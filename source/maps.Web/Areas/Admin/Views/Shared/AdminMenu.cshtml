@@ -1,0 +1,10 @@
+﻿@{
+    var controllerName = ViewContext.RequestContext.RouteData.Values["controller"] as string;
+}
+
+<div class="bs-sidebar hidden-print affix" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="@(controllerName == "Home" ? "active" : "")">@Html.ActionLink("Главная", "Index", "Home")</li>
+        <li class="@(controllerName == "User" ? "active" : "")">@Html.ActionLink("Пользователи", "Index", "User")</li>
+    </ul>
+</div>

@@ -1,0 +1,52 @@
+﻿@model PagedList.IPagedList<User>
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Пользователи
+</h2>
+@Html.ActionLink("Создать", "Create", "User", null, new { @class = "btn btn-primary" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Имя
+            </th>
+            <th>
+                Фамилия
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", "User", new { id = item.ID }, new { @class = "btn btn-default" })
+            </td>
+        </tr>
+    }
+</table>
+<div class="pager">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

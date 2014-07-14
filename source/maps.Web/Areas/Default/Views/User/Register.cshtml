@@ -1,0 +1,75 @@
+﻿@model maps.Web.Models.ViewModels.User.RegisterUserView
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        <legend>Register</legend>
+        <div class="form-group @Html.HasErrorClass("Email", "has-error")">
+            <label class="col-sm-4 control-label" for="Email">
+                Email
+            </label>
+            <div class="col-sm-4">
+                @Html.TextBox("Email", Model.Email, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @if (Html.HasError("Email"))
+                {
+                    @Html.ValidationMessage("Email");
+                }
+                else
+                {
+                    <span class="help-block">Enter Email</span>
+                }
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Email", "has-error")">
+            <label class="col-sm-4 control-label" for="Password">
+                Password
+            </label>
+            <div class="col-sm-4">
+                @Html.Password("Password", Model.Password, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Password")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Email", "has-error")">
+            <label class="col-sm-4 control-label" for="Email">
+                Confirm password
+            </label>
+            <div class="col-sm-4">
+                @Html.Password("ConfirmPassword", Model.ConfirmPassword, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("ConfirmPassword")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Email", "has-error")">
+            <div class="col-sm-4 col-sm-offset-4">
+                <img src="@Url.Action("Captcha","User")" alt="captcha" />
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Email", "has-error")">
+            <label class="col-sm-4 control-label" for="Captcha">
+                Captcha
+            </label>
+            <div class="col-sm-4">
+                @Html.TextBox("Captcha", Model.Captcha, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @if (Html.HasError("Captcha"))
+                {
+                    @Html.ValidationMessage("Captcha")
+                }
+                else
+                {
+                    <p class="help-block">Enter numbers showed on image</p>
+                }
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </fieldset>
+}

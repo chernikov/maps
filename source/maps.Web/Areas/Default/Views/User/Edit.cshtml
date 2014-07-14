@@ -1,0 +1,69 @@
+﻿@model maps.Web.Models.ViewModels.User.UserView
+@{
+    ViewBag.Title = "Edit user";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+}
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    <script type="text/javascript" src="/Scripts/default/edit-user.js"></script>
+}
+@using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.Hidden("ID", Model.ID)
+    @Html.Hidden("AvatarPath", Model.AvatarPath)
+    <div class="row">
+        <div class="col-md-3">
+            <img src="@Model.FullAvatarPath" alt="@Model.FirstName" id="AvatarImage" />
+            <br />
+            <br />
+            <div id="ChangeAvatar">Change</div>
+            @Html.Partial("UploadTemplate")
+            
+        </div>
+        <div class="col-md-9">
+            <fieldset>
+                <legend>Edit user</legend>
+                <div class="form-group @Html.HasErrorClass("Email", "has-error")">
+                    <label class="col-sm-4 control-label" for="Email">
+                        Email
+                    </label>
+                    <div class="col-sm-4">
+                        @Html.TextBox("Email", Model.Email, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.ValidationMessage("Email")
+                    </div>
+                </div>
+                <div class="form-group @Html.HasErrorClass("FirstName", "has-error")">
+                    <label class="col-sm-4 control-label" for="FirstName">
+                        First name
+                    </label>
+                    <div class="col-sm-4">
+                        @Html.TextBox("FirstName", Model.FirstName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.ValidationMessage("FirstName")
+                    </div>
+                </div>
+                <div class="form-group @Html.HasErrorClass("LastName", "has-error")">
+                    <label class="col-sm-4 control-label" for="FirstName">
+                        Last Name
+                    </label>
+                    <div class="col-sm-4">
+                        @Html.TextBox("LastName", Model.LastName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.ValidationMessage("LastName")
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                @Html.ActionLink("Change password", "ChangePassword", "User", null, new { @class = "btn" })
+            </fieldset>
+        </div>
+    </div>
+}

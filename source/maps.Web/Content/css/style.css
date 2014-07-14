@@ -1,0 +1,82 @@
+﻿html {
+    height : 100%;
+}
+
+body {
+    padding-top: 50px;
+    height : 100%;
+    overflow : hidden;
+    font-family : 'Segoe UI';
+}
+
+.has-warning .field-validation-error {
+    color: #c09853;
+}
+
+
+.has-error .field-validation-error {
+    color: #b94a48;
+}
+
+.has-success .field-validation-error {
+    color: #468847;
+}
+
+
+.field-validation-error {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #737373;
+}
+
+.background-map 
+{
+    margin: 30px 0 0 0;
+    height : 100%;
+    width : 100%;
+}
+
+.projects {
+    position : fixed;
+    top : 100px;
+    right : 10px;
+    list-style : none;
+}
+
+.projects li {
+    
+}
+
+.projects li a {
+    display : block;
+    background-color : #468847;
+    height : 70px;
+    color : #fff;
+    font-size : 40px;
+    width : 300px;
+    padding : 10px 50px 20px 50px;
+    text-decoration : none;
+    text-align : right;
+}
+
+.projects li a img {
+    position : relative;
+    top : -4px;
+}
+
+.navbar > .container .navbar-brand.bycicle  {
+    color : #fff;
+    font-size : 30px;
+    text-decoration : none;
+    margin-left : 30px;
+    display : inline-block;
+}
+
+.action-wrapper 
+{
+    position : fixed;
+    top : 100px;
+    right : 10px;
+    z-index : 2;
+}

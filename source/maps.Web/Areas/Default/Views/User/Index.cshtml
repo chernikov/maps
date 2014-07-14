@@ -1,0 +1,34 @@
+﻿@model User
+@{
+    ViewBag.Title = "User page";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<h2>User page</h2>
+
+
+<div class="row">
+    <div class="col-md-3">
+        <img src="@Model.FullAvatarPath" alt="@Model.FirstName" />
+    </div>
+    <div class="col-md-4">
+        <dl class="dl-horizontal">
+            <dt>Email</dt>
+            <dd>@Model.Email</dd>
+            @if (!string.IsNullOrWhiteSpace(Model.FirstName))
+            {
+                <dt>First name</dt>
+                <dd>@Model.FirstName</dd>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.LastName))
+            {
+                <dt>Last name</dt>
+                <dd>@Model.LastName</dd>
+            }
+        </dl>
+    </div>
+</div>
+@if (currentUser != null && currentUser.ID == Model.ID)
+{
+    @Html.ActionLink("Edit", "Edit", "User", null, new { @class = "btn btn-default" })
+}
