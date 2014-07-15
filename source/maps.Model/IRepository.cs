@@ -28,13 +28,10 @@ namespace maps.Model
 
         bool UpdateUser(User instance);
 
-        User GetUser(string email);
+        User GetUser(string login);
 
-        User Login(string email, string password);
+        User Login(string login, string password);
 
-        bool ActivateUser(User instance);
-
-        bool ChangePassword(User instance);
 
         #endregion
 
@@ -57,6 +54,18 @@ namespace maps.Model
         bool UpdateBycicleDirection(BycicleDirection instance);
         
         bool RemoveBycicleDirection(int idBycicleDirection);
+        
+        #endregion 
+
+        #region Social
+        
+        IQueryable<Social> Socials { get; }
+        
+        bool CreateSocial(Social instance);
+        
+        bool UpdateSocial(Social instance);
+        
+        bool RemoveSocial(int idSocial);
         
         #endregion 
     }

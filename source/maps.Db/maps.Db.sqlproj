@@ -68,6 +68,7 @@
     <Build Include="dbo\Tables\UserRole.sql" />
     <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\BycicleDirection.sql" />
+    <Build Include="dbo\Tables\Social.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="data\Init.sql" />

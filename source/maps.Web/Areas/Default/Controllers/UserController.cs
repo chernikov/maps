@@ -9,173 +9,138 @@ using Tool;
 using maps.Web.Mail;
 using maps.Model;
 using maps.Web.Models.ViewModels.User;
+using maps.Social.Facebook;
+using Newtonsoft.Json;
+using maps.Web.Models.ViewModels;
+using System.Net;
+using ImageResizer;
+using System.Drawing;
 
 namespace maps.Web.Areas.Default.Controllers
 {
     public class UserController : DefaultController
     {
-        public ActionResult Index(int id = 0)
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
+        private FbProvider fbProvider;
+
+        private static string AvatarFolder = "/Media/files/avatars/";
+
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
-            if (id == 0)
+            fbProvider = new FbProvider();
+            fbProvider.Config = Config.FacebookAppConfig;
+            base.Initialize(requestContext);
+        }
+
+
+        #region Facebook
+
+        public ActionResult Connect()
+        {
+            return Redirect(fbProvider.Authorize("http://" + HostName + "/User/SaveFbCode"));
+        }
+
+        public ActionResult SaveFbCode()
+        {
+            if (Request.Params.AllKeys.Contains("code"))
             {
-                if (CurrentUser != null)
+                var code = Request.Params["code"];
+                return ProcessFbCode(code);
+            }
+            return RedirectBack("~/");
+        }
+
+        protected ActionResult ProcessFbCode(string code)
+        {
+            if (fbProvider.GetAccessToken(code, "http://" + HostName + "/User/SaveFbCode"))
+            {
+                var jObj = fbProvider.GetUserInfo();
+                var fbUserInfo = JsonConvert.DeserializeObject<FbUserInfo>(jObj.ToString());
+                var identifier = fbUserInfo.Identifier;
+                if (TryLogin(identifier))
                 {
-                    return View(CurrentUser);
+                    return RedirectBack("~/");
                 }
-                return RedirectToLoginPage;
-            }
-            var user = Repository.Users.FirstOrDefault(p => p.ID == id);
-            if (user != null)
-            {
-                return View(user);
-            }
-            return RedirectToNotFoundPage;
-        }
-
-        [HttpGet]
-        [Authorize]
-        public ActionResult Edit()
-        {
-            if (CurrentUser != null)
-            {
-                var userView = (UserView)ModelMapper.Map(CurrentUser, typeof(User), typeof(UserView));
-                return View(userView);
-            }
-            return RedirectToLoginPage;
-        }
-
-        [HttpPost]
-        [Authorize]
-        public ActionResult Edit(UserView userView)
-        {
-            if (CurrentUser.ID == userView.ID)
-            {
-                if (ModelState.IsValid)
+                var registerView = new SocialRegisterUserView()
                 {
-                    var user = (User)ModelMapper.Map(userView, typeof(UserView), typeof(User));
-                    Repository.UpdateUser(user);
-
-                    return RedirectToAction("Index");
-                }
-                return View(userView);
-            }
-            return RedirectToLoginPage;
-        }
-
-        [HttpGet]
-        public ActionResult Register()
-        {
-            var registerUserView = new RegisterUserView();
-            return View(registerUserView);
-        }
-
-        [HttpPost]
-        public ActionResult Register(RegisterUserView registerUserView)
-        {
-            if (Session[CaptchaImage.CaptchaValueKey] as string != registerUserView.Captcha)
-            {
-                ModelState.AddModelError("Captcha", "Numbers not correct");
-            }
-            if (ModelState.IsValid)
-            {
-                var user = (User)ModelMapper.Map(registerUserView, typeof(RegisterUserView), typeof(User));
-                Repository.CreateUser(user);
-
-                NotifyMail.SendNotify("Register", user.Email,
-                                      format => string.Format(format, HostName),
-                                      format => string.Format(format, user.ActivatedLink, HostName));
-
-                return View("RegisterSuccess", user);
-            }
-            return View(registerUserView);
-        }
-
-        public ActionResult Captcha()
-        {
-            Session[CaptchaImage.CaptchaValueKey] = new Random(DateTime.Now.Millisecond).Next(1111, 9999).ToString();
-            // Create a CAPTCHA image using the text stored in the Session object.
-            var ci = new CaptchaImage(Session[CaptchaImage.CaptchaValueKey].ToString(), 211, 50, "Arial");
-
-            // Change the response headers to output a JPEG image.
-            this.Response.Clear();
-            this.Response.ContentType = "image/jpeg";
-
-            // Write the image to the response stream in JPEG format.
-            ci.Image.Save(this.Response.OutputStream, ImageFormat.Jpeg);
-
-            // Dispose of the CAPTCHA image object.
-            ci.Dispose();
-            return null;
-        }
-
-        public ActionResult Activate(string id)
-        {
-            var user = Repository.Users.FirstOrDefault(p => string.Compare(p.ActivatedLink, id, true) == 0);
-            if (user != null)
-            {
-                Repository.ActivateUser(user);
-                Auth.Login(user.Email);
-                return View("ActivateSuccess");
-            }
-            return RedirectToNotFoundPage;
-        }
-
-        [HttpPost]
-        public JsonResult UploadAvatar(string qqfile)
-        {
-           /* var fileName = string.Empty;
-            var inputStream = GetInputStream(qqfile, out fileName);
-            if (inputStream != null)
-            {
-                var extension = Path.GetExtension(fileName);
-                if (extension != null)
+                    Avatar = string.Format("http://graph.facebook.com/{0}/picture", fbUserInfo.Id),
+                    Email = fbUserInfo.Email,
+                    FirstName = fbUserInfo.FirstName,
+                    LastName = fbUserInfo.LastName,
+                    Login = fbUserInfo.Name,
+                    Identifier = fbUserInfo.Identifier,
+                    Provider = Model.Social.ProviderType.facebook,
+                    UserInfo = jObj.ToString()
+                };
+                try
                 {
-                    extension = extension.ToLower();
-                    var mimeType = Config.MimeTypes.FirstOrDefault(p => p.Extension == extension);
+                    //проверить логин (при необходимости - изменить)
+                    registerView.Login = Translit.Translate(registerView.Login).ToLower();
+                    registerView.Login = registerView.Login.Replace("-", "_");
+                    //создать аккаунт 
+                    var user = (User)ModelMapper.Map(registerView, typeof(SocialRegisterUserView), typeof(User));
+                    
+                    user.Password = StringExtension.GenerateNewFile();
 
-                    if (mimeType != null && PreviewCreator.SupportMimeType(mimeType.Name))
+                    Repository.CreateUser(user);
+
+                    //создать Social
+
+                    var social = new Model.Social()
                     {
-                        var ms = GetMemoryStream(inputStream);
-                        var avatarUrl = MakeAvatar(ms);
-                        return Json(new
-                        {
-                            success = true,
-                            result = "ok",
-                            data = new
-                            {
-                                AvatarUrl = avatarUrl
-                            }
-                        }, "text/html");
+                        Identified = registerView.Identifier,
+                        Provider = (int)registerView.Provider,
+                        UserInfo = registerView.UserInfo,
+                        JsonResource = string.Empty,
+                        UserID = user.ID
+                    };
+                    Repository.CreateSocial(social);
+
+                    //скачать картинку (если есть)
+                    if (!string.IsNullOrWhiteSpace(registerView.Avatar))
+                    {
+                        CreateAvatar(user, registerView.Avatar);
                     }
+                    Auth.Login(user.Login);
                 }
-            }*/
-            return Json(new { success = true, result = "error" });
-        }
-
-     
-
-        [HttpGet]
-        [Authorize]
-        public ActionResult ChangePassword()
-        {
-            var changePasswordView = new ChangePasswordView
-            {
-                ID = CurrentUser.ID
-            };
-            return View(changePasswordView);
-        }
-
-        [HttpPost]
-        [Authorize]
-        public ActionResult ChangePassword(ChangePasswordView changePasswordView)
-        {
-            if (ModelState.IsValid)
-            {
-                CurrentUser.Password = changePasswordView.NewPassword;
-                Repository.ChangePassword(CurrentUser);
-                TempData["message"] = "Saved";
+                catch (Exception ex)
+                {
+                    logger.Error(ex.Message);
+                    logger.Debug("Can't initialize : " + registerView.UserInfo);
+                }
             }
-            return View(changePasswordView);
+            return RedirectBack("~/");
         }
+        #endregion
+
+        private bool TryLogin(string identifier)
+        {
+            var social = Repository.Socials.FirstOrDefault(p => p.Identified == identifier);
+
+            if (social != null)
+            {
+                Auth.Login(social.User.Login);
+                return true;
+            }
+            return false;
+        }
+
+        public void CreateAvatar(User user, string pictureUrl)
+        {
+            var webClient = new WebClient();
+            var bytes = webClient.DownloadData(pictureUrl);
+            var ms = new MemoryStream(bytes);
+
+            var uFile = StringExtension.GenerateNewFile() + ".jpg";
+            var filePath = Path.Combine(Path.Combine(Server.MapPath("~"), DestinationDir), uFile);
+            ImageBuilder.Current.Build(ms, filePath, new ResizeSettings("maxwidth=1600&crop=auto"));
+
+            user.AvatarPath = "/" + DestinationDir + uFile;
+            Repository.UpdateUser(user);
+
+        }
+
+
     }
 }

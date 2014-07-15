@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
@@ -52,11 +56,13 @@
     </Compile>
     <Compile Include="Proxy\BycicleDirection.cs" />
     <Compile Include="Proxy\Role.cs" />
+    <Compile Include="Proxy\Social.cs" />
     <Compile Include="Proxy\User.cs" />
     <Compile Include="Proxy\UserRole.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="SqlRepository\BycicleDirection.cs" />
     <Compile Include="SqlRepository\Role.cs" />
+    <Compile Include="SqlRepository\Social.cs" />
     <Compile Include="SqlRepository\User.cs" />
     <Compile Include="SqlRepository\UserRole.cs" />
     <Compile Include="mapsDb.designer.cs">

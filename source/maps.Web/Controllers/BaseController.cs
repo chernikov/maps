@@ -62,6 +62,15 @@ namespace maps.Web.Controllers
             }
         }
 
+        public RedirectResult RedirectBack(string redirect)
+        {
+                if (Request.UrlReferrer != null)
+                {
+                    return Redirect(Request.UrlReferrer.ToString());
+                }
+                return Redirect(redirect);
+        }
+
         protected override void Initialize(RequestContext requestContext)
         {
             if (requestContext.HttpContext.Request.Url != null)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using maps.Web.Global.Config;
 using System.Configuration;
+using maps.Social.Facebook;
 
 namespace maps.UnitTest.Tools
 {
@@ -61,5 +62,11 @@ namespace maps.UnitTest.Tools
         }
 
         #endregion
+
+
+        public IFbAppConfig FacebookAppConfig
+        {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

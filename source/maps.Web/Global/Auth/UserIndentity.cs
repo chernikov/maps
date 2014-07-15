@@ -59,11 +59,11 @@ namespace maps.Web.Global.Auth
         /// Инициализация по имени
         /// </summary>
         /// <param name="email">имя пользователя [email]</param>
-        public void Init(string email, IRepository repository)
+        public void Init(string login, IRepository repository)
         {
-            if (!string.IsNullOrEmpty(email))
+            if (!string.IsNullOrEmpty(login))
             {
-                User = repository.GetUser(email);
+                User = repository.GetUser(login);
             }
         }
     }

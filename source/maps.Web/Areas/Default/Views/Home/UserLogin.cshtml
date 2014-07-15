@@ -1,14 +1,15 @@
 ﻿@model User
 
-
 @if (Model != null)
 {
-    <li>@Html.ActionLink(Model.Email, "Index", "User", null, null)</li>
-    <li>@Html.ActionLink("Sign out", "Logout", "Login", null, null)</li>
+    if (!string.IsNullOrWhiteSpace(Model.AvatarPath))
+    {
+        <li><img src="@Model.AvatarPath?w=50&h=50&mode=crop" /></li>
+    }
+    <li>@Html.ActionLink("Sign out", "Logout", "Login", null, new { @class = "btn btn-default btn-navbar" })</li>
 }
 else
 {
-    <li>@Html.ActionLink("Sign in", "Index", "Login", null, null)</li>
-    <li>@Html.ActionLink("Register", "Register", "User", null, null)</li>
+    <li>@Html.ActionLink("Facebook login", "Connect", "User", null, new { @class = "btn btn-default btn-navbar" })</li>
 }
 

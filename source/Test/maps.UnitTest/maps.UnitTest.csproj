@@ -39,6 +39,10 @@
     <Reference Include="Moq">
       <HintPath>..\..\packages\Moq.4.2.1312.1622\lib\net40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
@@ -107,6 +111,10 @@
     <ProjectReference Include="..\..\maps.Model\maps.Model.csproj">
       <Project>{69b9bddf-2bff-4755-920b-db29b3d3565e}</Project>
       <Name>maps.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\maps.Social\maps.Social.csproj">
+      <Project>{14b73b87-60ab-4894-aa0b-823d7d19bc98}</Project>
+      <Name>maps.Social</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\maps.Web\maps.Web.csproj">
       <Project>{87da2f28-a8ac-40ea-9be7-52f80f7e1ef8}</Project>

@@ -27,21 +27,9 @@ namespace maps.Model
             return false;
         }
 
-        public bool IsActivated
+        public bool HasSocial(Social.ProviderType type)
         {
-            get { return ActivatedDate.HasValue; }
-        }
-
-        public string FullAvatarPath
-        {
-            get
-            {
-                if (string.IsNullOrWhiteSpace(AvatarPath))
-                {
-                    return "/Content/images/default_avatar.jpg?w=260&h=200&mode=crop";
-                }
-                return AvatarPath+"?w=260&h=200&mode=crop";
-            }
+            return Socials.Any(p => p.Provider == (int)type);
         }
     }
 }

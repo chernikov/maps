@@ -30,7 +30,7 @@ namespace maps.UnitTest
             };
         }
 
-        [Test]
+        /*[Test]
         public void Register_CaptchaIsInCorrect_Fail()
         {
             var httpContext = new MockHttpContext().Object;
@@ -50,6 +50,6 @@ namespace maps.UnitTest
                 Captcha = "1111"
             };
             controller.Register(registerUserView);
-        }
+        }*/
     }
 }

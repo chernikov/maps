@@ -1,4 +1,6 @@
-﻿using System;
+﻿using maps.Social.Facebook;
+using maps.Web.Global.OAuth;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -43,6 +45,14 @@ namespace maps.Web.Global.Config
             {
                 MailTemplateConfig configInfo = (MailTemplateConfig)ConfigurationManager.GetSection("mailTemplatesConfig");
                 return configInfo.mailTemplates.OfType<MailTemplate>().AsQueryable<MailTemplate>();
+            }
+        }
+
+        public IFbAppConfig FacebookAppConfig
+        {
+            get
+            {
+                return (FacebookAppConfig)ConfigurationManager.GetSection("facebookAppConfig");
             }
         }
     }

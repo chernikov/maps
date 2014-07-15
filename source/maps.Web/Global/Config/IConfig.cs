@@ -1,4 +1,5 @@
-﻿using System;
+﻿using maps.Social.Facebook;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,5 +17,7 @@ namespace maps.Web.Global.Config
         bool EnableMail { get; }
       
         IQueryable<MailTemplate> MailTemplates { get; }
+
+        IFbAppConfig FacebookAppConfig { get; }
     }
 }

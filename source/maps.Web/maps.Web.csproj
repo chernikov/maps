@@ -56,6 +56,10 @@
     <Reference Include="MiniProfiler">
       <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
@@ -65,8 +69,9 @@
     <Reference Include="Ninject.Web.Mvc">
       <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="NLog">
-      <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
+    <Reference Include="NLog, Version=3.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.3.1.0.0\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="PagedList">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -127,10 +132,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <Private>True</Private>
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivator">
       <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
@@ -190,6 +191,7 @@
     <Compile Include="Global\Config\MailTemplateConfig.cs" />
     <Compile Include="Global\FineUpload.cs" />
     <Compile Include="Global\FineUploaderResult.cs" />
+    <Compile Include="Global\OAuth\FacebookAppConfig.cs" />
     <Compile Include="Helpers\CustomHelpers.cs" />
     <Compile Include="Mail\MailSender.cs" />
     <Compile Include="Mail\NotifyMail.cs" />
@@ -197,6 +199,7 @@
     <Compile Include="Models\Mappers\ModelMapper.cs" />
     <Compile Include="Models\ViewModels\BycicleDirectionView.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
+    <Compile Include="Models\ViewModels\SocialRegisterUserView.cs" />
     <Compile Include="Models\ViewModels\User\BaseUserView.cs" />
     <Compile Include="Models\ViewModels\User\ChangePasswordView.cs" />
     <Compile Include="Models\ViewModels\User\ForgotPasswordView.cs" />
@@ -303,6 +306,10 @@
     <ProjectReference Include="..\maps.Model\maps.Model.csproj">
       <Project>{69b9bddf-2bff-4755-920b-db29b3d3565e}</Project>
       <Name>maps.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\maps.Social\maps.Social.csproj">
+      <Project>{14b73b87-60ab-4894-aa0b-823d7d19bc98}</Project>
+      <Name>maps.Social</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

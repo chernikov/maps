@@ -9,6 +9,6 @@ namespace maps.Web.Areas.Default.Controllers
 {
     public abstract class DefaultController : BaseController
     {
-
+        protected string DestinationDir = "Content/files/uploads/";
     }
 }

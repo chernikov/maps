@@ -23,7 +23,6 @@ namespace maps.Model
             {
                 instance.AddedDate = DateTime.Now;
                 instance.LastVisitDate = DateTime.Now;
-                instance.ActivatedLink = StringExtension.GenerateNewFile();
                 Db.Users.InsertOnSubmit(instance);
                 Db.Users.Context.SubmitChanges();
                 return true;
@@ -32,14 +31,14 @@ namespace maps.Model
             return false;
         }
 
-        public User GetUser(string email)
+        public User GetUser(string login)
         {
-            return Db.Users.FirstOrDefault(p => string.Compare(p.Email, email, true) == 0);
+            return Db.Users.FirstOrDefault(p => string.Compare(p.Login, login, true) == 0);
         }
 
-        public User Login(string email, string password)
+        public User Login(string login, string password)
         {
-            return Db.Users.FirstOrDefault(p => string.Compare(p.Email, email, true) == 0 && p.Password == password);
+            return Db.Users.FirstOrDefault(p => string.Compare(p.Login, login, true) == 0 && p.Password == password);
         }
 
         public bool UpdateUser(User instance)
@@ -51,32 +50,6 @@ namespace maps.Model
                 cache.AvatarPath = instance.AvatarPath;
                 cache.FirstName = instance.FirstName;
                 cache.LastName = instance.LastName;
-                Db.Users.Context.SubmitChanges();
-                return true;
-            }
-            return false;
-        }
-
-        public bool ActivateUser(User instance)
-        {
-            var cache = Db.Users.FirstOrDefault(p => p.ID == instance.ID);
-            if (cache != null)
-            {
-                cache.ActivatedDate = DateTime.Now;
-                Db.Users.Context.SubmitChanges();
-                return true;
-            }
-
-            return false;
-        }
-
-
-        public bool ChangePassword(User instance)
-        {
-            var cache = Db.Users.FirstOrDefault(p => p.ID == instance.ID);
-            if (cache != null)
-            {
-                cache.Password = instance.Password;
                 Db.Users.Context.SubmitChanges();
                 return true;
             }

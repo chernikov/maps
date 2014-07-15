@@ -17,7 +17,7 @@ namespace maps.IntegrationTest
     [TestFixture]
     public class DefaultUserControllerTest
     {
-        [Test]
+       /* [Test]
         public void CreateUser_CreateNormalUser_CountPlusOne()
         {
             var repository = DependencyResolver.Current.GetService<IRepository>();
@@ -52,6 +52,6 @@ namespace maps.IntegrationTest
 
             var countAfter = repository.Users.Count();
             Assert.AreEqual(countBefore + 1, countAfter);
-        }
+        }*/
     }
 }

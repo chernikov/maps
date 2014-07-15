@@ -34,7 +34,7 @@ namespace maps.Web.Global.Auth
 
         public User Login(string userName)
         {
-            User retUser = Repository.Users.FirstOrDefault(p => string.Compare(p.Email, userName, true) == 0);
+            User retUser = Repository.Users.FirstOrDefault(p => string.Compare(p.Login, userName, true) == 0);
             if (retUser != null)
             {
                 CreateCookie(userName);

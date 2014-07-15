@@ -21,13 +21,10 @@
                 <a class="navbar-brand" href="/">
                     <img src="/Content/images/maps_logo_small.png" />
                 </a>
-                <a class="navbar-brand bycicle" href="@Url.Action("Index", "Home")">
-                    <img src="/Content/images/bycicle_2.png" /> Велорух
-                </a>
             </div>
             <div class="collapse navbar-collapse pull-right">
-                <ul class="nav navbar-nav">
-                    @* @Html.Action("UserLogin", "Home")*@
+                <ul class="nav navbar-nav navbar-form">
+                    @Html.Action("UserLogin", "Home", new { area = "Default" })
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

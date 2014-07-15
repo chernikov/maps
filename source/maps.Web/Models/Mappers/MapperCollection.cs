@@ -26,6 +26,7 @@ namespace maps.Web.Models.Mappers
             {
                 Mapper.CreateMap<User, RegisterUserView>();
                 Mapper.CreateMap<RegisterUserView, User>();
+                Mapper.CreateMap<SocialRegisterUserView, User>();
 
                 Mapper.CreateMap<User, UserView>();
                 Mapper.CreateMap<UserView, User>();

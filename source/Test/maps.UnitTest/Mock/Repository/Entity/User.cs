@@ -20,8 +20,7 @@ namespace maps.UnitTest.Mock.Repository
             var admin = new User()
             {
                 ID = 1,
-                ActivatedDate = DateTime.Now,
-                ActivatedLink = "",
+                Login = "admin",
                 Email = "admin",
                 FirstName = "",
                 LastName = "",
@@ -47,8 +46,7 @@ namespace maps.UnitTest.Mock.Repository
             Users.Add(new User()
             {
                 ID = 2,
-                ActivatedDate = DateTime.Now,
-                ActivatedLink = "",
+                Login = "chernikov",
                 Email = "chernikov@gmail.com",
                 FirstName = "Andrey",
                 LastName = "Chernikov",
