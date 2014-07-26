@@ -1,0 +1,16 @@
+﻿@{
+    var controllerName = ViewContext.RequestContext.RouteData.Values["controller"] as string;
+    var actionName = ViewContext.RequestContext.RouteData.Values["action"] as string;
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <li class="@(controllerName == "Home" ? "active" : "")"><a href="@Url.Action("Index", "Home")">Велорух</a></li>
+        <li class="@(controllerName == "Route" ? "active" : "")"><a href="@Url.Action("Index", "Route")">Маршрути</a></li>
+        @if (controllerName == "Route" && currentUser != null)
+        {
+            <li class="@(controllerName == "Route" && actionName == "Add" ? "active" : "")"><a href="@Url.Action("Add", "Route")"><span class="glyphicon glyphicon-plus"></span> Додати</a></li>
+            <li class="@(controllerName == "Route" && actionName == "My" ? "active" : "")"><a href="@Url.Action("My", "Route")">Мої маршрути</a></li>
+        }
+    </ul>
+</div>
