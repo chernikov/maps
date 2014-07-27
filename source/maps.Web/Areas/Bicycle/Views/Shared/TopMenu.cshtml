@@ -12,5 +12,10 @@
             <li class="@(controllerName == "Route" && actionName == "Add" ? "active" : "")"><a href="@Url.Action("Add", "Route")"><span class="glyphicon glyphicon-plus"></span> Додати</a></li>
             <li class="@(controllerName == "Route" && actionName == "My" ? "active" : "")"><a href="@Url.Action("My", "Route")">Мої маршрути</a></li>
         }
+        <li class="@(controllerName == "Parking" ? "active" : "")"><a href="@Url.Action("Index", "Parking")">Велопарковки</a></li>
+        @if (controllerName == "Parking" && currentUser != null)
+        {
+            <li class="@(controllerName == "Parking" && actionName == "Add" ? "active" : "")"><a href="@Url.Action("Add", "Parking")"><span class="glyphicon glyphicon-plus"></span> Додати</a></li>
+        }
     </ul>
 </div>

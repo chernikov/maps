@@ -1,0 +1,33 @@
+@model IEnumerable<BicycleParking>
+
+@{
+    ViewBag.Title = "BicycleParking";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>
+	BicycleParking
+</h2>
+@Html.ActionLink("Create", "Create", "BicycleParking", null, new { @class = "btn" })
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+					#
+			</th>
+			<th>
+			</th>
+		</tr>
+	</thead>
+	
+	@foreach(var item in Model) {
+	<tr>
+		<td> 
+			@item.ID
+		</td>
+		<td>
+			@Html.ActionLink("Edit", "Edit", "BicycleParking", new { id = item.ID }, new { @class = "btn  btn-default" })
+            @Html.ActionLink("Remove", "Delete", "BicycleParking", new { id = item.ID }, new { @class = "btn  btn-danger" })
+		</td>
+	</tr>
+	}
+</table>

@@ -68,5 +68,29 @@ namespace maps.Model
         bool RemoveSocial(int idSocial);
         
         #endregion 
+
+        #region BicycleParking
+        
+        IQueryable<BicycleParking> BicycleParkings { get; }
+        
+        bool CreateBicycleParking(BicycleParking instance);
+        
+        bool UpdateBicycleParking(BicycleParking instance);
+        
+        bool RemoveBicycleParking(int idBicycleParking);
+        
+        #endregion 
+
+        #region BicycleParkingVote
+        
+        IQueryable<BicycleParkingVote> BicycleParkingVotes { get; }
+        
+        bool CreateBicycleParkingVote(BicycleParkingVote instance);
+        
+        bool UpdateBicycleParkingVote(BicycleParkingVote instance);
+        
+        bool RemoveBicycleParkingVote(int idBicycleParkingVote);
+        
+        #endregion 
     }
 }

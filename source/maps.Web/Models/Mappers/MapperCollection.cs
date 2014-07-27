@@ -42,5 +42,16 @@ namespace maps.Web.Models.Mappers
         		Mapper.CreateMap<BycicleDirectionView, BycicleDirection>();
         	}
         }
+
+        
+        public static class BicycleParkingMapper
+        {
+        	public static void Init()
+        	{
+        		Mapper.CreateMap<BicycleParking, BicycleParkingView>();
+                Mapper.CreateMap<BicycleParkingView, BicycleParking>()
+                    .ForMember(p => p.Type, opt => opt.Ignore());
+        	}
+        }
     }
 }

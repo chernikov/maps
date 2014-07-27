@@ -69,11 +69,16 @@
     <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\BycicleDirection.sql" />
     <Build Include="dbo\Tables\Social.sql" />
+    <Build Include="dbo\Tables\BicycleParking.sql" />
+    <Build Include="dbo\Tables\BicycleParkingVote.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="data\Init.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="maps.Db.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="maps.Db.publish.xml" />
   </ItemGroup>
 </Project>

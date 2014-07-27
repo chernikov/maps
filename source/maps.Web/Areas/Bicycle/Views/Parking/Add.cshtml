@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Додати велопарковку - Велорух - maps.if.ua";
+    Layout = "~/Areas/Bicycle/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+}
+
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    <script type="text/javascript" src="/scripts/bycicle/add-parking.js"></script>
+}
+
+<div class="background-map" id="map">
+</div>

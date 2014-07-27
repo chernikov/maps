@@ -54,12 +54,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Proxy\BicycleParking.cs" />
+    <Compile Include="Proxy\BicycleParkingVote.cs" />
     <Compile Include="Proxy\BycicleDirection.cs" />
     <Compile Include="Proxy\Role.cs" />
     <Compile Include="Proxy\Social.cs" />
     <Compile Include="Proxy\User.cs" />
     <Compile Include="Proxy\UserRole.cs" />
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="SqlRepository\BicycleParking.cs" />
+    <Compile Include="SqlRepository\BicycleParkingVote.cs" />
     <Compile Include="SqlRepository\BycicleDirection.cs" />
     <Compile Include="SqlRepository\Role.cs" />
     <Compile Include="SqlRepository\Social.cs" />

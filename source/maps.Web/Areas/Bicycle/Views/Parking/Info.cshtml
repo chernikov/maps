@@ -1,0 +1,15 @@
+﻿@model BicycleParking
+
+
+<div class="thumbnail">
+    @if (!string.IsNullOrWhiteSpace(Model.PhotoUrl))
+    {
+        <img src="@Model.PhotoUrl?w=300&h=300&mode=crop" />
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.Description))
+    {
+        <div class="caption">
+            <p>@Model.Description</p>
+        </div>
+    }
+</div>

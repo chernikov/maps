@@ -1,0 +1,31 @@
+﻿@model maps.Web.Models.ViewModels.BicycleParkingView
+
+@using (Html.BeginForm("Edit", "Parking", FormMethod.Post, new { @class = "form-horizontal", id = "ParkingForm" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        @Html.Hidden("PhotoUrl", Model.PhotoUrl)
+        @Html.Hidden("Position", Model.Position)
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Фото
+            </label>
+            <div class="col-sm-9">
+                <img src="@Model.FullPhotoUrl?w=300&h=300&mode=crop" id="ParkingImage" />
+                <br />
+                <br />
+                <div id="ChangePhoto">Змiнити</div>
+                @Html.Partial("UploadTemplate")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Description", "has-error")">
+            <label class="col-sm-3 control-label" for="Description">
+                Опис
+                @Html.ValidationMessage("Description")
+            </label>
+            <div class="col-sm-9">
+                @Html.TextArea("Description", Model.Description, new { @class = "form-control textarea" })
+            </div>
+        </div>
+    </fieldset>
+}
