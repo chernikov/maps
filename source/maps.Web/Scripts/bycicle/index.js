@@ -2,17 +2,11 @@
     var _this = this;
 
     this.map = null;
-    this.directionsDisplay = null;
-    this.markers = [];
-    this.directionsService = null;
-    this.response = null;
-    this.init = function () {
-        google.maps.event.addDomListener(window, 'load', _this.initializeMap);
-        _this.directionsService = new google.maps.DirectionsService();
+    this.infoWindows = [];
 
-        $(document).on("click", "#SaveRouteBtn", function () {
-            _this.saveRoute();
-        });
+    this.init = function () {
+
+        google.maps.event.addDomListener(window, 'load', _this.initializeMap);
     }
 
     this.initializeMap = function () {
@@ -22,6 +16,89 @@
             disableDefaultUI: true
         };
         _this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        _this.loadRoutes();
+        _this.loadParkings();
+    }
+
+    this.loadRoutes = function () {
+        var url = $("#map").data("url");
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (data) {
+                if (data.result == "ok") {
+                    var opacity = 1 / data.data.length * 2;
+                    $.each(data.data, function (i, item) {
+                        console.log(item);
+                        var path = google.maps.geometry.encoding.decodePath(item);
+
+                        var polyline = new google.maps.Polyline({
+                            map: _this.map,
+                            path: path,
+                            strokeColor: "#008B8B",
+                            strokeOpacity: opacity,
+                            strokeWeight: 5
+                        });
+                    });
+                }
+            }
+        })
+    }
+
+    this.loadParkings = function () {
+        $.ajax({
+            type: "GET",
+            url: "/bicycle/parking/getAll",
+            success: function (data) {
+                if (data.result == "ok") {
+                    $.each(data.data, function (i, item) {
+                        console.log(item.Position);
+                        var position = item.Position.replace('(', '').replace(')', '');
+
+                        var lat = position.replace(/\s*\,.*/, ''); // first 123
+                        var lng = position.replace(/.*,\s*/, ''); // second ,456
+
+                        var latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
+                        var marker = new google.maps.Marker({
+                            map: _this.map,
+                            position: latLng,
+                            icon: "/Content/images/marker_12_2x.png"
+                        });
+                        marker.set("Id", item.Id);
+                        google.maps.event.addListener(marker, 'click', function () {
+                            var id = marker.get("Id");
+                            _this.showInfo(marker);
+                        });
+                    });
+                }
+            }
+        });
+    }
+
+    this.showInfo = function (marker) {
+        var id = marker.get("Id");
+        $.ajax({
+            type: "GET",
+            url: "/bicycle/Parking/Info",
+            data: { id: id },
+            success: function (data) {
+                _this.clearAllInfo();
+                var infowindow = new google.maps.InfoWindow({
+                    content: data
+                });
+                infowindow.open(_this.map, marker);
+                _this.infoWindows.push(infowindow);
+
+            }
+        });
+    }
+
+    this.clearAllInfo = function () {
+        for (var i = 0; i < _this.infoWindows.length; i++) {
+            _this.infoWindows[i].setMap(null);
+        }
+        _this.infoWindows = [];
     }
 }
 

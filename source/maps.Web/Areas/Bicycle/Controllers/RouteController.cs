@@ -43,7 +43,7 @@ namespace maps.Web.Areas.Bicycle.Controllers
 
         public ActionResult GetMine()
         {
-            var list = Repository.BycicleDirections.ToList();
+            var list = Repository.BycicleDirections.Where(p => p.UserID == CurrentUser.ID).ToList();
 
             return Json(new { result = "ok", data = list.Select(p => p.PolyLine) }, JsonRequestBehavior.AllowGet);
         }

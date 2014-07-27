@@ -34,6 +34,10 @@
         _this.directionsDisplay = new google.maps.DirectionsRenderer({
             draggable : true
         });
+
+        google.maps.event.addListener(_this.directionsDisplay, 'directions_changed', function () {
+            _this.response = _this.directionsDisplay.getDirections();
+        });
     }
 
     this.clickOnMap = function (event) {
