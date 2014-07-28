@@ -2,8 +2,10 @@
 @{
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Sign in";
-
 }
+<div class="row">
+    <div class="col-sm-4 "></div>
+</div>
 @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <fieldset>
