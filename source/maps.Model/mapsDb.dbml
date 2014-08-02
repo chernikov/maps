@@ -52,21 +52,8 @@
       <Association Name="User_UserRole" Member="UserRoles" ThisKey="ID" OtherKey="UserID" Type="UserRole" />
       <Association Name="User_BycicleDirection" Member="BycicleDirections" ThisKey="ID" OtherKey="UserID" Type="BycicleDirection" />
       <Association Name="User_Social" Member="Socials" ThisKey="ID" OtherKey="UserID" Type="Social" />
+      <Association Name="User_Shop" Member="Shops" ThisKey="ID" OtherKey="UserID" Type="Shop" />
       <Association Name="User_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="UserID" Type="BicycleParking" />
-    </Type>
-  </Table>
-  <Table Name="dbo.BicycleParking" Member="BicycleParkings">
-    <Type Name="BicycleParking">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Position" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="PhotoUrl" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Quality" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="VotesCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="BicycleParking_BicycleParkingVote" Member="BicycleParkingVotes" ThisKey="ID" OtherKey="BicycleParkingID" Type="BicycleParkingVote" />
-      <Association Name="User_BicycleParking" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.BicycleParkingVote" Member="BicycleParkingVotes">
@@ -76,6 +63,34 @@
       <Column Name="BicycleParkingID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Mark" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="BicycleParking_BicycleParkingVote" Member="BicycleParking" ThisKey="BicycleParkingID" OtherKey="ID" Type="BicycleParking" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shop" Member="Shops">
+    <Type Name="Shop">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="User_Shop" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BicycleParking" Member="BicycleParkings">
+    <Type Name="BicycleParking">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PhotoUrl" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Exist" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Camera" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Quality" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Capacity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VotesCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Rent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="BicycleParking_BicycleParkingVote" Member="BicycleParkingVotes" ThisKey="ID" OtherKey="BicycleParkingID" Type="BicycleParkingVote" />
+      <Association Name="User_BicycleParking" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

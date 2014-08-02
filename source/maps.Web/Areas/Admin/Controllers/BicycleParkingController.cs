@@ -8,41 +8,43 @@ using maps.Model;
 
 
 namespace maps.Web.Areas.Admin.Controllers
-{ 
+{
     public class BicycleParkingController : AdminController
     {
-		public ActionResult Index()
+        public ActionResult Index()
         {
-			var list = Repository.BicycleParkings.ToList();
-			return View(list);
-		}
+            var list = Repository.BicycleParkings.ToList();
+            return View(list);
+        }
 
-		public ActionResult Create() 
-		{
-			var bicycleparkingView = new BicycleParkingView();
-			return View("Edit", bicycleparkingView);
-		}
+        public ActionResult Create()
+        {
+            var bicycleparkingView = new BicycleParkingView();
+            return View("Edit", bicycleparkingView);
+        }
 
-		[HttpGet]
-		public ActionResult Edit(int id) 
-		{
-			var  bicycleparking = Repository.BicycleParkings.FirstOrDefault(p => p.ID == id); 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var bicycleparking = Repository.BicycleParkings.FirstOrDefault(p => p.ID == id);
 
-			if (bicycleparking != null) {
-				var bicycleparkingView = (BicycleParkingView)ModelMapper.Map(bicycleparking, typeof(BicycleParking), typeof(BicycleParkingView));
-				return View(bicycleparkingView);
-			}
-			return RedirectToNotFoundPage;
-		}
+            if (bicycleparking != null)
+            {
+                var bicycleparkingView = (BicycleParkingView)ModelMapper.Map(bicycleparking, typeof(BicycleParking), typeof(BicycleParkingView));
+                return View(bicycleparkingView);
+            }
+            return RedirectToNotFoundPage;
+        }
 
-		[HttpPost]
-		public ActionResult Edit(BicycleParkingView bicycleparkingView)
+        [HttpPost]
+        public ActionResult Edit(BicycleParkingView bicycleparkingView)
         {
             if (ModelState.IsValid)
             {
                 var bicycleparking = (BicycleParking)ModelMapper.Map(bicycleparkingView, typeof(BicycleParkingView), typeof(BicycleParking));
                 if (bicycleparking.ID == 0)
                 {
+                    bicycleparking.UserID = CurrentUser.ID;
                     Repository.CreateBicycleParking(bicycleparking);
                 }
                 else
@@ -59,9 +61,9 @@ namespace maps.Web.Areas.Admin.Controllers
             var bicycleparking = Repository.BicycleParkings.FirstOrDefault(p => p.ID == id);
             if (bicycleparking != null)
             {
-                    Repository.RemoveBicycleParking(bicycleparking.ID);
+                Repository.RemoveBicycleParking(bicycleparking.ID);
             }
-			return RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
-	}
+    }
 }

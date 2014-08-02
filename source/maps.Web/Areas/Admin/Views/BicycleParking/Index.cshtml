@@ -1,33 +1,85 @@
 @model IEnumerable<BicycleParking>
 
 @{
-    ViewBag.Title = "BicycleParking";
+    ViewBag.Title = "Велопарковки";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <h2>
-	BicycleParking
+    Велопарковки
 </h2>
-@Html.ActionLink("Create", "Create", "BicycleParking", null, new { @class = "btn" })
+@Html.ActionLink("Додати", "Create", "BicycleParking", null, new { @class = "btn btn-primary" })
 <table class="table">
-	<thead>
-		<tr>
-			<th>
-					#
-			</th>
-			<th>
-			</th>
-		</tr>
-	</thead>
-	
-	@foreach(var item in Model) {
-	<tr>
-		<td> 
-			@item.ID
-		</td>
-		<td>
-			@Html.ActionLink("Edit", "Edit", "BicycleParking", new { id = item.ID }, new { @class = "btn  btn-default" })
-            @Html.ActionLink("Remove", "Delete", "BicycleParking", new { id = item.ID }, new { @class = "btn  btn-danger" })
-		</td>
-	</tr>
-	}
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Додано
+            </th>
+            <th>
+                Iснуюча
+            </th>
+            <th>
+                Тип
+            </th>
+            <th>
+                Фото
+            </th>
+            <th>
+                Ємність
+            </th>
+            <th>
+                Замок
+            </th>
+            <th>
+                Прокат
+            </th>
+            <th>
+                Камера
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.User.FirstName @item.User.LastName
+            </td>
+            <td>
+                @(item.Exist ? "Так" : "Ні")
+            </td>
+            <td>
+                @item.TypeStr
+            </td>
+            <td>
+                @if (!string.IsNullOrWhiteSpace(item.PhotoUrl))
+                {
+                    <img src="@item.PhotoUrl?w=50&h=50&mode=crop" />
+                } 
+            </td>
+            <td>
+                @item.Capacity
+            </td>
+            <td>
+                @(item.Lock ? "Так" : "Ні")
+            </td>
+            <td>
+                @(item.Rent ? "Так" : "Ні")
+            </td>
+            <td>
+                @(item.Camera ? "Так" : "Ні")
+            </td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", "BicycleParking", new { id = item.ID }, new { @class = "btn  btn-default" })
+                @Html.ActionLink("Видалити", "Delete", "BicycleParking", new { id = item.ID }, new { @class = "btn  btn-danger" })
+            </td>
+        </tr>
+    }
 </table>

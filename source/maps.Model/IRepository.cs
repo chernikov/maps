@@ -92,5 +92,17 @@ namespace maps.Model
         bool RemoveBicycleParkingVote(int idBicycleParkingVote);
         
         #endregion 
+
+        #region Shop
+        
+        IQueryable<Shop> Shops { get; }
+        
+        bool CreateShop(Shop instance);
+        
+        bool UpdateShop(Shop instance);
+        
+        bool RemoveShop(int idShop);
+        
+        #endregion 
     }
 }

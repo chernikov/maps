@@ -49,8 +49,17 @@ namespace maps.Web.Models.Mappers
         	public static void Init()
         	{
         		Mapper.CreateMap<BicycleParking, BicycleParkingView>();
-                Mapper.CreateMap<BicycleParkingView, BicycleParking>()
-                    .ForMember(p => p.Type, opt => opt.Ignore());
+                Mapper.CreateMap<BicycleParkingView, BicycleParking>();
+        	}
+        }
+
+        
+        public static class ShopMapper
+        {
+        	public static void Init()
+        	{
+        		Mapper.CreateMap<Shop, ShopView>();
+        		Mapper.CreateMap<ShopView, Shop>();
         	}
         }
     }

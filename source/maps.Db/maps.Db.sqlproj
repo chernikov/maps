@@ -71,6 +71,7 @@
     <Build Include="dbo\Tables\Social.sql" />
     <Build Include="dbo\Tables\BicycleParking.sql" />
     <Build Include="dbo\Tables\BicycleParkingVote.sql" />
+    <Build Include="dbo\Tables\Shop.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="data\Init.sql" />
@@ -80,5 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="maps.Db.publish.xml" />
+    <None Include="maps_work.publish.xml" />
   </ItemGroup>
 </Project>

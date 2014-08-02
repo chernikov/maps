@@ -2,8 +2,9 @@
     var _this = this;
 
     this.init = function () {
-        $(".delete-action, .btn-danger").live("click", function () {
-            return confirm("Вы действительно хотите удалить?");
+
+        $(document).on("click", ".delete-action, .btn-danger", function () {
+            return confirm("Ви дійсно хочете видалити?");
         });
     };
 }

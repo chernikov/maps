@@ -6,9 +6,11 @@ using System.Text;
 
 namespace maps.Model
 {
-	
- public partial class SqlRepository
+
+    public partial class SqlRepository
     {
+
+
         public IQueryable<BicycleParking> BicycleParkings
         {
             get
@@ -21,6 +23,7 @@ namespace maps.Model
         {
             if (instance.ID == 0)
             {
+                instance.AddedDate = DateTime.Now;
                 Db.BicycleParkings.InsertOnSubmit(instance);
                 Db.BicycleParkings.Context.SubmitChanges();
                 return true;
@@ -34,19 +37,37 @@ namespace maps.Model
             var cache = Db.BicycleParkings.FirstOrDefault(p => p.ID == instance.ID);
             if (cache != null)
             {
-				cache.UserID = instance.UserID;
-				cache.Position = instance.Position;
-				cache.PhotoUrl = instance.PhotoUrl;
-				cache.Type = instance.Type;
-				cache.Quality = instance.Quality;
-				cache.VotesCount = instance.VotesCount;
-				cache.Description = instance.Description;
+                cache.Position = instance.Position;
+                cache.PhotoUrl = instance.PhotoUrl;
+                cache.Exist = instance.Exist;
+                cache.Type = instance.Type;
+                cache.Camera = instance.Camera;
+                cache.Lock = instance.Lock;
+                cache.Rent = instance.Rent;
+                cache.Capacity = instance.Capacity;
+                cache.Quality = instance.Quality;
+                cache.Description = instance.Description;
                 Db.BicycleParkings.Context.SubmitChanges();
                 return true;
             }
 
             return false;
         }
+
+
+        public bool UpdateBicycleParkingVote(BicycleParking instance)
+        {
+            var cache = Db.BicycleParkings.FirstOrDefault(p => p.ID == instance.ID);
+            if (cache != null)
+            {
+                cache.VotesCount = instance.VotesCount;
+                Db.BicycleParkings.Context.SubmitChanges();
+                return true;
+            }
+
+            return false;
+        }
+
 
         public bool RemoveBicycleParking(int idBicycleParking)
         {

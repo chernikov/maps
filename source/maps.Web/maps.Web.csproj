@@ -202,6 +202,7 @@
     <Compile Include="Models\ViewModels\BicycleParkingView.cs" />
     <Compile Include="Models\ViewModels\BycicleDirectionView.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
+    <Compile Include="Models\ViewModels\ShopView.cs" />
     <Compile Include="Models\ViewModels\SocialRegisterUserView.cs" />
     <Compile Include="Models\ViewModels\User\BaseUserView.cs" />
     <Compile Include="Models\ViewModels\User\ChangePasswordView.cs" />
@@ -235,6 +236,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Scripts\admin\bicycle-edit-parking.js" />
     <Content Include="Scripts\admin\common.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -290,6 +292,7 @@
     <Content Include="Areas\Bicycle\Views\Parking\Edit.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\UploadTemplate.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\Info.cshtml" />
+    <Content Include="Areas\Admin\Views\BicycleParking\UploadTemplate.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add.js" />

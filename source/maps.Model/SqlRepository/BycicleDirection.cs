@@ -35,10 +35,8 @@ namespace maps.Model
             var cache = Db.BycicleDirections.FirstOrDefault(p => p.ID == instance.ID);
             if (cache != null)
             {
-				cache.UserID = instance.UserID;
 				cache.Waypoints = instance.Waypoints;
 				cache.PolyLine = instance.PolyLine;
-				
                 Db.BycicleDirections.Context.SubmitChanges();
                 return true;
             }

@@ -147,3 +147,14 @@
     width: 263px;
   }
 }
+
+.small-map 
+{
+    width : 600px;
+    height : 400px;
+}
+
+.textarea {
+    width: 99%;
+    height: 200px !important;
+}

@@ -1,54 +1,121 @@
-﻿@model maps.Web.Models.ViewModels.User.
+﻿@model maps.Web.Models.ViewModels.BicycleParkingView
 @{
-    ViewBag.Title = Model.ID == 0 ? "Добавить пользователя" : "Изменить пользователя";
+    ViewBag.Title = Model.ID == 0 ? "Додати парковку" : "Змінити дані про парковку";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+}
 
-<h2>@(Model.ID == 0 ? "Добавить пользователя" : "Изменить пользователя")</h2>
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    <script type="text/javascript" src="/scripts/admin/bicycle-edit-parking.js"></script>
+}
+<h2>@(Model.ID == 0 ? "Додати парковку" : "Змінити дані про парковку")</h2>
 <p></p>
-@using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+@using (Html.BeginForm("Edit", "BicycleParking", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <fieldset>
         @Html.Hidden("ID", Model.ID)
-        <div class="form-group @Html.HasErrorClass("Email", "has-error")">
+        @Html.Hidden("Position", Model.Position)
+        @Html.Hidden("PhotoUrl", Model.PhotoUrl)
+        <div class="form-group @Html.HasErrorClass("Exist", "has-error")">
+            <div class="col-sm-offset-3 col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBox("Exist", Model.Exist) Існуюча
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Type", "has-error")">
             <label class="col-sm-3 control-label" for="Email">
-                Email
+                Тип
             </label>
             <div class="col-sm-5">
-                @Html.TextBox("Email", Model.Email, new { @class = "form-control" })
+                @Html.DropDownList("Type", Model.SelectListType, new { @class = "form-control" })
             </div>
             <div class="col-sm-4">
-                @Html.ValidationMessage("Email")
+                @Html.ValidationMessage("Type")
             </div>
         </div>
-        <div class="form-group @Html.HasErrorClass("FirstName", "has-error")">
-            <label class="col-sm-3 control-label" for="Email">
-                Имя
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Фото
+            </label>
+            <div class="col-sm-9">
+                <img src="@Model.FullPhotoUrl?w=300&h=300&mode=crop" id="ParkingImage" />
+                <br />
+                <br />
+                <div class="col-sm-3">
+                    <div id="ChangePhoto">Змiнити</div>
+                </div>
+                @Html.Partial("UploadTemplate")
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Місцезнаходження 
+            </label>
+            <div class="col-sm-9">
+                <div class="small-map" id="map">
+                </div>
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Description", "has-error")">
+            <label class="col-sm-3 control-label" for="Description">
+                Опис
+                @Html.ValidationMessage("Description")
+            </label>
+            <div class="col-sm-9">
+                @Html.TextArea("Description", Model.Description, new { @class = "form-control textarea" })
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Lock", "has-error")">
+            <div class="col-sm-offset-3 col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBox("Lock", Model.Lock) Можна позичити замок
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Camera", "has-error")">
+            <div class="col-sm-offset-3 col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBox("Camera", Model.Camera) Є відеонагляд
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Rent", "has-error")">
+            <div class="col-sm-offset-3 col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBox("Rent", Model.Rent) Прокат велосипедів
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Capacity", "has-error")">
+            <label class="col-sm-3 control-label" for="Capacity">
+                Ємність
             </label>
             <div class="col-sm-5">
-                @Html.TextBox("FirstName", Model.FirstName, new { @class = "form-control" })
+                @Html.TextBox("Capacity", Model.Capacity, new { @class = "form-control" })
             </div>
             <div class="col-sm-4">
-                @Html.ValidationMessage("FirstName")
+                @Html.ValidationMessage("Capacity")
             </div>
         </div>
-        <div class="form-group @Html.HasErrorClass("LastName", "has-error")">
-            <label class="col-sm-3 control-label" for="LastName">
-                Фамилия
-            </label>
-            <div class="col-sm-5">
-                @Html.TextBox("LastName", Model.LastName, new { @class = "form-control" })
-            </div>
-            <div class="col-sm-4">
-                @Html.ValidationMessage("LastName")
-            </div>
-        </div>
-      
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">
-                Сохранить
+                Зберегти
             </button>
-            @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+            @Html.ActionLink("Назад", "Index", null, null, new { @class = "btn" })
         </div>
     </fieldset>
 }
+<p></p>

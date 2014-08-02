@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AutoMapper;
+using maps.Model;
 using maps.Web.Models.Mappers;
 
 
@@ -16,6 +17,7 @@ namespace maps.Web.Mappers
             MapperCollection.UserMapper.Init();
             MapperCollection.BycicleDirectionMapper.Init();
             MapperCollection.BicycleParkingMapper.Init();
+            MapperCollection.ShopMapper.Init();
         }
 
         public object Map(object source, Type sourceType, Type destinationType)
