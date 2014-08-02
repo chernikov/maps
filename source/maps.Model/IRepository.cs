@@ -54,6 +54,8 @@ namespace maps.Model
         bool UpdateBycicleDirection(BycicleDirection instance);
         
         bool RemoveBycicleDirection(int idBycicleDirection);
+
+        bool ProcessBycicleDirection(int idBycicleDirection);
         
         #endregion 
 
@@ -92,6 +94,24 @@ namespace maps.Model
         bool UpdateBicycleParkingVote(BicycleParkingVote instance);
         
         bool RemoveBicycleParkingVote(int idBicycleParkingVote);
+        
+        #endregion 
+
+        #region BicycleLine
+        
+        IQueryable<BicycleLine> BicycleLines { get; }
+        
+        bool CreateBicycleLine(BicycleLine instance);
+
+        bool ClearAllBicycleLines();
+        
+        #endregion 
+
+        #region BicycleDirectionLine
+        
+        IQueryable<BicycleDirectionLine> BicycleDirectionLines { get; }
+        
+        bool CreateBicycleDirectionLine(BicycleDirectionLine instance);
         
         #endregion 
     }

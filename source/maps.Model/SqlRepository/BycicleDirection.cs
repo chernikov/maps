@@ -30,6 +30,18 @@ namespace maps.Model
             return false;
         }
 
+        public bool ProcessBycicleDirection(int idBycicleDirection)
+        {
+            var instance = Db.BycicleDirections.FirstOrDefault(p => p.ID == idBycicleDirection && !p.Processed);
+            if (instance != null)
+            {
+                instance.Processed = true;
+                Db.BycicleDirections.Context.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
         public bool UpdateBycicleDirection(BycicleDirection instance)
         {
             var cache = Db.BycicleDirections.FirstOrDefault(p => p.ID == instance.ID);
@@ -46,7 +58,7 @@ namespace maps.Model
 
         public bool RemoveBycicleDirection(int idBycicleDirection)
         {
-            BycicleDirection instance = Db.BycicleDirections.FirstOrDefault(p => p.ID == idBycicleDirection);
+            var instance = Db.BycicleDirections.FirstOrDefault(p => p.ID == idBycicleDirection);
             if (instance != null)
             {
                 Db.BycicleDirections.DeleteOnSubmit(instance);

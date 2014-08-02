@@ -36,9 +36,6 @@ namespace maps.Model
     partial void InsertUserRole(UserRole instance);
     partial void UpdateUserRole(UserRole instance);
     partial void DeleteUserRole(UserRole instance);
-    partial void InsertBycicleDirection(BycicleDirection instance);
-    partial void UpdateBycicleDirection(BycicleDirection instance);
-    partial void DeleteBycicleDirection(BycicleDirection instance);
     partial void InsertSocial(Social instance);
     partial void UpdateSocial(Social instance);
     partial void DeleteSocial(Social instance);
@@ -51,6 +48,15 @@ namespace maps.Model
     partial void InsertBicycleParking(BicycleParking instance);
     partial void UpdateBicycleParking(BicycleParking instance);
     partial void DeleteBicycleParking(BicycleParking instance);
+    partial void InsertBicycleLine(BicycleLine instance);
+    partial void UpdateBicycleLine(BicycleLine instance);
+    partial void DeleteBicycleLine(BicycleLine instance);
+    partial void InsertBicycleDirectionLine(BicycleDirectionLine instance);
+    partial void UpdateBicycleDirectionLine(BicycleDirectionLine instance);
+    partial void DeleteBicycleDirectionLine(BicycleDirectionLine instance);
+    partial void InsertBycicleDirection(BycicleDirection instance);
+    partial void UpdateBycicleDirection(BycicleDirection instance);
+    partial void DeleteBycicleDirection(BycicleDirection instance);
     #endregion
 		
 		public mapsDbDataContext() : 
@@ -99,14 +105,6 @@ namespace maps.Model
 			}
 		}
 		
-		public System.Data.Linq.Table<BycicleDirection> BycicleDirections
-		{
-			get
-			{
-				return this.GetTable<BycicleDirection>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Social> Socials
 		{
 			get
@@ -136,6 +134,30 @@ namespace maps.Model
 			get
 			{
 				return this.GetTable<BicycleParking>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BicycleLine> BicycleLines
+		{
+			get
+			{
+				return this.GetTable<BicycleLine>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BicycleDirectionLine> BicycleDirectionLines
+		{
+			get
+			{
+				return this.GetTable<BicycleDirectionLine>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BycicleDirection> BycicleDirections
+		{
+			get
+			{
+				return this.GetTable<BycicleDirection>();
 			}
 		}
 	}
@@ -470,205 +492,6 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BycicleDirection")]
-	public partial class BycicleDirection : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _UserID;
-		
-		private string _Waypoints;
-		
-		private string _PolyLine;
-		
-		private System.DateTime _AddedDate;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnWaypointsChanging(string value);
-    partial void OnWaypointsChanged();
-    partial void OnPolyLineChanging(string value);
-    partial void OnPolyLineChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    #endregion
-		
-		public BycicleDirection()
-		{
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Waypoints", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Waypoints
-		{
-			get
-			{
-				return this._Waypoints;
-			}
-			set
-			{
-				if ((this._Waypoints != value))
-				{
-					this.OnWaypointsChanging(value);
-					this.SendPropertyChanging();
-					this._Waypoints = value;
-					this.SendPropertyChanged("Waypoints");
-					this.OnWaypointsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PolyLine", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string PolyLine
-		{
-			get
-			{
-				return this._PolyLine;
-			}
-			set
-			{
-				if ((this._PolyLine != value))
-				{
-					this.OnPolyLineChanging(value);
-					this.SendPropertyChanging();
-					this._PolyLine = value;
-					this.SendPropertyChanged("PolyLine");
-					this.OnPolyLineChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.BycicleDirections.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.BycicleDirections.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Social")]
 	public partial class Social : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -918,11 +741,11 @@ namespace maps.Model
 		
 		private EntitySet<UserRole> _UserRoles;
 		
-		private EntitySet<BycicleDirection> _BycicleDirections;
-		
 		private EntitySet<Social> _Socials;
 		
 		private EntitySet<BicycleParking> _BicycleParkings;
+		
+		private EntitySet<BycicleDirection> _BycicleDirections;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -951,9 +774,9 @@ namespace maps.Model
 		public User()
 		{
 			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
-			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
 			this._Socials = new EntitySet<Social>(new Action<Social>(this.attach_Socials), new Action<Social>(this.detach_Socials));
 			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
+			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
 			OnCreated();
 		}
 		
@@ -1150,19 +973,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<BycicleDirection> BycicleDirections
-		{
-			get
-			{
-				return this._BycicleDirections;
-			}
-			set
-			{
-				this._BycicleDirections.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Social", Storage="_Socials", ThisKey="ID", OtherKey="UserID")]
 		public EntitySet<Social> Socials
 		{
@@ -1186,6 +996,19 @@ namespace maps.Model
 			set
 			{
 				this._BicycleParkings.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<BycicleDirection> BycicleDirections
+		{
+			get
+			{
+				return this._BycicleDirections;
+			}
+			set
+			{
+				this._BycicleDirections.Assign(value);
 			}
 		}
 		
@@ -1221,18 +1044,6 @@ namespace maps.Model
 			entity.User = null;
 		}
 		
-		private void attach_BycicleDirections(BycicleDirection entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_BycicleDirections(BycicleDirection entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
 		private void attach_Socials(Social entity)
 		{
 			this.SendPropertyChanging();
@@ -1252,6 +1063,18 @@ namespace maps.Model
 		}
 		
 		private void detach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_BycicleDirections(BycicleDirection entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_BycicleDirections(BycicleDirection entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -1921,6 +1744,611 @@ namespace maps.Model
 		{
 			this.SendPropertyChanging();
 			entity.BicycleParking = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleLine")]
+	public partial class BicycleLine : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Start;
+		
+		private string _End;
+		
+		private int _Quantity;
+		
+		private EntitySet<BicycleDirectionLine> _BicycleDirectionLines;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnStartChanging(string value);
+    partial void OnStartChanged();
+    partial void OnEndChanging(string value);
+    partial void OnEndChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
+    #endregion
+		
+		public BicycleLine()
+		{
+			this._BicycleDirectionLines = new EntitySet<BicycleDirectionLine>(new Action<BicycleDirectionLine>(this.attach_BicycleDirectionLines), new Action<BicycleDirectionLine>(this.detach_BicycleDirectionLines));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Start", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string Start
+		{
+			get
+			{
+				return this._Start;
+			}
+			set
+			{
+				if ((this._Start != value))
+				{
+					this.OnStartChanging(value);
+					this.SendPropertyChanging();
+					this._Start = value;
+					this.SendPropertyChanged("Start");
+					this.OnStartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[End]", Storage="_End", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string End
+		{
+			get
+			{
+				return this._End;
+			}
+			set
+			{
+				if ((this._End != value))
+				{
+					this.OnEndChanging(value);
+					this.SendPropertyChanging();
+					this._End = value;
+					this.SendPropertyChanged("End");
+					this.OnEndChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleLine_BicycleDirectionLine", Storage="_BicycleDirectionLines", ThisKey="ID", OtherKey="BicycleLineID")]
+		public EntitySet<BicycleDirectionLine> BicycleDirectionLines
+		{
+			get
+			{
+				return this._BicycleDirectionLines;
+			}
+			set
+			{
+				this._BicycleDirectionLines.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BicycleDirectionLines(BicycleDirectionLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.BicycleLine = this;
+		}
+		
+		private void detach_BicycleDirectionLines(BicycleDirectionLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.BicycleLine = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleDirectionLine")]
+	public partial class BicycleDirectionLine : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _BicycleDirectionID;
+		
+		private int _BicycleLineID;
+		
+		private EntityRef<BicycleLine> _BicycleLine;
+		
+		private EntityRef<BycicleDirection> _BycicleDirection;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnBicycleDirectionIDChanging(int value);
+    partial void OnBicycleDirectionIDChanged();
+    partial void OnBicycleLineIDChanging(int value);
+    partial void OnBicycleLineIDChanged();
+    #endregion
+		
+		public BicycleDirectionLine()
+		{
+			this._BicycleLine = default(EntityRef<BicycleLine>);
+			this._BycicleDirection = default(EntityRef<BycicleDirection>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BicycleDirectionID", DbType="Int NOT NULL")]
+		public int BicycleDirectionID
+		{
+			get
+			{
+				return this._BicycleDirectionID;
+			}
+			set
+			{
+				if ((this._BicycleDirectionID != value))
+				{
+					if (this._BycicleDirection.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBicycleDirectionIDChanging(value);
+					this.SendPropertyChanging();
+					this._BicycleDirectionID = value;
+					this.SendPropertyChanged("BicycleDirectionID");
+					this.OnBicycleDirectionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BicycleLineID", DbType="Int NOT NULL")]
+		public int BicycleLineID
+		{
+			get
+			{
+				return this._BicycleLineID;
+			}
+			set
+			{
+				if ((this._BicycleLineID != value))
+				{
+					if (this._BicycleLine.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBicycleLineIDChanging(value);
+					this.SendPropertyChanging();
+					this._BicycleLineID = value;
+					this.SendPropertyChanged("BicycleLineID");
+					this.OnBicycleLineIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleLine_BicycleDirectionLine", Storage="_BicycleLine", ThisKey="BicycleLineID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public BicycleLine BicycleLine
+		{
+			get
+			{
+				return this._BicycleLine.Entity;
+			}
+			set
+			{
+				BicycleLine previousValue = this._BicycleLine.Entity;
+				if (((previousValue != value) 
+							|| (this._BicycleLine.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BicycleLine.Entity = null;
+						previousValue.BicycleDirectionLines.Remove(this);
+					}
+					this._BicycleLine.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleDirectionLines.Add(this);
+						this._BicycleLineID = value.ID;
+					}
+					else
+					{
+						this._BicycleLineID = default(int);
+					}
+					this.SendPropertyChanged("BicycleLine");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BycicleDirection_BicycleDirectionLine", Storage="_BycicleDirection", ThisKey="BicycleDirectionID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public BycicleDirection BycicleDirection
+		{
+			get
+			{
+				return this._BycicleDirection.Entity;
+			}
+			set
+			{
+				BycicleDirection previousValue = this._BycicleDirection.Entity;
+				if (((previousValue != value) 
+							|| (this._BycicleDirection.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BycicleDirection.Entity = null;
+						previousValue.BicycleDirectionLines.Remove(this);
+					}
+					this._BycicleDirection.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleDirectionLines.Add(this);
+						this._BicycleDirectionID = value.ID;
+					}
+					else
+					{
+						this._BicycleDirectionID = default(int);
+					}
+					this.SendPropertyChanged("BycicleDirection");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BycicleDirection")]
+	public partial class BycicleDirection : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _UserID;
+		
+		private string _Waypoints;
+		
+		private string _PolyLine;
+		
+		private System.DateTime _AddedDate;
+		
+		private bool _Processed;
+		
+		private EntitySet<BicycleDirectionLine> _BicycleDirectionLines;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnWaypointsChanging(string value);
+    partial void OnWaypointsChanged();
+    partial void OnPolyLineChanging(string value);
+    partial void OnPolyLineChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnProcessedChanging(bool value);
+    partial void OnProcessedChanged();
+    #endregion
+		
+		public BycicleDirection()
+		{
+			this._BicycleDirectionLines = new EntitySet<BicycleDirectionLine>(new Action<BicycleDirectionLine>(this.attach_BicycleDirectionLines), new Action<BicycleDirectionLine>(this.detach_BicycleDirectionLines));
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Waypoints", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Waypoints
+		{
+			get
+			{
+				return this._Waypoints;
+			}
+			set
+			{
+				if ((this._Waypoints != value))
+				{
+					this.OnWaypointsChanging(value);
+					this.SendPropertyChanging();
+					this._Waypoints = value;
+					this.SendPropertyChanged("Waypoints");
+					this.OnWaypointsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PolyLine", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string PolyLine
+		{
+			get
+			{
+				return this._PolyLine;
+			}
+			set
+			{
+				if ((this._PolyLine != value))
+				{
+					this.OnPolyLineChanging(value);
+					this.SendPropertyChanging();
+					this._PolyLine = value;
+					this.SendPropertyChanged("PolyLine");
+					this.OnPolyLineChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Processed", DbType="Bit NOT NULL")]
+		public bool Processed
+		{
+			get
+			{
+				return this._Processed;
+			}
+			set
+			{
+				if ((this._Processed != value))
+				{
+					this.OnProcessedChanging(value);
+					this.SendPropertyChanging();
+					this._Processed = value;
+					this.SendPropertyChanged("Processed");
+					this.OnProcessedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BycicleDirection_BicycleDirectionLine", Storage="_BicycleDirectionLines", ThisKey="ID", OtherKey="BicycleDirectionID")]
+		public EntitySet<BicycleDirectionLine> BicycleDirectionLines
+		{
+			get
+			{
+				return this._BicycleDirectionLines;
+			}
+			set
+			{
+				this._BicycleDirectionLines.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.BycicleDirections.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.BycicleDirections.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BicycleDirectionLines(BicycleDirectionLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.BycicleDirection = this;
+		}
+		
+		private void detach_BicycleDirectionLines(BicycleDirectionLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.BycicleDirection = null;
 		}
 	}
 }

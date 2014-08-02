@@ -2,6 +2,7 @@
 using maps.Web.Models.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,6 +12,11 @@ namespace maps.Web.Areas.Bicycle.Controllers
     public class RouteController : BicycleController
     {
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Map()
         {
             return View();
         }
@@ -36,9 +42,34 @@ namespace maps.Web.Areas.Bicycle.Controllers
 
         public ActionResult GetAll()
         {
-            var list = Repository.BycicleDirections.ToList();
+            var list = Repository.BycicleDirections.Where(p => !p.Processed).ToList();
 
             return Json(new {result = "ok", data = list.Select(p => p.PolyLine) }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetBicycleRoutes(int id)
+        {
+            var bicycleLine = Repository.BicycleLines.FirstOrDefault(p => p.ID == id);
+
+            if (bicycleLine != null)
+            {
+                var list = bicycleLine.BicycleDirectionLines.Select(p => p.BycicleDirection).ToList();
+
+                return Json(new { result = "ok", data = list.Select(p => p.PolyLine) }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { result = "error" });
+            
+        }
+
+        public ActionResult GetMap()
+        {
+            var list = Repository.BicycleLines.ToList();
+
+            return Json(new { result = "ok", data = list.Select(p => new {
+                p.ID, 
+                p.Start, 
+                p.End, 
+                p.Quantity }) }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult GetMine()

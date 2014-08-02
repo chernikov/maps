@@ -54,6 +54,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Proxy\BicycleDirectionLine.cs" />
+    <Compile Include="Proxy\BicycleLine.cs" />
     <Compile Include="Proxy\BicycleParking.cs" />
     <Compile Include="Proxy\BicycleParkingVote.cs" />
     <Compile Include="Proxy\BycicleDirection.cs" />
@@ -62,6 +64,8 @@
     <Compile Include="Proxy\User.cs" />
     <Compile Include="Proxy\UserRole.cs" />
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="SqlRepository\BicycleDirectionLine.cs" />
+    <Compile Include="SqlRepository\BicycleLine.cs" />
     <Compile Include="SqlRepository\BicycleParking.cs" />
     <Compile Include="SqlRepository\BicycleParkingVote.cs" />
     <Compile Include="SqlRepository\BycicleDirection.cs" />

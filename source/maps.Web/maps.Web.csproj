@@ -147,7 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\BicycleRoute\" />
     <Folder Include="Areas\Default\Models\" />
     <Folder Include="Content\files\uploads\" />
     <Folder Include="Content\logs\" />
@@ -160,11 +160,14 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\BicycleParkingController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BicycleRouteController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\TestController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Models\GeoLine.cs" />
+    <Compile Include="Areas\Admin\Models\GeoPoint.cs" />
     <Compile Include="Areas\Bicycle\BicycleAreaRegistration.cs" />
-    <Compile Include="Areas\Bicycle\Controllers\BycicleController.cs" />
+    <Compile Include="Areas\Bicycle\Controllers\BicycleController.cs" />
     <Compile Include="Areas\Bicycle\Controllers\HomeController.cs" />
     <Compile Include="Areas\Bicycle\Controllers\ParkingController.cs" />
     <Compile Include="Areas\Bicycle\Controllers\RouteController.cs" />
@@ -236,6 +239,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Scripts\admin\index.js" />
     <Content Include="Scripts\admin\bicycle-edit-parking.js" />
     <Content Include="Scripts\admin\common.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -293,6 +297,7 @@
     <Content Include="Areas\Bicycle\Views\Parking\UploadTemplate.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\Info.cshtml" />
     <Content Include="Areas\Admin\Views\BicycleParking\UploadTemplate.cshtml" />
+    <Content Include="Areas\Bicycle\Views\Route\Map.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add.js" />

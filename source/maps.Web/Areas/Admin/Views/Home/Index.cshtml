@@ -2,5 +2,17 @@
     ViewBag.Title = "Адмінка";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
+@section header {
+    <script type="text/javascript" src="/scripts/admin/index.js"></script>
+}
 <h2>Адмінка</h2>
+
+@if (TempData["message"] != null)
+{
+   <div class="alert alert-success fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <strong>@TempData["message"]</strong> 
+    </div>
+    
+}
+<a class="btn btn-default" id="ProcessRoutesBtn" href="@Url.Action("Generate", "BicycleRoute")" >Обробити маршрути (може тривати деякий час)</a>
