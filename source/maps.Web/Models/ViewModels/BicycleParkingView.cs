@@ -55,7 +55,7 @@ namespace maps.Web.Models.ViewModels
 
         public bool Rent { get; set; }
 
-        public int Capacity { get; set; }
+        public int? Capacity { get; set; }
 
         public BicycleParkingView()
         {

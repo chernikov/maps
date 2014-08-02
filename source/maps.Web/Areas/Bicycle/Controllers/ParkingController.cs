@@ -60,7 +60,10 @@ namespace maps.Web.Areas.Bicycle.Controllers
         {
             var bycicleParking = (BicycleParking)ModelMapper.Map(bicycleParkingView, typeof(BicycleParkingView), typeof(BicycleParking));
             bycicleParking.UserID = CurrentUser.ID;
+            bycicleParking.Exist = true;
+
             Repository.CreateBicycleParking(bycicleParking);
+            
             return Json(new { result = "ok" });
         }
 

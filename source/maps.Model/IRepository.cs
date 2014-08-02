@@ -78,6 +78,8 @@ namespace maps.Model
         bool UpdateBicycleParking(BicycleParking instance);
         
         bool RemoveBicycleParking(int idBicycleParking);
+
+        bool VerifiedBicycleParking(int idBicycleParking, bool verified);
         
         #endregion 
 
@@ -90,18 +92,6 @@ namespace maps.Model
         bool UpdateBicycleParkingVote(BicycleParkingVote instance);
         
         bool RemoveBicycleParkingVote(int idBicycleParkingVote);
-        
-        #endregion 
-
-        #region Shop
-        
-        IQueryable<Shop> Shops { get; }
-        
-        bool CreateShop(Shop instance);
-        
-        bool UpdateShop(Shop instance);
-        
-        bool RemoveShop(int idShop);
         
         #endregion 
     }

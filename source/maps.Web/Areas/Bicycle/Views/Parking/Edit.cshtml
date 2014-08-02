@@ -9,18 +9,48 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">
                 Фото
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Будь ласка, зробіть якісну фотографію парковки зблизька, бажано аби на ній в цей час стояв велосипед. Можете поставити і сфотографувати свій велосипед."></span>
             </label>
             <div class="col-sm-9">
                 <img src="@Model.FullPhotoUrl?w=300&h=300&mode=crop" id="ParkingImage" />
                 <br />
                 <br />
-                <div id="ChangePhoto">Змiнити</div>
+                <div class="col-sm-6">
+                    <div id="ChangePhoto">Змiнити</div>
+                </div>
                 @Html.Partial("UploadTemplate")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Type", "has-error")">
+            <label class="col-sm-3 control-label" for="Email">
+                Тип
+
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Оберіть відповідний тип із двох варіантів. Тип 'Рама' означає, що стійка придатна для спирання велосипеда рамою і дозволяє легко застібнути велосипед будь-яким типом замка; тип'Колесо' підтримує велосипед за колесо і до неї не завжди легко пристібнути велосипед за раму."></span>
+            </label>
+            <div class="col-sm-5">
+                @Html.DropDownList("Type", Model.SelectListType, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Type")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Capacity", "has-error")">
+            <label class="col-sm-3 control-label" for="Capacity">
+                Місткість
+
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Зазначте розрахункову місткість велопарковки - кількість велосипедів, яку можна одночасно розмістити і застібнути. Напишіть лише цифру - наприклад 4, 6, або 8. Підказка: у типі 'під колесо' ця кількість відповідає кількості 'слотів' під велосипед, якщо вони наварені дуже близько - тоді рахувати треба через один; у типі 'під раму' до однієї стійки можна закріпити 2 велосипеда."></span>
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Capacity", Model.Capacity, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Capacity")
             </div>
         </div>
         <div class="form-group @Html.HasErrorClass("Description", "has-error")">
             <label class="col-sm-3 control-label" for="Description">
                 Опис
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Можете залишити коментар чи уточнення, наприклад де розташовано парковку (назву кафе, магазину ітд). Можна також залишити зауваження про зручність і якість виконання парковки, про її популярність та ін."></span>
                 @Html.ValidationMessage("Description")
             </label>
             <div class="col-sm-9">

@@ -110,6 +110,7 @@
                     if (data.result == "ok")
                     {
                         _this.clear();
+                        window.location = "/bicycle/Route";
                     }
                 }
             });

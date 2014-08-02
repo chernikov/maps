@@ -12,10 +12,10 @@
     <thead>
         <tr>
             <th>
-                #
+                
             </th>
             <th>
-                Додано
+                Додав
             </th>
             <th>
                 Iснуюча
@@ -47,7 +47,18 @@
     {
         <tr>
             <td>
-                @item.ID
+                @if (item.VerifiedDate.HasValue)
+                {
+                    <h5>
+                        <span class="label label-success ">Перевірено </span><a class="btn btn-xs btn-default" href="@Url.Action("Unverify", "BicycleParking", new { id = item.ID })"><span class="glyphicon glyphicon-remove"></span></a>
+                    </h5>
+                }
+                else
+                {
+                    <h5>
+                        <span class="label label-warning">Не перевірено </span><a class="btn btn-xs btn-default" href="@Url.Action("Verify", "BicycleParking", new { id = item.ID })"><span class="glyphicon glyphicon-ok"></span></a>
+                    </h5>
+                }
             </td>
             <td>
                 @item.User.FirstName @item.User.LastName
@@ -62,7 +73,7 @@
                 @if (!string.IsNullOrWhiteSpace(item.PhotoUrl))
                 {
                     <img src="@item.PhotoUrl?w=50&h=50&mode=crop" />
-                } 
+                }
             </td>
             <td>
                 @item.Capacity

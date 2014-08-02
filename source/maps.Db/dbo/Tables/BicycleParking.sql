@@ -14,6 +14,8 @@
 	[VotesCount] INT NOT NULL,
 	[Description] NVARCHAR(MAX),
 	[AddedDate] DATETIME NOT NULL, 
+    [VerifiedDate] DATETIME NULL, 
+    [CreatedDate] DATETIME NULL, 
     CONSTRAINT [PK_BicycleParking] PRIMARY KEY CLUSTERED ([ID] ASC),
 	CONSTRAINT [FK_BicycleParking_User] FOREIGN KEY ([UserID]) REFERENCES [dbo].[User] ([ID]) ON DELETE CASCADE ON UPDATE CASCADE
 )

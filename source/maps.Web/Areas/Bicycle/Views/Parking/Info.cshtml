@@ -6,10 +6,20 @@
     {
         <img src="@Model.PhotoUrl?w=300&h=300&mode=crop" />
     }
+    <div class="caption">
+        <strong>Тип: @Model.TypeStr</strong>
+    </div>
+   
+    @if (Model.Capacity > 0)
+    {
+        <div class="caption">
+            <strong>Місткість: @Model.Capacity @Model.Capacity.CountWord("місце", "місця", "місць")</strong>
+        </div>
+    }
     @if (!string.IsNullOrWhiteSpace(Model.Description))
     {
         <div class="caption">
-            <p>@Model.Description</p>
+            @Model.Description
         </div>
     }
 </div>

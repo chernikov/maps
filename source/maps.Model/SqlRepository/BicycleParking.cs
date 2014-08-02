@@ -37,6 +37,14 @@ namespace maps.Model
             var cache = Db.BicycleParkings.FirstOrDefault(p => p.ID == instance.ID);
             if (cache != null)
             {
+                if (!cache.Exist && instance.Exist)
+                {
+                    cache.CreatedDate = DateTime.Now;
+                } 
+                else if (cache.Exist && !instance.Exist)
+                {
+                    cache.CreatedDate = null;
+                }
                 cache.Position = instance.Position;
                 cache.PhotoUrl = instance.PhotoUrl;
                 cache.Exist = instance.Exist;
@@ -53,6 +61,26 @@ namespace maps.Model
 
             return false;
         }
+
+        public bool VerifiedBicycleParking(int idBicycleParking, bool verified)
+        {
+            var cache = Db.BicycleParkings.FirstOrDefault(p => p.ID == idBicycleParking);
+            if (cache != null)
+            {
+                if (verified)
+                {
+                    cache.VerifiedDate = DateTime.Now;
+                }
+                else
+                {
+                    cache.VerifiedDate = null;
+                }
+                Db.BicycleParkings.Context.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
 
 
         public bool UpdateBicycleParkingVote(BicycleParking instance)

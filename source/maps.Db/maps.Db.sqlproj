@@ -71,7 +71,6 @@
     <Build Include="dbo\Tables\Social.sql" />
     <Build Include="dbo\Tables\BicycleParking.sql" />
     <Build Include="dbo\Tables\BicycleParkingVote.sql" />
-    <Build Include="dbo\Tables\Shop.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="data\Init.sql" />

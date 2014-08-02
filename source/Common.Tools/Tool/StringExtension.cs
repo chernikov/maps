@@ -284,5 +284,18 @@ namespace Tool
 
             return content.Substring(0, length) + more;
         }
+
+        public static string CountWord(this int count, string first, string second, string five)
+        {
+            if (count % 10 == 1 && ((int)(count / 10) % 10) != 1)
+            {
+                return first;
+            }
+            if (count % 10 > 1 && count % 10 < 5 && ((int)(count / 10) % 10) != 1)
+            {
+                return second;
+            }
+            return five;
+        }
     }
 }

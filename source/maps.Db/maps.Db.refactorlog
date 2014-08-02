@@ -28,4 +28,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="fa715d97-3fb0-476b-b411-01752404b764" ChangeDateTime="08/02/2014 09:18:48">
+    <Property Name="ElementName" Value="[dbo].[BicycleParking].[VerifiedDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BicycleParking]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ValidDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2ffa913d-d479-44d1-b006-14b72305a3c5" ChangeDateTime="08/02/2014 09:20:50">
+    <Property Name="ElementName" Value="[dbo].[BicycleParking].[ValidDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BicycleParking]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VerifiedDate" />
+  </Operation>
 </Operations>

@@ -202,7 +202,6 @@
     <Compile Include="Models\ViewModels\BicycleParkingView.cs" />
     <Compile Include="Models\ViewModels\BycicleDirectionView.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
-    <Compile Include="Models\ViewModels\ShopView.cs" />
     <Compile Include="Models\ViewModels\SocialRegisterUserView.cs" />
     <Compile Include="Models\ViewModels\User\BaseUserView.cs" />
     <Compile Include="Models\ViewModels\User\ChangePasswordView.cs" />
@@ -230,6 +229,7 @@
     <Content Include="Content\images\maps_logo.png" />
     <Content Include="Content\images\maps_logo_small.png" />
     <Content Include="Content\images\marker_12_2x.png" />
+    <Content Include="Content\images\marker_13_2x.png" />
     <Content Include="Content\images\marker_stroked.png" />
     <Content Include="Content\images\no_camera_sign.png" />
     <Content Include="favicon.ico" />

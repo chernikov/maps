@@ -57,13 +57,18 @@
 
                         var lat = position.replace(/\s*\,.*/, ''); // first 123
                         var lng = position.replace(/.*,\s*/, ''); // second ,456
-
                         var latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
                         var marker = new google.maps.Marker({
                             map: _this.map,
-                            position: latLng,
-                            icon: "/Content/images/marker_12_2x.png"
-                        });
+                            position: latLng});
+
+                        if (item.Type == 1)
+                        {
+                            marker.setIcon("/Content/images/marker_13_2x.png");
+                        }
+                        if (item.Type == 2) {
+                            marker.setIcon("/Content/images/marker_12_2x.png");
+                        }
                         marker.set("Id", item.Id);
                         google.maps.event.addListener(marker, 'click', function () {
                             var id = marker.get("Id");

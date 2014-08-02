@@ -84,6 +84,10 @@
            $(".qq-upload-fail").remove();
            return true;
        });
+
+        $('.tooltipInfo').tooltip({
+            html : true
+        });
     }
 
     this.saveParking = function () 
@@ -97,6 +101,7 @@
                 {
                     _this.clearMarker();
                     $("#PopupWrapper").empty();
+                    window.location = "/bicycle/Parking";
                 }
             }
         });

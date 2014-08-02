@@ -48,9 +48,6 @@ namespace maps.Model
     partial void InsertBicycleParkingVote(BicycleParkingVote instance);
     partial void UpdateBicycleParkingVote(BicycleParkingVote instance);
     partial void DeleteBicycleParkingVote(BicycleParkingVote instance);
-    partial void InsertShop(Shop instance);
-    partial void UpdateShop(Shop instance);
-    partial void DeleteShop(Shop instance);
     partial void InsertBicycleParking(BicycleParking instance);
     partial void UpdateBicycleParking(BicycleParking instance);
     partial void DeleteBicycleParking(BicycleParking instance);
@@ -131,14 +128,6 @@ namespace maps.Model
 			get
 			{
 				return this.GetTable<BicycleParkingVote>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Shop> Shops
-		{
-			get
-			{
-				return this.GetTable<Shop>();
 			}
 		}
 		
@@ -933,8 +922,6 @@ namespace maps.Model
 		
 		private EntitySet<Social> _Socials;
 		
-		private EntitySet<Shop> _Shops;
-		
 		private EntitySet<BicycleParking> _BicycleParkings;
 		
     #region Extensibility Method Definitions
@@ -966,7 +953,6 @@ namespace maps.Model
 			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
 			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
 			this._Socials = new EntitySet<Social>(new Action<Social>(this.attach_Socials), new Action<Social>(this.detach_Socials));
-			this._Shops = new EntitySet<Shop>(new Action<Shop>(this.attach_Shops), new Action<Shop>(this.detach_Shops));
 			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
 			OnCreated();
 		}
@@ -1190,19 +1176,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Shop", Storage="_Shops", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<Shop> Shops
-		{
-			get
-			{
-				return this._Shops;
-			}
-			set
-			{
-				this._Shops.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="UserID")]
 		public EntitySet<BicycleParking> BicycleParkings
 		{
@@ -1267,18 +1240,6 @@ namespace maps.Model
 		}
 		
 		private void detach_Socials(Social entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Shops(Shop entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Shops(Shop entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -1472,157 +1433,6 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Shop")]
-	public partial class Shop : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _UserID;
-		
-		private string _Position;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnPositionChanging(string value);
-    partial void OnPositionChanged();
-    #endregion
-		
-		public Shop()
-		{
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(50)")]
-		public string Position
-		{
-			get
-			{
-				return this._Position;
-			}
-			set
-			{
-				if ((this._Position != value))
-				{
-					this.OnPositionChanging(value);
-					this.SendPropertyChanging();
-					this._Position = value;
-					this.SendPropertyChanged("Position");
-					this.OnPositionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Shop", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Shops.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Shops.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleParking")]
 	public partial class BicycleParking : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1645,6 +1455,8 @@ namespace maps.Model
 		
 		private bool _Camera;
 		
+		private bool _Rent;
+		
 		private int _Quality;
 		
 		private int _Capacity;
@@ -1655,7 +1467,9 @@ namespace maps.Model
 		
 		private System.DateTime _AddedDate;
 		
-		private bool _Rent;
+		private System.Nullable<System.DateTime> _VerifiedDate;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
 		
 		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
 		
@@ -1681,6 +1495,8 @@ namespace maps.Model
     partial void OnLockChanged();
     partial void OnCameraChanging(bool value);
     partial void OnCameraChanged();
+    partial void OnRentChanging(bool value);
+    partial void OnRentChanged();
     partial void OnQualityChanging(int value);
     partial void OnQualityChanged();
     partial void OnCapacityChanging(int value);
@@ -1691,8 +1507,10 @@ namespace maps.Model
     partial void OnDescriptionChanged();
     partial void OnAddedDateChanging(System.DateTime value);
     partial void OnAddedDateChanged();
-    partial void OnRentChanging(bool value);
-    partial void OnRentChanged();
+    partial void OnVerifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnVerifiedDateChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
     #endregion
 		
 		public BicycleParking()
@@ -1866,6 +1684,26 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rent", DbType="Bit NOT NULL")]
+		public bool Rent
+		{
+			get
+			{
+				return this._Rent;
+			}
+			set
+			{
+				if ((this._Rent != value))
+				{
+					this.OnRentChanging(value);
+					this.SendPropertyChanging();
+					this._Rent = value;
+					this.SendPropertyChanged("Rent");
+					this.OnRentChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quality", DbType="Int NOT NULL")]
 		public int Quality
 		{
@@ -1966,22 +1804,42 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rent", DbType="Bit NOT NULL")]
-		public bool Rent
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VerifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> VerifiedDate
 		{
 			get
 			{
-				return this._Rent;
+				return this._VerifiedDate;
 			}
 			set
 			{
-				if ((this._Rent != value))
+				if ((this._VerifiedDate != value))
 				{
-					this.OnRentChanging(value);
+					this.OnVerifiedDateChanging(value);
 					this.SendPropertyChanging();
-					this._Rent = value;
-					this.SendPropertyChanged("Rent");
-					this.OnRentChanged();
+					this._VerifiedDate = value;
+					this.SendPropertyChanged("VerifiedDate");
+					this.OnVerifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
 				}
 			}
 		}

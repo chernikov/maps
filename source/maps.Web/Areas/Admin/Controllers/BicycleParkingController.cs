@@ -65,5 +65,19 @@ namespace maps.Web.Areas.Admin.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public ActionResult Verify(int id)
+        {
+            Repository.VerifiedBicycleParking(id,true);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Unverify(int id)
+        {
+            Repository.VerifiedBicycleParking(id, false);
+
+            return RedirectToAction("Index");
+        }
     }
 }

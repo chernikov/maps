@@ -58,7 +58,6 @@
     <Compile Include="Proxy\BicycleParkingVote.cs" />
     <Compile Include="Proxy\BycicleDirection.cs" />
     <Compile Include="Proxy\Role.cs" />
-    <Compile Include="Proxy\Shop.cs" />
     <Compile Include="Proxy\Social.cs" />
     <Compile Include="Proxy\User.cs" />
     <Compile Include="Proxy\UserRole.cs" />
@@ -67,7 +66,6 @@
     <Compile Include="SqlRepository\BicycleParkingVote.cs" />
     <Compile Include="SqlRepository\BycicleDirection.cs" />
     <Compile Include="SqlRepository\Role.cs" />
-    <Compile Include="SqlRepository\Shop.cs" />
     <Compile Include="SqlRepository\Social.cs" />
     <Compile Include="SqlRepository\User.cs" />
     <Compile Include="SqlRepository\UserRole.cs" />

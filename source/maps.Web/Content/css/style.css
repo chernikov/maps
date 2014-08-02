@@ -89,3 +89,8 @@ body {
     width: 99%;
     height: 200px !important;
 }
+
+.parking-modal .tooltip-inner {
+    max-width: 350px;
+    width: 350px; 
+}

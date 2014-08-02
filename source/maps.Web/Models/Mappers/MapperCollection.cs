@@ -32,7 +32,6 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<UserView, User>();
             }
         }
-
         
         public static class BycicleDirectionMapper
         {
@@ -42,7 +41,6 @@ namespace maps.Web.Models.Mappers
         		Mapper.CreateMap<BycicleDirectionView, BycicleDirection>();
         	}
         }
-
         
         public static class BicycleParkingMapper
         {
@@ -50,16 +48,6 @@ namespace maps.Web.Models.Mappers
         	{
         		Mapper.CreateMap<BicycleParking, BicycleParkingView>();
                 Mapper.CreateMap<BicycleParkingView, BicycleParking>();
-        	}
-        }
-
-        
-        public static class ShopMapper
-        {
-        	public static void Init()
-        	{
-        		Mapper.CreateMap<Shop, ShopView>();
-        		Mapper.CreateMap<ShopView, Shop>();
         	}
         }
     }
