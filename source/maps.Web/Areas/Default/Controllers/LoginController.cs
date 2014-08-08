@@ -25,7 +25,7 @@ namespace maps.Web.Areas.Default.Controllers
                 var user = Auth.Login(loginView.Email, loginView.Password, loginView.IsPersistent);
                 if (user != null)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", new {area = "Admin"});
                 }
                 ModelState.AddModelError("Password", "Password doesn't match");
             }

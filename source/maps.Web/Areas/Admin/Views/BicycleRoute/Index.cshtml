@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Length";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section header
+{
+    <script type="text/javascript" src="/Scripts/admin/route-lengths.js"></script>
+}
+
+<div class="map" id="map" data-url="@Url.Action("GetAll", "BicycleRoute")">
+</div>

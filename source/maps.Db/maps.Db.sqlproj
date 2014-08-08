@@ -83,5 +83,6 @@
   <ItemGroup>
     <None Include="maps.Db.publish.xml" />
     <None Include="maps_work.publish.xml" />
+    <None Include="maps.Db.office.publish.xml" />
   </ItemGroup>
 </Project>

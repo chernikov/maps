@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="maps.Db" Class="mapsDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SATURN\MSSQL;Initial Catalog=maps.Db;Integrated Security=True" SettingsObjectName="maps.Model.Properties.Settings" SettingsPropertyName="maps_DbConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DNTEAM20140418\MSSQL;Initial Catalog=maps.Db;Integrated Security=True" SettingsObjectName="maps.Model.Properties.Settings" SettingsPropertyName="maps_DbConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Role" Member="Roles">
     <Type Name="Role">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -76,15 +76,6 @@
       <Association Name="User_BicycleParking" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.BicycleLine" Member="BicycleLines">
-    <Type Name="BicycleLine">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Start" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="[End]" Member="End" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="BicycleLine_BicycleDirectionLine" Member="BicycleDirectionLines" ThisKey="ID" OtherKey="BicycleLineID" Type="BicycleDirectionLine" />
-    </Type>
-  </Table>
   <Table Name="dbo.BicycleDirectionLine" Member="BicycleDirectionLines">
     <Type Name="BicycleDirectionLine">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -94,14 +85,28 @@
       <Association Name="BycicleDirection_BicycleDirectionLine" Member="BycicleDirection" ThisKey="BicycleDirectionID" OtherKey="ID" Type="BycicleDirection" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.BicycleLine" Member="BicycleLines">
+    <Type Name="BicycleLine">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Start" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="[End]" Member="End" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="StartLat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="StartLng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="EndLat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="EndLng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BicycleLine_BicycleDirectionLine" Member="BicycleDirectionLines" ThisKey="ID" OtherKey="BicycleLineID" Type="BicycleDirectionLine" />
+    </Type>
+  </Table>
   <Table Name="dbo.BycicleDirection" Member="BycicleDirections">
     <Type Name="BycicleDirection">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Waypoints" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="PolyLine" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Processed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="BycicleDirection_BicycleDirectionLine" Member="BicycleDirectionLines" ThisKey="ID" OtherKey="BicycleDirectionID" Type="BicycleDirectionLine" />
       <Association Name="User_BycicleDirection" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>

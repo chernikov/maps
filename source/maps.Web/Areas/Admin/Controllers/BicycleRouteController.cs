@@ -11,6 +11,30 @@ namespace maps.Web.Areas.Admin.Controllers
 {
     public class BicycleRouteController : AdminController
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult GetAll()
+        {
+            var list = Repository.BycicleDirections.Where(p => p.Processed).ToList();
+
+            return Json(new { result = "ok", data = list.Select(p => new {p.ID, p.PolyLine}) }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SaveLength(int id, double length)
+        {
+            var item = Repository.BycicleDirections.FirstOrDefault(p => p.ID == id);
+            if (item != null)
+            {
+                item.Length = length;
+                Repository.UpdateBycicleDirection(item);
+
+            }
+            return Json(new {result = "OK"}, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult Generate()
         {
             Repository.ClearAllBicycleLines();
@@ -41,17 +65,18 @@ namespace maps.Web.Areas.Admin.Controllers
             }
 
             var quantityList = new List<GeoLine>();
+            var TOLERANCE = 0.00001;
             foreach (var entity in geoLinesArray)
             {
                 var exist = quantityList.FirstOrDefault(p =>
-                    (p.Start.Lat == entity.Start.Lat &&
-                    p.Start.Lng == entity.Start.Lng &&
-                    p.End.Lat == entity.End.Lat &&
-                    p.End.Lng == entity.End.Lng) ||
-                     (p.End.Lat == entity.Start.Lat &&
-                    p.End.Lng == entity.Start.Lng &&
-                    p.Start.Lat == entity.End.Lat &&
-                    p.Start.Lng == entity.End.Lng));
+                    (Math.Abs(p.Start.Lat - entity.Start.Lat) < TOLERANCE &&
+                    Math.Abs(p.Start.Lng - entity.Start.Lng) < TOLERANCE &&
+                    Math.Abs(p.End.Lat - entity.End.Lat) < TOLERANCE &&
+                    Math.Abs(p.End.Lng - entity.End.Lng) < TOLERANCE) ||
+                     (Math.Abs(p.End.Lat - entity.Start.Lat) < TOLERANCE &&
+                    Math.Abs(p.End.Lng - entity.Start.Lng) < TOLERANCE &&
+                    Math.Abs(p.Start.Lat - entity.End.Lat) < TOLERANCE &&
+                    Math.Abs(p.Start.Lng - entity.End.Lng) < TOLERANCE));
                 if (exist != null)
                 {
                     exist.Quantity++;
@@ -74,7 +99,11 @@ namespace maps.Web.Areas.Admin.Controllers
                 var entity = new BicycleLine()
                 {
                     Start = line.Start.Position,
+                    StartLat = line.Start.Lat,
+                    StartLng = line.Start.Lng,
                     End = line.End.Position,
+                    EndLat = line.End.Lat,
+                    EndLng = line.End.Lng,
                     Quantity = line.Quantity,
                 };
                 Repository.CreateBicycleLine(entity);

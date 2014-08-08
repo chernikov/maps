@@ -103,6 +103,8 @@ namespace maps.Model
         
         bool CreateBicycleLine(BicycleLine instance);
 
+        bool UpdateBicycleLineQuantity(int idBicycleLine);
+
         bool ClearAllBicycleLines();
         
         #endregion 

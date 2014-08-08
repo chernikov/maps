@@ -49,6 +49,7 @@ namespace maps.Model
             {
 				cache.Waypoints = instance.Waypoints;
 				cache.PolyLine = instance.PolyLine;
+                cache.Length = instance.Length;
                 Db.BycicleDirections.Context.SubmitChanges();
                 return true;
             }

@@ -37,5 +37,16 @@ namespace maps.Model
 
             return false;
         }
+
+        public bool UpdateBicycleLineQuantity(int idBicycleLine)
+        {
+            var cache = Db.BicycleLines.FirstOrDefault(p => p.ID == idBicycleLine);
+            if (cache != null)
+            {
+                cache.Quantity++;
+                return true;
+            }
+            return false;
+        }
     }
 }

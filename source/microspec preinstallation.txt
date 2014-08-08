@@ -1,0 +1,36 @@
+1. get to \\192.168.102.15 
+2. Go to \common using your ldap access
+3. Go \MCP_soft\developers tools 
+4. copy n_visual_studio_professional_2012_x86_dvd_920779.iso
+5. Install daemon tools lite from http://www.daemon-tools.cc/products/dtLite
+6. bind .iso to daemon tools
+7. Install Visual Studio 2012
+8. Select C# developer on start
+9. Update visual studio 2012
+10. Install tortoisesvn from http://tortoisesvn.net/downloads.html
+11. Get project from svn http://svn.softjourn.if.ua/repos/microspec/branches/devs using your ldap access
+12. install ruby from http://rubyinstaller.org/downloads/ Ruby 2.0.0-p451 (x64).msi if (machine is x64) or Ruby 2.0.0-p451.msi if not
+13. set ruby path to environment   
+	- http://screencast.com/t/4XFihfgd
+	- http://screencast.com/t/cZ7Lbt7l
+	- add path http://screencast.com/t/hrZcDonCt - c:\Ruby200-x64\bin
+14. Install gems compass : 
+	Start -> cmd -> gem install compass --version 0.12.2‏
+15. Install Sass:
+	Start -> cmd -> gem install sass‏ --version 3.2.14
+16. Install mysql + workbench from http://dev.mysql.com/downloads/installer/5.6.html using Windows MSI Installer (1.5M)
+17. Select custom installation http://screencast.com/t/Z27ilknT9 and select only 
+	- My SQL Server 
+	- MySQL Workbench
+	- MySql Notifier
+	Install.
+	
+18. Add to Visual Studio External tool: TOOLS -> External Tools -> Add 
+	http://screencast.com/t/X7YPxhMd
+	
+19. Run MySql workbench
+20. Add Data scheme "geo" using {projectFolder}\Data\Db\Sql\geo_backup.sql
+21. Add Data scheme "microspec" using {projectFolder}\Data\Db\Sql\microspec_backup.sql
+22. Add User "microspec" with password "qwerty" and set full access to "geo" and "microspec"
+	http://screencast.com/t/uv8Uitj48
+	
