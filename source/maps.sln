@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4ED383CE-DE8B-446B-BF25-0F54D67FB793}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps.UnitTest", "Test\maps.UnitTest\maps.UnitTest.csproj", "{DEA8361E-965C-422A-9EAF-B14EACC980F7}"
@@ -20,11 +22,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tool", "Common.Tools\Tool\Tool.csproj", "{2755DEE8-1AF1-41CC-B798-1EED42A9581D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps.Social", "maps.Social\maps.Social.csproj", "{14B73B87-60AB-4894-AA0B-823D7D19BC98}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backup", "backup", "{16D07B2C-8FF5-4EBE-BFBB-46088A335D2A}"
-	ProjectSection(SolutionItems) = preProject
-		backup\1gb_maps_2014_08_08_20_54_33.bak = backup\1gb_maps_2014_08_08_20_54_33.bak
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
