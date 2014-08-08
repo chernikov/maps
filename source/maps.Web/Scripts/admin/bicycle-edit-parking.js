@@ -11,7 +11,7 @@
 
     this.initializeMap = function () 
     {
-        var latLng = new google.maps.LatLng(48.9117731, 24.717129);
+        var latLng = new google.maps.LatLng(centerLat, centerLng);
         if ($("#Position").val() != "") 
         {
             var position = $("#Position").val().replace('(', '').replace(')', '');

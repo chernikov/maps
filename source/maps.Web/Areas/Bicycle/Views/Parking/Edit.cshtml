@@ -1,4 +1,4 @@
-﻿@model maps.Web.Models.ViewModels.BicycleParkingView
+﻿@model BicycleParkingView
 
 @using (Html.BeginForm("Edit", "Parking", FormMethod.Post, new { @class = "form-horizontal", id = "ParkingForm" }))
 {
@@ -6,6 +6,15 @@
         @Html.Hidden("ID", Model.ID)
         @Html.Hidden("PhotoUrl", Model.PhotoUrl)
         @Html.Hidden("Position", Model.Position)
+        @Html.Hidden("CenterDistance", Model.CenterDistance)
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Адреса
+            </label>
+            <div class="col-sm-9">
+                 @Html.TextBox("Address", Model.Address, new { @class = "form-control" })
+            </div>
+        </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">
                 Фото

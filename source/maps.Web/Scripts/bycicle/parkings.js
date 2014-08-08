@@ -12,7 +12,7 @@
     this.initializeMap = function () {
         var mapOptions = {
             zoom: 14,
-            center: new google.maps.LatLng(48.9117731, 24.717129),
+            center: new google.maps.LatLng(centerLat, centerLng),
         };
         _this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
     }

@@ -19,7 +19,6 @@ namespace maps.Web.Models.ViewModels
 
 		public string PolyLine {get; set; }
 
-		public DateTime AddedDate {get; set; }
-
+		public double Length { get; set; }
     }
 }

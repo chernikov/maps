@@ -16,6 +16,8 @@
 	[AddedDate] DATETIME NOT NULL, 
     [VerifiedDate] DATETIME NULL, 
     [CreatedDate] DATETIME NULL, 
+	[Address] NVARCHAR(MAX) NULL,
+	[CenterDistance] FLOAT NOT NULL DEFAULT 0,
     CONSTRAINT [PK_BicycleParking] PRIMARY KEY CLUSTERED ([ID] ASC),
 	CONSTRAINT [FK_BicycleParking_User] FOREIGN KEY ([UserID]) REFERENCES [dbo].[User] ([ID]) ON DELETE CASCADE ON UPDATE CASCADE
 )

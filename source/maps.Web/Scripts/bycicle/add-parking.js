@@ -3,18 +3,20 @@
 
     this.map = null;
     this.marker = null;
+    this.geocoder = null;
     this.init = function () {
         google.maps.event.addDomListener(window, 'load', _this.initializeMap);
         $(document).on("click", "#SaveParkingBtn", function () {
             _this.saveParking();
         });
         $("#ActionWrapper").hide();
+        _this.geocoder = new google.maps.Geocoder();
     }
 
     this.initializeMap = function () {
         var mapOptions = {
             zoom: 14,
-            center: new google.maps.LatLng(48.9117731, 24.717129),
+            center: new google.maps.LatLng(centerLat, centerLng),
             draggableCursor: 'crosshair'
         };
         _this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -34,6 +36,7 @@
             animation: google.maps.Animation.DROP,
             position: position,
         });
+
         //показать попап для добавления
         $.ajax({
             type: "GET",
@@ -45,7 +48,7 @@
                 obj.modal({
                     backdrop: false
                 });
-                _this.initModal();
+                _this.initModal(position);
                 $("#Position").val(position);
 
                 $('#ParkingModal').on('hidden.bs.modal', function (e) {
@@ -55,7 +58,7 @@
         })
     }
 
-    this.initModal = function () {
+    this.initModal = function (position) {
         $("#ChangePhoto").fineUploader({
             element: $('#ChangePhoto'),
             request: {
@@ -87,6 +90,23 @@
 
         $('.tooltipInfo').tooltip({
             html : true
+        });
+        //CenterDistance
+        var center = new google.maps.LatLng(centerLat, centerLng);
+        var distance = position.distanceFrom(center);
+        $("#CenterDistance").val(distance);
+        //Address
+        _this.geocoder.geocode({ 'latLng': position }, function (results, status)
+        {
+            if (status == google.maps.GeocoderStatus.OK)
+            {
+                if (results[0])
+                {
+                   $("#Address").val(results[0].formatted_address);
+                }
+            } else {
+                console.error("Geocoder failed due to: " + status);
+            }
         });
     }
 

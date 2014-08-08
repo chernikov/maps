@@ -79,5 +79,48 @@ namespace maps.Web.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult Address()
+        {
+            return View();
+        }
+
+        public ActionResult GetAddress()
+        {
+            var list = Repository.BicycleParkings.ToList();
+            return Json(new
+            {
+                result = "ok",
+                data = list.Select(p =>
+                    new
+                    {
+                        Id = p.ID,
+                        Position = p.Position,
+                        Type = p.Type
+                    })
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SaveAddress(int id, string address)
+        {
+            var item = Repository.BicycleParkings.FirstOrDefault(p => p.ID == id);
+            if (item != null)
+            {
+                item.Address = address;
+                Repository.UpdateBicycleParking(item);
+            }
+            return Json(new {result = "ok" }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SaveDistance(int id, double distance)
+        {
+            var item = Repository.BicycleParkings.FirstOrDefault(p => p.ID == id);
+            if (item != null)
+            {
+                item.CenterDistance = distance;
+                Repository.UpdateBicycleParking(item);
+            }
+            return Json(new { result = "ok" }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

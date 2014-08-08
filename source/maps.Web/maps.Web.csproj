@@ -238,6 +238,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Scripts\admin\address-parking.js" />
+    <Content Include="Scripts\admin\distance-parking.js" />
     <Content Include="Scripts\admin\index.js" />
     <Content Include="Scripts\admin\bicycle-edit-parking.js" />
     <Content Include="Scripts\admin\common.js" />
@@ -299,6 +301,7 @@
     <Content Include="Areas\Admin\Views\BicycleParking\UploadTemplate.cshtml" />
     <Content Include="Areas\Bicycle\Views\Route\Map.cshtml" />
     <Content Include="Areas\Admin\Views\BicycleRoute\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BicycleParking\Address.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add.js" />
@@ -306,6 +309,7 @@
     <Content Include="Scripts\bycicle\my-routes.js" />
     <Content Include="Scripts\bycicle\parkings.js" />
     <Content Include="Scripts\bycicle\routes.js" />
+    <Content Include="Scripts\constants.js" />
     <Content Include="Scripts\default\common.js" />
     <Content Include="Scripts\default\edit-user.js" />
     <Content Include="Scripts\default\index.js" />

@@ -55,6 +55,8 @@ namespace maps.Model
                 cache.Capacity = instance.Capacity;
                 cache.Quality = instance.Quality;
                 cache.Description = instance.Description;
+                cache.Address = instance.Address;
+                cache.CenterDistance = instance.CenterDistance;
                 Db.BicycleParkings.Context.SubmitChanges();
                 return true;
             }

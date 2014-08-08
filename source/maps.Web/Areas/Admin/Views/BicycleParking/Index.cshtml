@@ -30,13 +30,10 @@
                 Ємність
             </th>
             <th>
-                Замок
+                Адреса
             </th>
             <th>
-                Прокат
-            </th>
-            <th>
-                Камера
+                Віддаленість
             </th>
             <th>
             </th>
@@ -79,13 +76,10 @@
                 @item.Capacity
             </td>
             <td>
-                @(item.Lock ? "Так" : "Ні")
+                @item.Address
             </td>
             <td>
-                @(item.Rent ? "Так" : "Ні")
-            </td>
-            <td>
-                @(item.Camera ? "Так" : "Ні")
+                @item.CenterDistance.ToString("0.000") км
             </td>
             <td>
                 @Html.ActionLink("Редагувати", "Edit", "BicycleParking", new { id = item.ID }, new { @class = "btn  btn-default" })

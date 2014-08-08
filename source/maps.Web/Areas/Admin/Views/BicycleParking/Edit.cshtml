@@ -29,8 +29,19 @@
                 </div>
             </div>
         </div>
+        <div class="form-group @Html.HasErrorClass("Address", "has-error")">
+            <label class="col-sm-3 control-label" for="Address">
+                Адреса
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Address", Model.Address, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Address")
+            </div>
+        </div>
         <div class="form-group @Html.HasErrorClass("Type", "has-error")">
-            <label class="col-sm-3 control-label" for="Email">
+            <label class="col-sm-3 control-label" for="Type">
                 Тип
             </label>
             <div class="col-sm-5">

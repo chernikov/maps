@@ -22,4 +22,10 @@
             @Model.Description
         </div>
     }
+    @if (!string.IsNullOrWhiteSpace(Model.Address))
+    {
+        <div class="caption">
+            @Model.Address
+        </div>
+    }
 </div>

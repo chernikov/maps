@@ -22,7 +22,7 @@
     this.initializeMap = function () {
         var mapOptions = {
             zoom: 14,
-            center: new google.maps.LatLng(48.9117731, 24.717129),
+            center: new google.maps.LatLng(centerLat, centerLng),
             draggableCursor: 'crosshair'
         };
         _this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -98,13 +98,18 @@
         {
             var route = _this.response.routes[0];
             var waypts = _this.response.routes[0].overview_path;
+            var distance = 0;
+            $.each(_this.response.routes[0].legs, function(i, item) {
+                distance += item.distance.value;
+            });
 
             $.ajax({
                 url : "/bicycle/Route/SaveRoute",
                 type: "POST",
                 data: {
                     Waypoints: JSON.stringify(waypts),
-                    PolyLine : route.overview_polyline,
+                    PolyLine: route.overview_polyline,
+                    Length : distance / 1000,
                 },
                 success: function (data) {
                     if (data.result == "ok")

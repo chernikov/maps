@@ -49,6 +49,8 @@ namespace maps.Web.Models.ViewModels
 
         public string Description { get; set; }
 
+        public string Address { get; set; }
+
         public bool Lock { get; set; }
 
         public bool Camera { get; set; }
@@ -56,6 +58,8 @@ namespace maps.Web.Models.ViewModels
         public bool Rent { get; set; }
 
         public int? Capacity { get; set; }
+
+        public double CenterDistance { get; set; }
 
         public BicycleParkingView()
         {
