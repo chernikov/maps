@@ -82,8 +82,8 @@
                 @item.CenterDistance.ToString("0.000") км
             </td>
             <td>
-                @Html.ActionLink("Редагувати", "Edit", "BicycleParking", new { id = item.ID }, new { @class = "btn  btn-default" })
-                @Html.ActionLink("Видалити", "Delete", "BicycleParking", new { id = item.ID }, new { @class = "btn  btn-danger" })
+                @Html.ActionLink("Редагувати", "Edit", "BicycleParking", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Видалити", "Delete", "BicycleParking", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
             </td>
         </tr>
     }

@@ -1,12 +1,12 @@
 ﻿html {
-    height : 100%;
+    height: 100%;
 }
 
 body {
     padding-top: 50px;
-    height : 100%;
-    overflow : hidden;
-    font-family : 'Segoe UI';
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI';
 }
 
 .has-warning .field-validation-error {
@@ -30,61 +30,67 @@ body {
     color: #737373;
 }
 
-.background-map 
-{
+.background-map {
     margin: 30px 0 0 0;
-    height : 100%;
-    width : 100%;
+    height: 100%;
+    width: 100%;
 }
 
 .projects {
-    position : fixed;
-    top : 100px;
-    right : 10px;
-    list-style : none;
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    list-style: none;
 }
 
-.projects li {
-    
+    .projects li a {
+        display: block;
+        background-color: #468847;
+        height: 70px;
+        color: #fff;
+        font-size: 40px;
+        width: 300px;
+        padding: 3px 45px 20px 50px;
+        text-decoration: none;
+        text-align: right;
+    }
+
+        .projects li a img {
+            position: relative;
+            top: -4px;
+        }
+
+.navbar > .container .navbar-brand.bycicle {
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    margin-left: 30px;
+    display: inline-block;
 }
 
-.projects li a {
-    display : block;
-    background-color : #468847;
-    height : 70px;
-    color : #fff;
-    font-size : 40px;
-    width : 300px;
-    padding : 10px 50px 20px 50px;
-    text-decoration : none;
-    text-align : right;
+.action-wrapper {
+    position: fixed;
+    bottom: 0px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    text-align: center;
 }
 
-.projects li a img {
-    position : relative;
-    top : -4px;
+.tutorial-wrapper {
+    position: fixed;
+    bottom: 0px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    text-align: center;
 }
 
-.navbar > .container .navbar-brand.bycicle  {
-    color : #fff;
-    font-size : 30px;
-    text-decoration : none;
-    margin-left : 30px;
-    display : inline-block;
+.tutorial-item {
+    list-style-type: none;
+    text-align: left;
 }
 
-.action-wrapper 
-{
-    position : fixed;
-    bottom : 0px;
-    padding : 20px;
-    background-color : rgba(255, 255, 255, 0.5);
-    width : 100%;
-    z-index : 2;
-    text-align : center;
-}
-
-      
 .textarea {
     width: 99%;
     height: 200px !important;
@@ -92,5 +98,5 @@ body {
 
 .parking-modal .tooltip-inner {
     max-width: 350px;
-    width: 350px; 
+    width: 350px;
 }

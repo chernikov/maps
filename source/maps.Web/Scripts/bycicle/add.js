@@ -1,6 +1,5 @@
 ﻿function Add() {
     var _this = this;
-
     this.map = null;
     this.directionsDisplay = null;
     this.markers = [];
@@ -9,12 +8,13 @@
     this.init = function () {
         google.maps.event.addDomListener(window, 'load', _this.initializeMap);
         _this.directionsService = new google.maps.DirectionsService();
-
         $(document).on("click", "#SaveRouteBtn", function () {
+            $(".tutorial-wrapper div").css("text-decoration", "line-through");
             _this.saveRoute();
         });
         $(document).on("click", "#CancelBtn", function () {
             _this.clear();
+            $(".tutorial-wrapper div").css("text-decoration", "");
         });
         $("#ActionWrapper").hide();
     }
@@ -26,12 +26,11 @@
             draggableCursor: 'crosshair'
         };
         _this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        //_this.map.setOptions({  });
 
         google.maps.event.addListener(_this.map, 'click', _this.clickOnMap);
 
         _this.directionsDisplay = new google.maps.DirectionsRenderer({
-            draggable : true
+            draggable: true
         });
 
         google.maps.event.addListener(_this.directionsDisplay, 'directions_changed', function () {
@@ -40,14 +39,19 @@
     }
 
     this.clickOnMap = function (event) {
-        if (_this.markers.length < 2)
-        {
+        var markersLength = _this.markers.length;
+        if (markersLength === 0) {
+            $(".tutorial-wrapper div:first").css("text-decoration", "line-through");
+        }
+        if (markersLength === 1) {
+            $(".tutorial-wrapper div").slice(0, 2).css("text-decoration", "line-through");
+        }
+        if (markersLength < 2) {
             _this.addMarker(event.latLng);
-        } 
+        }
     }
 
-    this.addMarker = function (position)
-    {
+    this.addMarker = function (position) {
         var marker = new google.maps.Marker({
             map: _this.map,
             draggable: true,
@@ -62,15 +66,14 @@
 
     //получить координаты и информацию о местоположении
     this.markerPositionChanged = function () {
+        alert("zz");
         _this.createRoute();
     }
-
 
     this.createRoute = function () {
         if (_this.markers.length > 1) {
             var start = _this.markers[0].position;
-            var end = _this.markers[_this.markers.length-1].position;
-
+            var end = _this.markers[_this.markers.length - 1].position;
             var request = {
                 origin: start,
                 destination: end,
@@ -88,32 +91,30 @@
             });
 
             _this.clearMarkers();
-            _this.map.setOptions({ draggableCursor: ""});
+            _this.map.setOptions({ draggableCursor: "" });
             $("#ActionWrapper").show();
         }
     }
 
     this.saveRoute = function () {
-        if (_this.response != null)
-        {
+        if (_this.response != null) {
             var route = _this.response.routes[0];
             var waypts = _this.response.routes[0].overview_path;
             var distance = 0;
-            $.each(_this.response.routes[0].legs, function(i, item) {
+            $.each(_this.response.routes[0].legs, function (i, item) {
                 distance += item.distance.value;
             });
 
             $.ajax({
-                url : "/bicycle/Route/SaveRoute",
+                url: "/bicycle/Route/SaveRoute",
                 type: "POST",
                 data: {
                     Waypoints: JSON.stringify(waypts),
                     PolyLine: route.overview_polyline,
-                    Length : distance / 1000,
+                    Length: distance / 1000,
                 },
                 success: function (data) {
-                    if (data.result == "ok")
-                    {
+                    if (data.result == "ok") {
                         _this.clear();
                         window.location = "/bicycle/Route";
                     }
@@ -122,9 +123,7 @@
         }
     }
 
-
-    this.clearMarkers = function ()
-    {
+    this.clearMarkers = function () {
         for (var i = 0; i < _this.markers.length; i++) {
             _this.markers[i].setMap(null);
         }

@@ -3,14 +3,20 @@
     Layout = "~/Areas/Bicycle/Views/Shared/_Layout.cshtml";
 }
 @section header {
-    <script type="text/javascript" src="/scripts/bycicle/add.js"></script>
+   
+<script type="text/javascript" src="/scripts/bycicle/add.js"></script>
 }
 <div class="background-map" id="map">
 </div>
 
-
-<div class="action-wrapper" id="ActionWrapper">
+<div class="col-md-offset-9 col-md-3 tutorial-wrapper">
+    <div class="tutorial-item">1. Позначте початок маршруту</div>
+    <div class="tutorial-item">2. Позначте кінець маршруту</div>
+    <div class="tutorial-item">3. Скорегуйте маршрут перетягуючи його</div>
+    <div class="tutorial-item">4. Перевірте чи все вірно</div>
+    <div class="tutorial-item">5. Натисніть зберегти.</div>
+</div>
+<div class="col-md-9 action-wrapper" id="ActionWrapper">
     <div class="btn btn-primary" id="SaveRouteBtn">Зберегти</div>
-
     <div class="btn btn-default" id="CancelBtn">Скасувати</div>
 </div>
