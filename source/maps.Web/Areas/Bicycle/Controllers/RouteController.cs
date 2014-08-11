@@ -44,13 +44,6 @@ namespace maps.Web.Areas.Bicycle.Controllers
             return Json(new { result = "ok" });
         }
 
-        public ActionResult GetAll()
-        {
-            var list = Repository.BycicleDirections.Where(p => !p.Processed).ToList();
-
-            return Json(new { result = "ok", data = list.Select(p => p.PolyLine) }, JsonRequestBehavior.AllowGet);
-        }
-
         public ActionResult GetBicycleRoutes(int id)
         {
             var bicycleLine = Repository.BicycleLines.FirstOrDefault(p => p.ID == id);

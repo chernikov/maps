@@ -79,11 +79,22 @@ body {
 
 .tutorial-wrapper {
     position: fixed;
-    bottom: 0px;
+    top : 100px;
+    right : 20px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 1);
     z-index: 2;
     text-align: center;
+    font-size: 16px;
+    cursor: default;
+}
+
+.tutorial-wrapper .active {
+    font-weight: bold;
+}
+
+.tutorial-wrapper .passed {
+    text-decoration: line-through;
 }
 
 .tutorial-item {

@@ -5,10 +5,12 @@
     this.markers = [];
     this.directionsService = null;
     this.response = null;
+
+    this.draggableFirst = false;
     this.init = function () {
         google.maps.event.addDomListener(window, 'load', _this.initializeMap);
         _this.directionsService = new google.maps.DirectionsService();
-        $(document).on("click", "#SaveRouteBtn", function () {
+        $(document).on("click", "#SaveRouteBtn, #SaveRouteBtnOther", function () {
             $(".tutorial-wrapper div").css("text-decoration", "line-through");
             _this.saveRoute();
         });
@@ -17,6 +19,7 @@
             $(".tutorial-wrapper div").css("text-decoration", "");
         });
         $("#ActionWrapper").hide();
+        $("#first").addClass("active");
     }
 
     this.initializeMap = function () {
@@ -35,23 +38,43 @@
 
         google.maps.event.addListener(_this.directionsDisplay, 'directions_changed', function () {
             _this.response = _this.directionsDisplay.getDirections();
+            if (_this.draggableFirst == 0)
+            {
+                _this.draggableFirst = 1;
+            } else if (_this.draggableFirst == 1) {
+                _this.draggableFirst = 2;
+                $("#third").removeClass("active");
+                $("#third").addClass("passed");
+                $("#fourth").addClass("active");
+                $("#fifth").addClass("active");
+                $("#SaveRouteBtnOther").removeAttr("disabled");
+                $("#SaveRouteBtnOther").removeClass("disabled");
+            }
+          
         });
     }
 
-    this.clickOnMap = function (event) {
+    this.clickOnMap = function (event)
+    {
         var markersLength = _this.markers.length;
         if (markersLength === 0) {
-            $(".tutorial-wrapper div:first").css("text-decoration", "line-through");
+            $("#first").removeClass("active");
+            $("#first").addClass("passed");
+            $("#second").addClass("active");
         }
         if (markersLength === 1) {
-            $(".tutorial-wrapper div").slice(0, 2).css("text-decoration", "line-through");
+            $("#second").removeClass("active");
+            $("#second").addClass("passed");
+            $("#third").addClass("active");
         }
-        if (markersLength < 2) {
+        if (markersLength < 2 && _this.response == null)
+        {
             _this.addMarker(event.latLng);
         }
     }
 
-    this.addMarker = function (position) {
+    this.addMarker = function (position)
+    {
         var marker = new google.maps.Marker({
             map: _this.map,
             draggable: true,
@@ -66,12 +89,13 @@
 
     //получить координаты и информацию о местоположении
     this.markerPositionChanged = function () {
-        alert("zz");
         _this.createRoute();
     }
 
-    this.createRoute = function () {
-        if (_this.markers.length > 1) {
+    this.createRoute = function ()
+    {
+        if (_this.markers.length > 1)
+        {
             var start = _this.markers[0].position;
             var end = _this.markers[_this.markers.length - 1].position;
             var request = {
@@ -83,7 +107,8 @@
             };
 
             _this.directionsService.route(request, function (response, status) {
-                if (status == google.maps.DirectionsStatus.OK) {
+                if (status == google.maps.DirectionsStatus.OK)
+                {
                     _this.response = response;
                     _this.directionsDisplay.setMap(_this.map);
                     _this.directionsDisplay.setDirections(response);

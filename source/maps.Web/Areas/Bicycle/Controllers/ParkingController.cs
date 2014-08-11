@@ -18,7 +18,7 @@ namespace maps.Web.Areas.Bicycle.Controllers
 
         public ActionResult GetAll()
         {
-            var list = Repository.BicycleParkings.ToList();
+            var list = Repository.BicycleParkings.Where(p => p.VerifiedDate != null).ToList();
 
             return Json(new { result = "ok", data = list.Select(p => 
                     new {
@@ -64,6 +64,30 @@ namespace maps.Web.Areas.Bicycle.Controllers
 
             Repository.CreateBicycleParking(bycicleParking);
             
+            return Json(new { result = "ok" });
+        }
+
+
+        [HttpGet]
+        public ActionResult PopupFuture()
+        {
+            return View();
+        }
+
+        public ActionResult CreateFuture()
+        {
+            return View("EditFuture", new BicycleParkingView());
+        }
+
+        [HttpPost]
+        public ActionResult SaveParkingFuture(BicycleParkingView bicycleParkingView)
+        {
+            var bycicleParking = (BicycleParking)ModelMapper.Map(bicycleParkingView, typeof(BicycleParkingView), typeof(BicycleParking));
+            bycicleParking.UserID = CurrentUser.ID;
+            bycicleParking.Exist = false;
+
+            Repository.CreateBicycleParking(bycicleParking);
+
             return Json(new { result = "ok" });
         }
 

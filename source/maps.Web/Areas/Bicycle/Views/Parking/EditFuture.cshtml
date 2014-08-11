@@ -1,0 +1,29 @@
+﻿@model BicycleParkingView
+
+@using (Html.BeginForm("CreateFuture", "Parking", FormMethod.Post, new { @class = "form-horizontal", id = "FutureParkingForm" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        @Html.Hidden("PhotoUrl", Model.PhotoUrl)
+        @Html.Hidden("Position", Model.Position)
+        @Html.Hidden("CenterDistance", Model.CenterDistance)
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Адреса
+            </label>
+            <div class="col-sm-9">
+                 @Html.TextBox("Address", Model.Address, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Description", "has-error")">
+            <label class="col-sm-3 control-label" for="Description">
+                Чому тут має бути велопарковка?
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title=""></span>
+                @Html.ValidationMessage("Description")
+            </label>
+            <div class="col-sm-9">
+                @Html.TextArea("Description", Model.Description, new { @class = "form-control textarea" })
+            </div>
+        </div>
+    </fieldset>
+}

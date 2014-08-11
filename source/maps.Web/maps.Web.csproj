@@ -302,6 +302,8 @@
     <Content Include="Areas\Bicycle\Views\Route\Map.cshtml" />
     <Content Include="Areas\Admin\Views\BicycleRoute\Index.cshtml" />
     <Content Include="Areas\Admin\Views\BicycleParking\Address.cshtml" />
+    <Content Include="Areas\Bicycle\Views\Parking\PopupFuture.cshtml" />
+    <Content Include="Areas\Bicycle\Views\Parking\EditFuture.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add.js" />
