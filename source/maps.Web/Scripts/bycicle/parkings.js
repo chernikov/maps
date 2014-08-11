@@ -7,6 +7,20 @@
     {
         _this.initializeMap();
         _this.loadParkings();
+
+        $(document).on("click", ".vote", function () {
+            var id = $(this).data("id");
+            $.ajax({
+                type: "GET",
+                url: "/bicycle/Parking/SaveVote",
+                data: { id: id },
+                success : function(data) {
+                    if (data.result == "ok") {
+                        _this.clearAllInfo();
+                    }
+                }
+            });
+        });
     }
 
     this.initializeMap = function () {
@@ -15,6 +29,8 @@
             center: new google.maps.LatLng(centerLat, centerLng),
         };
         _this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        
     }
 
     this.loadParkings = function ()
@@ -36,16 +52,21 @@
                             map: _this.map,
                             position: latLng
                         });
-                        if (item.Type == 1) {
-                            marker.setIcon("/Content/images/marker_13_2x.png");
+                        if (item.Exist) {
+                            if (item.Type == 1) {
+                                marker.setIcon("/Content/images/marker_13_2x.png");
+                                marker.setZIndex(10);
+                            }
+                            if (item.Type == 2) {
+                                marker.setIcon("/Content/images/marker_12_2x.png");
+                                marker.setZIndex(100);
+                            }
+                        } else {
+                            marker.setIcon("/Content/images/parking-16.png");
+                            marker.setZIndex(110);
                         }
-                        if (item.Type == 2) {
-                            marker.setIcon("/Content/images/marker_12_2x.png");
-                        }
-
                         marker.set("Id", item.Id);
                         google.maps.event.addListener(marker, 'click', function () {
-                            var id = marker.get("Id");
                             _this.showInfo(marker);
                         });
                     });
@@ -54,7 +75,8 @@
         });
     }
 
-    this.showInfo = function (marker) {
+    this.showInfo = function (marker)
+    {
         var id = marker.get("Id");
         $.ajax({
             type: "GET",

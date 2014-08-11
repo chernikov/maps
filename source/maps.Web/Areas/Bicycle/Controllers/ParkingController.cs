@@ -18,12 +18,13 @@ namespace maps.Web.Areas.Bicycle.Controllers
 
         public ActionResult GetAll()
         {
-            var list = Repository.BicycleParkings.Where(p => p.VerifiedDate != null).ToList();
+            var list = Repository.BicycleParkings.Where(p => p.VerifiedDate != null || !p.Exist ).ToList();
 
             return Json(new { result = "ok", data = list.Select(p => 
                     new {
                         Id = p.ID,
                         Position = p.Position,
+                        Exist = p.Exist,
                         Type = p.Type}) }, JsonRequestBehavior.AllowGet);
         }
 
@@ -43,6 +44,13 @@ namespace maps.Web.Areas.Bicycle.Controllers
         {
             return View();
         }
+
+        [Authorize]
+        public ActionResult AddFuture()
+        {
+            return View();
+        }
+
 
         [HttpGet]
         public ActionResult Popup()
@@ -80,16 +88,37 @@ namespace maps.Web.Areas.Bicycle.Controllers
         }
 
         [HttpPost]
-        public ActionResult SaveParkingFuture(BicycleParkingView bicycleParkingView)
+        public ActionResult SaveFutureParking(BicycleParkingView bicycleParkingView)
         {
             var bycicleParking = (BicycleParking)ModelMapper.Map(bicycleParkingView, typeof(BicycleParkingView), typeof(BicycleParking));
             bycicleParking.UserID = CurrentUser.ID;
             bycicleParking.Exist = false;
-
+            bycicleParking.VotesCount = 1;
             Repository.CreateBicycleParking(bycicleParking);
+
+            Repository.CreateBicycleParkingVote(new BicycleParkingVote()
+            {
+                BicycleParkingID = bycicleParking.ID,
+                UserID = CurrentUser.ID
+            });
 
             return Json(new { result = "ok" });
         }
 
+        public ActionResult SaveVote(int id)
+        {
+            var parkingVote =
+                Repository.BicycleParkingVotes.FirstOrDefault(
+                    p => p.BicycleParkingID == id && p.UserID == CurrentUser.ID);
+            if (parkingVote == null)
+            {
+                Repository.CreateBicycleParkingVote(new BicycleParkingVote()
+                {
+                    BicycleParkingID = id,
+                    UserID = CurrentUser.ID
+                });
+            }
+            return Json(new {result = "ok"}, JsonRequestBehavior.AllowGet);
+        }
 	}
 }

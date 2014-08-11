@@ -91,9 +91,9 @@ namespace maps.Model
         
         bool CreateBicycleParkingVote(BicycleParkingVote instance);
         
-        bool UpdateBicycleParkingVote(BicycleParkingVote instance);
+        /*bool UpdateBicycleParkingVote(BicycleParkingVote instance);
         
-        bool RemoveBicycleParkingVote(int idBicycleParkingVote);
+        bool RemoveBicycleParkingVote(int idBicycleParkingVote);*/
         
         #endregion 
 

@@ -304,9 +304,11 @@
     <Content Include="Areas\Admin\Views\BicycleParking\Address.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\PopupFuture.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\EditFuture.cshtml" />
+    <Content Include="Areas\Bicycle\Views\Parking\AddFuture.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add.js" />
+    <Content Include="Scripts\bycicle\add-future-parking.js" />
     <Content Include="Scripts\bycicle\index.js" />
     <Content Include="Scripts\bycicle\my-routes.js" />
     <Content Include="Scripts\bycicle\parkings.js" />

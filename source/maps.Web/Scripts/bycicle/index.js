@@ -8,6 +8,21 @@
     this.init = function () {
         _this.selectedPolylines = [];
         google.maps.event.addDomListener(window, 'load', _this.initializeMap);
+
+        $(document).on("click", ".vote", function () {
+            var id = $(this).data("id");
+            $.ajax({
+                type: "GET",
+                url: "/bicycle/Parking/SaveVote",
+                data: { id: id },
+                success: function (data) {
+                    if (data.result == "ok")
+                    {
+                        _this.clearAllInfo();
+                    }
+                }
+            });
+        });
     }
 
     this.initializeMap = function () {
@@ -19,6 +34,8 @@
 
         _this.loadRoutes();
         _this.loadParkings();
+
+
     }
 
     this.loadRoutes = function () {
@@ -113,13 +130,20 @@
                             map: _this.map,
                             position: latLng});
 
-                        if (item.Type == 1)
-                        {
-                            marker.setIcon("/Content/images/marker_13_2x.png");
+                        if (item.Exist) {
+                            if (item.Type == 1) {
+                                marker.setIcon("/Content/images/marker_13_2x.png");
+                                marker.setZIndex(10);
+                            }
+                            if (item.Type == 2) {
+                                marker.setIcon("/Content/images/marker_12_2x.png");
+                                marker.setZIndex(100);
+                            }
+                        } else {
+                            marker.setIcon("/Content/images/parking-16.png");
+                            marker.setZIndex(110);
                         }
-                        if (item.Type == 2) {
-                            marker.setIcon("/Content/images/marker_12_2x.png");
-                        }
+
                         marker.set("Id", item.Id);
                         google.maps.event.addListener(marker, 'click', function () {
                             var id = marker.get("Id");

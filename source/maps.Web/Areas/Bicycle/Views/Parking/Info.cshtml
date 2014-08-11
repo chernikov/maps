@@ -1,31 +1,68 @@
 ﻿@model BicycleParking
+@{
 
-
-<div class="thumbnail">
-    @if (!string.IsNullOrWhiteSpace(Model.PhotoUrl))
-    {
-        <img src="@Model.PhotoUrl?w=300&h=300&mode=crop" />
-    }
-    <div class="caption">
-        <strong>Тип: @Model.TypeStr</strong>
-    </div>
+    var currentUser = ((maps.Web.Controllers.BaseController) ViewContext.Controller).CurrentUser;
+}
+@if (Model.Exist)
+{
+    <div class="thumbnail">
+        @if (!string.IsNullOrWhiteSpace(Model.PhotoUrl))
+        {
+            <img src="@Model.PhotoUrl?w=300&h=300&mode=crop" />
+        }
+        <div class="caption">
+            <strong>Тип: @Model.TypeStr</strong>
+        </div>
    
-    @if (Model.Capacity > 0)
-    {
+        @if (Model.Capacity > 0)
+        {
+            <div class="caption">
+                <strong>Місткість: @Model.Capacity @Model.Capacity.CountWord("місце", "місця", "місць")</strong>
+            </div>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <div class="caption">
+                @Model.Description
+            </div>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Address))
+        {
+            <div class="caption">
+                @Model.Address
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="thumbnail">
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <div class="caption">
+                @Model.Description
+            </div>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Address))
+        {
+            <div class="caption">
+                @Model.Address
+            </div>
+        }
         <div class="caption">
-            <strong>Місткість: @Model.Capacity @Model.Capacity.CountWord("місце", "місця", "місць")</strong>
+            <strong>@Model.VotesCount @Model.VotesCount.CountWord("голос", "голоси", "голосів")</strong>
         </div>
-    }
-    @if (!string.IsNullOrWhiteSpace(Model.Description))
-    {
-        <div class="caption">
-            @Model.Description
-        </div>
-    }
-    @if (!string.IsNullOrWhiteSpace(Model.Address))
-    {
-        <div class="caption">
-            @Model.Address
-        </div>
-    }
-</div>
+        @if (currentUser != null)
+        {
+            if (currentUser.HasBicycleParkingVote(Model))
+            {
+                <strong>Ваш голос зараховано</strong>
+            }
+            else
+            {
+                <button class="btn btn-primary vote" data-id="@Model.ID"><span class="glyphicon glyphicon-thumbs-up"></span> Голосую!</button>
+            }
+        }
+        
+    </div>
+}

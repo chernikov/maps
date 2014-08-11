@@ -104,11 +104,23 @@ namespace maps.Model
             BicycleParking instance = Db.BicycleParkings.FirstOrDefault(p => p.ID == idBicycleParking);
             if (instance != null)
             {
+                
                 Db.BicycleParkings.DeleteOnSubmit(instance);
                 Db.BicycleParkings.Context.SubmitChanges();
                 return true;
             }
             return false;
+        }
+
+        private void RecalculateBicycleParkingVotes(int idBicycleParking)
+        {
+            var instance = Db.BicycleParkings.FirstOrDefault(p => p.ID == idBicycleParking);
+            if (instance != null)
+            {
+                var total = instance.BicycleParkingVotes.Count();
+                instance.VotesCount = total;
+                Db.BicycleParkings.Context.SubmitChanges();
+            }
         }
     }
 }

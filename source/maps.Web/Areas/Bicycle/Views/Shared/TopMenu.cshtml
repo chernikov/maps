@@ -16,6 +16,7 @@
         @if (controllerName == "Parking" && currentUser != null)
         {
             <li class="@(controllerName == "Parking" && actionName == "Add" ? "active" : "")"><a href="@Url.Action("Add", "Parking")"><span class="glyphicon glyphicon-plus"></span> Додати</a></li>
+            <li class="@(controllerName == "Parking" && actionName == "AddFuture" ? "active" : "")"><a href="@Url.Action("AddFuture", "Parking")"><span class="glyphicon glyphicon-heart"></span> Хочу нову</a></li>
         }
     </ul>
 </div>

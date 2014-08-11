@@ -23,37 +23,12 @@ namespace maps.Model
             {
                 Db.BicycleParkingVotes.InsertOnSubmit(instance);
                 Db.BicycleParkingVotes.Context.SubmitChanges();
+                RecalculateBicycleParkingVotes(instance.BicycleParkingID);
                 return true;
             }
 
             return false;
         }
 
-        public bool UpdateBicycleParkingVote(BicycleParkingVote instance)
-        {
-            var cache = Db.BicycleParkingVotes.FirstOrDefault(p => p.ID == instance.ID);
-            if (cache != null)
-            {
-				cache.UserID = instance.UserID;
-				cache.BicycleParkingID = instance.BicycleParkingID;
-				cache.Mark = instance.Mark;
-                Db.BicycleParkingVotes.Context.SubmitChanges();
-                return true;
-            }
-
-            return false;
-        }
-
-        public bool RemoveBicycleParkingVote(int idBicycleParkingVote)
-        {
-            BicycleParkingVote instance = Db.BicycleParkingVotes.FirstOrDefault(p => p.ID == idBicycleParkingVote);
-            if (instance != null)
-            {
-                Db.BicycleParkingVotes.DeleteOnSubmit(instance);
-                Db.BicycleParkingVotes.Context.SubmitChanges();
-                return true;
-            }
-            return false;
-        }
     }
 }

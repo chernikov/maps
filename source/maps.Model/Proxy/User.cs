@@ -31,5 +31,15 @@ namespace maps.Model
         {
             return Socials.Any(p => p.Provider == (int)type);
         }
+
+        public bool HasBicycleParkingVote(BicycleParking bicycleParking)
+        {
+            if (bicycleParking != null)
+            {
+                var exist = BicycleParkingVotes.Any(p => p.BicycleParkingID == bicycleParking.ID);
+                return exist;
+            }
+            return false;
+        }
     }
 }
