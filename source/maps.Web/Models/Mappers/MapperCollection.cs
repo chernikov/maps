@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 using maps.Model;
+using maps.Web.Models.Dto;
 using maps.Web.Models.ViewModels;
 using maps.Web.Models.ViewModels.User;
 
@@ -48,6 +49,8 @@ namespace maps.Web.Models.Mappers
         	{
         		Mapper.CreateMap<BicycleParking, BicycleParkingView>();
                 Mapper.CreateMap<BicycleParkingView, BicycleParking>();
+
+                Mapper.CreateMap<BicycleParking, BicycleParkingDto>();
         	}
         }
     }
