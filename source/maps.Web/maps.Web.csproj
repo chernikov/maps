@@ -208,6 +208,7 @@
     <Compile Include="Models\Dto\BicycleParkingDto.cs" />
     <Compile Include="Models\Mappers\MapperCollection.cs" />
     <Compile Include="Models\Mappers\ModelMapper.cs" />
+    <Compile Include="Models\Api\BicycleParkingApiModel.cs" />
     <Compile Include="Models\ViewModels\BicycleParkingView.cs" />
     <Compile Include="Models\ViewModels\BycicleDirectionView.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
@@ -312,6 +313,7 @@
     <Content Include="Areas\Bicycle\Views\Parking\PopupFuture.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\EditFuture.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\AddFuture.cshtml" />
+    <Content Include="Areas\Bicycle\Views\Parking\SampleForm.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add.js" />

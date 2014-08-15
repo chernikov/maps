@@ -1,0 +1,103 @@
+﻿@model BicycleParkingApiModel
+@{
+    ViewBag.Title = "Пробна форма";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+<div class="main-wrapper">
+    <div class="row">
+        <div class="col-sm-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <form method="POST" action="/api/BycicleParking" class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ID">
+                            ID
+                        </label>
+                        <div class="col-sm-5">
+                            @Html.TextBox("ID", Model.ID, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.ValidationMessage("Address")
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="Address">
+                            Адреса
+                        </label>
+                        <div class="col-sm-5">
+                            @Html.TextBox("Address", Model.Address, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.ValidationMessage("Address")
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="Type">
+                            Тип
+                        </label>
+                        <div class="col-sm-5">
+                            @Html.TextBox("Type", Model.Type, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.ValidationMessage("Type")
+                        </div>
+                    </div>
+                    @*
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Фото
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="file" name="File" id="File" />
+                            </div>
+                        </div>
+                    *@
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        Місцезнаходження, lat
+                    </label>
+                    <div class="col-sm-9">
+                        @Html.TextBox("Lat", Model.Lat, new { @class = "form-control" })
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            Місцезнаходження, lng
+                        </label>
+                        <div class="col-sm-9">
+                            @Html.TextBox("Lng", Model.Lng, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="Description">
+                            Опис
+                        @Html.ValidationMessage("Description")
+                        </label>
+                        <div class="col-sm-9">
+                            @Html.TextArea("Description", Model.Description, new { @class = "form-control textarea" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="Capacity">
+                            Місткість
+                        </label>
+                        <div class="col-sm-5">
+                            @Html.TextBox("Capacity", Model.Capacity, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.ValidationMessage("Capacity")
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            Зберегти
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

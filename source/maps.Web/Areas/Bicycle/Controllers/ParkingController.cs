@@ -1,4 +1,6 @@
 ﻿using maps.Model;
+using maps.Web.Models.Api;
+using maps.Web.Models.Dto;
 using maps.Web.Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -119,6 +121,13 @@ namespace maps.Web.Areas.Bicycle.Controllers
                 });
             }
             return Json(new {result = "ok"}, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SampleForm()
+        {
+            var bicycleParking = new BicycleParkingApiModel();
+
+            return View(bicycleParking);
         }
 	}
 }

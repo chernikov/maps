@@ -111,3 +111,7 @@ body {
     max-width: 350px;
     width: 350px;
 }
+
+.main-wrapper {
+    padding-top: 70px;
+}

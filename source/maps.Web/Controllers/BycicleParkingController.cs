@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using maps.Model;
 using maps.Web.Mappers;
+using maps.Web.Models.Api;
 using maps.Web.Models.Dto;
 using Ninject;
 
@@ -21,8 +22,9 @@ namespace maps.Web.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]BicycleParkingDto value)
+        public void Post([FromBody]BicycleParkingApiModel value)
         {
+
         }
 
         // PUT api/values/5

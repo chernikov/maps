@@ -24,12 +24,13 @@
             </div>
             <div class="collapse navbar-collapse pull-right">
                 <ul class="nav navbar-nav navbar-form">
-                    @Html.Action("UserLogin", "Home")
+                    @Html.Action("UserLogin", "Home", new {area = "Default"})
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </div>
     @RenderBody()
+
     @Html.Partial("GoogleAnalytics")
     @MiniProfiler.RenderIncludes()
     @Scripts.Render("~/bundles/jquery")
