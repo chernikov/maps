@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tool
 {
+
     public class Translit
     {
+        private static Random rand = new Random((int)DateTime.Now.Ticks);
+
         private static Dictionary<string, string> translateTable { get; set; }
 
         static Translit()
@@ -46,6 +49,10 @@ namespace Tool
             translateTable.Add("э", "eh");
             translateTable.Add("ю", "yu");
             translateTable.Add("я", "ya");
+            translateTable.Add("ї", "i");
+            translateTable.Add("і", "i");
+            translateTable.Add("є", "ye");
+            translateTable.Add("ґ", "g");
         }
 
         /// <summary>
@@ -53,20 +60,38 @@ namespace Tool
         /// </summary>
         /// <param name="source"></param>
         /// <returns></returns>
+
         public static string Translate(string source)
         {
             if (source == null)
                 return string.Empty;
             var prepared = source.ToLower();
 
-            foreach (var item in translateTable.Keys)
-            {
-                prepared = prepared.Replace(item, translateTable[item]);
-            }
+            prepared = translateTable.Keys.Aggregate(prepared, (current, item) => current.Replace(item, translateTable[item]));
+
             prepared = prepared.Replace(" ", "-");
             prepared = prepared.Replace(",", "-");
             prepared = prepared.Replace("--", "-");
+            char[] illegalChar = { '/', '!', '~', '[', ']', '{', '}', '(', ')', '#', '@', '$', '%', '^', '&', '*', '+', '=', '~', '\'', '"', ',', '.', '?', '\\', ':', '`' };
+
+            foreach (char c in illegalChar)
+            {
+                prepared = prepared.Replace(c.ToString(), "");
+            }
             return prepared;
         }
+
+        public static string Predicate()
+        {
+            var num = rand.Next(90000) + 10000;
+            return num.ToString();
+        }
+
+        public static string WithPredicateTranslate(string source)
+        {
+            return Predicate() + "-" + Translate(source);
+        }
+
+
     }
 }

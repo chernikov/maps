@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Моя ціль";
+    Layout = "~/Areas/Goal/Views/Shared/_Layout.cshtml";
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var url = (string)ViewBag.Url;
+}
+@section header {
+    @Scripts.Render("~/Scripts/goal/index.js")
+}
+
+@if (url == null && currentUser == null)
+{
+    <div class="jumbotron">
+        <h1>Моя ціль</h1>
+        <p>Зареєструйтесь через фейсбук, щоб додати ціль.</p>
+        @Html.ActionLink("Facebook login", "Connect", "User", new { area = "Default" }, new { @class = "btn btn-primary btn-lg" })
+    </div>
+}
+else
+{
+    <div id="ItemWrapper">
+        @Html.Action("Item", "Home", new { url })
+    </div>
+}
+
+
+
+

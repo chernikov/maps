@@ -7,6 +7,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using maps.Web.Global.Auth;
 using System.Web.Http;
+using maps.Web.App_Start;
 
 namespace maps.Web
 {
@@ -17,8 +18,8 @@ namespace maps.Web
         protected void Application_Start()
         {
             WebApiConfig.Register(GlobalConfiguration.Configuration);
-            AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            AreaConfig.RegisterAreas(RouteTable.Routes);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }

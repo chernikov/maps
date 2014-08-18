@@ -55,5 +55,15 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<BicycleParkingApiModel, BicycleParking>();
         	}
         }
+
+        
+        public static class GoalMapper
+        {
+        	public static void Init()
+        	{
+        		Mapper.CreateMap<Goal, GoalView>();
+        		Mapper.CreateMap<GoalView, Goal>();
+        	}
+        }
     }
 }

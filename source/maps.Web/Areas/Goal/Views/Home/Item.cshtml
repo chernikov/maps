@@ -1,0 +1,71 @@
+﻿@model Goal
+@{
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+
+@if (Model == null)
+{
+    <div class="jumbotron">
+        <h1>Ціль не поцілена</h1>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>
+                @Model.Text
+            @if (currentUser == null || currentUser.ID != Model.UserID)
+            {
+                <small>@Model.User.FirstName @Model.User.LastName</small>
+            }
+        </h2>
+    </div>
+
+</div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="goal-table">
+                @foreach (var goalCell in Model.SubGoalCells)
+                {
+                    <div class="cell @((currentUser != null && currentUser.ID == Model.UserID) ? "active" : "") @(goalCell.State == 1 ? "set": "empty")" data-id="@goalCell.ID">
+
+                    </div>
+                    if ((goalCell.Number + 1) % Model.ColumnsCount == 0)
+                    {
+                        <div class="separator"></div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="col-md-2">
+            <p>
+                <strong>
+                    <span id="Progress">@Model.Progress</span>/<span id="Count">@Model.Count</span>
+                </strong>
+            </p>
+            @if (currentUser != null && currentUser.ID == Model.UserID)
+            {
+                <p>
+                    <a href="@Url.Action("Reset", "Home", new { id = Model.ID })" class="btn btn-warning">Заново все</a>
+                </p>
+
+                <p>
+                    <a href="@Url.Action("Remove", "Home", new { id = Model.ID })" class="btn btn-danger">Видалити цю ціль</a>
+                </p>
+                if (Model.IsPublic)
+                {
+                    <p>
+                        <a href="@Url.Action("Index", "Home", new { url = Model.Url })">Посилання на цю ціль</a>
+                    </p>
+                    <p>
+                        <div class="fb-share-button" data-href="http://maps.if.ua/goal/@(Model.Url)"></div>
+                    </p>
+                }
+
+            }
+        </div>
+    </div>
+}
+

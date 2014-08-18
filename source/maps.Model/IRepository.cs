@@ -116,5 +116,27 @@ namespace maps.Model
         bool CreateBicycleDirectionLine(BicycleDirectionLine instance);
         
         #endregion 
+
+        #region Goal
+        
+        IQueryable<Goal> Goals { get; }
+        
+        bool CreateGoal(Goal instance);
+        
+        bool UpdateGoal(Goal instance);
+        
+        bool RemoveGoal(int idGoal);
+        
+        #endregion 
+
+        #region GoalCell
+        
+        IQueryable<GoalCell> GoalCells { get; }
+        
+        bool UpdateGoalCell(GoalCell instance);
+
+        void ClearAllCells(int idGoal);
+        
+        #endregion 
     }
 }

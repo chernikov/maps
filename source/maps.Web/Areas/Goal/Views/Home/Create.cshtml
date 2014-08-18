@@ -1,0 +1,50 @@
+﻿@model GoalView
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <blockquote>
+            Шлях у тисячу миль починається з одного кроку
+            <small>Конфуций</small>
+        </blockquote>
+        <p>Хочете змінити світ на краще? Почніть з себе!</p>
+        <p>Поставте ціль і зробіть <strong>100</strong> кроків до неї.</p>
+        <p>
+            Це може бути: <strong>100</strong> прочитаних книжок, <strong>100</strong> зарядок з ранку, <strong>100</strong> пробіжок, <strong>100</strong> виконаних завдань англійскої мови,
+            <strong>100</strong> годин роботи над твором.
+        </p>
+        <p>Це може бути все, що завгодно для вас. Тільки <strong>100</strong> маленьких, але дуже важливих кроків.</p>
+        <p>То ж до роботи!</p>
+
+        @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "form-horizontal", id = "CreateGoalForm" }))
+        {
+            <fieldset>
+                <legend>Моя ціль</legend>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBox("IsPublic", Model.IsPublic) Публічна
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group  @Html.HasErrorClass("Text", "has-error")">
+                    <label class="col-sm-3 control-label">
+                        Опис цілі <small>(до 140 символів)</small>
+                    </label>
+                    <div class="col-sm-5">
+                        @Html.TextBox("Text", Model.Text, new { @class = "form-control", maxlength = 140 })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.ValidationMessage("Text")
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="CreateGoalBtn">
+                        Зберегти
+                    </button>
+                </div>
+            </fieldset>
+        }
+    </div>
+</div>

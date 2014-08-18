@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="maps.Db" Class="mapsDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DNTEAM20140418\MSSQL;Initial Catalog=maps.Db;Integrated Security=True" SettingsObjectName="maps.Model.Properties.Settings" SettingsPropertyName="maps_DbConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SATURN\MSSQL;Initial Catalog=maps.Db;Integrated Security=True" SettingsObjectName="maps.Model.Properties.Settings" SettingsPropertyName="maps_DbConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Role" Member="Roles">
     <Type Name="Role">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -44,6 +44,7 @@
       <Association Name="User_BycicleDirection" Member="BycicleDirections" ThisKey="ID" OtherKey="UserID" Type="BycicleDirection" />
       <Association Name="User_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="UserID" Type="BicycleParking" />
       <Association Name="User_BicycleParkingVote" Member="BicycleParkingVotes" ThisKey="ID" OtherKey="UserID" Type="BicycleParkingVote" />
+      <Association Name="User_Goal" Member="Goals" ThisKey="ID" OtherKey="UserID" Type="Goal" />
     </Type>
   </Table>
   <Table Name="dbo.BicycleDirectionLine" Member="BicycleDirectionLines">
@@ -113,6 +114,32 @@
       <Column Name="Mark" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="BicycleParking_BicycleParkingVote" Member="BicycleParking" ThisKey="BicycleParkingID" OtherKey="ID" Type="BicycleParking" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="User_BicycleParkingVote" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Goal" Member="Goals">
+    <Type Name="Goal">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(140) NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(140) NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Progress" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsReady" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ColumnsCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Goal_GoalCell" Member="GoalCells" ThisKey="ID" OtherKey="GoalID" Type="GoalCell" />
+      <Association Name="User_Goal" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GoalCell" Member="GoalCells">
+    <Type Name="GoalCell">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GoalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Goal_GoalCell" Member="Goal" ThisKey="GoalID" OtherKey="ID" Type="Goal" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>
