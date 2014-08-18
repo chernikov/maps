@@ -92,9 +92,9 @@ body.overflow {
 /* line 84, ../../Sass/style.scss */
 .tutorial-wrapper {
   position: fixed;
-  top: 100px;
-  right: 20px;
-  padding: 20px;
+  top: 93px;
+  right: 6px;
+  padding: 15px;
   background-color: white;
   z-index: 2;
   text-align: center;
