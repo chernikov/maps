@@ -8,6 +8,8 @@ namespace maps.Web.Models.Api
 
         public int Type { get; set; }
 
+        public string PhotoUrl { get; set; }
+
         public string Position
         {
             get { return string.Format("({0},{1})", Lat, Lng); }

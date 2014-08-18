@@ -13,6 +13,12 @@ namespace maps.Web.Areas.Default.Controllers
 {
     public class FileController : DefaultController
     {
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         [ValidateInput(false)]
         [HttpPost]
         public FineUploaderResult UploadFile(FineUpload upload)

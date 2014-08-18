@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -12,6 +16,8 @@ namespace maps.Web.Controllers
 {
     public class BaseApiController : ApiController
     {
+        protected string DestinationDir = "Content/files/uploads/";
+
         public IRepository Repository { get; set; }
 
         public ModelMapper ModelMapper { get; set; }

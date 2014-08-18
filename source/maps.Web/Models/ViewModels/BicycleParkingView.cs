@@ -38,7 +38,6 @@ namespace maps.Web.Models.ViewModels
 
         public string PhotoUrl { get; set; }
 
-
         public string FullPhotoUrl
         {
             get

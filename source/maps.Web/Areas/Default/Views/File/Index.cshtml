@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-wrapper">
+    <div class="row">
+        <div class="col-md-offset-2">
+            <form name="form1" method="post" enctype="multipart/form-data" action="/api/upload">
+                <div>
+                    <label for="image1">Image File</label>
+                    <input name="image1" type="file" />
+                </div>
+                <div>
+                    <label for="image1">Image File</label>
+                    <input name="image1" type="file" />
+                </div>
+                <div>
+                    <label for="image1">Image File</label>
+                    <input name="image1" type="file" />
+                </div>
+
+                <div>
+                    <br/><br/>
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

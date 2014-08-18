@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using maps.Model;
@@ -22,19 +26,55 @@ namespace maps.Web.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]BicycleParkingApiModel value)
+        public object Post([FromBody]BicycleParkingApiModel value)
         {
-
+            if (ModelState.IsValid)
+            {
+                var bicycleParking =
+                    (BicycleParking) ModelMapper.Map(value, typeof (BicycleParkingApiModel), typeof (BicycleParking));
+                bicycleParking.UserID = 3; //admin
+                Repository.CreateBicycleParking(bicycleParking);
+                return Request.CreateResponse(HttpStatusCode.OK, new
+                {
+                    result = "ok",
+                });
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                result = "error",
+                value
+            });
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]BicycleParkingDto value)
+        public object Put(int id, [FromBody]BicycleParkingApiModel value)
         {
+            if (ModelState.IsValid)
+            {
+                var bicycleParking =
+                    (BicycleParking)ModelMapper.Map(value, typeof(BicycleParkingApiModel), typeof(BicycleParking));
+                Repository.UpdateBicycleParking(bicycleParking);
+                return Request.CreateResponse(HttpStatusCode.OK, new
+                {
+                    result = "ok",
+                });
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                result = "error",
+                value
+            });
+
         }
 
         // DELETE api/values/5
-        public void Delete(int id)
+        public object Delete(int id)
         {
+            Repository.RemoveBicycleParking(id);
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                result = "ok",
+            });
         }
     }
 }

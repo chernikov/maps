@@ -3,13 +3,19 @@
     ViewBag.Title = "Пробна форма";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
+
+@section header 
+{
+    @Scripts.Render("~/Scripts/jquery.serialize.js")
+    @Scripts.Render("~/Scripts/bycicle/simple-form.js")
+}
 <div class="main-wrapper">
     <div class="row">
         <div class="col-sm-4"></div>
     </div>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-            <form method="POST" action="/api/BycicleParking" class="form-horizontal">
+            <form method="POST" action="/api/BycicleParking" class="form-horizontal" id="SimpleForm">
                 <fieldset>
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="ID">
@@ -19,10 +25,20 @@
                             @Html.TextBox("ID", Model.ID, new { @class = "form-control" })
                         </div>
                         <div class="col-sm-4">
-                            @Html.ValidationMessage("Address")
+                            @Html.ValidationMessage("ID")
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ID">
+                            PhotoUrl
+                        </label>
+                        <div class="col-sm-5">
+                            @Html.TextBox("PhotoUrl", Model.PhotoUrl, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.ValidationMessage("PhotoUrl")
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="Address">
                             Адреса
@@ -45,24 +61,14 @@
                             @Html.ValidationMessage("Type")
                         </div>
                     </div>
-                    @*
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">
-                                Фото
-                            </label>
-                            <div class="col-sm-9">
-                                <input type="file" name="File" id="File" />
-                            </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            Місцезнаходження, lat
+                        </label>
+                        <div class="col-sm-9">
+                            @Html.TextBox("Lat", Model.Lat, new { @class = "form-control" })
                         </div>
-                    *@
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">
-                        Місцезнаходження, lat
-                    </label>
-                    <div class="col-sm-9">
-                        @Html.TextBox("Lat", Model.Lat, new { @class = "form-control" })
                     </div>
-                </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">
                             Місцезнаходження, lng
@@ -94,6 +100,12 @@
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">
                             Зберегти
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="SavePutBtn">
+                            Зберегти (PUT)
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="RemoveBtn">
+                           Видалити (DELETE)
                         </button>
                     </div>
                 </fieldset>

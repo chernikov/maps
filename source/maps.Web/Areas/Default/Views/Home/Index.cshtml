@@ -1,14 +1,14 @@
 ﻿@{
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "maps.if.ua";
-    
 }
-@section header {
+@section header 
+{
     <script type="text/javascript" src="/scripts/default/index.js"></script>
 }
+
 <div class="background-map" id="map">
 </div>
-
 <ul class="projects">
     <li>
         <a href="@Url.Action("Index", "Home", new { area = "bicycle" })">
