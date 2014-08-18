@@ -1,0 +1,55 @@
+
+
+UPLOAD FILE 
+
+END POINT: http://maps.if.ua/api/upload
+
+Multiple file Upload 
+
+Success answer: 
+{"success":true,"files":[{"Key":"10466757_10204138159355451_59472275_n.jpg","Value":"/Content/files/uploads/e6490a207f1f474abd616b1e546bef59.jpg"},{"Key":"amex.png","Value":"/Content/files/uploads/e87375a3b4ed4c8f98acaaebc4ba027d.png"},{"Key":"2012-05-21 10-55-42.JPG","Value":"/Content/files/uploads/c9e91f62876a4f3582d98afdb0836d83.JPG"}],"error":null}
+
+Error answer:
+
+{"success":false,"files":null,"error":"File may be corrupted, empty, or may contain a PNG image with a single dimension greater than 65,535 pixels."}
+
+
+Bicycle Parking 
+
+END POINT: http://maps.if.ua/api/BycicleParking
+
+GET 
+
+Sample:
+
+[{"ID":1,"Type":1,"Position":"(48.92093420675022, 24.711143374443054)","Lat":48.920934206750218,"Lng":24.711143374443054,"FullPhotoUrl":"/Content/files/uploads/4ed1cec563ef4386bc3fc308b54b0619.jpg","Description":"На \"Верандi\" дають замок, щоб почепити велосипед","Address":"площа Міцкевича, 4","Capacity":8}, {...}...]
+
+
+POST (create)
+http://maps.if.ua/api/BycicleParking
+
+Object:
+	ID : int (0 for create)
+	Type : int (Wheel (на колесо): 1, Frame (на раму) : 2)
+	PhotoUrl : string (/Content/files/uploads/e6490a207f1f474abd616b1e546bef59.jpg)
+	Lat : double
+	Lng : double
+	Description : string 
+	Address : string
+	Capacity : int?
+
+PUT (update)
+http://maps.if.ua/api/BycicleParking/{id}
+
+Object:
+	ID : int (0 for create)
+	Type : int (Wheel (на колесо): 1, Frame (на раму) : 2)
+	PhotoUrl : string (/Content/files/uploads/e6490a207f1f474abd616b1e546bef59.jpg)
+	Lat : double
+	Lng : double
+	Description : string 
+	Address : string
+	Capacity : int?
+
+DELETE (remove)
+http://maps.if.ua/api/BycicleParking/{id}
