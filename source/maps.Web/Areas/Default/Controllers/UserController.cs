@@ -24,8 +24,6 @@ namespace maps.Web.Areas.Default.Controllers
 
         private FbProvider fbProvider;
 
-        private static string AvatarFolder = "/Media/files/avatars/";
-
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
             fbProvider = new FbProvider();

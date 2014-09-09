@@ -80,9 +80,12 @@
           }
         ];
 
+        var centerLat = $("#map").data("lat");
+        var centerLng = $("#map").data("lng");
+        var zoom = $("#map").data("zoom");
 
         var mapOptions = {
-            zoom: 14,
+            zoom: zoom,
             center: new google.maps.LatLng(centerLat, centerLng),
             mapTypeControlOptions: {
                 mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]

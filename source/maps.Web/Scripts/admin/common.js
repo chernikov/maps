@@ -6,6 +6,10 @@
         $(document).on("click", ".delete-action, .btn-danger", function () {
             return confirm("Ви дійсно хочете видалити?");
         });
+
+        $("#SelectCityID").change(function () {
+            $("#SelectCitiesForm").submit();
+        });
     };
 }
 

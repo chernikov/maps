@@ -70,4 +70,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ColumnsCount" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="52b2cfe8-296f-44f3-94a9-4bb8f7153fc4" ChangeDateTime="09/05/2014 10:02:39">
+    <Property Name="ElementName" Value="[dbo].[City].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[City]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="42c6b344-575e-4d78-91db-a0687af4867c" ChangeDateTime="09/05/2014 10:33:42">
+    <Property Name="ElementName" Value="[dbo].[City].[Center]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[City]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CenterLat" />
+  </Operation>
 </Operations>

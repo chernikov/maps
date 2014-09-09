@@ -16,6 +16,11 @@ namespace maps.Web.Areas.Admin.Controllers
             return View();
         }
 
+        public ActionResult Distance()
+        {
+            return View();
+        }
+
         public ActionResult GetAll()
         {
             var list = Repository.BycicleDirections.Where(p => p.Processed).ToList();
@@ -119,7 +124,7 @@ namespace maps.Web.Areas.Admin.Controllers
             }
 
             TempData["message"] = "Обробку завершено!";
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "BicycleRoute");
         }
     }
 }

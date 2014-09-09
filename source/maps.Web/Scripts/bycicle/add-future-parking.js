@@ -1,26 +1,23 @@
-﻿function AddFutureParking() {
+﻿function AddFutureParking()
+{
     var _this = this;
 
-    this.map = null;
     this.marker = null;
     this.geocoder = null;
-    this.init = function () {
-        google.maps.event.addDomListener(window, 'load', _this.initializeMap);
+    this.init = function ()
+    {
+        google.maps.event.addDomListener(window, 'load', function () {
+            mapMain.init(function () {
+                mapMain.map.setOptions({ draggableCursor: 'crosshair' });
+                _this.geocoder = new google.maps.Geocoder();
+                google.maps.event.addListener(mapMain.map, 'click', _this.clickOnMap);
+            });
+        });
         $(document).on("click", "#SaveFutureParkingBtn", function () {
             _this.saveParking();
         });
-        $("#ActionWrapper").hide();
-        _this.geocoder = new google.maps.Geocoder();
-    }
 
-    this.initializeMap = function () {
-        var mapOptions = {
-            zoom: 14,
-            center: new google.maps.LatLng(centerLat, centerLng),
-            draggableCursor: 'crosshair'
-        };
-        _this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        google.maps.event.addListener(_this.map, 'click', _this.clickOnMap);
+        $("#ActionWrapper").hide();
     }
 
     this.clickOnMap = function (event)
@@ -31,7 +28,7 @@
     this.addParkingMarker = function (position)
     {
         _this.marker = new google.maps.Marker({
-            map: _this.map,
+            map: mapMain.map,
             draggable: true,
             animation: google.maps.Animation.DROP,
             position: position,
@@ -63,7 +60,7 @@
             html : true
         });
         //CenterDistance
-        var center = new google.maps.LatLng(centerLat, centerLng);
+        var center = new google.maps.LatLng(mapMain.centerLat, mapMain.centerLng);
         var distance = position.distanceFrom(center);
         $("#CenterDistance").val(distance);
         //Address
@@ -108,7 +105,6 @@
 }
 
 var addFutureParking = null;
-
 $(function () {
     addFutureParking = new AddFutureParking();
     addFutureParking.init();

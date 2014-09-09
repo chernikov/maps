@@ -33,7 +33,7 @@ namespace maps.Web.Controllers
         [Inject]
         public ModelMapper ModelMapper { get; set; }
 
-        public User CurrentUser
+        public virtual User CurrentUser
         {
             get
             {
@@ -43,6 +43,31 @@ namespace maps.Web.Controllers
                 }
                 return null;
             }
+        }
+
+        public virtual City CurrentCity
+        {
+            get
+            {
+                if (CurrentUser != null)
+                {
+                    return CurrentUser.City;
+                }
+                else
+                {
+                    if (Session["City"] != null)
+                    {
+                        var cityID = (int)Session["City"];
+                        var city = Repository.Cities.FirstOrDefault(p => p.ID == cityID);
+                        if (city != null)
+                        {
+                            return city;
+                        }
+                    }
+                    return Repository.Cities.First();
+                }
+            }
+            
         }
 
         public RedirectResult RedirectToNotFoundPage

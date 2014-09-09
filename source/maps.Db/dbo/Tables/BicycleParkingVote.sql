@@ -7,5 +7,4 @@
 	CONSTRAINT [PK_BicycleParkingVote] PRIMARY KEY CLUSTERED ([ID] ASC),
 	CONSTRAINT [FK_BicycleParkingVote_BicycleParking] FOREIGN KEY ([BicycleParkingID]) REFERENCES [dbo].[BicycleParking] ([ID]) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT [FK_BicycleParkingVote_User] FOREIGN KEY ([UserID]) REFERENCES [dbo].[User] ([ID]) 
-	
 )

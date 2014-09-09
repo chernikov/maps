@@ -1,13 +1,17 @@
 ﻿@{
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "maps.if.ua";
+    var currentCity = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentCity;
 }
 @section header 
 {
     <script type="text/javascript" src="/scripts/default/index.js"></script>
 }
 
-<div class="background-map" id="map">
+<div class="background-map" id="map"
+     data-lat="@currentCity.CenterLat.ToString(CultureInfo.InvariantCulture)"
+     data-lng="@currentCity.CenterLng.ToString(CultureInfo.InvariantCulture)"
+     data-zoom="@currentCity.Zoom">
 </div>
 <ul class="projects">
     <li>

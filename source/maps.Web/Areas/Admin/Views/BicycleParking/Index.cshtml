@@ -8,11 +8,16 @@
     Велопарковки
 </h2>
 @Html.ActionLink("Додати", "Create", "BicycleParking", null, new { @class = "btn btn-primary" })
+
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                
+
+            </th>
+            <th>
+                Місто
             </th>
             <th>
                 Додав
@@ -39,10 +44,12 @@
             </th>
         </tr>
     </thead>
-
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                @item.City.Name
+            </td>
             <td>
                 @if (item.VerifiedDate.HasValue)
                 {

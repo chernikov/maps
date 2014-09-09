@@ -1,0 +1,37 @@
+@model IEnumerable<City>
+
+@{
+    ViewBag.Title = "Міста";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Міста
+</h2>
+@Html.ActionLink("Додати", "Create", "City", null, new { @class = "btn btn-primary" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                Назва
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+               @item.Name
+            </td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", "City", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Видалити", "Delete", "City", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Обрахунок дистанцій";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var defaultCity = ((maps.Web.Areas.Admin.Controllers.AdminController)ViewContext.Controller).DefaultCity;
+}
+
+@section header
+{
+    <script type="text/javascript" src="/Scripts/admin/distance-parking.js"></script>
+}
+
+<div class="map" id="map"
+     data-lat="@defaultCity.CenterLat.ToString(CultureInfo.InvariantCulture)"
+     data-lng="@defaultCity.CenterLng.ToString(CultureInfo.InvariantCulture)"
+     data-zoom="@defaultCity.Zoom">
+</div>

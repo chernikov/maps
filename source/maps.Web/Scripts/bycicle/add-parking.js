@@ -1,26 +1,23 @@
 ﻿function AddParking() {
     var _this = this;
 
-    this.map = null;
-    this.marker = null;
     this.geocoder = null;
-    this.init = function () {
-        google.maps.event.addDomListener(window, 'load', _this.initializeMap);
-        $(document).on("click", "#SaveParkingBtn", function () {
+    this.init = function ()
+    {
+        google.maps.event.addDomListener(window, 'load', function () {
+            mapMain.init(function ()
+            {
+                mapMain.map.setOptions({ draggableCursor: 'crosshair' });
+                _this.geocoder = new google.maps.Geocoder();
+                google.maps.event.addListener(mapMain.map, 'click', _this.clickOnMap);
+            });
+        });
+        $(document).on("click", "#SaveParkingBtn", function ()
+        {
             _this.saveParking();
         });
-        $("#ActionWrapper").hide();
-        _this.geocoder = new google.maps.Geocoder();
-    }
 
-    this.initializeMap = function () {
-        var mapOptions = {
-            zoom: 14,
-            center: new google.maps.LatLng(centerLat, centerLng),
-            draggableCursor: 'crosshair'
-        };
-        _this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        google.maps.event.addListener(_this.map, 'click', _this.clickOnMap);
+        $("#ActionWrapper").hide();
     }
 
     this.clickOnMap = function (event)
@@ -31,7 +28,7 @@
     this.addParkingMarker = function (position)
     {
         _this.marker = new google.maps.Marker({
-            map: _this.map,
+            map: mapMain.map,
             draggable: true,
             animation: google.maps.Animation.DROP,
             position: position,
@@ -46,7 +43,8 @@
                 var obj = $(data);
                 $("#PopupWrapper").html(obj);
                 obj.modal({
-                    backdrop: false
+                    backdrop: false,
+
                 });
                 _this.initModal(position);
                 $("#Position").val(position);
@@ -58,7 +56,8 @@
         })
     }
 
-    this.initModal = function (position) {
+    this.initModal = function (position)
+    {
         $("#ChangePhoto").fineUploader({
             element: $('#ChangePhoto'),
             request: {
@@ -78,8 +77,10 @@
             },
             debug: true
         })
-       .on('complete', function (event, id, filename, responseJSON) {
-           if (responseJSON.success) {
+       .on('complete', function (event, id, filename, responseJSON)
+       {
+           if (responseJSON.success)
+           {
                $("#PhotoUrl").val(responseJSON.fileUrl);
                $("#ParkingImage").attr("src", responseJSON.fileUrl + "?w=300&h=300&mode=crop");
            }
@@ -92,7 +93,7 @@
             html : true
         });
         //CenterDistance
-        var center = new google.maps.LatLng(centerLat, centerLng);
+        var center = new google.maps.LatLng(mapMain.centerLat, mapMain.centerLng);
         var distance = position.distanceFrom(center);
         $("#CenterDistance").val(distance);
         //Address
@@ -116,7 +117,8 @@
             url : "/bicycle/Parking/SaveParking",
             type: "POST",
             data: $("#ParkingForm").serialize(),
-            success: function (data) {
+            success: function (data)
+            {
                 if (data.result == "ok")
                 {
                     _this.clearMarker();
@@ -126,7 +128,6 @@
             }
         });
     }
-
 
     this.clearMarker = function ()
     {

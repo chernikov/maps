@@ -55,5 +55,17 @@ namespace maps.Model
             }
             return false;
         }
+
+        public bool ChangeUserCity(User instance)
+        {
+            var cache = Db.Users.FirstOrDefault(p => p.ID == instance.ID);
+            if (cache != null)
+            {
+                cache.CityID = instance.CityID;
+                Db.Users.Context.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

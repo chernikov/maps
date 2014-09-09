@@ -18,6 +18,7 @@ namespace maps.Web.Mappers
             MapperCollection.BycicleDirectionMapper.Init();
             MapperCollection.BicycleParkingMapper.Init();
             MapperCollection.GoalMapper.Init();
+            MapperCollection.CityMapper.Init();
         }
 
         public object Map(object source, Type sourceType, Type destinationType)

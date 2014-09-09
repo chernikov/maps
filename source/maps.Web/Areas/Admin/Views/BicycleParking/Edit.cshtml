@@ -1,7 +1,8 @@
-﻿@model maps.Web.Models.ViewModels.BicycleParkingView
+﻿@model maps.Web.Models.ViewModels.AdminBicycleParkingView
 @{
     ViewBag.Title = Model.ID == 0 ? "Додати парковку" : "Змінити дані про парковку";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var currentCity = ((maps.Web.Areas.Admin.Controllers.AdminController)ViewContext.Controller).CurrentCityOrDefault;
 }
 @section styles {
     @Styles.Render("~/Content/css/fineuploader")
@@ -20,6 +21,17 @@
         @Html.Hidden("ID", Model.ID)
         @Html.Hidden("Position", Model.Position)
         @Html.Hidden("PhotoUrl", Model.PhotoUrl)
+        <div class="form-group @Html.HasErrorClass("Address", "has-error")">
+            <label class="col-sm-3 control-label" for="Address">
+                Місто
+            </label>
+            <div class="col-sm-5">
+                @Html.DropDownList("CityID", Model.SelectListCity, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Address")
+            </div>
+        </div>
         <div class="form-group @Html.HasErrorClass("Exist", "has-error")">
             <div class="col-sm-offset-3 col-sm-9">
                 <div class="checkbox">
@@ -70,7 +82,10 @@
                 Місцезнаходження 
             </label>
             <div class="col-sm-9">
-                <div class="small-map" id="map">
+                <div class="small-map" id="map"
+                     data-lat="@currentCity.CenterLat.ToString(CultureInfo.InvariantCulture)"
+                     data-lng="@currentCity.CenterLng.ToString(CultureInfo.InvariantCulture)"
+                     data-zoom="@currentCity.Zoom">
                 </div>
             </div>
         </div>

@@ -13,13 +13,21 @@ namespace maps.Web.Areas.Admin.Controllers
     {
         public ActionResult Index()
         {
-            var list = Repository.BicycleParkings.ToList();
-            return View(list);
+            var list = Repository.BicycleParkings;
+            if (CurrentCity != null)
+            {
+                list = list.Where(p => p.CityID == CurrentCity.ID);
+            }
+            return View(list.ToList());
         }
+
 
         public ActionResult Create()
         {
-            var bicycleparkingView = new BicycleParkingView();
+            var bicycleparkingView = new AdminBicycleParkingView()
+            {
+                CityID = CurrentCity != null ? (int?)CurrentCity.ID : null
+            };
             return View("Edit", bicycleparkingView);
         }
 
@@ -30,18 +38,18 @@ namespace maps.Web.Areas.Admin.Controllers
 
             if (bicycleparking != null)
             {
-                var bicycleparkingView = (BicycleParkingView)ModelMapper.Map(bicycleparking, typeof(BicycleParking), typeof(BicycleParkingView));
+                var bicycleparkingView = (AdminBicycleParkingView)ModelMapper.Map(bicycleparking, typeof(BicycleParking), typeof(BicycleParkingView));
                 return View(bicycleparkingView);
             }
             return RedirectToNotFoundPage;
         }
 
         [HttpPost]
-        public ActionResult Edit(BicycleParkingView bicycleparkingView)
+        public ActionResult Edit(AdminBicycleParkingView bicycleparkingView)
         {
             if (ModelState.IsValid)
             {
-                var bicycleparking = (BicycleParking)ModelMapper.Map(bicycleparkingView, typeof(BicycleParkingView), typeof(BicycleParking));
+                var bicycleparking = (BicycleParking)ModelMapper.Map(bicycleparkingView, typeof(AdminBicycleParkingView), typeof(BicycleParking));
                 if (bicycleparking.ID == 0)
                 {
                     bicycleparking.UserID = CurrentUser.ID;
@@ -80,12 +88,12 @@ namespace maps.Web.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Address()
+        public ActionResult Distance()
         {
             return View();
         }
 
-        public ActionResult GetAddress()
+        public ActionResult List()
         {
             var list = Repository.BicycleParkings.ToList();
             return Json(new
@@ -96,20 +104,12 @@ namespace maps.Web.Areas.Admin.Controllers
                     {
                         Id = p.ID,
                         Position = p.Position,
-                        Type = p.Type
+                        Exist = p.Exist,
+                        Type = p.Type,
+                        CityCenterLat = p.City.CenterLat,
+                        CityCenterLng = p.City.CenterLng,
                     })
             }, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult SaveAddress(int id, string address)
-        {
-            var item = Repository.BicycleParkings.FirstOrDefault(p => p.ID == id);
-            if (item != null)
-            {
-                item.Address = address;
-                Repository.UpdateBicycleParking(item);
-            }
-            return Json(new {result = "ok" }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult SaveDistance(int id, double distance)

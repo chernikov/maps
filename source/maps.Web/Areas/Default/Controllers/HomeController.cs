@@ -13,6 +13,43 @@ namespace maps.Web.Areas.Default.Controllers
             return View();
         }
 
+        [HttpGet]
+        [ChildActionOnly]
+        public ActionResult SelectCities()
+        {
+            var selectList = new List<SelectListItem>();
+
+            var list = Repository.Cities.ToList();
+
+            foreach (var city in list)
+            {
+                selectList.Add(new SelectListItem()
+                {
+                    Value = city.ID.ToString(),
+                    Text = city.Name,
+                    Selected = city.ID == CurrentCity.ID
+                });
+            }
+            return View(selectList);
+        }
+
+
+        [HttpPost]
+        public ActionResult SelectCities(int SelectCityID)
+        {
+            if (CurrentUser != null)
+            {
+                CurrentUser.CityID = SelectCityID;
+                Repository.ChangeUserCity(CurrentUser);
+            }
+            else
+            {
+                Session["City"] = SelectCityID;
+            }
+            return RedirectBack("~/");
+        }
+
+
         public ActionResult UserLogin()
         {
             return View(CurrentUser);

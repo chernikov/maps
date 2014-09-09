@@ -3,6 +3,11 @@
 
     this.map = null;
     this.marker = null;
+    this.centerLat = null;
+    this.centerLng = null;
+    this.zoom = null;
+
+    this.geocoder = null;
     this.init = function () 
     {
         google.maps.event.addDomListener(window, 'load', _this.initializeMap);
@@ -11,7 +16,12 @@
 
     this.initializeMap = function () 
     {
-        var latLng = new google.maps.LatLng(centerLat, centerLng);
+        _this.centerLat = $("#map").data("lat");
+        _this.centerLng = $("#map").data("lng");
+        _this.zoom = $("#map").data("zoom");
+        _this.geocoder = new google.maps.Geocoder();
+
+        var latLng = new google.maps.LatLng(_this.centerLat, _this.centerLng);
         if ($("#Position").val() != "") 
         {
             var position = $("#Position").val().replace('(', '').replace(')', '');
@@ -20,7 +30,7 @@
             latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
         };
         var mapOptions = {
-            zoom: 16,
+            zoom: _this.zoom,
             center: latLng,
             disableDefaultUI: true,
         };
@@ -33,11 +43,27 @@
         });
         //при окончании перемещения маркера установить функцию 
         google.maps.event.addListener(_this.marker, 'dragend', _this.markerPositionChanged);
+
     }
 
     this.markerPositionChanged = function ()
     {
         $("#Position").val(_this.marker.position.toString());
+
+        var center = new google.maps.LatLng(_this.centerLat, _this.centerLng);
+        var distance = _this.marker.position.distanceFrom(center);
+        $("#CenterDistance").val(distance);
+        //Address
+        _this.geocoder.geocode({ 'latLng': _this.marker.position }, function (results, status)
+        {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    $("#Address").val(results[0].formatted_address);
+                }
+            } else {
+                console.error("Geocoder failed due to: " + status);
+            }
+        });
     }
 
     this.initPhoto = function ()

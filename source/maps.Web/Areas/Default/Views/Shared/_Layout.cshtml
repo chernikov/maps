@@ -22,10 +22,15 @@
                     <img src="/Content/images/maps_logo_small.png" />
                 </a>
             </div>
+
             <div class="collapse navbar-collapse pull-right">
                 <ul class="nav navbar-nav navbar-form">
-                    @Html.Action("UserLogin", "Home", new {area = "Default"})
+                    @Html.Action("SelectCities", "Home")
                 </ul>
+                <ul class="nav navbar-nav navbar-form">
+                    @Html.Action("UserLogin", "Home", new { area = "Default" })
+                </ul>
+
             </div><!--/.nav-collapse -->
         </div>
     </div>
@@ -36,7 +41,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=uk&libraries=geometry"></script>
     <script type="text/javascript" src="/Scripts/google.maps.extend.js"></script>
-    <script type="text/javascript" src="/Scripts/constants.js"></script>
+    <script type="text/javascript" src="/Scripts/default/common.js"></script>
     @RenderSection("header", false)
 </body>
 </html>

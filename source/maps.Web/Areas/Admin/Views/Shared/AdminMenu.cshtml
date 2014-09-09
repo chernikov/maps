@@ -5,7 +5,27 @@
 <div class="bs-sidebar hidden-print affix" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="@(controllerName == "Home" ? "active" : "")">@Html.ActionLink("Головна", "Index", "Home")</li>
+        <li class="@(controllerName == "City" ? "active" : "")">@Html.ActionLink("Міста", "Index", "City")</li>
         <li class="@(controllerName == "BicycleParking" ? "active" : "")">@Html.ActionLink("Велопарковки", "Index", "BicycleParking")</li>
+        @if (controllerName == "BicycleParking")
+        {
+            <li>
+                <ul>
+                    <li>@Html.ActionLink("Обробити дистанції до центру", "Distance", "BicycleParking")</li>
+                </ul>
+            </li>
+        }
+        <li class="@(controllerName == "BicycleRoute" ? "active" : "")">@Html.ActionLink("Веломаршрути", "Index", "BicycleRoute")</li>
+        @if (controllerName == "BicycleRoute")
+        {
+            <li>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Обробити дистанції", "Distance", "BicycleRoute")
+                    </li>
+                </ul>
+            </li>
+        }
         @*<li class="@(controllerName == "User" ? "active" : "")">@Html.ActionLink("Пользователи", "Index", "User")</li>*@
     </ul>
 </div>

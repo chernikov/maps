@@ -18,11 +18,6 @@ namespace maps.Web.Areas.Bicycle.Controllers
             return View();
         }
 
-        public ActionResult Map()
-        {
-            return View();
-        }
-
         public ActionResult My()
         {
             return View();
@@ -38,6 +33,7 @@ namespace maps.Web.Areas.Bicycle.Controllers
         {
             var bycicleDirection = (BycicleDirection)ModelMapper.Map(bycicleDirectionView, typeof(BycicleDirectionView), typeof(BycicleDirection));
             bycicleDirection.UserID = CurrentUser.ID;
+            bycicleDirection.CityID = CurrentCity.ID;
             Repository.CreateBycicleDirection(bycicleDirection);
             ProcessDirection(bycicleDirection);
             Repository.ProcessBycicleDirection(bycicleDirection.ID);
@@ -47,20 +43,21 @@ namespace maps.Web.Areas.Bicycle.Controllers
         public ActionResult GetBicycleRoutes(int id)
         {
             var bicycleLine = Repository.BicycleLines.FirstOrDefault(p => p.ID == id);
-
             if (bicycleLine != null)
             {
                 var list = bicycleLine.BicycleDirectionLines.Select(p => p.BycicleDirection).ToList();
-
-                return Json(new { result = "ok", data = list.Select(p => p.PolyLine) }, JsonRequestBehavior.AllowGet);
+                return Json(new 
+                { 
+                    result = "ok", 
+                    data = list.Select(p => p.PolyLine) 
+                }, JsonRequestBehavior.AllowGet);
             }
             return Json(new { result = "error" });
-
         }
 
         public ActionResult GetMap()
         {
-            var list = Repository.BicycleLines.ToList();
+            var list = Repository.BicycleLines.Where(p => p.CityID == CurrentCity.ID).ToList();
 
             return Json(new
             {
@@ -129,7 +126,8 @@ namespace maps.Web.Areas.Bicycle.Controllers
                         End = geoLine.End.Position,
                         EndLat = geoLine.End.Lat,
                         EndLng = geoLine.End.Lng,
-                        Quantity = 1
+                        CityID = CurrentCity.ID,
+                        Quantity = 1,
                     };
                     Repository.CreateBicycleLine(entity);
 

@@ -23,7 +23,9 @@
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav pull-right">
-
+                    <ul class="nav navbar-nav navbar-form">
+                        @Html.Action("SelectCities", "Home")
+                    </ul>
                     <li class="dropdown">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="glyphicon glyphicon-user"></i> &nbsp; @currentUser.Email &nbsp;<b class="caret"></b>
@@ -51,7 +53,7 @@
     <script type="text/javascript" src="/Scripts/admin/common.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=uk&libraries=geometry"></script>
     <script type="text/javascript" src="/Scripts/google.maps.extend.js"></script>
-    <script type="text/javascript" src="/Scripts/constants.js"></script>
+    <script type="text/javascript" src="/Scripts/admin/common.js"></script>
 
     @RenderSection("header", false)
 </body>

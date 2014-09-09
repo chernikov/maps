@@ -32,6 +32,8 @@ namespace maps.Model
 
         User Login(string login, string password);
 
+        bool ChangeUserCity(User instance);
+
 
         #endregion
 
@@ -136,6 +138,18 @@ namespace maps.Model
         bool UpdateGoalCell(GoalCell instance);
 
         void ClearAllCells(int idGoal);
+        
+        #endregion 
+
+        #region City
+        
+        IQueryable<City> Cities { get; }
+        
+        bool CreateCity(City instance);
+        
+        bool UpdateCity(City instance);
+        
+        bool RemoveCity(int idCity);
         
         #endregion 
     }

@@ -4,8 +4,9 @@
 }
 @section header
 {
-    <script type="text/javascript" src="/scripts/bycicle/add-future-parking.js"></script>
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/scripts/bycicle/map-main.js")
+    @Scripts.Render("~/scripts/bycicle/add-future-parking.js")
 }
 
-<div class="background-map" id="map">
-</div>
+@Html.Partial("Map")

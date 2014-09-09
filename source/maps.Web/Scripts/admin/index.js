@@ -4,9 +4,6 @@
     this.init = function () 
     {
 
-        $("#ProcessRoutesBtn").click(function () {
-            $(this).attr("disabled", "disabled");
-        })
     }
 
 }

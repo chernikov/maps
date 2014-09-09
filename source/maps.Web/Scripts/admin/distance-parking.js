@@ -1,17 +1,28 @@
-﻿function AddressParking() {
+﻿function DistanceParking() {
     var _this = this;
 
     this.map = null;
     this.infowindow = null;
     this.geocoder = null;
-    this.init = function() {
+
+    this.centerLat = null;
+    this.centerLng = null;
+    this.zoom = null;
+
+    this.init = function ()
+    {
         google.maps.event.addDomListener(window, 'load', _this.initializeMap);
     }
 
-    this.initializeMap = function() {
+    this.initializeMap = function ()
+    {
+        _this.centerLat = $("#map").data("lat");
+        _this.centerLng = $("#map").data("lng");
+        _this.zoom = $("#map").data("zoom");
+
         var mapOptions = {
-            zoom: 14,
-            center: new google.maps.LatLng(centerLat, centerLng),
+            zoom: _this.zoom,
+            center: new google.maps.LatLng(_this.centerLat, _this.centerLng),
         };
         _this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
         _this.loadParkings();
@@ -21,7 +32,7 @@
     this.loadParkings = function() {
         $.ajax({
             type: "GET",
-            url: "/admin/BicycleParking/getAddress",
+            url: "/admin/BicycleParking/List",
             success: function(data) {
                 if (data.result == "ok") {
                     $.each(data.data, function(i, item) {
@@ -36,13 +47,22 @@
                             position: latLng
                         });
 
-                        if (item.Type == 1) {
-                            marker.setIcon("/Content/images/marker_13_2x.png");
+                        if (item.Exist) {
+                            if (item.Type == 1) {
+                                marker.setIcon("/Content/images/icons_bikeparking-02_22x22.png");
+                                marker.setZIndex(10);
+                            }
+                            if (item.Type == 2) {
+                                marker.setIcon("/Content/images/icons_bikeparking-01_22x22.png");
+                                marker.setZIndex(100);
+                            }
+                        } else {
+                            marker.setIcon("/Content/images/icons_bikeparking-03_22x22.png");
+                            marker.setZIndex(9);
+                            marker.setOpacity(0.7);
                         }
-                        if (item.Type == 2) {
-                            marker.setIcon("/Content/images/marker_12_2x.png");
-                        }
-
+                        var centerLat = item.CityCenterLat;
+                        var centerLng = item.CityCenterLng;
                         var center = new google.maps.LatLng(centerLat, centerLng);
 
                         var distance = latLng.distanceFrom(center);
@@ -66,8 +86,8 @@
     }
 }
 
-var addressParking = null;
-        $(function() {
-            addressParking = new AddressParking();
-            addressParking.init();
-        });
+var distanceParking = null;
+$(function() {
+    distanceParking = new DistanceParking();
+    distanceParking.init();
+});

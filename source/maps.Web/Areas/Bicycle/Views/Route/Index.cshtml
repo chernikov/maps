@@ -2,9 +2,11 @@
     ViewBag.Title = "Велорух - maps.if.ua";
     Layout = "~/Areas/Bicycle/Views/Shared/_Layout.cshtml";
 }
+
 @section header {
-    <script type="text/javascript" src="/scripts/bycicle/routes.js"></script>
+    @Scripts.Render("~/scripts/bycicle/map-main.js")
+    @Scripts.Render("~/scripts/bycicle/map-route.js")
+    @Scripts.Render("~/scripts/bycicle/route.js")
 }
-<div class="background-map" id="map" data-url="@Url.Action("GetAll", "Route")">
-</div>
+@Html.Partial("Map")
 

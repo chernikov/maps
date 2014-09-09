@@ -4,8 +4,12 @@
     this.init = function () {
         $('.dropdown-toggle').dropdown();
 
-        $('.delete-action').live('click', function () {
+        $(document).on("click", ".delete-action",function () {
             return confirm("Действительно удалять?");
+        });
+
+        $("#SelectCityID").change(function () {
+            $("#SelectCitiesForm").submit();
         });
     };
 }

@@ -50,6 +50,8 @@ namespace maps.Web.Models.Mappers
         	{
         		Mapper.CreateMap<BicycleParking, BicycleParkingView>();
                 Mapper.CreateMap<BicycleParkingView, BicycleParking>();
+                Mapper.CreateMap<AdminBicycleParkingView, BicycleParking>();
+                Mapper.CreateMap<BicycleParking, AdminBicycleParkingView>();
 
                 Mapper.CreateMap<BicycleParking, BicycleParkingDto>();
                 Mapper.CreateMap<BicycleParkingApiModel, BicycleParking>();
@@ -63,6 +65,16 @@ namespace maps.Web.Models.Mappers
         	{
         		Mapper.CreateMap<Goal, GoalView>();
         		Mapper.CreateMap<GoalView, Goal>();
+        	}
+        }
+
+        
+        public static class CityMapper
+        {
+        	public static void Init()
+        	{
+        		Mapper.CreateMap<City, CityView>();
+        		Mapper.CreateMap<CityView, City>();
         	}
         }
     }

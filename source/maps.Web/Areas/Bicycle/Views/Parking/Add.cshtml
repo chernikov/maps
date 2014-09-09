@@ -10,8 +10,9 @@
 @section header
 {
     @Scripts.Render("~/bundles/fineuploader")
-    <script type="text/javascript" src="/scripts/bycicle/add-parking.js"></script>
-}
+    @Scripts.Render("~/scripts/bycicle/map-main.js")
+    @Scripts.Render("~/scripts/bycicle/add-parking.js")
 
-<div class="background-map" id="map">
-</div>
+}
+@Html.Partial("Map")
+

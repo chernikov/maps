@@ -1,0 +1,8 @@
+﻿@model IEnumerable<SelectListItem>
+
+@using (Html.BeginForm("SelectCities", "Home", FormMethod.Post, new { id="SelectCitiesForm", @class = "navbar-form navbar-left" }))
+{ 
+    <div class="form-group">
+        @Html.DropDownList("SelectCityID", Model, new { @class = "form-control" })
+    </div>
+}

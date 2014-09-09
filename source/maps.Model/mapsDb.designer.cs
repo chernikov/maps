@@ -39,21 +39,9 @@ namespace maps.Model
     partial void InsertSocial(Social instance);
     partial void UpdateSocial(Social instance);
     partial void DeleteSocial(Social instance);
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
     partial void InsertBicycleDirectionLine(BicycleDirectionLine instance);
     partial void UpdateBicycleDirectionLine(BicycleDirectionLine instance);
     partial void DeleteBicycleDirectionLine(BicycleDirectionLine instance);
-    partial void InsertBicycleLine(BicycleLine instance);
-    partial void UpdateBicycleLine(BicycleLine instance);
-    partial void DeleteBicycleLine(BicycleLine instance);
-    partial void InsertBycicleDirection(BycicleDirection instance);
-    partial void UpdateBycicleDirection(BycicleDirection instance);
-    partial void DeleteBycicleDirection(BycicleDirection instance);
-    partial void InsertBicycleParking(BicycleParking instance);
-    partial void UpdateBicycleParking(BicycleParking instance);
-    partial void DeleteBicycleParking(BicycleParking instance);
     partial void InsertBicycleParkingVote(BicycleParkingVote instance);
     partial void UpdateBicycleParkingVote(BicycleParkingVote instance);
     partial void DeleteBicycleParkingVote(BicycleParkingVote instance);
@@ -63,6 +51,21 @@ namespace maps.Model
     partial void InsertGoalCell(GoalCell instance);
     partial void UpdateGoalCell(GoalCell instance);
     partial void DeleteGoalCell(GoalCell instance);
+    partial void InsertCity(City instance);
+    partial void UpdateCity(City instance);
+    partial void DeleteCity(City instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
+    partial void InsertBicycleParking(BicycleParking instance);
+    partial void UpdateBicycleParking(BicycleParking instance);
+    partial void DeleteBicycleParking(BicycleParking instance);
+    partial void InsertBycicleDirection(BycicleDirection instance);
+    partial void UpdateBycicleDirection(BycicleDirection instance);
+    partial void DeleteBycicleDirection(BycicleDirection instance);
+    partial void InsertBicycleLine(BicycleLine instance);
+    partial void UpdateBicycleLine(BicycleLine instance);
+    partial void DeleteBicycleLine(BicycleLine instance);
     #endregion
 		
 		public mapsDbDataContext() : 
@@ -119,43 +122,11 @@ namespace maps.Model
 			}
 		}
 		
-		public System.Data.Linq.Table<User> Users
-		{
-			get
-			{
-				return this.GetTable<User>();
-			}
-		}
-		
 		public System.Data.Linq.Table<BicycleDirectionLine> BicycleDirectionLines
 		{
 			get
 			{
 				return this.GetTable<BicycleDirectionLine>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BicycleLine> BicycleLines
-		{
-			get
-			{
-				return this.GetTable<BicycleLine>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BycicleDirection> BycicleDirections
-		{
-			get
-			{
-				return this.GetTable<BycicleDirection>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BicycleParking> BicycleParkings
-		{
-			get
-			{
-				return this.GetTable<BicycleParking>();
 			}
 		}
 		
@@ -180,6 +151,46 @@ namespace maps.Model
 			get
 			{
 				return this.GetTable<GoalCell>();
+			}
+		}
+		
+		public System.Data.Linq.Table<City> Cities
+		{
+			get
+			{
+				return this.GetTable<City>();
+			}
+		}
+		
+		public System.Data.Linq.Table<User> Users
+		{
+			get
+			{
+				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BicycleParking> BicycleParkings
+		{
+			get
+			{
+				return this.GetTable<BicycleParking>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BycicleDirection> BycicleDirections
+		{
+			get
+			{
+				return this.GetTable<BycicleDirection>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BicycleLine> BicycleLines
+		{
+			get
+			{
+				return this.GetTable<BicycleLine>();
 			}
 		}
 	}
@@ -737,428 +748,6 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Login;
-		
-		private string _Email;
-		
-		private string _Password;
-		
-		private System.DateTime _AddedDate;
-		
-		private System.DateTime _LastVisitDate;
-		
-		private string _AvatarPath;
-		
-		private string _FirstName;
-		
-		private string _LastName;
-		
-		private EntitySet<UserRole> _UserRoles;
-		
-		private EntitySet<Social> _Socials;
-		
-		private EntitySet<BycicleDirection> _BycicleDirections;
-		
-		private EntitySet<BicycleParking> _BicycleParkings;
-		
-		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
-		
-		private EntitySet<Goal> _Goals;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnLoginChanging(string value);
-    partial void OnLoginChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    partial void OnLastVisitDateChanging(System.DateTime value);
-    partial void OnLastVisitDateChanged();
-    partial void OnAvatarPathChanging(string value);
-    partial void OnAvatarPathChanged();
-    partial void OnFirstNameChanging(string value);
-    partial void OnFirstNameChanged();
-    partial void OnLastNameChanging(string value);
-    partial void OnLastNameChanged();
-    #endregion
-		
-		public User()
-		{
-			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
-			this._Socials = new EntitySet<Social>(new Action<Social>(this.attach_Socials), new Action<Social>(this.detach_Socials));
-			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
-			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
-			this._BicycleParkingVotes = new EntitySet<BicycleParkingVote>(new Action<BicycleParkingVote>(this.attach_BicycleParkingVotes), new Action<BicycleParkingVote>(this.detach_BicycleParkingVotes));
-			this._Goals = new EntitySet<Goal>(new Action<Goal>(this.attach_Goals), new Action<Goal>(this.detach_Goals));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Login", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string Login
-		{
-			get
-			{
-				return this._Login;
-			}
-			set
-			{
-				if ((this._Login != value))
-				{
-					this.OnLoginChanging(value);
-					this.SendPropertyChanging();
-					this._Login = value;
-					this.SendPropertyChanged("Login");
-					this.OnLoginChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastVisitDate", DbType="DateTime NOT NULL")]
-		public System.DateTime LastVisitDate
-		{
-			get
-			{
-				return this._LastVisitDate;
-			}
-			set
-			{
-				if ((this._LastVisitDate != value))
-				{
-					this.OnLastVisitDateChanging(value);
-					this.SendPropertyChanging();
-					this._LastVisitDate = value;
-					this.SendPropertyChanged("LastVisitDate");
-					this.OnLastVisitDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvatarPath", DbType="NVarChar(150)")]
-		public string AvatarPath
-		{
-			get
-			{
-				return this._AvatarPath;
-			}
-			set
-			{
-				if ((this._AvatarPath != value))
-				{
-					this.OnAvatarPathChanging(value);
-					this.SendPropertyChanging();
-					this._AvatarPath = value;
-					this.SendPropertyChanged("AvatarPath");
-					this.OnAvatarPathChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(500)")]
-		public string FirstName
-		{
-			get
-			{
-				return this._FirstName;
-			}
-			set
-			{
-				if ((this._FirstName != value))
-				{
-					this.OnFirstNameChanging(value);
-					this.SendPropertyChanging();
-					this._FirstName = value;
-					this.SendPropertyChanged("FirstName");
-					this.OnFirstNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(500)")]
-		public string LastName
-		{
-			get
-			{
-				return this._LastName;
-			}
-			set
-			{
-				if ((this._LastName != value))
-				{
-					this.OnLastNameChanging(value);
-					this.SendPropertyChanging();
-					this._LastName = value;
-					this.SendPropertyChanged("LastName");
-					this.OnLastNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserRole", Storage="_UserRoles", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<UserRole> UserRoles
-		{
-			get
-			{
-				return this._UserRoles;
-			}
-			set
-			{
-				this._UserRoles.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Social", Storage="_Socials", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<Social> Socials
-		{
-			get
-			{
-				return this._Socials;
-			}
-			set
-			{
-				this._Socials.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<BycicleDirection> BycicleDirections
-		{
-			get
-			{
-				return this._BycicleDirections;
-			}
-			set
-			{
-				this._BycicleDirections.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<BicycleParking> BicycleParkings
-		{
-			get
-			{
-				return this._BicycleParkings;
-			}
-			set
-			{
-				this._BicycleParkings.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParkingVote", Storage="_BicycleParkingVotes", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<BicycleParkingVote> BicycleParkingVotes
-		{
-			get
-			{
-				return this._BicycleParkingVotes;
-			}
-			set
-			{
-				this._BicycleParkingVotes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Goal", Storage="_Goals", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<Goal> Goals
-		{
-			get
-			{
-				return this._Goals;
-			}
-			set
-			{
-				this._Goals.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_UserRoles(UserRole entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_UserRoles(UserRole entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Socials(Social entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Socials(Social entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_BycicleDirections(BycicleDirection entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_BycicleDirections(BycicleDirection entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_BicycleParkings(BicycleParking entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_BicycleParkings(BicycleParking entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_BicycleParkingVotes(BicycleParkingVote entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_BicycleParkingVotes(BicycleParkingVote entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Goals(Goal entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Goals(Goal entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleDirectionLine")]
 	public partial class BicycleDirectionLine : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1171,9 +760,9 @@ namespace maps.Model
 		
 		private int _BicycleLineID;
 		
-		private EntityRef<BicycleLine> _BicycleLine;
-		
 		private EntityRef<BycicleDirection> _BycicleDirection;
+		
+		private EntityRef<BicycleLine> _BicycleLine;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1189,8 +778,8 @@ namespace maps.Model
 		
 		public BicycleDirectionLine()
 		{
-			this._BicycleLine = default(EntityRef<BicycleLine>);
 			this._BycicleDirection = default(EntityRef<BycicleDirection>);
+			this._BicycleLine = default(EntityRef<BicycleLine>);
 			OnCreated();
 		}
 		
@@ -1262,40 +851,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleLine_BicycleDirectionLine", Storage="_BicycleLine", ThisKey="BicycleLineID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public BicycleLine BicycleLine
-		{
-			get
-			{
-				return this._BicycleLine.Entity;
-			}
-			set
-			{
-				BicycleLine previousValue = this._BicycleLine.Entity;
-				if (((previousValue != value) 
-							|| (this._BicycleLine.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BicycleLine.Entity = null;
-						previousValue.BicycleDirectionLines.Remove(this);
-					}
-					this._BicycleLine.Entity = value;
-					if ((value != null))
-					{
-						value.BicycleDirectionLines.Add(this);
-						this._BicycleLineID = value.ID;
-					}
-					else
-					{
-						this._BicycleLineID = default(int);
-					}
-					this.SendPropertyChanged("BicycleLine");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BycicleDirection_BicycleDirectionLine", Storage="_BycicleDirection", ThisKey="BicycleDirectionID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public BycicleDirection BycicleDirection
 		{
@@ -1330,523 +885,36 @@ namespace maps.Model
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleLine")]
-	public partial class BicycleLine : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Start;
-		
-		private string _End;
-		
-		private double _StartLat;
-		
-		private double _StartLng;
-		
-		private double _EndLat;
-		
-		private double _EndLng;
-		
-		private int _Quantity;
-		
-		private EntitySet<BicycleDirectionLine> _BicycleDirectionLines;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnStartChanging(string value);
-    partial void OnStartChanged();
-    partial void OnEndChanging(string value);
-    partial void OnEndChanged();
-    partial void OnStartLatChanging(double value);
-    partial void OnStartLatChanged();
-    partial void OnStartLngChanging(double value);
-    partial void OnStartLngChanged();
-    partial void OnEndLatChanging(double value);
-    partial void OnEndLatChanged();
-    partial void OnEndLngChanging(double value);
-    partial void OnEndLngChanged();
-    partial void OnQuantityChanging(int value);
-    partial void OnQuantityChanged();
-    #endregion
-		
-		public BicycleLine()
-		{
-			this._BicycleDirectionLines = new EntitySet<BicycleDirectionLine>(new Action<BicycleDirectionLine>(this.attach_BicycleDirectionLines), new Action<BicycleDirectionLine>(this.detach_BicycleDirectionLines));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleLine_BicycleDirectionLine", Storage="_BicycleLine", ThisKey="BicycleLineID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public BicycleLine BicycleLine
 		{
 			get
 			{
-				return this._ID;
+				return this._BicycleLine.Entity;
 			}
 			set
 			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Start", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string Start
-		{
-			get
-			{
-				return this._Start;
-			}
-			set
-			{
-				if ((this._Start != value))
-				{
-					this.OnStartChanging(value);
-					this.SendPropertyChanging();
-					this._Start = value;
-					this.SendPropertyChanged("Start");
-					this.OnStartChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[End]", Storage="_End", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string End
-		{
-			get
-			{
-				return this._End;
-			}
-			set
-			{
-				if ((this._End != value))
-				{
-					this.OnEndChanging(value);
-					this.SendPropertyChanging();
-					this._End = value;
-					this.SendPropertyChanged("End");
-					this.OnEndChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartLat", DbType="Float NOT NULL")]
-		public double StartLat
-		{
-			get
-			{
-				return this._StartLat;
-			}
-			set
-			{
-				if ((this._StartLat != value))
-				{
-					this.OnStartLatChanging(value);
-					this.SendPropertyChanging();
-					this._StartLat = value;
-					this.SendPropertyChanged("StartLat");
-					this.OnStartLatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartLng", DbType="Float NOT NULL")]
-		public double StartLng
-		{
-			get
-			{
-				return this._StartLng;
-			}
-			set
-			{
-				if ((this._StartLng != value))
-				{
-					this.OnStartLngChanging(value);
-					this.SendPropertyChanging();
-					this._StartLng = value;
-					this.SendPropertyChanged("StartLng");
-					this.OnStartLngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndLat", DbType="Float NOT NULL")]
-		public double EndLat
-		{
-			get
-			{
-				return this._EndLat;
-			}
-			set
-			{
-				if ((this._EndLat != value))
-				{
-					this.OnEndLatChanging(value);
-					this.SendPropertyChanging();
-					this._EndLat = value;
-					this.SendPropertyChanged("EndLat");
-					this.OnEndLatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndLng", DbType="Float NOT NULL")]
-		public double EndLng
-		{
-			get
-			{
-				return this._EndLng;
-			}
-			set
-			{
-				if ((this._EndLng != value))
-				{
-					this.OnEndLngChanging(value);
-					this.SendPropertyChanging();
-					this._EndLng = value;
-					this.SendPropertyChanged("EndLng");
-					this.OnEndLngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-		public int Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleLine_BicycleDirectionLine", Storage="_BicycleDirectionLines", ThisKey="ID", OtherKey="BicycleLineID")]
-		public EntitySet<BicycleDirectionLine> BicycleDirectionLines
-		{
-			get
-			{
-				return this._BicycleDirectionLines;
-			}
-			set
-			{
-				this._BicycleDirectionLines.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BicycleDirectionLines(BicycleDirectionLine entity)
-		{
-			this.SendPropertyChanging();
-			entity.BicycleLine = this;
-		}
-		
-		private void detach_BicycleDirectionLines(BicycleDirectionLine entity)
-		{
-			this.SendPropertyChanging();
-			entity.BicycleLine = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BycicleDirection")]
-	public partial class BycicleDirection : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _UserID;
-		
-		private string _Waypoints;
-		
-		private string _PolyLine;
-		
-		private double _Length;
-		
-		private bool _Processed;
-		
-		private System.DateTime _AddedDate;
-		
-		private EntitySet<BicycleDirectionLine> _BicycleDirectionLines;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnWaypointsChanging(string value);
-    partial void OnWaypointsChanged();
-    partial void OnPolyLineChanging(string value);
-    partial void OnPolyLineChanged();
-    partial void OnLengthChanging(double value);
-    partial void OnLengthChanged();
-    partial void OnProcessedChanging(bool value);
-    partial void OnProcessedChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    #endregion
-		
-		public BycicleDirection()
-		{
-			this._BicycleDirectionLines = new EntitySet<BicycleDirectionLine>(new Action<BicycleDirectionLine>(this.attach_BicycleDirectionLines), new Action<BicycleDirectionLine>(this.detach_BicycleDirectionLines));
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Waypoints", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Waypoints
-		{
-			get
-			{
-				return this._Waypoints;
-			}
-			set
-			{
-				if ((this._Waypoints != value))
-				{
-					this.OnWaypointsChanging(value);
-					this.SendPropertyChanging();
-					this._Waypoints = value;
-					this.SendPropertyChanged("Waypoints");
-					this.OnWaypointsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PolyLine", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string PolyLine
-		{
-			get
-			{
-				return this._PolyLine;
-			}
-			set
-			{
-				if ((this._PolyLine != value))
-				{
-					this.OnPolyLineChanging(value);
-					this.SendPropertyChanging();
-					this._PolyLine = value;
-					this.SendPropertyChanged("PolyLine");
-					this.OnPolyLineChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="Float NOT NULL")]
-		public double Length
-		{
-			get
-			{
-				return this._Length;
-			}
-			set
-			{
-				if ((this._Length != value))
-				{
-					this.OnLengthChanging(value);
-					this.SendPropertyChanging();
-					this._Length = value;
-					this.SendPropertyChanged("Length");
-					this.OnLengthChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Processed", DbType="Bit NOT NULL")]
-		public bool Processed
-		{
-			get
-			{
-				return this._Processed;
-			}
-			set
-			{
-				if ((this._Processed != value))
-				{
-					this.OnProcessedChanging(value);
-					this.SendPropertyChanging();
-					this._Processed = value;
-					this.SendPropertyChanged("Processed");
-					this.OnProcessedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BycicleDirection_BicycleDirectionLine", Storage="_BicycleDirectionLines", ThisKey="ID", OtherKey="BicycleDirectionID")]
-		public EntitySet<BicycleDirectionLine> BicycleDirectionLines
-		{
-			get
-			{
-				return this._BicycleDirectionLines;
-			}
-			set
-			{
-				this._BicycleDirectionLines.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
+				BicycleLine previousValue = this._BicycleLine.Entity;
 				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
+							|| (this._BicycleLine.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._User.Entity = null;
-						previousValue.BycicleDirections.Remove(this);
+						this._BicycleLine.Entity = null;
+						previousValue.BicycleDirectionLines.Remove(this);
 					}
-					this._User.Entity = value;
+					this._BicycleLine.Entity = value;
 					if ((value != null))
 					{
-						value.BycicleDirections.Add(this);
-						this._UserID = value.ID;
+						value.BicycleDirectionLines.Add(this);
+						this._BicycleLineID = value.ID;
 					}
 					else
 					{
-						this._UserID = default(int);
+						this._BicycleLineID = default(int);
 					}
-					this.SendPropertyChanged("User");
+					this.SendPropertyChanged("BicycleLine");
 				}
 			}
 		}
@@ -1869,557 +937,6 @@ namespace maps.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_BicycleDirectionLines(BicycleDirectionLine entity)
-		{
-			this.SendPropertyChanging();
-			entity.BycicleDirection = this;
-		}
-		
-		private void detach_BicycleDirectionLines(BicycleDirectionLine entity)
-		{
-			this.SendPropertyChanging();
-			entity.BycicleDirection = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleParking")]
-	public partial class BicycleParking : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _UserID;
-		
-		private string _Position;
-		
-		private string _PhotoUrl;
-		
-		private bool _Exist;
-		
-		private int _Type;
-		
-		private bool _Lock;
-		
-		private bool _Camera;
-		
-		private bool _Rent;
-		
-		private int _Quality;
-		
-		private int _Capacity;
-		
-		private int _VotesCount;
-		
-		private string _Description;
-		
-		private System.DateTime _AddedDate;
-		
-		private System.Nullable<System.DateTime> _VerifiedDate;
-		
-		private System.Nullable<System.DateTime> _CreatedDate;
-		
-		private string _Address;
-		
-		private double _CenterDistance;
-		
-		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnPositionChanging(string value);
-    partial void OnPositionChanged();
-    partial void OnPhotoUrlChanging(string value);
-    partial void OnPhotoUrlChanged();
-    partial void OnExistChanging(bool value);
-    partial void OnExistChanged();
-    partial void OnTypeChanging(int value);
-    partial void OnTypeChanged();
-    partial void OnLockChanging(bool value);
-    partial void OnLockChanged();
-    partial void OnCameraChanging(bool value);
-    partial void OnCameraChanged();
-    partial void OnRentChanging(bool value);
-    partial void OnRentChanged();
-    partial void OnQualityChanging(int value);
-    partial void OnQualityChanged();
-    partial void OnCapacityChanging(int value);
-    partial void OnCapacityChanged();
-    partial void OnVotesCountChanging(int value);
-    partial void OnVotesCountChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    partial void OnVerifiedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnVerifiedDateChanged();
-    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreatedDateChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnCenterDistanceChanging(double value);
-    partial void OnCenterDistanceChanged();
-    #endregion
-		
-		public BicycleParking()
-		{
-			this._BicycleParkingVotes = new EntitySet<BicycleParkingVote>(new Action<BicycleParkingVote>(this.attach_BicycleParkingVotes), new Action<BicycleParkingVote>(this.detach_BicycleParkingVotes));
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Position
-		{
-			get
-			{
-				return this._Position;
-			}
-			set
-			{
-				if ((this._Position != value))
-				{
-					this.OnPositionChanging(value);
-					this.SendPropertyChanging();
-					this._Position = value;
-					this.SendPropertyChanged("Position");
-					this.OnPositionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhotoUrl", DbType="NVarChar(150)")]
-		public string PhotoUrl
-		{
-			get
-			{
-				return this._PhotoUrl;
-			}
-			set
-			{
-				if ((this._PhotoUrl != value))
-				{
-					this.OnPhotoUrlChanging(value);
-					this.SendPropertyChanging();
-					this._PhotoUrl = value;
-					this.SendPropertyChanged("PhotoUrl");
-					this.OnPhotoUrlChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Exist", DbType="Bit NOT NULL")]
-		public bool Exist
-		{
-			get
-			{
-				return this._Exist;
-			}
-			set
-			{
-				if ((this._Exist != value))
-				{
-					this.OnExistChanging(value);
-					this.SendPropertyChanging();
-					this._Exist = value;
-					this.SendPropertyChanged("Exist");
-					this.OnExistChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int NOT NULL")]
-		public int Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this.OnTypeChanging(value);
-					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lock", DbType="Bit NOT NULL")]
-		public bool Lock
-		{
-			get
-			{
-				return this._Lock;
-			}
-			set
-			{
-				if ((this._Lock != value))
-				{
-					this.OnLockChanging(value);
-					this.SendPropertyChanging();
-					this._Lock = value;
-					this.SendPropertyChanged("Lock");
-					this.OnLockChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Camera", DbType="Bit NOT NULL")]
-		public bool Camera
-		{
-			get
-			{
-				return this._Camera;
-			}
-			set
-			{
-				if ((this._Camera != value))
-				{
-					this.OnCameraChanging(value);
-					this.SendPropertyChanging();
-					this._Camera = value;
-					this.SendPropertyChanged("Camera");
-					this.OnCameraChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rent", DbType="Bit NOT NULL")]
-		public bool Rent
-		{
-			get
-			{
-				return this._Rent;
-			}
-			set
-			{
-				if ((this._Rent != value))
-				{
-					this.OnRentChanging(value);
-					this.SendPropertyChanging();
-					this._Rent = value;
-					this.SendPropertyChanged("Rent");
-					this.OnRentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quality", DbType="Int NOT NULL")]
-		public int Quality
-		{
-			get
-			{
-				return this._Quality;
-			}
-			set
-			{
-				if ((this._Quality != value))
-				{
-					this.OnQualityChanging(value);
-					this.SendPropertyChanging();
-					this._Quality = value;
-					this.SendPropertyChanged("Quality");
-					this.OnQualityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacity", DbType="Int NOT NULL")]
-		public int Capacity
-		{
-			get
-			{
-				return this._Capacity;
-			}
-			set
-			{
-				if ((this._Capacity != value))
-				{
-					this.OnCapacityChanging(value);
-					this.SendPropertyChanging();
-					this._Capacity = value;
-					this.SendPropertyChanged("Capacity");
-					this.OnCapacityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotesCount", DbType="Int NOT NULL")]
-		public int VotesCount
-		{
-			get
-			{
-				return this._VotesCount;
-			}
-			set
-			{
-				if ((this._VotesCount != value))
-				{
-					this.OnVotesCountChanging(value);
-					this.SendPropertyChanging();
-					this._VotesCount = value;
-					this.SendPropertyChanged("VotesCount");
-					this.OnVotesCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VerifiedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> VerifiedDate
-		{
-			get
-			{
-				return this._VerifiedDate;
-			}
-			set
-			{
-				if ((this._VerifiedDate != value))
-				{
-					this.OnVerifiedDateChanging(value);
-					this.SendPropertyChanging();
-					this._VerifiedDate = value;
-					this.SendPropertyChanged("VerifiedDate");
-					this.OnVerifiedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreatedDate
-		{
-			get
-			{
-				return this._CreatedDate;
-			}
-			set
-			{
-				if ((this._CreatedDate != value))
-				{
-					this.OnCreatedDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedDate = value;
-					this.SendPropertyChanged("CreatedDate");
-					this.OnCreatedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(MAX)")]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterDistance", DbType="Float NOT NULL")]
-		public double CenterDistance
-		{
-			get
-			{
-				return this._CenterDistance;
-			}
-			set
-			{
-				if ((this._CenterDistance != value))
-				{
-					this.OnCenterDistanceChanging(value);
-					this.SendPropertyChanging();
-					this._CenterDistance = value;
-					this.SendPropertyChanged("CenterDistance");
-					this.OnCenterDistanceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParkingVotes", ThisKey="ID", OtherKey="BicycleParkingID")]
-		public EntitySet<BicycleParkingVote> BicycleParkingVotes
-		{
-			get
-			{
-				return this._BicycleParkingVotes;
-			}
-			set
-			{
-				this._BicycleParkingVotes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.BicycleParkings.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.BicycleParkings.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BicycleParkingVotes(BicycleParkingVote entity)
-		{
-			this.SendPropertyChanging();
-			entity.BicycleParking = this;
-		}
-		
-		private void detach_BicycleParkingVotes(BicycleParkingVote entity)
-		{
-			this.SendPropertyChanging();
-			entity.BicycleParking = null;
 		}
 	}
 	
@@ -2437,9 +954,9 @@ namespace maps.Model
 		
 		private int _Mark;
 		
-		private EntityRef<BicycleParking> _BicycleParking;
-		
 		private EntityRef<User> _User;
+		
+		private EntityRef<BicycleParking> _BicycleParking;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2457,8 +974,8 @@ namespace maps.Model
 		
 		public BicycleParkingVote()
 		{
-			this._BicycleParking = default(EntityRef<BicycleParking>);
 			this._User = default(EntityRef<User>);
+			this._BicycleParking = default(EntityRef<BicycleParking>);
 			OnCreated();
 		}
 		
@@ -2550,40 +1067,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParking", ThisKey="BicycleParkingID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public BicycleParking BicycleParking
-		{
-			get
-			{
-				return this._BicycleParking.Entity;
-			}
-			set
-			{
-				BicycleParking previousValue = this._BicycleParking.Entity;
-				if (((previousValue != value) 
-							|| (this._BicycleParking.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BicycleParking.Entity = null;
-						previousValue.BicycleParkingVotes.Remove(this);
-					}
-					this._BicycleParking.Entity = value;
-					if ((value != null))
-					{
-						value.BicycleParkingVotes.Add(this);
-						this._BicycleParkingID = value.ID;
-					}
-					else
-					{
-						this._BicycleParkingID = default(int);
-					}
-					this.SendPropertyChanged("BicycleParking");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParkingVote", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
 		public User User
 		{
@@ -2614,6 +1097,40 @@ namespace maps.Model
 						this._UserID = default(int);
 					}
 					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParking", ThisKey="BicycleParkingID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public BicycleParking BicycleParking
+		{
+			get
+			{
+				return this._BicycleParking.Entity;
+			}
+			set
+			{
+				BicycleParking previousValue = this._BicycleParking.Entity;
+				if (((previousValue != value) 
+							|| (this._BicycleParking.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BicycleParking.Entity = null;
+						previousValue.BicycleParkingVotes.Remove(this);
+					}
+					this._BicycleParking.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleParkingVotes.Add(this);
+						this._BicycleParkingID = value.ID;
+					}
+					else
+					{
+						this._BicycleParkingID = default(int);
+					}
+					this.SendPropertyChanged("BicycleParking");
 				}
 			}
 		}
@@ -3182,6 +1699,2030 @@ namespace maps.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.City")]
+	public partial class City : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private double _CenterLat;
+		
+		private double _CenterLng;
+		
+		private int _Zoom;
+		
+		private EntitySet<User> _Users;
+		
+		private EntitySet<BicycleParking> _BicycleParkings;
+		
+		private EntitySet<BycicleDirection> _BycicleDirections;
+		
+		private EntitySet<BicycleLine> _BicycleLines;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnCenterLatChanging(double value);
+    partial void OnCenterLatChanged();
+    partial void OnCenterLngChanging(double value);
+    partial void OnCenterLngChanged();
+    partial void OnZoomChanging(int value);
+    partial void OnZoomChanged();
+    #endregion
+		
+		public City()
+		{
+			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
+			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
+			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
+			this._BicycleLines = new EntitySet<BicycleLine>(new Action<BicycleLine>(this.attach_BicycleLines), new Action<BicycleLine>(this.detach_BicycleLines));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterLat", DbType="Float NOT NULL")]
+		public double CenterLat
+		{
+			get
+			{
+				return this._CenterLat;
+			}
+			set
+			{
+				if ((this._CenterLat != value))
+				{
+					this.OnCenterLatChanging(value);
+					this.SendPropertyChanging();
+					this._CenterLat = value;
+					this.SendPropertyChanged("CenterLat");
+					this.OnCenterLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterLng", DbType="Float NOT NULL")]
+		public double CenterLng
+		{
+			get
+			{
+				return this._CenterLng;
+			}
+			set
+			{
+				if ((this._CenterLng != value))
+				{
+					this.OnCenterLngChanging(value);
+					this.SendPropertyChanging();
+					this._CenterLng = value;
+					this.SendPropertyChanged("CenterLng");
+					this.OnCenterLngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zoom", DbType="Int NOT NULL")]
+		public int Zoom
+		{
+			get
+			{
+				return this._Zoom;
+			}
+			set
+			{
+				if ((this._Zoom != value))
+				{
+					this.OnZoomChanging(value);
+					this.SendPropertyChanging();
+					this._Zoom = value;
+					this.SendPropertyChanged("Zoom");
+					this.OnZoomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_User", Storage="_Users", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<User> Users
+		{
+			get
+			{
+				return this._Users;
+			}
+			set
+			{
+				this._Users.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<BicycleParking> BicycleParkings
+		{
+			get
+			{
+				return this._BicycleParkings;
+			}
+			set
+			{
+				this._BicycleParkings.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<BycicleDirection> BycicleDirections
+		{
+			get
+			{
+				return this._BycicleDirections;
+			}
+			set
+			{
+				this._BycicleDirections.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleLine", Storage="_BicycleLines", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<BicycleLine> BicycleLines
+		{
+			get
+			{
+				return this._BicycleLines;
+			}
+			set
+			{
+				this._BicycleLines.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_BycicleDirections(BycicleDirection entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_BycicleDirections(BycicleDirection entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_BicycleLines(BicycleLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_BicycleLines(BicycleLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _CityID;
+		
+		private string _Login;
+		
+		private string _Email;
+		
+		private string _Password;
+		
+		private System.DateTime _AddedDate;
+		
+		private System.DateTime _LastVisitDate;
+		
+		private string _AvatarPath;
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private EntitySet<UserRole> _UserRoles;
+		
+		private EntitySet<Social> _Socials;
+		
+		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
+		
+		private EntitySet<Goal> _Goals;
+		
+		private EntitySet<BicycleParking> _BicycleParkings;
+		
+		private EntitySet<BycicleDirection> _BycicleDirections;
+		
+		private EntityRef<City> _City;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnCityIDChanging(int value);
+    partial void OnCityIDChanged();
+    partial void OnLoginChanging(string value);
+    partial void OnLoginChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnLastVisitDateChanging(System.DateTime value);
+    partial void OnLastVisitDateChanged();
+    partial void OnAvatarPathChanging(string value);
+    partial void OnAvatarPathChanged();
+    partial void OnFirstNameChanging(string value);
+    partial void OnFirstNameChanged();
+    partial void OnLastNameChanging(string value);
+    partial void OnLastNameChanged();
+    #endregion
+		
+		public User()
+		{
+			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
+			this._Socials = new EntitySet<Social>(new Action<Social>(this.attach_Socials), new Action<Social>(this.detach_Socials));
+			this._BicycleParkingVotes = new EntitySet<BicycleParkingVote>(new Action<BicycleParkingVote>(this.attach_BicycleParkingVotes), new Action<BicycleParkingVote>(this.detach_BicycleParkingVotes));
+			this._Goals = new EntitySet<Goal>(new Action<Goal>(this.attach_Goals), new Action<Goal>(this.detach_Goals));
+			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
+			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
+			this._City = default(EntityRef<City>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
+		public int CityID
+		{
+			get
+			{
+				return this._CityID;
+			}
+			set
+			{
+				if ((this._CityID != value))
+				{
+					if (this._City.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCityIDChanging(value);
+					this.SendPropertyChanging();
+					this._CityID = value;
+					this.SendPropertyChanged("CityID");
+					this.OnCityIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Login", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string Login
+		{
+			get
+			{
+				return this._Login;
+			}
+			set
+			{
+				if ((this._Login != value))
+				{
+					this.OnLoginChanging(value);
+					this.SendPropertyChanging();
+					this._Login = value;
+					this.SendPropertyChanged("Login");
+					this.OnLoginChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastVisitDate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastVisitDate
+		{
+			get
+			{
+				return this._LastVisitDate;
+			}
+			set
+			{
+				if ((this._LastVisitDate != value))
+				{
+					this.OnLastVisitDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastVisitDate = value;
+					this.SendPropertyChanged("LastVisitDate");
+					this.OnLastVisitDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvatarPath", DbType="NVarChar(150)")]
+		public string AvatarPath
+		{
+			get
+			{
+				return this._AvatarPath;
+			}
+			set
+			{
+				if ((this._AvatarPath != value))
+				{
+					this.OnAvatarPathChanging(value);
+					this.SendPropertyChanging();
+					this._AvatarPath = value;
+					this.SendPropertyChanged("AvatarPath");
+					this.OnAvatarPathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(500)")]
+		public string FirstName
+		{
+			get
+			{
+				return this._FirstName;
+			}
+			set
+			{
+				if ((this._FirstName != value))
+				{
+					this.OnFirstNameChanging(value);
+					this.SendPropertyChanging();
+					this._FirstName = value;
+					this.SendPropertyChanged("FirstName");
+					this.OnFirstNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(500)")]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this.OnLastNameChanging(value);
+					this.SendPropertyChanging();
+					this._LastName = value;
+					this.SendPropertyChanged("LastName");
+					this.OnLastNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserRole", Storage="_UserRoles", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<UserRole> UserRoles
+		{
+			get
+			{
+				return this._UserRoles;
+			}
+			set
+			{
+				this._UserRoles.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Social", Storage="_Socials", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<Social> Socials
+		{
+			get
+			{
+				return this._Socials;
+			}
+			set
+			{
+				this._Socials.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParkingVote", Storage="_BicycleParkingVotes", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<BicycleParkingVote> BicycleParkingVotes
+		{
+			get
+			{
+				return this._BicycleParkingVotes;
+			}
+			set
+			{
+				this._BicycleParkingVotes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Goal", Storage="_Goals", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<Goal> Goals
+		{
+			get
+			{
+				return this._Goals;
+			}
+			set
+			{
+				this._Goals.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<BicycleParking> BicycleParkings
+		{
+			get
+			{
+				return this._BicycleParkings;
+			}
+			set
+			{
+				this._BicycleParkings.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<BycicleDirection> BycicleDirections
+		{
+			get
+			{
+				return this._BycicleDirections;
+			}
+			set
+			{
+				this._BycicleDirections.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_User", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
+		public City City
+		{
+			get
+			{
+				return this._City.Entity;
+			}
+			set
+			{
+				City previousValue = this._City.Entity;
+				if (((previousValue != value) 
+							|| (this._City.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._City.Entity = null;
+						previousValue.Users.Remove(this);
+					}
+					this._City.Entity = value;
+					if ((value != null))
+					{
+						value.Users.Add(this);
+						this._CityID = value.ID;
+					}
+					else
+					{
+						this._CityID = default(int);
+					}
+					this.SendPropertyChanged("City");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_UserRoles(UserRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_UserRoles(UserRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Socials(Social entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Socials(Social entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_BicycleParkingVotes(BicycleParkingVote entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_BicycleParkingVotes(BicycleParkingVote entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Goals(Goal entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Goals(Goal entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_BycicleDirections(BycicleDirection entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_BycicleDirections(BycicleDirection entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleParking")]
+	public partial class BicycleParking : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _UserID;
+		
+		private int _CityID;
+		
+		private string _Position;
+		
+		private string _PhotoUrl;
+		
+		private bool _Exist;
+		
+		private int _Type;
+		
+		private bool _Lock;
+		
+		private bool _Camera;
+		
+		private bool _Rent;
+		
+		private int _Quality;
+		
+		private int _Capacity;
+		
+		private int _VotesCount;
+		
+		private string _Description;
+		
+		private System.DateTime _AddedDate;
+		
+		private System.Nullable<System.DateTime> _VerifiedDate;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private string _Address;
+		
+		private double _CenterDistance;
+		
+		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
+		
+		private EntityRef<City> _City;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnCityIDChanging(int value);
+    partial void OnCityIDChanged();
+    partial void OnPositionChanging(string value);
+    partial void OnPositionChanged();
+    partial void OnPhotoUrlChanging(string value);
+    partial void OnPhotoUrlChanged();
+    partial void OnExistChanging(bool value);
+    partial void OnExistChanged();
+    partial void OnTypeChanging(int value);
+    partial void OnTypeChanged();
+    partial void OnLockChanging(bool value);
+    partial void OnLockChanged();
+    partial void OnCameraChanging(bool value);
+    partial void OnCameraChanged();
+    partial void OnRentChanging(bool value);
+    partial void OnRentChanged();
+    partial void OnQualityChanging(int value);
+    partial void OnQualityChanged();
+    partial void OnCapacityChanging(int value);
+    partial void OnCapacityChanged();
+    partial void OnVotesCountChanging(int value);
+    partial void OnVotesCountChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnVerifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnVerifiedDateChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnCenterDistanceChanging(double value);
+    partial void OnCenterDistanceChanged();
+    #endregion
+		
+		public BicycleParking()
+		{
+			this._BicycleParkingVotes = new EntitySet<BicycleParkingVote>(new Action<BicycleParkingVote>(this.attach_BicycleParkingVotes), new Action<BicycleParkingVote>(this.detach_BicycleParkingVotes));
+			this._City = default(EntityRef<City>);
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
+		public int CityID
+		{
+			get
+			{
+				return this._CityID;
+			}
+			set
+			{
+				if ((this._CityID != value))
+				{
+					if (this._City.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCityIDChanging(value);
+					this.SendPropertyChanging();
+					this._CityID = value;
+					this.SendPropertyChanged("CityID");
+					this.OnCityIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Position
+		{
+			get
+			{
+				return this._Position;
+			}
+			set
+			{
+				if ((this._Position != value))
+				{
+					this.OnPositionChanging(value);
+					this.SendPropertyChanging();
+					this._Position = value;
+					this.SendPropertyChanged("Position");
+					this.OnPositionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhotoUrl", DbType="NVarChar(150)")]
+		public string PhotoUrl
+		{
+			get
+			{
+				return this._PhotoUrl;
+			}
+			set
+			{
+				if ((this._PhotoUrl != value))
+				{
+					this.OnPhotoUrlChanging(value);
+					this.SendPropertyChanging();
+					this._PhotoUrl = value;
+					this.SendPropertyChanged("PhotoUrl");
+					this.OnPhotoUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Exist", DbType="Bit NOT NULL")]
+		public bool Exist
+		{
+			get
+			{
+				return this._Exist;
+			}
+			set
+			{
+				if ((this._Exist != value))
+				{
+					this.OnExistChanging(value);
+					this.SendPropertyChanging();
+					this._Exist = value;
+					this.SendPropertyChanged("Exist");
+					this.OnExistChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int NOT NULL")]
+		public int Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lock", DbType="Bit NOT NULL")]
+		public bool Lock
+		{
+			get
+			{
+				return this._Lock;
+			}
+			set
+			{
+				if ((this._Lock != value))
+				{
+					this.OnLockChanging(value);
+					this.SendPropertyChanging();
+					this._Lock = value;
+					this.SendPropertyChanged("Lock");
+					this.OnLockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Camera", DbType="Bit NOT NULL")]
+		public bool Camera
+		{
+			get
+			{
+				return this._Camera;
+			}
+			set
+			{
+				if ((this._Camera != value))
+				{
+					this.OnCameraChanging(value);
+					this.SendPropertyChanging();
+					this._Camera = value;
+					this.SendPropertyChanged("Camera");
+					this.OnCameraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rent", DbType="Bit NOT NULL")]
+		public bool Rent
+		{
+			get
+			{
+				return this._Rent;
+			}
+			set
+			{
+				if ((this._Rent != value))
+				{
+					this.OnRentChanging(value);
+					this.SendPropertyChanging();
+					this._Rent = value;
+					this.SendPropertyChanged("Rent");
+					this.OnRentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quality", DbType="Int NOT NULL")]
+		public int Quality
+		{
+			get
+			{
+				return this._Quality;
+			}
+			set
+			{
+				if ((this._Quality != value))
+				{
+					this.OnQualityChanging(value);
+					this.SendPropertyChanging();
+					this._Quality = value;
+					this.SendPropertyChanged("Quality");
+					this.OnQualityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacity", DbType="Int NOT NULL")]
+		public int Capacity
+		{
+			get
+			{
+				return this._Capacity;
+			}
+			set
+			{
+				if ((this._Capacity != value))
+				{
+					this.OnCapacityChanging(value);
+					this.SendPropertyChanging();
+					this._Capacity = value;
+					this.SendPropertyChanged("Capacity");
+					this.OnCapacityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotesCount", DbType="Int NOT NULL")]
+		public int VotesCount
+		{
+			get
+			{
+				return this._VotesCount;
+			}
+			set
+			{
+				if ((this._VotesCount != value))
+				{
+					this.OnVotesCountChanging(value);
+					this.SendPropertyChanging();
+					this._VotesCount = value;
+					this.SendPropertyChanged("VotesCount");
+					this.OnVotesCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VerifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> VerifiedDate
+		{
+			get
+			{
+				return this._VerifiedDate;
+			}
+			set
+			{
+				if ((this._VerifiedDate != value))
+				{
+					this.OnVerifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._VerifiedDate = value;
+					this.SendPropertyChanged("VerifiedDate");
+					this.OnVerifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(MAX)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterDistance", DbType="Float NOT NULL")]
+		public double CenterDistance
+		{
+			get
+			{
+				return this._CenterDistance;
+			}
+			set
+			{
+				if ((this._CenterDistance != value))
+				{
+					this.OnCenterDistanceChanging(value);
+					this.SendPropertyChanging();
+					this._CenterDistance = value;
+					this.SendPropertyChanged("CenterDistance");
+					this.OnCenterDistanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParkingVotes", ThisKey="ID", OtherKey="BicycleParkingID")]
+		public EntitySet<BicycleParkingVote> BicycleParkingVotes
+		{
+			get
+			{
+				return this._BicycleParkingVotes;
+			}
+			set
+			{
+				this._BicycleParkingVotes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleParking", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
+		public City City
+		{
+			get
+			{
+				return this._City.Entity;
+			}
+			set
+			{
+				City previousValue = this._City.Entity;
+				if (((previousValue != value) 
+							|| (this._City.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._City.Entity = null;
+						previousValue.BicycleParkings.Remove(this);
+					}
+					this._City.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleParkings.Add(this);
+						this._CityID = value.ID;
+					}
+					else
+					{
+						this._CityID = default(int);
+					}
+					this.SendPropertyChanged("City");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.BicycleParkings.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleParkings.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BicycleParkingVotes(BicycleParkingVote entity)
+		{
+			this.SendPropertyChanging();
+			entity.BicycleParking = this;
+		}
+		
+		private void detach_BicycleParkingVotes(BicycleParkingVote entity)
+		{
+			this.SendPropertyChanging();
+			entity.BicycleParking = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BycicleDirection")]
+	public partial class BycicleDirection : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _CityID;
+		
+		private int _UserID;
+		
+		private string _Waypoints;
+		
+		private string _PolyLine;
+		
+		private double _Length;
+		
+		private bool _Processed;
+		
+		private System.DateTime _AddedDate;
+		
+		private EntitySet<BicycleDirectionLine> _BicycleDirectionLines;
+		
+		private EntityRef<City> _City;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnCityIDChanging(int value);
+    partial void OnCityIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnWaypointsChanging(string value);
+    partial void OnWaypointsChanged();
+    partial void OnPolyLineChanging(string value);
+    partial void OnPolyLineChanged();
+    partial void OnLengthChanging(double value);
+    partial void OnLengthChanged();
+    partial void OnProcessedChanging(bool value);
+    partial void OnProcessedChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    #endregion
+		
+		public BycicleDirection()
+		{
+			this._BicycleDirectionLines = new EntitySet<BicycleDirectionLine>(new Action<BicycleDirectionLine>(this.attach_BicycleDirectionLines), new Action<BicycleDirectionLine>(this.detach_BicycleDirectionLines));
+			this._City = default(EntityRef<City>);
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
+		public int CityID
+		{
+			get
+			{
+				return this._CityID;
+			}
+			set
+			{
+				if ((this._CityID != value))
+				{
+					if (this._City.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCityIDChanging(value);
+					this.SendPropertyChanging();
+					this._CityID = value;
+					this.SendPropertyChanged("CityID");
+					this.OnCityIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Waypoints", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Waypoints
+		{
+			get
+			{
+				return this._Waypoints;
+			}
+			set
+			{
+				if ((this._Waypoints != value))
+				{
+					this.OnWaypointsChanging(value);
+					this.SendPropertyChanging();
+					this._Waypoints = value;
+					this.SendPropertyChanged("Waypoints");
+					this.OnWaypointsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PolyLine", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string PolyLine
+		{
+			get
+			{
+				return this._PolyLine;
+			}
+			set
+			{
+				if ((this._PolyLine != value))
+				{
+					this.OnPolyLineChanging(value);
+					this.SendPropertyChanging();
+					this._PolyLine = value;
+					this.SendPropertyChanged("PolyLine");
+					this.OnPolyLineChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="Float NOT NULL")]
+		public double Length
+		{
+			get
+			{
+				return this._Length;
+			}
+			set
+			{
+				if ((this._Length != value))
+				{
+					this.OnLengthChanging(value);
+					this.SendPropertyChanging();
+					this._Length = value;
+					this.SendPropertyChanged("Length");
+					this.OnLengthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Processed", DbType="Bit NOT NULL")]
+		public bool Processed
+		{
+			get
+			{
+				return this._Processed;
+			}
+			set
+			{
+				if ((this._Processed != value))
+				{
+					this.OnProcessedChanging(value);
+					this.SendPropertyChanging();
+					this._Processed = value;
+					this.SendPropertyChanged("Processed");
+					this.OnProcessedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BycicleDirection_BicycleDirectionLine", Storage="_BicycleDirectionLines", ThisKey="ID", OtherKey="BicycleDirectionID")]
+		public EntitySet<BicycleDirectionLine> BicycleDirectionLines
+		{
+			get
+			{
+				return this._BicycleDirectionLines;
+			}
+			set
+			{
+				this._BicycleDirectionLines.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BycicleDirection", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
+		public City City
+		{
+			get
+			{
+				return this._City.Entity;
+			}
+			set
+			{
+				City previousValue = this._City.Entity;
+				if (((previousValue != value) 
+							|| (this._City.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._City.Entity = null;
+						previousValue.BycicleDirections.Remove(this);
+					}
+					this._City.Entity = value;
+					if ((value != null))
+					{
+						value.BycicleDirections.Add(this);
+						this._CityID = value.ID;
+					}
+					else
+					{
+						this._CityID = default(int);
+					}
+					this.SendPropertyChanged("City");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.BycicleDirections.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.BycicleDirections.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BicycleDirectionLines(BicycleDirectionLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.BycicleDirection = this;
+		}
+		
+		private void detach_BicycleDirectionLines(BicycleDirectionLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.BycicleDirection = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleLine")]
+	public partial class BicycleLine : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _CityID;
+		
+		private string _Start;
+		
+		private string _End;
+		
+		private double _StartLat;
+		
+		private double _StartLng;
+		
+		private double _EndLat;
+		
+		private double _EndLng;
+		
+		private int _Quantity;
+		
+		private EntitySet<BicycleDirectionLine> _BicycleDirectionLines;
+		
+		private EntityRef<City> _City;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnCityIDChanging(int value);
+    partial void OnCityIDChanged();
+    partial void OnStartChanging(string value);
+    partial void OnStartChanged();
+    partial void OnEndChanging(string value);
+    partial void OnEndChanged();
+    partial void OnStartLatChanging(double value);
+    partial void OnStartLatChanged();
+    partial void OnStartLngChanging(double value);
+    partial void OnStartLngChanged();
+    partial void OnEndLatChanging(double value);
+    partial void OnEndLatChanged();
+    partial void OnEndLngChanging(double value);
+    partial void OnEndLngChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
+    #endregion
+		
+		public BicycleLine()
+		{
+			this._BicycleDirectionLines = new EntitySet<BicycleDirectionLine>(new Action<BicycleDirectionLine>(this.attach_BicycleDirectionLines), new Action<BicycleDirectionLine>(this.detach_BicycleDirectionLines));
+			this._City = default(EntityRef<City>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
+		public int CityID
+		{
+			get
+			{
+				return this._CityID;
+			}
+			set
+			{
+				if ((this._CityID != value))
+				{
+					if (this._City.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCityIDChanging(value);
+					this.SendPropertyChanging();
+					this._CityID = value;
+					this.SendPropertyChanged("CityID");
+					this.OnCityIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Start", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string Start
+		{
+			get
+			{
+				return this._Start;
+			}
+			set
+			{
+				if ((this._Start != value))
+				{
+					this.OnStartChanging(value);
+					this.SendPropertyChanging();
+					this._Start = value;
+					this.SendPropertyChanged("Start");
+					this.OnStartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[End]", Storage="_End", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string End
+		{
+			get
+			{
+				return this._End;
+			}
+			set
+			{
+				if ((this._End != value))
+				{
+					this.OnEndChanging(value);
+					this.SendPropertyChanging();
+					this._End = value;
+					this.SendPropertyChanged("End");
+					this.OnEndChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartLat", DbType="Float NOT NULL")]
+		public double StartLat
+		{
+			get
+			{
+				return this._StartLat;
+			}
+			set
+			{
+				if ((this._StartLat != value))
+				{
+					this.OnStartLatChanging(value);
+					this.SendPropertyChanging();
+					this._StartLat = value;
+					this.SendPropertyChanged("StartLat");
+					this.OnStartLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartLng", DbType="Float NOT NULL")]
+		public double StartLng
+		{
+			get
+			{
+				return this._StartLng;
+			}
+			set
+			{
+				if ((this._StartLng != value))
+				{
+					this.OnStartLngChanging(value);
+					this.SendPropertyChanging();
+					this._StartLng = value;
+					this.SendPropertyChanged("StartLng");
+					this.OnStartLngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndLat", DbType="Float NOT NULL")]
+		public double EndLat
+		{
+			get
+			{
+				return this._EndLat;
+			}
+			set
+			{
+				if ((this._EndLat != value))
+				{
+					this.OnEndLatChanging(value);
+					this.SendPropertyChanging();
+					this._EndLat = value;
+					this.SendPropertyChanged("EndLat");
+					this.OnEndLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndLng", DbType="Float NOT NULL")]
+		public double EndLng
+		{
+			get
+			{
+				return this._EndLng;
+			}
+			set
+			{
+				if ((this._EndLng != value))
+				{
+					this.OnEndLngChanging(value);
+					this.SendPropertyChanging();
+					this._EndLng = value;
+					this.SendPropertyChanged("EndLng");
+					this.OnEndLngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleLine_BicycleDirectionLine", Storage="_BicycleDirectionLines", ThisKey="ID", OtherKey="BicycleLineID")]
+		public EntitySet<BicycleDirectionLine> BicycleDirectionLines
+		{
+			get
+			{
+				return this._BicycleDirectionLines;
+			}
+			set
+			{
+				this._BicycleDirectionLines.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleLine", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
+		public City City
+		{
+			get
+			{
+				return this._City.Entity;
+			}
+			set
+			{
+				City previousValue = this._City.Entity;
+				if (((previousValue != value) 
+							|| (this._City.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._City.Entity = null;
+						previousValue.BicycleLines.Remove(this);
+					}
+					this._City.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleLines.Add(this);
+						this._CityID = value.ID;
+					}
+					else
+					{
+						this._CityID = default(int);
+					}
+					this.SendPropertyChanged("City");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BicycleDirectionLines(BicycleDirectionLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.BicycleLine = this;
+		}
+		
+		private void detach_BicycleDirectionLines(BicycleDirectionLine entity)
+		{
+			this.SendPropertyChanging();
+			entity.BicycleLine = null;
 		}
 	}
 }
