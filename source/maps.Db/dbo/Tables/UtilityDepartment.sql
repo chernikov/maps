@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[UtilityDepartment]
+(
+	[ID] INT IDENTITY (1, 1) NOT NULL, 
+	[CityID] INT NOT NULL,
+	[Name] NVARCHAR(150) NOT NULL,
+	[Phone] NVARCHAR(100) NULL,
+	[Address] NVARCHAR(MAX) NULL,
+	CONSTRAINT [PK_UtilityDepartment] PRIMARY KEY CLUSTERED ([ID] ASC),
+	CONSTRAINT [FK_UtilityDepartment_City] FOREIGN KEY ([CityID]) REFERENCES [dbo].[City] ([ID]) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	
+)

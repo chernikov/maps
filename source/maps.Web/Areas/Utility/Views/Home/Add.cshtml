@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Додати Дефект - Комуналка - maps.if.ua";
+    Layout = "~/Areas/Bicycle/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+    @Styles.Render("~/Content/css/chosen.css")
+}
+
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/scripts/utility/map-main.js")
+    @Scripts.Render("~/scripts/utility/add-issue.js")
+    @Scripts.Render("~/scripts/chosen.jquery.js")
+}
+@Html.Partial("Map")
+

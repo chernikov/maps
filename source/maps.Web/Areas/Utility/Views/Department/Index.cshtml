@@ -1,0 +1,46 @@
+@model IEnumerable<UtilityDepartment>
+
+@{
+    ViewBag.Title = "Відповідальні";
+    Layout = "~/Areas/Utility/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>
+    Відповідальні
+</h2>
+@Html.ActionLink("Додати", "Create", "Department", null, new { @class = "btn btn-primary" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Назва
+            </th>
+            <th>
+                Телефон
+            </th>
+            <th>
+                Адреса
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+               @item.Name
+            </td>
+            <td>
+                @item.Phone
+            </td>
+            <td>
+                @item.Address
+            </td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", "Department", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Видалити", "Delete", "Department", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+            </td>
+        </tr>
+    }
+</table>

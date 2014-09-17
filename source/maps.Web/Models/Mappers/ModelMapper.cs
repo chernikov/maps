@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AutoMapper;
-using maps.Model;
 using maps.Web.Models.Mappers;
 
 
@@ -19,6 +18,11 @@ namespace maps.Web.Mappers
             MapperCollection.BicycleParkingMapper.Init();
             MapperCollection.GoalMapper.Init();
             MapperCollection.CityMapper.Init();
+            MapperCollection.UtilityIssueMapper.Init();
+            MapperCollection.UtilityTagMapper.Init();
+            MapperCollection.UtilityPhotoMapper.Init();
+            MapperCollection.UtilityDepartmentMapper.Init();
+            MapperCollection.CommentMapper.Init();
         }
 
         public object Map(object source, Type sourceType, Type destinationType)

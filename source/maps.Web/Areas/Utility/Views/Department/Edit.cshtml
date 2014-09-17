@@ -1,0 +1,53 @@
+﻿@model maps.Web.Models.ViewModels.UtilityDepartmentView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Додати відповідального" : "Змінити дані про відповідального";
+    Layout = "~/Areas/Utility/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>@(Model.ID == 0 ? "Додати відповідального" : "Змінити дані про відповідального")</h2>
+<p></p>
+@using (Html.BeginForm("Edit", "Department", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        <div class="form-group @Html.HasErrorClass("Name", "has-error")">
+            <label class="col-sm-3 control-label" for="Name">
+                Назва
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Name", Model.Name, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Name")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Phone", "has-error")">
+            <label class="col-sm-3 control-label" for="Name">
+                Телефон
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Phone", Model.Phone, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Phone")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Address", "has-error")">
+            <label class="col-sm-3 control-label" for="Address">
+                Адреса
+            </label>
+            <div class="col-sm-5">
+                @Html.TextArea("Address", Model.Address, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Address")
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Зберегти
+            </button>
+            @Html.ActionLink("Назад", "Index", null, null, new { @class = "btn" })
+        </div>
+    </fieldset>
+}

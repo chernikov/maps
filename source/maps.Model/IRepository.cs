@@ -152,5 +152,99 @@ namespace maps.Model
         bool RemoveCity(int idCity);
         
         #endregion 
+
+        #region Comment
+        
+        IQueryable<Comment> Comments { get; }
+        
+        bool CreateComment(Comment instance);
+        
+        bool UpdateComment(Comment instance);
+        
+        bool RemoveComment(int idComment);
+        
+        #endregion 
+
+        #region UtilityDepartment
+        
+        IQueryable<UtilityDepartment> UtilityDepartments { get; }
+        
+        bool CreateUtilityDepartment(UtilityDepartment instance);
+        
+        bool UpdateUtilityDepartment(UtilityDepartment instance);
+        
+        bool RemoveUtilityDepartment(int idUtilityDepartment);
+        
+        #endregion 
+
+        #region UtilityIssue
+        
+        IQueryable<UtilityIssue> UtilityIssues { get; }
+        
+        bool CreateUtilityIssue(UtilityIssue instance);
+
+        bool UpdateUtilityIssue(UtilityIssue instance, int userID);
+
+        bool AcceptUtilityIssue(UtilityIssue instance, int userID);
+
+        bool ResolveUtilityIssue(UtilityIssue instance, int userID);
+
+        bool CloseUtilityIssue(UtilityIssue instance, int userID);
+
+        bool RemoveUtilityIssue(int idUtilityIssue, int userID);
+
+        bool ClearAllUtilityIssueTags(int idUtilityIssue);
+
+        bool ClearAllUtilityIssuePhotos(int idUtilityIssue);
+
+        #endregion 
+
+        #region UtilityIssueComment
+        
+        IQueryable<UtilityIssueComment> UtilityIssueComments { get; }
+        
+        bool CreateUtilityIssueComment(UtilityIssueComment instance);
+        
+        bool UpdateUtilityIssueComment(UtilityIssueComment instance);
+        
+        bool RemoveUtilityIssueComment(int idUtilityIssueComment);
+        
+        #endregion 
+
+        #region UtilityTag
+        
+        IQueryable<UtilityTag> UtilityTags { get; }
+        
+        bool CreateUtilityTag(UtilityTag instance);
+        
+        bool UpdateUtilityTag(UtilityTag instance);
+        
+        bool RemoveUtilityTag(int idUtilityTag);
+        
+        #endregion 
+
+        #region UtilityIssueTag
+        
+        IQueryable<UtilityIssueTag> UtilityIssueTags { get; }
+        
+        bool CreateUtilityIssueTag(UtilityIssueTag instance);
+        
+        bool UpdateUtilityIssueTag(UtilityIssueTag instance);
+        
+        bool RemoveUtilityIssueTag(int idUtilityIssueTag);
+        
+        #endregion 
+
+        #region UtilityPhoto
+
+        IQueryable<UtilityPhoto> UtilityPhotos { get; }
+        
+        bool CreateUtilityPhoto(UtilityPhoto instance);
+        
+        bool UpdateUtilityPhoto(UtilityPhoto instance);
+        
+        bool RemoveUtilityPhoto(int idUtilityPhoto);
+        
+        #endregion 
     }
 }

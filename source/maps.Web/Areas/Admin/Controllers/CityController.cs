@@ -69,11 +69,5 @@ namespace maps.Web.Areas.Admin.Controllers
             }
             return RedirectToAction("Index");
         }
-
-
-        public ActionResult Address()
-        {
-            return View();
-        }
     }
 }

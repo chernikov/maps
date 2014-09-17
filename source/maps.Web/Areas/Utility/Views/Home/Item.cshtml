@@ -1,0 +1,152 @@
+﻿@model maps.Model.UtilityIssue
+
+@{
+    ViewBag.Title = "Інформація - Комуналка - maps.if.ua";
+    Layout = "~/Areas/Utility/Views/Shared/_FullLayout.cshtml";
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+
+@section styles {
+    @Styles.Render("~/Content/css/blueimp-gallery.min.css")
+    @Styles.Render("~/Content/css/bootstrap-image-gallery.min.css")
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.blueimp-gallery.min.js")
+    @Scripts.Render("~/Scripts/bootstrap-image-gallery.min.js")
+    @Scripts.Render("~/Scripts/utility/item.js")
+}
+
+<p>&nbsp;</p><p>&nbsp;</p>
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-2">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="small-map" id="map"
+                     data-lat="@Model.Lat.ToString(CultureInfo.InvariantCulture)"
+                     data-lng="@Model.Lng.ToString(CultureInfo.InvariantCulture)"
+                     data-zoom="@Model.City.Zoom">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <br />
+                <a href="@Url.Action("Index", "Home")" class="btn btn-default">На загальну мапу</a>
+            </div>
+        </div>
+        <div class="row">
+            <br /><br />
+        </div>
+        <div class="row">
+            @foreach (var item in Model.SubPhotos)
+            {
+                <div class="col-xs-12 col-md-6">
+                    <a href="@item.Image" class="thumbnail" data-gallery>
+                        <img src="@item.Image?w=200&h=200&mode=crop" />
+                    </a>
+                    @if (item.State == (int)UtilityIssue.StatusType.Resolved)
+                    {
+                        <div class="label label-success">Вирішено</div>  
+                    }
+                </div>
+            }
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                    <div class="fb-share-button" data-href="http://maps.if.ua/utility/Home/Item/@Model.ID"></div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <h3 class="label @Model.StatusClass">@Model.StatusText</h3>
+        <p>&nbsp;</p>
+
+        <p>
+            <span class="glyphicon glyphicon-user"></span> @Model.User.FullName
+        </p>
+        <p>
+            <span class="glyphicon glyphicon-time"></span> Додано : <em>@Model.AddedDate.ToString("dd.MM.yyyy HH:mm")</em>
+        </p>
+        @if (Model.AcceptedDate.HasValue)
+        {
+            <p>
+                <span class="glyphicon glyphicon-time"></span> Прийнято : <em>@Model.AcceptedDate.Value.ToString("dd.MM.yyyy HH:mm")</em>
+            </p>
+            if (Model.UtilityDepartment != null)
+            {
+                <p>
+                    Відповідальний :<strong> @Model.UtilityDepartment.Name</strong>
+
+                    @if (!string.IsNullOrWhiteSpace(@Model.UtilityDepartment.Phone))
+                    {
+                        <em>@Model.UtilityDepartment.Phone</em>
+                    }
+                </p>
+            }
+        }
+        @if (Model.ResolvedDate.HasValue)
+        {
+            <p>
+                <span class="glyphicon glyphicon-time"></span> Вирішено : <em>@Model.ResolvedDate.Value.ToString("dd.MM.yyyy HH:mm")</em>
+            </p>
+        }
+        @if (Model.SubTags.Any())
+        {
+            <p>
+                @foreach (var tag in Model.SubTags)
+                {
+                    <div class="badge @tag.Color">@tag.Name</div>
+                }
+            </p>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Address))
+        {
+            <p>
+                <strong>Адреса:</strong> @Model.Address
+            </p>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <p>
+                <strong>Опис:</strong> @Model.Description
+            </p>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <br />
+        <hr>
+
+        <!-- the comment box -->
+        @if (currentUser != null)
+        {
+            <div id="CommentWrapper">
+                @Html.Action("Write", "Comment")
+            </div>
+        }
+        else
+        {
+            <div class="jumbotron">
+                <p>Зареєструйтесь через фейсбук, щоб додати коментар.</p>
+                @Html.ActionLink("Facebook login", "Connect", "User", new { area = "Default" }, new { @class = "btn btn-primary btn-lg" })
+            </div>
+        }
+
+
+        @foreach (var comment in Model.SubComments)
+        {
+            <h3>
+                <i class="fa fa-comment"></i> @comment.User.FullName:
+                <small> @comment.AddedDate.ToString("dd.MM.yyyy HH:mm")</small>
+            </h3>
+            <p>@Html.Raw(comment.Text.NlToBr())</p>
+        }
+    </div>
+</div>
+<div class="row">
+    <br/>
+    <br/>
+</div>
+@Html.Partial("GalleryLightBox")

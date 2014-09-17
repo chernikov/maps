@@ -170,3 +170,7 @@
     width: 99%;
     height: 200px !important;
 }
+
+.no-top-border td {
+    border-top : none !important;
+}

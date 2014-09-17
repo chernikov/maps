@@ -41,5 +41,13 @@ namespace maps.Model
             }
             return false;
         }
+
+        public string FullName
+        {
+            get
+            {
+                return string.Format("{0} {1}", FirstName, LastName);
+            }
+        }
     }
 }

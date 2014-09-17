@@ -1,0 +1,19 @@
+﻿@{
+    var controllerName = ViewContext.RequestContext.RouteData.Values["controller"] as string;
+    var actionName = ViewContext.RequestContext.RouteData.Values["action"] as string;
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <li class="@(controllerName == "Home" ? "active" : "")"><a href="@Url.Action("Index", "Home")">Комуналка</a></li>
+        @if (currentUser != null && currentUser.InRoles("admin,utility_moderator"))
+        {
+            <li><a href="@Url.Action("Index", "Admin")"><span class="glyphicon glyphicon-home"></span> Адмінка</a></li>
+        }
+        @if (controllerName == "Home" && currentUser != null)
+        {
+            <li class="@(controllerName == "Home" && actionName == "Add" ? "active" : "")"><a href="@Url.Action("Add", "Home")"><span class="glyphicon glyphicon-plus"></span> Додати дефект</a></li>
+        }
+     
+    </ul>
+</div>

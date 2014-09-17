@@ -29,8 +29,6 @@ namespace maps.Web.Areas.Default.Controllers
             try
             {
                 ImageBuilder.Current.Build(upload.InputStream, filePath, new ResizeSettings("maxwidth=1600&crop=auto"));
-
-                var img = new Bitmap(filePath);
             }
             catch (Exception ex)
             {

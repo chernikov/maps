@@ -27,6 +27,10 @@ namespace maps.Web.App_Start
             var goalAreaContext = new AreaRegistrationContext(goalArea.AreaName, routes);
             goalArea.RegisterArea(goalAreaContext);
 
+            var utilityArea = new UtilityAreaRegistration();
+            var utilityAreaContext = new AreaRegistrationContext(utilityArea.AreaName, routes);
+            utilityArea.RegisterArea(utilityAreaContext);
+
             var defaultArea = new DefaultAreaRegistration();
             var defaultAreaContext = new AreaRegistrationContext(defaultArea.AreaName, routes);
             defaultArea.RegisterArea(defaultAreaContext);

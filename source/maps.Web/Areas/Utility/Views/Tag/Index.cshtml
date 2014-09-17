@@ -1,0 +1,37 @@
+@model IEnumerable<UtilityTag>
+
+@{
+    ViewBag.Title = "Розділи";
+    Layout = "~/Areas/Utility/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>
+    Розділи
+</h2>
+@Html.ActionLink("Додати", "Create", "Tag", null, new { @class = "btn btn-primary" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                Назва
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+               @item.Name
+            </td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", "Tag", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Видалити", "Delete", "Tag", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+            </td>
+        </tr>
+    }
+</table>

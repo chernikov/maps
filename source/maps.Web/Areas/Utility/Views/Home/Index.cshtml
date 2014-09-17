@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Комуналка";
+    Layout = "~/Areas/Utility/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    @Scripts.Render("~/scripts/utility/map-main.js")
+    @Scripts.Render("~/scripts/utility/map-issue.js")
+    @Scripts.Render("~/scripts/utility/index.js")
+}
+
+
+@Html.Partial("Map")
+
+

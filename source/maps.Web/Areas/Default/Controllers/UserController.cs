@@ -80,7 +80,7 @@ namespace maps.Web.Areas.Default.Controllers
                     var user = (User)ModelMapper.Map(registerView, typeof(SocialRegisterUserView), typeof(User));
                     
                     user.Password = StringExtension.GenerateNewFile();
-
+                    user.CityID = CurrentCity.ID;
                     Repository.CreateUser(user);
 
                     //создать Social

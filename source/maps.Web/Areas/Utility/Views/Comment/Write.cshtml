@@ -1,0 +1,19 @@
+﻿@model CommentView
+<div class="well">
+
+    <h4><i class="fa fa-paper-plane-o"></i> Додайте коментар:</h4>
+
+    @using (Html.BeginForm("Write", "Comment", FormMethod.Post, new { role = "form", id = "WriteCommentForm" }))
+    {
+        @Html.Hidden("OwnerID", Model.OwnerID)
+        <div class="form-group">
+            @Html.TextArea("Text", Model.Text, new { @class = "form-control", rows = 3 })
+        </div>
+        <button type="submit" class="btn btn-primary" id="WriteCommentBtn">
+            <i class="fa fa-reply"></i> Додати
+        </button>
+    }
+
+</div>
+
+<hr>

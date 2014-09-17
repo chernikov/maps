@@ -1,0 +1,47 @@
+﻿@model UtilityIssue
+<div>
+    <div class="col-sm-6">
+        <div class="thumbnail">
+            @if (Model.FirstImage != null)
+            {
+                <img src="@Model.FirstImage.Image?w=200&h=200&mode=crop" />
+            }
+        </div>
+    </div>
+    <div class="col-sm-5">
+        @if (Model.SubTags.Any())
+        {
+            <p>
+                @foreach (var tag in Model.SubTags)
+                {
+                    <span class="badge @tag.Color">@tag.Name</span>
+                }
+            </p>
+        }
+        @if (Model.UtilityDepartment != null)
+        {
+            <p>
+                Відповідальний :<strong> @Model.UtilityDepartment.Name</strong>
+
+                @if (!string.IsNullOrWhiteSpace(@Model.UtilityDepartment.Phone))
+                {
+                    <em>@Model.UtilityDepartment.Phone</em>
+                }
+            </p>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <p>
+                @Model.Description
+            </p>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Address))
+        {
+            <p>
+                @Model.Address
+            </p>
+        }
+        <a href="@Url.Action("Item", "Home", new {id = Model.ID })">Детальніше >>></a>
+    </div>
+    <h3 class="pull-right label @Model.StatusClass">@Model.StatusText</h3>
+</div>

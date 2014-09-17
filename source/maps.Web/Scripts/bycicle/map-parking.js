@@ -73,8 +73,10 @@
                 var infowindow = new google.maps.InfoWindow({
                     content: data
                 });
-                infowindow.open(mapMain.map, marker);
                 _this.infoWindows.push(infowindow);
+
+                infowindow.open(mapMain.map, marker);
+                
 
             }
         });

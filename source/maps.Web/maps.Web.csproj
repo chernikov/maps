@@ -158,6 +158,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Default\Models\" />
     <Folder Include="Content\files\uploads\" />
+    <Folder Include="Content\files\utilities\" />
     <Folder Include="Content\logs\" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,15 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Utility\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Utility\Controllers\CommentController.cs" />
+    <Compile Include="Areas\Utility\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Utility\Controllers\DepartmentController.cs" />
+    <Compile Include="Areas\Utility\Controllers\TagController.cs" />
+    <Compile Include="Areas\Utility\Controllers\UtilityIssueController.cs" />
+    <Compile Include="Areas\Utility\Controllers\UtilityPhotoController.cs" />
+    <Compile Include="Areas\Utility\UtilityAreaRegistration.cs" />
+    <Compile Include="Areas\Utility\Controllers\UtilityController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\CityController.cs" />
@@ -214,25 +224,33 @@
     <Compile Include="Global\FineUpload.cs" />
     <Compile Include="Global\FineUploaderResult.cs" />
     <Compile Include="Global\OAuth\FacebookAppConfig.cs" />
+    <Compile Include="Global\Search\SearchEngine.cs" />
     <Compile Include="Helpers\CustomHelpers.cs" />
     <Compile Include="Mail\MailSender.cs" />
     <Compile Include="Mail\NotifyMail.cs" />
+    <Compile Include="Models\Info\MessageInfo.cs" />
+    <Compile Include="Models\Mappers\ModelMapper.cs" />
     <Compile Include="Models\ViewModels\AdminBicycleParkingView.cs" />
     <Compile Include="Models\Dto\BicycleParkingDto.cs" />
     <Compile Include="Models\Mappers\MapperCollection.cs" />
-    <Compile Include="Models\Mappers\ModelMapper.cs" />
     <Compile Include="Models\Api\BicycleParkingApiModel.cs" />
     <Compile Include="Models\ViewModels\BicycleParkingView.cs" />
     <Compile Include="Models\ViewModels\BycicleDirectionView.cs" />
     <Compile Include="Models\ViewModels\CityView.cs" />
+    <Compile Include="Models\ViewModels\CommentView.cs" />
     <Compile Include="Models\ViewModels\GoalView.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
+    <Compile Include="Models\ViewModels\UtilityDepartmentView.cs" />
+    <Compile Include="Models\ViewModels\UtilityIssueView.cs" />
     <Compile Include="Models\ViewModels\SocialRegisterUserView.cs" />
     <Compile Include="Models\ViewModels\User\BaseUserView.cs" />
     <Compile Include="Models\ViewModels\User\ChangePasswordView.cs" />
     <Compile Include="Models\ViewModels\User\ForgotPasswordView.cs" />
     <Compile Include="Models\ViewModels\User\RegisterUserView.cs" />
     <Compile Include="Models\ViewModels\User\UserView.cs" />
+    <Compile Include="Models\ViewModels\NewUtilityIssueView.cs" />
+    <Compile Include="Models\ViewModels\UtilityPhotoView.cs" />
+    <Compile Include="Models\ViewModels\UtilityTagView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\IsUserPassword.cs" />
     <Compile Include="Validation\PropertiesMustMatch.cs" />
@@ -244,24 +262,40 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\admin.css" />
+    <Content Include="Content\css\blueimp-gallery.min.css" />
+    <Content Include="Content\css\bootstrap-image-gallery.css" />
+    <Content Include="Content\css\bootstrap-image-gallery.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap\bootstrap.css" />
+    <Content Include="Content\css\chosen.css" />
     <Content Include="Content\css\fineuploader-4.1.1.min.css" />
     <Content Include="Content\css\fineuploader.css" />
     <Content Include="Content\css\PagedList.css" />
+    <Content Include="Content\css\typeahead.css" />
     <Content Include="Content\images\bycicle_2.png" />
+    <Content Include="Content\images\chosen-sprite.png" />
+    <Content Include="Content\images\danger-icon.png" />
     <Content Include="Content\images\default_avatar.jpg" />
     <Content Include="Content\images\icons_bikeparking-01_22x22.png" />
     <Content Include="Content\images\icons_bikeparking-02_22x22.png" />
     <Content Include="Content\images\icons_bikeparking-03_22x22.png" />
     <Content Include="Content\images\ifx_empty.png" />
     <Content Include="Content\images\ifx_set.png" />
+    <Content Include="Content\images\info-icon.png" />
     <Content Include="Content\images\maps_logo.png" />
     <Content Include="Content\images\maps_logo_small.png" />
     <Content Include="Content\images\marker_12_2x.png" />
+    <Content Include="Content\images\marker_12_2x__.png" />
     <Content Include="Content\images\marker_13_2x.png" />
+    <Content Include="Content\images\marker_13_2x__.png" />
     <Content Include="Content\images\marker_stroked.png" />
     <Content Include="Content\images\no_camera_sign.png" />
+    <Content Include="Content\images\parking-16.png" />
+    <Content Include="Content\images\primary-icon.png" />
+    <Content Include="Content\images\success-icon.png" />
+    <Content Include="Content\images\utility_logo.png" />
+    <Content Include="Content\images\utility_logo_2.png" />
+    <Content Include="Content\images\warnings-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -273,6 +307,10 @@
     <Content Include="Scripts\admin\bicycle-edit-parking.js" />
     <Content Include="Scripts\admin\common.js" />
     <Content Include="Scripts\admin\route-lengths.js" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
+    <Content Include="Scripts\bootstrap-image-gallery.js" />
+    <Content Include="Scripts\bootstrap-image-gallery.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -426,6 +464,32 @@
     <Content Include="Areas\Admin\Views\BicycleParking\Distance.cshtml" />
     <Content Include="Areas\Admin\Views\BicycleRoute\Distance.cshtml" />
     <Content Include="Areas\Admin\Views\BicycleRoute\Index.cshtml" />
+    <Content Include="Areas\Utility\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Utility\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Utility\Views\Shared\AdminMenu.cshtml" />
+    <Content Include="Areas\Utility\Views\web.config" />
+    <Content Include="Areas\Utility\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Utility\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Utility\Views\Shared\TopMenu.cshtml" />
+    <Content Include="Areas\Utility\Views\Shared\FbCode.cshtml" />
+    <Content Include="Areas\Utility\Views\Shared\Map.cshtml" />
+    <Content Include="Areas\Utility\Views\Home\Add.cshtml" />
+    <Content Include="Areas\Utility\Views\Home\Popup.cshtml" />
+    <Content Include="Areas\Utility\Views\Home\Edit.cshtml" />
+    <Content Include="Areas\Utility\Views\Tag\Edit.cshtml" />
+    <Content Include="Areas\Utility\Views\Tag\Index.cshtml" />
+    <Content Include="Areas\Utility\Views\Shared\UtilityPhoto.cshtml" />
+    <Content Include="Areas\Utility\Views\Home\UploadTemplate.cshtml" />
+    <Content Include="Areas\Utility\Views\UtilityIssue\Edit.cshtml" />
+    <Content Include="Areas\Utility\Views\UtilityIssue\Index.cshtml" />
+    <Content Include="Areas\Utility\Views\UtilityIssue\UploadTemplate.cshtml" />
+    <Content Include="Areas\Utility\Views\Department\Edit.cshtml" />
+    <Content Include="Areas\Utility\Views\Department\Index.cshtml" />
+    <Content Include="Areas\Utility\Views\Home\Info.cshtml" />
+    <Content Include="Areas\Utility\Views\Home\Item.cshtml" />
+    <Content Include="Areas\Utility\Views\Shared\GalleryLightBox.cshtml" />
+    <Content Include="Areas\Utility\Views\Shared\_FullLayout.cshtml" />
+    <Content Include="Areas\Utility\Views\Comment\Write.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add-route.js" />
@@ -438,7 +502,16 @@
     <Content Include="Scripts\bycicle\parking.js" />
     <Content Include="Scripts\bycicle\route.js" />
     <Content Include="Scripts\bycicle\simple-form.js" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\chosen.jquery.min.js" />
     <Content Include="Scripts\constants.js" />
+    <Content Include="Scripts\jquery.blueimp-gallery.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
+    <Content Include="Scripts\utility\edit-issue.js" />
+    <Content Include="Scripts\utility\add-issue.js" />
     <Content Include="Scripts\default\common.js" />
     <Content Include="Scripts\default\edit-user.js" />
     <Content Include="Scripts\default\index.js" />
@@ -454,6 +527,13 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\utility\admin-index.js" />
+    <Content Include="Scripts\utility\admin-common.js" />
+    <Content Include="Scripts\utility\index.js" />
+    <Content Include="Scripts\utility\item.js" />
+    <Content Include="Scripts\utility\map-issue.js" />
+    <Content Include="Scripts\utility\map-small-main.js" />
+    <Content Include="Scripts\utility\map-main.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -468,6 +548,8 @@
     <Content Include="Views\Shared\Referal.cshtml" />
     <Content Include="Views\web.config" />
     <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
+    <Content Include="Views\Shared\_Ok.cshtml" />
+    <Content Include="Views\Shared\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">
@@ -507,7 +589,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>15986</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:15986/</IISUrl>
+          <IISUrl>http://localhost:15000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

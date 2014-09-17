@@ -1,0 +1,9 @@
+﻿@{
+    var currentCity = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentCity;
+}
+<div class="background-map" id="map"
+     data-lat="@currentCity.CenterLat.ToString(CultureInfo.InvariantCulture)"
+     data-lng="@currentCity.CenterLng.ToString(CultureInfo.InvariantCulture)"
+     data-zoom="@currentCity.Zoom">
+</div>
+

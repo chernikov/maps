@@ -77,5 +77,61 @@ namespace maps.Web.Models.Mappers
         		Mapper.CreateMap<CityView, City>();
         	}
         }
+
+        
+        public static class UtilityIssueMapper
+        {
+        	public static void Init()
+        	{
+        		Mapper.CreateMap<UtilityIssue, NewUtilityIssueView>();
+        		Mapper.CreateMap<NewUtilityIssueView, UtilityIssue>();
+
+                Mapper.CreateMap<UtilityIssue, UtilityIssueView>()
+                      .ForMember(dest => dest.Photos,
+                        opt => opt.MapFrom(p =>
+                        p.UtilityPhotos.Where(r => !r.IsRemoved).Select(r => new KeyValuePair<string, UtilityPhotoView>(Guid.NewGuid().ToString("N"), (UtilityPhotoView)Mapper.Map(r, typeof(UtilityPhoto), typeof(UtilityPhotoView))))))
+                      .ForMember(dest => dest.UtilityTagList,
+                        opt => opt.MapFrom(p => p.UtilityIssueTags.Select(r => r.UtilityTagID)));
+                Mapper.CreateMap<UtilityIssueView, UtilityIssue>();
+             
+        	}
+        }
+
+        
+        public static class UtilityTagMapper
+        {
+        	public static void Init()
+        	{
+        		Mapper.CreateMap<UtilityTag, UtilityTagView>();
+        		Mapper.CreateMap<UtilityTagView, UtilityTag>();
+        	}
+        }
+
+        public static class UtilityPhotoMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<UtilityPhoto, UtilityPhotoView>();
+                Mapper.CreateMap<UtilityPhotoView, UtilityPhoto>();
+            }
+        }
+
+        public static class UtilityDepartmentMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<UtilityDepartment, UtilityDepartmentView>();
+                Mapper.CreateMap<UtilityDepartmentView, UtilityDepartment>();
+            }
+        }
+
+        public static class CommentMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<Comment, CommentView>();
+                Mapper.CreateMap<CommentView, Comment>();
+            }
+        }
     }
 }

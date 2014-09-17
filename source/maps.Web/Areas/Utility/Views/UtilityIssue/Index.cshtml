@@ -1,0 +1,121 @@
+﻿@model PagedList.IPagedList<UtilityIssue>
+@{
+    ViewBag.Title = "Дефекти";
+    Layout = "~/Areas/Utility/Views/Shared/_AdminLayout.cshtml";
+    var status = (int?)ViewBag.Status;
+}
+<h2>
+    Дефекти
+</h2>
+<p>
+    <a href="@Url.Action("Index", "UtilityIssue")" class="btn btn-default @(status.HasValue ? "" : "active") btn-lg" role="button">Всі</a>
+    <a href="@Url.Action("Index", "UtilityIssue", new { status = (int)UtilityIssue.StatusType.Create })" class="btn no-ask btn-danger btn-sm @(status == (int)UtilityIssue.StatusType.Create ? "active" : "")" role="button">Нові</a>
+    <a href="@Url.Action("Index", "UtilityIssue", new { status = (int)UtilityIssue.StatusType.Accept })" class="btn btn-primary btn-sm @(status == (int)UtilityIssue.StatusType.Accept ? "active" : "")" role="button">Прийняті</a>
+    <a href="@Url.Action("Index", "UtilityIssue", new { status = (int)UtilityIssue.StatusType.Resolved })" class="btn btn-success btn-sm @(status == (int)UtilityIssue.StatusType.Resolved ? "active" : "")" role="button">Вирішені</a>
+    <a href="@Url.Action("Index", "UtilityIssue", new { status = (int)UtilityIssue.StatusType.Closed })" class="btn btn-info btn-sm @(status == (int)UtilityIssue.StatusType.Closed ? "active" : "")" role="button">Закриті</a>
+</p>
+<br />
+<p>
+    @Html.ActionLink("Додати", "Create", "UtilityIssue", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Статус
+            </th>
+            <th>
+                Відповідальний
+            </th>
+            <th>
+                Дата
+            </th>
+            <th>
+                Тема
+            </th>
+            <th>
+                Користувач
+            </th>
+
+            <th>
+                Адреса
+            </th>
+            <th>
+                Фото
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <span class="label @item.StatusClass">
+                    @item.StatusText
+                </span>
+            </td>
+            <td>
+                @if (item.UtilityDepartmentID.HasValue)
+                {
+                    @item.UtilityDepartment.Name
+                }
+            </td>
+            <td>
+                @item.AddedDate.ToString("dd.MM.yyyy HH:mm")
+            </td>
+            <td>
+                @foreach (var tag in item.SubTags)
+                {
+                    <span class="badge @tag.Color">@tag.Name</span>
+                }
+            </td>
+            <td>
+                @item.User.FullName
+            </td>
+
+            <td>
+                @item.Address.Teaser(40, "")
+            </td>
+
+            <td>
+                <p>
+                    @Html.ActionLink("Редагувати", "Edit", "UtilityIssue", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                </p>
+                <p>
+                    @Html.ActionLink("Видалити", "Delete", "UtilityIssue", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+                </p>
+                @if (item.UtilityDepartmentID.HasValue)
+                {
+                    if (item.Status == (int)UtilityIssue.StatusType.Accept)
+                    {
+                        <p>
+                            @Html.ActionLink("Вирішена", "Resolve", "UtilityIssue", new { id = item.ID }, new { @class = "btn btn-xs btn-success" })
+                        </p>
+                    }
+                    else if (item.Status == (int)UtilityIssue.StatusType.Create)
+                    {
+                        <p>
+                            @Html.ActionLink("Прийняти", "Accept", "UtilityIssue", new { id = item.ID }, new { @class = "btn btn-xs btn-primary" })
+                        </p>
+                    }
+                }
+                <p>
+                    @Html.ActionLink("Закрити", "Close", "UtilityIssue", new { id = item.ID }, new { @class = "btn btn-xs btn-warning" })
+                </p>
+            </td>
+        </tr>
+        <tr class="no-top-border">
+            <td colspan="6">
+                @foreach (var photo in item.SubPhotos)
+                {
+                    <img src="@photo.Image?w=100&h=100&mode=crop" />
+                }
+            </td>
+        </tr>
+    }
+</table>
+<div class="pager">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, status }))
+</div>
+

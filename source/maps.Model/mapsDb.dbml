@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="maps.Db" Class="mapsDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SATURN\MSSQL;Initial Catalog=maps.Db;Integrated Security=True" SettingsObjectName="maps.Model.Properties.Settings" SettingsPropertyName="maps_DbConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="maps.Db_work" Class="mapsDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SATURN\MSSQL;Initial Catalog=maps.Db_work;Integrated Security=True" SettingsObjectName="maps.Model.Properties.Settings" SettingsPropertyName="maps_Db_workConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Role" Member="Roles">
     <Type Name="Role">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -84,6 +84,8 @@
       <Association Name="City_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="CityID" Type="BicycleParking" />
       <Association Name="City_BycicleDirection" Member="BycicleDirections" ThisKey="ID" OtherKey="CityID" Type="BycicleDirection" />
       <Association Name="City_BicycleLine" Member="BicycleLines" ThisKey="ID" OtherKey="CityID" Type="BicycleLine" />
+      <Association Name="City_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="CityID" Type="UtilityIssue" />
+      <Association Name="City_UtilityDepartment" Member="UtilityDepartments" ThisKey="ID" OtherKey="CityID" Type="UtilityDepartment" />
     </Type>
   </Table>
   <Table Name="dbo.[User]" Member="Users">
@@ -104,6 +106,10 @@
       <Association Name="User_Goal" Member="Goals" ThisKey="ID" OtherKey="UserID" Type="Goal" />
       <Association Name="User_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="UserID" Type="BicycleParking" />
       <Association Name="User_BycicleDirection" Member="BycicleDirections" ThisKey="ID" OtherKey="UserID" Type="BycicleDirection" />
+      <Association Name="User_Comment" Member="Comments" ThisKey="ID" OtherKey="UserID" Type="Comment" />
+      <Association Name="User_UtilityPhoto" Member="UtilityPhotos" ThisKey="ID" OtherKey="UserID" Type="UtilityPhoto" />
+      <Association Name="User_UtilityIssueHistory" Member="UtilityIssueHistories" ThisKey="ID" OtherKey="UserID" Type="UtilityIssueHistory" />
+      <Association Name="User_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="UserID" Type="UtilityIssue" />
       <Association Name="City_User" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
     </Type>
   </Table>
@@ -161,6 +167,123 @@
       <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="BicycleLine_BicycleDirectionLine" Member="BicycleDirectionLines" ThisKey="ID" OtherKey="BicycleLineID" Type="BicycleDirectionLine" />
       <Association Name="City_BicycleLine" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comment" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Comment_Comment" Member="Comments" ThisKey="ID" OtherKey="ParentID" Type="Comment" />
+      <Association Name="Comment_UtilityIssueComment" Member="UtilityIssueComments" ThisKey="ID" OtherKey="CommentID" Type="UtilityIssueComment" />
+      <Association Name="Comment_Comment" Member="Comment1" ThisKey="ParentID" OtherKey="ID" Type="Comment" IsForeignKey="true" />
+      <Association Name="User_Comment" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UtilityPhoto" Member="UtilityPhotos">
+    <Type Name="UtilityPhoto">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRemoved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="User_UtilityPhoto" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="UtilityIssue_UtilityPhoto" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UtilityIssueComment" Member="UtilityIssueComments">
+    <Type Name="UtilityIssueComment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Comment_UtilityIssueComment" Member="Comment" ThisKey="CommentID" OtherKey="ID" Type="Comment" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="UtilityIssue_UtilityIssueComment" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UtilityIssueHistory" Member="UtilityIssueHistories">
+    <Type Name="UtilityIssueHistory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AcceptedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResolvedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClosedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UtilityDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MainUtilityIssueID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Lng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Solution" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRemoved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="UtilityIssueHistory_UtilityIssueHistory" Member="UtilityIssueHistories" ThisKey="ID" OtherKey="MainUtilityIssueID" Type="UtilityIssueHistory" />
+      <Association Name="UtilityIssueHistory_UtilityIssueHistory" Member="UtilityIssueHistory1" ThisKey="MainUtilityIssueID" OtherKey="ID" Type="UtilityIssueHistory" IsForeignKey="true" />
+      <Association Name="User_UtilityIssueHistory" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="UtilityIssue_UtilityIssueHistory" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="UtilityDepartment_UtilityIssueHistory" Member="UtilityDepartment" ThisKey="UtilityDepartmentID" OtherKey="ID" Type="UtilityDepartment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UtilityIssueTag" Member="UtilityIssueTags">
+    <Type Name="UtilityIssueTag">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UtilityTagID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UtilityTag_UtilityIssueTag" Member="UtilityTag" ThisKey="UtilityTagID" OtherKey="ID" Type="UtilityTag" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="UtilityIssue_UtilityIssueTag" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UtilityTag" Member="UtilityTags">
+    <Type Name="UtilityTag">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="UtilityTag_UtilityIssueTag" Member="UtilityIssueTags" ThisKey="ID" OtherKey="UtilityTagID" Type="UtilityIssueTag" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UtilityIssue" Member="UtilityIssues">
+    <Type Name="UtilityIssue">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AcceptedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResolvedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClosedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UtilityDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MainUtilityIssueID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Lng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Solution" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRemoved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="UtilityIssue_UtilityPhoto" Member="UtilityPhotos" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityPhoto" />
+      <Association Name="UtilityIssue_UtilityIssueComment" Member="UtilityIssueComments" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityIssueComment" />
+      <Association Name="UtilityIssue_UtilityIssueHistory" Member="UtilityIssueHistories" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityIssueHistory" />
+      <Association Name="UtilityIssue_UtilityIssueTag" Member="UtilityIssueTags" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityIssueTag" />
+      <Association Name="UtilityIssue_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="MainUtilityIssueID" Type="UtilityIssue" />
+      <Association Name="City_UtilityIssue" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+      <Association Name="User_UtilityIssue" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="UtilityIssue_UtilityIssue" Member="UtilityIssue1" ThisKey="MainUtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" />
+      <Association Name="UtilityDepartment_UtilityIssue" Member="UtilityDepartment" ThisKey="UtilityDepartmentID" OtherKey="ID" Type="UtilityDepartment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UtilityDepartment" Member="UtilityDepartments">
+    <Type Name="UtilityDepartment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="UtilityDepartment_UtilityIssueHistory" Member="UtilityIssueHistories" ThisKey="ID" OtherKey="UtilityDepartmentID" Type="UtilityIssueHistory" />
+      <Association Name="UtilityDepartment_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="UtilityDepartmentID" Type="UtilityIssue" />
+      <Association Name="City_UtilityDepartment" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

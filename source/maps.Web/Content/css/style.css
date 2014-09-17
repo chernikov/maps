@@ -55,22 +55,29 @@ body.overflow {
 /* line 49, ../../Sass/style.scss */
 .projects li a {
   display: block;
-  background-color: #468847;
   height: 70px;
   color: #fff;
   font-size: 40px;
-  width: 300px;
   padding: 3px 45px 20px 50px;
   text-decoration: none;
   text-align: right;
+  margin: 0 0 20px 0;
 }
-/* line 59, ../../Sass/style.scss */
+/* line 58, ../../Sass/style.scss */
 .projects li a img {
   position: relative;
   top: -4px;
 }
+/* line 64, ../../Sass/style.scss */
+.projects li a.bicycle {
+  background-color: #468847;
+}
+/* line 68, ../../Sass/style.scss */
+.projects li a.utility {
+  background-color: #ee9127;
+}
 
-/* line 67, ../../Sass/style.scss */
+/* line 75, ../../Sass/style.scss */
 .navbar > .container .navbar-brand.bycicle {
   color: #fff;
   font-size: 30px;
@@ -79,7 +86,7 @@ body.overflow {
   display: inline-block;
 }
 
-/* line 75, ../../Sass/style.scss */
+/* line 83, ../../Sass/style.scss */
 .action-wrapper {
   position: fixed;
   bottom: 0px;
@@ -89,55 +96,55 @@ body.overflow {
   text-align: center;
 }
 
-/* line 84, ../../Sass/style.scss */
+/* line 92, ../../Sass/style.scss */
 .tutorial-wrapper {
   position: fixed;
-  top: 93px;
-  right: 6px;
-  padding: 15px;
+  top: 100px;
+  right: 20px;
+  padding: 20px;
   background-color: white;
   z-index: 2;
   text-align: center;
   font-size: 16px;
   cursor: default;
 }
-/* line 94, ../../Sass/style.scss */
+/* line 102, ../../Sass/style.scss */
 .tutorial-wrapper .active {
   font-weight: bold;
 }
-/* line 97, ../../Sass/style.scss */
+/* line 105, ../../Sass/style.scss */
 .tutorial-wrapper .passed {
   text-decoration: line-through;
 }
 
-/* line 103, ../../Sass/style.scss */
+/* line 111, ../../Sass/style.scss */
 .tutorial-item {
   list-style-type: none;
   text-align: left;
 }
 
-/* line 108, ../../Sass/style.scss */
+/* line 116, ../../Sass/style.scss */
 .textarea {
   width: 99%;
   height: 200px !important;
 }
 
-/* line 113, ../../Sass/style.scss */
+/* line 121, ../../Sass/style.scss */
 .parking-modal .tooltip-inner {
   max-width: 350px;
   width: 350px;
 }
 
-/* line 118, ../../Sass/style.scss */
+/* line 126, ../../Sass/style.scss */
 .main-wrapper {
   padding-top: 70px;
 }
 
-/* line 122, ../../Sass/style.scss */
+/* line 130, ../../Sass/style.scss */
 .goal-table {
   margin: 10px 10px 10px 10px;
 }
-/* line 124, ../../Sass/style.scss */
+/* line 132, ../../Sass/style.scss */
 .goal-table .cell {
   width: 76px;
   height: 76px;
@@ -145,19 +152,34 @@ body.overflow {
   float: left;
   margin: -1px 0 0 -1px;
 }
-/* line 132, ../../Sass/style.scss */
+/* line 140, ../../Sass/style.scss */
 .goal-table .cell.active {
   cursor: pointer;
 }
-/* line 135, ../../Sass/style.scss */
+/* line 143, ../../Sass/style.scss */
 .goal-table .cell.empty {
   background: transparent url("/Content/images/ifx_empty.png") no-repeat 2px 2px;
 }
-/* line 138, ../../Sass/style.scss */
+/* line 146, ../../Sass/style.scss */
 .goal-table .cell.set {
   background: transparent url("/Content/images/ifx_set.png") no-repeat 2px 2px;
 }
-/* line 142, ../../Sass/style.scss */
+/* line 150, ../../Sass/style.scss */
 .goal-table .separator {
   clear: both;
+}
+
+/* line 156, ../../Sass/style.scss */
+.remove-file {
+  cursor: pointer;
+}
+
+/* line 161, ../../Sass/style.scss */
+h3.label {
+  font-size: 24px;
+}
+
+/* line 165, ../../Sass/style.scss */
+.small-map {
+  height: 400px;
 }

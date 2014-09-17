@@ -1,0 +1,119 @@
+﻿@model maps.Web.Models.ViewModels.UtilityIssueView
+
+@{
+    ViewBag.Title = Model.ID == 0 ? "Додати дефект" : "Редагувати дефект";
+    Layout = "~/Areas/Utility/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+    @Styles.Render("~/Content/css/chosen.css")
+    @Styles.Render("~/Content/css/typeahead.css")
+}
+
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/scripts/typeahead.jquery.js")
+    @Scripts.Render("~/scripts/chosen.jquery.js")
+    @Scripts.Render("~/scripts/utility/map-small-main.js")
+    @Scripts.Render("~/scripts/utility/edit-issue.js")
+}
+
+<h2>@(Model.ID == 0 ? "Додати дефект" : "Редагувати дефект")</h2>
+<p></p>
+@using (Html.BeginForm("Edit", "UtilityIssue", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary()
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        @Html.Hidden("Lat", Model.Lat)
+        @Html.Hidden("Lng", Model.Lng)
+        @Html.Hidden("Status", Model.Status)
+        @Html.Hidden("City.ID", Model.City.ID)
+        @Html.Hidden("City.CenterLat", Model.City.CenterLat)
+        @Html.Hidden("City.CenterLng", Model.City.CenterLng)
+        @Html.Hidden("City.Zoom", Model.City.Zoom)
+        @Html.Hidden("City.Name", Model.City.Name)
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Відповідальний
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title='Призначте відповідальний відділок, щоб статус дефекту перейшов в стан "Прийнято"'></span>
+            </label>
+            <div class="col-sm-9">
+                @Html.TextBox("UtilityDepartmentName", Model.UtilityDepartmentName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Місцезнаходження
+            </label>
+            <div class="col-sm-9">
+                <div class="small-map" id="map"
+                     data-lat="@Model.City.CenterLat.ToString(CultureInfo.InvariantCulture)"
+                     data-lng="@Model.City.CenterLng.ToString(CultureInfo.InvariantCulture)"
+                     data-zoom="@Model.City.Zoom">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Адреса
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Скорегуйте, якщо адреса визначилась неправильно."></span>
+            </label>
+            <div class="col-sm-9">
+                @Html.TextBox("Address", Model.Address, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Фотографіі
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Будь ласка, зробіть якісну фотографію (або декілька) зблизька."></span>
+                <br />
+                <p>
+                    <div id="AddPhoto">Додати</div>
+                </p>
+            </label>
+            <div class="col-sm-9">
+                <div class="row" id="UtilityPhotosWrapper">
+                    @if (Model.Photos != null)
+                    {
+                        foreach (var keyValuePair in Model.Photos)
+                        {
+                            @Html.Partial("UtilityPhoto", keyValuePair)
+                        }
+                    }
+                </div>
+                @Html.Partial("UploadTemplate")
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="UtilityTagList">
+                Тема
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Можна вибрати декілька"></span>
+            </label>
+            <div class="col-sm-9">
+                @Html.ListBox("UtilityTagList", Model.SelectListUtilityTags, new { @class = "form-control chzn-select" })
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Description", "has-error")">
+            <label class="col-sm-3 control-label" for="Description">
+                Опис
+                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Можете залишити коментар чи уточнення"></span>
+                @Html.ValidationMessage("Description")
+            </label>
+            <div class="col-sm-9">
+                @Html.TextArea("Description", Model.Description, new { @class = "form-control textarea" })
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Зберегти
+            </button>
+            @Html.ActionLink("Назад", "Index", null, null, new { @class = "btn" })
+        </div>
+    </fieldset>
+}
+
+

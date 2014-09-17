@@ -60,12 +60,20 @@
     <Compile Include="Proxy\BicycleParkingVote.cs" />
     <Compile Include="Proxy\BycicleDirection.cs" />
     <Compile Include="Proxy\City.cs" />
+    <Compile Include="Proxy\Comment.cs" />
     <Compile Include="Proxy\Goal.cs" />
     <Compile Include="Proxy\GoalCell.cs" />
     <Compile Include="Proxy\Role.cs" />
     <Compile Include="Proxy\Social.cs" />
     <Compile Include="Proxy\User.cs" />
     <Compile Include="Proxy\UserRole.cs" />
+    <Compile Include="Proxy\UtilityDepartment.cs" />
+    <Compile Include="Proxy\UtilityIssue.cs" />
+    <Compile Include="Proxy\UtilityIssueComment.cs" />
+    <Compile Include="Proxy\UtilityIssueHistory.cs" />
+    <Compile Include="Proxy\UtilityIssueTag.cs" />
+    <Compile Include="Proxy\UtilityPhoto.cs" />
+    <Compile Include="Proxy\UtilityTag.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="SqlRepository\BicycleDirectionLine.cs" />
     <Compile Include="SqlRepository\BicycleLine.cs" />
@@ -73,6 +81,7 @@
     <Compile Include="SqlRepository\BicycleParkingVote.cs" />
     <Compile Include="SqlRepository\BycicleDirection.cs" />
     <Compile Include="SqlRepository\City.cs" />
+    <Compile Include="SqlRepository\Comment.cs" />
     <Compile Include="SqlRepository\Goal.cs" />
     <Compile Include="SqlRepository\GoalCell.cs" />
     <Compile Include="SqlRepository\Role.cs" />
@@ -84,6 +93,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mapsDb.dbml</DependentUpon>
     </Compile>
+    <Compile Include="SqlRepository\UtilityDepartment.cs" />
+    <Compile Include="SqlRepository\UtilityIssue.cs" />
+    <Compile Include="SqlRepository\UtilityIssueComment.cs" />
+    <Compile Include="SqlRepository\UtilityIssueHistory.cs" />
+    <Compile Include="SqlRepository\UtilityIssueTag.cs" />
+    <Compile Include="SqlRepository\UtilityPhoto.cs" />
+    <Compile Include="SqlRepository\UtilityTag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

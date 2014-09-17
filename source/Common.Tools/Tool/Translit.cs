@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Tool
 {
-
     public class Translit
     {
         private static Random rand = new Random((int)DateTime.Now.Ticks);

@@ -13,7 +13,6 @@ namespace maps.Web.Areas.Default.Controllers
             return View();
         }
 
-        [HttpGet]
         [ChildActionOnly]
         public ActionResult SelectCities()
         {
@@ -35,7 +34,7 @@ namespace maps.Web.Areas.Default.Controllers
 
 
         [HttpPost]
-        public ActionResult SelectCities(int SelectCityID)
+        public ActionResult SelectCitiesSelect(int SelectCityID)
         {
             if (CurrentUser != null)
             {

@@ -48,17 +48,25 @@ body.overflow
 	li {
 		a {
 			display: block;
-			background-color: #468847;
 			height: 70px;
 			color: #fff;
 			font-size: 40px;
-			width: 300px;
 			padding: 3px 45px 20px 50px;
 			text-decoration: none;
 			text-align: right;
+			margin : 0 0 20px 0;
 			img {
 				position: relative;
 				top: -4px;
+			}
+
+			&.bicycle 
+			{
+				background-color: #468847;
+			}
+			&.utility 
+			{
+				background-color: #ee9127;
 			}
 		}
 	}
@@ -142,4 +150,18 @@ body.overflow
     {
         clear : both;
     }
+}
+
+.remove-file
+{
+    cursor : pointer;
+}
+
+h3.label 
+{
+	font-size : 24px;
+}
+
+.small-map {
+	height : 400px;
 }

@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[UtilityTag]
+(
+	[ID] INT IDENTITY (1, 1) NOT NULL, 
+	[Name] NVARCHAR(150) NOT NULL, 
+    CONSTRAINT [PK_UtilityTag] PRIMARY KEY CLUSTERED ([ID] ASC),
+	
+)
