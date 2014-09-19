@@ -1,102 +1,71 @@
-/* line 1, ../../Sass/style.scss */
-html {
-  height: 100%;
-}
+﻿html {
+  height: 100%; }
 
-/* line 5, ../../Sass/style.scss */
 body {
   padding-top: 50px;
   height: 100%;
-  font-family: 'Segoe UI';
-}
+  font-family: 'Segoe UI'; }
 
-/* line 12, ../../Sass/style.scss */
 body.overflow {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-/* line 16, ../../Sass/style.scss */
 .has-warning .field-validation-error {
-  color: #c09853;
-}
+  color: #c09853; }
 
-/* line 21, ../../Sass/style.scss */
 .has-error .field-validation-error {
-  color: #b94a48;
-}
+  color: #b94a48; }
 
-/* line 25, ../../Sass/style.scss */
 .has-success .field-validation-error {
-  color: #468847;
-}
+  color: #468847; }
 
-/* line 30, ../../Sass/style.scss */
 .field-validation-error {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373;
-}
+  color: #737373; }
 
-/* line 37, ../../Sass/style.scss */
 .background-map {
   margin: 19px 0 0 0;
   height: 100%;
-  width: 100%;
-}
+  width: 100%; }
 
-/* line 43, ../../Sass/style.scss */
 .projects {
   position: fixed;
   top: 100px;
   right: 10px;
-  list-style: none;
-}
-/* line 49, ../../Sass/style.scss */
-.projects li a {
-  display: block;
-  height: 70px;
-  color: #fff;
-  font-size: 40px;
-  padding: 3px 45px 20px 50px;
-  text-decoration: none;
-  text-align: right;
-  margin: 0 0 20px 0;
-}
-/* line 58, ../../Sass/style.scss */
-.projects li a img {
-  position: relative;
-  top: -4px;
-}
-/* line 64, ../../Sass/style.scss */
-.projects li a.bicycle {
-  background-color: #468847;
-}
-/* line 68, ../../Sass/style.scss */
-.projects li a.utility {
-  background-color: #ee9127;
-}
+  list-style: none; }
+  .projects li a {
+    display: block;
+    height: 70px;
+    color: #fff;
+    font-size: 40px;
+    padding: 3px 45px 20px 50px;
+    text-decoration: none;
+    text-align: right;
+    margin: 0 0 20px 0; }
+    .projects li a img {
+      position: relative;
+      top: -4px; }
+    .projects li a.bicycle {
+      background-color: #468847; }
+    .projects li a.utility {
+      background-color: #ee9127; }
 
-/* line 75, ../../Sass/style.scss */
 .navbar > .container .navbar-brand.bycicle {
   color: #fff;
   font-size: 30px;
   text-decoration: none;
   margin-left: 30px;
-  display: inline-block;
-}
+  display: inline-block; }
 
-/* line 83, ../../Sass/style.scss */
 .action-wrapper {
   position: fixed;
   bottom: 0px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 2;
-  text-align: center;
-}
+  text-align: center; }
 
-/* line 92, ../../Sass/style.scss */
 .tutorial-wrapper {
   position: fixed;
   top: 100px;
@@ -106,80 +75,51 @@ body.overflow {
   z-index: 2;
   text-align: center;
   font-size: 16px;
-  cursor: default;
-}
-/* line 102, ../../Sass/style.scss */
-.tutorial-wrapper .active {
-  font-weight: bold;
-}
-/* line 105, ../../Sass/style.scss */
-.tutorial-wrapper .passed {
-  text-decoration: line-through;
-}
+  cursor: default; }
+  .tutorial-wrapper .active {
+    font-weight: bold; }
+  .tutorial-wrapper .passed {
+    text-decoration: line-through; }
 
-/* line 111, ../../Sass/style.scss */
 .tutorial-item {
   list-style-type: none;
-  text-align: left;
-}
+  text-align: left; }
 
-/* line 116, ../../Sass/style.scss */
 .textarea {
   width: 99%;
-  height: 200px !important;
-}
+  height: 200px !important; }
 
-/* line 121, ../../Sass/style.scss */
 .parking-modal .tooltip-inner {
   max-width: 350px;
-  width: 350px;
-}
+  width: 350px; }
 
-/* line 126, ../../Sass/style.scss */
 .main-wrapper {
-  padding-top: 70px;
-}
+  padding-top: 70px; }
 
-/* line 130, ../../Sass/style.scss */
 .goal-table {
-  margin: 10px 10px 10px 10px;
-}
-/* line 132, ../../Sass/style.scss */
-.goal-table .cell {
-  width: 76px;
-  height: 76px;
-  border: 1px solid #ccc;
-  float: left;
-  margin: -1px 0 0 -1px;
-}
-/* line 140, ../../Sass/style.scss */
-.goal-table .cell.active {
-  cursor: pointer;
-}
-/* line 143, ../../Sass/style.scss */
-.goal-table .cell.empty {
-  background: transparent url("/Content/images/ifx_empty.png") no-repeat 2px 2px;
-}
-/* line 146, ../../Sass/style.scss */
-.goal-table .cell.set {
-  background: transparent url("/Content/images/ifx_set.png") no-repeat 2px 2px;
-}
-/* line 150, ../../Sass/style.scss */
-.goal-table .separator {
-  clear: both;
-}
+  margin: 10px 10px 10px 10px; }
+  .goal-table .cell {
+    width: 76px;
+    height: 76px;
+    border: 1px solid #ccc;
+    float: left;
+    margin: -1px 0 0 -1px; }
+  .goal-table .cell.active {
+    cursor: pointer; }
+  .goal-table .cell.empty {
+    background: transparent url("/Content/images/ifx_empty.png") no-repeat 2px 2px; }
+  .goal-table .cell.set {
+    background: transparent url("/Content/images/ifx_set.png") no-repeat 2px 2px; }
+  .goal-table .separator {
+    clear: both; }
 
-/* line 156, ../../Sass/style.scss */
 .remove-file {
-  cursor: pointer;
-}
+  cursor: pointer; }
 
-/* line 161, ../../Sass/style.scss */
 h3.label {
-  font-size: 24px;
-}
+  font-size: 24px; }
 
-/* line 165, ../../Sass/style.scss */
 .small-map {
-  height: 400px;
-}
+  height: 400px; }
+
+/*# sourceMappingURL=style.css.map */

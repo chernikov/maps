@@ -3,6 +3,13 @@
     ViewBag.Title = Model.ID == 0 ? "Додати парковку" : "Змінити дані про парковку";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
     var currentCity = ((maps.Web.Areas.Admin.Controllers.AdminController)ViewContext.Controller).CurrentCityOrDefault;
+
+    if (Model.ID != null)
+    {
+        currentCity.CenterLat = Model.CityCenterLat;
+        currentCity.CenterLng = Model.CityCenterLng;
+        currentCity.Zoom = Model.CityZoom;
+    }
 }
 @section styles {
     @Styles.Render("~/Content/css/fineuploader")
@@ -20,6 +27,9 @@
     <fieldset>
         @Html.Hidden("ID", Model.ID)
         @Html.Hidden("Position", Model.Position)
+        @Html.Hidden("CityCenterLat", Model.CityCenterLat)
+        @Html.Hidden("CityCenterLng", Model.CityCenterLng)
+        @Html.Hidden("CityZoom", Model.CityZoom)
         @Html.Hidden("PhotoUrl", Model.PhotoUrl)
         <div class="form-group @Html.HasErrorClass("Address", "has-error")">
             <label class="col-sm-3 control-label" for="Address">

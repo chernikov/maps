@@ -13,6 +13,12 @@ namespace maps.Web.Models.ViewModels
         [Required(ErrorMessage = "¬ибер≥ть м≥сто")]
         public int? CityID { get; set; }
 
+        public double CityCenterLat { get; set; }
+
+        public double CityCenterLng { get; set; }
+
+        public int CityZoom { get; set; }
+
         private List<City> Cities
         {
             get

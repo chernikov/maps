@@ -85,7 +85,7 @@ namespace maps.Web.Areas.Utility.Controllers
 
                 return View("Thanks", new MessageInfo("Дякую!", "Дякую за повідомлення!"));
             }
-            return View(newUtilityIssueView);
+            return View("Edit", newUtilityIssueView);
         }
 
         public ActionResult GetAll()

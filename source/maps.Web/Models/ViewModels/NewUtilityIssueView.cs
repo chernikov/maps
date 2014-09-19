@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using maps.Model;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace maps.Web.Models.ViewModels
@@ -19,6 +20,7 @@ namespace maps.Web.Models.ViewModels
 
 		public string Address {get; set; }
 
+        [Required(ErrorMessage="Додайте опис")]
 		public string Description {get; set; }
 
         private List<UtilityTag> _utilityTags

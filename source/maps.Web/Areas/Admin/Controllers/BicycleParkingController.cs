@@ -38,7 +38,7 @@ namespace maps.Web.Areas.Admin.Controllers
 
             if (bicycleparking != null)
             {
-                var bicycleparkingView = (AdminBicycleParkingView)ModelMapper.Map(bicycleparking, typeof(BicycleParking), typeof(BicycleParkingView));
+                var bicycleparkingView = (AdminBicycleParkingView)ModelMapper.Map(bicycleparking, typeof(BicycleParking), typeof(AdminBicycleParkingView));
                 return View(bicycleparkingView);
             }
             return RedirectToNotFoundPage;

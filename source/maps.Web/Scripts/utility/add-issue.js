@@ -66,7 +66,7 @@
                 }
             });
         }
-        $('#ParkingModal').on('hidden.bs.modal', function (e) {
+        $('#IssueModal').on('hidden.bs.modal', function (e) {
             _this.clearMarker();
         });
 
@@ -119,12 +119,9 @@
             type: "POST",
             data: $("#IssueForm").serialize(),
             success: function (data) {
-                $("#PopupWrapper").empty();
+                $("#PopupIssueWrapper").empty();
                 var obj = $(data);
-                $("#PopupWrapper").html(obj);
-                obj.modal({
-                    backdrop: false,
-                });
+                $("#PopupIssueWrapper").html(obj);
                 _this.initModal();
                 _this.clearMarker();
             }
@@ -132,8 +129,10 @@
     }
 
     this.clearMarker = function () {
-        _this.marker.setMap(null);
-        _this.marker = null;
+        if (_this.marker != null) {
+            _this.marker.setMap(null);
+            _this.marker = null;
+        }
     }
 
 }

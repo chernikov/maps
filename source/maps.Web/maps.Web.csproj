@@ -261,12 +261,21 @@
     <Compile Include="Validation\ValidPhone.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\admin.css" />
+    <Content Include="Content\css\admin.css">
+      <DependentUpon>admin.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\admin.min.css">
+      <DependentUpon>admin.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\blueimp-gallery.min.css" />
     <Content Include="Content\css\bootstrap-image-gallery.css" />
     <Content Include="Content\css\bootstrap-image-gallery.min.css" />
-    <Content Include="Content\css\bootstrap.css" />
-    <Content Include="Content\css\bootstrap\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.css">
+      <DependentUpon>bootstrap.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\chosen.css" />
     <Content Include="Content\css\fineuploader-4.1.1.min.css" />
     <Content Include="Content\css\fineuploader.css" />
@@ -299,7 +308,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <Content Include="Scripts\admin\city-edit.js" />
     <Content Include="Scripts\admin\distance-parking.js" />
     <Content Include="Scripts\admin\route-index.js" />
@@ -379,82 +393,9 @@
     <Content Include="Areas\Goal\Views\Home\_Ok.cshtml" />
     <Content Include="Areas\Goal\Views\Home\Item.cshtml" />
     <Content Include="Areas\Goal\Views\Shared\FbCode.cshtml" />
-    <Content Include="Sass\bootstrap.scss" />
-    <Content Include="Sass\bootstrap\bootstrap.scss" />
-    <Content Include="Sass\bootstrap\mixins\_alerts.scss" />
-    <Content Include="Sass\bootstrap\mixins\_background-variant.scss" />
-    <Content Include="Sass\bootstrap\mixins\_border-radius.scss" />
-    <Content Include="Sass\bootstrap\mixins\_buttons.scss" />
-    <Content Include="Sass\bootstrap\mixins\_center-block.scss" />
-    <Content Include="Sass\bootstrap\mixins\_clearfix.scss" />
-    <Content Include="Sass\bootstrap\mixins\_forms.scss" />
-    <Content Include="Sass\bootstrap\mixins\_gradients.scss" />
-    <Content Include="Sass\bootstrap\mixins\_grid-framework.scss" />
-    <Content Include="Sass\bootstrap\mixins\_grid.scss" />
-    <Content Include="Sass\bootstrap\mixins\_hide-text.scss" />
-    <Content Include="Sass\bootstrap\mixins\_image.scss" />
-    <Content Include="Sass\bootstrap\mixins\_labels.scss" />
-    <Content Include="Sass\bootstrap\mixins\_list-group.scss" />
-    <Content Include="Sass\bootstrap\mixins\_nav-divider.scss" />
-    <Content Include="Sass\bootstrap\mixins\_nav-vertical-align.scss" />
-    <Content Include="Sass\bootstrap\mixins\_opacity.scss" />
-    <Content Include="Sass\bootstrap\mixins\_pagination.scss" />
-    <Content Include="Sass\bootstrap\mixins\_panels.scss" />
-    <Content Include="Sass\bootstrap\mixins\_progress-bar.scss" />
-    <Content Include="Sass\bootstrap\mixins\_reset-filter.scss" />
-    <Content Include="Sass\bootstrap\mixins\_resize.scss" />
-    <Content Include="Sass\bootstrap\mixins\_responsive-visibility.scss" />
-    <Content Include="Sass\bootstrap\mixins\_size.scss" />
-    <Content Include="Sass\bootstrap\mixins\_tab-focus.scss" />
-    <Content Include="Sass\bootstrap\mixins\_table-row.scss" />
-    <Content Include="Sass\bootstrap\mixins\_text-emphasis.scss" />
-    <Content Include="Sass\bootstrap\mixins\_text-overflow.scss" />
-    <Content Include="Sass\bootstrap\mixins\_vendor-prefixes.scss" />
-    <Content Include="Sass\bootstrap\_alerts.scss" />
-    <Content Include="Sass\bootstrap\_badges.scss" />
-    <Content Include="Sass\bootstrap\_breadcrumbs.scss" />
-    <Content Include="Sass\bootstrap\_button-groups.scss" />
-    <Content Include="Sass\bootstrap\_buttons.scss" />
-    <Content Include="Sass\bootstrap\_carousel.scss" />
-    <Content Include="Sass\bootstrap\_close.scss" />
-    <Content Include="Sass\bootstrap\_code.scss" />
-    <Content Include="Sass\bootstrap\_component-animations.scss" />
-    <Content Include="Sass\bootstrap\_dropdowns.scss" />
-    <Content Include="Sass\bootstrap\_forms.scss" />
-    <Content Include="Sass\bootstrap\_glyphicons.scss" />
-    <Content Include="Sass\bootstrap\_grid.scss" />
-    <Content Include="Sass\bootstrap\_input-groups.scss" />
-    <Content Include="Sass\bootstrap\_jumbotron.scss" />
-    <Content Include="Sass\bootstrap\_labels.scss" />
-    <Content Include="Sass\bootstrap\_list-group.scss" />
-    <Content Include="Sass\bootstrap\_media.scss" />
-    <Content Include="Sass\bootstrap\_mixins.scss" />
-    <Content Include="Sass\bootstrap\_modals.scss" />
-    <Content Include="Sass\bootstrap\_navbar.scss" />
-    <Content Include="Sass\bootstrap\_navs.scss" />
-    <Content Include="Sass\bootstrap\_normalize.scss" />
-    <Content Include="Sass\bootstrap\_pager.scss" />
-    <Content Include="Sass\bootstrap\_pagination.scss" />
-    <Content Include="Sass\bootstrap\_panels.scss" />
-    <Content Include="Sass\bootstrap\_popovers.scss" />
-    <Content Include="Sass\bootstrap\_print.scss" />
-    <Content Include="Sass\bootstrap\_progress-bars.scss" />
-    <Content Include="Sass\bootstrap\_responsive-embed.scss" />
-    <Content Include="Sass\bootstrap\_responsive-utilities.scss" />
-    <Content Include="Sass\bootstrap\_scaffolding.scss" />
-    <Content Include="Sass\bootstrap\_tables.scss" />
-    <Content Include="Sass\bootstrap\_theme.scss" />
-    <Content Include="Sass\bootstrap\_thumbnails.scss" />
-    <Content Include="Sass\bootstrap\_tooltip.scss" />
-    <Content Include="Sass\bootstrap\_type.scss" />
-    <Content Include="Sass\bootstrap\_utilities.scss" />
-    <Content Include="Sass\bootstrap\_variables.scss" />
-    <Content Include="Sass\bootstrap\_wells.scss" />
-    <Content Include="Sass\_bootstrap-compass.scss" />
-    <Content Include="Sass\_bootstrap-mincer.scss" />
-    <Content Include="Sass\_bootstrap-sprockets.scss" />
+    <Content Include="Content\css\bootstrap.scss" />
     <Content Include="config.rb" />
-    <Content Include="Sass\style.scss" />
+    <Content Include="Content\css\style.scss" />
     <Content Include="Areas\Default\Views\File\Index.cshtml" />
     <Content Include="Areas\Admin\Views\City\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\City\Index.cshtml" />
@@ -490,6 +431,90 @@
     <Content Include="Areas\Utility\Views\Shared\GalleryLightBox.cshtml" />
     <Content Include="Areas\Utility\Views\Shared\_FullLayout.cshtml" />
     <Content Include="Areas\Utility\Views\Comment\Write.cshtml" />
+    <Content Include="Content\css\bootstrap.css.map">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\admin.css.map">
+      <DependentUpon>admin.css</DependentUpon>
+    </Content>
+    <None Include="Content\css\admin.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_alerts.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_center-block.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_labels.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_opacity.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_panels.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="Content\css\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\css\bootstrap\_alerts.scss" />
+    <Content Include="Content\css\bootstrap\_badges.scss" />
+    <Content Include="Content\css\bootstrap\_breadcrumbs.scss" />
+    <Content Include="Content\css\bootstrap\_button-groups.scss" />
+    <Content Include="Content\css\bootstrap\_buttons.scss" />
+    <Content Include="Content\css\bootstrap\_carousel.scss" />
+    <Content Include="Content\css\bootstrap\_close.scss" />
+    <Content Include="Content\css\bootstrap\_code.scss" />
+    <Content Include="Content\css\bootstrap\_component-animations.scss" />
+    <Content Include="Content\css\bootstrap\_dropdowns.scss" />
+    <Content Include="Content\css\bootstrap\_forms.scss" />
+    <Content Include="Content\css\bootstrap\_glyphicons.scss" />
+    <Content Include="Content\css\bootstrap\_grid.scss" />
+    <Content Include="Content\css\bootstrap\_input-groups.scss" />
+    <Content Include="Content\css\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\css\bootstrap\_labels.scss" />
+    <Content Include="Content\css\bootstrap\_list-group.scss" />
+    <Content Include="Content\css\bootstrap\_media.scss" />
+    <Content Include="Content\css\bootstrap\_mixins.scss" />
+    <Content Include="Content\css\bootstrap\_modals.scss" />
+    <Content Include="Content\css\bootstrap\_navbar.scss" />
+    <Content Include="Content\css\bootstrap\_navs.scss" />
+    <Content Include="Content\css\bootstrap\_normalize.scss" />
+    <Content Include="Content\css\bootstrap\_pager.scss" />
+    <Content Include="Content\css\bootstrap\_pagination.scss" />
+    <Content Include="Content\css\bootstrap\_panels.scss" />
+    <Content Include="Content\css\bootstrap\_popovers.scss" />
+    <Content Include="Content\css\bootstrap\_print.scss" />
+    <Content Include="Content\css\bootstrap\_progress-bars.scss" />
+    <Content Include="Content\css\bootstrap\_responsive-embed.scss" />
+    <Content Include="Content\css\bootstrap\_responsive-utilities.scss" />
+    <Content Include="Content\css\bootstrap\_scaffolding.scss" />
+    <Content Include="Content\css\bootstrap\_tables.scss" />
+    <Content Include="Content\css\bootstrap\_theme.scss" />
+    <Content Include="Content\css\bootstrap\_thumbnails.scss" />
+    <Content Include="Content\css\bootstrap\_tooltip.scss" />
+    <Content Include="Content\css\bootstrap\_type.scss" />
+    <Content Include="Content\css\bootstrap\_utilities.scss" />
+    <Content Include="Content\css\bootstrap\_variables.scss" />
+    <Content Include="Content\css\bootstrap\_wells.scss" />
+    <Content Include="Content\css\_bootstrap-compass.scss" />
+    <Content Include="Content\css\_bootstrap-mincer.scss" />
+    <Content Include="Content\css\_bootstrap-sprockets.scss" />
+    <Content Include="Content\css\_bootstrap.scss" />
+    <None Include="Properties\PublishProfiles\ftp.pubxml" />
+    <Content Include="Content\css\style.css.map">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add-route.js" />

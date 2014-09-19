@@ -23,8 +23,6 @@ namespace maps.Web.Areas.Utility.Controllers
             return View(orderedList.ToPagedList(page, PageSize));
         }
 
-        
-
         [HttpGet]
         public ActionResult Create()
         {
@@ -160,5 +158,5 @@ namespace maps.Web.Areas.Utility.Controllers
             }
             return RedirectBack("Index");
         }
-	}
+    }
 }
