@@ -16,5 +16,10 @@ namespace maps.Web.Areas.Admin.Controllers
             mailSender.SendMail("chernikov@gmail.com", "Test", "Test");
             return Content("OK");
         }
+
+        public ActionResult Upload()
+        {
+            return View();
+        }
 	}
 }

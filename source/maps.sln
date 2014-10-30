@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4ED383CE-DE8B-446B-BF25-0F54D67FB793}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps.UnitTest", "Test\maps.UnitTest\maps.UnitTest.csproj", "{DEA8361E-965C-422A-9EAF-B14EACC980F7}"
@@ -20,6 +22,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tool", "Common.Tools\Tool\Tool.csproj", "{2755DEE8-1AF1-41CC-B798-1EED42A9581D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps.Social", "maps.Social\maps.Social.csproj", "{14B73B87-60AB-4894-AA0B-823D7D19BC98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{83288A35-B494-432A-9E4F-13B85310C804}"
+	ProjectSection(SolutionItems) = preProject
+		WebEssentials-Settings.json = WebEssentials-Settings.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps.EF", "maps.EF\maps.EF.csproj", "{8FB70912-05CC-4564-83E9-27AF0C7C2420}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,14 +70,18 @@ Global
 		{14B73B87-60AB-4894-AA0B-823D7D19BC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14B73B87-60AB-4894-AA0B-823D7D19BC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14B73B87-60AB-4894-AA0B-823D7D19BC98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB70912-05CC-4564-83E9-27AF0C7C2420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB70912-05CC-4564-83E9-27AF0C7C2420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB70912-05CC-4564-83E9-27AF0C7C2420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB70912-05CC-4564-83E9-27AF0C7C2420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DEA8361E-965C-422A-9EAF-B14EACC980F7} = {4ED383CE-DE8B-446B-BF25-0F54D67FB793}
-		{04275F33-96AC-4D83-89B0-675EC78CA971} = {4ED383CE-DE8B-446B-BF25-0F54D67FB793}
 		{6B127020-1BCC-4D06-A290-9E30726FB10B} = {D73C6662-B87F-4941-B0FA-66CC59FBFEF2}
+		{04275F33-96AC-4D83-89B0-675EC78CA971} = {4ED383CE-DE8B-446B-BF25-0F54D67FB793}
 		{2755DEE8-1AF1-41CC-B798-1EED42A9581D} = {D73C6662-B87F-4941-B0FA-66CC59FBFEF2}
 	EndGlobalSection
 EndGlobal

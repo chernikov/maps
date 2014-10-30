@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+}
+@section header {
+    @Scripts.Render("~/bundles/fineuploader")
+    <script src="~/Scripts/admin/upload-sample.js"></script>
+}
+<h2>Upload</h2>
+
+
+<div id="AddPhoto">Додати</div>
+
+
+<div id="Wrapper">
+</div>
+
+@Html.Partial("UploadTemplate")
+

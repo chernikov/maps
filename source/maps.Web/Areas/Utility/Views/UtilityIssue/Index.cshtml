@@ -87,11 +87,17 @@
                 </p>
                 @if (item.UtilityDepartmentID.HasValue)
                 {
+                    <p>
+                        <a class="btn btn-xs btn-default" target="_blank" href="@Url.Action("Print", "UtilityIssue", new { id = item.ID })">
+                            <span class="glyphicon glyphicon-print"></span> Друк
+                        </a>
+                    </p>
                     if (item.Status == (int)UtilityIssue.StatusType.Accept)
                     {
                         <p>
                             @Html.ActionLink("Вирішена", "Resolve", "UtilityIssue", new { id = item.ID }, new { @class = "btn btn-xs btn-success" })
                         </p>
+   
                     }
                     else if (item.Status == (int)UtilityIssue.StatusType.Create)
                     {

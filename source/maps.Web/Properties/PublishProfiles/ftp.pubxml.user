@@ -149,7 +149,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/08/2014 09:53:36</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Shared/TopMenu.cshtml">
-      <publishTime>08/16/2014 11:12:53</publishTime>
+      <publishTime>09/19/2014 13:40:55</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Shared/_Layout.cshtml">
       <publishTime>09/08/2014 10:41:21</publishTime>
@@ -188,7 +188,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/19/2014 07:45:18</publishTime>
     </File>
     <File Include="Areas/Default/Views/Home/Index.cshtml">
-      <publishTime>09/15/2014 08:38:48</publishTime>
+      <publishTime>09/19/2014 13:36:07</publishTime>
     </File>
     <File Include="Areas/Default/Views/Home/SelectCities.cshtml">
       <publishTime>09/11/2014 11:47:43</publishTime>
@@ -260,7 +260,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2014 11:51:32</publishTime>
     </File>
     <File Include="Areas/Goal/Views/Shared/_Layout.cshtml">
-      <publishTime>08/17/2014 16:13:31</publishTime>
+      <publishTime>09/19/2014 17:12:50</publishTime>
     </File>
     <File Include="Areas/Goal/Views/web.config">
       <publishTime>08/16/2014 11:49:23</publishTime>
@@ -308,7 +308,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/11/2014 16:07:33</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Home/Edit.cshtml">
-      <publishTime>09/15/2014 11:45:28</publishTime>
+      <publishTime>09/19/2014 16:12:54</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Home/Index.cshtml">
       <publishTime>09/16/2014 08:52:41</publishTime>
@@ -320,7 +320,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/16/2014 12:10:27</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Home/Popup.cshtml">
-      <publishTime>09/11/2014 13:47:51</publishTime>
+      <publishTime>09/19/2014 16:18:01</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Home/UploadTemplate.cshtml">
       <publishTime>09/15/2014 09:23:55</publishTime>
@@ -362,7 +362,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/15/2014 16:47:17</publishTime>
     </File>
     <File Include="Areas/Utility/Views/UtilityIssue/Index.cshtml">
-      <publishTime>09/16/2014 12:16:01</publishTime>
+      <publishTime>09/22/2014 09:29:54</publishTime>
+    </File>
+    <File Include="Areas/Utility/Views/UtilityIssue/Print.cshtml">
+      <publishTime>09/22/2014 15:39:15</publishTime>
     </File>
     <File Include="Areas/Utility/Views/UtilityIssue/UploadTemplate.cshtml">
       <publishTime>09/15/2014 11:48:21</publishTime>
@@ -389,22 +392,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2014 22:43:48</publishTime>
     </File>
     <File Include="bin/maps.Model.dll">
-      <publishTime>09/16/2014 11:15:52</publishTime>
+      <publishTime>09/20/2014 15:42:02</publishTime>
     </File>
     <File Include="bin/maps.Model.pdb">
-      <publishTime>09/16/2014 11:15:52</publishTime>
+      <publishTime>09/20/2014 15:42:02</publishTime>
     </File>
     <File Include="bin/maps.Social.dll">
-      <publishTime>09/15/2014 10:46:45</publishTime>
+      <publishTime>09/20/2014 15:42:01</publishTime>
     </File>
     <File Include="bin/maps.Social.pdb">
-      <publishTime>09/15/2014 10:46:45</publishTime>
+      <publishTime>09/20/2014 15:42:01</publishTime>
     </File>
     <File Include="bin/maps.Web.dll">
-      <publishTime>09/19/2014 12:15:09</publishTime>
+      <publishTime>09/22/2014 16:24:26</publishTime>
     </File>
     <File Include="bin/maps.Web.pdb">
-      <publishTime>09/19/2014 12:15:09</publishTime>
+      <publishTime>09/22/2014 16:24:26</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>07/15/2014 22:43:48</publishTime>
@@ -476,10 +479,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2014 22:43:48</publishTime>
     </File>
     <File Include="bin/Tool.dll">
-      <publishTime>09/15/2014 11:07:39</publishTime>
+      <publishTime>09/20/2014 15:42:01</publishTime>
     </File>
     <File Include="bin/Tool.pdb">
-      <publishTime>09/15/2014 11:07:39</publishTime>
+      <publishTime>09/20/2014 15:42:01</publishTime>
     </File>
     <File Include="bin/WebActivator.dll">
       <publishTime>07/15/2014 22:43:49</publishTime>
@@ -536,7 +539,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/18/2014 08:34:20</publishTime>
     </File>
     <File Include="Content/css/admin.css">
-      <publishTime>09/15/2014 11:05:35</publishTime>
+      <publishTime>09/19/2014 15:11:40</publishTime>
+    </File>
+    <File Include="Content/css/admin.css.map">
+      <publishTime>09/19/2014 15:11:40</publishTime>
+    </File>
+    <File Include="Content/css/admin.min.css">
+      <publishTime>09/19/2014 15:11:40</publishTime>
     </File>
     <File Include="Content/css/blueimp-gallery.min.css">
       <publishTime>09/16/2014 10:13:35</publishTime>
@@ -548,10 +557,226 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/16/2014 10:09:41</publishTime>
     </File>
     <File Include="Content/css/bootstrap.css">
-      <publishTime>08/19/2014 07:45:18</publishTime>
+      <publishTime>09/19/2014 16:01:10</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.css.map">
+      <publishTime>09/19/2014 15:39:24</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.min.css">
+      <publishTime>09/19/2014 16:00:54</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.scss">
+      <publishTime>09/19/2014 14:56:10</publishTime>
     </File>
     <File Include="Content/css/bootstrap/bootstrap.css">
       <publishTime>08/19/2014 07:45:18</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_alerts.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_background-variant.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_border-radius.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_buttons.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_center-block.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_clearfix.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_forms.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_gradients.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_grid-framework.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_grid.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_hide-text.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_image.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_labels.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_list-group.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_nav-divider.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_nav-vertical-align.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_opacity.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_pagination.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_panels.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_progress-bar.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_reset-filter.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_resize.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_responsive-visibility.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_size.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_tab-focus.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_table-row.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_text-emphasis.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_text-overflow.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/mixins/_vendor-prefixes.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_alerts.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_badges.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_breadcrumbs.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_button-groups.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_buttons.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_carousel.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_close.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_code.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_component-animations.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_dropdowns.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_forms.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_glyphicons.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_grid.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_input-groups.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_jumbotron.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_labels.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_list-group.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_media.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_mixins.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_modals.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_navbar.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_navs.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_normalize.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_pager.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_pagination.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_panels.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_popovers.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_print.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_progress-bars.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_responsive-embed.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_responsive-utilities.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_scaffolding.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_tables.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_theme.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_thumbnails.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_tooltip.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_type.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_utilities.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_variables.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap/_wells.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
     </File>
     <File Include="Content/css/chosen.css">
       <publishTime>09/11/2014 16:08:13</publishTime>
@@ -566,10 +791,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/08/2014 15:04:24</publishTime>
     </File>
     <File Include="Content/css/style.css">
-      <publishTime>09/16/2014 09:59:46</publishTime>
+      <publishTime>09/19/2014 13:33:14</publishTime>
+    </File>
+    <File Include="Content/css/style.css.map">
+      <publishTime>09/19/2014 13:32:50</publishTime>
+    </File>
+    <File Include="Content/css/style.min.css">
+      <publishTime>09/19/2014 13:33:14</publishTime>
+    </File>
+    <File Include="Content/css/style.scss">
+      <publishTime>09/19/2014 13:33:14</publishTime>
     </File>
     <File Include="Content/css/typeahead.css">
       <publishTime>09/15/2014 13:02:09</publishTime>
+    </File>
+    <File Include="Content/css/_bootstrap-compass.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/_bootstrap-mincer.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/_bootstrap-sprockets.scss">
+      <publishTime>09/19/2014 16:09:51</publishTime>
+    </File>
+    <File Include="Content/css/_bootstrap.scss">
+      <publishTime>09/19/2014 16:09:54</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.eot">
       <publishTime>01/06/2014 13:59:06</publishTime>
@@ -1034,7 +1280,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/15/2014 12:38:36</publishTime>
     </File>
     <File Include="Scripts/utility/add-issue.js">
-      <publishTime>09/15/2014 12:07:01</publishTime>
+      <publishTime>09/19/2014 16:19:34</publishTime>
     </File>
     <File Include="Scripts/utility/admin-common.js">
       <publishTime>09/16/2014 12:08:56</publishTime>
@@ -1079,7 +1325,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/26/2014 15:36:43</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/19/2014 12:22:48</publishTime>
+      <publishTime>09/22/2014 16:24:29</publishTime>
     </File>
   </ItemGroup>
 </Project>

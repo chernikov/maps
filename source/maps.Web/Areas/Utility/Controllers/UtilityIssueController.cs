@@ -32,6 +32,15 @@ namespace maps.Web.Areas.Utility.Controllers
             });
         }
 
+        public ActionResult Print(int id)
+        {
+            var item = Repository.UtilityIssues.FirstOrDefault(p => p.ID == id);
+            if (item != null)
+            {
+                return View(item);
+            }
+            return RedirectToNotFoundPage;
+        }
 
         [HttpGet]
         public ActionResult Edit(int id)

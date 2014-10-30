@@ -24,7 +24,5 @@ namespace maps.Web.Models.Api
         public string Address { get; set; }
 
         public int? Capacity { get; set; }
-
-       /* public HttpPostedFileBase File { get; set; }*/
     }
 }

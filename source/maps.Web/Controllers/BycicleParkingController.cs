@@ -33,6 +33,7 @@ namespace maps.Web.Controllers
                 var bicycleParking =
                     (BicycleParking) ModelMapper.Map(value, typeof (BicycleParkingApiModel), typeof (BicycleParking));
                 bicycleParking.UserID = 3; //admin
+                bicycleParking.CityID = 1;
                 Repository.CreateBicycleParking(bicycleParking);
                 return Request.CreateResponse(HttpStatusCode.OK, new
                 {

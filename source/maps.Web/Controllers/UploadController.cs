@@ -36,15 +36,13 @@ namespace maps.Web.Controllers
             {
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
-
+         
             string root = HttpContext.Current.Server.MapPath("~/App_Data");
             var provider = new MultipartFormDataStreamProvider(root);
-
             try
             {
                 // Read the form data.
                 await Request.Content.ReadAsMultipartAsync(provider);
-
                 var list = new List<KeyValuePair<string, string>>();
                 foreach (var file in provider.FileData)
                 {
@@ -77,7 +75,7 @@ namespace maps.Web.Controllers
                 new FileUploadAnswer()
                 {
                     success = false,
-                    error = ex.Message
+                    error = string.Format("{0} \n Stack Trace : {1}", ex.Message, ex.StackTrace)
                 }, new JsonMediaTypeFormatter(), "application/json");
                 return responseFail;
             }

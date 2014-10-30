@@ -24,13 +24,17 @@ namespace maps.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
+
+
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
+          /*  logger.Debug(this.Context.Request.ToRaw());*/
             if (this.Context.Session != null)
             {
                 var auth = DependencyResolver.Current.GetService<IAuthentication>();
                 auth.AuthCookieProvider = new HttpContextCookieProvider(this.Context);
                 this.Context.User = auth.CurrentUser;
+              
             }
         }
     }
