@@ -74,6 +74,24 @@ namespace maps.Model
             return false;
         }
 
+        public bool AcceptBackUtilityIssue(UtilityIssue instance, int userID)
+        {
+            var cache = Db.UtilityIssues.FirstOrDefault(p => p.ID == instance.ID);
+            if (cache != null)
+            {
+
+                cache.Status = (int)UtilityIssue.StatusType.Accept;
+                cache.ResolvedDate = null;
+                Db.UtilityIssues.Context.SubmitChanges();
+                MakeUtilityIssueHistory(cache, userID);
+
+                return true;
+            }
+
+            return false;
+        }
+
+
         public bool ResolveUtilityIssue(UtilityIssue instance, int userID)
         {
             var cache = Db.UtilityIssues.FirstOrDefault(p => p.ID == instance.ID);

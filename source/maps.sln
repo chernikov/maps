@@ -28,8 +28,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		WebEssentials-Settings.json = WebEssentials-Settings.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps.EF", "maps.EF\maps.EF.csproj", "{8FB70912-05CC-4564-83E9-27AF0C7C2420}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,10 +68,6 @@ Global
 		{14B73B87-60AB-4894-AA0B-823D7D19BC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14B73B87-60AB-4894-AA0B-823D7D19BC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14B73B87-60AB-4894-AA0B-823D7D19BC98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FB70912-05CC-4564-83E9-27AF0C7C2420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FB70912-05CC-4564-83E9-27AF0C7C2420}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FB70912-05CC-4564-83E9-27AF0C7C2420}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FB70912-05CC-4564-83E9-27AF0C7C2420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

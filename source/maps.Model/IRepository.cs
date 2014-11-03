@@ -187,6 +187,8 @@ namespace maps.Model
 
         bool AcceptUtilityIssue(UtilityIssue instance, int userID);
 
+        bool AcceptBackUtilityIssue(UtilityIssue instance, int userID);
+
         bool ResolveUtilityIssue(UtilityIssue instance, int userID);
 
         bool CloseUtilityIssue(UtilityIssue instance, int userID);

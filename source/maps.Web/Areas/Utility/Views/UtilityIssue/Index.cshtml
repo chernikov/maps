@@ -97,7 +97,8 @@
                         <p>
                             @Html.ActionLink("Вирішена", "Resolve", "UtilityIssue", new { id = item.ID }, new { @class = "btn btn-xs btn-success" })
                         </p>
-   
+    
+
                     }
                     else if (item.Status == (int)UtilityIssue.StatusType.Create)
                     {
@@ -106,6 +107,13 @@
                         </p>
                     }
                 }
+                @if (item.Status == (int)UtilityIssue.StatusType.Resolved)
+                {
+                <p>
+                    @Html.ActionLink("Прийняти назад", "ReAccept", "UtilityIssue", new { id = item.ID }, new { @class = "btn btn-xs btn-success" })
+                </p>
+                }
+
                 <p>
                     @Html.ActionLink("Закрити", "Close", "UtilityIssue", new { id = item.ID }, new { @class = "btn btn-xs btn-warning" })
                 </p>

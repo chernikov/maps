@@ -147,6 +147,16 @@ namespace maps.Web.Areas.Utility.Controllers
             return RedirectBack("Index");
         }
 
+        public ActionResult ReAccept(int id)
+        {
+            var utilityIssue = Repository.UtilityIssues.FirstOrDefault(p => p.ID == id);
+            if (utilityIssue != null)
+            {
+                Repository.AcceptBackUtilityIssue(utilityIssue, CurrentUser.ID);
+            }
+            return RedirectBack("Index");
+        }
+
 
         public ActionResult Resolve(int id)
         {
