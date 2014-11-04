@@ -16,6 +16,8 @@ namespace maps.Web.Models.ViewModels
 
         public string UtilityDepartmentName { get; set; }
 
+        public string WorkFlow { get; set; }
+
         public CityView City { get; set; }
 
     }

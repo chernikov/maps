@@ -37,6 +37,10 @@ namespace maps.Web.Areas.Utility.Controllers
             var item = Repository.UtilityIssues.FirstOrDefault(p => p.ID == id);
             if (item != null)
             {
+                if (item.Status == (int)UtilityIssue.StatusType.Create)
+                {
+                    Repository.AcceptUtilityIssue(item, CurrentUser.ID);
+                }
                 return View(item);
             }
             return RedirectToNotFoundPage;

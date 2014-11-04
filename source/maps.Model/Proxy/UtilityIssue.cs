@@ -92,5 +92,13 @@ namespace maps.Model
                 return UtilityIssueComments.Select(p => p.Comment).Where(p => p.ParentID == null).OrderBy(p => p.AddedDate);
             }
         }
+
+        public UtilityIssueHistory LastHistory
+        {
+            get
+            {
+                return UtilityIssueHistories.OrderBy(p => p.HistoryDate).LastOrDefault();
+            }
+        }
 	}
 }

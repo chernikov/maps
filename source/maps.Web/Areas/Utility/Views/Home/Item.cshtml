@@ -44,7 +44,7 @@
                     </a>
                     @if (item.State == (int)UtilityIssue.StatusType.Resolved)
                     {
-                        <div class="label label-success">Вирішено</div>  
+                        <div class="label label-success">Вирішено</div>
                     }
                 </div>
             }
@@ -108,7 +108,18 @@
         @if (!string.IsNullOrWhiteSpace(Model.Description))
         {
             <p>
-                <strong>Опис:</strong> @Model.Description
+                <strong>Опис:</strong> @Model.Description.NlToBr()
+            </p>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.WorkFlow))
+        {
+            <p>
+                <strong>Хід робіт:</strong>
+                @if (Model.LastHistory != null)
+                {
+                    <em>@Model.LastHistory.HistoryDate.ToString("dd.MM.yyyy")</em><br/>
+                }
+                @Model.WorkFlow.NlToBr()
             </p>
         }
     </div>
@@ -146,7 +157,7 @@
     </div>
 </div>
 <div class="row">
-    <br/>
-    <br/>
+    <br />
+    <br />
 </div>
 @Html.Partial("GalleryLightBox")
