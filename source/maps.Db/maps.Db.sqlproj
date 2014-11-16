@@ -84,6 +84,7 @@
     <Build Include="dbo\Tables\UtilityDepartment.sql" />
     <Build Include="dbo\Tables\UtilityIssueTag.sql" />
     <Build Include="dbo\Tables\UtilityIssueHistory.sql" />
+    <Build Include="dbo\Tables\InstagramPhoto.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\Init.sql" />

@@ -248,5 +248,18 @@ namespace maps.Model
         bool RemoveUtilityPhoto(int idUtilityPhoto);
         
         #endregion 
+
+        #region InstagramPhoto
+        
+        IQueryable<InstagramPhoto> InstagramPhotoes { get; }
+        
+
+        bool CreateInstagramPhoto(InstagramPhoto instance);
+        
+        bool UpdateInstagramPhoto(InstagramPhoto instance);
+        
+        bool RemoveInstagramPhoto(int idInstagramPhoto);
+        
+        #endregion 
     }
 }

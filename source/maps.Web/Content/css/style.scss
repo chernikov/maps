@@ -8,8 +8,7 @@ body {
     font-family: 'Segoe UI';
 }
 
-body.overflow 
-{
+body.overflow {
     overflow: hidden;
 }
 
@@ -45,31 +44,32 @@ body.overflow
     top: 100px;
     right: 10px;
     list-style: none;
-	li {
-		a {
-			display: block;
-			height: 70px;
-			color: #fff;
-			font-size: 40px;
-			padding: 3px 45px 20px 50px;
-			text-decoration: none;
-			text-align: right;
-			margin : 0 0 20px 0;
-			img {
-				position: relative;
-				top: -4px;
-			}
 
-			&.bicycle 
-			{
-				background-color: #468847;
-			}
-			&.utility 
-			{
-				background-color: #ee9127;
-			}
-		}
-	}
+    li {
+        a {
+            display: block;
+            height: 70px;
+            color: #fff;
+            font-size: 40px;
+            padding: 3px 45px 20px 50px;
+            text-decoration: none;
+            text-align: right;
+            margin: 0 0 20px 0;
+
+            img {
+                position: relative;
+                top: -4px;
+            }
+
+            &.bicycle {
+                background-color: #468847;
+            }
+
+            &.utility {
+                background-color: #ee9127;
+            }
+        }
+    }
 }
 
 .navbar > .container .navbar-brand.bycicle {
@@ -99,13 +99,14 @@ body.overflow
     text-align: center;
     font-size: 16px;
     cursor: default;
-	.active {
+
+    .active {
         font-weight: bold;
     }
-	.passed {
+
+    .passed {
         text-decoration: line-through;
     }
-
 }
 
 .tutorial-item {
@@ -128,40 +129,41 @@ body.overflow
 }
 
 .goal-table {
-    margin : 10px 10px 10px 10px;
-	.cell {
+    margin: 10px 10px 10px 10px;
+
+    .cell {
         width: 76px;
-        height : 76px;
-        border : 1px solid #ccc;
+        height: 76px;
+        border: 1px solid #ccc;
         float: left;
-        margin : -1px 0 0 -1px;
+        margin: -1px 0 0 -1px;
     }
-	.cell.active 
-    {
-         cursor : pointer;
+
+    .cell.active {
+        cursor: pointer;
     }
-	.cell.empty {
-        background : transparent url("/Content/images/ifx_empty.png") no-repeat 2px 2px;
+
+    .cell.empty {
+        background: transparent url("/Content/images/ifx_empty.png") no-repeat 2px 2px;
     }
-	.cell.set {
-        background : transparent url("/Content/images/ifx_set.png") no-repeat 2px 2px;
+
+    .cell.set {
+        background: transparent url("/Content/images/ifx_set.png") no-repeat 2px 2px;
     }
-	.separator 
-    {
-        clear : both;
+
+    .separator {
+        clear: both;
     }
 }
 
-.remove-file
-{
-    cursor : pointer;
+.remove-file {
+    cursor: pointer;
 }
 
-h3.label 
-{
-	font-size : 24px;
+h3.label {
+    font-size: 24px;
 }
 
 .small-map {
-	height : 400px;
+    height: 400px;
 }

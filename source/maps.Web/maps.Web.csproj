@@ -157,6 +157,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Default\Models\" />
+    <Folder Include="Areas\Instagram\Models\" />
+    <Folder Include="Areas\Instagram\Views\Instagram\" />
     <Folder Include="CodeTemplates\" />
     <Folder Include="Content\files\uploads\" />
     <Folder Include="Content\files\utilities\" />
@@ -169,6 +171,11 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Default\Controllers\OauthController.cs" />
+    <Compile Include="Areas\Instagram\Controllers\OauthController.cs" />
+    <Compile Include="Areas\Instagram\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Instagram\Controllers\InstagramController.cs" />
+    <Compile Include="Areas\Instagram\InstagramAreaRegistration.cs" />
     <Compile Include="Areas\Utility\Controllers\AdminController.cs" />
     <Compile Include="Areas\Utility\Controllers\CommentController.cs" />
     <Compile Include="Areas\Utility\Controllers\HomeController.cs" />
@@ -428,6 +435,15 @@
     <Content Include="Areas\Utility\Views\UtilityIssue\Print.cshtml" />
     <Content Include="Areas\Admin\Views\Test\Upload.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\UploadTemplate.cshtml" />
+    <Content Include="Areas\Instagram\Views\web.config" />
+    <Content Include="Areas\Instagram\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Instagram\Views\Shared\FbCode.cshtml" />
+    <Content Include="Areas\Instagram\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Instagram\Views\Shared\Map.cshtml" />
+    <Content Include="Areas\Instagram\Views\Home\Photos.cshtml" />
+    <Content Include="Areas\Instagram\Views\Shared\TopMenu.cshtml" />
+    <Content Include="Areas\Instagram\Views\Shared\_SimpleLayout.cshtml" />
+    <Content Include="Areas\Instagram\Views\Home\Photo.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\css\bootstrap\mixins\_alerts.scss" />
     <Content Include="Content\css\bootstrap\mixins\_background-variant.scss" />
@@ -521,6 +537,9 @@
     <Content Include="Scripts\chosen.jquery.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />
     <Content Include="Scripts\constants.js" />
+    <Content Include="Scripts\instagram\index.js" />
+    <Content Include="Scripts\instagram\map-photo.js" />
+    <Content Include="Scripts\instagram\map-photos.js" />
     <Content Include="Scripts\jquery.blueimp-gallery.min.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
     <Content Include="Scripts\typeahead.bundle.min.js" />
@@ -549,7 +568,7 @@
     <Content Include="Scripts\utility\item.js" />
     <Content Include="Scripts\utility\map-issue.js" />
     <Content Include="Scripts\utility\map-small-main.js" />
-    <Content Include="Scripts\utility\map-main.js" />
+    <Content Include="Scripts\instagram\map-main.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -571,6 +590,10 @@
     <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">
       <Project>{2755dee8-1af1-41cc-b798-1eed42a9581d}</Project>
       <Name>Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\maps.Instagram\maps.Instagram.csproj">
+      <Project>{c3a161db-5a66-4ff4-b6f3-3b1f7733cbea}</Project>
+      <Name>maps.Instagram</Name>
     </ProjectReference>
     <ProjectReference Include="..\maps.Model\maps.Model.csproj">
       <Project>{69b9bddf-2bff-4755-920b-db29b3d3565e}</Project>

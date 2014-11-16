@@ -2,7 +2,8 @@
     var _this = this;
     this.init = function ()
     {
-        google.maps.event.addDomListener(window, 'load', function () {
+        google.maps.event.addDomListener(window, 'load', function ()
+        {
             mapMain.init();
             mapIssue.init();
         });

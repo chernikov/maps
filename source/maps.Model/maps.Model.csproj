@@ -64,6 +64,7 @@
     <Compile Include="Proxy\Comment.cs" />
     <Compile Include="Proxy\Goal.cs" />
     <Compile Include="Proxy\GoalCell.cs" />
+    <Compile Include="Proxy\InstagramPhoto.cs" />
     <Compile Include="Proxy\Role.cs" />
     <Compile Include="Proxy\Social.cs" />
     <Compile Include="Proxy\User.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="SqlRepository\Comment.cs" />
     <Compile Include="SqlRepository\Goal.cs" />
     <Compile Include="SqlRepository\GoalCell.cs" />
+    <Compile Include="SqlRepository\InstagramPhoto.cs" />
     <Compile Include="SqlRepository\Role.cs" />
     <Compile Include="SqlRepository\Social.cs" />
     <Compile Include="SqlRepository\User.cs" />

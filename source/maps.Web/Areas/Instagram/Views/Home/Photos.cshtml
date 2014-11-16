@@ -1,0 +1,22 @@
+﻿@model IEnumerable<InstagramPhoto>
+
+@{
+    ViewBag.Title = "Pictures";
+    Layout = "~/Areas/Instagram/Views/Shared/_SimpleLayout.cshtml";
+}
+
+<div class="row">
+    @foreach (var photo in Model)
+    {
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <a href="@Url.Action("Photo", "Home", new { id = photo.ID})">
+                    <img src="@photo.PhotoUrl" />
+                </a>
+                <br/>
+                @photo.CreatedTime.ToString("dd/MM/yyyy HH:mm")<br/>
+                <a href="http://instagram.com/@photo.UserName">@photo.UserFullName</a><br/>
+            </div>
+        </div>
+    }
+</div>
