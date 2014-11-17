@@ -49,6 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepository.cs" />
+    <Compile Include="mapsDb1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mapsDb.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -91,11 +96,6 @@
     <Compile Include="SqlRepository\Social.cs" />
     <Compile Include="SqlRepository\User.cs" />
     <Compile Include="SqlRepository\UserRole.cs" />
-    <Compile Include="mapsDb.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mapsDb.dbml</DependentUpon>
-    </Compile>
     <Compile Include="SqlRepository\UtilityDepartment.cs" />
     <Compile Include="SqlRepository\UtilityIssue.cs" />
     <Compile Include="SqlRepository\UtilityIssueComment.cs" />
@@ -116,24 +116,23 @@
     <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepository.ps1" />
     <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepositoryLangTemplate.cs.t4" />
     <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepositoryTemplate.cs.t4" />
+    <None Include="mapsDb.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>mapsDb1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mapsDb.dbml.layout">
+      <DependentUpon>mapsDb.dbml</DependentUpon>
+    </None>
+    <None Include="mapsDb.designer.cs" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="mapsDb.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>mapsDb.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="mapsDb.dbml.layout">
-      <DependentUpon>mapsDb.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">

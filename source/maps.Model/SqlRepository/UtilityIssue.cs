@@ -25,7 +25,6 @@ namespace maps.Model
                 instance.Status = (int)UtilityIssue.StatusType.Create;
                 Db.UtilityIssues.InsertOnSubmit(instance);
                 Db.UtilityIssues.Context.SubmitChanges();
-
                 MakeUtilityIssueHistory(instance, instance.UserID);
                 return true;
             }
@@ -43,9 +42,9 @@ namespace maps.Model
                 cache.Lng = instance.Lng;
                 cache.Address = instance.Address;
                 cache.Description = instance.Description;
+                cache.WorkFlow = instance.WorkFlow;
                 cache.Solution = instance.Solution;
                 Db.UtilityIssues.Context.SubmitChanges();
-
                 MakeUtilityIssueHistory(cache, userID);
                 return true;
             }
@@ -59,7 +58,6 @@ namespace maps.Model
             var cache = Db.UtilityIssues.FirstOrDefault(p => p.ID == instance.ID);
             if (cache != null)
             {
-               
                 if (cache.Status == (int)UtilityIssue.StatusType.Create)
                 {
                     cache.Status = (int)UtilityIssue.StatusType.Accept;

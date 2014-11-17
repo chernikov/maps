@@ -23,7 +23,7 @@ namespace maps.Model
             {
                 UtilityIssueID = instance.ID,
                 UserID = userId,
-
+                HistoryDate = DateTime.Now,
                 AddedDate = instance.AddedDate,
                 AcceptedDate = instance.AcceptedDate,
                 ResolvedDate = instance.ResolvedDate,
@@ -34,6 +34,7 @@ namespace maps.Model
                 Lng = instance.Lng,
                 Address = instance.Address,
                 Description = instance.Description,
+                WorkFlow = instance.WorkFlow,
                 Solution = instance.Solution,
                 Status = instance.Status,
                 IsRemoved = instance.IsRemoved,
