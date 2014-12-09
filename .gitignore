@@ -41,3 +41,4 @@ source/maps.Web/Content/files
 source/maps.Web/Content/logs
 source/packages
 source/maps.Web/.sass-cache
+*.suo
