@@ -11,8 +11,13 @@ namespace maps.Web.Areas.Instagram.Controllers
 {
     public class HomeController : InstagramController
     {
-        // GET: Instagram
         public ActionResult Index()
+        {
+            return View();
+        }
+        
+        
+        public ActionResult Old()
         {
             return View();
         }

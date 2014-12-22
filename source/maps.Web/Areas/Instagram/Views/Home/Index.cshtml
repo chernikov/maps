@@ -3,10 +3,45 @@
     Layout = "~/Areas/Instagram/Views/Shared/_Layout.cshtml";
 }
 @section header {
+
+    @Scripts.Render("~/Scripts/moment.js")
+    @Scripts.Render("~/Scripts/bootstrap-datetimepicker.js")
     @Scripts.Render("~/scripts/instagram/map-main.js")
-    @Scripts.Render("~/scripts/instagram/map-photos.js")
+    @Scripts.Render("~/scripts/instagram/map-instagram.js")
     @Scripts.Render("~/scripts/instagram/index.js")
 }
-
 @Html.Partial("Map")
 
+<div class="col-md-offset-3 col-md-9  instagram-panel">
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-inline" }))
+    {
+        <div class="form-group">
+            <label for="StartDate" class="col-sm-2 control-label">Дата початку</label>
+            <div class="col-sm-10">
+                <div class='input-group date' id='StartDatedatetimepicker'>
+                    @Html.TextBox("StartDate", DateTime.Now.AddDays(-1), new { @class = "form-control" })
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="StartDate" class="col-sm-2 control-label">Дата кінця</label>
+            <div class="col-sm-10">
+                <div class='input-group date' id='EndDateDatetimepicker'>
+                    @Html.TextBox("EndDate", DateTime.Now, new { @class = "form-control" })
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Пошук</button>
+            </div>
+        </div>
+    }
+</div>

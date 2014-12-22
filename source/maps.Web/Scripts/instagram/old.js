@@ -1,18 +1,17 @@
-﻿function Index() {
+﻿function Old() {
     var _this = this;
     this.init = function ()
     {
         google.maps.event.addDomListener(window, 'load', function () {
             mapMain.init();
+            mapPhotos.init();
+            
         });
-
-        $('#StartDatedatetimepicker').datetimepicker();
-        $('#EndDateDatetimepicker').datetimepicker();
     }
 }
 
-var index = null;
+var old = null;
 $(function () {
-    index = new Index();
-    index.init();
+    old = new Old();
+    old.init();
 });
