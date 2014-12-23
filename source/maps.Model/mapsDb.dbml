@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="maps.Db_work" Class="mapsDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SATURN\MSSQL;Initial Catalog=maps.Db_work;Integrated Security=True" SettingsObjectName="maps.Model.Properties.Settings" SettingsPropertyName="maps_Db_workConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="maps.Db" Class="mapsDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SATURN\MSSQL;Initial Catalog=maps.Db;Integrated Security=True" SettingsObjectName="maps.Model.Properties.Settings" SettingsPropertyName="maps_DbConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Role" Member="Roles">
     <Type Name="Role">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -302,6 +302,7 @@
       <Column Name="UserName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="UserFullName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Association Name="City_InstagramPhoto" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
     </Type>
   </Table>

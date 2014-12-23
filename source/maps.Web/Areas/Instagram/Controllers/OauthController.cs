@@ -8,7 +8,6 @@ namespace maps.Web.Areas.Instagram.Controllers
 {
     public class OauthController : InstagramController
     {
-
         public ActionResult Index(string code)
         {
             InstagramApiCaller.Code = code;
@@ -16,7 +15,12 @@ namespace maps.Web.Areas.Instagram.Controllers
             
             if (result != null)
             {
-                return RedirectToAction("GetMore", "Home");
+                if (Session["INSTAGRAM_REDIRECT"] != null)
+                {
+                    return Redirect(Session["INSTAGRAM_REDIRECT"] as string);
+                }
+
+                return RedirectToAction("Index", "Home");
             }
             return Content(result.ToString());
         }

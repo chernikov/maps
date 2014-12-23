@@ -270,6 +270,10 @@
     <Compile Include="Validation\ValidPhone.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap-datetimepicker.css" />
+    <Content Include="Content\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\css\bootstrap-datepicker.css" />
+    <Content Include="Content\css\bootstrap-datepicker3.css" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -328,6 +332,9 @@
     <Content Include="Scripts\admin\upload-sample.js" />
     <Content Include="Scripts\bloodhound.js" />
     <Content Include="Scripts\bloodhound.min.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap-image-gallery.js" />
     <Content Include="Scripts\bootstrap-image-gallery.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -435,6 +442,7 @@
     <Content Include="Areas\Instagram\Views\Shared\_LayoutOld.cshtml" />
     <Content Include="Areas\Instagram\Views\Home\Index.cshtml" />
     <Content Include="Areas\Utility\Views\Home\Thanks.cshtml" />
+    <Content Include="Areas\Instagram\Views\Home\EmptyModal.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -460,12 +468,17 @@
     <Content Include="Scripts\chosen.jquery.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />
     <Content Include="Scripts\constants.js" />
+    <Content Include="Scripts\instagram\distance-widget.js" />
     <Content Include="Scripts\instagram\old.js" />
     <Content Include="Scripts\instagram\index.js" />
     <Content Include="Scripts\instagram\map-instagram.js" />
     <Content Include="Scripts\instagram\map-photo.js" />
     <Content Include="Scripts\instagram\map-photos.js" />
     <Content Include="Scripts\jquery.blueimp-gallery.min.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
     <Content Include="Scripts\typeahead.bundle.min.js" />
     <Content Include="Scripts\typeahead.jquery.js" />

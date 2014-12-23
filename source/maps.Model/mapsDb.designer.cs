@@ -22,7 +22,7 @@ namespace maps.Model
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="maps.Db_work")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="maps.Db")]
 	public partial class mapsDbDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -96,7 +96,7 @@ namespace maps.Model
     #endregion
 		
 		public mapsDbDataContext() : 
-				base(global::maps.Model.Properties.Settings.Default.maps_Db_workConnectionString, mappingSource)
+				base(global::maps.Model.Properties.Settings.Default.maps_DbConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -6730,6 +6730,8 @@ namespace maps.Model
 		
 		private System.DateTime _AddedDate;
 		
+		private string _Link;
+		
 		private EntityRef<City> _City;
 		
     #region Extensibility Method Definitions
@@ -6762,6 +6764,8 @@ namespace maps.Model
     partial void OnUserFullNameChanged();
     partial void OnAddedDateChanging(System.DateTime value);
     partial void OnAddedDateChanged();
+    partial void OnLinkChanging(string value);
+    partial void OnLinkChanged();
     #endregion
 		
 		public InstagramPhoto()
@@ -7030,6 +7034,26 @@ namespace maps.Model
 					this._AddedDate = value;
 					this.SendPropertyChanged("AddedDate");
 					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Link
+		{
+			get
+			{
+				return this._Link;
+			}
+			set
+			{
+				if ((this._Link != value))
+				{
+					this.OnLinkChanging(value);
+					this.SendPropertyChanging();
+					this._Link = value;
+					this.SendPropertyChanged("Link");
+					this.OnLinkChanged();
 				}
 			}
 		}

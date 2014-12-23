@@ -50,6 +50,7 @@ namespace maps.Model
                 cache.UserName = instance.UserName;
                 cache.UserFullName = instance.UserFullName;
                 cache.AddedDate = instance.AddedDate;
+                cache.Link = instance.Link;
                 Db.InstagramPhotos.Context.SubmitChanges();
                 return true;
             }

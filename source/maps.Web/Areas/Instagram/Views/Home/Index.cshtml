@@ -3,45 +3,39 @@
     Layout = "~/Areas/Instagram/Views/Shared/_Layout.cshtml";
 }
 @section header {
-
     @Scripts.Render("~/Scripts/moment.js")
+
     @Scripts.Render("~/Scripts/bootstrap-datetimepicker.js")
+    <script src="~/Scripts/instagram/distance-widget.js"></script>
     @Scripts.Render("~/scripts/instagram/map-main.js")
     @Scripts.Render("~/scripts/instagram/map-instagram.js")
     @Scripts.Render("~/scripts/instagram/index.js")
+    
+}
+@section styles {
+    @Styles.Render("~/Content/css/bootstrap-datetimepicker.css")
 }
 @Html.Partial("Map")
 
-<div class="col-md-offset-3 col-md-9  instagram-panel">
-
+<div class="col-md-6 instagram-panel">
     @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-inline" }))
     {
         <div class="form-group">
-            <label for="StartDate" class="col-sm-2 control-label">Дата початку</label>
-            <div class="col-sm-10">
-                <div class='input-group date' id='StartDatedatetimepicker'>
-                    @Html.TextBox("StartDate", DateTime.Now.AddDays(-1), new { @class = "form-control" })
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
+            З
         </div>
         <div class="form-group">
-            <label for="StartDate" class="col-sm-2 control-label">Дата кінця</label>
-            <div class="col-sm-10">
-                <div class='input-group date' id='EndDateDatetimepicker'>
-                    @Html.TextBox("EndDate", DateTime.Now, new { @class = "form-control" })
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
+            @Html.TextBox("StartDate", DateTime.Now.Date.AddDays(-1).ToString("dd.MM.yyyy HH:mm"), new { @class = "form-control col-md-4", placeholder = "Початок" })
         </div>
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Пошук</button>
-            </div>
+            &nbsp;&nbsp;По
         </div>
+        <div class="form-group">
+
+            @Html.TextBox("EndDate", DateTime.Now.Date.ToString("dd.MM.yyyy HH:mm"), new { @class = "form-control col-md-4", placeholder = "Кінець" })
+        </div>
+        <label for="StartDate">&nbsp;</label>
+        <div  class="btn btn-primary" id="SearchBtn">Пошук</div>
     }
+    <p></p>
+    <div class="btn btn-primary" id="ListBtn">Списком</div>
 </div>

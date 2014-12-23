@@ -39,7 +39,7 @@
         var id = marker.get("Id");
         var photoUrl = marker.get("PhotoUrl");
         _this.clearAllInfo();
-        var data = "<div><img src=\"" + photoUrl + "\" /></div>";
+        var data = "<div class=\"instagram-photo\"><img src=\"" + photoUrl + "\" /></div>";
         var infoWindow = new google.maps.InfoWindow({
             content: data
         });

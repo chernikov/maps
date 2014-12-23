@@ -2,7 +2,9 @@
 using maps.Web.Controllers;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,6 +15,8 @@ namespace maps.Web.Areas.Instagram.Controllers
         protected string CallbackUri = "http://" + HostName + "/instagram/oauth";
 
         protected string SessionIstagramName = "INSTAGRAM_INSTANCE";
+
+        
 
         protected InsagramApiCaller InstagramApiCaller
         {
@@ -29,7 +33,12 @@ namespace maps.Web.Areas.Instagram.Controllers
 
         public InstagramController()
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
         }
 
+        public void SaveRedirect(string redirect)
+        {
+            Session["INSTAGRAM_REDIRECT"] = redirect;
+        }
     }
 }
