@@ -1,5 +1,5 @@
 ﻿@model System.Collections.Generic.KeyValuePair<string, maps.Web.Models.ViewModels.UtilityPhotoView>
-<div class="col-sm-6 UtilitPhotoItem">
+<div class="col-sm-6 UtilityPhotoItem">
     @Html.Hidden("Photos[" + Model.Key + "].ID", Model.Value.ID)
     @Html.Hidden("Photos[" + Model.Key + "].Image", Model.Value.Image)
     @Html.Hidden("Photos[" + Model.Key + "].State", Model.Value.State, new { @class = "PhotoItemState" })

@@ -1,19 +1,23 @@
-﻿
+﻿@model maps.Web.Models.Info.MessageInfo
 
 <div class="modal fade parking-modal" id="IssueModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title">Додати дефект</h4>
+                <h4 class="modal-title">@Model.Title</h4>
             </div>
-            <div class="modal-body" id="PopupIssueWrapper">
-                @Html.Action("Create", "Home")
+            <div class="modal-body">
+                <p>@Model.Message</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Скасувати</button>
-                <button type="button" class="btn btn-primary" id="SaveIssueBtn">Додати</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="CloseThanksBtn">Закрити</button>
+                
             </div>
+            
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<h1></h1>
+

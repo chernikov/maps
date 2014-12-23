@@ -33,18 +33,13 @@ namespace maps.Web.Areas.Utility.Controllers
         }
 
         [HttpGet]
-        public ActionResult Popup()
-        {
-            return View();
-        }
-
         public ActionResult Create()
         {
             return View("Edit", new NewUtilityIssueView());
         }
 
         [HttpPost]
-        public ActionResult Save(NewUtilityIssueView newUtilityIssueView)
+        public ActionResult Edit(NewUtilityIssueView newUtilityIssueView)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +80,7 @@ namespace maps.Web.Areas.Utility.Controllers
 
                 return View("Thanks", new MessageInfo("Дякую!", "Дякую за повідомлення!"));
             }
-            return View("Edit", newUtilityIssueView);
+            return View(newUtilityIssueView);
         }
 
         public ActionResult GetAll()

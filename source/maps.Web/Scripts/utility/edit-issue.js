@@ -61,7 +61,7 @@
        });
 
         $(document).on("click", ".RemoveUtilityPhoto", function () {
-            $(this).closest(".UtilitPhotoItem").remove();
+            $(this).closest(".UtilityPhotoItem").remove();
         });
     }
 

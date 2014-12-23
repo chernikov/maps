@@ -270,20 +270,15 @@
     <Compile Include="Validation\ValidPhone.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\admin.css">
       <DependentUpon>admin.scss</DependentUpon>
     </Content>
     <Content Include="Content\css\admin.min.css">
       <DependentUpon>admin.css</DependentUpon>
-    </Content>
-    <Content Include="Content\css\blueimp-gallery.min.css" />
-    <Content Include="Content\css\bootstrap-image-gallery.css" />
-    <Content Include="Content\css\bootstrap-image-gallery.min.css" />
-    <Content Include="Content\css\bootstrap.css">
-      <DependentUpon>bootstrap.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\css\bootstrap.min.css">
-      <DependentUpon>bootstrap.css</DependentUpon>
     </Content>
     <Content Include="Content\css\chosen.css" />
     <Content Include="Content\css\fineuploader-4.1.1.min.css" />
@@ -333,12 +328,8 @@
     <Content Include="Scripts\admin\upload-sample.js" />
     <Content Include="Scripts\bloodhound.js" />
     <Content Include="Scripts\bloodhound.min.js" />
-    <Content Include="Scripts\bootstrap-datetimepicker.js" />
-    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap-image-gallery.js" />
     <Content Include="Scripts\bootstrap-image-gallery.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Default\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
@@ -390,7 +381,6 @@
     <Content Include="Areas\Goal\Views\Home\_Ok.cshtml" />
     <Content Include="Areas\Goal\Views\Home\Item.cshtml" />
     <Content Include="Areas\Goal\Views\Shared\FbCode.cshtml" />
-    <Content Include="Content\css\bootstrap.scss" />
     <Content Include="config.rb" />
     <Content Include="Content\css\style.scss" />
     <Content Include="Areas\Default\Views\File\Index.cshtml" />
@@ -412,7 +402,6 @@
     <Content Include="Areas\Utility\Views\Shared\FbCode.cshtml" />
     <Content Include="Areas\Utility\Views\Shared\Map.cshtml" />
     <Content Include="Areas\Utility\Views\Home\Add.cshtml" />
-    <Content Include="Areas\Utility\Views\Home\Popup.cshtml" />
     <Content Include="Areas\Utility\Views\Home\Edit.cshtml" />
     <Content Include="Areas\Utility\Views\Tag\Edit.cshtml" />
     <Content Include="Areas\Utility\Views\Tag\Index.cshtml" />
@@ -428,9 +417,6 @@
     <Content Include="Areas\Utility\Views\Shared\GalleryLightBox.cshtml" />
     <Content Include="Areas\Utility\Views\Shared\_FullLayout.cshtml" />
     <Content Include="Areas\Utility\Views\Comment\Write.cshtml" />
-    <Content Include="Content\css\bootstrap.css.map">
-      <DependentUpon>bootstrap.css</DependentUpon>
-    </Content>
     <Content Include="Content\css\admin.css.map">
       <DependentUpon>admin.css</DependentUpon>
     </Content>
@@ -448,127 +434,18 @@
     <Content Include="Areas\Instagram\Views\Home\Photo.cshtml" />
     <Content Include="Areas\Instagram\Views\Shared\_LayoutOld.cshtml" />
     <Content Include="Areas\Instagram\Views\Home\Index.cshtml" />
-    <Content Include="Content\bootstrap\wells.less" />
-    <Content Include="Content\bootstrap\variables.less" />
-    <Content Include="Content\bootstrap\utilities.less" />
-    <Content Include="Content\bootstrap\type.less" />
-    <Content Include="Content\bootstrap\tooltip.less" />
-    <Content Include="Content\bootstrap\thumbnails.less" />
-    <Content Include="Content\bootstrap\theme.less" />
-    <Content Include="Content\bootstrap\tables.less" />
-    <Content Include="Content\bootstrap\scaffolding.less" />
-    <Content Include="Content\bootstrap\responsive-utilities.less" />
-    <Content Include="Content\bootstrap\progress-bars.less" />
-    <Content Include="Content\bootstrap\print.less" />
-    <Content Include="Content\bootstrap\popovers.less" />
-    <Content Include="Content\bootstrap\panels.less" />
-    <Content Include="Content\bootstrap\pagination.less" />
-    <Content Include="Content\bootstrap\pager.less" />
-    <Content Include="Content\bootstrap\normalize.less" />
-    <Content Include="Content\bootstrap\navs.less" />
-    <Content Include="Content\bootstrap\navbar.less" />
-    <Content Include="Content\bootstrap\modals.less" />
-    <Content Include="Content\bootstrap\mixins.less" />
-    <Content Include="Content\bootstrap\media.less" />
-    <Content Include="Content\bootstrap\list-group.less" />
-    <Content Include="Content\bootstrap\labels.less" />
-    <Content Include="Content\bootstrap\jumbotron.less" />
-    <Content Include="Content\bootstrap\input-groups.less" />
-    <Content Include="Content\bootstrap\grid.less" />
-    <Content Include="Content\bootstrap\glyphicons.less" />
-    <Content Include="Content\bootstrap\forms.less" />
-    <Content Include="Content\bootstrap\dropdowns.less" />
-    <Content Include="Content\bootstrap\component-animations.less" />
-    <Content Include="Content\bootstrap\code.less" />
-    <Content Include="Content\bootstrap\close.less" />
-    <Content Include="Content\bootstrap\carousel.less" />
-    <Content Include="Content\bootstrap\buttons.less" />
-    <Content Include="Content\bootstrap\button-groups.less" />
-    <Content Include="Content\bootstrap\breadcrumbs.less" />
-    <Content Include="Content\bootstrap\bootstrap.less" />
-    <Content Include="Content\bootstrap\badges.less" />
-    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Areas\Utility\Views\Home\Thanks.cshtml" />
     <None Include="Content\css\admin.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_alerts.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_background-variant.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_border-radius.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_buttons.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_center-block.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_clearfix.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_forms.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_gradients.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_grid-framework.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_grid.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_hide-text.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_image.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_labels.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_list-group.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_nav-divider.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_nav-vertical-align.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_opacity.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_pagination.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_panels.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_progress-bar.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_reset-filter.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_resize.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_responsive-visibility.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_size.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_tab-focus.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_table-row.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_text-emphasis.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_text-overflow.scss" />
-    <Content Include="Content\css\bootstrap\mixins\_vendor-prefixes.scss" />
-    <Content Include="Content\css\bootstrap\_alerts.scss" />
-    <Content Include="Content\css\bootstrap\_badges.scss" />
-    <Content Include="Content\css\bootstrap\_breadcrumbs.scss" />
-    <Content Include="Content\css\bootstrap\_button-groups.scss" />
-    <Content Include="Content\css\bootstrap\_buttons.scss" />
-    <Content Include="Content\css\bootstrap\_carousel.scss" />
-    <Content Include="Content\css\bootstrap\_close.scss" />
-    <Content Include="Content\css\bootstrap\_code.scss" />
-    <Content Include="Content\css\bootstrap\_component-animations.scss" />
-    <Content Include="Content\css\bootstrap\_dropdowns.scss" />
-    <Content Include="Content\css\bootstrap\_forms.scss" />
-    <Content Include="Content\css\bootstrap\_glyphicons.scss" />
-    <Content Include="Content\css\bootstrap\_grid.scss" />
-    <Content Include="Content\css\bootstrap\_input-groups.scss" />
-    <Content Include="Content\css\bootstrap\_jumbotron.scss" />
-    <Content Include="Content\css\bootstrap\_labels.scss" />
-    <Content Include="Content\css\bootstrap\_list-group.scss" />
-    <Content Include="Content\css\bootstrap\_media.scss" />
-    <Content Include="Content\css\bootstrap\_mixins.scss" />
-    <Content Include="Content\css\bootstrap\_modals.scss" />
-    <Content Include="Content\css\bootstrap\_navbar.scss" />
-    <Content Include="Content\css\bootstrap\_navs.scss" />
-    <Content Include="Content\css\bootstrap\_normalize.scss" />
-    <Content Include="Content\css\bootstrap\_pager.scss" />
-    <Content Include="Content\css\bootstrap\_pagination.scss" />
-    <Content Include="Content\css\bootstrap\_panels.scss" />
-    <Content Include="Content\css\bootstrap\_popovers.scss" />
-    <Content Include="Content\css\bootstrap\_print.scss" />
-    <Content Include="Content\css\bootstrap\_progress-bars.scss" />
-    <Content Include="Content\css\bootstrap\_responsive-embed.scss" />
-    <Content Include="Content\css\bootstrap\_responsive-utilities.scss" />
-    <Content Include="Content\css\bootstrap\_scaffolding.scss" />
-    <Content Include="Content\css\bootstrap\_tables.scss" />
-    <Content Include="Content\css\bootstrap\_theme.scss" />
-    <Content Include="Content\css\bootstrap\_thumbnails.scss" />
-    <Content Include="Content\css\bootstrap\_tooltip.scss" />
-    <Content Include="Content\css\bootstrap\_type.scss" />
-    <Content Include="Content\css\bootstrap\_utilities.scss" />
-    <Content Include="Content\css\bootstrap\_variables.scss" />
-    <Content Include="Content\css\bootstrap\_wells.scss" />
-    <Content Include="Content\css\_bootstrap-compass.scss" />
-    <Content Include="Content\css\_bootstrap-mincer.scss" />
-    <Content Include="Content\css\_bootstrap-sprockets.scss" />
-    <Content Include="Content\css\_bootstrap.scss" />
-    <Content Include="Content\less\bootstrap-datetimepicker-build.less" />
-    <Content Include="Content\less\bootstrap-datetimepicker.less" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <Content Include="Content\css\style.css.map">
       <DependentUpon>style.css</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add-route.js" />
     <Content Include="Scripts\bycicle\add-future-parking.js" />
@@ -589,11 +466,6 @@
     <Content Include="Scripts\instagram\map-photo.js" />
     <Content Include="Scripts\instagram\map-photos.js" />
     <Content Include="Scripts\jquery.blueimp-gallery.min.js" />
-    <Content Include="Scripts\less-1.4.1.min.js" />
-    <Content Include="Scripts\moment-with-locales.js" />
-    <Content Include="Scripts\moment-with-locales.min.js" />
-    <Content Include="Scripts\moment.js" />
-    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
     <Content Include="Scripts\typeahead.bundle.min.js" />
     <Content Include="Scripts\typeahead.jquery.js" />
@@ -620,6 +492,7 @@
     <Content Include="Scripts\utility\index.js" />
     <Content Include="Scripts\utility\item.js" />
     <Content Include="Scripts\utility\map-issue.js" />
+    <Content Include="Scripts\utility\map-main.js" />
     <Content Include="Scripts\utility\map-small-main.js" />
     <Content Include="Scripts\instagram\map-main.js" />
     <Content Include="Scripts\_references.js" />
@@ -658,9 +531,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>

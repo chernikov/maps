@@ -27,25 +27,28 @@
             animation: google.maps.Animation.DROP,
             position: position,
         });
+        _this.createPopup(position);
+    }
 
+    this.createPopup = function (position)
+    {
         //показать попап для добавления
         $.ajax({
             type: "GET",
-            url: "/utility/Home/Popup",
+            url: "/utility/Home/Create",
             success: function (data) {
                 var obj = $(data);
                 $("#PopupWrapper").html(obj);
                 obj.modal({
                     backdrop: false,
                 });
+
                 _this.initModal(position);
             }
-        })
+        });
     }
-
-    this.initModal = function (position) {
-
-
+    this.initModal = function (position)
+    {
         $(".chzn-select").chosen({ disable_search_threshold: 10 });
 
         $('.tooltipInfo').tooltip({
@@ -97,7 +100,11 @@
         });
 
         $(document).on("click", ".RemoveUtilityPhoto", function () {
-            $(this).closest(".UtilitPhotoItem").remove();
+            $(this).closest(".UtilityPhotoItem").remove();
+        });
+
+        $("#CloseThanksBtn").click(function () {
+            window.location = "/utility";
         });
     }
 
@@ -115,15 +122,18 @@
 
     this.saveIssue = function () {
         $.ajax({
-            url: "/utility/Home/Save",
+            url: "/utility/Home/Edit",
             type: "POST",
             data: $("#IssueForm").serialize(),
-            success: function (data) {
-                $("#PopupIssueWrapper").empty();
+            success: function (data)
+            {
+                $("#PopupWrapper").empty();
                 var obj = $(data);
-                $("#PopupIssueWrapper").html(obj);
+                $("#PopupWrapper").html(obj);
+                obj.modal({
+                    backdrop: false,
+                });
                 _this.initModal();
-                _this.clearMarker();
             }
         });
     }
