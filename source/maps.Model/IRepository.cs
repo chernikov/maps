@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace maps.Model
 {
-    public interface IRepository
+    public interface IOldRepository
     {
         IQueryable<T> GetTable<T>() where T : class;
 

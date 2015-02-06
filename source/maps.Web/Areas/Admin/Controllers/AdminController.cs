@@ -8,11 +8,17 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using maps.Web.Controllers;
 using maps.Model;
+using Ninject;
+using maps.Core;
+using maps.Data.Entities;
 
 namespace maps.Web.Areas.Admin.Controllers
 {
     public abstract class AdminController : BaseController
     {
+        [Inject]
+        public CityManager CityManager { get; set; }
+
         public readonly int PageSize = 20;
         protected override void Initialize(RequestContext requestContext)
         {
@@ -29,7 +35,7 @@ namespace maps.Web.Areas.Admin.Controllers
                 if (Session["City"] != null)
                 {
                     var cityID = (int)Session["City"];
-                    return Repository.Cities.FirstOrDefault(p => p.ID == cityID);
+                    return CityManager.Cities.FirstOrDefault(p => p.ID == cityID);
                 }
                 return null;
             }

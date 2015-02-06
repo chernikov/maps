@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[Place]
+(
+	[ID] INT IDENTITY (1, 1) NOT NULL, 
+    [Name] NVARCHAR(50) NOT NULL, 
+    [Lat] FLOAT NOT NULL, 
+	[Lng] FLOAT NOT NULL, 
+	[Distance] INT NOT NULL,
+    [Zoom] INT NOT NULL,
+	[MinDate] DATETIME NULL,
+	[MaxDate] DATETIME NULL,
+	CONSTRAINT [PK_Place] PRIMARY KEY CLUSTERED ([ID] ASC)
+)

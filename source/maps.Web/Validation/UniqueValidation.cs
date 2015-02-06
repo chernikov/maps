@@ -10,7 +10,7 @@ namespace maps.Web.Validation
 {
     public abstract class UniqueValidationAttribute : ValidationAttribute
     {
-        protected IRepository repository { get; private set; }
+        protected IOldRepository repository { get; private set; }
 
         private bool _valid;
 
@@ -33,7 +33,7 @@ namespace maps.Web.Validation
 
         protected virtual void Init()
         {
-            repository = (DependencyResolver.Current).GetService<IRepository>();
+            repository = (DependencyResolver.Current).GetService<IOldRepository>();
             /* repository = kernel.Get<IRepository>("TransientScoped");*/
         }
 

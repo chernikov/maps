@@ -11,6 +11,7 @@ namespace maps.Web.Areas.Admin.Controllers
 {
     public class BicycleParkingController : AdminController
     {
+
         public ActionResult Index()
         {
             var list = Repository.BicycleParkings;

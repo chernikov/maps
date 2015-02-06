@@ -35,7 +35,7 @@ namespace maps.IntegrationTest
             string connectionString;
             CopyDb(kernel, out sandboxFile, out connectionString);
             kernel.Bind<mapsDbDataContext>().ToMethod(c => new mapsDbDataContext(connectionString));
-            kernel.Bind<IRepository>().To<SqlRepository>().InTransientScope();
+            kernel.Bind<IOldRepository>().To<SqlRepository>().InTransientScope();
             sandboxFile.Delete();
         }
 

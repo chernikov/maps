@@ -7,34 +7,50 @@ namespace maps.Data
     using maps.Data.Entities;
     using maps.Data.Configuration;
 
-    public partial class MapsContext : DbContext
+    public partial class MapsContext : DbContext,  IDbContext, IMapsContext
     {
         public MapsContext()
             : base("name=MapsContext")
         {
         }
 
-        public virtual DbSet<BicycleDirectionLine> BicycleDirectionLines { get; set; }
-        public virtual DbSet<BicycleLine> BicycleLines { get; set; }
-        public virtual DbSet<BicycleParking> BicycleParkings { get; set; }
-        public virtual DbSet<BicycleParkingVote> BicycleParkingVotes { get; set; }
-        public virtual DbSet<BycicleDirection> BycicleDirections { get; set; }
-        public virtual DbSet<City> Cities { get; set; }
-        public virtual DbSet<Comment> Comments { get; set; }
-        public virtual DbSet<Goal> Goals { get; set; }
-        public virtual DbSet<GoalCell> GoalCells { get; set; }
-        public virtual DbSet<InstagramPhoto> InstagramPhotoes { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<Social> Socials { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<UserRole> UserRoles { get; set; }
-        public virtual DbSet<UtilityDepartment> UtilityDepartments { get; set; }
-        public virtual DbSet<UtilityIssue> UtilityIssues { get; set; }
-        public virtual DbSet<UtilityIssueComment> UtilityIssueComments { get; set; }
-        public virtual DbSet<UtilityIssueHistory> UtilityIssueHistories { get; set; }
-        public virtual DbSet<UtilityIssueTag> UtilityIssueTags { get; set; }
-        public virtual DbSet<UtilityPhoto> UtilityPhotoes { get; set; }
-        public virtual DbSet<UtilityTag> UtilityTags { get; set; }
+        public IDbSet<BicycleDirectionLine> BicycleDirectionLines { get; set; }
+
+        public IDbSet<BicycleLine> BicycleLines { get; set; }
+
+        public IDbSet<BicycleParking> BicycleParkings { get; set; }
+
+        public IDbSet<BicycleParkingVote> BicycleParkingVotes { get; set; }
+
+        public IDbSet<BicycleDirection> BycicleDirections { get; set; }
+
+        public IDbSet<City> Cities { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
+
+        public IDbSet<InstagramPhoto> InstagramPhotoes { get; set; }
+
+        public IDbSet<Role> Roles { get; set; }
+
+        public IDbSet<Social> Socials { get; set; }
+
+        public IDbSet<User> Users { get; set; }
+
+        public IDbSet<UserRole> UserRoles { get; set; }
+
+        public IDbSet<UtilityDepartment> UtilityDepartments { get; set; }
+
+        public IDbSet<UtilityIssue> UtilityIssues { get; set; }
+
+        public IDbSet<UtilityIssueComment> UtilityIssueComments { get; set; }
+
+        public IDbSet<UtilityIssueHistory> UtilityIssueHistories { get; set; }
+
+        public IDbSet<UtilityIssueTag> UtilityIssueTags { get; set; }
+
+        public IDbSet<UtilityPhoto> UtilityPhotoes { get; set; }
+
+        public IDbSet<UtilityTag> UtilityTags { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -49,6 +65,11 @@ namespace maps.Data
             modelBuilder.Configurations.Add(new UtilityIssueConfiguration());
 
             modelBuilder.Configurations.Add(new UtilityIssueHistoryConfiguration());
+        }
+
+        public new IDbSet<T> Set<T>() where T : class
+        {
+            return base.Set<T>();
         }
     }
 }

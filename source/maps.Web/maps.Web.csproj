@@ -531,13 +531,21 @@
       <Project>{2755dee8-1af1-41cc-b798-1eed42a9581d}</Project>
       <Name>Tool</Name>
     </ProjectReference>
+    <ProjectReference Include="..\maps.Core\maps.Core.csproj">
+      <Project>{55e647cd-75ad-4b61-8806-4f705eec9fbd}</Project>
+      <Name>maps.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\maps.Data\maps.Data.csproj">
+      <Project>{13c75509-4d8a-4cfe-8b39-ca7604220993}</Project>
+      <Name>maps.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\maps.Instagram\maps.Instagram.csproj">
       <Project>{c3a161db-5a66-4ff4-b6f3-3b1f7733cbea}</Project>
       <Name>maps.Instagram</Name>
     </ProjectReference>
-    <ProjectReference Include="..\maps.Model\maps.Model.csproj">
-      <Project>{69b9bddf-2bff-4755-920b-db29b3d3565e}</Project>
-      <Name>maps.Model</Name>
+    <ProjectReference Include="..\maps.Repository\maps.Repository.csproj">
+      <Project>{412e4aa1-1631-4cbd-9af0-4c88510ae3d4}</Project>
+      <Name>maps.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\maps.Social\maps.Social.csproj">
       <Project>{14b73b87-60ab-4894-aa0b-823d7d19bc98}</Project>

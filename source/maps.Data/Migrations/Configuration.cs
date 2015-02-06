@@ -1,9 +1,11 @@
 namespace maps.Data.Migrations
 {
     using maps.Data.Entities;
+    using maps.Data.Logging;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
+    using System.Data.Entity.Infrastructure.Interception;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -12,6 +14,7 @@ namespace maps.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            DbInterception.Add(new LoggingInterceptor());
         }
 
         protected override void Seed(MapsContext context)

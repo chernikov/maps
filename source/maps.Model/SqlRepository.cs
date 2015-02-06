@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace maps.Model
 {
-    public partial class SqlRepository : IRepository
+    public partial class SqlRepository : IOldRepository
     {
         [Inject]
         public mapsDbDataContext Db { get; set; }

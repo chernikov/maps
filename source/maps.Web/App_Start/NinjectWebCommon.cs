@@ -6,6 +6,8 @@ using Ninject.Web.Common;
 using maps.Web.Global.Config;
 using maps.Model;
 using maps.Web.Global.Auth;
+using maps.Data;
+using maps.Repository;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(maps.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(maps.Web.App_Start.NinjectWebCommon), "Stop")]
@@ -56,8 +58,10 @@ namespace maps.Web.App_Start
         {
             kernel.Bind<IConfig>().To<Config>();
             kernel.Bind<mapsDbDataContext>().ToMethod(c => new mapsDbDataContext(kernel.Get<IConfig>().ConnectionStrings("ConnectionString")));
-            kernel.Bind<IRepository>().To<SqlRepository>().InRequestScope();
+            kernel.Bind<IOldRepository>().To<SqlRepository>().InRequestScope();
             kernel.Bind<IAuthentication>().To<CustomAuthentication>().InRequestScope();
+            kernel.Bind<IMapsContext>().To<MapsContext>();
+            kernel.Bind<IUnitOfWorkFactory<IMapsContext>>().To<MapsUnitOfWorkFactory>();
         }        
     }
 }

@@ -37,6 +37,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.3.2.0.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -59,16 +62,26 @@
     <Compile Include="Entities\BicycleLine.cs" />
     <Compile Include="Entities\BicycleParking.cs" />
     <Compile Include="Entities\BicycleParkingVote.cs" />
-    <Compile Include="Entities\BycicleDirection.cs" />
+    <Compile Include="Entities\BicycleDirection.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Comment.cs" />
-    <Compile Include="Entities\Goal.cs" />
-    <Compile Include="Entities\GoalCell.cs" />
     <Compile Include="Entities\InstagramPhoto.cs" />
+    <Compile Include="IDbContext.cs" />
+    <Compile Include="IMapsContext.cs" />
+    <Compile Include="Infrastructure\DatabaseEntity.cs" />
+    <Compile Include="Infrastructure\IObjectStateable.cs" />
+    <Compile Include="Infrastructure\ObjectState.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LoggingInterceptor.cs" />
     <Compile Include="MapsContext.cs" />
     <Compile Include="Migrations\201501081444492_Init.cs" />
     <Compile Include="Migrations\201501081444492_Init.Designer.cs">
       <DependentUpon>201501081444492_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502060710354_GoalsOf.cs" />
+    <Compile Include="Migrations\201502060710354_GoalsOf.Designer.cs">
+      <DependentUpon>201502060710354_GoalsOf.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +104,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201501081444492_Init.resx">
       <DependentUpon>201501081444492_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502060710354_GoalsOf.resx">
+      <DependentUpon>201502060710354_GoalsOf.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,6 @@
 namespace maps.Data.Entities
 {
+    using maps.Data.Infrastructure;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -7,15 +8,14 @@ namespace maps.Data.Entities
     using System.Data.Entity.Spatial;
 
     [Table("User")]
-    public partial class User
+    public partial class User : DatabaseEntity
     {
         public User()
         {
             BicycleParkings = new HashSet<BicycleParking>();
             BicycleParkingVotes = new HashSet<BicycleParkingVote>();
-            BycicleDirections = new HashSet<BycicleDirection>();
+            BycicleDirections = new HashSet<BicycleDirection>();
             Comments = new HashSet<Comment>();
-            Goals = new HashSet<Goal>();
             Socials = new HashSet<Social>();
             UserRoles = new HashSet<UserRole>();
             UtilityIssues = new HashSet<UtilityIssue>();
@@ -56,13 +56,11 @@ namespace maps.Data.Entities
 
         public virtual ICollection<BicycleParkingVote> BicycleParkingVotes { get; set; }
 
-        public virtual ICollection<BycicleDirection> BycicleDirections { get; set; }
+        public virtual ICollection<BicycleDirection> BycicleDirections { get; set; }
 
         public virtual City City { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
-
-        public virtual ICollection<Goal> Goals { get; set; }
 
         public virtual ICollection<Social> Socials { get; set; }
 

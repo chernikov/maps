@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace maps.Data.Configuration
 {
-    internal class BycicleDirectionConfiguration : EntityTypeConfiguration<BycicleDirection>
+    internal class BycicleDirectionConfiguration : EntityTypeConfiguration<BicycleDirection>
     {
         public BycicleDirectionConfiguration()
         {

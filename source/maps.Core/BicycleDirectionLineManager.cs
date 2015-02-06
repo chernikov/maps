@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.Entity;
+using maps.Repository;
+using maps.Data;
+using maps.Data.Entities;
+using System.Linq.Expressions;
+
+namespace maps.Core
+{
+    public class BicycleDirectionLineManager : BaseManager
+    {
+        public BicycleDirectionLineManager(IUnitOfWorkFactory<IMapsContext> unitOfWorkFactory)
+            : base(unitOfWorkFactory)
+        {
+        }
+
+        public IList<BicycleDirectionLine> BicycleDirectionLines
+        {
+            get
+            {
+                using (var unitOfWork = _unitOfWorkFactory.Create())
+                {
+                    return unitOfWork.Repository<BicycleDirectionLine>().Entities.ToList();
+                }
+            }
+        }
+    }
+}

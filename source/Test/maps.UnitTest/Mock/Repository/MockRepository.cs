@@ -8,7 +8,7 @@ using maps.Model;
 
 namespace maps.UnitTest.Mock.Repository
 {
-    public partial class MockRepository : Mock<IRepository>
+    public partial class MockRepository : Mock<IOldRepository>
     {
         public MockRepository(MockBehavior mockBehavior = MockBehavior.Strict)
             : base(mockBehavior)

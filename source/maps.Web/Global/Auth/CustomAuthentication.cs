@@ -18,7 +18,7 @@ namespace maps.Web.Global.Auth
         public IAuthCookieProvider AuthCookieProvider { get; set; }
 
         [Inject]
-        public IRepository Repository { get; set; }
+        public IOldRepository Repository { get; set; }
 
         #region IAuthentication Members
 

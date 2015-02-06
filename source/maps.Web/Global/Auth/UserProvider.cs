@@ -48,7 +48,7 @@ namespace maps.Web.Global.Auth
         /// </summary>
         /// <param name="name"></param>
         /// <param name="repository"></param>
-        public UserProvider(string name, IRepository repository)
+        public UserProvider(string name, IOldRepository repository)
         {
             userIdentity = new UserIndentity();
             userIdentity.Init(name, repository);

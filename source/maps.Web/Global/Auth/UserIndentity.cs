@@ -59,7 +59,7 @@ namespace maps.Web.Global.Auth
         /// Инициализация по имени
         /// </summary>
         /// <param name="email">имя пользователя [email]</param>
-        public void Init(string login, IRepository repository)
+        public void Init(string login, IOldRepository repository)
         {
             if (!string.IsNullOrEmpty(login))
             {

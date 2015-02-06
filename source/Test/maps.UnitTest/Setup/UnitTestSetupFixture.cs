@@ -71,7 +71,7 @@ namespace maps.UnitTest
         protected virtual void InitRepository(StandardKernel kernel)
         {
             kernel.Bind<MockRepository>().To<MockRepository>().InThreadScope();
-            kernel.Bind<IRepository>().ToMethod(p => kernel.Get<MockRepository>().Object);
+            kernel.Bind<IOldRepository>().ToMethod(p => kernel.Get<MockRepository>().Object);
         }
 
         protected virtual void InitConfig(StandardKernel kernel)

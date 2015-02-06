@@ -27,7 +27,7 @@ namespace maps.Web.Models.ViewModels
         {
             get
             {
-                var repository = DependencyResolver.Current.GetService<IRepository>();
+                var repository = DependencyResolver.Current.GetService<IOldRepository>();
                 return repository.UtilityTags.ToList();
             }
         }

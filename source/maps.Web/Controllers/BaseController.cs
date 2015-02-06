@@ -10,6 +10,7 @@ using maps.Web.Global.Config;
 using maps.Model;
 using maps.Web.Models.Mappers;
 using maps.Web.Mappers;
+using maps.Data.Entities;
 
 namespace maps.Web.Controllers
 {
@@ -20,9 +21,6 @@ namespace maps.Web.Controllers
         protected static string NotFoundPage = "~/not-found-page";
 
         protected static string LoginPage = "~/Login";
-
-        [Inject]
-        public IRepository Repository { get; set; }
 
         [Inject]
         public IAuthentication Auth { get; set; }

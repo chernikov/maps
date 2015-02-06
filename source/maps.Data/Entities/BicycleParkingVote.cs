@@ -1,5 +1,6 @@
 namespace maps.Data.Entities
 {
+    using maps.Data.Infrastructure;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -7,7 +8,7 @@ namespace maps.Data.Entities
     using System.Data.Entity.Spatial;
 
     [Table("BicycleParkingVote")]
-    public partial class BicycleParkingVote
+    public partial class BicycleParkingVote : DatabaseEntity
     {
         public int ID { get; set; }
 

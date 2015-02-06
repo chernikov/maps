@@ -18,13 +18,13 @@ namespace maps.Web.Controllers
     {
         protected string DestinationDir = "Content/files/uploads/";
 
-        public IRepository Repository { get; set; }
+        public IOldRepository Repository { get; set; }
 
         public ModelMapper ModelMapper { get; set; }
 
         public BaseApiController()
         {
-            Repository = DependencyResolver.Current.GetService<IRepository>();
+            Repository = DependencyResolver.Current.GetService<IOldRepository>();
             ModelMapper = DependencyResolver.Current.GetService<ModelMapper>();
         }
     }
