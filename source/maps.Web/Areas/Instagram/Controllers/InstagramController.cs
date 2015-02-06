@@ -1,5 +1,6 @@
 ﻿using maps.Instagram;
 using maps.Web.Controllers;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -12,21 +13,28 @@ namespace maps.Web.Areas.Instagram.Controllers
 {
     public abstract class InstagramController : BaseController
     {
-        protected string CallbackUri = "http://" + HostName + "/instagram/oauth";
 
         protected string SessionIstagramName = "INSTAGRAM_INSTANCE";
+        protected string IstagramCookieCodeName = "INSTAGRAM_CODE_COOKIE";
+        protected string IstagramCookieAccessName = "INSTAGRAM_ACCESS_COOKIE";
 
-        
+        protected string CallbackUri 
+        {
+            get 
+            {
+                return "http://" + HostName + "/instagram/oauth";
+            }
+        }
 
         protected InsagramApiCaller InstagramApiCaller
         {
             get
             {
-                if (Session["INSTAGRAM_INSTANCE"] == null)
+                if (Session[SessionIstagramName] == null)
                 {
-                    Session["INSTAGRAM_INSTANCE"] = new InsagramApiCaller();
+                    Session[SessionIstagramName] = new InsagramApiCaller();
                 }
-                return (InsagramApiCaller)Session["INSTAGRAM_INSTANCE"];
+                return (InsagramApiCaller)Session[SessionIstagramName];
             }
         }
 
@@ -34,11 +42,28 @@ namespace maps.Web.Areas.Instagram.Controllers
         public InstagramController()
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+
+
         }
 
         public void SaveRedirect(string redirect)
         {
             Session["INSTAGRAM_REDIRECT"] = redirect;
+        }
+
+        protected void TryGetCookieAccess()
+        {
+            var codeCookie = Request.Cookies.Get(IstagramCookieCodeName);
+            if (codeCookie != null)
+            {
+                InstagramApiCaller.Code = codeCookie.Value;
+            }
+            var accessCookie = Request.Cookies.Get(IstagramCookieAccessName);
+            if (accessCookie != null)
+            {
+                var access = JObject.Parse(Server.UrlDecode(accessCookie.Value));
+                InstagramApiCaller.JsonAccess = access;
+            }
         }
     }
 }

@@ -67,7 +67,6 @@ namespace maps.Web.Controllers
                     return Repository.Cities.First();
                 }
             }
-            
         }
 
         public RedirectResult RedirectToNotFoundPage

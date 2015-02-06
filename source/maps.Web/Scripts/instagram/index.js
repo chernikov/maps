@@ -44,6 +44,9 @@
                 type: "POST",
                 url: "/instagram/Home/Get",
                 data: ajaxData,
+                beforeSend : function() {
+                    $.blockUI({message : "Зачекайте хвильку..."});
+                },
                 success: function (data) {
                     if (data.result == "success")
                     {
@@ -55,7 +58,11 @@
                             _this.createMarker(item);
                         });
                     }
+                },
+                complete: function () {
+                    $.unblockUI();
                 }
+
             });
             return false;
         });
@@ -114,7 +121,7 @@
     this.createThumb = function (item)
     {
         var list = $("#ModalWrapper .row");
-        list.append("<div class=\"col-md-3\"><div class=\"thumbnail instagram-thumbnail\"><a href=\"" + item.Link + "\"><img src=\"" + item.PhotoUrl + "\" /></a></div></div>");
+        list.append("<div class=\"col-md-3\"><div class=\"thumbnail instagram-thumbnail\"><a href=\"" + item.Link + "\" target=\"_blank\"><img src=\"" + item.PhotoUrl + "\"  /></a></div></div>");
     }
 
     this.showInfo = function (marker) {
@@ -122,7 +129,7 @@
         var photoUrl = marker.get("PhotoUrl");
         var link = marker.get("Link");
         _this.clearAllInfo();
-        var data = "<div class=\"instagram-photo\"><a href=\"" + link + "\"><img src=\"" + photoUrl + "\" /></a></div>";
+        var data = "<div class=\"instagram-photo\"><a href=\"" + link + "\" target=\"_blank\"><img src=\"" + photoUrl + "\" /></a></div>";
         var infoWindow = new google.maps.InfoWindow({
             content: data
         });

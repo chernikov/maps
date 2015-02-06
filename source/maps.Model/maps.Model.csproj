@@ -106,16 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="CodeTemplates\Scaffolders\IRepository\IRepository.ps1" />
-    <None Include="CodeTemplates\Scaffolders\IRepository\IRepositoryItemTemplate.cs.t4" />
-    <None Include="CodeTemplates\Scaffolders\IRepository\IRepositoryTemplate.cs.t4" />
-    <None Include="CodeTemplates\Scaffolders\ProviderRepository\ProviderRepository.ps1" />
-    <None Include="CodeTemplates\Scaffolders\Proxy\Proxy.ps1" />
-    <None Include="CodeTemplates\Scaffolders\Proxy\ProxyLangTemplate.cs.t4" />
-    <None Include="CodeTemplates\Scaffolders\Proxy\ProxyTemplate.cs.t4" />
-    <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepository.ps1" />
-    <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepositoryLangTemplate.cs.t4" />
-    <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepositoryTemplate.cs.t4" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

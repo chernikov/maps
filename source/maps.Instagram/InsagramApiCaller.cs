@@ -74,6 +74,7 @@ namespace maps.Instagram
 
         public JObject SearchMedia(double lat, double lng, int distance = 1000, DateTime? dateTime = null)
         {
+            logger.Debug(string.Format("Search {0} {1} {2} {3}", lat, lng, distance, dateTime));
             if (AccessToken != null)
             {
                 var @params = new List<KeyValuePair<string, string>>() {
@@ -91,5 +92,13 @@ namespace maps.Instagram
             return null;
         }
 
+
+        public bool IsReady
+        {
+            get
+            {
+                return !string.IsNullOrWhiteSpace(Code) && AccessToken != null;
+            }
+        }
     }
 }

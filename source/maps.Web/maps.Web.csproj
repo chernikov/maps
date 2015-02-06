@@ -159,7 +159,6 @@
     <Folder Include="Areas\Default\Models\" />
     <Folder Include="Areas\Instagram\Models\" />
     <Folder Include="Areas\Instagram\Views\Instagram\" />
-    <Folder Include="CodeTemplates\" />
     <Folder Include="Content\files\uploads\" />
     <Folder Include="Content\files\utilities\" />
     <Folder Include="Content\logs\" />
@@ -299,6 +298,7 @@
     <Content Include="Content\images\ifx_empty.png" />
     <Content Include="Content\images\ifx_set.png" />
     <Content Include="Content\images\info-icon.png" />
+    <Content Include="Content\images\instagram.png" />
     <Content Include="Content\images\maps_logo.png" />
     <Content Include="Content\images\maps_logo_small.png" />
     <Content Include="Content\images\marker_12_2x.png" />
@@ -474,6 +474,7 @@
     <Content Include="Scripts\instagram\map-instagram.js" />
     <Content Include="Scripts\instagram\map-photo.js" />
     <Content Include="Scripts\instagram\map-photos.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="Scripts\jquery.blueimp-gallery.min.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
