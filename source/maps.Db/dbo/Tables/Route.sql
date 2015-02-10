@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Route]
+(
+	[ID] INT IDENTITY (1, 1) NOT NULL,
+    [Name] NVARCHAR(50) NOT NULL, 
+    [Length] FLOAT NOT NULL,
+	CONSTRAINT [PK_Route] PRIMARY KEY CLUSTERED ([ID] ASC)
+)

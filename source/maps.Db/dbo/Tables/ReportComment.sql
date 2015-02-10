@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[ReportComment]
+(
+	[ID] INT IDENTITY (1, 1) NOT NULL,
+    [ReportID] INT NOT NULL, 
+    [CommentID] INT NOT NULL,
+	CONSTRAINT [PK_ReportComment] PRIMARY KEY CLUSTERED ([ID] ASC),
+	CONSTRAINT [FK_ReportComment_Report] FOREIGN KEY ([ReportID]) REFERENCES [dbo].[Report] ([ID]) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT [FK_ReportComment_Comment] FOREIGN KEY ([CommentID]) REFERENCES [dbo].[Comment] ([ID]) ON DELETE CASCADE ON UPDATE CASCADE,
+)

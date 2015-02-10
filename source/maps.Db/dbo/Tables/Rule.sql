@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Rule]
+(
+	[ID] INT IDENTITY (1, 1) NOT NULL,
+    [Name] NVARCHAR(200) NOT NULL, 
+    [Description] NVARCHAR(MAX) NOT NULL, 
+    [UrlToLaw] NVARCHAR(500) NULL,
+	CONSTRAINT [PK_Rule] PRIMARY KEY CLUSTERED ([ID] ASC)
+)

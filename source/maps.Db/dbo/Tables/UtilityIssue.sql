@@ -13,6 +13,7 @@
     [Lng] FLOAT NOT NULL, 
     [Address] NVARCHAR(MAX) NULL, 
     [Description] NVARCHAR(MAX) NULL, 
+	[WorkFlow] NVARCHAR(MAX) NULL, 
     [Solution] NVARCHAR(MAX) NULL, 
     [Status] INT NOT NULL, 
     [IsRemoved] BIT NOT NULL, 
