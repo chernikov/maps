@@ -236,6 +236,7 @@
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Mail\MailSender.cs" />
     <Compile Include="Mail\NotifyMail.cs" />
+    <Compile Include="Models\Info\InstagramPhoto.cs" />
     <Compile Include="Models\Info\MessageInfo.cs" />
     <Compile Include="Models\Mappers\ModelMapper.cs" />
     <Compile Include="Models\ViewModels\AdminBicycleParkingView.cs" />
@@ -433,13 +434,10 @@
     <Content Include="Areas\Instagram\Views\web.config" />
     <Content Include="Areas\Instagram\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Instagram\Views\Shared\FbCode.cshtml" />
-    <Content Include="Areas\Instagram\Views\Home\Old.cshtml" />
     <Content Include="Areas\Instagram\Views\Shared\Map.cshtml" />
     <Content Include="Areas\Instagram\Views\Home\Photos.cshtml" />
     <Content Include="Areas\Instagram\Views\Shared\TopMenu.cshtml" />
     <Content Include="Areas\Instagram\Views\Shared\_SimpleLayout.cshtml" />
-    <Content Include="Areas\Instagram\Views\Home\Photo.cshtml" />
-    <Content Include="Areas\Instagram\Views\Shared\_LayoutOld.cshtml" />
     <Content Include="Areas\Instagram\Views\Home\Index.cshtml" />
     <Content Include="Areas\Utility\Views\Home\Thanks.cshtml" />
     <Content Include="Areas\Instagram\Views\Home\EmptyModal.cshtml" />

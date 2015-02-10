@@ -23,7 +23,7 @@ namespace maps.Model
             {
                 UtilityIssueID = instance.ID,
                 UserID = userId,
-
+                HistoryDate = DateTime.Now,
                 AddedDate = instance.AddedDate,
                 AcceptedDate = instance.AcceptedDate,
                 ResolvedDate = instance.ResolvedDate,
@@ -37,6 +37,7 @@ namespace maps.Model
                 Solution = instance.Solution,
                 Status = instance.Status,
                 IsRemoved = instance.IsRemoved,
+                WorkFlow = instance.WorkFlow
             });
             Db.UtilityIssueHistories.Context.SubmitChanges();
         }

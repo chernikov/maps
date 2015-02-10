@@ -44,6 +44,7 @@ namespace maps.Model
                 cache.Address = instance.Address;
                 cache.Description = instance.Description;
                 cache.Solution = instance.Solution;
+                cache.WorkFlow = instance.WorkFlow;
                 Db.UtilityIssues.Context.SubmitChanges();
 
                 MakeUtilityIssueHistory(cache, userID);
