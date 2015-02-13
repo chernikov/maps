@@ -23,6 +23,10 @@ namespace maps.Web.Mappers
             MapperCollection.UtilityPhotoMapper.Init();
             MapperCollection.UtilityDepartmentMapper.Init();
             MapperCollection.CommentMapper.Init();
+            MapperCollection.TransporteurMapper.Init();
+            MapperCollection.RouteMapper.Init();
+            MapperCollection.BrandMapper.Init();
+            MapperCollection.BusMapper.Init();
         }
 
         public object Map(object source, Type sourceType, Type destinationType)

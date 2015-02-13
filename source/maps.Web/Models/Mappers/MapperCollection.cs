@@ -133,5 +133,41 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<CommentView, Comment>();
             }
         }
+
+        public static class TransporteurMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<Transporteur, TransporteurView>();
+                Mapper.CreateMap<TransporteurView, Transporteur>();
+            }
+        }
+
+        public static class RouteMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<Route, RouteView>();
+                Mapper.CreateMap<RouteView, Route>();
+            }
+        }
+
+        public static class BrandMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<Brand, BrandView>();
+                Mapper.CreateMap<BrandView, Brand>();
+            }
+        }
+
+        public static class BusMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<Bus, BusView>();
+                Mapper.CreateMap<BusView, Bus>();
+            }
+        }
     }
 }

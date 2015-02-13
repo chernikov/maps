@@ -6,8 +6,8 @@ using System.Text;
 
 namespace maps.Model
 {
-	
- public partial class SqlRepository
+
+    public partial class SqlRepository
     {
         public IQueryable<BicycleParkingVote> BicycleParkingVotes
         {

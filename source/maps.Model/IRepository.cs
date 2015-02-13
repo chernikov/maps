@@ -248,5 +248,168 @@ namespace maps.Model
         bool RemoveUtilityPhoto(int idUtilityPhoto);
         
         #endregion 
+
+
+
+        #region Brand
+
+        IQueryable<Brand> Brands { get; }
+
+        bool CreateBrand(Brand instance);
+
+        bool UpdateBrand(Brand instance);
+
+        bool RemoveBrand(int idBrand);
+
+        #endregion 
+
+
+        #region Bus
+
+        IQueryable<Bus> Bus { get; }
+
+        bool CreateBus(Bus instance);
+
+        bool UpdateBus(Bus instance);
+
+        bool RemoveBus(int idBus);
+
+        #endregion 
+
+
+        #region BusPhoto
+
+        IQueryable<BusPhoto> BusPhotos { get; }
+
+        bool CreateBusPhoto(BusPhoto instance);
+
+        bool RemoveBusPhoto(int idBusPhoto);
+
+        #endregion 
+        
+
+        #region Notify
+
+        IQueryable<Notify> Notifies { get; }
+
+        bool CreateNotify(Notify instance);
+
+        bool UpdateNotify(Notify instance);
+
+        bool RemoveNotify(int idNotify);
+
+        #endregion 
+        
+        
+        #region Report
+
+        IQueryable<Report> Reports { get; }
+
+        bool CreateReport(Report instance);
+
+        bool UpdateReport(Report instance);
+
+        bool RemoveReport(int idReport);
+
+        #endregion 
+        
+
+        #region ReportComment
+
+        IQueryable<ReportComment> ReportComments { get; }
+
+        bool CreateReportComment(ReportComment instance);
+
+        bool RemoveReportComment(int idReportComment);
+
+        #endregion 
+        
+
+        #region ReportPhoto
+
+        IQueryable<ReportPhoto> ReportPhotos { get; }
+
+        bool CreateReportPhoto(ReportPhoto instance);
+
+        bool RemoveReportPhoto(int idReportPhoto);
+
+        #endregion 
+     
+        
+        #region Route
+
+        IQueryable<Route> Routes { get; }
+
+        bool CreateRoute(Route instance);
+
+        bool UpdateRoute(Route instance);
+
+        bool RemoveRoute(int idRoute);
+
+        #endregion 
+        
+
+        #region RouteSection
+
+        IQueryable<RouteSection> RouteSections { get; }
+
+        bool CreateRouteSection(RouteSection instance);
+
+
+        bool RemoveRouteSection(int idRouteSection);
+
+        #endregion 
+        
+        
+        #region Rule
+
+        IQueryable<Rule> Rules { get; }
+
+        bool CreateRule(Rule instance);
+
+        bool UpdateRule(Rule instance);
+
+        bool RemoveRule(int idRule);
+
+        #endregion 
+        
+        
+        #region RuleReport
+
+        IQueryable<RuleReport> RuleReports { get; }
+
+        bool CreateRuleReport(RuleReport instance);
+
+        bool RemoveRuleReport(int idRuleReport);
+
+        #endregion 
+        
+
+        #region Station
+
+        IQueryable<Station> Stations { get; }
+
+        bool CreateStation(Station instance);
+
+        bool UpdateStation(Station instance);
+
+        bool RemoveStation(int idStation);
+
+        #endregion 
+    
+
+        #region Transporteur
+
+        IQueryable<Transporteur> Transporteurs { get; }
+
+        bool CreateTransporteur(Transporteur instance);
+
+        bool UpdateTransporteur(Transporteur instance);
+
+        bool RemoveTransporteur(int idTransporteur);
+
+        #endregion 
+        
     }
+
 }

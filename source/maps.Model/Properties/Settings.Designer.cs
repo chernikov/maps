@@ -73,5 +73,15 @@ namespace maps.Model.Properties {
                 return ((string)(this["maps_workConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WORKER\\MSSQL;Initial Catalog=maps;Integrated Security=True")]
+        public string mapsConnectionString {
+            get {
+                return ((string)(this["mapsConnectionString"]));
+            }
+        }
     }
 }

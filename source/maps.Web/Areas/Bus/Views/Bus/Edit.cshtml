@@ -1,0 +1,67 @@
+﻿@model BusView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Додати буса" : "Змінити дані про буса";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section header
+{
+}
+<h2>@ViewBag.Title</h2>
+<p></p>
+@using (Html.BeginForm("Edit", "Bus", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        <div class="form-group @Html.HasErrorClass("BrandID", "has-error")">
+            <label class="col-sm-3 control-label" for="BrandID">
+                Марка
+            </label>
+            <div class="col-sm-5">
+                @Html.DropDownList("BrandID", Model.SelectListBrands, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("BrandID")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Number", "has-error")">
+            <label class="col-sm-3 control-label" for="Number">
+                Номер
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Number", Model.Number, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Number")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("RouteID", "has-error")">
+            <label class="col-sm-3 control-label" for="RouteID">
+                Маршрут
+            </label>
+            <div class="col-sm-5">
+                @Html.DropDownList("RouteID", Model.SelectListRoutes, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("RouteID")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("TransporteurID", "has-error")">
+            <label class="col-sm-3 control-label" for="TransporteurID">
+                Перевізник
+            </label>
+            <div class="col-sm-5">
+                @Html.DropDownList("TransporteurID", Model.SelectListTranspourteur, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("TransporteurID")
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Зберегти
+            </button>
+            @Html.ActionLink("Назад", "Index", null, null, new { @class = "btn" })
+        </div>
+    </fieldset>
+}
+

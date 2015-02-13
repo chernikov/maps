@@ -1,0 +1,79 @@
+﻿@model TransporteurView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Додати перевізника" : "Змінити дані про перевізника";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header
+{
+}
+<h2>@ViewBag.Title</h2>
+<p></p>
+@using (Html.BeginForm("Edit", "Transporteur", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        <div class="form-group @Html.HasErrorClass("LastName", "has-error")">
+            <label class="col-sm-3 control-label" for="LastName">
+                Фамілія
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("LastName", Model.LastName, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("LastName")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("FirstName", "has-error")">
+            <label class="col-sm-3 control-label" for="FirstName">
+                Ім'я
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("FirstName", Model.FirstName, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("FirstName")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Patronymic", "has-error")">
+            <label class="col-sm-3 control-label" for="Patronymic">
+                По-батькові
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Patronymic", Model.Patronymic, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Patronymic")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("PrimaryPhone", "has-error")">
+            <label class="col-sm-3 control-label" for="PrimaryPhone">
+                Телефон
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("PrimaryPhone", Model.PrimaryPhone, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("PrimaryPhone")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("AdditionalPhone", "has-error")">
+            <label class="col-sm-3 control-label" for="AdditionalPhone">
+                Телефон додатковий
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("AdditionalPhone", Model.AdditionalPhone, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("PrimaryNumber")
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Зберегти
+            </button>
+            @Html.ActionLink("Назад", "Index", null, null, new { @class = "btn" })
+        </div>
+    </fieldset>
+}
+<p></p>

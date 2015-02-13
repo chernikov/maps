@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Transporteur>
+@{
+    ViewBag.Title = "Перевізники";
+    Layout = "~/Areas/Bus/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>
+    Перевізники
+</h2>
+@Html.ActionLink("Додати", "Create", "Transporteur", null, new { @class = "btn btn-primary" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Фамілія
+            </th>
+            <th>
+                Ім'я по-батькові
+            </th>
+            <th>
+                Телефон
+            </th>
+            <th>
+                Телефон (дод.)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.FirstName @item.Patronymic
+            </td>
+            <td>
+                @item.PrimaryPhone
+            </td>
+            <td>
+                @item.AdditionalPhone
+            </td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", "Transporteur", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Видалити", "Delete", "Transporteur", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+            </td>
+        </tr>
+    }
+</table>
+

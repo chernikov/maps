@@ -1,0 +1,12 @@
+﻿@{
+    var controllerName = ViewContext.RequestContext.RouteData.Values["controller"] as string;
+}
+
+<div class="bs-sidebar hidden-print affix" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="@(controllerName == "Home" ? "active" : "")">@Html.ActionLink("Головна", "Index", "Home")</li>
+        <li class="@(controllerName == "Transporteur" ? "active" : "")">@Html.ActionLink("Перевізники", "Index", "Transporteur")</li>
+        <li class="@(controllerName == "Route" ? "active" : "")">@Html.ActionLink("Маршрути", "Index", "Route")</li>
+        <li class="@(controllerName == "Brand" ? "active" : "")">@Html.ActionLink("Марки бусів", "Index", "Brand")</li>
+    </ul>
+</div>

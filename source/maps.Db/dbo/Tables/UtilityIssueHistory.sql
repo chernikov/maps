@@ -3,6 +3,7 @@
 	[ID] INT IDENTITY (1, 1) NOT NULL, 
 	[UtilityIssueID] INT NOT NULL,
 	[UserID] INT NOT NULL, 
+	[HistoryDate] DATETIME NOT NULL, 
 	[AddedDate] DATETIME NOT NULL, 
     [AcceptedDate] DATETIME NULL, 
     [ResolvedDate] DATETIME NULL, 
