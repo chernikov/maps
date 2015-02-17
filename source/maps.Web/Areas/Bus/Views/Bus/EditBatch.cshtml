@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Додати перевізників";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var errors = ViewBag.Errors as List<string>;
 }
 
 @section header
@@ -10,7 +11,15 @@
 }
 <h2>@ViewBag.Title</h2>
 <p></p>
-@using (Html.BeginForm("EditBatch", "Brand", FormMethod.Post, new { @class = "form-horizontal" }))
+
+@if (errors != null) 
+{ 
+    foreach (var item in errors)
+    {
+        @item<br/>
+    }
+}
+@using (Html.BeginForm("EditBatch", "Bus", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <fieldset>
         <div class="form-group @Html.HasErrorClass("Data", "has-error")">

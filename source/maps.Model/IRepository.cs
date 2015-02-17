@@ -249,8 +249,6 @@ namespace maps.Model
         
         #endregion 
 
-
-
         #region Brand
 
         IQueryable<Brand> Brands { get; }
@@ -262,7 +260,6 @@ namespace maps.Model
         bool RemoveBrand(int idBrand);
 
         #endregion 
-
 
         #region Bus
 
@@ -276,7 +273,6 @@ namespace maps.Model
 
         #endregion 
 
-
         #region BusPhoto
 
         IQueryable<BusPhoto> BusPhotos { get; }
@@ -286,7 +282,6 @@ namespace maps.Model
         bool RemoveBusPhoto(int idBusPhoto);
 
         #endregion 
-        
 
         #region Notify
 
@@ -300,7 +295,6 @@ namespace maps.Model
 
         #endregion 
         
-        
         #region Report
 
         IQueryable<Report> Reports { get; }
@@ -313,7 +307,6 @@ namespace maps.Model
 
         #endregion 
         
-
         #region ReportComment
 
         IQueryable<ReportComment> ReportComments { get; }
@@ -324,7 +317,6 @@ namespace maps.Model
 
         #endregion 
         
-
         #region ReportPhoto
 
         IQueryable<ReportPhoto> ReportPhotos { get; }
@@ -334,7 +326,6 @@ namespace maps.Model
         bool RemoveReportPhoto(int idReportPhoto);
 
         #endregion 
-     
         
         #region Route
 
@@ -347,7 +338,6 @@ namespace maps.Model
         bool RemoveRoute(int idRoute);
 
         #endregion 
-        
 
         #region RouteSection
 
@@ -357,6 +347,19 @@ namespace maps.Model
 
 
         bool RemoveRouteSection(int idRouteSection);
+
+        #endregion 
+
+
+        #region FundamentalRule
+
+        IQueryable<FundamentalRule> FundamentalRules { get; }
+
+        bool CreateFundamentalRule(FundamentalRule instance);
+
+        bool UpdateFundamentalRule(FundamentalRule instance);
+
+        bool RemoveFundamentalRule(int idFundamentalRule);
 
         #endregion 
         
@@ -373,7 +376,6 @@ namespace maps.Model
 
         #endregion 
         
-        
         #region RuleReport
 
         IQueryable<RuleReport> RuleReports { get; }
@@ -383,7 +385,6 @@ namespace maps.Model
         bool RemoveRuleReport(int idRuleReport);
 
         #endregion 
-        
 
         #region Station
 
@@ -396,7 +397,6 @@ namespace maps.Model
         bool RemoveStation(int idStation);
 
         #endregion 
-    
 
         #region Transporteur
 

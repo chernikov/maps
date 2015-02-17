@@ -8,5 +8,11 @@ namespace maps.Model
 {
     public partial class Rule
     {
+
+        public enum TypeEnum
+        {
+            RulesOfTheRoad,
+            BreachOfContract
+        }
     }
 }

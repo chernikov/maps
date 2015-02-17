@@ -169,5 +169,14 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<BusView, Bus>();
             }
         }
+
+        public static class FundamentalRuleMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<FundamentalRule, FundamentalRuleView>();
+                Mapper.CreateMap<FundamentalRuleView, FundamentalRule>();
+            }
+        }
     }
 }

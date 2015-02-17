@@ -36,6 +36,9 @@ namespace maps.Model
             if (cache != null)
             {
                 cache.UserID = instance.UserID;
+                cache.RouteID = instance.RouteID;
+                cache.Type = instance.Type;
+                cache.Status = instance.Status;
                 cache.BusID = instance.BusID;
                 cache.Status = instance.Status;
                 cache.DeadlineDate = instance.DeadlineDate;

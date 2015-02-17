@@ -13,7 +13,7 @@ namespace maps.Web.Areas.Bus.Controllers
     {
         public ActionResult Index()
         {
-            var list = Repository.Bus.ToList();
+            var list = Repository.Bus.OrderBy(p => p.Number).ToList();
             return View(list);
         }
 
@@ -70,19 +70,41 @@ namespace maps.Web.Areas.Bus.Controllers
         {
             return View("EditBatch", string.Empty);
         }
-
+      
         [HttpPost]
         public ActionResult EditBatch(string Data)
         {
+            var routes = Repository.Routes.ToList();
+            var transporteurs = Repository.Transporteurs.ToList();
+            var brands = Repository.Brands.ToList();
+
+            var errors = new List<string>();
+
             var lines = Data.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            /*foreach (var line in lines)
+            foreach (var line in lines)
             {
-                var bus = new Model.Bus()
+                var items = line.Split(new string[] { "\t" }, StringSplitOptions.RemoveEmptyEntries);
+
+                var route = routes.FirstOrDefault(p => p.Name.Trim() == items[0].Trim());
+                var brand = brands.FirstOrDefault(p => p.Name.Trim() == items[2].Trim());
+                var transporteur = transporteurs.FirstOrDefault(p => p.FullName.Trim() == items[3].Trim());
+                if (route != null && brand != null && transporteur != null)
                 {
-                    Name = line.Trim(),
-                };
-                Repository.CreateBus(bus);
-           }*/
+                    var bus = new Model.Bus()
+                    {
+                        RouteID = route.ID,
+                        BrandID = brand.ID,
+                        TransporteurID = transporteur.ID,
+                        Number = items[1]
+                    };
+                    Repository.CreateBus(bus);
+                }
+                else
+                {
+                    errors.Add(line);
+                }
+           }
+            ViewBag.Errors = errors;
            return View("EditBatch", string.Empty);
         }
     }

@@ -8,8 +8,6 @@ namespace maps.Model
 {
     public partial class SqlRepository
     {
-        
-
         public IQueryable<Rule> Rules
         {
             get
@@ -26,37 +24,35 @@ namespace maps.Model
                 Db.Rules.Context.SubmitChanges();
                 return true;
             }
-
             return false;
         }
 
         public bool UpdateRule(Rule instance)
         {
-            Rule cache = Db.Rules.Where(p => p.ID == instance.ID).FirstOrDefault();
+            var cache = Db.Rules.Where(p => p.ID == instance.ID).FirstOrDefault();
             if (cache != null)
             {
+                cache.FundamentalRuleID = instance.FundamentalRuleID;
                 cache.Name = instance.Name;
                 cache.Description = instance.Description;
+                cache.IsRouteScope = instance.IsRouteScope;
                 cache.UrlToLaw = instance.UrlToLaw;
                 Db.Rules.Context.SubmitChanges();
                 return true;
             }
-
             return false;
         }
 
         public bool RemoveRule(int idRule)
         {
-            Rule instance = Db.Rules.Where(p => p.ID == idRule).FirstOrDefault();
+            var instance = Db.Rules.Where(p => p.ID == idRule).FirstOrDefault();
             if (instance != null)
             {
                 Db.Rules.DeleteOnSubmit(instance);
                 Db.Rules.Context.SubmitChanges();
                 return true;
             }
-
             return false;
         }
-        
     }
 }
