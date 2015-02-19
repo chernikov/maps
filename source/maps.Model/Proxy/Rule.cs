@@ -11,8 +11,21 @@ namespace maps.Model
 
         public enum TypeEnum
         {
-            RulesOfTheRoad,
-            BreachOfContract
+            RulesOfTheRoad = 0x01,
+            BreachOfContract = 0x02
+        }
+
+        public string ТуреStr
+        {
+            get
+            {
+                switch (this.ТуреOfRule)
+                {
+                    case (int)TypeEnum.RulesOfTheRoad: return "ПДР";
+                    case (int)TypeEnum.BreachOfContract: return "Умови договору";
+                }
+                return string.Empty;
+            }
         }
     }
 }

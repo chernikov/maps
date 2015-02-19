@@ -123,15 +123,15 @@ namespace maps.Model
     partial void InsertReport(Report instance);
     partial void UpdateReport(Report instance);
     partial void DeleteReport(Report instance);
-    partial void InsertRule(Rule instance);
-    partial void UpdateRule(Rule instance);
-    partial void DeleteRule(Rule instance);
     partial void InsertFundamentalRule(FundamentalRule instance);
     partial void UpdateFundamentalRule(FundamentalRule instance);
     partial void DeleteFundamentalRule(FundamentalRule instance);
     partial void InsertRuleReport(RuleReport instance);
     partial void UpdateRuleReport(RuleReport instance);
     partial void DeleteRuleReport(RuleReport instance);
+    partial void InsertRule(Rule instance);
+    partial void UpdateRule(Rule instance);
+    partial void DeleteRule(Rule instance);
     #endregion
 		
 		public mapsDbDataContext() : 
@@ -412,14 +412,6 @@ namespace maps.Model
 			}
 		}
 		
-		public System.Data.Linq.Table<Rule> Rules
-		{
-			get
-			{
-				return this.GetTable<Rule>();
-			}
-		}
-		
 		public System.Data.Linq.Table<FundamentalRule> FundamentalRules
 		{
 			get
@@ -433,6 +425,14 @@ namespace maps.Model
 			get
 			{
 				return this.GetTable<RuleReport>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Rule> Rules
+		{
+			get
+			{
+				return this.GetTable<Rule>();
 			}
 		}
 	}
@@ -10016,281 +10016,6 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Rule]")]
-	public partial class Rule : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _FundamentalRuleID;
-		
-		private int _Туре;
-		
-		private bool _IsRouteScope;
-		
-		private string _Name;
-		
-		private string _Description;
-		
-		private string _UrlToLaw;
-		
-		private EntitySet<RuleReport> _RuleReports;
-		
-		private EntityRef<FundamentalRule> _FundamentalRule;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnFundamentalRuleIDChanging(System.Nullable<int> value);
-    partial void OnFundamentalRuleIDChanged();
-    partial void OnТуреChanging(int value);
-    partial void OnТуреChanged();
-    partial void OnIsRouteScopeChanging(bool value);
-    partial void OnIsRouteScopeChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnUrlToLawChanging(string value);
-    partial void OnUrlToLawChanged();
-    #endregion
-		
-		public Rule()
-		{
-			this._RuleReports = new EntitySet<RuleReport>(new Action<RuleReport>(this.attach_RuleReports), new Action<RuleReport>(this.detach_RuleReports));
-			this._FundamentalRule = default(EntityRef<FundamentalRule>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FundamentalRuleID", DbType="Int")]
-		public System.Nullable<int> FundamentalRuleID
-		{
-			get
-			{
-				return this._FundamentalRuleID;
-			}
-			set
-			{
-				if ((this._FundamentalRuleID != value))
-				{
-					if (this._FundamentalRule.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnFundamentalRuleIDChanging(value);
-					this.SendPropertyChanging();
-					this._FundamentalRuleID = value;
-					this.SendPropertyChanged("FundamentalRuleID");
-					this.OnFundamentalRuleIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Туре", DbType="Int NOT NULL")]
-		public int Туре
-		{
-			get
-			{
-				return this._Туре;
-			}
-			set
-			{
-				if ((this._Туре != value))
-				{
-					this.OnТуреChanging(value);
-					this.SendPropertyChanging();
-					this._Туре = value;
-					this.SendPropertyChanged("Туре");
-					this.OnТуреChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsRouteScope", DbType="Bit NOT NULL")]
-		public bool IsRouteScope
-		{
-			get
-			{
-				return this._IsRouteScope;
-			}
-			set
-			{
-				if ((this._IsRouteScope != value))
-				{
-					this.OnIsRouteScopeChanging(value);
-					this.SendPropertyChanging();
-					this._IsRouteScope = value;
-					this.SendPropertyChanged("IsRouteScope");
-					this.OnIsRouteScopeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UrlToLaw", DbType="NVarChar(500)")]
-		public string UrlToLaw
-		{
-			get
-			{
-				return this._UrlToLaw;
-			}
-			set
-			{
-				if ((this._UrlToLaw != value))
-				{
-					this.OnUrlToLawChanging(value);
-					this.SendPropertyChanging();
-					this._UrlToLaw = value;
-					this.SendPropertyChanged("UrlToLaw");
-					this.OnUrlToLawChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rule_RuleReport", Storage="_RuleReports", ThisKey="ID", OtherKey="RuleID")]
-		public EntitySet<RuleReport> RuleReports
-		{
-			get
-			{
-				return this._RuleReports;
-			}
-			set
-			{
-				this._RuleReports.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FundamentalRule_Rule", Storage="_FundamentalRule", ThisKey="FundamentalRuleID", OtherKey="ID", IsForeignKey=true)]
-		public FundamentalRule FundamentalRule
-		{
-			get
-			{
-				return this._FundamentalRule.Entity;
-			}
-			set
-			{
-				FundamentalRule previousValue = this._FundamentalRule.Entity;
-				if (((previousValue != value) 
-							|| (this._FundamentalRule.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._FundamentalRule.Entity = null;
-						previousValue.Rules.Remove(this);
-					}
-					this._FundamentalRule.Entity = value;
-					if ((value != null))
-					{
-						value.Rules.Add(this);
-						this._FundamentalRuleID = value.ID;
-					}
-					else
-					{
-						this._FundamentalRuleID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("FundamentalRule");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_RuleReports(RuleReport entity)
-		{
-			this.SendPropertyChanging();
-			entity.Rule = this;
-		}
-		
-		private void detach_RuleReports(RuleReport entity)
-		{
-			this.SendPropertyChanging();
-			entity.Rule = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FundamentalRule")]
 	public partial class FundamentalRule : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -10594,6 +10319,281 @@ namespace maps.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Rule]")]
+	public partial class Rule : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _FundamentalRuleID;
+		
+		private int _ТуреOfRule;
+		
+		private bool _IsRouteScope;
+		
+		private string _Name;
+		
+		private string _Description;
+		
+		private string _UrlToLaw;
+		
+		private EntitySet<RuleReport> _RuleReports;
+		
+		private EntityRef<FundamentalRule> _FundamentalRule;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnFundamentalRuleIDChanging(System.Nullable<int> value);
+    partial void OnFundamentalRuleIDChanged();
+    partial void OnТуреOfRuleChanging(int value);
+    partial void OnТуреOfRuleChanged();
+    partial void OnIsRouteScopeChanging(bool value);
+    partial void OnIsRouteScopeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnUrlToLawChanging(string value);
+    partial void OnUrlToLawChanged();
+    #endregion
+		
+		public Rule()
+		{
+			this._RuleReports = new EntitySet<RuleReport>(new Action<RuleReport>(this.attach_RuleReports), new Action<RuleReport>(this.detach_RuleReports));
+			this._FundamentalRule = default(EntityRef<FundamentalRule>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FundamentalRuleID", DbType="Int")]
+		public System.Nullable<int> FundamentalRuleID
+		{
+			get
+			{
+				return this._FundamentalRuleID;
+			}
+			set
+			{
+				if ((this._FundamentalRuleID != value))
+				{
+					if (this._FundamentalRule.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFundamentalRuleIDChanging(value);
+					this.SendPropertyChanging();
+					this._FundamentalRuleID = value;
+					this.SendPropertyChanged("FundamentalRuleID");
+					this.OnFundamentalRuleIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ТуреOfRule", DbType="Int NOT NULL")]
+		public int ТуреOfRule
+		{
+			get
+			{
+				return this._ТуреOfRule;
+			}
+			set
+			{
+				if ((this._ТуреOfRule != value))
+				{
+					this.OnТуреOfRuleChanging(value);
+					this.SendPropertyChanging();
+					this._ТуреOfRule = value;
+					this.SendPropertyChanged("ТуреOfRule");
+					this.OnТуреOfRuleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsRouteScope", DbType="Bit NOT NULL")]
+		public bool IsRouteScope
+		{
+			get
+			{
+				return this._IsRouteScope;
+			}
+			set
+			{
+				if ((this._IsRouteScope != value))
+				{
+					this.OnIsRouteScopeChanging(value);
+					this.SendPropertyChanging();
+					this._IsRouteScope = value;
+					this.SendPropertyChanged("IsRouteScope");
+					this.OnIsRouteScopeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UrlToLaw", DbType="NVarChar(500)")]
+		public string UrlToLaw
+		{
+			get
+			{
+				return this._UrlToLaw;
+			}
+			set
+			{
+				if ((this._UrlToLaw != value))
+				{
+					this.OnUrlToLawChanging(value);
+					this.SendPropertyChanging();
+					this._UrlToLaw = value;
+					this.SendPropertyChanged("UrlToLaw");
+					this.OnUrlToLawChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rule_RuleReport", Storage="_RuleReports", ThisKey="ID", OtherKey="RuleID")]
+		public EntitySet<RuleReport> RuleReports
+		{
+			get
+			{
+				return this._RuleReports;
+			}
+			set
+			{
+				this._RuleReports.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FundamentalRule_Rule", Storage="_FundamentalRule", ThisKey="FundamentalRuleID", OtherKey="ID", IsForeignKey=true)]
+		public FundamentalRule FundamentalRule
+		{
+			get
+			{
+				return this._FundamentalRule.Entity;
+			}
+			set
+			{
+				FundamentalRule previousValue = this._FundamentalRule.Entity;
+				if (((previousValue != value) 
+							|| (this._FundamentalRule.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._FundamentalRule.Entity = null;
+						previousValue.Rules.Remove(this);
+					}
+					this._FundamentalRule.Entity = value;
+					if ((value != null))
+					{
+						value.Rules.Add(this);
+						this._FundamentalRuleID = value.ID;
+					}
+					else
+					{
+						this._FundamentalRuleID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("FundamentalRule");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_RuleReports(RuleReport entity)
+		{
+			this.SendPropertyChanging();
+			entity.Rule = this;
+		}
+		
+		private void detach_RuleReports(RuleReport entity)
+		{
+			this.SendPropertyChanging();
+			entity.Rule = null;
 		}
 	}
 }

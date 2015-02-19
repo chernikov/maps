@@ -431,19 +431,6 @@
       <Association Name="User_Report1" Member="User1" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[Rule]" Member="Rules">
-    <Type Name="Rule">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FundamentalRuleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Туре" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IsRouteScope" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="UrlToLaw" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="Rule_RuleReport" Member="RuleReports" ThisKey="ID" OtherKey="RuleID" Type="RuleReport" />
-      <Association Name="FundamentalRule_Rule" Member="FundamentalRule" ThisKey="FundamentalRuleID" OtherKey="ID" Type="FundamentalRule" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.FundamentalRule" Member="FundamentalRules">
     <Type Name="FundamentalRule">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -458,6 +445,19 @@
       <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Report_RuleReport" Member="Report" ThisKey="ReportID" OtherKey="ID" Type="Report" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Rule_RuleReport" Member="Rule" ThisKey="RuleID" OtherKey="ID" Type="Rule" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Rule]" Member="Rules">
+    <Type Name="Rule">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FundamentalRuleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ТуреOfRule" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRouteScope" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlToLaw" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Rule_RuleReport" Member="RuleReports" ThisKey="ID" OtherKey="RuleID" Type="RuleReport" />
+      <Association Name="FundamentalRule_Rule" Member="FundamentalRule" ThisKey="FundamentalRuleID" OtherKey="ID" Type="FundamentalRule" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -178,5 +178,14 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<FundamentalRuleView, FundamentalRule>();
             }
         }
+
+        public static class RuleMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<Rule, RuleView>();
+                Mapper.CreateMap<RuleView, Rule>();
+            }
+        }
     }
 }

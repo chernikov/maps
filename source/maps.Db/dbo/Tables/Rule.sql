@@ -2,7 +2,7 @@
 (
 	[ID] INT IDENTITY (1, 1) NOT NULL,
 	[FundamentalRuleID] INT NULL,
-	[Туре] INT NOT NULL,
+	[ТуреOfRule] INT NOT NULL,
 	[IsRouteScope] BIT NOT NULL,
     [Name] NVARCHAR(200) NOT NULL, 
     [Description] NVARCHAR(MAX) NOT NULL, 

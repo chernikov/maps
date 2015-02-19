@@ -479,6 +479,8 @@
     <Content Include="Areas\Bus\Views\Bus\Index.cshtml" />
     <Content Include="Areas\Bus\Views\FundamentalRule\Edit.cshtml" />
     <Content Include="Areas\Bus\Views\FundamentalRule\Index.cshtml" />
+    <Content Include="Areas\Bus\Views\Rule\Edit.cshtml" />
+    <Content Include="Areas\Bus\Views\Rule\Index.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
