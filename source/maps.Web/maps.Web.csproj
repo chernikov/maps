@@ -173,6 +173,7 @@
     <Compile Include="Areas\Bus\BusAreaRegistration.cs" />
     <Compile Include="Areas\Bus\Controllers\BaseBusController.cs" />
     <Compile Include="Areas\Bus\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Bus\Controllers\ReportController.cs" />
     <Compile Include="Areas\Bus\Controllers\RuleController.cs" />
     <Compile Include="Areas\Bus\Controllers\FundamentalRuleController.cs" />
     <Compile Include="Areas\Bus\Controllers\BrandController.cs" />
@@ -262,6 +263,7 @@
     <Compile Include="Models\ViewModels\FundamentalRuleView.cs" />
     <Compile Include="Models\ViewModels\GoalView.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
+    <Compile Include="Models\ViewModels\ReportView.cs" />
     <Compile Include="Models\ViewModels\RouteView.cs" />
     <Compile Include="Models\ViewModels\RuleView.cs" />
     <Compile Include="Models\ViewModels\TransporteurView.cs" />
@@ -286,6 +288,12 @@
     <Compile Include="Validation\ValidPhone.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\admin - Copy.css">
+      <DependentUpon>bus.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\admin - Copy.min.css">
+      <DependentUpon>admin - Copy.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\bootstrap-datetimepicker.css" />
     <Content Include="Content\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\css\bootstrap-datepicker.css" />
@@ -481,6 +489,11 @@
     <Content Include="Areas\Bus\Views\FundamentalRule\Index.cshtml" />
     <Content Include="Areas\Bus\Views\Rule\Edit.cshtml" />
     <Content Include="Areas\Bus\Views\Rule\Index.cshtml" />
+    <Content Include="Areas\Bus\Views\Home\Create.cshtml" />
+    <Content Include="Content\css\admin - Copy.css.map">
+      <DependentUpon>admin - Copy.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\bus.scss" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -492,6 +505,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bus\report-create.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add-route.js" />
     <Content Include="Scripts\bycicle\add-future-parking.js" />

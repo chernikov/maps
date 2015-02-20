@@ -34,6 +34,11 @@ namespace maps.Web
                 "~/Content/css/bootstrap.css",
                 "~/Content/css/PagedList.css",
                 "~/Content/css/admin.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css/bus").Include(
+               "~/Content/css/bootstrap.css",
+               "~/Content/css/PagedList.css",
+               "~/Content/css/bus.css"));
         }
     }
 }

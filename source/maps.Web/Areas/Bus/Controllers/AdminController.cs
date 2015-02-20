@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace maps.Web.Areas.Bus.Controllers
 {
-    public class HomeController : BaseBusController
+    public class AdminController : BaseBusController
     {
         public ActionResult Index()
         {

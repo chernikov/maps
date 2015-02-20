@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace maps.Model
 {
-    public partial  class Report
+    public partial class Report
     {
+        public enum TypeEnum
+        {
+            RouteScope,
+            BusScope
+        }
     }
 }

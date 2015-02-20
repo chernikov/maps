@@ -1,8 +1,21 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "Перевізники";
     Layout = "~/Areas/Bus/Views/Shared/_Layout.cshtml";
+    var currentUser = ((BaseController)ViewContext.Controller).CurrentUser;
 }
+@section header
+{
 
-<h2>Index</h2>
-
+}
+<div class="row">
+    <p></p>
+</div>
+<div class="row">
+    <div class="col-lg-9 col-lg-offset-3">
+        <h2>@ViewBag.Title</h2>
+        @if (currentUser != null)
+        {
+            @Html.ActionLink("Додати скаргу", "Create", "Home", new { @class = "btn btn-primary" })
+        }
+    </div>
+</div>
