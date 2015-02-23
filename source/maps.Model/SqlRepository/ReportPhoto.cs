@@ -30,6 +30,18 @@ namespace maps.Model
             return false;
         }
 
+        public bool UpdateReportPhoto(ReportPhoto instance)
+        {
+            var cache = Db.ReportPhotos.Where(p => p.ID == instance.ID).FirstOrDefault();
+            if (cache != null)
+            {
+                cache.ReportID = instance.ReportID;
+                Db.ReportPhotos.Context.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
         public bool RemoveReportPhoto(int idReportPhoto)
         {
             ReportPhoto instance = Db.ReportPhotos.Where(p => p.ID == idReportPhoto).FirstOrDefault();

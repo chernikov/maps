@@ -22,6 +22,8 @@ namespace maps.Model
         {
             if (instance.ID == 0)
             {
+                instance.AddedDate = DateTime.Now;
+                instance.DeadlineDate = DateTime.Now.AddDays(5);
                 Db.Reports.InsertOnSubmit(instance);
                 Db.Reports.Context.SubmitChanges();
                 return true;

@@ -29,6 +29,8 @@ namespace maps.Web.Mappers
             MapperCollection.BusMapper.Init();
             MapperCollection.FundamentalRuleMapper.Init();
             MapperCollection.RuleMapper.Init();
+            MapperCollection.ReportMapper.Init();
+            MapperCollection.ReportPhotoMapper.Init();
         }
 
         public object Map(object source, Type sourceType, Type destinationType)

@@ -1,118 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="maps" Class="mapsDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=WORKER\MSSQL;Initial Catalog=maps;Integrated Security=True" SettingsObjectName="maps.Model.Properties.Settings" SettingsPropertyName="mapsConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Role" Member="Roles">
-    <Type Name="Role">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Role_UserRole" Member="UserRoles" ThisKey="ID" OtherKey="RoleID" Type="UserRole" />
-    </Type>
-  </Table>
-  <Table Name="dbo.UserRole" Member="UserRoles">
-    <Type Name="UserRole">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Role_UserRole" Member="Role" ThisKey="RoleID" OtherKey="ID" Type="Role" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="User_UserRole" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Social" Member="Socials">
-    <Type Name="Social">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Identified" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Provider" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UserInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="JsonResource" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Association Name="User_Social" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.BicycleDirectionLine" Member="BicycleDirectionLines">
     <Type Name="BicycleDirectionLine">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="BicycleDirectionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="BicycleLineID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="BycicleDirection_BicycleDirectionLine" Member="BycicleDirection" ThisKey="BicycleDirectionID" OtherKey="ID" Type="BycicleDirection" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="BicycleLine_BicycleDirectionLine" Member="BicycleLine" ThisKey="BicycleLineID" OtherKey="ID" Type="BicycleLine" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="BycicleDirection_BicycleDirectionLine" Member="BycicleDirection" ThisKey="BicycleDirectionID" OtherKey="ID" Type="BycicleDirection" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.BicycleParkingVote" Member="BicycleParkingVotes">
-    <Type Name="BicycleParkingVote">
+  <Table Name="dbo.UtilityTag" Member="UtilityTags">
+    <Type Name="UtilityTag">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BicycleParkingID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Mark" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="User_BicycleParkingVote" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
-      <Association Name="BicycleParking_BicycleParkingVote" Member="BicycleParking" ThisKey="BicycleParkingID" OtherKey="ID" Type="BicycleParking" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="UtilityTag_UtilityIssueTag" Member="UtilityIssueTags" ThisKey="ID" OtherKey="UtilityTagID" Type="UtilityIssueTag" />
     </Type>
   </Table>
-  <Table Name="dbo.Goal" Member="Goals">
-    <Type Name="Goal">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Url" Type="System.String" DbType="NVarChar(140) NOT NULL" CanBeNull="false" />
-      <Column Name="Text" Type="System.String" DbType="NVarChar(140) NOT NULL" CanBeNull="false" />
-      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Progress" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="IsReady" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="ColumnsCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Goal_GoalCell" Member="GoalCells" ThisKey="ID" OtherKey="GoalID" Type="GoalCell" />
-      <Association Name="User_Goal" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.GoalCell" Member="GoalCells">
-    <Type Name="GoalCell">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="GoalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="Goal_GoalCell" Member="Goal" ThisKey="GoalID" OtherKey="ID" Type="Goal" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.City" Member="Cities">
-    <Type Name="City">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CenterLat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="CenterLng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Zoom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="City_User" Member="Users" ThisKey="ID" OtherKey="CityID" Type="User" />
-      <Association Name="City_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="CityID" Type="BicycleParking" />
-      <Association Name="City_BycicleDirection" Member="BycicleDirections" ThisKey="ID" OtherKey="CityID" Type="BycicleDirection" />
-      <Association Name="City_BicycleLine" Member="BicycleLines" ThisKey="ID" OtherKey="CityID" Type="BicycleLine" />
-      <Association Name="City_UtilityDepartment" Member="UtilityDepartments" ThisKey="ID" OtherKey="CityID" Type="UtilityDepartment" />
-      <Association Name="City_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="CityID" Type="UtilityIssue" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
+  <Table Name="dbo.BicycleLine" Member="BicycleLines">
+    <Type Name="BicycleLine">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Login" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastVisitDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="AvatarPath" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="FirstName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="LastName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="User_UserRole" Member="UserRoles" ThisKey="ID" OtherKey="UserID" Type="UserRole" />
-      <Association Name="User_Social" Member="Socials" ThisKey="ID" OtherKey="UserID" Type="Social" />
-      <Association Name="User_BicycleParkingVote" Member="BicycleParkingVotes" ThisKey="ID" OtherKey="UserID" Type="BicycleParkingVote" />
-      <Association Name="User_Goal" Member="Goals" ThisKey="ID" OtherKey="UserID" Type="Goal" />
-      <Association Name="User_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="UserID" Type="BicycleParking" />
-      <Association Name="User_BycicleDirection" Member="BycicleDirections" ThisKey="ID" OtherKey="UserID" Type="BycicleDirection" />
-      <Association Name="User_Comment" Member="Comments" ThisKey="ID" OtherKey="UserID" Type="Comment" />
-      <Association Name="User_UtilityPhoto" Member="UtilityPhotos" ThisKey="ID" OtherKey="UserID" Type="UtilityPhoto" />
-      <Association Name="User_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="UserID" Type="UtilityIssue" />
-      <Association Name="User_UtilityIssueHistory" Member="UtilityIssueHistories" ThisKey="ID" OtherKey="UserID" Type="UtilityIssueHistory" />
-      <Association Name="User_Report" Member="Reports" ThisKey="ID" OtherKey="NotifyReporterID" Type="Report" />
-      <Association Name="User_Report1" Member="Reports1" ThisKey="ID" OtherKey="UserID" Type="Report" />
-      <Association Name="City_User" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+      <Column Name="Start" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="[End]" Member="End" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="StartLat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="StartLng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="EndLat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="EndLng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BicycleLine_BicycleDirectionLine" Member="BicycleDirectionLines" ThisKey="ID" OtherKey="BicycleLineID" Type="BicycleDirectionLine" />
+      <Association Name="City_BicycleLine" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.BicycleParking" Member="BicycleParkings">
@@ -141,6 +57,45 @@
       <Association Name="User_BicycleParking" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.BicycleParkingVote" Member="BicycleParkingVotes">
+    <Type Name="BicycleParkingVote">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BicycleParkingID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mark" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BicycleParking_BicycleParkingVote" Member="BicycleParking" ThisKey="BicycleParkingID" OtherKey="ID" Type="BicycleParking" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_BicycleParkingVote" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Brand" Member="Brands">
+    <Type Name="Brand">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Brand_Bus" Member="Bus" ThisKey="ID" OtherKey="BrandID" Type="Bus" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bus" Member="Bus">
+    <Type Name="Bus">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransporteurID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RouteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BrandID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Bus_BusPhoto" Member="BusPhotos" ThisKey="ID" OtherKey="BusID" Type="BusPhoto" />
+      <Association Name="Bus_Report" Member="Reports" ThisKey="ID" OtherKey="BusID" Type="Report" />
+      <Association Name="Brand_Bus" Member="Brand" ThisKey="BrandID" OtherKey="ID" Type="Brand" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Route_Bus" Member="Route" ThisKey="RouteID" OtherKey="ID" Type="Route" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Transporteur_Bus" Member="Transporteur" ThisKey="TransporteurID" OtherKey="ID" Type="Transporteur" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BusPhoto" Member="BusPhotos">
+    <Type Name="BusPhoto">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="Bus_BusPhoto" Member="Bus" ThisKey="BusID" OtherKey="ID" Type="Bus" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.BycicleDirection" Member="BycicleDirections">
     <Type Name="BycicleDirection">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -156,19 +111,19 @@
       <Association Name="User_BycicleDirection" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.BicycleLine" Member="BicycleLines">
-    <Type Name="BicycleLine">
+  <Table Name="dbo.City" Member="Cities">
+    <Type Name="City">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Start" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="[End]" Member="End" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="StartLat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="StartLng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="EndLat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="EndLng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="BicycleLine_BicycleDirectionLine" Member="BicycleDirectionLines" ThisKey="ID" OtherKey="BicycleLineID" Type="BicycleDirectionLine" />
-      <Association Name="City_BicycleLine" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CenterLat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CenterLng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Zoom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="City_BicycleLine" Member="BicycleLines" ThisKey="ID" OtherKey="CityID" Type="BicycleLine" />
+      <Association Name="City_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="CityID" Type="BicycleParking" />
+      <Association Name="City_BycicleDirection" Member="BycicleDirections" ThisKey="ID" OtherKey="CityID" Type="BycicleDirection" />
+      <Association Name="City_User" Member="Users" ThisKey="ID" OtherKey="CityID" Type="User" />
+      <Association Name="City_UtilityDepartment" Member="UtilityDepartments" ThisKey="ID" OtherKey="CityID" Type="UtilityDepartment" />
+      <Association Name="City_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="CityID" Type="UtilityIssue" />
     </Type>
   </Table>
   <Table Name="dbo.Comment" Member="Comments">
@@ -179,48 +134,237 @@
       <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Text" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Association Name="Comment_Comment" Member="Comments" ThisKey="ID" OtherKey="ParentID" Type="Comment" />
-      <Association Name="Comment_UtilityIssueComment" Member="UtilityIssueComments" ThisKey="ID" OtherKey="CommentID" Type="UtilityIssueComment" />
       <Association Name="Comment_ReportComment" Member="ReportComments" ThisKey="ID" OtherKey="CommentID" Type="ReportComment" />
+      <Association Name="Comment_UtilityIssueComment" Member="UtilityIssueComments" ThisKey="ID" OtherKey="CommentID" Type="UtilityIssueComment" />
       <Association Name="Comment_Comment" Member="Comment1" ThisKey="ParentID" OtherKey="ID" Type="Comment" IsForeignKey="true" />
       <Association Name="User_Comment" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.UtilityPhoto" Member="UtilityPhotos">
-    <Type Name="UtilityPhoto">
+  <Table Name="dbo.FundamentalRule" Member="FundamentalRules">
+    <Type Name="FundamentalRule">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Image" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="FundamentalRule_Rule" Member="Rules" ThisKey="ID" OtherKey="FundamentalRuleID" Type="Rule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Goal" Member="Goals">
+    <Type Name="Goal">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(140) NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(140) NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Progress" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsReady" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ColumnsCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Goal_GoalCell" Member="GoalCells" ThisKey="ID" OtherKey="GoalID" Type="GoalCell" />
+      <Association Name="User_Goal" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GoalCell" Member="GoalCells">
+    <Type Name="GoalCell">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GoalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IsRemoved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="User_UtilityPhoto" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
-      <Association Name="UtilityIssue_UtilityPhoto" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Goal_GoalCell" Member="Goal" ThisKey="GoalID" OtherKey="ID" Type="Goal" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.UtilityIssueComment" Member="UtilityIssueComments">
-    <Type Name="UtilityIssueComment">
+  <Table Name="dbo.Notify" Member="Notifies">
+    <Type Name="Notify">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReportID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Sender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Header" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsSent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Report_Notify" Member="Report" ThisKey="ReportID" OtherKey="ID" Type="Report" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Report" Member="Reports">
+    <Type Name="Report">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RouteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DeadlineDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NotifyTransporteurID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Answer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NotifyReporterID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FacebookLink" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Report_Notify" Member="Notifies" ThisKey="ID" OtherKey="ReportID" Type="Notify" />
+      <Association Name="Report_ReportComment" Member="ReportComments" ThisKey="ID" OtherKey="ReportID" Type="ReportComment" />
+      <Association Name="Report_ReportPhoto" Member="ReportPhotos" ThisKey="ID" OtherKey="ReportID" Type="ReportPhoto" />
+      <Association Name="Report_RuleReport" Member="RuleReports" ThisKey="ID" OtherKey="ReportID" Type="RuleReport" />
+      <Association Name="Bus_Report" Member="Bus" ThisKey="BusID" OtherKey="ID" Type="Bus" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Route_Report" Member="Route" ThisKey="RouteID" OtherKey="ID" Type="Route" IsForeignKey="true" />
+      <Association Name="Station_Report" Member="Station" ThisKey="StationID" OtherKey="ID" Type="Station" IsForeignKey="true" />
+      <Association Name="Transporteur_Report" Member="Transporteur" ThisKey="NotifyTransporteurID" OtherKey="ID" Type="Transporteur" IsForeignKey="true" />
+      <Association Name="User_Report" Member="User" ThisKey="NotifyReporterID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Report1" Member="User1" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReportComment" Member="ReportComments">
+    <Type Name="ReportComment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CommentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Comment_UtilityIssueComment" Member="Comment" ThisKey="CommentID" OtherKey="ID" Type="Comment" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="UtilityIssue_UtilityIssueComment" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Comment_ReportComment" Member="Comment" ThisKey="CommentID" OtherKey="ID" Type="Comment" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Report_ReportComment" Member="Report" ThisKey="ReportID" OtherKey="ID" Type="Report" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.UtilityIssueTag" Member="UtilityIssueTags">
-    <Type Name="UtilityIssueTag">
+  <Table Name="dbo.ReportPhoto" Member="ReportPhotos">
+    <Type Name="ReportPhoto">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UtilityTagID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="UtilityTag_UtilityIssueTag" Member="UtilityTag" ThisKey="UtilityTagID" OtherKey="ID" Type="UtilityTag" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="UtilityIssue_UtilityIssueTag" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Column Name="ReportID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="Report_ReportPhoto" Member="Report" ThisKey="ReportID" OtherKey="ID" Type="Report" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.UtilityTag" Member="UtilityTags">
-    <Type Name="UtilityTag">
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Association Name="UtilityTag_UtilityIssueTag" Member="UtilityIssueTags" ThisKey="ID" OtherKey="UtilityTagID" Type="UtilityIssueTag" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_UserRole" Member="UserRoles" ThisKey="ID" OtherKey="RoleID" Type="UserRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Route" Member="Routes">
+    <Type Name="Route">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Route_Bus" Member="Bus" ThisKey="ID" OtherKey="RouteID" Type="Bus" />
+      <Association Name="Route_Report" Member="Reports" ThisKey="ID" OtherKey="RouteID" Type="Report" />
+      <Association Name="Route_RouteSection" Member="RouteSections" ThisKey="ID" OtherKey="RouteID" Type="RouteSection" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RouteSection" Member="RouteSections">
+    <Type Name="RouteSection">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RouteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NextStationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Route_RouteSection" Member="Route" ThisKey="RouteID" OtherKey="ID" Type="Route" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Station_RouteSection" Member="Station" ThisKey="NextStationID" OtherKey="ID" Type="Station" IsForeignKey="true" />
+      <Association Name="Station_RouteSection1" Member="Station1" ThisKey="StationID" OtherKey="ID" Type="Station" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Rule]" Member="Rules">
+    <Type Name="Rule">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FundamentalRuleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ТуреOfRule" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRouteScope" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlToLaw" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Rule_RuleReport" Member="RuleReports" ThisKey="ID" OtherKey="RuleID" Type="RuleReport" />
+      <Association Name="FundamentalRule_Rule" Member="FundamentalRule" ThisKey="FundamentalRuleID" OtherKey="ID" Type="FundamentalRule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RuleReport" Member="RuleReports">
+    <Type Name="RuleReport">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RuleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Report_RuleReport" Member="Report" ThisKey="ReportID" OtherKey="ID" Type="Report" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Rule_RuleReport" Member="Rule" ThisKey="RuleID" OtherKey="ID" Type="Rule" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shop" Member="Shops">
+    <Type Name="Shop">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Social" Member="Socials">
+    <Type Name="Social">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Identified" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Provider" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="JsonResource" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Social" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Station" Member="Stations">
+    <Type Name="Station">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Lng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IsEndStation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HasPocket" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HasNewTimetable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Station_Report" Member="Reports" ThisKey="ID" OtherKey="StationID" Type="Report" />
+      <Association Name="Station_RouteSection" Member="RouteSections" ThisKey="ID" OtherKey="NextStationID" Type="RouteSection" />
+      <Association Name="Station_RouteSection1" Member="RouteSections1" ThisKey="ID" OtherKey="StationID" Type="RouteSection" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transporteur" Member="Transporteurs">
+    <Type Name="Transporteur">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Patronymic" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PrimaryPhone" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AdditionalPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Transporteur_Bus" Member="Bus" ThisKey="ID" OtherKey="TransporteurID" Type="Bus" />
+      <Association Name="Transporteur_Report" Member="Reports" ThisKey="ID" OtherKey="NotifyTransporteurID" Type="Report" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastVisitDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AvatarPath" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="User_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="UserID" Type="BicycleParking" />
+      <Association Name="User_BicycleParkingVote" Member="BicycleParkingVotes" ThisKey="ID" OtherKey="UserID" Type="BicycleParkingVote" />
+      <Association Name="User_BycicleDirection" Member="BycicleDirections" ThisKey="ID" OtherKey="UserID" Type="BycicleDirection" />
+      <Association Name="User_Comment" Member="Comments" ThisKey="ID" OtherKey="UserID" Type="Comment" />
+      <Association Name="User_Goal" Member="Goals" ThisKey="ID" OtherKey="UserID" Type="Goal" />
+      <Association Name="User_Report" Member="Reports" ThisKey="ID" OtherKey="NotifyReporterID" Type="Report" />
+      <Association Name="User_Report1" Member="Reports1" ThisKey="ID" OtherKey="UserID" Type="Report" />
+      <Association Name="User_Social" Member="Socials" ThisKey="ID" OtherKey="UserID" Type="Social" />
+      <Association Name="User_UserRole" Member="UserRoles" ThisKey="ID" OtherKey="UserID" Type="UserRole" />
+      <Association Name="User_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="UserID" Type="UtilityIssue" />
+      <Association Name="User_UtilityIssueHistory" Member="UtilityIssueHistories" ThisKey="ID" OtherKey="UserID" Type="UtilityIssueHistory" />
+      <Association Name="User_UtilityPhoto" Member="UtilityPhotos" ThisKey="ID" OtherKey="UserID" Type="UtilityPhoto" />
+      <Association Name="City_User" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRole" Member="UserRoles">
+    <Type Name="UserRole">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Role_UserRole" Member="Role" ThisKey="RoleID" OtherKey="ID" Type="Role" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_UserRole" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.UtilityDepartment" Member="UtilityDepartments">
@@ -254,15 +398,24 @@
       <Column Name="Solution" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="IsRemoved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="UtilityIssue_UtilityPhoto" Member="UtilityPhotos" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityPhoto" />
-      <Association Name="UtilityIssue_UtilityIssueComment" Member="UtilityIssueComments" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityIssueComment" />
-      <Association Name="UtilityIssue_UtilityIssueTag" Member="UtilityIssueTags" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityIssueTag" />
       <Association Name="UtilityIssue_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="MainUtilityIssueID" Type="UtilityIssue" />
+      <Association Name="UtilityIssue_UtilityIssueComment" Member="UtilityIssueComments" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityIssueComment" />
       <Association Name="UtilityIssue_UtilityIssueHistory" Member="UtilityIssueHistories" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityIssueHistory" />
+      <Association Name="UtilityIssue_UtilityIssueTag" Member="UtilityIssueTags" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityIssueTag" />
+      <Association Name="UtilityIssue_UtilityPhoto" Member="UtilityPhotos" ThisKey="ID" OtherKey="UtilityIssueID" Type="UtilityPhoto" />
       <Association Name="City_UtilityIssue" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
       <Association Name="User_UtilityIssue" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
       <Association Name="UtilityDepartment_UtilityIssue" Member="UtilityDepartment" ThisKey="UtilityDepartmentID" OtherKey="ID" Type="UtilityDepartment" IsForeignKey="true" />
       <Association Name="UtilityIssue_UtilityIssue" Member="UtilityIssue1" ThisKey="MainUtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UtilityIssueComment" Member="UtilityIssueComments">
+    <Type Name="UtilityIssueComment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Comment_UtilityIssueComment" Member="Comment" ThisKey="CommentID" OtherKey="ID" Type="Comment" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="UtilityIssue_UtilityIssueComment" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.UtilityIssueHistory" Member="UtilityIssueHistories">
@@ -292,172 +445,26 @@
       <Association Name="UtilityIssue_UtilityIssueHistory" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Brand" Member="Brands">
-    <Type Name="Brand">
+  <Table Name="dbo.UtilityIssueTag" Member="UtilityIssueTags">
+    <Type Name="UtilityIssueTag">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Brand_Bus" Member="Bus" ThisKey="ID" OtherKey="BrandID" Type="Bus" />
+      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UtilityTagID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UtilityIssue_UtilityIssueTag" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="UtilityTag_UtilityIssueTag" Member="UtilityTag" ThisKey="UtilityTagID" OtherKey="ID" Type="UtilityTag" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Bus" Member="Bus">
-    <Type Name="Bus">
+  <Table Name="dbo.UtilityPhoto" Member="UtilityPhotos">
+    <Type Name="UtilityPhoto">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TransporteurID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="RouteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BrandID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Number" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Bus_BusPhoto" Member="BusPhotos" ThisKey="ID" OtherKey="BusID" Type="BusPhoto" />
-      <Association Name="Bus_Report" Member="Reports" ThisKey="ID" OtherKey="BusID" Type="Report" />
-      <Association Name="Brand_Bus" Member="Brand" ThisKey="BrandID" OtherKey="ID" Type="Brand" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="Transporteur_Bus" Member="Transporteur" ThisKey="TransporteurID" OtherKey="ID" Type="Transporteur" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="Route_Bus" Member="Route" ThisKey="RouteID" OtherKey="ID" Type="Route" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.BusPhoto" Member="BusPhotos">
-    <Type Name="BusPhoto">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="BusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Association Name="Bus_BusPhoto" Member="Bus" ThisKey="BusID" OtherKey="ID" Type="Bus" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Notify" Member="Notifies">
-    <Type Name="Notify">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ReportID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="Sender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Header" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UtilityIssueID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="IsSent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Result" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="Report_Notify" Member="Report" ThisKey="ReportID" OtherKey="ID" Type="Report" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ReportComment" Member="ReportComments">
-    <Type Name="ReportComment">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CommentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Comment_ReportComment" Member="Comment" ThisKey="CommentID" OtherKey="ID" Type="Comment" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="Report_ReportComment" Member="Report" ThisKey="ReportID" OtherKey="ID" Type="Report" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ReportPhoto" Member="ReportPhotos">
-    <Type Name="ReportPhoto">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Association Name="Report_ReportPhoto" Member="Report" ThisKey="ReportID" OtherKey="ID" Type="Report" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Station" Member="Stations">
-    <Type Name="Station">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Lat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Lng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="IsEndStation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="HasPocket" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="HasNewTimetable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Station_RouteSection" Member="RouteSections" ThisKey="ID" OtherKey="NextStationID" Type="RouteSection" />
-      <Association Name="Station_RouteSection1" Member="RouteSections1" ThisKey="ID" OtherKey="StationID" Type="RouteSection" />
-      <Association Name="Station_Report" Member="Reports" ThisKey="ID" OtherKey="StationID" Type="Report" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Transporteur" Member="Transporteurs">
-    <Type Name="Transporteur">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Patronymic" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PrimaryPhone" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="AdditionalPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="Transporteur_Bus" Member="Bus" ThisKey="ID" OtherKey="TransporteurID" Type="Bus" />
-      <Association Name="Transporteur_Report" Member="Reports" ThisKey="ID" OtherKey="NotifyTransporteurID" Type="Report" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Route" Member="Routes">
-    <Type Name="Route">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Length" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Association Name="Route_Bus" Member="Bus" ThisKey="ID" OtherKey="RouteID" Type="Bus" />
-      <Association Name="Route_RouteSection" Member="RouteSections" ThisKey="ID" OtherKey="RouteID" Type="RouteSection" />
-      <Association Name="Route_Report" Member="Reports" ThisKey="ID" OtherKey="RouteID" Type="Report" />
-    </Type>
-  </Table>
-  <Table Name="dbo.RouteSection" Member="RouteSections">
-    <Type Name="RouteSection">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RouteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="StationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NextStationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Station_RouteSection" Member="Station" ThisKey="NextStationID" OtherKey="ID" Type="Station" IsForeignKey="true" />
-      <Association Name="Route_RouteSection" Member="Route" ThisKey="RouteID" OtherKey="ID" Type="Route" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="Station_RouteSection1" Member="Station1" ThisKey="StationID" OtherKey="ID" Type="Station" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Report" Member="Reports">
-    <Type Name="Report">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="RouteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="BusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="DeadlineDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="StationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NotifyTransporteurID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Answer" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="NotifyReporterID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Link" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="FacebookLink" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="Report_Notify" Member="Notifies" ThisKey="ID" OtherKey="ReportID" Type="Notify" />
-      <Association Name="Report_ReportComment" Member="ReportComments" ThisKey="ID" OtherKey="ReportID" Type="ReportComment" />
-      <Association Name="Report_ReportPhoto" Member="ReportPhotos" ThisKey="ID" OtherKey="ReportID" Type="ReportPhoto" />
-      <Association Name="Report_RuleReport" Member="RuleReports" ThisKey="ID" OtherKey="ReportID" Type="RuleReport" />
-      <Association Name="Bus_Report" Member="Bus" ThisKey="BusID" OtherKey="ID" Type="Bus" IsForeignKey="true" DeleteRule="CASCADE" />
-      <Association Name="User_Report" Member="User" ThisKey="NotifyReporterID" OtherKey="ID" Type="User" IsForeignKey="true" />
-      <Association Name="Transporteur_Report" Member="Transporteur" ThisKey="NotifyTransporteurID" OtherKey="ID" Type="Transporteur" IsForeignKey="true" />
-      <Association Name="Route_Report" Member="Route" ThisKey="RouteID" OtherKey="ID" Type="Route" IsForeignKey="true" />
-      <Association Name="Station_Report" Member="Station" ThisKey="StationID" OtherKey="ID" Type="Station" IsForeignKey="true" />
-      <Association Name="User_Report1" Member="User1" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.FundamentalRule" Member="FundamentalRules">
-    <Type Name="FundamentalRule">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Association Name="FundamentalRule_Rule" Member="Rules" ThisKey="ID" OtherKey="FundamentalRuleID" Type="Rule" />
-    </Type>
-  </Table>
-  <Table Name="dbo.RuleReport" Member="RuleReports">
-    <Type Name="RuleReport">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RuleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Report_RuleReport" Member="Report" ThisKey="ReportID" OtherKey="ID" Type="Report" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="Rule_RuleReport" Member="Rule" ThisKey="RuleID" OtherKey="ID" Type="Rule" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[Rule]" Member="Rules">
-    <Type Name="Rule">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FundamentalRuleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ТуреOfRule" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IsRouteScope" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="UrlToLaw" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="Rule_RuleReport" Member="RuleReports" ThisKey="ID" OtherKey="RuleID" Type="RuleReport" />
-      <Association Name="FundamentalRule_Rule" Member="FundamentalRule" ThisKey="FundamentalRuleID" OtherKey="ID" Type="FundamentalRule" IsForeignKey="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRemoved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="User_UtilityPhoto" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="UtilityIssue_UtilityPhoto" Member="UtilityIssue" ThisKey="UtilityIssueID" OtherKey="ID" Type="UtilityIssue" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

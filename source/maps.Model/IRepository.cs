@@ -323,6 +323,8 @@ namespace maps.Model
 
         bool CreateReportPhoto(ReportPhoto instance);
 
+        bool UpdateReportPhoto(ReportPhoto instance);
+
         bool RemoveReportPhoto(int idReportPhoto);
 
         #endregion 

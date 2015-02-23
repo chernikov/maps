@@ -187,5 +187,23 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<RuleView, Rule>();
             }
         }
+
+        public static class ReportMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<Report, NewReportView>();
+                Mapper.CreateMap<NewReportView, Report>();
+            }
+
+        }
+        public static class ReportPhotoMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<ReportPhoto, ReportPhotoView>();
+                Mapper.CreateMap<ReportPhotoView, ReportPhoto>();
+            }
+        }
     }
 }

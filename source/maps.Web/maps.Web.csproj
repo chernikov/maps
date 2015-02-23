@@ -263,7 +263,8 @@
     <Compile Include="Models\ViewModels\FundamentalRuleView.cs" />
     <Compile Include="Models\ViewModels\GoalView.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
-    <Compile Include="Models\ViewModels\ReportView.cs" />
+    <Compile Include="Models\ViewModels\NewReportView.cs" />
+    <Compile Include="Models\ViewModels\ReportPhotoView.cs" />
     <Compile Include="Models\ViewModels\RouteView.cs" />
     <Compile Include="Models\ViewModels\RuleView.cs" />
     <Compile Include="Models\ViewModels\TransporteurView.cs" />
@@ -288,12 +289,6 @@
     <Compile Include="Validation\ValidPhone.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\admin - Copy.css">
-      <DependentUpon>bus.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\css\admin - Copy.min.css">
-      <DependentUpon>admin - Copy.css</DependentUpon>
-    </Content>
     <Content Include="Content\css\bootstrap-datetimepicker.css" />
     <Content Include="Content\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\css\bootstrap-datepicker.css" />
@@ -307,6 +302,12 @@
     </Content>
     <Content Include="Content\css\admin.min.css">
       <DependentUpon>admin.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\bus.css">
+      <DependentUpon>bus.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\bus.min.css">
+      <DependentUpon>bus.css</DependentUpon>
     </Content>
     <Content Include="Content\css\chosen.css" />
     <Content Include="Content\css\fineuploader-4.1.1.min.css" />
@@ -438,7 +439,7 @@
     <Content Include="Areas\Utility\Views\Tag\Edit.cshtml" />
     <Content Include="Areas\Utility\Views\Tag\Index.cshtml" />
     <Content Include="Areas\Utility\Views\Shared\UtilityPhoto.cshtml" />
-    <Content Include="Areas\Utility\Views\Home\UploadTemplate.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\UploadTemplate.cshtml" />
     <Content Include="Areas\Utility\Views\UtilityIssue\Edit.cshtml" />
     <Content Include="Areas\Utility\Views\UtilityIssue\Index.cshtml" />
     <Content Include="Areas\Utility\Views\UtilityIssue\UploadTemplate.cshtml" />
@@ -468,7 +469,9 @@
     <Content Include="Areas\Bus\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Bus\Views\Shared\Map.cshtml" />
     <Content Include="Areas\Bus\Views\Shared\TopMenu.cshtml" />
-    <Content Include="Areas\Bus\Views\web.config" />
+    <Content Include="Areas\Bus\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Bus\Views\Home\Index.cshtml" />
     <Content Include="Areas\Bus\Views\Transporteur\Index.cshtml" />
     <Content Include="Areas\Bus\Views\Shared\_AdminLayout.cshtml" />
@@ -489,18 +492,36 @@
     <Content Include="Areas\Bus\Views\FundamentalRule\Index.cshtml" />
     <Content Include="Areas\Bus\Views\Rule\Edit.cshtml" />
     <Content Include="Areas\Bus\Views\Rule\Index.cshtml" />
-    <Content Include="Areas\Bus\Views\Home\Create.cshtml" />
-    <Content Include="Content\css\admin - Copy.css.map">
-      <DependentUpon>admin - Copy.css</DependentUpon>
-    </Content>
-    <Content Include="Content\css\bus.scss" />
+    <Content Include="Areas\Bus\Views\Report\Create.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\SelectBus.cshtml" />
+    <Content Include="Areas\Bus\Views\Shared\ReportPhoto.cshtml" />
+    <Content Include="Areas\Utility\Views\Home\UploadTemplate.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\css\bus.scss" />
+    <Content Include="Content\css\bus.css.map">
+      <DependentUpon>bus.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <Content Include="Content\css\style.css.map">
       <DependentUpon>style.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap-image-gallery.min.js.map">
+      <DependentUpon>bootstrap-image-gallery.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bloodhound.min.js.map">
+      <DependentUpon>bloodhound.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js.map">
+      <DependentUpon>bootstrap-datetimepicker.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.min.js.map">
+      <DependentUpon>bootstrap.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\chosen.jquery.min.js.map">
+      <DependentUpon>chosen.jquery.min.js</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -577,6 +598,24 @@
     <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_Ok.cshtml" />
     <Content Include="Views\Shared\Thanks.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.js.map">
+      <DependentUpon>jquery-1.10.2.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.fineuploader-3.5.0.min.js.map">
+      <DependentUpon>jquery.fineuploader-3.5.0.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\moment-with-locales.min.js.map">
+      <DependentUpon>moment-with-locales.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\moment.min.js.map">
+      <DependentUpon>moment.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\respond.min.js.map">
+      <DependentUpon>respond.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\typeahead.jquery.min.js.map">
+      <DependentUpon>typeahead.jquery.min.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">
