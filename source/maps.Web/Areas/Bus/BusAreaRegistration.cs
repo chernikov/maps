@@ -12,8 +12,15 @@ namespace maps.Web.Areas.Bus
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
+            context.MapRoute(
+                  null,
+                  "report/{id}",
+                  new { controller = "Report", action = "Item" },
+                  new[] { "maps.Web.Areas.Bus.Controllers" }
+            );
+        
             context.MapRoute(
                 "Bus_default",
                 "bus/{controller}/{action}/{id}",

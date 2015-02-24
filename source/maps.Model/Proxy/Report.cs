@@ -37,5 +37,23 @@ namespace maps.Model
                 return string.Empty;
             }
         }
+
+        public IEnumerable<Rule> SubRules
+        {
+            get
+            {
+                return RuleReports.Select(p => p.Rule).ToList();
+            }
+        }
+
+        public IEnumerable<ReportPhoto> SubPhotos
+        {
+            get
+            {
+                return ReportPhotos.ToList();
+            }
+        }
     }
+
+
 }

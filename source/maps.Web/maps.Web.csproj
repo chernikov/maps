@@ -237,6 +237,7 @@
     <Compile Include="Global\Auth\UserProvider.cs" />
     <Compile Include="Global\Config\Config.cs" />
     <Compile Include="Global\Config\IConfig.cs" />
+    <Compile Include="Global\Config\ISmsConfig.cs" />
     <Compile Include="Global\Config\MailSetting.cs" />
     <Compile Include="Global\Config\MailTemplateConfig.cs" />
     <Compile Include="Global\FineUpload.cs" />
@@ -280,6 +281,7 @@
     <Compile Include="Models\ViewModels\UtilityPhotoView.cs" />
     <Compile Include="Models\ViewModels\UtilityTagView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\SmsSender.cs" />
     <Compile Include="Validation\IsUserPassword.cs" />
     <Compile Include="Validation\PropertiesMustMatch.cs" />
     <Compile Include="Validation\UniqueValidation.cs" />
@@ -496,6 +498,7 @@
     <Content Include="Areas\Bus\Views\Report\SelectBus.cshtml" />
     <Content Include="Areas\Bus\Views\Shared\ReportPhoto.cshtml" />
     <Content Include="Areas\Utility\Views\Home\UploadTemplate.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\Item.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />

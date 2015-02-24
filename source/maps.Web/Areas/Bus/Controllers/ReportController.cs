@@ -2,6 +2,7 @@
 using maps.Model;
 using maps.Web.Global;
 using maps.Web.Models.ViewModels;
+using maps.Web.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -124,6 +125,60 @@ namespace maps.Web.Areas.Bus.Controllers
                 return View("ReportPhoto", new KeyValuePair<string, ReportPhotoView>(Guid.NewGuid().ToString("N"), reportPhotoView));
             }
             return null;
+        }
+
+        public ActionResult Item(int id)
+        {
+            var report = Repository.Reports.FirstOrDefault(p => p.ID == id);
+
+            if (report == null)
+            {
+                return RedirectToNotFoundPage;
+            }
+
+            return View(report);
+        }
+
+        public ActionResult SendSms(int id)
+        {
+            var report = Repository.Reports.FirstOrDefault(p => p.ID == id);
+            if (report.Bus != null)
+            {
+                var transporteur = report.Bus.Transporteur;
+
+                var result = SmsSender.SendSms("38" +transporteur.PrimaryPhone.ClearPhone(), 
+                    string.Format("Porushennja! Bus " + report.Bus.Number + ". Bil'she dostupno po http://maps.if.ua/report/" + report.ID));
+            }
+
+            return RedirectToAction("Item", new { id });
+        }
+
+
+        [HttpGet]
+        public ActionResult Answer(int id)
+        {
+            var codeAccess = (bool)Session["Code"];
+            var report = Repository.Reports.FirstOrDefault(p => p.ID == id);
+            if (codeAccess)
+            {
+                return View(report);
+            }
+            else
+            {
+                return View("GetCode", report);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Answer(int id)
+        {
+            var codeAccess = (bool)Session["Code"];
+            if (codeAccess)
+            {
+                var report = Repository.Reports.FirstOrDefault(p => p.ID == id);
+            }
+            var report = Repository.Reports.FirstOrDefault(p => p.ID == id);
+            return View("GetCode", report);
         }
     }
 }
