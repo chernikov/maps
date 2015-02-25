@@ -171,6 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Bus\BusAreaRegistration.cs" />
+    <Compile Include="Areas\Bus\Controllers\LoginController.cs" />
     <Compile Include="Areas\Bus\Controllers\BaseBusController.cs" />
     <Compile Include="Areas\Bus\Controllers\AdminController.cs" />
     <Compile Include="Areas\Bus\Controllers\ReportController.cs" />
@@ -255,6 +256,7 @@
     <Compile Include="Models\Dto\BicycleParkingDto.cs" />
     <Compile Include="Models\Mappers\MapperCollection.cs" />
     <Compile Include="Models\Api\BicycleParkingApiModel.cs" />
+    <Compile Include="Models\ViewModels\ReportAnswerView.cs" />
     <Compile Include="Models\ViewModels\BicycleParkingView.cs" />
     <Compile Include="Models\ViewModels\BrandView.cs" />
     <Compile Include="Models\ViewModels\BusView.cs" />
@@ -268,6 +270,7 @@
     <Compile Include="Models\ViewModels\ReportPhotoView.cs" />
     <Compile Include="Models\ViewModels\RouteView.cs" />
     <Compile Include="Models\ViewModels\RuleView.cs" />
+    <Compile Include="Models\ViewModels\TransporteurLoginView.cs" />
     <Compile Include="Models\ViewModels\TransporteurView.cs" />
     <Compile Include="Models\ViewModels\UtilityDepartmentView.cs" />
     <Compile Include="Models\ViewModels\UtilityIssueView.cs" />
@@ -499,6 +502,9 @@
     <Content Include="Areas\Bus\Views\Shared\ReportPhoto.cshtml" />
     <Content Include="Areas\Utility\Views\Home\UploadTemplate.cshtml" />
     <Content Include="Areas\Bus\Views\Report\Item.cshtml" />
+    <Content Include="Areas\Bus\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\Answer.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\Thanks.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -523,6 +529,8 @@
     <Content Include="Scripts\bootstrap.min.js.map">
       <DependentUpon>bootstrap.min.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\bus\login-index.js" />
+    <Content Include="Scripts\bus\report-item.js" />
     <Content Include="Scripts\chosen.jquery.min.js.map">
       <DependentUpon>chosen.jquery.min.js</DependentUpon>
     </Content>

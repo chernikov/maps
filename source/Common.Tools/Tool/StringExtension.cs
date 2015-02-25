@@ -164,9 +164,8 @@ namespace Tool
         /// </summary>
         /// <param name="passwordLength">length of password</param>
         /// <returns></returns>
-        public static string CreateRandomPassword(int passwordLength)
+        public static string CreateRandomPassword(int passwordLength, string allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789!@$?_-")
         {
-            string allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789!@$?_-";
             char[] chars = new char[passwordLength];
             Random rd = new Random();
 

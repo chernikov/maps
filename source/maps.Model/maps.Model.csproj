@@ -73,6 +73,7 @@
     <Compile Include="Proxy\Goal.cs" />
     <Compile Include="Proxy\GoalCell.cs" />
     <Compile Include="Proxy\Notify.cs" />
+    <Compile Include="Proxy\ReportAnswer.cs" />
     <Compile Include="Proxy\Report.cs" />
     <Compile Include="Proxy\ReportComment.cs" />
     <Compile Include="Proxy\ReportPhoto.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="SqlRepository\Goal.cs" />
     <Compile Include="SqlRepository\GoalCell.cs" />
     <Compile Include="SqlRepository\Notify.cs" />
+    <Compile Include="SqlRepository\ReportAnswer.cs" />
     <Compile Include="SqlRepository\Report.cs" />
     <Compile Include="SqlRepository\ReportComment.cs" />
     <Compile Include="SqlRepository\ReportPhoto.cs" />

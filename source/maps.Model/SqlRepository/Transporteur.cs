@@ -41,6 +41,7 @@ namespace maps.Model
                 cache.Email = instance.Email;
                 cache.PrimaryPhone = instance.PrimaryPhone;
                 cache.AdditionalPhone = instance.AdditionalPhone;
+                cache.UserID = instance.UserID;
                 Db.Transporteurs.Context.SubmitChanges();
                 return true;
             }

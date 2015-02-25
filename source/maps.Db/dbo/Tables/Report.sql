@@ -12,7 +12,6 @@
     [StationID] INT NULL, 
     [Description] NVARCHAR(MAX) NULL, 
     [NotifyTransporteurID] INT NULL, 
-    [Answer] NVARCHAR(MAX) NULL, 
     [NotifyReporterID] INT NULL, 
     [Link] NVARCHAR(500) NULL, 
     [FacebookLink] NVARCHAR(500) NULL,

@@ -205,5 +205,14 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<ReportPhotoView, ReportPhoto>();
             }
         }
+
+        public static class ReportAnswerMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<ReportAnswer,  ReportAnswerView>();
+                Mapper.CreateMap<ReportAnswerView,  ReportAnswer>();
+            }
+        }
     }
 }

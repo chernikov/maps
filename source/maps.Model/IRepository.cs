@@ -307,6 +307,18 @@ namespace maps.Model
 
         #endregion 
         
+        #region ReportAnswer
+
+        IQueryable<ReportAnswer> ReportAnswers { get; }
+
+        bool CreateReportAnswer(ReportAnswer instance);
+
+        bool UpdateReportAnswer(ReportAnswer instance);
+
+        bool RemoveReportAnswer(int idReportAnswer);
+
+        #endregion 
+        
         #region ReportComment
 
         IQueryable<ReportComment> ReportComments { get; }

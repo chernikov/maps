@@ -31,6 +31,7 @@ namespace maps.Web.Mappers
             MapperCollection.RuleMapper.Init();
             MapperCollection.ReportMapper.Init();
             MapperCollection.ReportPhotoMapper.Init();
+            MapperCollection.ReportAnswerMapper.Init();
         }
 
         public object Map(object source, Type sourceType, Type destinationType)

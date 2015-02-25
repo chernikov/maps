@@ -53,7 +53,47 @@ namespace maps.Model
                 return ReportPhotos.ToList();
             }
         }
+
+        public bool HasAccess(User user)
+        {
+            if (user == null) 
+            {
+                return false;
+            }
+            if (Bus != null)
+            {
+                return Bus.Transporteur.UserID == user.ID;
+            }
+            if (Route != null)
+            {
+                var transporteurs = Route.Bus.Select(p => p.Transporteur).Distinct().ToList();
+                return transporteurs.Any(p => p.UserID == user.ID);
+            }
+            return false;
+        }
+
+        public bool HasAccess(Transporteur transporteur)
+        {
+          
+            if (Bus != null)
+            {
+                return Bus.TransporteurID == transporteur.ID;
+            }
+            if (Route != null)
+            {
+                var transporteurs = Route.Bus.Select(p => p.Transporteur).Distinct().ToList();
+                return transporteurs.Any(p => p.ID == transporteur.ID);
+            }
+            return false;
+        }
+
+        public bool HasAnswerFrom(Transporteur transporteur)
+        {
+            if (transporteur == null) 
+            {
+                return false;
+            }
+            return ReportAnswers.Any(p => p.TransporteurID == transporteur.ID);
+        }
     }
-
-
 }

@@ -82,16 +82,19 @@
             </td>
             <td>
                 @Html.ActionLink("Перегляд", "Item", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
-                @if (currentUser.InRoles("admin"))
+                @if (currentUser != null)
                 {
-                    @Html.ActionLink("Редагувати", "Edit", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
-                }
-                @if (currentUser.InRoles("admin"))
-                {
-                    @Html.ActionLink("Видалити", "Delete", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-danger" })
+                    if (currentUser.InRoles("admin"))
+                    {
+                        @Html.ActionLink("Редагувати", "Edit", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                    }
+                    
+                    if (currentUser.InRoles("admin"))
+                    {
+                        @Html.ActionLink("Видалити", "Delete", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-danger" })
+                    }
                 }
             </td>
-
         </tr>
     }
 </table>
