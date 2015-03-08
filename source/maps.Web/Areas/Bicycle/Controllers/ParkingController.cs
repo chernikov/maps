@@ -17,6 +17,11 @@ namespace maps.Web.Areas.Bicycle.Controllers
             return View();
         }
 
+        public ActionResult Futures()
+        {
+            return View();
+
+        }
         public ActionResult GetAll()
         {
             var list = Repository.BicycleParkings.Where(p => (p.VerifiedDate != null 
@@ -28,6 +33,25 @@ namespace maps.Web.Areas.Bicycle.Controllers
                         Position = p.Position,
                         Exist = p.Exist,
                         Type = p.Type}) }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetFuture()
+        {
+            var list = Repository.BicycleParkings.Where(p => p.VerifiedDate.HasValue == null
+                && p.Exist && p.CityID == CurrentCity.ID).ToList();
+
+            return Json(new
+            {
+                result = "ok",
+                data = list.Select(p =>
+                    new
+                    {
+                        Id = p.ID,
+                        Position = p.Position,
+                        Exist = p.Exist,
+                        Type = p.Type
+                    })
+            }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Info(int id)

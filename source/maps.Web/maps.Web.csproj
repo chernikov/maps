@@ -473,6 +473,7 @@
     <Content Include="Areas\Bus\Views\Bus\Edit.cshtml" />
     <Content Include="Areas\Bus\Views\Bus\EditBatch.cshtml" />
     <Content Include="Areas\Bus\Views\Bus\Index.cshtml" />
+    <Content Include="Areas\Bicycle\Views\Parking\Futures.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -489,9 +490,11 @@
     <Content Include="Scripts\bycicle\add-future-parking.js" />
     <Content Include="Scripts\bycicle\index.js" />
     <Content Include="Scripts\bycicle\map-main.js" />
+    <Content Include="Scripts\bycicle\map-future-parking.js" />
     <Content Include="Scripts\bycicle\map-parking.js" />
     <Content Include="Scripts\bycicle\map-route.js" />
     <Content Include="Scripts\bycicle\my-route.js" />
+    <Content Include="Scripts\bycicle\parking-future.js" />
     <Content Include="Scripts\bycicle\parking.js" />
     <Content Include="Scripts\bycicle\route.js" />
     <Content Include="Scripts\bycicle\simple-form.js" />
