@@ -171,8 +171,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Bus\BusAreaRegistration.cs" />
+    <Compile Include="Areas\Bus\Controllers\LoginController.cs" />
     <Compile Include="Areas\Bus\Controllers\BaseBusController.cs" />
     <Compile Include="Areas\Bus\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Bus\Controllers\ReportController.cs" />
+    <Compile Include="Areas\Bus\Controllers\RuleController.cs" />
+    <Compile Include="Areas\Bus\Controllers\FundamentalRuleController.cs" />
     <Compile Include="Areas\Bus\Controllers\BrandController.cs" />
     <Compile Include="Areas\Bus\Controllers\BusController.cs" />
     <Compile Include="Areas\Bus\Controllers\RouteController.cs" />
@@ -234,6 +238,7 @@
     <Compile Include="Global\Auth\UserProvider.cs" />
     <Compile Include="Global\Config\Config.cs" />
     <Compile Include="Global\Config\IConfig.cs" />
+    <Compile Include="Global\Config\ISmsConfig.cs" />
     <Compile Include="Global\Config\MailSetting.cs" />
     <Compile Include="Global\Config\MailTemplateConfig.cs" />
     <Compile Include="Global\FineUpload.cs" />
@@ -251,15 +256,21 @@
     <Compile Include="Models\Dto\BicycleParkingDto.cs" />
     <Compile Include="Models\Mappers\MapperCollection.cs" />
     <Compile Include="Models\Api\BicycleParkingApiModel.cs" />
+    <Compile Include="Models\ViewModels\ReportAnswerView.cs" />
     <Compile Include="Models\ViewModels\BicycleParkingView.cs" />
     <Compile Include="Models\ViewModels\BrandView.cs" />
     <Compile Include="Models\ViewModels\BusView.cs" />
     <Compile Include="Models\ViewModels\BycicleDirectionView.cs" />
     <Compile Include="Models\ViewModels\CityView.cs" />
     <Compile Include="Models\ViewModels\CommentView.cs" />
+    <Compile Include="Models\ViewModels\FundamentalRuleView.cs" />
     <Compile Include="Models\ViewModels\GoalView.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
+    <Compile Include="Models\ViewModels\NewReportView.cs" />
+    <Compile Include="Models\ViewModels\ReportPhotoView.cs" />
     <Compile Include="Models\ViewModels\RouteView.cs" />
+    <Compile Include="Models\ViewModels\RuleView.cs" />
+    <Compile Include="Models\ViewModels\TransporteurLoginView.cs" />
     <Compile Include="Models\ViewModels\TransporteurView.cs" />
     <Compile Include="Models\ViewModels\UtilityDepartmentView.cs" />
     <Compile Include="Models\ViewModels\UtilityIssueView.cs" />
@@ -273,6 +284,7 @@
     <Compile Include="Models\ViewModels\UtilityPhotoView.cs" />
     <Compile Include="Models\ViewModels\UtilityTagView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\SmsSender.cs" />
     <Compile Include="Validation\IsUserPassword.cs" />
     <Compile Include="Validation\PropertiesMustMatch.cs" />
     <Compile Include="Validation\UniqueValidation.cs" />
@@ -295,6 +307,12 @@
     </Content>
     <Content Include="Content\css\admin.min.css">
       <DependentUpon>admin.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\bus.css">
+      <DependentUpon>bus.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\bus.min.css">
+      <DependentUpon>bus.css</DependentUpon>
     </Content>
     <Content Include="Content\css\chosen.css" />
     <Content Include="Content\css\fineuploader-4.1.1.min.css" />
@@ -426,7 +444,7 @@
     <Content Include="Areas\Utility\Views\Tag\Edit.cshtml" />
     <Content Include="Areas\Utility\Views\Tag\Index.cshtml" />
     <Content Include="Areas\Utility\Views\Shared\UtilityPhoto.cshtml" />
-    <Content Include="Areas\Utility\Views\Home\UploadTemplate.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\UploadTemplate.cshtml" />
     <Content Include="Areas\Utility\Views\UtilityIssue\Edit.cshtml" />
     <Content Include="Areas\Utility\Views\UtilityIssue\Index.cshtml" />
     <Content Include="Areas\Utility\Views\UtilityIssue\UploadTemplate.cshtml" />
@@ -456,7 +474,9 @@
     <Content Include="Areas\Bus\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Bus\Views\Shared\Map.cshtml" />
     <Content Include="Areas\Bus\Views\Shared\TopMenu.cshtml" />
-    <Content Include="Areas\Bus\Views\web.config" />
+    <Content Include="Areas\Bus\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Bus\Views\Home\Index.cshtml" />
     <Content Include="Areas\Bus\Views\Transporteur\Index.cshtml" />
     <Content Include="Areas\Bus\Views\Shared\_AdminLayout.cshtml" />
@@ -474,17 +494,51 @@
     <Content Include="Areas\Bus\Views\Bus\EditBatch.cshtml" />
     <Content Include="Areas\Bus\Views\Bus\Index.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\Futures.cshtml" />
+    <Content Include="Areas\Bus\Views\FundamentalRule\Edit.cshtml" />
+    <Content Include="Areas\Bus\Views\FundamentalRule\Index.cshtml" />
+    <Content Include="Areas\Bus\Views\Rule\Edit.cshtml" />
+    <Content Include="Areas\Bus\Views\Rule\Index.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\Create.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\SelectBus.cshtml" />
+    <Content Include="Areas\Bus\Views\Shared\ReportPhoto.cshtml" />
+    <Content Include="Areas\Utility\Views\Home\UploadTemplate.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\Item.cshtml" />
+    <Content Include="Areas\Bus\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\Answer.cshtml" />
+    <Content Include="Areas\Bus\Views\Report\Thanks.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\css\bus.scss" />
+    <Content Include="Content\css\bus.css.map">
+      <DependentUpon>bus.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <Content Include="Content\css\style.css.map">
       <DependentUpon>style.css</DependentUpon>
     </Content>
+    <Content Include="Scripts\bootstrap-image-gallery.min.js.map">
+      <DependentUpon>bootstrap-image-gallery.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bloodhound.min.js.map">
+      <DependentUpon>bloodhound.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js.map">
+      <DependentUpon>bootstrap-datetimepicker.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.min.js.map">
+      <DependentUpon>bootstrap.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bus\login-index.js" />
+    <Content Include="Scripts\bus\report-item.js" />
+    <Content Include="Scripts\chosen.jquery.min.js.map">
+      <DependentUpon>chosen.jquery.min.js</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bus\report-create.js" />
     <Content Include="Scripts\bycicle\add-parking.js" />
     <Content Include="Scripts\bycicle\add-route.js" />
     <Content Include="Scripts\bycicle\add-future-parking.js" />
@@ -558,6 +612,24 @@
     <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_Ok.cshtml" />
     <Content Include="Views\Shared\Thanks.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.js.map">
+      <DependentUpon>jquery-1.10.2.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.fineuploader-3.5.0.min.js.map">
+      <DependentUpon>jquery.fineuploader-3.5.0.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\moment-with-locales.min.js.map">
+      <DependentUpon>moment-with-locales.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\moment.min.js.map">
+      <DependentUpon>moment.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\respond.min.js.map">
+      <DependentUpon>respond.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\typeahead.jquery.min.js.map">
+      <DependentUpon>typeahead.jquery.min.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">

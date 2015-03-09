@@ -19,7 +19,9 @@ GO
 
 INSERT INTO [dbo].[Role] (Code,Name)
 VALUES('admin',N'Админ'),
-('moderator',N'Модератор')
+('moderator',N'Модератор'),
+('utility_moderator',N'Комунальщик'),
+('transporteur',N'Перевозчик')
 GO
 
 INSERT INTO [dbo].[User] ([Login], Email,	[Password],	AddedDate,	LastVisitDate,	AvatarPath,	FirstName,	LastName)

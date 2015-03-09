@@ -1,0 +1,19 @@
+﻿@model ReportAnswerView
+
+@using (Html.BeginForm("Answer", "Report", FormMethod.Post, new { id = "AnswerForm" }))
+{
+    @Html.Hidden("ReportID", Model.ReportID)
+    <fieldset>
+        <legend>Відповідь</legend>
+        <div class="form-group @Html.HasErrorClass("Email", "has-error")">
+            <div class="col-sm-12">
+                <label>
+                    Напишіть відповідь. Ми повідомимо про це того, хто подав скаргу.
+                </label>
+                @Html.TextArea("Answer", Model.Answer, new { @class = "form-control textarea" })
+            </div>
+        </div>
+        <div class="btn btn-primary" id="AnswerBtn">Відповісти</div>
+        <br/><br/>
+    </fieldset>
+}

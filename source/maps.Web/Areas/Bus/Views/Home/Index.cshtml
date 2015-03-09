@@ -1,8 +1,100 @@
-﻿
+﻿@model PagedList.IPagedList<Report>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Перевізники";
     Layout = "~/Areas/Bus/Views/Shared/_Layout.cshtml";
+    var currentUser = ((BaseController)ViewContext.Controller).CurrentUser;
 }
+@section header
+{
 
-<h2>Index</h2>
+}
+<div class="row">
+    <p></p>
+</div>
+<div class="row">
+    <div class="col-lg-9 col-lg-offset-3">
+        <h2>@ViewBag.Title</h2>
+        @if (currentUser != null)
+        {
+            @Html.ActionLink("Додати скаргу", "Create", "Report", null, new { @class = "btn btn-primary" })
+        }
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
 
+            </th>
+            <th>
+                Дата
+            </th>
+            <th>
+                Бус 
+            </th>
+            <th>
+                Порушені правила
+            </th>
+            <th>
+                Фото
+            </th>
+            <th>
+                Статус
+            </th>
+            <th>
+                Опис
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+               @item.ID
+            </td>
+            <td>
+                @item.DateTime
+            </td>
+            <td>
+                #@item.Route.Name   @item.Bus.Number (@item.Bus.Brand.Name)
+            </td>
+            <td>
+                @foreach (var rule in item.SubRules)
+                {
+                    <p>@rule.Name</p>
+                }
+            </td>
+            <td>
+                @foreach (var photo in item.SubPhotos)
+                {
+                    <div class="thumbnail">
+                        <img src="@photo.ImagePath?w=100&h=100&mode=crop" />
+                    </div>
+                }
+            </td>
+            <td>
+                @item.StatusStr
+            </td>
+            <td>
+                @item.Description.Teaser(100)
+            </td>
+            <td>
+                @Html.ActionLink("Перегляд", "Item", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @if (currentUser != null)
+                {
+                    if (currentUser.InRoles("admin"))
+                    {
+                        @Html.ActionLink("Редагувати", "Edit", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                    }
+                    
+                    if (currentUser.InRoles("admin"))
+                    {
+                        @Html.ActionLink("Видалити", "Delete", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-danger" })
+                    }
+                }
+            </td>
+        </tr>
+    }
+</table>

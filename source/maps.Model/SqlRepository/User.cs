@@ -47,6 +47,7 @@ namespace maps.Model
             if (cache != null)
             {
                 cache.Email = instance.Email;
+                cache.Mobile = instance.Mobile;
                 cache.AvatarPath = instance.AvatarPath;
                 cache.FirstName = instance.FirstName;
                 cache.LastName = instance.LastName;

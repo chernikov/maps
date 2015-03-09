@@ -37,8 +37,8 @@ namespace maps.Web.Areas.Bicycle.Controllers
 
         public ActionResult GetFuture()
         {
-            var list = Repository.BicycleParkings.Where(p => p.VerifiedDate.HasValue == null
-                && p.Exist && p.CityID == CurrentCity.ID).ToList();
+            var list = Repository.BicycleParkings.Where(p => p.VerifiedDate == null
+               && p.CityID == CurrentCity.ID).ToList();
 
             return Json(new
             {

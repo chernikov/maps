@@ -30,66 +30,21 @@ namespace maps.Model
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertRole(Role instance);
-    partial void UpdateRole(Role instance);
-    partial void DeleteRole(Role instance);
-    partial void InsertUserRole(UserRole instance);
-    partial void UpdateUserRole(UserRole instance);
-    partial void DeleteUserRole(UserRole instance);
-    partial void InsertSocial(Social instance);
-    partial void UpdateSocial(Social instance);
-    partial void DeleteSocial(Social instance);
     partial void InsertBicycleDirectionLine(BicycleDirectionLine instance);
     partial void UpdateBicycleDirectionLine(BicycleDirectionLine instance);
     partial void DeleteBicycleDirectionLine(BicycleDirectionLine instance);
-    partial void InsertBicycleParkingVote(BicycleParkingVote instance);
-    partial void UpdateBicycleParkingVote(BicycleParkingVote instance);
-    partial void DeleteBicycleParkingVote(BicycleParkingVote instance);
-    partial void InsertGoal(Goal instance);
-    partial void UpdateGoal(Goal instance);
-    partial void DeleteGoal(Goal instance);
-    partial void InsertGoalCell(GoalCell instance);
-    partial void UpdateGoalCell(GoalCell instance);
-    partial void DeleteGoalCell(GoalCell instance);
-    partial void InsertCity(City instance);
-    partial void UpdateCity(City instance);
-    partial void DeleteCity(City instance);
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
-    partial void InsertBicycleParking(BicycleParking instance);
-    partial void UpdateBicycleParking(BicycleParking instance);
-    partial void DeleteBicycleParking(BicycleParking instance);
-    partial void InsertBycicleDirection(BycicleDirection instance);
-    partial void UpdateBycicleDirection(BycicleDirection instance);
-    partial void DeleteBycicleDirection(BycicleDirection instance);
-    partial void InsertBicycleLine(BicycleLine instance);
-    partial void UpdateBicycleLine(BicycleLine instance);
-    partial void DeleteBicycleLine(BicycleLine instance);
-    partial void InsertComment(Comment instance);
-    partial void UpdateComment(Comment instance);
-    partial void DeleteComment(Comment instance);
-    partial void InsertUtilityPhoto(UtilityPhoto instance);
-    partial void UpdateUtilityPhoto(UtilityPhoto instance);
-    partial void DeleteUtilityPhoto(UtilityPhoto instance);
-    partial void InsertUtilityIssueComment(UtilityIssueComment instance);
-    partial void UpdateUtilityIssueComment(UtilityIssueComment instance);
-    partial void DeleteUtilityIssueComment(UtilityIssueComment instance);
-    partial void InsertUtilityIssueTag(UtilityIssueTag instance);
-    partial void UpdateUtilityIssueTag(UtilityIssueTag instance);
-    partial void DeleteUtilityIssueTag(UtilityIssueTag instance);
     partial void InsertUtilityTag(UtilityTag instance);
     partial void UpdateUtilityTag(UtilityTag instance);
     partial void DeleteUtilityTag(UtilityTag instance);
-    partial void InsertUtilityDepartment(UtilityDepartment instance);
-    partial void UpdateUtilityDepartment(UtilityDepartment instance);
-    partial void DeleteUtilityDepartment(UtilityDepartment instance);
-    partial void InsertUtilityIssue(UtilityIssue instance);
-    partial void UpdateUtilityIssue(UtilityIssue instance);
-    partial void DeleteUtilityIssue(UtilityIssue instance);
-    partial void InsertUtilityIssueHistory(UtilityIssueHistory instance);
-    partial void UpdateUtilityIssueHistory(UtilityIssueHistory instance);
-    partial void DeleteUtilityIssueHistory(UtilityIssueHistory instance);
+    partial void InsertBicycleLine(BicycleLine instance);
+    partial void UpdateBicycleLine(BicycleLine instance);
+    partial void DeleteBicycleLine(BicycleLine instance);
+    partial void InsertBicycleParking(BicycleParking instance);
+    partial void UpdateBicycleParking(BicycleParking instance);
+    partial void DeleteBicycleParking(BicycleParking instance);
+    partial void InsertBicycleParkingVote(BicycleParkingVote instance);
+    partial void UpdateBicycleParkingVote(BicycleParkingVote instance);
+    partial void DeleteBicycleParkingVote(BicycleParkingVote instance);
     partial void InsertBrand(Brand instance);
     partial void UpdateBrand(Brand instance);
     partial void DeleteBrand(Brand instance);
@@ -99,36 +54,90 @@ namespace maps.Model
     partial void InsertBusPhoto(BusPhoto instance);
     partial void UpdateBusPhoto(BusPhoto instance);
     partial void DeleteBusPhoto(BusPhoto instance);
+    partial void InsertBycicleDirection(BycicleDirection instance);
+    partial void UpdateBycicleDirection(BycicleDirection instance);
+    partial void DeleteBycicleDirection(BycicleDirection instance);
+    partial void InsertCity(City instance);
+    partial void UpdateCity(City instance);
+    partial void DeleteCity(City instance);
+    partial void InsertComment(Comment instance);
+    partial void UpdateComment(Comment instance);
+    partial void DeleteComment(Comment instance);
+    partial void InsertFundamentalRule(FundamentalRule instance);
+    partial void UpdateFundamentalRule(FundamentalRule instance);
+    partial void DeleteFundamentalRule(FundamentalRule instance);
+    partial void InsertGoal(Goal instance);
+    partial void UpdateGoal(Goal instance);
+    partial void DeleteGoal(Goal instance);
+    partial void InsertGoalCell(GoalCell instance);
+    partial void UpdateGoalCell(GoalCell instance);
+    partial void DeleteGoalCell(GoalCell instance);
     partial void InsertNotify(Notify instance);
     partial void UpdateNotify(Notify instance);
     partial void DeleteNotify(Notify instance);
-    partial void InsertRule(Rule instance);
-    partial void UpdateRule(Rule instance);
-    partial void DeleteRule(Rule instance);
-    partial void InsertReport(Report instance);
-    partial void UpdateReport(Report instance);
-    partial void DeleteReport(Report instance);
     partial void InsertReportComment(ReportComment instance);
     partial void UpdateReportComment(ReportComment instance);
     partial void DeleteReportComment(ReportComment instance);
     partial void InsertReportPhoto(ReportPhoto instance);
     partial void UpdateReportPhoto(ReportPhoto instance);
     partial void DeleteReportPhoto(ReportPhoto instance);
-    partial void InsertStation(Station instance);
-    partial void UpdateStation(Station instance);
-    partial void DeleteStation(Station instance);
-    partial void InsertTransporteur(Transporteur instance);
-    partial void UpdateTransporteur(Transporteur instance);
-    partial void DeleteTransporteur(Transporteur instance);
+    partial void InsertRole(Role instance);
+    partial void UpdateRole(Role instance);
+    partial void DeleteRole(Role instance);
     partial void InsertRoute(Route instance);
     partial void UpdateRoute(Route instance);
     partial void DeleteRoute(Route instance);
     partial void InsertRouteSection(RouteSection instance);
     partial void UpdateRouteSection(RouteSection instance);
     partial void DeleteRouteSection(RouteSection instance);
+    partial void InsertRule(Rule instance);
+    partial void UpdateRule(Rule instance);
+    partial void DeleteRule(Rule instance);
     partial void InsertRuleReport(RuleReport instance);
     partial void UpdateRuleReport(RuleReport instance);
     partial void DeleteRuleReport(RuleReport instance);
+    partial void InsertShop(Shop instance);
+    partial void UpdateShop(Shop instance);
+    partial void DeleteShop(Shop instance);
+    partial void InsertSocial(Social instance);
+    partial void UpdateSocial(Social instance);
+    partial void DeleteSocial(Social instance);
+    partial void InsertStation(Station instance);
+    partial void UpdateStation(Station instance);
+    partial void DeleteStation(Station instance);
+    partial void InsertUserRole(UserRole instance);
+    partial void UpdateUserRole(UserRole instance);
+    partial void DeleteUserRole(UserRole instance);
+    partial void InsertUtilityDepartment(UtilityDepartment instance);
+    partial void UpdateUtilityDepartment(UtilityDepartment instance);
+    partial void DeleteUtilityDepartment(UtilityDepartment instance);
+    partial void InsertUtilityIssue(UtilityIssue instance);
+    partial void UpdateUtilityIssue(UtilityIssue instance);
+    partial void DeleteUtilityIssue(UtilityIssue instance);
+    partial void InsertUtilityIssueComment(UtilityIssueComment instance);
+    partial void UpdateUtilityIssueComment(UtilityIssueComment instance);
+    partial void DeleteUtilityIssueComment(UtilityIssueComment instance);
+    partial void InsertUtilityIssueHistory(UtilityIssueHistory instance);
+    partial void UpdateUtilityIssueHistory(UtilityIssueHistory instance);
+    partial void DeleteUtilityIssueHistory(UtilityIssueHistory instance);
+    partial void InsertUtilityIssueTag(UtilityIssueTag instance);
+    partial void UpdateUtilityIssueTag(UtilityIssueTag instance);
+    partial void DeleteUtilityIssueTag(UtilityIssueTag instance);
+    partial void InsertUtilityPhoto(UtilityPhoto instance);
+    partial void UpdateUtilityPhoto(UtilityPhoto instance);
+    partial void DeleteUtilityPhoto(UtilityPhoto instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
+    partial void InsertTransporteur(Transporteur instance);
+    partial void UpdateTransporteur(Transporteur instance);
+    partial void DeleteTransporteur(Transporteur instance);
+    partial void InsertReport(Report instance);
+    partial void UpdateReport(Report instance);
+    partial void DeleteReport(Report instance);
+    partial void InsertReportAnswer(ReportAnswer instance);
+    partial void UpdateReportAnswer(ReportAnswer instance);
+    partial void DeleteReportAnswer(ReportAnswer instance);
     #endregion
 		
 		public mapsDbDataContext() : 
@@ -161,131 +170,11 @@ namespace maps.Model
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Role> Roles
-		{
-			get
-			{
-				return this.GetTable<Role>();
-			}
-		}
-		
-		public System.Data.Linq.Table<UserRole> UserRoles
-		{
-			get
-			{
-				return this.GetTable<UserRole>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Social> Socials
-		{
-			get
-			{
-				return this.GetTable<Social>();
-			}
-		}
-		
 		public System.Data.Linq.Table<BicycleDirectionLine> BicycleDirectionLines
 		{
 			get
 			{
 				return this.GetTable<BicycleDirectionLine>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BicycleParkingVote> BicycleParkingVotes
-		{
-			get
-			{
-				return this.GetTable<BicycleParkingVote>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Goal> Goals
-		{
-			get
-			{
-				return this.GetTable<Goal>();
-			}
-		}
-		
-		public System.Data.Linq.Table<GoalCell> GoalCells
-		{
-			get
-			{
-				return this.GetTable<GoalCell>();
-			}
-		}
-		
-		public System.Data.Linq.Table<City> Cities
-		{
-			get
-			{
-				return this.GetTable<City>();
-			}
-		}
-		
-		public System.Data.Linq.Table<User> Users
-		{
-			get
-			{
-				return this.GetTable<User>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BicycleParking> BicycleParkings
-		{
-			get
-			{
-				return this.GetTable<BicycleParking>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BycicleDirection> BycicleDirections
-		{
-			get
-			{
-				return this.GetTable<BycicleDirection>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BicycleLine> BicycleLines
-		{
-			get
-			{
-				return this.GetTable<BicycleLine>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Comment> Comments
-		{
-			get
-			{
-				return this.GetTable<Comment>();
-			}
-		}
-		
-		public System.Data.Linq.Table<UtilityPhoto> UtilityPhotos
-		{
-			get
-			{
-				return this.GetTable<UtilityPhoto>();
-			}
-		}
-		
-		public System.Data.Linq.Table<UtilityIssueComment> UtilityIssueComments
-		{
-			get
-			{
-				return this.GetTable<UtilityIssueComment>();
-			}
-		}
-		
-		public System.Data.Linq.Table<UtilityIssueTag> UtilityIssueTags
-		{
-			get
-			{
-				return this.GetTable<UtilityIssueTag>();
 			}
 		}
 		
@@ -297,27 +186,27 @@ namespace maps.Model
 			}
 		}
 		
-		public System.Data.Linq.Table<UtilityDepartment> UtilityDepartments
+		public System.Data.Linq.Table<BicycleLine> BicycleLines
 		{
 			get
 			{
-				return this.GetTable<UtilityDepartment>();
+				return this.GetTable<BicycleLine>();
 			}
 		}
 		
-		public System.Data.Linq.Table<UtilityIssue> UtilityIssues
+		public System.Data.Linq.Table<BicycleParking> BicycleParkings
 		{
 			get
 			{
-				return this.GetTable<UtilityIssue>();
+				return this.GetTable<BicycleParking>();
 			}
 		}
 		
-		public System.Data.Linq.Table<UtilityIssueHistory> UtilityIssueHistories
+		public System.Data.Linq.Table<BicycleParkingVote> BicycleParkingVotes
 		{
 			get
 			{
-				return this.GetTable<UtilityIssueHistory>();
+				return this.GetTable<BicycleParkingVote>();
 			}
 		}
 		
@@ -345,27 +234,59 @@ namespace maps.Model
 			}
 		}
 		
+		public System.Data.Linq.Table<BycicleDirection> BycicleDirections
+		{
+			get
+			{
+				return this.GetTable<BycicleDirection>();
+			}
+		}
+		
+		public System.Data.Linq.Table<City> Cities
+		{
+			get
+			{
+				return this.GetTable<City>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Comment> Comments
+		{
+			get
+			{
+				return this.GetTable<Comment>();
+			}
+		}
+		
+		public System.Data.Linq.Table<FundamentalRule> FundamentalRules
+		{
+			get
+			{
+				return this.GetTable<FundamentalRule>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Goal> Goals
+		{
+			get
+			{
+				return this.GetTable<Goal>();
+			}
+		}
+		
+		public System.Data.Linq.Table<GoalCell> GoalCells
+		{
+			get
+			{
+				return this.GetTable<GoalCell>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Notify> Notifies
 		{
 			get
 			{
 				return this.GetTable<Notify>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Rule> Rules
-		{
-			get
-			{
-				return this.GetTable<Rule>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Report> Reports
-		{
-			get
-			{
-				return this.GetTable<Report>();
 			}
 		}
 		
@@ -385,19 +306,11 @@ namespace maps.Model
 			}
 		}
 		
-		public System.Data.Linq.Table<Station> Stations
+		public System.Data.Linq.Table<Role> Roles
 		{
 			get
 			{
-				return this.GetTable<Station>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Transporteur> Transporteurs
-		{
-			get
-			{
-				return this.GetTable<Transporteur>();
+				return this.GetTable<Role>();
 			}
 		}
 		
@@ -417,6 +330,14 @@ namespace maps.Model
 			}
 		}
 		
+		public System.Data.Linq.Table<Rule> Rules
+		{
+			get
+			{
+				return this.GetTable<Rule>();
+			}
+		}
+		
 		public System.Data.Linq.Table<RuleReport> RuleReports
 		{
 			get
@@ -424,557 +345,116 @@ namespace maps.Model
 				return this.GetTable<RuleReport>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Role")]
-	public partial class Role : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Code;
-		
-		private string _Name;
-		
-		private EntitySet<UserRole> _UserRoles;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnCodeChanging(string value);
-    partial void OnCodeChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    #endregion
-		
-		public Role()
-		{
-			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		public System.Data.Linq.Table<Shop> Shops
 		{
 			get
 			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
+				return this.GetTable<Shop>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Code
+		public System.Data.Linq.Table<Social> Socials
 		{
 			get
 			{
-				return this._Code;
-			}
-			set
-			{
-				if ((this._Code != value))
-				{
-					this.OnCodeChanging(value);
-					this.SendPropertyChanging();
-					this._Code = value;
-					this.SendPropertyChanged("Code");
-					this.OnCodeChanged();
-				}
+				return this.GetTable<Social>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
+		public System.Data.Linq.Table<Station> Stations
 		{
 			get
 			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
+				return this.GetTable<Station>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_UserRole", Storage="_UserRoles", ThisKey="ID", OtherKey="RoleID")]
-		public EntitySet<UserRole> UserRoles
+		public System.Data.Linq.Table<UserRole> UserRoles
 		{
 			get
 			{
-				return this._UserRoles;
-			}
-			set
-			{
-				this._UserRoles.Assign(value);
+				return this.GetTable<UserRole>();
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_UserRoles(UserRole entity)
-		{
-			this.SendPropertyChanging();
-			entity.Role = this;
-		}
-		
-		private void detach_UserRoles(UserRole entity)
-		{
-			this.SendPropertyChanging();
-			entity.Role = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserRole")]
-	public partial class UserRole : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _RoleID;
-		
-		private int _UserID;
-		
-		private EntityRef<Role> _Role;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnRoleIDChanging(int value);
-    partial void OnRoleIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    #endregion
-		
-		public UserRole()
-		{
-			this._Role = default(EntityRef<Role>);
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		public System.Data.Linq.Table<UtilityDepartment> UtilityDepartments
 		{
 			get
 			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
+				return this.GetTable<UtilityDepartment>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", DbType="Int NOT NULL")]
-		public int RoleID
+		public System.Data.Linq.Table<UtilityIssue> UtilityIssues
 		{
 			get
 			{
-				return this._RoleID;
-			}
-			set
-			{
-				if ((this._RoleID != value))
-				{
-					if (this._Role.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnRoleIDChanging(value);
-					this.SendPropertyChanging();
-					this._RoleID = value;
-					this.SendPropertyChanged("RoleID");
-					this.OnRoleIDChanged();
-				}
+				return this.GetTable<UtilityIssue>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
+		public System.Data.Linq.Table<UtilityIssueComment> UtilityIssueComments
 		{
 			get
 			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
+				return this.GetTable<UtilityIssueComment>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_UserRole", Storage="_Role", ThisKey="RoleID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Role Role
+		public System.Data.Linq.Table<UtilityIssueHistory> UtilityIssueHistories
 		{
 			get
 			{
-				return this._Role.Entity;
-			}
-			set
-			{
-				Role previousValue = this._Role.Entity;
-				if (((previousValue != value) 
-							|| (this._Role.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Role.Entity = null;
-						previousValue.UserRoles.Remove(this);
-					}
-					this._Role.Entity = value;
-					if ((value != null))
-					{
-						value.UserRoles.Add(this);
-						this._RoleID = value.ID;
-					}
-					else
-					{
-						this._RoleID = default(int);
-					}
-					this.SendPropertyChanged("Role");
-				}
+				return this.GetTable<UtilityIssueHistory>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserRole", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public User User
+		public System.Data.Linq.Table<UtilityIssueTag> UtilityIssueTags
 		{
 			get
 			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.UserRoles.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.UserRoles.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
+				return this.GetTable<UtilityIssueTag>();
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Social")]
-	public partial class Social : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _UserID;
-		
-		private string _Identified;
-		
-		private int _Provider;
-		
-		private string _UserInfo;
-		
-		private string _JsonResource;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnIdentifiedChanging(string value);
-    partial void OnIdentifiedChanged();
-    partial void OnProviderChanging(int value);
-    partial void OnProviderChanged();
-    partial void OnUserInfoChanging(string value);
-    partial void OnUserInfoChanged();
-    partial void OnJsonResourceChanging(string value);
-    partial void OnJsonResourceChanged();
-    #endregion
-		
-		public Social()
-		{
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		public System.Data.Linq.Table<UtilityPhoto> UtilityPhotos
 		{
 			get
 			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
+				return this.GetTable<UtilityPhoto>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
+		public System.Data.Linq.Table<User> Users
 		{
 			get
 			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
+				return this.GetTable<User>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Identified", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Identified
+		public System.Data.Linq.Table<Transporteur> Transporteurs
 		{
 			get
 			{
-				return this._Identified;
-			}
-			set
-			{
-				if ((this._Identified != value))
-				{
-					this.OnIdentifiedChanging(value);
-					this.SendPropertyChanging();
-					this._Identified = value;
-					this.SendPropertyChanged("Identified");
-					this.OnIdentifiedChanged();
-				}
+				return this.GetTable<Transporteur>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Provider", DbType="Int NOT NULL")]
-		public int Provider
+		public System.Data.Linq.Table<Report> Reports
 		{
 			get
 			{
-				return this._Provider;
-			}
-			set
-			{
-				if ((this._Provider != value))
-				{
-					this.OnProviderChanging(value);
-					this.SendPropertyChanging();
-					this._Provider = value;
-					this.SendPropertyChanged("Provider");
-					this.OnProviderChanged();
-				}
+				return this.GetTable<Report>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserInfo", DbType="NVarChar(MAX)")]
-		public string UserInfo
+		public System.Data.Linq.Table<ReportAnswer> ReportAnswers
 		{
 			get
 			{
-				return this._UserInfo;
-			}
-			set
-			{
-				if ((this._UserInfo != value))
-				{
-					this.OnUserInfoChanging(value);
-					this.SendPropertyChanging();
-					this._UserInfo = value;
-					this.SendPropertyChanged("UserInfo");
-					this.OnUserInfoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JsonResource", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string JsonResource
-		{
-			get
-			{
-				return this._JsonResource;
-			}
-			set
-			{
-				if ((this._JsonResource != value))
-				{
-					this.OnJsonResourceChanging(value);
-					this.SendPropertyChanging();
-					this._JsonResource = value;
-					this.SendPropertyChanged("JsonResource");
-					this.OnJsonResourceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Social", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Socials.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Socials.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<ReportAnswer>();
 			}
 		}
 	}
@@ -991,9 +471,9 @@ namespace maps.Model
 		
 		private int _BicycleLineID;
 		
-		private EntityRef<BycicleDirection> _BycicleDirection;
-		
 		private EntityRef<BicycleLine> _BicycleLine;
+		
+		private EntityRef<BycicleDirection> _BycicleDirection;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1009,8 +489,8 @@ namespace maps.Model
 		
 		public BicycleDirectionLine()
 		{
-			this._BycicleDirection = default(EntityRef<BycicleDirection>);
 			this._BicycleLine = default(EntityRef<BicycleLine>);
+			this._BycicleDirection = default(EntityRef<BycicleDirection>);
 			OnCreated();
 		}
 		
@@ -1082,40 +562,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BycicleDirection_BicycleDirectionLine", Storage="_BycicleDirection", ThisKey="BicycleDirectionID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public BycicleDirection BycicleDirection
-		{
-			get
-			{
-				return this._BycicleDirection.Entity;
-			}
-			set
-			{
-				BycicleDirection previousValue = this._BycicleDirection.Entity;
-				if (((previousValue != value) 
-							|| (this._BycicleDirection.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BycicleDirection.Entity = null;
-						previousValue.BicycleDirectionLines.Remove(this);
-					}
-					this._BycicleDirection.Entity = value;
-					if ((value != null))
-					{
-						value.BicycleDirectionLines.Add(this);
-						this._BicycleDirectionID = value.ID;
-					}
-					else
-					{
-						this._BicycleDirectionID = default(int);
-					}
-					this.SendPropertyChanged("BycicleDirection");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleLine_BicycleDirectionLine", Storage="_BicycleLine", ThisKey="BicycleLineID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public BicycleLine BicycleLine
 		{
@@ -1150,218 +596,36 @@ namespace maps.Model
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleParkingVote")]
-	public partial class BicycleParkingVote : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _UserID;
-		
-		private int _BicycleParkingID;
-		
-		private int _Mark;
-		
-		private EntityRef<User> _User;
-		
-		private EntityRef<BicycleParking> _BicycleParking;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnBicycleParkingIDChanging(int value);
-    partial void OnBicycleParkingIDChanged();
-    partial void OnMarkChanging(int value);
-    partial void OnMarkChanged();
-    #endregion
-		
-		public BicycleParkingVote()
-		{
-			this._User = default(EntityRef<User>);
-			this._BicycleParking = default(EntityRef<BicycleParking>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BycicleDirection_BicycleDirectionLine", Storage="_BycicleDirection", ThisKey="BicycleDirectionID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public BycicleDirection BycicleDirection
 		{
 			get
 			{
-				return this._ID;
+				return this._BycicleDirection.Entity;
 			}
 			set
 			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BicycleParkingID", DbType="Int NOT NULL")]
-		public int BicycleParkingID
-		{
-			get
-			{
-				return this._BicycleParkingID;
-			}
-			set
-			{
-				if ((this._BicycleParkingID != value))
-				{
-					if (this._BicycleParking.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBicycleParkingIDChanging(value);
-					this.SendPropertyChanging();
-					this._BicycleParkingID = value;
-					this.SendPropertyChanged("BicycleParkingID");
-					this.OnBicycleParkingIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mark", DbType="Int NOT NULL")]
-		public int Mark
-		{
-			get
-			{
-				return this._Mark;
-			}
-			set
-			{
-				if ((this._Mark != value))
-				{
-					this.OnMarkChanging(value);
-					this.SendPropertyChanging();
-					this._Mark = value;
-					this.SendPropertyChanged("Mark");
-					this.OnMarkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParkingVote", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
+				BycicleDirection previousValue = this._BycicleDirection.Entity;
 				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
+							|| (this._BycicleDirection.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._User.Entity = null;
-						previousValue.BicycleParkingVotes.Remove(this);
+						this._BycicleDirection.Entity = null;
+						previousValue.BicycleDirectionLines.Remove(this);
 					}
-					this._User.Entity = value;
+					this._BycicleDirection.Entity = value;
 					if ((value != null))
 					{
-						value.BicycleParkingVotes.Add(this);
-						this._UserID = value.ID;
+						value.BicycleDirectionLines.Add(this);
+						this._BicycleDirectionID = value.ID;
 					}
 					else
 					{
-						this._UserID = default(int);
+						this._BicycleDirectionID = default(int);
 					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParking", ThisKey="BicycleParkingID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public BicycleParking BicycleParking
-		{
-			get
-			{
-				return this._BicycleParking.Entity;
-			}
-			set
-			{
-				BicycleParking previousValue = this._BicycleParking.Entity;
-				if (((previousValue != value) 
-							|| (this._BicycleParking.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BicycleParking.Entity = null;
-						previousValue.BicycleParkingVotes.Remove(this);
-					}
-					this._BicycleParking.Entity = value;
-					if ((value != null))
-					{
-						value.BicycleParkingVotes.Add(this);
-						this._BicycleParkingID = value.ID;
-					}
-					else
-					{
-						this._BicycleParkingID = default(int);
-					}
-					this.SendPropertyChanged("BicycleParking");
+					this.SendPropertyChanged("BycicleDirection");
 				}
 			}
 		}
@@ -1387,554 +651,8 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Goal")]
-	public partial class Goal : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _UserID;
-		
-		private bool _IsPublic;
-		
-		private string _Url;
-		
-		private string _Text;
-		
-		private int _Count;
-		
-		private int _Progress;
-		
-		private System.DateTime _AddedDate;
-		
-		private bool _IsReady;
-		
-		private int _ColumnsCount;
-		
-		private EntitySet<GoalCell> _GoalCells;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnIsPublicChanging(bool value);
-    partial void OnIsPublicChanged();
-    partial void OnUrlChanging(string value);
-    partial void OnUrlChanged();
-    partial void OnTextChanging(string value);
-    partial void OnTextChanged();
-    partial void OnCountChanging(int value);
-    partial void OnCountChanged();
-    partial void OnProgressChanging(int value);
-    partial void OnProgressChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    partial void OnIsReadyChanging(bool value);
-    partial void OnIsReadyChanged();
-    partial void OnColumnsCountChanging(int value);
-    partial void OnColumnsCountChanged();
-    #endregion
-		
-		public Goal()
-		{
-			this._GoalCells = new EntitySet<GoalCell>(new Action<GoalCell>(this.attach_GoalCells), new Action<GoalCell>(this.detach_GoalCells));
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPublic", DbType="Bit NOT NULL")]
-		public bool IsPublic
-		{
-			get
-			{
-				return this._IsPublic;
-			}
-			set
-			{
-				if ((this._IsPublic != value))
-				{
-					this.OnIsPublicChanging(value);
-					this.SendPropertyChanging();
-					this._IsPublic = value;
-					this.SendPropertyChanged("IsPublic");
-					this.OnIsPublicChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="NVarChar(140) NOT NULL", CanBeNull=false)]
-		public string Url
-		{
-			get
-			{
-				return this._Url;
-			}
-			set
-			{
-				if ((this._Url != value))
-				{
-					this.OnUrlChanging(value);
-					this.SendPropertyChanging();
-					this._Url = value;
-					this.SendPropertyChanged("Url");
-					this.OnUrlChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NVarChar(140) NOT NULL", CanBeNull=false)]
-		public string Text
-		{
-			get
-			{
-				return this._Text;
-			}
-			set
-			{
-				if ((this._Text != value))
-				{
-					this.OnTextChanging(value);
-					this.SendPropertyChanging();
-					this._Text = value;
-					this.SendPropertyChanged("Text");
-					this.OnTextChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Count", DbType="Int NOT NULL")]
-		public int Count
-		{
-			get
-			{
-				return this._Count;
-			}
-			set
-			{
-				if ((this._Count != value))
-				{
-					this.OnCountChanging(value);
-					this.SendPropertyChanging();
-					this._Count = value;
-					this.SendPropertyChanged("Count");
-					this.OnCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Progress", DbType="Int NOT NULL")]
-		public int Progress
-		{
-			get
-			{
-				return this._Progress;
-			}
-			set
-			{
-				if ((this._Progress != value))
-				{
-					this.OnProgressChanging(value);
-					this.SendPropertyChanging();
-					this._Progress = value;
-					this.SendPropertyChanged("Progress");
-					this.OnProgressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsReady", DbType="Bit NOT NULL")]
-		public bool IsReady
-		{
-			get
-			{
-				return this._IsReady;
-			}
-			set
-			{
-				if ((this._IsReady != value))
-				{
-					this.OnIsReadyChanging(value);
-					this.SendPropertyChanging();
-					this._IsReady = value;
-					this.SendPropertyChanged("IsReady");
-					this.OnIsReadyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColumnsCount", DbType="Int NOT NULL")]
-		public int ColumnsCount
-		{
-			get
-			{
-				return this._ColumnsCount;
-			}
-			set
-			{
-				if ((this._ColumnsCount != value))
-				{
-					this.OnColumnsCountChanging(value);
-					this.SendPropertyChanging();
-					this._ColumnsCount = value;
-					this.SendPropertyChanged("ColumnsCount");
-					this.OnColumnsCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Goal_GoalCell", Storage="_GoalCells", ThisKey="ID", OtherKey="GoalID")]
-		public EntitySet<GoalCell> GoalCells
-		{
-			get
-			{
-				return this._GoalCells;
-			}
-			set
-			{
-				this._GoalCells.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Goal", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Goals.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Goals.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_GoalCells(GoalCell entity)
-		{
-			this.SendPropertyChanging();
-			entity.Goal = this;
-		}
-		
-		private void detach_GoalCells(GoalCell entity)
-		{
-			this.SendPropertyChanging();
-			entity.Goal = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GoalCell")]
-	public partial class GoalCell : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _GoalID;
-		
-		private int _Number;
-		
-		private int _State;
-		
-		private System.Nullable<System.DateTime> _AddedDate;
-		
-		private EntityRef<Goal> _Goal;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnGoalIDChanging(int value);
-    partial void OnGoalIDChanged();
-    partial void OnNumberChanging(int value);
-    partial void OnNumberChanged();
-    partial void OnStateChanging(int value);
-    partial void OnStateChanged();
-    partial void OnAddedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnAddedDateChanged();
-    #endregion
-		
-		public GoalCell()
-		{
-			this._Goal = default(EntityRef<Goal>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GoalID", DbType="Int NOT NULL")]
-		public int GoalID
-		{
-			get
-			{
-				return this._GoalID;
-			}
-			set
-			{
-				if ((this._GoalID != value))
-				{
-					if (this._Goal.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnGoalIDChanging(value);
-					this.SendPropertyChanging();
-					this._GoalID = value;
-					this.SendPropertyChanged("GoalID");
-					this.OnGoalIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Number", DbType="Int NOT NULL")]
-		public int Number
-		{
-			get
-			{
-				return this._Number;
-			}
-			set
-			{
-				if ((this._Number != value))
-				{
-					this.OnNumberChanging(value);
-					this.SendPropertyChanging();
-					this._Number = value;
-					this.SendPropertyChanged("Number");
-					this.OnNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="Int NOT NULL")]
-		public int State
-		{
-			get
-			{
-				return this._State;
-			}
-			set
-			{
-				if ((this._State != value))
-				{
-					this.OnStateChanging(value);
-					this.SendPropertyChanging();
-					this._State = value;
-					this.SendPropertyChanged("State");
-					this.OnStateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Goal_GoalCell", Storage="_Goal", ThisKey="GoalID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Goal Goal
-		{
-			get
-			{
-				return this._Goal.Entity;
-			}
-			set
-			{
-				Goal previousValue = this._Goal.Entity;
-				if (((previousValue != value) 
-							|| (this._Goal.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Goal.Entity = null;
-						previousValue.GoalCells.Remove(this);
-					}
-					this._Goal.Entity = value;
-					if ((value != null))
-					{
-						value.GoalCells.Add(this);
-						this._GoalID = value.ID;
-					}
-					else
-					{
-						this._GoalID = default(int);
-					}
-					this.SendPropertyChanged("Goal");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.City")]
-	public partial class City : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UtilityTag")]
+	public partial class UtilityTag : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1943,23 +661,7 @@ namespace maps.Model
 		
 		private string _Name;
 		
-		private double _CenterLat;
-		
-		private double _CenterLng;
-		
-		private int _Zoom;
-		
-		private EntitySet<User> _Users;
-		
-		private EntitySet<BicycleParking> _BicycleParkings;
-		
-		private EntitySet<BycicleDirection> _BycicleDirections;
-		
-		private EntitySet<BicycleLine> _BicycleLines;
-		
-		private EntitySet<UtilityDepartment> _UtilityDepartments;
-		
-		private EntitySet<UtilityIssue> _UtilityIssues;
+		private EntitySet<UtilityIssueTag> _UtilityIssueTags;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1969,22 +671,11 @@ namespace maps.Model
     partial void OnIDChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
-    partial void OnCenterLatChanging(double value);
-    partial void OnCenterLatChanged();
-    partial void OnCenterLngChanging(double value);
-    partial void OnCenterLngChanged();
-    partial void OnZoomChanging(int value);
-    partial void OnZoomChanged();
     #endregion
 		
-		public City()
+		public UtilityTag()
 		{
-			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
-			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
-			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
-			this._BicycleLines = new EntitySet<BicycleLine>(new Action<BicycleLine>(this.attach_BicycleLines), new Action<BicycleLine>(this.detach_BicycleLines));
-			this._UtilityDepartments = new EntitySet<UtilityDepartment>(new Action<UtilityDepartment>(this.attach_UtilityDepartments), new Action<UtilityDepartment>(this.detach_UtilityDepartments));
-			this._UtilityIssues = new EntitySet<UtilityIssue>(new Action<UtilityIssue>(this.attach_UtilityIssues), new Action<UtilityIssue>(this.detach_UtilityIssues));
+			this._UtilityIssueTags = new EntitySet<UtilityIssueTag>(new Action<UtilityIssueTag>(this.attach_UtilityIssueTags), new Action<UtilityIssueTag>(this.detach_UtilityIssueTags));
 			OnCreated();
 		}
 		
@@ -2008,7 +699,7 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
 		public string Name
 		{
 			get
@@ -2028,141 +719,16 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterLat", DbType="Float NOT NULL")]
-		public double CenterLat
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityTag_UtilityIssueTag", Storage="_UtilityIssueTags", ThisKey="ID", OtherKey="UtilityTagID")]
+		public EntitySet<UtilityIssueTag> UtilityIssueTags
 		{
 			get
 			{
-				return this._CenterLat;
+				return this._UtilityIssueTags;
 			}
 			set
 			{
-				if ((this._CenterLat != value))
-				{
-					this.OnCenterLatChanging(value);
-					this.SendPropertyChanging();
-					this._CenterLat = value;
-					this.SendPropertyChanged("CenterLat");
-					this.OnCenterLatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterLng", DbType="Float NOT NULL")]
-		public double CenterLng
-		{
-			get
-			{
-				return this._CenterLng;
-			}
-			set
-			{
-				if ((this._CenterLng != value))
-				{
-					this.OnCenterLngChanging(value);
-					this.SendPropertyChanging();
-					this._CenterLng = value;
-					this.SendPropertyChanged("CenterLng");
-					this.OnCenterLngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zoom", DbType="Int NOT NULL")]
-		public int Zoom
-		{
-			get
-			{
-				return this._Zoom;
-			}
-			set
-			{
-				if ((this._Zoom != value))
-				{
-					this.OnZoomChanging(value);
-					this.SendPropertyChanging();
-					this._Zoom = value;
-					this.SendPropertyChanged("Zoom");
-					this.OnZoomChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_User", Storage="_Users", ThisKey="ID", OtherKey="CityID")]
-		public EntitySet<User> Users
-		{
-			get
-			{
-				return this._Users;
-			}
-			set
-			{
-				this._Users.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="CityID")]
-		public EntitySet<BicycleParking> BicycleParkings
-		{
-			get
-			{
-				return this._BicycleParkings;
-			}
-			set
-			{
-				this._BicycleParkings.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="CityID")]
-		public EntitySet<BycicleDirection> BycicleDirections
-		{
-			get
-			{
-				return this._BycicleDirections;
-			}
-			set
-			{
-				this._BycicleDirections.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleLine", Storage="_BicycleLines", ThisKey="ID", OtherKey="CityID")]
-		public EntitySet<BicycleLine> BicycleLines
-		{
-			get
-			{
-				return this._BicycleLines;
-			}
-			set
-			{
-				this._BicycleLines.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_UtilityDepartment", Storage="_UtilityDepartments", ThisKey="ID", OtherKey="CityID")]
-		public EntitySet<UtilityDepartment> UtilityDepartments
-		{
-			get
-			{
-				return this._UtilityDepartments;
-			}
-			set
-			{
-				this._UtilityDepartments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_UtilityIssue", Storage="_UtilityIssues", ThisKey="ID", OtherKey="CityID")]
-		public EntitySet<UtilityIssue> UtilityIssues
-		{
-			get
-			{
-				return this._UtilityIssues;
-			}
-			set
-			{
-				this._UtilityIssues.Assign(value);
+				this._UtilityIssueTags.Assign(value);
 			}
 		}
 		
@@ -2186,81 +752,21 @@ namespace maps.Model
 			}
 		}
 		
-		private void attach_Users(User entity)
+		private void attach_UtilityIssueTags(UtilityIssueTag entity)
 		{
 			this.SendPropertyChanging();
-			entity.City = this;
+			entity.UtilityTag = this;
 		}
 		
-		private void detach_Users(User entity)
+		private void detach_UtilityIssueTags(UtilityIssueTag entity)
 		{
 			this.SendPropertyChanging();
-			entity.City = null;
-		}
-		
-		private void attach_BicycleParkings(BicycleParking entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = this;
-		}
-		
-		private void detach_BicycleParkings(BicycleParking entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = null;
-		}
-		
-		private void attach_BycicleDirections(BycicleDirection entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = this;
-		}
-		
-		private void detach_BycicleDirections(BycicleDirection entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = null;
-		}
-		
-		private void attach_BicycleLines(BicycleLine entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = this;
-		}
-		
-		private void detach_BicycleLines(BicycleLine entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = null;
-		}
-		
-		private void attach_UtilityDepartments(UtilityDepartment entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = this;
-		}
-		
-		private void detach_UtilityDepartments(UtilityDepartment entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = null;
-		}
-		
-		private void attach_UtilityIssues(UtilityIssue entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = this;
-		}
-		
-		private void detach_UtilityIssues(UtilityIssue entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = null;
+			entity.UtilityTag = null;
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleLine")]
+	public partial class BicycleLine : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2269,45 +775,21 @@ namespace maps.Model
 		
 		private int _CityID;
 		
-		private string _Login;
+		private string _Start;
 		
-		private string _Email;
+		private string _End;
 		
-		private string _Password;
+		private double _StartLat;
 		
-		private System.DateTime _AddedDate;
+		private double _StartLng;
 		
-		private System.DateTime _LastVisitDate;
+		private double _EndLat;
 		
-		private string _AvatarPath;
+		private double _EndLng;
 		
-		private string _FirstName;
+		private int _Quantity;
 		
-		private string _LastName;
-		
-		private EntitySet<UserRole> _UserRoles;
-		
-		private EntitySet<Social> _Socials;
-		
-		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
-		
-		private EntitySet<Goal> _Goals;
-		
-		private EntitySet<BicycleParking> _BicycleParkings;
-		
-		private EntitySet<BycicleDirection> _BycicleDirections;
-		
-		private EntitySet<Comment> _Comments;
-		
-		private EntitySet<UtilityPhoto> _UtilityPhotos;
-		
-		private EntitySet<UtilityIssue> _UtilityIssues;
-		
-		private EntitySet<UtilityIssueHistory> _UtilityIssueHistories;
-		
-		private EntitySet<Report> _Reports;
-		
-		private EntitySet<Report> _Reports1;
+		private EntitySet<BicycleDirectionLine> _BicycleDirectionLines;
 		
 		private EntityRef<City> _City;
 		
@@ -2319,38 +801,25 @@ namespace maps.Model
     partial void OnIDChanged();
     partial void OnCityIDChanging(int value);
     partial void OnCityIDChanged();
-    partial void OnLoginChanging(string value);
-    partial void OnLoginChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    partial void OnLastVisitDateChanging(System.DateTime value);
-    partial void OnLastVisitDateChanged();
-    partial void OnAvatarPathChanging(string value);
-    partial void OnAvatarPathChanged();
-    partial void OnFirstNameChanging(string value);
-    partial void OnFirstNameChanged();
-    partial void OnLastNameChanging(string value);
-    partial void OnLastNameChanged();
+    partial void OnStartChanging(string value);
+    partial void OnStartChanged();
+    partial void OnEndChanging(string value);
+    partial void OnEndChanged();
+    partial void OnStartLatChanging(double value);
+    partial void OnStartLatChanged();
+    partial void OnStartLngChanging(double value);
+    partial void OnStartLngChanged();
+    partial void OnEndLatChanging(double value);
+    partial void OnEndLatChanged();
+    partial void OnEndLngChanging(double value);
+    partial void OnEndLngChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
     #endregion
 		
-		public User()
+		public BicycleLine()
 		{
-			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
-			this._Socials = new EntitySet<Social>(new Action<Social>(this.attach_Socials), new Action<Social>(this.detach_Socials));
-			this._BicycleParkingVotes = new EntitySet<BicycleParkingVote>(new Action<BicycleParkingVote>(this.attach_BicycleParkingVotes), new Action<BicycleParkingVote>(this.detach_BicycleParkingVotes));
-			this._Goals = new EntitySet<Goal>(new Action<Goal>(this.attach_Goals), new Action<Goal>(this.detach_Goals));
-			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
-			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
-			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
-			this._UtilityPhotos = new EntitySet<UtilityPhoto>(new Action<UtilityPhoto>(this.attach_UtilityPhotos), new Action<UtilityPhoto>(this.detach_UtilityPhotos));
-			this._UtilityIssues = new EntitySet<UtilityIssue>(new Action<UtilityIssue>(this.attach_UtilityIssues), new Action<UtilityIssue>(this.detach_UtilityIssues));
-			this._UtilityIssueHistories = new EntitySet<UtilityIssueHistory>(new Action<UtilityIssueHistory>(this.attach_UtilityIssueHistories), new Action<UtilityIssueHistory>(this.detach_UtilityIssueHistories));
-			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
-			this._Reports1 = new EntitySet<Report>(new Action<Report>(this.attach_Reports1), new Action<Report>(this.detach_Reports1));
+			this._BicycleDirectionLines = new EntitySet<BicycleDirectionLine>(new Action<BicycleDirectionLine>(this.attach_BicycleDirectionLines), new Action<BicycleDirectionLine>(this.detach_BicycleDirectionLines));
 			this._City = default(EntityRef<City>);
 			OnCreated();
 		}
@@ -2399,323 +868,160 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Login", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string Login
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Start", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string Start
 		{
 			get
 			{
-				return this._Login;
+				return this._Start;
 			}
 			set
 			{
-				if ((this._Login != value))
+				if ((this._Start != value))
 				{
-					this.OnLoginChanging(value);
+					this.OnStartChanging(value);
 					this.SendPropertyChanging();
-					this._Login = value;
-					this.SendPropertyChanged("Login");
-					this.OnLoginChanged();
+					this._Start = value;
+					this.SendPropertyChanged("Start");
+					this.OnStartChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string Email
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[End]", Storage="_End", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string End
 		{
 			get
 			{
-				return this._Email;
+				return this._End;
 			}
 			set
 			{
-				if ((this._Email != value))
+				if ((this._End != value))
 				{
-					this.OnEmailChanging(value);
+					this.OnEndChanging(value);
 					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
+					this._End = value;
+					this.SendPropertyChanged("End");
+					this.OnEndChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Password
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartLat", DbType="Float NOT NULL")]
+		public double StartLat
 		{
 			get
 			{
-				return this._Password;
+				return this._StartLat;
 			}
 			set
 			{
-				if ((this._Password != value))
+				if ((this._StartLat != value))
 				{
-					this.OnPasswordChanging(value);
+					this.OnStartLatChanging(value);
 					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
+					this._StartLat = value;
+					this.SendPropertyChanged("StartLat");
+					this.OnStartLatChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartLng", DbType="Float NOT NULL")]
+		public double StartLng
 		{
 			get
 			{
-				return this._AddedDate;
+				return this._StartLng;
 			}
 			set
 			{
-				if ((this._AddedDate != value))
+				if ((this._StartLng != value))
 				{
-					this.OnAddedDateChanging(value);
+					this.OnStartLngChanging(value);
 					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
+					this._StartLng = value;
+					this.SendPropertyChanged("StartLng");
+					this.OnStartLngChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastVisitDate", DbType="DateTime NOT NULL")]
-		public System.DateTime LastVisitDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndLat", DbType="Float NOT NULL")]
+		public double EndLat
 		{
 			get
 			{
-				return this._LastVisitDate;
+				return this._EndLat;
 			}
 			set
 			{
-				if ((this._LastVisitDate != value))
+				if ((this._EndLat != value))
 				{
-					this.OnLastVisitDateChanging(value);
+					this.OnEndLatChanging(value);
 					this.SendPropertyChanging();
-					this._LastVisitDate = value;
-					this.SendPropertyChanged("LastVisitDate");
-					this.OnLastVisitDateChanged();
+					this._EndLat = value;
+					this.SendPropertyChanged("EndLat");
+					this.OnEndLatChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvatarPath", DbType="NVarChar(150)")]
-		public string AvatarPath
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndLng", DbType="Float NOT NULL")]
+		public double EndLng
 		{
 			get
 			{
-				return this._AvatarPath;
+				return this._EndLng;
 			}
 			set
 			{
-				if ((this._AvatarPath != value))
+				if ((this._EndLng != value))
 				{
-					this.OnAvatarPathChanging(value);
+					this.OnEndLngChanging(value);
 					this.SendPropertyChanging();
-					this._AvatarPath = value;
-					this.SendPropertyChanged("AvatarPath");
-					this.OnAvatarPathChanged();
+					this._EndLng = value;
+					this.SendPropertyChanged("EndLng");
+					this.OnEndLngChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(500)")]
-		public string FirstName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
 		{
 			get
 			{
-				return this._FirstName;
+				return this._Quantity;
 			}
 			set
 			{
-				if ((this._FirstName != value))
+				if ((this._Quantity != value))
 				{
-					this.OnFirstNameChanging(value);
+					this.OnQuantityChanging(value);
 					this.SendPropertyChanging();
-					this._FirstName = value;
-					this.SendPropertyChanged("FirstName");
-					this.OnFirstNameChanged();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(500)")]
-		public string LastName
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleLine_BicycleDirectionLine", Storage="_BicycleDirectionLines", ThisKey="ID", OtherKey="BicycleLineID")]
+		public EntitySet<BicycleDirectionLine> BicycleDirectionLines
 		{
 			get
 			{
-				return this._LastName;
+				return this._BicycleDirectionLines;
 			}
 			set
 			{
-				if ((this._LastName != value))
-				{
-					this.OnLastNameChanging(value);
-					this.SendPropertyChanging();
-					this._LastName = value;
-					this.SendPropertyChanged("LastName");
-					this.OnLastNameChanged();
-				}
+				this._BicycleDirectionLines.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserRole", Storage="_UserRoles", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<UserRole> UserRoles
-		{
-			get
-			{
-				return this._UserRoles;
-			}
-			set
-			{
-				this._UserRoles.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Social", Storage="_Socials", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<Social> Socials
-		{
-			get
-			{
-				return this._Socials;
-			}
-			set
-			{
-				this._Socials.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParkingVote", Storage="_BicycleParkingVotes", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<BicycleParkingVote> BicycleParkingVotes
-		{
-			get
-			{
-				return this._BicycleParkingVotes;
-			}
-			set
-			{
-				this._BicycleParkingVotes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Goal", Storage="_Goals", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<Goal> Goals
-		{
-			get
-			{
-				return this._Goals;
-			}
-			set
-			{
-				this._Goals.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<BicycleParking> BicycleParkings
-		{
-			get
-			{
-				return this._BicycleParkings;
-			}
-			set
-			{
-				this._BicycleParkings.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<BycicleDirection> BycicleDirections
-		{
-			get
-			{
-				return this._BycicleDirections;
-			}
-			set
-			{
-				this._BycicleDirections.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_Comments", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<Comment> Comments
-		{
-			get
-			{
-				return this._Comments;
-			}
-			set
-			{
-				this._Comments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityPhoto", Storage="_UtilityPhotos", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<UtilityPhoto> UtilityPhotos
-		{
-			get
-			{
-				return this._UtilityPhotos;
-			}
-			set
-			{
-				this._UtilityPhotos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityIssue", Storage="_UtilityIssues", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<UtilityIssue> UtilityIssues
-		{
-			get
-			{
-				return this._UtilityIssues;
-			}
-			set
-			{
-				this._UtilityIssues.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityIssueHistory", Storage="_UtilityIssueHistories", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<UtilityIssueHistory> UtilityIssueHistories
-		{
-			get
-			{
-				return this._UtilityIssueHistories;
-			}
-			set
-			{
-				this._UtilityIssueHistories.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Report", Storage="_Reports", ThisKey="ID", OtherKey="NotifyReporterID")]
-		public EntitySet<Report> Reports
-		{
-			get
-			{
-				return this._Reports;
-			}
-			set
-			{
-				this._Reports.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Report1", Storage="_Reports1", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<Report> Reports1
-		{
-			get
-			{
-				return this._Reports1;
-			}
-			set
-			{
-				this._Reports1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_User", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleLine", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
 		public City City
 		{
 			get
@@ -2732,12 +1038,12 @@ namespace maps.Model
 					if ((previousValue != null))
 					{
 						this._City.Entity = null;
-						previousValue.Users.Remove(this);
+						previousValue.BicycleLines.Remove(this);
 					}
 					this._City.Entity = value;
 					if ((value != null))
 					{
-						value.Users.Add(this);
+						value.BicycleLines.Add(this);
 						this._CityID = value.ID;
 					}
 					else
@@ -2769,148 +1075,16 @@ namespace maps.Model
 			}
 		}
 		
-		private void attach_UserRoles(UserRole entity)
+		private void attach_BicycleDirectionLines(BicycleDirectionLine entity)
 		{
 			this.SendPropertyChanging();
-			entity.User = this;
+			entity.BicycleLine = this;
 		}
 		
-		private void detach_UserRoles(UserRole entity)
+		private void detach_BicycleDirectionLines(BicycleDirectionLine entity)
 		{
 			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Socials(Social entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Socials(Social entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_BicycleParkingVotes(BicycleParkingVote entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_BicycleParkingVotes(BicycleParkingVote entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Goals(Goal entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Goals(Goal entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_BicycleParkings(BicycleParking entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_BicycleParkings(BicycleParking entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_BycicleDirections(BycicleDirection entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_BycicleDirections(BycicleDirection entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_UtilityPhotos(UtilityPhoto entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_UtilityPhotos(UtilityPhoto entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_UtilityIssues(UtilityIssue entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_UtilityIssues(UtilityIssue entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_UtilityIssueHistories(UtilityIssueHistory entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_UtilityIssueHistories(UtilityIssueHistory entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Reports(Report entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Reports(Report entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Reports1(Report entity)
-		{
-			this.SendPropertyChanging();
-			entity.User1 = this;
-		}
-		
-		private void detach_Reports1(Report entity)
-		{
-			this.SendPropertyChanging();
-			entity.User1 = null;
+			entity.BicycleLine = null;
 		}
 	}
 	
@@ -3518,6 +1692,824 @@ namespace maps.Model
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleParkingVote")]
+	public partial class BicycleParkingVote : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _UserID;
+		
+		private int _BicycleParkingID;
+		
+		private int _Mark;
+		
+		private EntityRef<BicycleParking> _BicycleParking;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnBicycleParkingIDChanging(int value);
+    partial void OnBicycleParkingIDChanged();
+    partial void OnMarkChanging(int value);
+    partial void OnMarkChanged();
+    #endregion
+		
+		public BicycleParkingVote()
+		{
+			this._BicycleParking = default(EntityRef<BicycleParking>);
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BicycleParkingID", DbType="Int NOT NULL")]
+		public int BicycleParkingID
+		{
+			get
+			{
+				return this._BicycleParkingID;
+			}
+			set
+			{
+				if ((this._BicycleParkingID != value))
+				{
+					if (this._BicycleParking.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBicycleParkingIDChanging(value);
+					this.SendPropertyChanging();
+					this._BicycleParkingID = value;
+					this.SendPropertyChanged("BicycleParkingID");
+					this.OnBicycleParkingIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mark", DbType="Int NOT NULL")]
+		public int Mark
+		{
+			get
+			{
+				return this._Mark;
+			}
+			set
+			{
+				if ((this._Mark != value))
+				{
+					this.OnMarkChanging(value);
+					this.SendPropertyChanging();
+					this._Mark = value;
+					this.SendPropertyChanged("Mark");
+					this.OnMarkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParking", ThisKey="BicycleParkingID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public BicycleParking BicycleParking
+		{
+			get
+			{
+				return this._BicycleParking.Entity;
+			}
+			set
+			{
+				BicycleParking previousValue = this._BicycleParking.Entity;
+				if (((previousValue != value) 
+							|| (this._BicycleParking.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BicycleParking.Entity = null;
+						previousValue.BicycleParkingVotes.Remove(this);
+					}
+					this._BicycleParking.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleParkingVotes.Add(this);
+						this._BicycleParkingID = value.ID;
+					}
+					else
+					{
+						this._BicycleParkingID = default(int);
+					}
+					this.SendPropertyChanged("BicycleParking");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParkingVote", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.BicycleParkingVotes.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleParkingVotes.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Brand")]
+	public partial class Brand : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private EntitySet<Bus> _Bus;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    #endregion
+		
+		public Brand()
+		{
+			this._Bus = new EntitySet<Bus>(new Action<Bus>(this.attach_Bus), new Action<Bus>(this.detach_Bus));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Brand_Bus", Storage="_Bus", ThisKey="ID", OtherKey="BrandID")]
+		public EntitySet<Bus> Bus
+		{
+			get
+			{
+				return this._Bus;
+			}
+			set
+			{
+				this._Bus.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Bus(Bus entity)
+		{
+			this.SendPropertyChanging();
+			entity.Brand = this;
+		}
+		
+		private void detach_Bus(Bus entity)
+		{
+			this.SendPropertyChanging();
+			entity.Brand = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bus")]
+	public partial class Bus : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _TransporteurID;
+		
+		private int _RouteID;
+		
+		private int _BrandID;
+		
+		private string _Number;
+		
+		private EntitySet<BusPhoto> _BusPhotos;
+		
+		private EntitySet<Report> _Reports;
+		
+		private EntityRef<Brand> _Brand;
+		
+		private EntityRef<Route> _Route;
+		
+		private EntityRef<Transporteur> _Transporteur;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTransporteurIDChanging(int value);
+    partial void OnTransporteurIDChanged();
+    partial void OnRouteIDChanging(int value);
+    partial void OnRouteIDChanged();
+    partial void OnBrandIDChanging(int value);
+    partial void OnBrandIDChanged();
+    partial void OnNumberChanging(string value);
+    partial void OnNumberChanged();
+    #endregion
+		
+		public Bus()
+		{
+			this._BusPhotos = new EntitySet<BusPhoto>(new Action<BusPhoto>(this.attach_BusPhotos), new Action<BusPhoto>(this.detach_BusPhotos));
+			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
+			this._Brand = default(EntityRef<Brand>);
+			this._Route = default(EntityRef<Route>);
+			this._Transporteur = default(EntityRef<Transporteur>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransporteurID", DbType="Int NOT NULL")]
+		public int TransporteurID
+		{
+			get
+			{
+				return this._TransporteurID;
+			}
+			set
+			{
+				if ((this._TransporteurID != value))
+				{
+					if (this._Transporteur.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTransporteurIDChanging(value);
+					this.SendPropertyChanging();
+					this._TransporteurID = value;
+					this.SendPropertyChanged("TransporteurID");
+					this.OnTransporteurIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteID", DbType="Int NOT NULL")]
+		public int RouteID
+		{
+			get
+			{
+				return this._RouteID;
+			}
+			set
+			{
+				if ((this._RouteID != value))
+				{
+					if (this._Route.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRouteIDChanging(value);
+					this.SendPropertyChanging();
+					this._RouteID = value;
+					this.SendPropertyChanged("RouteID");
+					this.OnRouteIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandID", DbType="Int NOT NULL")]
+		public int BrandID
+		{
+			get
+			{
+				return this._BrandID;
+			}
+			set
+			{
+				if ((this._BrandID != value))
+				{
+					if (this._Brand.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBrandIDChanging(value);
+					this.SendPropertyChanging();
+					this._BrandID = value;
+					this.SendPropertyChanged("BrandID");
+					this.OnBrandIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Number", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Number
+		{
+			get
+			{
+				return this._Number;
+			}
+			set
+			{
+				if ((this._Number != value))
+				{
+					this.OnNumberChanging(value);
+					this.SendPropertyChanging();
+					this._Number = value;
+					this.SendPropertyChanged("Number");
+					this.OnNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_BusPhoto", Storage="_BusPhotos", ThisKey="ID", OtherKey="BusID")]
+		public EntitySet<BusPhoto> BusPhotos
+		{
+			get
+			{
+				return this._BusPhotos;
+			}
+			set
+			{
+				this._BusPhotos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_Report", Storage="_Reports", ThisKey="ID", OtherKey="BusID")]
+		public EntitySet<Report> Reports
+		{
+			get
+			{
+				return this._Reports;
+			}
+			set
+			{
+				this._Reports.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Brand_Bus", Storage="_Brand", ThisKey="BrandID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Brand Brand
+		{
+			get
+			{
+				return this._Brand.Entity;
+			}
+			set
+			{
+				Brand previousValue = this._Brand.Entity;
+				if (((previousValue != value) 
+							|| (this._Brand.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Brand.Entity = null;
+						previousValue.Bus.Remove(this);
+					}
+					this._Brand.Entity = value;
+					if ((value != null))
+					{
+						value.Bus.Add(this);
+						this._BrandID = value.ID;
+					}
+					else
+					{
+						this._BrandID = default(int);
+					}
+					this.SendPropertyChanged("Brand");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_Bus", Storage="_Route", ThisKey="RouteID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Route Route
+		{
+			get
+			{
+				return this._Route.Entity;
+			}
+			set
+			{
+				Route previousValue = this._Route.Entity;
+				if (((previousValue != value) 
+							|| (this._Route.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Route.Entity = null;
+						previousValue.Bus.Remove(this);
+					}
+					this._Route.Entity = value;
+					if ((value != null))
+					{
+						value.Bus.Add(this);
+						this._RouteID = value.ID;
+					}
+					else
+					{
+						this._RouteID = default(int);
+					}
+					this.SendPropertyChanged("Route");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transporteur_Bus", Storage="_Transporteur", ThisKey="TransporteurID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Transporteur Transporteur
+		{
+			get
+			{
+				return this._Transporteur.Entity;
+			}
+			set
+			{
+				Transporteur previousValue = this._Transporteur.Entity;
+				if (((previousValue != value) 
+							|| (this._Transporteur.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Transporteur.Entity = null;
+						previousValue.Bus.Remove(this);
+					}
+					this._Transporteur.Entity = value;
+					if ((value != null))
+					{
+						value.Bus.Add(this);
+						this._TransporteurID = value.ID;
+					}
+					else
+					{
+						this._TransporteurID = default(int);
+					}
+					this.SendPropertyChanged("Transporteur");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BusPhotos(BusPhoto entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bus = this;
+		}
+		
+		private void detach_BusPhotos(BusPhoto entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bus = null;
+		}
+		
+		private void attach_Reports(Report entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bus = this;
+		}
+		
+		private void detach_Reports(Report entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bus = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BusPhoto")]
+	public partial class BusPhoto : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _BusID;
+		
+		private string _ImagePath;
+		
+		private EntityRef<Bus> _Bus;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnBusIDChanging(int value);
+    partial void OnBusIDChanged();
+    partial void OnImagePathChanging(string value);
+    partial void OnImagePathChanged();
+    #endregion
+		
+		public BusPhoto()
+		{
+			this._Bus = default(EntityRef<Bus>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BusID", DbType="Int NOT NULL")]
+		public int BusID
+		{
+			get
+			{
+				return this._BusID;
+			}
+			set
+			{
+				if ((this._BusID != value))
+				{
+					if (this._Bus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBusIDChanging(value);
+					this.SendPropertyChanging();
+					this._BusID = value;
+					this.SendPropertyChanged("BusID");
+					this.OnBusIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string ImagePath
+		{
+			get
+			{
+				return this._ImagePath;
+			}
+			set
+			{
+				if ((this._ImagePath != value))
+				{
+					this.OnImagePathChanging(value);
+					this.SendPropertyChanging();
+					this._ImagePath = value;
+					this.SendPropertyChanged("ImagePath");
+					this.OnImagePathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_BusPhoto", Storage="_Bus", ThisKey="BusID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Bus Bus
+		{
+			get
+			{
+				return this._Bus.Entity;
+			}
+			set
+			{
+				Bus previousValue = this._Bus.Entity;
+				if (((previousValue != value) 
+							|| (this._Bus.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Bus.Entity = null;
+						previousValue.BusPhotos.Remove(this);
+					}
+					this._Bus.Entity = value;
+					if ((value != null))
+					{
+						value.BusPhotos.Add(this);
+						this._BusID = value.ID;
+					}
+					else
+					{
+						this._BusID = default(int);
+					}
+					this.SendPropertyChanged("Bus");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BycicleDirection")]
 	public partial class BycicleDirection : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3858,33 +2850,33 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleLine")]
-	public partial class BicycleLine : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.City")]
+	public partial class City : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private int _CityID;
+		private string _Name;
 		
-		private string _Start;
+		private double _CenterLat;
 		
-		private string _End;
+		private double _CenterLng;
 		
-		private double _StartLat;
+		private int _Zoom;
 		
-		private double _StartLng;
+		private EntitySet<BicycleLine> _BicycleLines;
 		
-		private double _EndLat;
+		private EntitySet<BicycleParking> _BicycleParkings;
 		
-		private double _EndLng;
+		private EntitySet<BycicleDirection> _BycicleDirections;
 		
-		private int _Quantity;
+		private EntitySet<UtilityDepartment> _UtilityDepartments;
 		
-		private EntitySet<BicycleDirectionLine> _BicycleDirectionLines;
+		private EntitySet<UtilityIssue> _UtilityIssues;
 		
-		private EntityRef<City> _City;
+		private EntitySet<User> _Users;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3892,28 +2884,24 @@ namespace maps.Model
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnCityIDChanging(int value);
-    partial void OnCityIDChanged();
-    partial void OnStartChanging(string value);
-    partial void OnStartChanged();
-    partial void OnEndChanging(string value);
-    partial void OnEndChanged();
-    partial void OnStartLatChanging(double value);
-    partial void OnStartLatChanged();
-    partial void OnStartLngChanging(double value);
-    partial void OnStartLngChanged();
-    partial void OnEndLatChanging(double value);
-    partial void OnEndLatChanged();
-    partial void OnEndLngChanging(double value);
-    partial void OnEndLngChanged();
-    partial void OnQuantityChanging(int value);
-    partial void OnQuantityChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnCenterLatChanging(double value);
+    partial void OnCenterLatChanged();
+    partial void OnCenterLngChanging(double value);
+    partial void OnCenterLngChanged();
+    partial void OnZoomChanging(int value);
+    partial void OnZoomChanged();
     #endregion
 		
-		public BicycleLine()
+		public City()
 		{
-			this._BicycleDirectionLines = new EntitySet<BicycleDirectionLine>(new Action<BicycleDirectionLine>(this.attach_BicycleDirectionLines), new Action<BicycleDirectionLine>(this.detach_BicycleDirectionLines));
-			this._City = default(EntityRef<City>);
+			this._BicycleLines = new EntitySet<BicycleLine>(new Action<BicycleLine>(this.attach_BicycleLines), new Action<BicycleLine>(this.detach_BicycleLines));
+			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
+			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
+			this._UtilityDepartments = new EntitySet<UtilityDepartment>(new Action<UtilityDepartment>(this.attach_UtilityDepartments), new Action<UtilityDepartment>(this.detach_UtilityDepartments));
+			this._UtilityIssues = new EntitySet<UtilityIssue>(new Action<UtilityIssue>(this.attach_UtilityIssues), new Action<UtilityIssue>(this.detach_UtilityIssues));
+			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
 			OnCreated();
 		}
 		
@@ -3937,214 +2925,161 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
-		public int CityID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
 		{
 			get
 			{
-				return this._CityID;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._CityID != value))
+				if ((this._Name != value))
 				{
-					if (this._City.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCityIDChanging(value);
+					this.OnNameChanging(value);
 					this.SendPropertyChanging();
-					this._CityID = value;
-					this.SendPropertyChanged("CityID");
-					this.OnCityIDChanged();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Start", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string Start
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterLat", DbType="Float NOT NULL")]
+		public double CenterLat
 		{
 			get
 			{
-				return this._Start;
+				return this._CenterLat;
 			}
 			set
 			{
-				if ((this._Start != value))
+				if ((this._CenterLat != value))
 				{
-					this.OnStartChanging(value);
+					this.OnCenterLatChanging(value);
 					this.SendPropertyChanging();
-					this._Start = value;
-					this.SendPropertyChanged("Start");
-					this.OnStartChanged();
+					this._CenterLat = value;
+					this.SendPropertyChanged("CenterLat");
+					this.OnCenterLatChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[End]", Storage="_End", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string End
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterLng", DbType="Float NOT NULL")]
+		public double CenterLng
 		{
 			get
 			{
-				return this._End;
+				return this._CenterLng;
 			}
 			set
 			{
-				if ((this._End != value))
+				if ((this._CenterLng != value))
 				{
-					this.OnEndChanging(value);
+					this.OnCenterLngChanging(value);
 					this.SendPropertyChanging();
-					this._End = value;
-					this.SendPropertyChanged("End");
-					this.OnEndChanged();
+					this._CenterLng = value;
+					this.SendPropertyChanged("CenterLng");
+					this.OnCenterLngChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartLat", DbType="Float NOT NULL")]
-		public double StartLat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zoom", DbType="Int NOT NULL")]
+		public int Zoom
 		{
 			get
 			{
-				return this._StartLat;
+				return this._Zoom;
 			}
 			set
 			{
-				if ((this._StartLat != value))
+				if ((this._Zoom != value))
 				{
-					this.OnStartLatChanging(value);
+					this.OnZoomChanging(value);
 					this.SendPropertyChanging();
-					this._StartLat = value;
-					this.SendPropertyChanged("StartLat");
-					this.OnStartLatChanged();
+					this._Zoom = value;
+					this.SendPropertyChanged("Zoom");
+					this.OnZoomChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartLng", DbType="Float NOT NULL")]
-		public double StartLng
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleLine", Storage="_BicycleLines", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<BicycleLine> BicycleLines
 		{
 			get
 			{
-				return this._StartLng;
+				return this._BicycleLines;
 			}
 			set
 			{
-				if ((this._StartLng != value))
-				{
-					this.OnStartLngChanging(value);
-					this.SendPropertyChanging();
-					this._StartLng = value;
-					this.SendPropertyChanged("StartLng");
-					this.OnStartLngChanged();
-				}
+				this._BicycleLines.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndLat", DbType="Float NOT NULL")]
-		public double EndLat
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<BicycleParking> BicycleParkings
 		{
 			get
 			{
-				return this._EndLat;
+				return this._BicycleParkings;
 			}
 			set
 			{
-				if ((this._EndLat != value))
-				{
-					this.OnEndLatChanging(value);
-					this.SendPropertyChanging();
-					this._EndLat = value;
-					this.SendPropertyChanged("EndLat");
-					this.OnEndLatChanged();
-				}
+				this._BicycleParkings.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndLng", DbType="Float NOT NULL")]
-		public double EndLng
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<BycicleDirection> BycicleDirections
 		{
 			get
 			{
-				return this._EndLng;
+				return this._BycicleDirections;
 			}
 			set
 			{
-				if ((this._EndLng != value))
-				{
-					this.OnEndLngChanging(value);
-					this.SendPropertyChanging();
-					this._EndLng = value;
-					this.SendPropertyChanged("EndLng");
-					this.OnEndLngChanged();
-				}
+				this._BycicleDirections.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-		public int Quantity
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_UtilityDepartment", Storage="_UtilityDepartments", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<UtilityDepartment> UtilityDepartments
 		{
 			get
 			{
-				return this._Quantity;
+				return this._UtilityDepartments;
 			}
 			set
 			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
-				}
+				this._UtilityDepartments.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleLine_BicycleDirectionLine", Storage="_BicycleDirectionLines", ThisKey="ID", OtherKey="BicycleLineID")]
-		public EntitySet<BicycleDirectionLine> BicycleDirectionLines
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_UtilityIssue", Storage="_UtilityIssues", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<UtilityIssue> UtilityIssues
 		{
 			get
 			{
-				return this._BicycleDirectionLines;
+				return this._UtilityIssues;
 			}
 			set
 			{
-				this._BicycleDirectionLines.Assign(value);
+				this._UtilityIssues.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleLine", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
-		public City City
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_User", Storage="_Users", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<User> Users
 		{
 			get
 			{
-				return this._City.Entity;
+				return this._Users;
 			}
 			set
 			{
-				City previousValue = this._City.Entity;
-				if (((previousValue != value) 
-							|| (this._City.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._City.Entity = null;
-						previousValue.BicycleLines.Remove(this);
-					}
-					this._City.Entity = value;
-					if ((value != null))
-					{
-						value.BicycleLines.Add(this);
-						this._CityID = value.ID;
-					}
-					else
-					{
-						this._CityID = default(int);
-					}
-					this.SendPropertyChanged("City");
-				}
+				this._Users.Assign(value);
 			}
 		}
 		
@@ -4168,16 +3103,76 @@ namespace maps.Model
 			}
 		}
 		
-		private void attach_BicycleDirectionLines(BicycleDirectionLine entity)
+		private void attach_BicycleLines(BicycleLine entity)
 		{
 			this.SendPropertyChanging();
-			entity.BicycleLine = this;
+			entity.City = this;
 		}
 		
-		private void detach_BicycleDirectionLines(BicycleDirectionLine entity)
+		private void detach_BicycleLines(BicycleLine entity)
 		{
 			this.SendPropertyChanging();
-			entity.BicycleLine = null;
+			entity.City = null;
+		}
+		
+		private void attach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_BycicleDirections(BycicleDirection entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_BycicleDirections(BycicleDirection entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_UtilityDepartments(UtilityDepartment entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_UtilityDepartments(UtilityDepartment entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_UtilityIssues(UtilityIssue entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_UtilityIssues(UtilityIssue entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
 		}
 	}
 	
@@ -4199,9 +3194,9 @@ namespace maps.Model
 		
 		private EntitySet<Comment> _Comments;
 		
-		private EntitySet<UtilityIssueComment> _UtilityIssueComments;
-		
 		private EntitySet<ReportComment> _ReportComments;
+		
+		private EntitySet<UtilityIssueComment> _UtilityIssueComments;
 		
 		private EntityRef<Comment> _Comment1;
 		
@@ -4226,8 +3221,8 @@ namespace maps.Model
 		public Comment()
 		{
 			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
-			this._UtilityIssueComments = new EntitySet<UtilityIssueComment>(new Action<UtilityIssueComment>(this.attach_UtilityIssueComments), new Action<UtilityIssueComment>(this.detach_UtilityIssueComments));
 			this._ReportComments = new EntitySet<ReportComment>(new Action<ReportComment>(this.attach_ReportComments), new Action<ReportComment>(this.detach_ReportComments));
+			this._UtilityIssueComments = new EntitySet<UtilityIssueComment>(new Action<UtilityIssueComment>(this.attach_UtilityIssueComments), new Action<UtilityIssueComment>(this.detach_UtilityIssueComments));
 			this._Comment1 = default(EntityRef<Comment>);
 			this._User = default(EntityRef<User>);
 			OnCreated();
@@ -4354,19 +3349,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comment_UtilityIssueComment", Storage="_UtilityIssueComments", ThisKey="ID", OtherKey="CommentID")]
-		public EntitySet<UtilityIssueComment> UtilityIssueComments
-		{
-			get
-			{
-				return this._UtilityIssueComments;
-			}
-			set
-			{
-				this._UtilityIssueComments.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comment_ReportComment", Storage="_ReportComments", ThisKey="ID", OtherKey="CommentID")]
 		public EntitySet<ReportComment> ReportComments
 		{
@@ -4377,6 +3359,19 @@ namespace maps.Model
 			set
 			{
 				this._ReportComments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comment_UtilityIssueComment", Storage="_UtilityIssueComments", ThisKey="ID", OtherKey="CommentID")]
+		public EntitySet<UtilityIssueComment> UtilityIssueComments
+		{
+			get
+			{
+				return this._UtilityIssueComments;
+			}
+			set
+			{
+				this._UtilityIssueComments.Assign(value);
 			}
 		}
 		
@@ -4480,18 +3475,6 @@ namespace maps.Model
 			entity.Comment1 = null;
 		}
 		
-		private void attach_UtilityIssueComments(UtilityIssueComment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Comment = this;
-		}
-		
-		private void detach_UtilityIssueComments(UtilityIssueComment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Comment = null;
-		}
-		
 		private void attach_ReportComments(ReportComment entity)
 		{
 			this.SendPropertyChanging();
@@ -4503,31 +3486,31 @@ namespace maps.Model
 			this.SendPropertyChanging();
 			entity.Comment = null;
 		}
+		
+		private void attach_UtilityIssueComments(UtilityIssueComment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Comment = this;
+		}
+		
+		private void detach_UtilityIssueComments(UtilityIssueComment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Comment = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UtilityPhoto")]
-	public partial class UtilityPhoto : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FundamentalRule")]
+	public partial class FundamentalRule : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private System.Nullable<int> _UtilityIssueID;
+		private string _Name;
 		
-		private System.Nullable<int> _UserID;
-		
-		private string _Image;
-		
-		private System.DateTime _AddedDate;
-		
-		private int _State;
-		
-		private bool _IsRemoved;
-		
-		private EntityRef<User> _User;
-		
-		private EntityRef<UtilityIssue> _UtilityIssue;
+		private EntitySet<Rule> _Rules;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -4535,24 +3518,13 @@ namespace maps.Model
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnUtilityIssueIDChanging(System.Nullable<int> value);
-    partial void OnUtilityIssueIDChanged();
-    partial void OnUserIDChanging(System.Nullable<int> value);
-    partial void OnUserIDChanged();
-    partial void OnImageChanging(string value);
-    partial void OnImageChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    partial void OnStateChanging(int value);
-    partial void OnStateChanged();
-    partial void OnIsRemovedChanging(bool value);
-    partial void OnIsRemovedChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
     #endregion
 		
-		public UtilityPhoto()
+		public FundamentalRule()
 		{
-			this._User = default(EntityRef<User>);
-			this._UtilityIssue = default(EntityRef<UtilityIssue>);
+			this._Rules = new EntitySet<Rule>(new Action<Rule>(this.attach_Rules), new Action<Rule>(this.detach_Rules));
 			OnCreated();
 		}
 		
@@ -4576,32 +3548,157 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UtilityIssueID", DbType="Int")]
-		public System.Nullable<int> UtilityIssueID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string Name
 		{
 			get
 			{
-				return this._UtilityIssueID;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._UtilityIssueID != value))
+				if ((this._Name != value))
 				{
-					if (this._UtilityIssue.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUtilityIssueIDChanging(value);
+					this.OnNameChanging(value);
 					this.SendPropertyChanging();
-					this._UtilityIssueID = value;
-					this.SendPropertyChanged("UtilityIssueID");
-					this.OnUtilityIssueIDChanged();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
-		public System.Nullable<int> UserID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FundamentalRule_Rule", Storage="_Rules", ThisKey="ID", OtherKey="FundamentalRuleID")]
+		public EntitySet<Rule> Rules
+		{
+			get
+			{
+				return this._Rules;
+			}
+			set
+			{
+				this._Rules.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Rules(Rule entity)
+		{
+			this.SendPropertyChanging();
+			entity.FundamentalRule = this;
+		}
+		
+		private void detach_Rules(Rule entity)
+		{
+			this.SendPropertyChanging();
+			entity.FundamentalRule = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Goal")]
+	public partial class Goal : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _UserID;
+		
+		private bool _IsPublic;
+		
+		private string _Url;
+		
+		private string _Text;
+		
+		private int _Count;
+		
+		private int _Progress;
+		
+		private System.DateTime _AddedDate;
+		
+		private bool _IsReady;
+		
+		private int _ColumnsCount;
+		
+		private EntitySet<GoalCell> _GoalCells;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnIsPublicChanging(bool value);
+    partial void OnIsPublicChanged();
+    partial void OnUrlChanging(string value);
+    partial void OnUrlChanged();
+    partial void OnTextChanging(string value);
+    partial void OnTextChanged();
+    partial void OnCountChanging(int value);
+    partial void OnCountChanged();
+    partial void OnProgressChanging(int value);
+    partial void OnProgressChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnIsReadyChanging(bool value);
+    partial void OnIsReadyChanged();
+    partial void OnColumnsCountChanging(int value);
+    partial void OnColumnsCountChanged();
+    #endregion
+		
+		public Goal()
+		{
+			this._GoalCells = new EntitySet<GoalCell>(new Action<GoalCell>(this.attach_GoalCells), new Action<GoalCell>(this.detach_GoalCells));
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
 		{
 			get
 			{
@@ -4624,22 +3721,102 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string Image
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPublic", DbType="Bit NOT NULL")]
+		public bool IsPublic
 		{
 			get
 			{
-				return this._Image;
+				return this._IsPublic;
 			}
 			set
 			{
-				if ((this._Image != value))
+				if ((this._IsPublic != value))
 				{
-					this.OnImageChanging(value);
+					this.OnIsPublicChanging(value);
 					this.SendPropertyChanging();
-					this._Image = value;
-					this.SendPropertyChanged("Image");
-					this.OnImageChanged();
+					this._IsPublic = value;
+					this.SendPropertyChanged("IsPublic");
+					this.OnIsPublicChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="NVarChar(140) NOT NULL", CanBeNull=false)]
+		public string Url
+		{
+			get
+			{
+				return this._Url;
+			}
+			set
+			{
+				if ((this._Url != value))
+				{
+					this.OnUrlChanging(value);
+					this.SendPropertyChanging();
+					this._Url = value;
+					this.SendPropertyChanged("Url");
+					this.OnUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NVarChar(140) NOT NULL", CanBeNull=false)]
+		public string Text
+		{
+			get
+			{
+				return this._Text;
+			}
+			set
+			{
+				if ((this._Text != value))
+				{
+					this.OnTextChanging(value);
+					this.SendPropertyChanging();
+					this._Text = value;
+					this.SendPropertyChanged("Text");
+					this.OnTextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Count", DbType="Int NOT NULL")]
+		public int Count
+		{
+			get
+			{
+				return this._Count;
+			}
+			set
+			{
+				if ((this._Count != value))
+				{
+					this.OnCountChanging(value);
+					this.SendPropertyChanging();
+					this._Count = value;
+					this.SendPropertyChanged("Count");
+					this.OnCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Progress", DbType="Int NOT NULL")]
+		public int Progress
+		{
+			get
+			{
+				return this._Progress;
+			}
+			set
+			{
+				if ((this._Progress != value))
+				{
+					this.OnProgressChanging(value);
+					this.SendPropertyChanging();
+					this._Progress = value;
+					this.SendPropertyChanged("Progress");
+					this.OnProgressChanged();
 				}
 			}
 		}
@@ -4664,6 +3841,230 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsReady", DbType="Bit NOT NULL")]
+		public bool IsReady
+		{
+			get
+			{
+				return this._IsReady;
+			}
+			set
+			{
+				if ((this._IsReady != value))
+				{
+					this.OnIsReadyChanging(value);
+					this.SendPropertyChanging();
+					this._IsReady = value;
+					this.SendPropertyChanged("IsReady");
+					this.OnIsReadyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColumnsCount", DbType="Int NOT NULL")]
+		public int ColumnsCount
+		{
+			get
+			{
+				return this._ColumnsCount;
+			}
+			set
+			{
+				if ((this._ColumnsCount != value))
+				{
+					this.OnColumnsCountChanging(value);
+					this.SendPropertyChanging();
+					this._ColumnsCount = value;
+					this.SendPropertyChanged("ColumnsCount");
+					this.OnColumnsCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Goal_GoalCell", Storage="_GoalCells", ThisKey="ID", OtherKey="GoalID")]
+		public EntitySet<GoalCell> GoalCells
+		{
+			get
+			{
+				return this._GoalCells;
+			}
+			set
+			{
+				this._GoalCells.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Goal", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Goals.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Goals.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_GoalCells(GoalCell entity)
+		{
+			this.SendPropertyChanging();
+			entity.Goal = this;
+		}
+		
+		private void detach_GoalCells(GoalCell entity)
+		{
+			this.SendPropertyChanging();
+			entity.Goal = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GoalCell")]
+	public partial class GoalCell : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _GoalID;
+		
+		private int _Number;
+		
+		private int _State;
+		
+		private System.Nullable<System.DateTime> _AddedDate;
+		
+		private EntityRef<Goal> _Goal;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnGoalIDChanging(int value);
+    partial void OnGoalIDChanged();
+    partial void OnNumberChanging(int value);
+    partial void OnNumberChanged();
+    partial void OnStateChanging(int value);
+    partial void OnStateChanged();
+    partial void OnAddedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnAddedDateChanged();
+    #endregion
+		
+		public GoalCell()
+		{
+			this._Goal = default(EntityRef<Goal>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GoalID", DbType="Int NOT NULL")]
+		public int GoalID
+		{
+			get
+			{
+				return this._GoalID;
+			}
+			set
+			{
+				if ((this._GoalID != value))
+				{
+					if (this._Goal.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnGoalIDChanging(value);
+					this.SendPropertyChanging();
+					this._GoalID = value;
+					this.SendPropertyChanged("GoalID");
+					this.OnGoalIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Number", DbType="Int NOT NULL")]
+		public int Number
+		{
+			get
+			{
+				return this._Number;
+			}
+			set
+			{
+				if ((this._Number != value))
+				{
+					this.OnNumberChanging(value);
+					this.SendPropertyChanging();
+					this._Number = value;
+					this.SendPropertyChanged("Number");
+					this.OnNumberChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="Int NOT NULL")]
 		public int State
 		{
@@ -4684,90 +4085,56 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsRemoved", DbType="Bit NOT NULL")]
-		public bool IsRemoved
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> AddedDate
 		{
 			get
 			{
-				return this._IsRemoved;
+				return this._AddedDate;
 			}
 			set
 			{
-				if ((this._IsRemoved != value))
+				if ((this._AddedDate != value))
 				{
-					this.OnIsRemovedChanging(value);
+					this.OnAddedDateChanging(value);
 					this.SendPropertyChanging();
-					this._IsRemoved = value;
-					this.SendPropertyChanged("IsRemoved");
-					this.OnIsRemovedChanged();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityPhoto", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
-		public User User
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Goal_GoalCell", Storage="_Goal", ThisKey="GoalID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Goal Goal
 		{
 			get
 			{
-				return this._User.Entity;
+				return this._Goal.Entity;
 			}
 			set
 			{
-				User previousValue = this._User.Entity;
+				Goal previousValue = this._Goal.Entity;
 				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
+							|| (this._Goal.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._User.Entity = null;
-						previousValue.UtilityPhotos.Remove(this);
+						this._Goal.Entity = null;
+						previousValue.GoalCells.Remove(this);
 					}
-					this._User.Entity = value;
+					this._Goal.Entity = value;
 					if ((value != null))
 					{
-						value.UtilityPhotos.Add(this);
-						this._UserID = value.ID;
+						value.GoalCells.Add(this);
+						this._GoalID = value.ID;
 					}
 					else
 					{
-						this._UserID = default(Nullable<int>);
+						this._GoalID = default(int);
 					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityPhoto", Storage="_UtilityIssue", ThisKey="UtilityIssueID", OtherKey="ID", IsForeignKey=true)]
-		public UtilityIssue UtilityIssue
-		{
-			get
-			{
-				return this._UtilityIssue.Entity;
-			}
-			set
-			{
-				UtilityIssue previousValue = this._UtilityIssue.Entity;
-				if (((previousValue != value) 
-							|| (this._UtilityIssue.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._UtilityIssue.Entity = null;
-						previousValue.UtilityPhotos.Remove(this);
-					}
-					this._UtilityIssue.Entity = value;
-					if ((value != null))
-					{
-						value.UtilityPhotos.Add(this);
-						this._UtilityIssueID = value.ID;
-					}
-					else
-					{
-						this._UtilityIssueID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("UtilityIssue");
+					this.SendPropertyChanged("Goal");
 				}
 			}
 		}
@@ -4793,21 +4160,33 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UtilityIssueComment")]
-	public partial class UtilityIssueComment : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Notify")]
+	public partial class Notify : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private int _UtilityIssueID;
+		private System.Nullable<int> _ReportID;
 		
-		private int _CommentID;
+		private string _Phone;
 		
-		private EntityRef<Comment> _Comment;
+		private string _Email;
 		
-		private EntityRef<UtilityIssue> _UtilityIssue;
+		private string _Sender;
+		
+		private string _Header;
+		
+		private string _Text;
+		
+		private System.DateTime _AddedDate;
+		
+		private bool _IsSent;
+		
+		private string _Result;
+		
+		private EntityRef<Report> _Report;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -4815,16 +4194,29 @@ namespace maps.Model
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnUtilityIssueIDChanging(int value);
-    partial void OnUtilityIssueIDChanged();
-    partial void OnCommentIDChanging(int value);
-    partial void OnCommentIDChanged();
+    partial void OnReportIDChanging(System.Nullable<int> value);
+    partial void OnReportIDChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnSenderChanging(string value);
+    partial void OnSenderChanged();
+    partial void OnHeaderChanging(string value);
+    partial void OnHeaderChanged();
+    partial void OnTextChanging(string value);
+    partial void OnTextChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnIsSentChanging(bool value);
+    partial void OnIsSentChanged();
+    partial void OnResultChanging(string value);
+    partial void OnResultChanged();
     #endregion
 		
-		public UtilityIssueComment()
+		public Notify()
 		{
-			this._Comment = default(EntityRef<Comment>);
-			this._UtilityIssue = default(EntityRef<UtilityIssue>);
+			this._Report = default(EntityRef<Report>);
 			OnCreated();
 		}
 		
@@ -4848,26 +4240,320 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UtilityIssueID", DbType="Int NOT NULL")]
-		public int UtilityIssueID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportID", DbType="Int")]
+		public System.Nullable<int> ReportID
 		{
 			get
 			{
-				return this._UtilityIssueID;
+				return this._ReportID;
 			}
 			set
 			{
-				if ((this._UtilityIssueID != value))
+				if ((this._ReportID != value))
 				{
-					if (this._UtilityIssue.HasLoadedOrAssignedValue)
+					if (this._Report.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnUtilityIssueIDChanging(value);
+					this.OnReportIDChanging(value);
 					this.SendPropertyChanging();
-					this._UtilityIssueID = value;
-					this.SendPropertyChanged("UtilityIssueID");
-					this.OnUtilityIssueIDChanged();
+					this._ReportID = value;
+					this.SendPropertyChanged("ReportID");
+					this.OnReportIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NVarChar(50)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(150)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sender", DbType="NVarChar(50)")]
+		public string Sender
+		{
+			get
+			{
+				return this._Sender;
+			}
+			set
+			{
+				if ((this._Sender != value))
+				{
+					this.OnSenderChanging(value);
+					this.SendPropertyChanging();
+					this._Sender = value;
+					this.SendPropertyChanged("Sender");
+					this.OnSenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Header", DbType="NVarChar(150)")]
+		public string Header
+		{
+			get
+			{
+				return this._Header;
+			}
+			set
+			{
+				if ((this._Header != value))
+				{
+					this.OnHeaderChanging(value);
+					this.SendPropertyChanging();
+					this._Header = value;
+					this.SendPropertyChanged("Header");
+					this.OnHeaderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NVarChar(MAX)")]
+		public string Text
+		{
+			get
+			{
+				return this._Text;
+			}
+			set
+			{
+				if ((this._Text != value))
+				{
+					this.OnTextChanging(value);
+					this.SendPropertyChanging();
+					this._Text = value;
+					this.SendPropertyChanged("Text");
+					this.OnTextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsSent", DbType="Bit NOT NULL")]
+		public bool IsSent
+		{
+			get
+			{
+				return this._IsSent;
+			}
+			set
+			{
+				if ((this._IsSent != value))
+				{
+					this.OnIsSentChanging(value);
+					this.SendPropertyChanging();
+					this._IsSent = value;
+					this.SendPropertyChanged("IsSent");
+					this.OnIsSentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="NVarChar(MAX)")]
+		public string Result
+		{
+			get
+			{
+				return this._Result;
+			}
+			set
+			{
+				if ((this._Result != value))
+				{
+					this.OnResultChanging(value);
+					this.SendPropertyChanging();
+					this._Result = value;
+					this.SendPropertyChanged("Result");
+					this.OnResultChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_Notify", Storage="_Report", ThisKey="ReportID", OtherKey="ID", IsForeignKey=true)]
+		public Report Report
+		{
+			get
+			{
+				return this._Report.Entity;
+			}
+			set
+			{
+				Report previousValue = this._Report.Entity;
+				if (((previousValue != value) 
+							|| (this._Report.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Report.Entity = null;
+						previousValue.Notifies.Remove(this);
+					}
+					this._Report.Entity = value;
+					if ((value != null))
+					{
+						value.Notifies.Add(this);
+						this._ReportID = value.ID;
+					}
+					else
+					{
+						this._ReportID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Report");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReportComment")]
+	public partial class ReportComment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _ReportID;
+		
+		private int _CommentID;
+		
+		private EntityRef<Comment> _Comment;
+		
+		private EntityRef<Report> _Report;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnReportIDChanging(int value);
+    partial void OnReportIDChanged();
+    partial void OnCommentIDChanging(int value);
+    partial void OnCommentIDChanged();
+    #endregion
+		
+		public ReportComment()
+		{
+			this._Comment = default(EntityRef<Comment>);
+			this._Report = default(EntityRef<Report>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportID", DbType="Int NOT NULL")]
+		public int ReportID
+		{
+			get
+			{
+				return this._ReportID;
+			}
+			set
+			{
+				if ((this._ReportID != value))
+				{
+					if (this._Report.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnReportIDChanging(value);
+					this.SendPropertyChanging();
+					this._ReportID = value;
+					this.SendPropertyChanged("ReportID");
+					this.OnReportIDChanged();
 				}
 			}
 		}
@@ -4896,7 +4582,7 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comment_UtilityIssueComment", Storage="_Comment", ThisKey="CommentID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comment_ReportComment", Storage="_Comment", ThisKey="CommentID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Comment Comment
 		{
 			get
@@ -4913,12 +4599,12 @@ namespace maps.Model
 					if ((previousValue != null))
 					{
 						this._Comment.Entity = null;
-						previousValue.UtilityIssueComments.Remove(this);
+						previousValue.ReportComments.Remove(this);
 					}
 					this._Comment.Entity = value;
 					if ((value != null))
 					{
-						value.UtilityIssueComments.Add(this);
+						value.ReportComments.Add(this);
 						this._CommentID = value.ID;
 					}
 					else
@@ -4930,36 +4616,36 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityIssueComment", Storage="_UtilityIssue", ThisKey="UtilityIssueID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public UtilityIssue UtilityIssue
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportComment", Storage="_Report", ThisKey="ReportID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Report Report
 		{
 			get
 			{
-				return this._UtilityIssue.Entity;
+				return this._Report.Entity;
 			}
 			set
 			{
-				UtilityIssue previousValue = this._UtilityIssue.Entity;
+				Report previousValue = this._Report.Entity;
 				if (((previousValue != value) 
-							|| (this._UtilityIssue.HasLoadedOrAssignedValue == false)))
+							|| (this._Report.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._UtilityIssue.Entity = null;
-						previousValue.UtilityIssueComments.Remove(this);
+						this._Report.Entity = null;
+						previousValue.ReportComments.Remove(this);
 					}
-					this._UtilityIssue.Entity = value;
+					this._Report.Entity = value;
 					if ((value != null))
 					{
-						value.UtilityIssueComments.Add(this);
-						this._UtilityIssueID = value.ID;
+						value.ReportComments.Add(this);
+						this._ReportID = value.ID;
 					}
 					else
 					{
-						this._UtilityIssueID = default(int);
+						this._ReportID = default(int);
 					}
-					this.SendPropertyChanged("UtilityIssue");
+					this.SendPropertyChanged("Report");
 				}
 			}
 		}
@@ -4985,21 +4671,19 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UtilityIssueTag")]
-	public partial class UtilityIssueTag : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReportPhoto")]
+	public partial class ReportPhoto : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private int _UtilityIssueID;
+		private System.Nullable<int> _ReportID;
 		
-		private int _UtilityTagID;
+		private string _ImagePath;
 		
-		private EntityRef<UtilityTag> _UtilityTag;
-		
-		private EntityRef<UtilityIssue> _UtilityIssue;
+		private EntityRef<Report> _Report;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5007,16 +4691,15 @@ namespace maps.Model
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnUtilityIssueIDChanging(int value);
-    partial void OnUtilityIssueIDChanged();
-    partial void OnUtilityTagIDChanging(int value);
-    partial void OnUtilityTagIDChanged();
+    partial void OnReportIDChanging(System.Nullable<int> value);
+    partial void OnReportIDChanged();
+    partial void OnImagePathChanging(string value);
+    partial void OnImagePathChanged();
     #endregion
 		
-		public UtilityIssueTag()
+		public ReportPhoto()
 		{
-			this._UtilityTag = default(EntityRef<UtilityTag>);
-			this._UtilityIssue = default(EntityRef<UtilityIssue>);
+			this._Report = default(EntityRef<Report>);
 			OnCreated();
 		}
 		
@@ -5040,118 +4723,80 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UtilityIssueID", DbType="Int NOT NULL")]
-		public int UtilityIssueID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportID", DbType="Int")]
+		public System.Nullable<int> ReportID
 		{
 			get
 			{
-				return this._UtilityIssueID;
+				return this._ReportID;
 			}
 			set
 			{
-				if ((this._UtilityIssueID != value))
+				if ((this._ReportID != value))
 				{
-					if (this._UtilityIssue.HasLoadedOrAssignedValue)
+					if (this._Report.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnUtilityIssueIDChanging(value);
+					this.OnReportIDChanging(value);
 					this.SendPropertyChanging();
-					this._UtilityIssueID = value;
-					this.SendPropertyChanged("UtilityIssueID");
-					this.OnUtilityIssueIDChanged();
+					this._ReportID = value;
+					this.SendPropertyChanged("ReportID");
+					this.OnReportIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UtilityTagID", DbType="Int NOT NULL")]
-		public int UtilityTagID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string ImagePath
 		{
 			get
 			{
-				return this._UtilityTagID;
+				return this._ImagePath;
 			}
 			set
 			{
-				if ((this._UtilityTagID != value))
+				if ((this._ImagePath != value))
 				{
-					if (this._UtilityTag.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUtilityTagIDChanging(value);
+					this.OnImagePathChanging(value);
 					this.SendPropertyChanging();
-					this._UtilityTagID = value;
-					this.SendPropertyChanged("UtilityTagID");
-					this.OnUtilityTagIDChanged();
+					this._ImagePath = value;
+					this.SendPropertyChanged("ImagePath");
+					this.OnImagePathChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityTag_UtilityIssueTag", Storage="_UtilityTag", ThisKey="UtilityTagID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public UtilityTag UtilityTag
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportPhoto", Storage="_Report", ThisKey="ReportID", OtherKey="ID", IsForeignKey=true)]
+		public Report Report
 		{
 			get
 			{
-				return this._UtilityTag.Entity;
+				return this._Report.Entity;
 			}
 			set
 			{
-				UtilityTag previousValue = this._UtilityTag.Entity;
+				Report previousValue = this._Report.Entity;
 				if (((previousValue != value) 
-							|| (this._UtilityTag.HasLoadedOrAssignedValue == false)))
+							|| (this._Report.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._UtilityTag.Entity = null;
-						previousValue.UtilityIssueTags.Remove(this);
+						this._Report.Entity = null;
+						previousValue.ReportPhotos.Remove(this);
 					}
-					this._UtilityTag.Entity = value;
+					this._Report.Entity = value;
 					if ((value != null))
 					{
-						value.UtilityIssueTags.Add(this);
-						this._UtilityTagID = value.ID;
+						value.ReportPhotos.Add(this);
+						this._ReportID = value.ID;
 					}
 					else
 					{
-						this._UtilityTagID = default(int);
+						this._ReportID = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("UtilityTag");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityIssueTag", Storage="_UtilityIssue", ThisKey="UtilityIssueID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public UtilityIssue UtilityIssue
-		{
-			get
-			{
-				return this._UtilityIssue.Entity;
-			}
-			set
-			{
-				UtilityIssue previousValue = this._UtilityIssue.Entity;
-				if (((previousValue != value) 
-							|| (this._UtilityIssue.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._UtilityIssue.Entity = null;
-						previousValue.UtilityIssueTags.Remove(this);
-					}
-					this._UtilityIssue.Entity = value;
-					if ((value != null))
-					{
-						value.UtilityIssueTags.Add(this);
-						this._UtilityIssueID = value.ID;
-					}
-					else
-					{
-						this._UtilityIssueID = default(int);
-					}
-					this.SendPropertyChanged("UtilityIssue");
+					this.SendPropertyChanged("Report");
 				}
 			}
 		}
@@ -5177,17 +4822,19 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UtilityTag")]
-	public partial class UtilityTag : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Role")]
+	public partial class Role : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
+		private string _Code;
+		
 		private string _Name;
 		
-		private EntitySet<UtilityIssueTag> _UtilityIssueTags;
+		private EntitySet<UserRole> _UserRoles;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5195,13 +4842,15 @@ namespace maps.Model
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
+    partial void OnCodeChanging(string value);
+    partial void OnCodeChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
     #endregion
 		
-		public UtilityTag()
+		public Role()
 		{
-			this._UtilityIssueTags = new EntitySet<UtilityIssueTag>(new Action<UtilityIssueTag>(this.attach_UtilityIssueTags), new Action<UtilityIssueTag>(this.detach_UtilityIssueTags));
+			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
 			OnCreated();
 		}
 		
@@ -5225,7 +4874,27 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Code
+		{
+			get
+			{
+				return this._Code;
+			}
+			set
+			{
+				if ((this._Code != value))
+				{
+					this.OnCodeChanging(value);
+					this.SendPropertyChanging();
+					this._Code = value;
+					this.SendPropertyChanged("Code");
+					this.OnCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string Name
 		{
 			get
@@ -5245,16 +4914,16 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityTag_UtilityIssueTag", Storage="_UtilityIssueTags", ThisKey="ID", OtherKey="UtilityTagID")]
-		public EntitySet<UtilityIssueTag> UtilityIssueTags
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_UserRole", Storage="_UserRoles", ThisKey="ID", OtherKey="RoleID")]
+		public EntitySet<UserRole> UserRoles
 		{
 			get
 			{
-				return this._UtilityIssueTags;
+				return this._UserRoles;
 			}
 			set
 			{
-				this._UtilityIssueTags.Assign(value);
+				this._UserRoles.Assign(value);
 			}
 		}
 		
@@ -5278,16 +4947,1749 @@ namespace maps.Model
 			}
 		}
 		
-		private void attach_UtilityIssueTags(UtilityIssueTag entity)
+		private void attach_UserRoles(UserRole entity)
 		{
 			this.SendPropertyChanging();
-			entity.UtilityTag = this;
+			entity.Role = this;
 		}
 		
-		private void detach_UtilityIssueTags(UtilityIssueTag entity)
+		private void detach_UserRoles(UserRole entity)
 		{
 			this.SendPropertyChanging();
-			entity.UtilityTag = null;
+			entity.Role = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Route")]
+	public partial class Route : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private double _Length;
+		
+		private EntitySet<Bus> _Bus;
+		
+		private EntitySet<RouteSection> _RouteSections;
+		
+		private EntitySet<Report> _Reports;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnLengthChanging(double value);
+    partial void OnLengthChanged();
+    #endregion
+		
+		public Route()
+		{
+			this._Bus = new EntitySet<Bus>(new Action<Bus>(this.attach_Bus), new Action<Bus>(this.detach_Bus));
+			this._RouteSections = new EntitySet<RouteSection>(new Action<RouteSection>(this.attach_RouteSections), new Action<RouteSection>(this.detach_RouteSections));
+			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="Float NOT NULL")]
+		public double Length
+		{
+			get
+			{
+				return this._Length;
+			}
+			set
+			{
+				if ((this._Length != value))
+				{
+					this.OnLengthChanging(value);
+					this.SendPropertyChanging();
+					this._Length = value;
+					this.SendPropertyChanged("Length");
+					this.OnLengthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_Bus", Storage="_Bus", ThisKey="ID", OtherKey="RouteID")]
+		public EntitySet<Bus> Bus
+		{
+			get
+			{
+				return this._Bus;
+			}
+			set
+			{
+				this._Bus.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_RouteSection", Storage="_RouteSections", ThisKey="ID", OtherKey="RouteID")]
+		public EntitySet<RouteSection> RouteSections
+		{
+			get
+			{
+				return this._RouteSections;
+			}
+			set
+			{
+				this._RouteSections.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_Report", Storage="_Reports", ThisKey="ID", OtherKey="RouteID")]
+		public EntitySet<Report> Reports
+		{
+			get
+			{
+				return this._Reports;
+			}
+			set
+			{
+				this._Reports.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Bus(Bus entity)
+		{
+			this.SendPropertyChanging();
+			entity.Route = this;
+		}
+		
+		private void detach_Bus(Bus entity)
+		{
+			this.SendPropertyChanging();
+			entity.Route = null;
+		}
+		
+		private void attach_RouteSections(RouteSection entity)
+		{
+			this.SendPropertyChanging();
+			entity.Route = this;
+		}
+		
+		private void detach_RouteSections(RouteSection entity)
+		{
+			this.SendPropertyChanging();
+			entity.Route = null;
+		}
+		
+		private void attach_Reports(Report entity)
+		{
+			this.SendPropertyChanging();
+			entity.Route = this;
+		}
+		
+		private void detach_Reports(Report entity)
+		{
+			this.SendPropertyChanging();
+			entity.Route = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RouteSection")]
+	public partial class RouteSection : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _RouteID;
+		
+		private int _StationID;
+		
+		private int _NextStationID;
+		
+		private EntityRef<Route> _Route;
+		
+		private EntityRef<Station> _Station;
+		
+		private EntityRef<Station> _Station1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnRouteIDChanging(int value);
+    partial void OnRouteIDChanged();
+    partial void OnStationIDChanging(int value);
+    partial void OnStationIDChanged();
+    partial void OnNextStationIDChanging(int value);
+    partial void OnNextStationIDChanged();
+    #endregion
+		
+		public RouteSection()
+		{
+			this._Route = default(EntityRef<Route>);
+			this._Station = default(EntityRef<Station>);
+			this._Station1 = default(EntityRef<Station>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteID", DbType="Int NOT NULL")]
+		public int RouteID
+		{
+			get
+			{
+				return this._RouteID;
+			}
+			set
+			{
+				if ((this._RouteID != value))
+				{
+					if (this._Route.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRouteIDChanging(value);
+					this.SendPropertyChanging();
+					this._RouteID = value;
+					this.SendPropertyChanged("RouteID");
+					this.OnRouteIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int NOT NULL")]
+		public int StationID
+		{
+			get
+			{
+				return this._StationID;
+			}
+			set
+			{
+				if ((this._StationID != value))
+				{
+					if (this._Station1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._StationID = value;
+					this.SendPropertyChanged("StationID");
+					this.OnStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NextStationID", DbType="Int NOT NULL")]
+		public int NextStationID
+		{
+			get
+			{
+				return this._NextStationID;
+			}
+			set
+			{
+				if ((this._NextStationID != value))
+				{
+					if (this._Station.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnNextStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._NextStationID = value;
+					this.SendPropertyChanged("NextStationID");
+					this.OnNextStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_RouteSection", Storage="_Route", ThisKey="RouteID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Route Route
+		{
+			get
+			{
+				return this._Route.Entity;
+			}
+			set
+			{
+				Route previousValue = this._Route.Entity;
+				if (((previousValue != value) 
+							|| (this._Route.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Route.Entity = null;
+						previousValue.RouteSections.Remove(this);
+					}
+					this._Route.Entity = value;
+					if ((value != null))
+					{
+						value.RouteSections.Add(this);
+						this._RouteID = value.ID;
+					}
+					else
+					{
+						this._RouteID = default(int);
+					}
+					this.SendPropertyChanged("Route");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_RouteSection", Storage="_Station", ThisKey="NextStationID", OtherKey="ID", IsForeignKey=true)]
+		public Station Station
+		{
+			get
+			{
+				return this._Station.Entity;
+			}
+			set
+			{
+				Station previousValue = this._Station.Entity;
+				if (((previousValue != value) 
+							|| (this._Station.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Station.Entity = null;
+						previousValue.RouteSections.Remove(this);
+					}
+					this._Station.Entity = value;
+					if ((value != null))
+					{
+						value.RouteSections.Add(this);
+						this._NextStationID = value.ID;
+					}
+					else
+					{
+						this._NextStationID = default(int);
+					}
+					this.SendPropertyChanged("Station");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_RouteSection1", Storage="_Station1", ThisKey="StationID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Station Station1
+		{
+			get
+			{
+				return this._Station1.Entity;
+			}
+			set
+			{
+				Station previousValue = this._Station1.Entity;
+				if (((previousValue != value) 
+							|| (this._Station1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Station1.Entity = null;
+						previousValue.RouteSections1.Remove(this);
+					}
+					this._Station1.Entity = value;
+					if ((value != null))
+					{
+						value.RouteSections1.Add(this);
+						this._StationID = value.ID;
+					}
+					else
+					{
+						this._StationID = default(int);
+					}
+					this.SendPropertyChanged("Station1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Rule]")]
+	public partial class Rule : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _FundamentalRuleID;
+		
+		private int _ТуреOfRule;
+		
+		private bool _IsRouteScope;
+		
+		private string _Name;
+		
+		private string _Description;
+		
+		private string _UrlToLaw;
+		
+		private EntitySet<RuleReport> _RuleReports;
+		
+		private EntityRef<FundamentalRule> _FundamentalRule;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnFundamentalRuleIDChanging(System.Nullable<int> value);
+    partial void OnFundamentalRuleIDChanged();
+    partial void OnТуреOfRuleChanging(int value);
+    partial void OnТуреOfRuleChanged();
+    partial void OnIsRouteScopeChanging(bool value);
+    partial void OnIsRouteScopeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnUrlToLawChanging(string value);
+    partial void OnUrlToLawChanged();
+    #endregion
+		
+		public Rule()
+		{
+			this._RuleReports = new EntitySet<RuleReport>(new Action<RuleReport>(this.attach_RuleReports), new Action<RuleReport>(this.detach_RuleReports));
+			this._FundamentalRule = default(EntityRef<FundamentalRule>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FundamentalRuleID", DbType="Int")]
+		public System.Nullable<int> FundamentalRuleID
+		{
+			get
+			{
+				return this._FundamentalRuleID;
+			}
+			set
+			{
+				if ((this._FundamentalRuleID != value))
+				{
+					if (this._FundamentalRule.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFundamentalRuleIDChanging(value);
+					this.SendPropertyChanging();
+					this._FundamentalRuleID = value;
+					this.SendPropertyChanged("FundamentalRuleID");
+					this.OnFundamentalRuleIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ТуреOfRule", DbType="Int NOT NULL")]
+		public int ТуреOfRule
+		{
+			get
+			{
+				return this._ТуреOfRule;
+			}
+			set
+			{
+				if ((this._ТуреOfRule != value))
+				{
+					this.OnТуреOfRuleChanging(value);
+					this.SendPropertyChanging();
+					this._ТуреOfRule = value;
+					this.SendPropertyChanged("ТуреOfRule");
+					this.OnТуреOfRuleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsRouteScope", DbType="Bit NOT NULL")]
+		public bool IsRouteScope
+		{
+			get
+			{
+				return this._IsRouteScope;
+			}
+			set
+			{
+				if ((this._IsRouteScope != value))
+				{
+					this.OnIsRouteScopeChanging(value);
+					this.SendPropertyChanging();
+					this._IsRouteScope = value;
+					this.SendPropertyChanged("IsRouteScope");
+					this.OnIsRouteScopeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UrlToLaw", DbType="NVarChar(500)")]
+		public string UrlToLaw
+		{
+			get
+			{
+				return this._UrlToLaw;
+			}
+			set
+			{
+				if ((this._UrlToLaw != value))
+				{
+					this.OnUrlToLawChanging(value);
+					this.SendPropertyChanging();
+					this._UrlToLaw = value;
+					this.SendPropertyChanged("UrlToLaw");
+					this.OnUrlToLawChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rule_RuleReport", Storage="_RuleReports", ThisKey="ID", OtherKey="RuleID")]
+		public EntitySet<RuleReport> RuleReports
+		{
+			get
+			{
+				return this._RuleReports;
+			}
+			set
+			{
+				this._RuleReports.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FundamentalRule_Rule", Storage="_FundamentalRule", ThisKey="FundamentalRuleID", OtherKey="ID", IsForeignKey=true)]
+		public FundamentalRule FundamentalRule
+		{
+			get
+			{
+				return this._FundamentalRule.Entity;
+			}
+			set
+			{
+				FundamentalRule previousValue = this._FundamentalRule.Entity;
+				if (((previousValue != value) 
+							|| (this._FundamentalRule.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._FundamentalRule.Entity = null;
+						previousValue.Rules.Remove(this);
+					}
+					this._FundamentalRule.Entity = value;
+					if ((value != null))
+					{
+						value.Rules.Add(this);
+						this._FundamentalRuleID = value.ID;
+					}
+					else
+					{
+						this._FundamentalRuleID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("FundamentalRule");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_RuleReports(RuleReport entity)
+		{
+			this.SendPropertyChanging();
+			entity.Rule = this;
+		}
+		
+		private void detach_RuleReports(RuleReport entity)
+		{
+			this.SendPropertyChanging();
+			entity.Rule = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RuleReport")]
+	public partial class RuleReport : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _RuleID;
+		
+		private int _ReportID;
+		
+		private EntityRef<Rule> _Rule;
+		
+		private EntityRef<Report> _Report;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnRuleIDChanging(int value);
+    partial void OnRuleIDChanged();
+    partial void OnReportIDChanging(int value);
+    partial void OnReportIDChanged();
+    #endregion
+		
+		public RuleReport()
+		{
+			this._Rule = default(EntityRef<Rule>);
+			this._Report = default(EntityRef<Report>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RuleID", DbType="Int NOT NULL")]
+		public int RuleID
+		{
+			get
+			{
+				return this._RuleID;
+			}
+			set
+			{
+				if ((this._RuleID != value))
+				{
+					if (this._Rule.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRuleIDChanging(value);
+					this.SendPropertyChanging();
+					this._RuleID = value;
+					this.SendPropertyChanged("RuleID");
+					this.OnRuleIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportID", DbType="Int NOT NULL")]
+		public int ReportID
+		{
+			get
+			{
+				return this._ReportID;
+			}
+			set
+			{
+				if ((this._ReportID != value))
+				{
+					if (this._Report.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnReportIDChanging(value);
+					this.SendPropertyChanging();
+					this._ReportID = value;
+					this.SendPropertyChanged("ReportID");
+					this.OnReportIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rule_RuleReport", Storage="_Rule", ThisKey="RuleID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Rule Rule
+		{
+			get
+			{
+				return this._Rule.Entity;
+			}
+			set
+			{
+				Rule previousValue = this._Rule.Entity;
+				if (((previousValue != value) 
+							|| (this._Rule.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Rule.Entity = null;
+						previousValue.RuleReports.Remove(this);
+					}
+					this._Rule.Entity = value;
+					if ((value != null))
+					{
+						value.RuleReports.Add(this);
+						this._RuleID = value.ID;
+					}
+					else
+					{
+						this._RuleID = default(int);
+					}
+					this.SendPropertyChanged("Rule");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_RuleReport", Storage="_Report", ThisKey="ReportID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Report Report
+		{
+			get
+			{
+				return this._Report.Entity;
+			}
+			set
+			{
+				Report previousValue = this._Report.Entity;
+				if (((previousValue != value) 
+							|| (this._Report.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Report.Entity = null;
+						previousValue.RuleReports.Remove(this);
+					}
+					this._Report.Entity = value;
+					if ((value != null))
+					{
+						value.RuleReports.Add(this);
+						this._ReportID = value.ID;
+					}
+					else
+					{
+						this._ReportID = default(int);
+					}
+					this.SendPropertyChanged("Report");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Shop")]
+	public partial class Shop : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _UserID;
+		
+		private string _Position;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnPositionChanging(string value);
+    partial void OnPositionChanged();
+    #endregion
+		
+		public Shop()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(50)")]
+		public string Position
+		{
+			get
+			{
+				return this._Position;
+			}
+			set
+			{
+				if ((this._Position != value))
+				{
+					this.OnPositionChanging(value);
+					this.SendPropertyChanging();
+					this._Position = value;
+					this.SendPropertyChanged("Position");
+					this.OnPositionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Social")]
+	public partial class Social : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _UserID;
+		
+		private string _Identified;
+		
+		private int _Provider;
+		
+		private string _UserInfo;
+		
+		private string _JsonResource;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnIdentifiedChanging(string value);
+    partial void OnIdentifiedChanged();
+    partial void OnProviderChanging(int value);
+    partial void OnProviderChanged();
+    partial void OnUserInfoChanging(string value);
+    partial void OnUserInfoChanged();
+    partial void OnJsonResourceChanging(string value);
+    partial void OnJsonResourceChanged();
+    #endregion
+		
+		public Social()
+		{
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Identified", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Identified
+		{
+			get
+			{
+				return this._Identified;
+			}
+			set
+			{
+				if ((this._Identified != value))
+				{
+					this.OnIdentifiedChanging(value);
+					this.SendPropertyChanging();
+					this._Identified = value;
+					this.SendPropertyChanged("Identified");
+					this.OnIdentifiedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Provider", DbType="Int NOT NULL")]
+		public int Provider
+		{
+			get
+			{
+				return this._Provider;
+			}
+			set
+			{
+				if ((this._Provider != value))
+				{
+					this.OnProviderChanging(value);
+					this.SendPropertyChanging();
+					this._Provider = value;
+					this.SendPropertyChanged("Provider");
+					this.OnProviderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserInfo", DbType="NVarChar(MAX)")]
+		public string UserInfo
+		{
+			get
+			{
+				return this._UserInfo;
+			}
+			set
+			{
+				if ((this._UserInfo != value))
+				{
+					this.OnUserInfoChanging(value);
+					this.SendPropertyChanging();
+					this._UserInfo = value;
+					this.SendPropertyChanged("UserInfo");
+					this.OnUserInfoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JsonResource", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string JsonResource
+		{
+			get
+			{
+				return this._JsonResource;
+			}
+			set
+			{
+				if ((this._JsonResource != value))
+				{
+					this.OnJsonResourceChanging(value);
+					this.SendPropertyChanging();
+					this._JsonResource = value;
+					this.SendPropertyChanged("JsonResource");
+					this.OnJsonResourceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Social", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Socials.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Socials.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Station")]
+	public partial class Station : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private double _Lat;
+		
+		private double _Lng;
+		
+		private bool _IsEndStation;
+		
+		private bool _HasPocket;
+		
+		private bool _HasNewTimetable;
+		
+		private EntitySet<RouteSection> _RouteSections;
+		
+		private EntitySet<RouteSection> _RouteSections1;
+		
+		private EntitySet<Report> _Reports;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnLatChanging(double value);
+    partial void OnLatChanged();
+    partial void OnLngChanging(double value);
+    partial void OnLngChanged();
+    partial void OnIsEndStationChanging(bool value);
+    partial void OnIsEndStationChanged();
+    partial void OnHasPocketChanging(bool value);
+    partial void OnHasPocketChanged();
+    partial void OnHasNewTimetableChanging(bool value);
+    partial void OnHasNewTimetableChanged();
+    #endregion
+		
+		public Station()
+		{
+			this._RouteSections = new EntitySet<RouteSection>(new Action<RouteSection>(this.attach_RouteSections), new Action<RouteSection>(this.detach_RouteSections));
+			this._RouteSections1 = new EntitySet<RouteSection>(new Action<RouteSection>(this.attach_RouteSections1), new Action<RouteSection>(this.detach_RouteSections1));
+			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Float NOT NULL")]
+		public double Lat
+		{
+			get
+			{
+				return this._Lat;
+			}
+			set
+			{
+				if ((this._Lat != value))
+				{
+					this.OnLatChanging(value);
+					this.SendPropertyChanging();
+					this._Lat = value;
+					this.SendPropertyChanged("Lat");
+					this.OnLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lng", DbType="Float NOT NULL")]
+		public double Lng
+		{
+			get
+			{
+				return this._Lng;
+			}
+			set
+			{
+				if ((this._Lng != value))
+				{
+					this.OnLngChanging(value);
+					this.SendPropertyChanging();
+					this._Lng = value;
+					this.SendPropertyChanged("Lng");
+					this.OnLngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsEndStation", DbType="Bit NOT NULL")]
+		public bool IsEndStation
+		{
+			get
+			{
+				return this._IsEndStation;
+			}
+			set
+			{
+				if ((this._IsEndStation != value))
+				{
+					this.OnIsEndStationChanging(value);
+					this.SendPropertyChanging();
+					this._IsEndStation = value;
+					this.SendPropertyChanged("IsEndStation");
+					this.OnIsEndStationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasPocket", DbType="Bit NOT NULL")]
+		public bool HasPocket
+		{
+			get
+			{
+				return this._HasPocket;
+			}
+			set
+			{
+				if ((this._HasPocket != value))
+				{
+					this.OnHasPocketChanging(value);
+					this.SendPropertyChanging();
+					this._HasPocket = value;
+					this.SendPropertyChanged("HasPocket");
+					this.OnHasPocketChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasNewTimetable", DbType="Bit NOT NULL")]
+		public bool HasNewTimetable
+		{
+			get
+			{
+				return this._HasNewTimetable;
+			}
+			set
+			{
+				if ((this._HasNewTimetable != value))
+				{
+					this.OnHasNewTimetableChanging(value);
+					this.SendPropertyChanging();
+					this._HasNewTimetable = value;
+					this.SendPropertyChanged("HasNewTimetable");
+					this.OnHasNewTimetableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_RouteSection", Storage="_RouteSections", ThisKey="ID", OtherKey="NextStationID")]
+		public EntitySet<RouteSection> RouteSections
+		{
+			get
+			{
+				return this._RouteSections;
+			}
+			set
+			{
+				this._RouteSections.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_RouteSection1", Storage="_RouteSections1", ThisKey="ID", OtherKey="StationID")]
+		public EntitySet<RouteSection> RouteSections1
+		{
+			get
+			{
+				return this._RouteSections1;
+			}
+			set
+			{
+				this._RouteSections1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_Report", Storage="_Reports", ThisKey="ID", OtherKey="StationID")]
+		public EntitySet<Report> Reports
+		{
+			get
+			{
+				return this._Reports;
+			}
+			set
+			{
+				this._Reports.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_RouteSections(RouteSection entity)
+		{
+			this.SendPropertyChanging();
+			entity.Station = this;
+		}
+		
+		private void detach_RouteSections(RouteSection entity)
+		{
+			this.SendPropertyChanging();
+			entity.Station = null;
+		}
+		
+		private void attach_RouteSections1(RouteSection entity)
+		{
+			this.SendPropertyChanging();
+			entity.Station1 = this;
+		}
+		
+		private void detach_RouteSections1(RouteSection entity)
+		{
+			this.SendPropertyChanging();
+			entity.Station1 = null;
+		}
+		
+		private void attach_Reports(Report entity)
+		{
+			this.SendPropertyChanging();
+			entity.Station = this;
+		}
+		
+		private void detach_Reports(Report entity)
+		{
+			this.SendPropertyChanging();
+			entity.Station = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserRole")]
+	public partial class UserRole : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _RoleID;
+		
+		private int _UserID;
+		
+		private EntityRef<Role> _Role;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnRoleIDChanging(int value);
+    partial void OnRoleIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    #endregion
+		
+		public UserRole()
+		{
+			this._Role = default(EntityRef<Role>);
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", DbType="Int NOT NULL")]
+		public int RoleID
+		{
+			get
+			{
+				return this._RoleID;
+			}
+			set
+			{
+				if ((this._RoleID != value))
+				{
+					if (this._Role.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRoleIDChanging(value);
+					this.SendPropertyChanging();
+					this._RoleID = value;
+					this.SendPropertyChanged("RoleID");
+					this.OnRoleIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_UserRole", Storage="_Role", ThisKey="RoleID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Role Role
+		{
+			get
+			{
+				return this._Role.Entity;
+			}
+			set
+			{
+				Role previousValue = this._Role.Entity;
+				if (((previousValue != value) 
+							|| (this._Role.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Role.Entity = null;
+						previousValue.UserRoles.Remove(this);
+					}
+					this._Role.Entity = value;
+					if ((value != null))
+					{
+						value.UserRoles.Add(this);
+						this._RoleID = value.ID;
+					}
+					else
+					{
+						this._RoleID = default(int);
+					}
+					this.SendPropertyChanged("Role");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserRole", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.UserRoles.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.UserRoles.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -5586,23 +6988,23 @@ namespace maps.Model
 		
 		private bool _IsRemoved;
 		
-		private EntitySet<UtilityPhoto> _UtilityPhotos;
+		private EntitySet<UtilityIssue> _UtilityIssues;
 		
 		private EntitySet<UtilityIssueComment> _UtilityIssueComments;
 		
-		private EntitySet<UtilityIssueTag> _UtilityIssueTags;
-		
-		private EntitySet<UtilityIssue> _UtilityIssues;
-		
 		private EntitySet<UtilityIssueHistory> _UtilityIssueHistories;
 		
-		private EntityRef<City> _City;
+		private EntitySet<UtilityIssueTag> _UtilityIssueTags;
 		
-		private EntityRef<User> _User;
+		private EntitySet<UtilityPhoto> _UtilityPhotos;
+		
+		private EntityRef<City> _City;
 		
 		private EntityRef<UtilityDepartment> _UtilityDepartment;
 		
 		private EntityRef<UtilityIssue> _UtilityIssue1;
+		
+		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5646,15 +7048,15 @@ namespace maps.Model
 		
 		public UtilityIssue()
 		{
-			this._UtilityPhotos = new EntitySet<UtilityPhoto>(new Action<UtilityPhoto>(this.attach_UtilityPhotos), new Action<UtilityPhoto>(this.detach_UtilityPhotos));
-			this._UtilityIssueComments = new EntitySet<UtilityIssueComment>(new Action<UtilityIssueComment>(this.attach_UtilityIssueComments), new Action<UtilityIssueComment>(this.detach_UtilityIssueComments));
-			this._UtilityIssueTags = new EntitySet<UtilityIssueTag>(new Action<UtilityIssueTag>(this.attach_UtilityIssueTags), new Action<UtilityIssueTag>(this.detach_UtilityIssueTags));
 			this._UtilityIssues = new EntitySet<UtilityIssue>(new Action<UtilityIssue>(this.attach_UtilityIssues), new Action<UtilityIssue>(this.detach_UtilityIssues));
+			this._UtilityIssueComments = new EntitySet<UtilityIssueComment>(new Action<UtilityIssueComment>(this.attach_UtilityIssueComments), new Action<UtilityIssueComment>(this.detach_UtilityIssueComments));
 			this._UtilityIssueHistories = new EntitySet<UtilityIssueHistory>(new Action<UtilityIssueHistory>(this.attach_UtilityIssueHistories), new Action<UtilityIssueHistory>(this.detach_UtilityIssueHistories));
+			this._UtilityIssueTags = new EntitySet<UtilityIssueTag>(new Action<UtilityIssueTag>(this.attach_UtilityIssueTags), new Action<UtilityIssueTag>(this.detach_UtilityIssueTags));
+			this._UtilityPhotos = new EntitySet<UtilityPhoto>(new Action<UtilityPhoto>(this.attach_UtilityPhotos), new Action<UtilityPhoto>(this.detach_UtilityPhotos));
 			this._City = default(EntityRef<City>);
-			this._User = default(EntityRef<User>);
 			this._UtilityDepartment = default(EntityRef<UtilityDepartment>);
 			this._UtilityIssue1 = default(EntityRef<UtilityIssue>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -6014,16 +7416,16 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityPhoto", Storage="_UtilityPhotos", ThisKey="ID", OtherKey="UtilityIssueID")]
-		public EntitySet<UtilityPhoto> UtilityPhotos
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityIssue", Storage="_UtilityIssues", ThisKey="ID", OtherKey="MainUtilityIssueID")]
+		public EntitySet<UtilityIssue> UtilityIssues
 		{
 			get
 			{
-				return this._UtilityPhotos;
+				return this._UtilityIssues;
 			}
 			set
 			{
-				this._UtilityPhotos.Assign(value);
+				this._UtilityIssues.Assign(value);
 			}
 		}
 		
@@ -6040,6 +7442,19 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityIssueHistory", Storage="_UtilityIssueHistories", ThisKey="ID", OtherKey="UtilityIssueID")]
+		public EntitySet<UtilityIssueHistory> UtilityIssueHistories
+		{
+			get
+			{
+				return this._UtilityIssueHistories;
+			}
+			set
+			{
+				this._UtilityIssueHistories.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityIssueTag", Storage="_UtilityIssueTags", ThisKey="ID", OtherKey="UtilityIssueID")]
 		public EntitySet<UtilityIssueTag> UtilityIssueTags
 		{
@@ -6053,29 +7468,16 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityIssue", Storage="_UtilityIssues", ThisKey="ID", OtherKey="MainUtilityIssueID")]
-		public EntitySet<UtilityIssue> UtilityIssues
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityPhoto", Storage="_UtilityPhotos", ThisKey="ID", OtherKey="UtilityIssueID")]
+		public EntitySet<UtilityPhoto> UtilityPhotos
 		{
 			get
 			{
-				return this._UtilityIssues;
+				return this._UtilityPhotos;
 			}
 			set
 			{
-				this._UtilityIssues.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityIssueHistory", Storage="_UtilityIssueHistories", ThisKey="ID", OtherKey="UtilityIssueID")]
-		public EntitySet<UtilityIssueHistory> UtilityIssueHistories
-		{
-			get
-			{
-				return this._UtilityIssueHistories;
-			}
-			set
-			{
-				this._UtilityIssueHistories.Assign(value);
+				this._UtilityPhotos.Assign(value);
 			}
 		}
 		
@@ -6109,40 +7511,6 @@ namespace maps.Model
 						this._CityID = default(int);
 					}
 					this.SendPropertyChanged("City");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityIssue", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.UtilityIssues.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.UtilityIssues.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
 				}
 			}
 		}
@@ -6215,6 +7583,40 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityIssue", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.UtilityIssues.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.UtilityIssues.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -6235,16 +7637,16 @@ namespace maps.Model
 			}
 		}
 		
-		private void attach_UtilityPhotos(UtilityPhoto entity)
+		private void attach_UtilityIssues(UtilityIssue entity)
 		{
 			this.SendPropertyChanging();
-			entity.UtilityIssue = this;
+			entity.UtilityIssue1 = this;
 		}
 		
-		private void detach_UtilityPhotos(UtilityPhoto entity)
+		private void detach_UtilityIssues(UtilityIssue entity)
 		{
 			this.SendPropertyChanging();
-			entity.UtilityIssue = null;
+			entity.UtilityIssue1 = null;
 		}
 		
 		private void attach_UtilityIssueComments(UtilityIssueComment entity)
@@ -6254,6 +7656,18 @@ namespace maps.Model
 		}
 		
 		private void detach_UtilityIssueComments(UtilityIssueComment entity)
+		{
+			this.SendPropertyChanging();
+			entity.UtilityIssue = null;
+		}
+		
+		private void attach_UtilityIssueHistories(UtilityIssueHistory entity)
+		{
+			this.SendPropertyChanging();
+			entity.UtilityIssue = this;
+		}
+		
+		private void detach_UtilityIssueHistories(UtilityIssueHistory entity)
 		{
 			this.SendPropertyChanging();
 			entity.UtilityIssue = null;
@@ -6271,28 +7685,208 @@ namespace maps.Model
 			entity.UtilityIssue = null;
 		}
 		
-		private void attach_UtilityIssues(UtilityIssue entity)
-		{
-			this.SendPropertyChanging();
-			entity.UtilityIssue1 = this;
-		}
-		
-		private void detach_UtilityIssues(UtilityIssue entity)
-		{
-			this.SendPropertyChanging();
-			entity.UtilityIssue1 = null;
-		}
-		
-		private void attach_UtilityIssueHistories(UtilityIssueHistory entity)
+		private void attach_UtilityPhotos(UtilityPhoto entity)
 		{
 			this.SendPropertyChanging();
 			entity.UtilityIssue = this;
 		}
 		
-		private void detach_UtilityIssueHistories(UtilityIssueHistory entity)
+		private void detach_UtilityPhotos(UtilityPhoto entity)
 		{
 			this.SendPropertyChanging();
 			entity.UtilityIssue = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UtilityIssueComment")]
+	public partial class UtilityIssueComment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _UtilityIssueID;
+		
+		private int _CommentID;
+		
+		private EntityRef<Comment> _Comment;
+		
+		private EntityRef<UtilityIssue> _UtilityIssue;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUtilityIssueIDChanging(int value);
+    partial void OnUtilityIssueIDChanged();
+    partial void OnCommentIDChanging(int value);
+    partial void OnCommentIDChanged();
+    #endregion
+		
+		public UtilityIssueComment()
+		{
+			this._Comment = default(EntityRef<Comment>);
+			this._UtilityIssue = default(EntityRef<UtilityIssue>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UtilityIssueID", DbType="Int NOT NULL")]
+		public int UtilityIssueID
+		{
+			get
+			{
+				return this._UtilityIssueID;
+			}
+			set
+			{
+				if ((this._UtilityIssueID != value))
+				{
+					if (this._UtilityIssue.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUtilityIssueIDChanging(value);
+					this.SendPropertyChanging();
+					this._UtilityIssueID = value;
+					this.SendPropertyChanged("UtilityIssueID");
+					this.OnUtilityIssueIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommentID", DbType="Int NOT NULL")]
+		public int CommentID
+		{
+			get
+			{
+				return this._CommentID;
+			}
+			set
+			{
+				if ((this._CommentID != value))
+				{
+					if (this._Comment.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCommentIDChanging(value);
+					this.SendPropertyChanging();
+					this._CommentID = value;
+					this.SendPropertyChanged("CommentID");
+					this.OnCommentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comment_UtilityIssueComment", Storage="_Comment", ThisKey="CommentID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Comment Comment
+		{
+			get
+			{
+				return this._Comment.Entity;
+			}
+			set
+			{
+				Comment previousValue = this._Comment.Entity;
+				if (((previousValue != value) 
+							|| (this._Comment.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Comment.Entity = null;
+						previousValue.UtilityIssueComments.Remove(this);
+					}
+					this._Comment.Entity = value;
+					if ((value != null))
+					{
+						value.UtilityIssueComments.Add(this);
+						this._CommentID = value.ID;
+					}
+					else
+					{
+						this._CommentID = default(int);
+					}
+					this.SendPropertyChanged("Comment");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityIssueComment", Storage="_UtilityIssue", ThisKey="UtilityIssueID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public UtilityIssue UtilityIssue
+		{
+			get
+			{
+				return this._UtilityIssue.Entity;
+			}
+			set
+			{
+				UtilityIssue previousValue = this._UtilityIssue.Entity;
+				if (((previousValue != value) 
+							|| (this._UtilityIssue.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UtilityIssue.Entity = null;
+						previousValue.UtilityIssueComments.Remove(this);
+					}
+					this._UtilityIssue.Entity = value;
+					if ((value != null))
+					{
+						value.UtilityIssueComments.Add(this);
+						this._UtilityIssueID = value.ID;
+					}
+					else
+					{
+						this._UtilityIssueID = default(int);
+					}
+					this.SendPropertyChanged("UtilityIssue");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -6342,11 +7936,11 @@ namespace maps.Model
 		
 		private EntityRef<UtilityIssueHistory> _UtilityIssueHistory1;
 		
-		private EntityRef<User> _User;
-		
 		private EntityRef<UtilityDepartment> _UtilityDepartment;
 		
 		private EntityRef<UtilityIssue> _UtilityIssue;
+		
+		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6394,9 +7988,9 @@ namespace maps.Model
 		{
 			this._UtilityIssueHistories = new EntitySet<UtilityIssueHistory>(new Action<UtilityIssueHistory>(this.attach_UtilityIssueHistories), new Action<UtilityIssueHistory>(this.detach_UtilityIssueHistories));
 			this._UtilityIssueHistory1 = default(EntityRef<UtilityIssueHistory>);
-			this._User = default(EntityRef<User>);
 			this._UtilityDepartment = default(EntityRef<UtilityDepartment>);
 			this._UtilityIssue = default(EntityRef<UtilityIssue>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -6823,40 +8417,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityIssueHistory", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.UtilityIssueHistories.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.UtilityIssueHistories.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityDepartment_UtilityIssueHistory", Storage="_UtilityDepartment", ThisKey="UtilityDepartmentID", OtherKey="ID", IsForeignKey=true)]
 		public UtilityDepartment UtilityDepartment
 		{
@@ -6925,6 +8485,40 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityIssueHistory", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.UtilityIssueHistories.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.UtilityIssueHistories.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -6958,17 +8552,21 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Brand")]
-	public partial class Brand : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UtilityIssueTag")]
+	public partial class UtilityIssueTag : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private string _Name;
+		private int _UtilityIssueID;
 		
-		private EntitySet<Bus> _Bus;
+		private int _UtilityTagID;
+		
+		private EntityRef<UtilityIssue> _UtilityIssue;
+		
+		private EntityRef<UtilityTag> _UtilityTag;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6976,13 +8574,16 @@ namespace maps.Model
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
+    partial void OnUtilityIssueIDChanging(int value);
+    partial void OnUtilityIssueIDChanged();
+    partial void OnUtilityTagIDChanging(int value);
+    partial void OnUtilityTagIDChanged();
     #endregion
 		
-		public Brand()
+		public UtilityIssueTag()
 		{
-			this._Bus = new EntitySet<Bus>(new Action<Bus>(this.attach_Bus), new Action<Bus>(this.detach_Bus));
+			this._UtilityIssue = default(EntityRef<UtilityIssue>);
+			this._UtilityTag = default(EntityRef<UtilityTag>);
 			OnCreated();
 		}
 		
@@ -7006,535 +8607,118 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UtilityIssueID", DbType="Int NOT NULL")]
+		public int UtilityIssueID
 		{
 			get
 			{
-				return this._Name;
+				return this._UtilityIssueID;
 			}
 			set
 			{
-				if ((this._Name != value))
+				if ((this._UtilityIssueID != value))
 				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Brand_Bus", Storage="_Bus", ThisKey="ID", OtherKey="BrandID")]
-		public EntitySet<Bus> Bus
-		{
-			get
-			{
-				return this._Bus;
-			}
-			set
-			{
-				this._Bus.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Bus(Bus entity)
-		{
-			this.SendPropertyChanging();
-			entity.Brand = this;
-		}
-		
-		private void detach_Bus(Bus entity)
-		{
-			this.SendPropertyChanging();
-			entity.Brand = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bus")]
-	public partial class Bus : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _TransporteurID;
-		
-		private int _RouteID;
-		
-		private int _BrandID;
-		
-		private string _Number;
-		
-		private EntitySet<BusPhoto> _BusPhotos;
-		
-		private EntitySet<Report> _Reports;
-		
-		private EntityRef<Brand> _Brand;
-		
-		private EntityRef<Transporteur> _Transporteur;
-		
-		private EntityRef<Route> _Route;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnTransporteurIDChanging(int value);
-    partial void OnTransporteurIDChanged();
-    partial void OnRouteIDChanging(int value);
-    partial void OnRouteIDChanged();
-    partial void OnBrandIDChanging(int value);
-    partial void OnBrandIDChanged();
-    partial void OnNumberChanging(string value);
-    partial void OnNumberChanged();
-    #endregion
-		
-		public Bus()
-		{
-			this._BusPhotos = new EntitySet<BusPhoto>(new Action<BusPhoto>(this.attach_BusPhotos), new Action<BusPhoto>(this.detach_BusPhotos));
-			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
-			this._Brand = default(EntityRef<Brand>);
-			this._Transporteur = default(EntityRef<Transporteur>);
-			this._Route = default(EntityRef<Route>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransporteurID", DbType="Int NOT NULL")]
-		public int TransporteurID
-		{
-			get
-			{
-				return this._TransporteurID;
-			}
-			set
-			{
-				if ((this._TransporteurID != value))
-				{
-					if (this._Transporteur.HasLoadedOrAssignedValue)
+					if (this._UtilityIssue.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnTransporteurIDChanging(value);
+					this.OnUtilityIssueIDChanging(value);
 					this.SendPropertyChanging();
-					this._TransporteurID = value;
-					this.SendPropertyChanged("TransporteurID");
-					this.OnTransporteurIDChanged();
+					this._UtilityIssueID = value;
+					this.SendPropertyChanged("UtilityIssueID");
+					this.OnUtilityIssueIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteID", DbType="Int NOT NULL")]
-		public int RouteID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UtilityTagID", DbType="Int NOT NULL")]
+		public int UtilityTagID
 		{
 			get
 			{
-				return this._RouteID;
+				return this._UtilityTagID;
 			}
 			set
 			{
-				if ((this._RouteID != value))
+				if ((this._UtilityTagID != value))
 				{
-					if (this._Route.HasLoadedOrAssignedValue)
+					if (this._UtilityTag.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnRouteIDChanging(value);
+					this.OnUtilityTagIDChanging(value);
 					this.SendPropertyChanging();
-					this._RouteID = value;
-					this.SendPropertyChanged("RouteID");
-					this.OnRouteIDChanged();
+					this._UtilityTagID = value;
+					this.SendPropertyChanged("UtilityTagID");
+					this.OnUtilityTagIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandID", DbType="Int NOT NULL")]
-		public int BrandID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityIssueTag", Storage="_UtilityIssue", ThisKey="UtilityIssueID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public UtilityIssue UtilityIssue
 		{
 			get
 			{
-				return this._BrandID;
+				return this._UtilityIssue.Entity;
 			}
 			set
 			{
-				if ((this._BrandID != value))
-				{
-					if (this._Brand.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBrandIDChanging(value);
-					this.SendPropertyChanging();
-					this._BrandID = value;
-					this.SendPropertyChanged("BrandID");
-					this.OnBrandIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Number", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Number
-		{
-			get
-			{
-				return this._Number;
-			}
-			set
-			{
-				if ((this._Number != value))
-				{
-					this.OnNumberChanging(value);
-					this.SendPropertyChanging();
-					this._Number = value;
-					this.SendPropertyChanged("Number");
-					this.OnNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_BusPhoto", Storage="_BusPhotos", ThisKey="ID", OtherKey="BusID")]
-		public EntitySet<BusPhoto> BusPhotos
-		{
-			get
-			{
-				return this._BusPhotos;
-			}
-			set
-			{
-				this._BusPhotos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_Report", Storage="_Reports", ThisKey="ID", OtherKey="BusID")]
-		public EntitySet<Report> Reports
-		{
-			get
-			{
-				return this._Reports;
-			}
-			set
-			{
-				this._Reports.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Brand_Bus", Storage="_Brand", ThisKey="BrandID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Brand Brand
-		{
-			get
-			{
-				return this._Brand.Entity;
-			}
-			set
-			{
-				Brand previousValue = this._Brand.Entity;
+				UtilityIssue previousValue = this._UtilityIssue.Entity;
 				if (((previousValue != value) 
-							|| (this._Brand.HasLoadedOrAssignedValue == false)))
+							|| (this._UtilityIssue.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Brand.Entity = null;
-						previousValue.Bus.Remove(this);
+						this._UtilityIssue.Entity = null;
+						previousValue.UtilityIssueTags.Remove(this);
 					}
-					this._Brand.Entity = value;
+					this._UtilityIssue.Entity = value;
 					if ((value != null))
 					{
-						value.Bus.Add(this);
-						this._BrandID = value.ID;
+						value.UtilityIssueTags.Add(this);
+						this._UtilityIssueID = value.ID;
 					}
 					else
 					{
-						this._BrandID = default(int);
+						this._UtilityIssueID = default(int);
 					}
-					this.SendPropertyChanged("Brand");
+					this.SendPropertyChanged("UtilityIssue");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transporteur_Bus", Storage="_Transporteur", ThisKey="TransporteurID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Transporteur Transporteur
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityTag_UtilityIssueTag", Storage="_UtilityTag", ThisKey="UtilityTagID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public UtilityTag UtilityTag
 		{
 			get
 			{
-				return this._Transporteur.Entity;
+				return this._UtilityTag.Entity;
 			}
 			set
 			{
-				Transporteur previousValue = this._Transporteur.Entity;
+				UtilityTag previousValue = this._UtilityTag.Entity;
 				if (((previousValue != value) 
-							|| (this._Transporteur.HasLoadedOrAssignedValue == false)))
+							|| (this._UtilityTag.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Transporteur.Entity = null;
-						previousValue.Bus.Remove(this);
+						this._UtilityTag.Entity = null;
+						previousValue.UtilityIssueTags.Remove(this);
 					}
-					this._Transporteur.Entity = value;
+					this._UtilityTag.Entity = value;
 					if ((value != null))
 					{
-						value.Bus.Add(this);
-						this._TransporteurID = value.ID;
+						value.UtilityIssueTags.Add(this);
+						this._UtilityTagID = value.ID;
 					}
 					else
 					{
-						this._TransporteurID = default(int);
+						this._UtilityTagID = default(int);
 					}
-					this.SendPropertyChanged("Transporteur");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_Bus", Storage="_Route", ThisKey="RouteID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Route Route
-		{
-			get
-			{
-				return this._Route.Entity;
-			}
-			set
-			{
-				Route previousValue = this._Route.Entity;
-				if (((previousValue != value) 
-							|| (this._Route.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Route.Entity = null;
-						previousValue.Bus.Remove(this);
-					}
-					this._Route.Entity = value;
-					if ((value != null))
-					{
-						value.Bus.Add(this);
-						this._RouteID = value.ID;
-					}
-					else
-					{
-						this._RouteID = default(int);
-					}
-					this.SendPropertyChanged("Route");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BusPhotos(BusPhoto entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bus = this;
-		}
-		
-		private void detach_BusPhotos(BusPhoto entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bus = null;
-		}
-		
-		private void attach_Reports(Report entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bus = this;
-		}
-		
-		private void detach_Reports(Report entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bus = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BusPhoto")]
-	public partial class BusPhoto : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _BusID;
-		
-		private string _ImagePath;
-		
-		private EntityRef<Bus> _Bus;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnBusIDChanging(int value);
-    partial void OnBusIDChanged();
-    partial void OnImagePathChanging(string value);
-    partial void OnImagePathChanged();
-    #endregion
-		
-		public BusPhoto()
-		{
-			this._Bus = default(EntityRef<Bus>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BusID", DbType="Int NOT NULL")]
-		public int BusID
-		{
-			get
-			{
-				return this._BusID;
-			}
-			set
-			{
-				if ((this._BusID != value))
-				{
-					if (this._Bus.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBusIDChanging(value);
-					this.SendPropertyChanging();
-					this._BusID = value;
-					this.SendPropertyChanged("BusID");
-					this.OnBusIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string ImagePath
-		{
-			get
-			{
-				return this._ImagePath;
-			}
-			set
-			{
-				if ((this._ImagePath != value))
-				{
-					this.OnImagePathChanging(value);
-					this.SendPropertyChanging();
-					this._ImagePath = value;
-					this.SendPropertyChanged("ImagePath");
-					this.OnImagePathChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_BusPhoto", Storage="_Bus", ThisKey="BusID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Bus Bus
-		{
-			get
-			{
-				return this._Bus.Entity;
-			}
-			set
-			{
-				Bus previousValue = this._Bus.Entity;
-				if (((previousValue != value) 
-							|| (this._Bus.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Bus.Entity = null;
-						previousValue.BusPhotos.Remove(this);
-					}
-					this._Bus.Entity = value;
-					if ((value != null))
-					{
-						value.BusPhotos.Add(this);
-						this._BusID = value.ID;
-					}
-					else
-					{
-						this._BusID = default(int);
-					}
-					this.SendPropertyChanged("Bus");
+					this.SendPropertyChanged("UtilityTag");
 				}
 			}
 		}
@@ -7560,33 +8744,29 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Notify")]
-	public partial class Notify : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UtilityPhoto")]
+	public partial class UtilityPhoto : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private System.Nullable<int> _ReportID;
+		private System.Nullable<int> _UtilityIssueID;
 		
-		private string _Phone;
+		private System.Nullable<int> _UserID;
 		
-		private string _Email;
-		
-		private string _Sender;
-		
-		private string _Header;
-		
-		private string _Text;
+		private string _Image;
 		
 		private System.DateTime _AddedDate;
 		
-		private bool _IsSent;
+		private int _State;
 		
-		private string _Result;
+		private bool _IsRemoved;
 		
-		private EntityRef<Report> _Report;
+		private EntityRef<UtilityIssue> _UtilityIssue;
+		
+		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -7594,29 +8774,24 @@ namespace maps.Model
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnReportIDChanging(System.Nullable<int> value);
-    partial void OnReportIDChanged();
-    partial void OnPhoneChanging(string value);
-    partial void OnPhoneChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnSenderChanging(string value);
-    partial void OnSenderChanged();
-    partial void OnHeaderChanging(string value);
-    partial void OnHeaderChanged();
-    partial void OnTextChanging(string value);
-    partial void OnTextChanged();
+    partial void OnUtilityIssueIDChanging(System.Nullable<int> value);
+    partial void OnUtilityIssueIDChanged();
+    partial void OnUserIDChanging(System.Nullable<int> value);
+    partial void OnUserIDChanged();
+    partial void OnImageChanging(string value);
+    partial void OnImageChanged();
     partial void OnAddedDateChanging(System.DateTime value);
     partial void OnAddedDateChanged();
-    partial void OnIsSentChanging(bool value);
-    partial void OnIsSentChanged();
-    partial void OnResultChanging(string value);
-    partial void OnResultChanged();
+    partial void OnStateChanging(int value);
+    partial void OnStateChanged();
+    partial void OnIsRemovedChanging(bool value);
+    partial void OnIsRemovedChanged();
     #endregion
 		
-		public Notify()
+		public UtilityPhoto()
 		{
-			this._Report = default(EntityRef<Report>);
+			this._UtilityIssue = default(EntityRef<UtilityIssue>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -7640,46 +8815,406 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportID", DbType="Int")]
-		public System.Nullable<int> ReportID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UtilityIssueID", DbType="Int")]
+		public System.Nullable<int> UtilityIssueID
 		{
 			get
 			{
-				return this._ReportID;
+				return this._UtilityIssueID;
 			}
 			set
 			{
-				if ((this._ReportID != value))
+				if ((this._UtilityIssueID != value))
 				{
-					if (this._Report.HasLoadedOrAssignedValue)
+					if (this._UtilityIssue.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnReportIDChanging(value);
+					this.OnUtilityIssueIDChanging(value);
 					this.SendPropertyChanging();
-					this._ReportID = value;
-					this.SendPropertyChanged("ReportID");
-					this.OnReportIDChanged();
+					this._UtilityIssueID = value;
+					this.SendPropertyChanged("UtilityIssueID");
+					this.OnUtilityIssueIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NVarChar(50)")]
-		public string Phone
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
+		public System.Nullable<int> UserID
 		{
 			get
 			{
-				return this._Phone;
+				return this._UserID;
 			}
 			set
 			{
-				if ((this._Phone != value))
+				if ((this._UserID != value))
 				{
-					this.OnPhoneChanging(value);
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
 					this.SendPropertyChanging();
-					this._Phone = value;
-					this.SendPropertyChanged("Phone");
-					this.OnPhoneChanged();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string Image
+		{
+			get
+			{
+				return this._Image;
+			}
+			set
+			{
+				if ((this._Image != value))
+				{
+					this.OnImageChanging(value);
+					this.SendPropertyChanging();
+					this._Image = value;
+					this.SendPropertyChanged("Image");
+					this.OnImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="Int NOT NULL")]
+		public int State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this.OnStateChanging(value);
+					this.SendPropertyChanging();
+					this._State = value;
+					this.SendPropertyChanged("State");
+					this.OnStateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsRemoved", DbType="Bit NOT NULL")]
+		public bool IsRemoved
+		{
+			get
+			{
+				return this._IsRemoved;
+			}
+			set
+			{
+				if ((this._IsRemoved != value))
+				{
+					this.OnIsRemovedChanging(value);
+					this.SendPropertyChanging();
+					this._IsRemoved = value;
+					this.SendPropertyChanged("IsRemoved");
+					this.OnIsRemovedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UtilityIssue_UtilityPhoto", Storage="_UtilityIssue", ThisKey="UtilityIssueID", OtherKey="ID", IsForeignKey=true)]
+		public UtilityIssue UtilityIssue
+		{
+			get
+			{
+				return this._UtilityIssue.Entity;
+			}
+			set
+			{
+				UtilityIssue previousValue = this._UtilityIssue.Entity;
+				if (((previousValue != value) 
+							|| (this._UtilityIssue.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UtilityIssue.Entity = null;
+						previousValue.UtilityPhotos.Remove(this);
+					}
+					this._UtilityIssue.Entity = value;
+					if ((value != null))
+					{
+						value.UtilityPhotos.Add(this);
+						this._UtilityIssueID = value.ID;
+					}
+					else
+					{
+						this._UtilityIssueID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UtilityIssue");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityPhoto", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.UtilityPhotos.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.UtilityPhotos.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _CityID;
+		
+		private string _Login;
+		
+		private string _Mobile;
+		
+		private string _Email;
+		
+		private string _Password;
+		
+		private System.DateTime _AddedDate;
+		
+		private System.DateTime _LastVisitDate;
+		
+		private string _AvatarPath;
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private EntitySet<BicycleParking> _BicycleParkings;
+		
+		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
+		
+		private EntitySet<BycicleDirection> _BycicleDirections;
+		
+		private EntitySet<Comment> _Comments;
+		
+		private EntitySet<Goal> _Goals;
+		
+		private EntitySet<Social> _Socials;
+		
+		private EntitySet<UserRole> _UserRoles;
+		
+		private EntitySet<UtilityIssue> _UtilityIssues;
+		
+		private EntitySet<UtilityIssueHistory> _UtilityIssueHistories;
+		
+		private EntitySet<UtilityPhoto> _UtilityPhotos;
+		
+		private EntitySet<Transporteur> _Transporteurs;
+		
+		private EntitySet<Report> _Reports;
+		
+		private EntitySet<Report> _Reports1;
+		
+		private EntityRef<City> _City;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnCityIDChanging(int value);
+    partial void OnCityIDChanged();
+    partial void OnLoginChanging(string value);
+    partial void OnLoginChanged();
+    partial void OnMobileChanging(string value);
+    partial void OnMobileChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnLastVisitDateChanging(System.DateTime value);
+    partial void OnLastVisitDateChanged();
+    partial void OnAvatarPathChanging(string value);
+    partial void OnAvatarPathChanged();
+    partial void OnFirstNameChanging(string value);
+    partial void OnFirstNameChanged();
+    partial void OnLastNameChanging(string value);
+    partial void OnLastNameChanged();
+    #endregion
+		
+		public User()
+		{
+			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
+			this._BicycleParkingVotes = new EntitySet<BicycleParkingVote>(new Action<BicycleParkingVote>(this.attach_BicycleParkingVotes), new Action<BicycleParkingVote>(this.detach_BicycleParkingVotes));
+			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
+			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
+			this._Goals = new EntitySet<Goal>(new Action<Goal>(this.attach_Goals), new Action<Goal>(this.detach_Goals));
+			this._Socials = new EntitySet<Social>(new Action<Social>(this.attach_Socials), new Action<Social>(this.detach_Socials));
+			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
+			this._UtilityIssues = new EntitySet<UtilityIssue>(new Action<UtilityIssue>(this.attach_UtilityIssues), new Action<UtilityIssue>(this.detach_UtilityIssues));
+			this._UtilityIssueHistories = new EntitySet<UtilityIssueHistory>(new Action<UtilityIssueHistory>(this.attach_UtilityIssueHistories), new Action<UtilityIssueHistory>(this.detach_UtilityIssueHistories));
+			this._UtilityPhotos = new EntitySet<UtilityPhoto>(new Action<UtilityPhoto>(this.attach_UtilityPhotos), new Action<UtilityPhoto>(this.detach_UtilityPhotos));
+			this._Transporteurs = new EntitySet<Transporteur>(new Action<Transporteur>(this.attach_Transporteurs), new Action<Transporteur>(this.detach_Transporteurs));
+			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
+			this._Reports1 = new EntitySet<Report>(new Action<Report>(this.attach_Reports1), new Action<Report>(this.detach_Reports1));
+			this._City = default(EntityRef<City>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
+		public int CityID
+		{
+			get
+			{
+				return this._CityID;
+			}
+			set
+			{
+				if ((this._CityID != value))
+				{
+					if (this._City.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCityIDChanging(value);
+					this.SendPropertyChanging();
+					this._CityID = value;
+					this.SendPropertyChanged("CityID");
+					this.OnCityIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Login", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string Login
+		{
+			get
+			{
+				return this._Login;
+			}
+			set
+			{
+				if ((this._Login != value))
+				{
+					this.OnLoginChanging(value);
+					this.SendPropertyChanging();
+					this._Login = value;
+					this.SendPropertyChanged("Login");
+					this.OnLoginChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="NVarChar(150)")]
+		public string Mobile
+		{
+			get
+			{
+				return this._Mobile;
+			}
+			set
+			{
+				if ((this._Mobile != value))
+				{
+					this.OnMobileChanging(value);
+					this.SendPropertyChanging();
+					this._Mobile = value;
+					this.SendPropertyChanged("Mobile");
+					this.OnMobileChanged();
 				}
 			}
 		}
@@ -7704,62 +9239,22 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sender", DbType="NVarChar(50)")]
-		public string Sender
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
 		{
 			get
 			{
-				return this._Sender;
+				return this._Password;
 			}
 			set
 			{
-				if ((this._Sender != value))
+				if ((this._Password != value))
 				{
-					this.OnSenderChanging(value);
+					this.OnPasswordChanging(value);
 					this.SendPropertyChanging();
-					this._Sender = value;
-					this.SendPropertyChanged("Sender");
-					this.OnSenderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Header", DbType="NVarChar(150)")]
-		public string Header
-		{
-			get
-			{
-				return this._Header;
-			}
-			set
-			{
-				if ((this._Header != value))
-				{
-					this.OnHeaderChanging(value);
-					this.SendPropertyChanging();
-					this._Header = value;
-					this.SendPropertyChanged("Header");
-					this.OnHeaderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NVarChar(MAX)")]
-		public string Text
-		{
-			get
-			{
-				return this._Text;
-			}
-			set
-			{
-				if ((this._Text != value))
-				{
-					this.OnTextChanging(value);
-					this.SendPropertyChanging();
-					this._Text = value;
-					this.SendPropertyChanged("Text");
-					this.OnTextChanged();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
 				}
 			}
 		}
@@ -7784,1492 +9279,230 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsSent", DbType="Bit NOT NULL")]
-		public bool IsSent
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastVisitDate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastVisitDate
 		{
 			get
 			{
-				return this._IsSent;
+				return this._LastVisitDate;
 			}
 			set
 			{
-				if ((this._IsSent != value))
+				if ((this._LastVisitDate != value))
 				{
-					this.OnIsSentChanging(value);
+					this.OnLastVisitDateChanging(value);
 					this.SendPropertyChanging();
-					this._IsSent = value;
-					this.SendPropertyChanged("IsSent");
-					this.OnIsSentChanged();
+					this._LastVisitDate = value;
+					this.SendPropertyChanged("LastVisitDate");
+					this.OnLastVisitDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="NVarChar(MAX)")]
-		public string Result
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvatarPath", DbType="NVarChar(150)")]
+		public string AvatarPath
 		{
 			get
 			{
-				return this._Result;
+				return this._AvatarPath;
 			}
 			set
 			{
-				if ((this._Result != value))
+				if ((this._AvatarPath != value))
 				{
-					this.OnResultChanging(value);
+					this.OnAvatarPathChanging(value);
 					this.SendPropertyChanging();
-					this._Result = value;
-					this.SendPropertyChanged("Result");
-					this.OnResultChanged();
+					this._AvatarPath = value;
+					this.SendPropertyChanged("AvatarPath");
+					this.OnAvatarPathChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_Notify", Storage="_Report", ThisKey="ReportID", OtherKey="ID", IsForeignKey=true)]
-		public Report Report
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(500)")]
+		public string FirstName
 		{
 			get
 			{
-				return this._Report.Entity;
+				return this._FirstName;
 			}
 			set
 			{
-				Report previousValue = this._Report.Entity;
-				if (((previousValue != value) 
-							|| (this._Report.HasLoadedOrAssignedValue == false)))
+				if ((this._FirstName != value))
 				{
+					this.OnFirstNameChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Report.Entity = null;
-						previousValue.Notifies.Remove(this);
-					}
-					this._Report.Entity = value;
-					if ((value != null))
-					{
-						value.Notifies.Add(this);
-						this._ReportID = value.ID;
-					}
-					else
-					{
-						this._ReportID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Report");
+					this._FirstName = value;
+					this.SendPropertyChanged("FirstName");
+					this.OnFirstNameChanged();
 				}
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Rule]")]
-	public partial class Rule : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Name;
-		
-		private string _Description;
-		
-		private string _UrlToLaw;
-		
-		private EntitySet<RuleReport> _RuleReports;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnUrlToLawChanging(string value);
-    partial void OnUrlToLawChanged();
-    #endregion
-		
-		public Rule()
-		{
-			this._RuleReports = new EntitySet<RuleReport>(new Action<RuleReport>(this.attach_RuleReports), new Action<RuleReport>(this.detach_RuleReports));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(500)")]
+		public string LastName
 		{
 			get
 			{
-				return this._ID;
+				return this._LastName;
 			}
 			set
 			{
-				if ((this._ID != value))
+				if ((this._LastName != value))
 				{
-					this.OnIDChanging(value);
+					this.OnLastNameChanging(value);
 					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
+					this._LastName = value;
+					this.SendPropertyChanged("LastName");
+					this.OnLastNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string Name
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<BicycleParking> BicycleParkings
 		{
 			get
 			{
-				return this._Name;
+				return this._BicycleParkings;
 			}
 			set
 			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
+				this._BicycleParkings.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Description
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParkingVote", Storage="_BicycleParkingVotes", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<BicycleParkingVote> BicycleParkingVotes
 		{
 			get
 			{
-				return this._Description;
+				return this._BicycleParkingVotes;
 			}
 			set
 			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
+				this._BicycleParkingVotes.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UrlToLaw", DbType="NVarChar(500)")]
-		public string UrlToLaw
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<BycicleDirection> BycicleDirections
 		{
 			get
 			{
-				return this._UrlToLaw;
+				return this._BycicleDirections;
 			}
 			set
 			{
-				if ((this._UrlToLaw != value))
-				{
-					this.OnUrlToLawChanging(value);
-					this.SendPropertyChanging();
-					this._UrlToLaw = value;
-					this.SendPropertyChanged("UrlToLaw");
-					this.OnUrlToLawChanged();
-				}
+				this._BycicleDirections.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rule_RuleReport", Storage="_RuleReports", ThisKey="ID", OtherKey="RuleID")]
-		public EntitySet<RuleReport> RuleReports
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_Comments", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<Comment> Comments
 		{
 			get
 			{
-				return this._RuleReports;
+				return this._Comments;
 			}
 			set
 			{
-				this._RuleReports.Assign(value);
+				this._Comments.Assign(value);
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_RuleReports(RuleReport entity)
-		{
-			this.SendPropertyChanging();
-			entity.Rule = this;
-		}
-		
-		private void detach_RuleReports(RuleReport entity)
-		{
-			this.SendPropertyChanging();
-			entity.Rule = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Report")]
-	public partial class Report : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _UserID;
-		
-		private System.Nullable<int> _BusID;
-		
-		private int _Status;
-		
-		private System.DateTime _AddedDate;
-		
-		private System.DateTime _DeadlineDate;
-		
-		private System.Nullable<System.DateTime> _DateTime;
-		
-		private System.Nullable<int> _StationID;
-		
-		private string _Description;
-		
-		private System.Nullable<int> _NotifyTransporteurID;
-		
-		private string _Answer;
-		
-		private System.Nullable<int> _NotifyReporterID;
-		
-		private string _Link;
-		
-		private string _FacebookLink;
-		
-		private EntitySet<Notify> _Notifies;
-		
-		private EntitySet<ReportComment> _ReportComments;
-		
-		private EntitySet<ReportPhoto> _ReportPhotos;
-		
-		private EntitySet<RuleReport> _RuleReports;
-		
-		private EntityRef<Bus> _Bus;
-		
-		private EntityRef<User> _User;
-		
-		private EntityRef<User> _User1;
-		
-		private EntityRef<Station> _Station;
-		
-		private EntityRef<Transporteur> _Transporteur;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnBusIDChanging(System.Nullable<int> value);
-    partial void OnBusIDChanged();
-    partial void OnStatusChanging(int value);
-    partial void OnStatusChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    partial void OnDeadlineDateChanging(System.DateTime value);
-    partial void OnDeadlineDateChanged();
-    partial void OnDateTimeChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateTimeChanged();
-    partial void OnStationIDChanging(System.Nullable<int> value);
-    partial void OnStationIDChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnNotifyTransporteurIDChanging(System.Nullable<int> value);
-    partial void OnNotifyTransporteurIDChanged();
-    partial void OnAnswerChanging(string value);
-    partial void OnAnswerChanged();
-    partial void OnNotifyReporterIDChanging(System.Nullable<int> value);
-    partial void OnNotifyReporterIDChanged();
-    partial void OnLinkChanging(string value);
-    partial void OnLinkChanged();
-    partial void OnFacebookLinkChanging(string value);
-    partial void OnFacebookLinkChanged();
-    #endregion
-		
-		public Report()
-		{
-			this._Notifies = new EntitySet<Notify>(new Action<Notify>(this.attach_Notifies), new Action<Notify>(this.detach_Notifies));
-			this._ReportComments = new EntitySet<ReportComment>(new Action<ReportComment>(this.attach_ReportComments), new Action<ReportComment>(this.detach_ReportComments));
-			this._ReportPhotos = new EntitySet<ReportPhoto>(new Action<ReportPhoto>(this.attach_ReportPhotos), new Action<ReportPhoto>(this.detach_ReportPhotos));
-			this._RuleReports = new EntitySet<RuleReport>(new Action<RuleReport>(this.attach_RuleReports), new Action<RuleReport>(this.detach_RuleReports));
-			this._Bus = default(EntityRef<Bus>);
-			this._User = default(EntityRef<User>);
-			this._User1 = default(EntityRef<User>);
-			this._Station = default(EntityRef<Station>);
-			this._Transporteur = default(EntityRef<Transporteur>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Goal", Storage="_Goals", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<Goal> Goals
 		{
 			get
 			{
-				return this._ID;
+				return this._Goals;
 			}
 			set
 			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
+				this._Goals.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Social", Storage="_Socials", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<Social> Socials
 		{
 			get
 			{
-				return this._UserID;
+				return this._Socials;
 			}
 			set
 			{
-				if ((this._UserID != value))
-				{
-					if (this._User1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
+				this._Socials.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BusID", DbType="Int")]
-		public System.Nullable<int> BusID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserRole", Storage="_UserRoles", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<UserRole> UserRoles
 		{
 			get
 			{
-				return this._BusID;
+				return this._UserRoles;
 			}
 			set
 			{
-				if ((this._BusID != value))
-				{
-					if (this._Bus.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBusIDChanging(value);
-					this.SendPropertyChanging();
-					this._BusID = value;
-					this.SendPropertyChanged("BusID");
-					this.OnBusIDChanged();
-				}
+				this._UserRoles.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
-		public int Status
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityIssue", Storage="_UtilityIssues", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<UtilityIssue> UtilityIssues
 		{
 			get
 			{
-				return this._Status;
+				return this._UtilityIssues;
 			}
 			set
 			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
+				this._UtilityIssues.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityIssueHistory", Storage="_UtilityIssueHistories", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<UtilityIssueHistory> UtilityIssueHistories
 		{
 			get
 			{
-				return this._AddedDate;
+				return this._UtilityIssueHistories;
 			}
 			set
 			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
+				this._UtilityIssueHistories.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeadlineDate", DbType="DateTime NOT NULL")]
-		public System.DateTime DeadlineDate
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UtilityPhoto", Storage="_UtilityPhotos", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<UtilityPhoto> UtilityPhotos
 		{
 			get
 			{
-				return this._DeadlineDate;
+				return this._UtilityPhotos;
 			}
 			set
 			{
-				if ((this._DeadlineDate != value))
-				{
-					this.OnDeadlineDateChanging(value);
-					this.SendPropertyChanging();
-					this._DeadlineDate = value;
-					this.SendPropertyChanged("DeadlineDate");
-					this.OnDeadlineDateChanged();
-				}
+				this._UtilityPhotos.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTime", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateTime
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Transporteur", Storage="_Transporteurs", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<Transporteur> Transporteurs
 		{
 			get
 			{
-				return this._DateTime;
+				return this._Transporteurs;
 			}
 			set
 			{
-				if ((this._DateTime != value))
-				{
-					this.OnDateTimeChanging(value);
-					this.SendPropertyChanging();
-					this._DateTime = value;
-					this.SendPropertyChanged("DateTime");
-					this.OnDateTimeChanged();
-				}
+				this._Transporteurs.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int")]
-		public System.Nullable<int> StationID
-		{
-			get
-			{
-				return this._StationID;
-			}
-			set
-			{
-				if ((this._StationID != value))
-				{
-					if (this._Station.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnStationIDChanging(value);
-					this.SendPropertyChanging();
-					this._StationID = value;
-					this.SendPropertyChanged("StationID");
-					this.OnStationIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NotifyTransporteurID", DbType="Int")]
-		public System.Nullable<int> NotifyTransporteurID
-		{
-			get
-			{
-				return this._NotifyTransporteurID;
-			}
-			set
-			{
-				if ((this._NotifyTransporteurID != value))
-				{
-					if (this._Transporteur.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnNotifyTransporteurIDChanging(value);
-					this.SendPropertyChanging();
-					this._NotifyTransporteurID = value;
-					this.SendPropertyChanged("NotifyTransporteurID");
-					this.OnNotifyTransporteurIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Answer", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Answer
-		{
-			get
-			{
-				return this._Answer;
-			}
-			set
-			{
-				if ((this._Answer != value))
-				{
-					this.OnAnswerChanging(value);
-					this.SendPropertyChanging();
-					this._Answer = value;
-					this.SendPropertyChanged("Answer");
-					this.OnAnswerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NotifyReporterID", DbType="Int")]
-		public System.Nullable<int> NotifyReporterID
-		{
-			get
-			{
-				return this._NotifyReporterID;
-			}
-			set
-			{
-				if ((this._NotifyReporterID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnNotifyReporterIDChanging(value);
-					this.SendPropertyChanging();
-					this._NotifyReporterID = value;
-					this.SendPropertyChanged("NotifyReporterID");
-					this.OnNotifyReporterIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="NVarChar(500)")]
-		public string Link
-		{
-			get
-			{
-				return this._Link;
-			}
-			set
-			{
-				if ((this._Link != value))
-				{
-					this.OnLinkChanging(value);
-					this.SendPropertyChanging();
-					this._Link = value;
-					this.SendPropertyChanged("Link");
-					this.OnLinkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacebookLink", DbType="NVarChar(500)")]
-		public string FacebookLink
-		{
-			get
-			{
-				return this._FacebookLink;
-			}
-			set
-			{
-				if ((this._FacebookLink != value))
-				{
-					this.OnFacebookLinkChanging(value);
-					this.SendPropertyChanging();
-					this._FacebookLink = value;
-					this.SendPropertyChanged("FacebookLink");
-					this.OnFacebookLinkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_Notify", Storage="_Notifies", ThisKey="ID", OtherKey="ReportID")]
-		public EntitySet<Notify> Notifies
-		{
-			get
-			{
-				return this._Notifies;
-			}
-			set
-			{
-				this._Notifies.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportComment", Storage="_ReportComments", ThisKey="ID", OtherKey="ReportID")]
-		public EntitySet<ReportComment> ReportComments
-		{
-			get
-			{
-				return this._ReportComments;
-			}
-			set
-			{
-				this._ReportComments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportPhoto", Storage="_ReportPhotos", ThisKey="ID", OtherKey="ReportID")]
-		public EntitySet<ReportPhoto> ReportPhotos
-		{
-			get
-			{
-				return this._ReportPhotos;
-			}
-			set
-			{
-				this._ReportPhotos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_RuleReport", Storage="_RuleReports", ThisKey="ID", OtherKey="ReportID")]
-		public EntitySet<RuleReport> RuleReports
-		{
-			get
-			{
-				return this._RuleReports;
-			}
-			set
-			{
-				this._RuleReports.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_Report", Storage="_Bus", ThisKey="BusID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
-		public Bus Bus
-		{
-			get
-			{
-				return this._Bus.Entity;
-			}
-			set
-			{
-				Bus previousValue = this._Bus.Entity;
-				if (((previousValue != value) 
-							|| (this._Bus.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Bus.Entity = null;
-						previousValue.Reports.Remove(this);
-					}
-					this._Bus.Entity = value;
-					if ((value != null))
-					{
-						value.Reports.Add(this);
-						this._BusID = value.ID;
-					}
-					else
-					{
-						this._BusID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Bus");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Report", Storage="_User", ThisKey="NotifyReporterID", OtherKey="ID", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Reports.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Reports.Add(this);
-						this._NotifyReporterID = value.ID;
-					}
-					else
-					{
-						this._NotifyReporterID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Report1", Storage="_User1", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
-		public User User1
-		{
-			get
-			{
-				return this._User1.Entity;
-			}
-			set
-			{
-				User previousValue = this._User1.Entity;
-				if (((previousValue != value) 
-							|| (this._User1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User1.Entity = null;
-						previousValue.Reports1.Remove(this);
-					}
-					this._User1.Entity = value;
-					if ((value != null))
-					{
-						value.Reports1.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_Report", Storage="_Station", ThisKey="StationID", OtherKey="ID", IsForeignKey=true)]
-		public Station Station
-		{
-			get
-			{
-				return this._Station.Entity;
-			}
-			set
-			{
-				Station previousValue = this._Station.Entity;
-				if (((previousValue != value) 
-							|| (this._Station.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Station.Entity = null;
-						previousValue.Reports.Remove(this);
-					}
-					this._Station.Entity = value;
-					if ((value != null))
-					{
-						value.Reports.Add(this);
-						this._StationID = value.ID;
-					}
-					else
-					{
-						this._StationID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Station");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transporteur_Report", Storage="_Transporteur", ThisKey="NotifyTransporteurID", OtherKey="ID", IsForeignKey=true)]
-		public Transporteur Transporteur
-		{
-			get
-			{
-				return this._Transporteur.Entity;
-			}
-			set
-			{
-				Transporteur previousValue = this._Transporteur.Entity;
-				if (((previousValue != value) 
-							|| (this._Transporteur.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Transporteur.Entity = null;
-						previousValue.Reports.Remove(this);
-					}
-					this._Transporteur.Entity = value;
-					if ((value != null))
-					{
-						value.Reports.Add(this);
-						this._NotifyTransporteurID = value.ID;
-					}
-					else
-					{
-						this._NotifyTransporteurID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Transporteur");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Notifies(Notify entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = this;
-		}
-		
-		private void detach_Notifies(Notify entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = null;
-		}
-		
-		private void attach_ReportComments(ReportComment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = this;
-		}
-		
-		private void detach_ReportComments(ReportComment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = null;
-		}
-		
-		private void attach_ReportPhotos(ReportPhoto entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = this;
-		}
-		
-		private void detach_ReportPhotos(ReportPhoto entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = null;
-		}
-		
-		private void attach_RuleReports(RuleReport entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = this;
-		}
-		
-		private void detach_RuleReports(RuleReport entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReportComment")]
-	public partial class ReportComment : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _ReportID;
-		
-		private int _CommentID;
-		
-		private EntityRef<Comment> _Comment;
-		
-		private EntityRef<Report> _Report;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnReportIDChanging(int value);
-    partial void OnReportIDChanged();
-    partial void OnCommentIDChanging(int value);
-    partial void OnCommentIDChanged();
-    #endregion
-		
-		public ReportComment()
-		{
-			this._Comment = default(EntityRef<Comment>);
-			this._Report = default(EntityRef<Report>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportID", DbType="Int NOT NULL")]
-		public int ReportID
-		{
-			get
-			{
-				return this._ReportID;
-			}
-			set
-			{
-				if ((this._ReportID != value))
-				{
-					if (this._Report.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnReportIDChanging(value);
-					this.SendPropertyChanging();
-					this._ReportID = value;
-					this.SendPropertyChanged("ReportID");
-					this.OnReportIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommentID", DbType="Int NOT NULL")]
-		public int CommentID
-		{
-			get
-			{
-				return this._CommentID;
-			}
-			set
-			{
-				if ((this._CommentID != value))
-				{
-					if (this._Comment.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCommentIDChanging(value);
-					this.SendPropertyChanging();
-					this._CommentID = value;
-					this.SendPropertyChanged("CommentID");
-					this.OnCommentIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comment_ReportComment", Storage="_Comment", ThisKey="CommentID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Comment Comment
-		{
-			get
-			{
-				return this._Comment.Entity;
-			}
-			set
-			{
-				Comment previousValue = this._Comment.Entity;
-				if (((previousValue != value) 
-							|| (this._Comment.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Comment.Entity = null;
-						previousValue.ReportComments.Remove(this);
-					}
-					this._Comment.Entity = value;
-					if ((value != null))
-					{
-						value.ReportComments.Add(this);
-						this._CommentID = value.ID;
-					}
-					else
-					{
-						this._CommentID = default(int);
-					}
-					this.SendPropertyChanged("Comment");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportComment", Storage="_Report", ThisKey="ReportID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Report Report
-		{
-			get
-			{
-				return this._Report.Entity;
-			}
-			set
-			{
-				Report previousValue = this._Report.Entity;
-				if (((previousValue != value) 
-							|| (this._Report.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Report.Entity = null;
-						previousValue.ReportComments.Remove(this);
-					}
-					this._Report.Entity = value;
-					if ((value != null))
-					{
-						value.ReportComments.Add(this);
-						this._ReportID = value.ID;
-					}
-					else
-					{
-						this._ReportID = default(int);
-					}
-					this.SendPropertyChanged("Report");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReportPhoto")]
-	public partial class ReportPhoto : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _ReportID;
-		
-		private string _ImagePath;
-		
-		private EntityRef<Report> _Report;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnReportIDChanging(int value);
-    partial void OnReportIDChanged();
-    partial void OnImagePathChanging(string value);
-    partial void OnImagePathChanged();
-    #endregion
-		
-		public ReportPhoto()
-		{
-			this._Report = default(EntityRef<Report>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportID", DbType="Int NOT NULL")]
-		public int ReportID
-		{
-			get
-			{
-				return this._ReportID;
-			}
-			set
-			{
-				if ((this._ReportID != value))
-				{
-					if (this._Report.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnReportIDChanging(value);
-					this.SendPropertyChanging();
-					this._ReportID = value;
-					this.SendPropertyChanged("ReportID");
-					this.OnReportIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string ImagePath
-		{
-			get
-			{
-				return this._ImagePath;
-			}
-			set
-			{
-				if ((this._ImagePath != value))
-				{
-					this.OnImagePathChanging(value);
-					this.SendPropertyChanging();
-					this._ImagePath = value;
-					this.SendPropertyChanged("ImagePath");
-					this.OnImagePathChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportPhoto", Storage="_Report", ThisKey="ReportID", OtherKey="ID", IsForeignKey=true)]
-		public Report Report
-		{
-			get
-			{
-				return this._Report.Entity;
-			}
-			set
-			{
-				Report previousValue = this._Report.Entity;
-				if (((previousValue != value) 
-							|| (this._Report.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Report.Entity = null;
-						previousValue.ReportPhotos.Remove(this);
-					}
-					this._Report.Entity = value;
-					if ((value != null))
-					{
-						value.ReportPhotos.Add(this);
-						this._ReportID = value.ID;
-					}
-					else
-					{
-						this._ReportID = default(int);
-					}
-					this.SendPropertyChanged("Report");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Station")]
-	public partial class Station : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Name;
-		
-		private double _Lat;
-		
-		private double _Lng;
-		
-		private bool _IsEndStation;
-		
-		private bool _HasPocket;
-		
-		private bool _HasNewTimetable;
-		
-		private EntitySet<Report> _Reports;
-		
-		private EntitySet<RouteSection> _RouteSections;
-		
-		private EntitySet<RouteSection> _RouteSections1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnLatChanging(double value);
-    partial void OnLatChanged();
-    partial void OnLngChanging(double value);
-    partial void OnLngChanged();
-    partial void OnIsEndStationChanging(bool value);
-    partial void OnIsEndStationChanged();
-    partial void OnHasPocketChanging(bool value);
-    partial void OnHasPocketChanged();
-    partial void OnHasNewTimetableChanging(bool value);
-    partial void OnHasNewTimetableChanged();
-    #endregion
-		
-		public Station()
-		{
-			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
-			this._RouteSections = new EntitySet<RouteSection>(new Action<RouteSection>(this.attach_RouteSections), new Action<RouteSection>(this.detach_RouteSections));
-			this._RouteSections1 = new EntitySet<RouteSection>(new Action<RouteSection>(this.attach_RouteSections1), new Action<RouteSection>(this.detach_RouteSections1));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Float NOT NULL")]
-		public double Lat
-		{
-			get
-			{
-				return this._Lat;
-			}
-			set
-			{
-				if ((this._Lat != value))
-				{
-					this.OnLatChanging(value);
-					this.SendPropertyChanging();
-					this._Lat = value;
-					this.SendPropertyChanged("Lat");
-					this.OnLatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lng", DbType="Float NOT NULL")]
-		public double Lng
-		{
-			get
-			{
-				return this._Lng;
-			}
-			set
-			{
-				if ((this._Lng != value))
-				{
-					this.OnLngChanging(value);
-					this.SendPropertyChanging();
-					this._Lng = value;
-					this.SendPropertyChanged("Lng");
-					this.OnLngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsEndStation", DbType="Bit NOT NULL")]
-		public bool IsEndStation
-		{
-			get
-			{
-				return this._IsEndStation;
-			}
-			set
-			{
-				if ((this._IsEndStation != value))
-				{
-					this.OnIsEndStationChanging(value);
-					this.SendPropertyChanging();
-					this._IsEndStation = value;
-					this.SendPropertyChanged("IsEndStation");
-					this.OnIsEndStationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasPocket", DbType="Bit NOT NULL")]
-		public bool HasPocket
-		{
-			get
-			{
-				return this._HasPocket;
-			}
-			set
-			{
-				if ((this._HasPocket != value))
-				{
-					this.OnHasPocketChanging(value);
-					this.SendPropertyChanging();
-					this._HasPocket = value;
-					this.SendPropertyChanged("HasPocket");
-					this.OnHasPocketChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasNewTimetable", DbType="Bit NOT NULL")]
-		public bool HasNewTimetable
-		{
-			get
-			{
-				return this._HasNewTimetable;
-			}
-			set
-			{
-				if ((this._HasNewTimetable != value))
-				{
-					this.OnHasNewTimetableChanging(value);
-					this.SendPropertyChanging();
-					this._HasNewTimetable = value;
-					this.SendPropertyChanged("HasNewTimetable");
-					this.OnHasNewTimetableChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_Report", Storage="_Reports", ThisKey="ID", OtherKey="StationID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Report", Storage="_Reports", ThisKey="ID", OtherKey="NotifyReporterID")]
 		public EntitySet<Report> Reports
 		{
 			get
@@ -9282,29 +9515,50 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_RouteSection", Storage="_RouteSections", ThisKey="ID", OtherKey="NextStationID")]
-		public EntitySet<RouteSection> RouteSections
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Report1", Storage="_Reports1", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<Report> Reports1
 		{
 			get
 			{
-				return this._RouteSections;
+				return this._Reports1;
 			}
 			set
 			{
-				this._RouteSections.Assign(value);
+				this._Reports1.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_RouteSection1", Storage="_RouteSections1", ThisKey="ID", OtherKey="StationID")]
-		public EntitySet<RouteSection> RouteSections1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_User", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
+		public City City
 		{
 			get
 			{
-				return this._RouteSections1;
+				return this._City.Entity;
 			}
 			set
 			{
-				this._RouteSections1.Assign(value);
+				City previousValue = this._City.Entity;
+				if (((previousValue != value) 
+							|| (this._City.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._City.Entity = null;
+						previousValue.Users.Remove(this);
+					}
+					this._City.Entity = value;
+					if ((value != null))
+					{
+						value.Users.Add(this);
+						this._CityID = value.ID;
+					}
+					else
+					{
+						this._CityID = default(int);
+					}
+					this.SendPropertyChanged("City");
+				}
 			}
 		}
 		
@@ -9328,40 +9582,160 @@ namespace maps.Model
 			}
 		}
 		
+		private void attach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_BicycleParkingVotes(BicycleParkingVote entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_BicycleParkingVotes(BicycleParkingVote entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_BycicleDirections(BycicleDirection entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_BycicleDirections(BycicleDirection entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Goals(Goal entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Goals(Goal entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Socials(Social entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Socials(Social entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_UserRoles(UserRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_UserRoles(UserRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_UtilityIssues(UtilityIssue entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_UtilityIssues(UtilityIssue entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_UtilityIssueHistories(UtilityIssueHistory entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_UtilityIssueHistories(UtilityIssueHistory entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_UtilityPhotos(UtilityPhoto entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_UtilityPhotos(UtilityPhoto entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Transporteurs(Transporteur entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Transporteurs(Transporteur entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
 		private void attach_Reports(Report entity)
 		{
 			this.SendPropertyChanging();
-			entity.Station = this;
+			entity.User = this;
 		}
 		
 		private void detach_Reports(Report entity)
 		{
 			this.SendPropertyChanging();
-			entity.Station = null;
+			entity.User = null;
 		}
 		
-		private void attach_RouteSections(RouteSection entity)
+		private void attach_Reports1(Report entity)
 		{
 			this.SendPropertyChanging();
-			entity.Station = this;
+			entity.User1 = this;
 		}
 		
-		private void detach_RouteSections(RouteSection entity)
+		private void detach_Reports1(Report entity)
 		{
 			this.SendPropertyChanging();
-			entity.Station = null;
-		}
-		
-		private void attach_RouteSections1(RouteSection entity)
-		{
-			this.SendPropertyChanging();
-			entity.Station1 = this;
-		}
-		
-		private void detach_RouteSections1(RouteSection entity)
-		{
-			this.SendPropertyChanging();
-			entity.Station1 = null;
+			entity.User1 = null;
 		}
 	}
 	
@@ -9372,6 +9746,8 @@ namespace maps.Model
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
+		
+		private System.Nullable<int> _UserID;
 		
 		private string _FirstName;
 		
@@ -9389,12 +9765,18 @@ namespace maps.Model
 		
 		private EntitySet<Report> _Reports;
 		
+		private EntitySet<ReportAnswer> _ReportAnswers;
+		
+		private EntityRef<User> _User;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
+    partial void OnUserIDChanging(System.Nullable<int> value);
+    partial void OnUserIDChanged();
     partial void OnFirstNameChanging(string value);
     partial void OnFirstNameChanged();
     partial void OnLastNameChanging(string value);
@@ -9413,6 +9795,8 @@ namespace maps.Model
 		{
 			this._Bus = new EntitySet<Bus>(new Action<Bus>(this.attach_Bus), new Action<Bus>(this.detach_Bus));
 			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
+			this._ReportAnswers = new EntitySet<ReportAnswer>(new Action<ReportAnswer>(this.attach_ReportAnswers), new Action<ReportAnswer>(this.detach_ReportAnswers));
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -9432,6 +9816,30 @@ namespace maps.Model
 					this._ID = value;
 					this.SendPropertyChanged("ID");
 					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
+		public System.Nullable<int> UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
 				}
 			}
 		}
@@ -9582,6 +9990,53 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transporteur_ReportAnswer", Storage="_ReportAnswers", ThisKey="ID", OtherKey="TransporteurID")]
+		public EntitySet<ReportAnswer> ReportAnswers
+		{
+			get
+			{
+				return this._ReportAnswers;
+			}
+			set
+			{
+				this._ReportAnswers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Transporteur", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteRule="SET NULL")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Transporteurs.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Transporteurs.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -9625,193 +10080,77 @@ namespace maps.Model
 			this.SendPropertyChanging();
 			entity.Transporteur = null;
 		}
+		
+		private void attach_ReportAnswers(ReportAnswer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Transporteur = this;
+		}
+		
+		private void detach_ReportAnswers(ReportAnswer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Transporteur = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Route")]
-	public partial class Route : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Report")]
+	public partial class Report : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private string _Name;
+		private int _UserID;
 		
-		private double _Length;
+		private System.Nullable<int> _RouteID;
 		
-		private EntitySet<Bus> _Bus;
+		private System.Nullable<int> _BusID;
 		
-		private EntitySet<RouteSection> _RouteSections;
+		private int _Status;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnLengthChanging(double value);
-    partial void OnLengthChanged();
-    #endregion
+		private int _Type;
 		
-		public Route()
-		{
-			this._Bus = new EntitySet<Bus>(new Action<Bus>(this.attach_Bus), new Action<Bus>(this.detach_Bus));
-			this._RouteSections = new EntitySet<RouteSection>(new Action<RouteSection>(this.attach_RouteSections), new Action<RouteSection>(this.detach_RouteSections));
-			OnCreated();
-		}
+		private System.DateTime _AddedDate;
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
+		private System.DateTime _DeadlineDate;
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
+		private System.Nullable<System.DateTime> _DateTime;
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="Float NOT NULL")]
-		public double Length
-		{
-			get
-			{
-				return this._Length;
-			}
-			set
-			{
-				if ((this._Length != value))
-				{
-					this.OnLengthChanging(value);
-					this.SendPropertyChanging();
-					this._Length = value;
-					this.SendPropertyChanged("Length");
-					this.OnLengthChanged();
-				}
-			}
-		}
+		private System.Nullable<int> _StationID;
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_Bus", Storage="_Bus", ThisKey="ID", OtherKey="RouteID")]
-		public EntitySet<Bus> Bus
-		{
-			get
-			{
-				return this._Bus;
-			}
-			set
-			{
-				this._Bus.Assign(value);
-			}
-		}
+		private string _Description;
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_RouteSection", Storage="_RouteSections", ThisKey="ID", OtherKey="RouteID")]
-		public EntitySet<RouteSection> RouteSections
-		{
-			get
-			{
-				return this._RouteSections;
-			}
-			set
-			{
-				this._RouteSections.Assign(value);
-			}
-		}
+		private System.Nullable<int> _NotifyTransporteurID;
 		
-		public event PropertyChangingEventHandler PropertyChanging;
+		private System.Nullable<int> _NotifyReporterID;
 		
-		public event PropertyChangedEventHandler PropertyChanged;
+		private string _Link;
 		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
+		private string _FacebookLink;
 		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
+		private EntitySet<Notify> _Notifies;
 		
-		private void attach_Bus(Bus entity)
-		{
-			this.SendPropertyChanging();
-			entity.Route = this;
-		}
+		private EntitySet<ReportComment> _ReportComments;
 		
-		private void detach_Bus(Bus entity)
-		{
-			this.SendPropertyChanging();
-			entity.Route = null;
-		}
+		private EntitySet<ReportPhoto> _ReportPhotos;
 		
-		private void attach_RouteSections(RouteSection entity)
-		{
-			this.SendPropertyChanging();
-			entity.Route = this;
-		}
+		private EntitySet<RuleReport> _RuleReports;
 		
-		private void detach_RouteSections(RouteSection entity)
-		{
-			this.SendPropertyChanging();
-			entity.Route = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RouteSection")]
-	public partial class RouteSection : INotifyPropertyChanging, INotifyPropertyChanged
-	{
+		private EntitySet<ReportAnswer> _ReportAnswers;
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		private EntityRef<Bus> _Bus;
 		
-		private int _ID;
+		private EntityRef<User> _User;
 		
-		private int _RouteID;
-		
-		private int _StationID;
-		
-		private int _NextStationID;
-		
-		private EntityRef<Station> _Station;
+		private EntityRef<Transporteur> _Transporteur;
 		
 		private EntityRef<Route> _Route;
 		
-		private EntityRef<Station> _Station1;
+		private EntityRef<Station> _Station;
+		
+		private EntityRef<User> _User1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -9819,19 +10158,49 @@ namespace maps.Model
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnRouteIDChanging(int value);
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnRouteIDChanging(System.Nullable<int> value);
     partial void OnRouteIDChanged();
-    partial void OnStationIDChanging(int value);
+    partial void OnBusIDChanging(System.Nullable<int> value);
+    partial void OnBusIDChanged();
+    partial void OnStatusChanging(int value);
+    partial void OnStatusChanged();
+    partial void OnTypeChanging(int value);
+    partial void OnTypeChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnDeadlineDateChanging(System.DateTime value);
+    partial void OnDeadlineDateChanged();
+    partial void OnDateTimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateTimeChanged();
+    partial void OnStationIDChanging(System.Nullable<int> value);
     partial void OnStationIDChanged();
-    partial void OnNextStationIDChanging(int value);
-    partial void OnNextStationIDChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnNotifyTransporteurIDChanging(System.Nullable<int> value);
+    partial void OnNotifyTransporteurIDChanged();
+    partial void OnNotifyReporterIDChanging(System.Nullable<int> value);
+    partial void OnNotifyReporterIDChanged();
+    partial void OnLinkChanging(string value);
+    partial void OnLinkChanged();
+    partial void OnFacebookLinkChanging(string value);
+    partial void OnFacebookLinkChanged();
     #endregion
 		
-		public RouteSection()
+		public Report()
 		{
-			this._Station = default(EntityRef<Station>);
+			this._Notifies = new EntitySet<Notify>(new Action<Notify>(this.attach_Notifies), new Action<Notify>(this.detach_Notifies));
+			this._ReportComments = new EntitySet<ReportComment>(new Action<ReportComment>(this.attach_ReportComments), new Action<ReportComment>(this.detach_ReportComments));
+			this._ReportPhotos = new EntitySet<ReportPhoto>(new Action<ReportPhoto>(this.attach_ReportPhotos), new Action<ReportPhoto>(this.detach_ReportPhotos));
+			this._RuleReports = new EntitySet<RuleReport>(new Action<RuleReport>(this.attach_RuleReports), new Action<RuleReport>(this.detach_RuleReports));
+			this._ReportAnswers = new EntitySet<ReportAnswer>(new Action<ReportAnswer>(this.attach_ReportAnswers), new Action<ReportAnswer>(this.detach_ReportAnswers));
+			this._Bus = default(EntityRef<Bus>);
+			this._User = default(EntityRef<User>);
+			this._Transporteur = default(EntityRef<Transporteur>);
 			this._Route = default(EntityRef<Route>);
-			this._Station1 = default(EntityRef<Station>);
+			this._Station = default(EntityRef<Station>);
+			this._User1 = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -9855,8 +10224,32 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteID", DbType="Int NOT NULL")]
-		public int RouteID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteID", DbType="Int")]
+		public System.Nullable<int> RouteID
 		{
 			get
 			{
@@ -9879,8 +10272,132 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int NOT NULL")]
-		public int StationID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BusID", DbType="Int")]
+		public System.Nullable<int> BusID
+		{
+			get
+			{
+				return this._BusID;
+			}
+			set
+			{
+				if ((this._BusID != value))
+				{
+					if (this._Bus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBusIDChanging(value);
+					this.SendPropertyChanging();
+					this._BusID = value;
+					this.SendPropertyChanged("BusID");
+					this.OnBusIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
+		public int Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int NOT NULL")]
+		public int Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeadlineDate", DbType="DateTime NOT NULL")]
+		public System.DateTime DeadlineDate
+		{
+			get
+			{
+				return this._DeadlineDate;
+			}
+			set
+			{
+				if ((this._DeadlineDate != value))
+				{
+					this.OnDeadlineDateChanging(value);
+					this.SendPropertyChanging();
+					this._DeadlineDate = value;
+					this.SendPropertyChanged("DeadlineDate");
+					this.OnDeadlineDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTime", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateTime
+		{
+			get
+			{
+				return this._DateTime;
+			}
+			set
+			{
+				if ((this._DateTime != value))
+				{
+					this.OnDateTimeChanging(value);
+					this.SendPropertyChanging();
+					this._DateTime = value;
+					this.SendPropertyChanged("DateTime");
+					this.OnDateTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int")]
+		public System.Nullable<int> StationID
 		{
 			get
 			{
@@ -9890,7 +10407,7 @@ namespace maps.Model
 			{
 				if ((this._StationID != value))
 				{
-					if (this._Station1.HasLoadedOrAssignedValue)
+					if (this._Station.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -9903,65 +10420,282 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NextStationID", DbType="Int NOT NULL")]
-		public int NextStationID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
 		{
 			get
 			{
-				return this._NextStationID;
+				return this._Description;
 			}
 			set
 			{
-				if ((this._NextStationID != value))
+				if ((this._Description != value))
 				{
-					if (this._Station.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnNextStationIDChanging(value);
+					this.OnDescriptionChanging(value);
 					this.SendPropertyChanging();
-					this._NextStationID = value;
-					this.SendPropertyChanged("NextStationID");
-					this.OnNextStationIDChanged();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_RouteSection", Storage="_Station", ThisKey="NextStationID", OtherKey="ID", IsForeignKey=true)]
-		public Station Station
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NotifyTransporteurID", DbType="Int")]
+		public System.Nullable<int> NotifyTransporteurID
 		{
 			get
 			{
-				return this._Station.Entity;
+				return this._NotifyTransporteurID;
 			}
 			set
 			{
-				Station previousValue = this._Station.Entity;
+				if ((this._NotifyTransporteurID != value))
+				{
+					if (this._Transporteur.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnNotifyTransporteurIDChanging(value);
+					this.SendPropertyChanging();
+					this._NotifyTransporteurID = value;
+					this.SendPropertyChanged("NotifyTransporteurID");
+					this.OnNotifyTransporteurIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NotifyReporterID", DbType="Int")]
+		public System.Nullable<int> NotifyReporterID
+		{
+			get
+			{
+				return this._NotifyReporterID;
+			}
+			set
+			{
+				if ((this._NotifyReporterID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnNotifyReporterIDChanging(value);
+					this.SendPropertyChanging();
+					this._NotifyReporterID = value;
+					this.SendPropertyChanged("NotifyReporterID");
+					this.OnNotifyReporterIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="NVarChar(500)")]
+		public string Link
+		{
+			get
+			{
+				return this._Link;
+			}
+			set
+			{
+				if ((this._Link != value))
+				{
+					this.OnLinkChanging(value);
+					this.SendPropertyChanging();
+					this._Link = value;
+					this.SendPropertyChanged("Link");
+					this.OnLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacebookLink", DbType="NVarChar(500)")]
+		public string FacebookLink
+		{
+			get
+			{
+				return this._FacebookLink;
+			}
+			set
+			{
+				if ((this._FacebookLink != value))
+				{
+					this.OnFacebookLinkChanging(value);
+					this.SendPropertyChanging();
+					this._FacebookLink = value;
+					this.SendPropertyChanged("FacebookLink");
+					this.OnFacebookLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_Notify", Storage="_Notifies", ThisKey="ID", OtherKey="ReportID")]
+		public EntitySet<Notify> Notifies
+		{
+			get
+			{
+				return this._Notifies;
+			}
+			set
+			{
+				this._Notifies.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportComment", Storage="_ReportComments", ThisKey="ID", OtherKey="ReportID")]
+		public EntitySet<ReportComment> ReportComments
+		{
+			get
+			{
+				return this._ReportComments;
+			}
+			set
+			{
+				this._ReportComments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportPhoto", Storage="_ReportPhotos", ThisKey="ID", OtherKey="ReportID")]
+		public EntitySet<ReportPhoto> ReportPhotos
+		{
+			get
+			{
+				return this._ReportPhotos;
+			}
+			set
+			{
+				this._ReportPhotos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_RuleReport", Storage="_RuleReports", ThisKey="ID", OtherKey="ReportID")]
+		public EntitySet<RuleReport> RuleReports
+		{
+			get
+			{
+				return this._RuleReports;
+			}
+			set
+			{
+				this._RuleReports.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportAnswer", Storage="_ReportAnswers", ThisKey="ID", OtherKey="ReportID")]
+		public EntitySet<ReportAnswer> ReportAnswers
+		{
+			get
+			{
+				return this._ReportAnswers;
+			}
+			set
+			{
+				this._ReportAnswers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_Report", Storage="_Bus", ThisKey="BusID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public Bus Bus
+		{
+			get
+			{
+				return this._Bus.Entity;
+			}
+			set
+			{
+				Bus previousValue = this._Bus.Entity;
 				if (((previousValue != value) 
-							|| (this._Station.HasLoadedOrAssignedValue == false)))
+							|| (this._Bus.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Station.Entity = null;
-						previousValue.RouteSections.Remove(this);
+						this._Bus.Entity = null;
+						previousValue.Reports.Remove(this);
 					}
-					this._Station.Entity = value;
+					this._Bus.Entity = value;
 					if ((value != null))
 					{
-						value.RouteSections.Add(this);
-						this._NextStationID = value.ID;
+						value.Reports.Add(this);
+						this._BusID = value.ID;
 					}
 					else
 					{
-						this._NextStationID = default(int);
+						this._BusID = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Station");
+					this.SendPropertyChanged("Bus");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_RouteSection", Storage="_Route", ThisKey="RouteID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Report", Storage="_User", ThisKey="NotifyReporterID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Reports.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Reports.Add(this);
+						this._NotifyReporterID = value.ID;
+					}
+					else
+					{
+						this._NotifyReporterID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transporteur_Report", Storage="_Transporteur", ThisKey="NotifyTransporteurID", OtherKey="ID", IsForeignKey=true)]
+		public Transporteur Transporteur
+		{
+			get
+			{
+				return this._Transporteur.Entity;
+			}
+			set
+			{
+				Transporteur previousValue = this._Transporteur.Entity;
+				if (((previousValue != value) 
+							|| (this._Transporteur.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Transporteur.Entity = null;
+						previousValue.Reports.Remove(this);
+					}
+					this._Transporteur.Entity = value;
+					if ((value != null))
+					{
+						value.Reports.Add(this);
+						this._NotifyTransporteurID = value.ID;
+					}
+					else
+					{
+						this._NotifyTransporteurID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Transporteur");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_Report", Storage="_Route", ThisKey="RouteID", OtherKey="ID", IsForeignKey=true)]
 		public Route Route
 		{
 			get
@@ -9978,53 +10712,87 @@ namespace maps.Model
 					if ((previousValue != null))
 					{
 						this._Route.Entity = null;
-						previousValue.RouteSections.Remove(this);
+						previousValue.Reports.Remove(this);
 					}
 					this._Route.Entity = value;
 					if ((value != null))
 					{
-						value.RouteSections.Add(this);
+						value.Reports.Add(this);
 						this._RouteID = value.ID;
 					}
 					else
 					{
-						this._RouteID = default(int);
+						this._RouteID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Route");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_RouteSection1", Storage="_Station1", ThisKey="StationID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Station Station1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Station_Report", Storage="_Station", ThisKey="StationID", OtherKey="ID", IsForeignKey=true)]
+		public Station Station
 		{
 			get
 			{
-				return this._Station1.Entity;
+				return this._Station.Entity;
 			}
 			set
 			{
-				Station previousValue = this._Station1.Entity;
+				Station previousValue = this._Station.Entity;
 				if (((previousValue != value) 
-							|| (this._Station1.HasLoadedOrAssignedValue == false)))
+							|| (this._Station.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Station1.Entity = null;
-						previousValue.RouteSections1.Remove(this);
+						this._Station.Entity = null;
+						previousValue.Reports.Remove(this);
 					}
-					this._Station1.Entity = value;
+					this._Station.Entity = value;
 					if ((value != null))
 					{
-						value.RouteSections1.Add(this);
+						value.Reports.Add(this);
 						this._StationID = value.ID;
 					}
 					else
 					{
-						this._StationID = default(int);
+						this._StationID = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Station1");
+					this.SendPropertyChanged("Station");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Report1", Storage="_User1", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public User User1
+		{
+			get
+			{
+				return this._User1.Entity;
+			}
+			set
+			{
+				User previousValue = this._User1.Entity;
+				if (((previousValue != value) 
+							|| (this._User1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User1.Entity = null;
+						previousValue.Reports1.Remove(this);
+					}
+					this._User1.Entity = value;
+					if ((value != null))
+					{
+						value.Reports1.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User1");
 				}
 			}
 		}
@@ -10048,23 +10816,87 @@ namespace maps.Model
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_Notifies(Notify entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = this;
+		}
+		
+		private void detach_Notifies(Notify entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = null;
+		}
+		
+		private void attach_ReportComments(ReportComment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = this;
+		}
+		
+		private void detach_ReportComments(ReportComment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = null;
+		}
+		
+		private void attach_ReportPhotos(ReportPhoto entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = this;
+		}
+		
+		private void detach_ReportPhotos(ReportPhoto entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = null;
+		}
+		
+		private void attach_RuleReports(RuleReport entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = this;
+		}
+		
+		private void detach_RuleReports(RuleReport entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = null;
+		}
+		
+		private void attach_ReportAnswers(ReportAnswer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = this;
+		}
+		
+		private void detach_ReportAnswers(ReportAnswer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Report = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RuleReport")]
-	public partial class RuleReport : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReportAnswer")]
+	public partial class ReportAnswer : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private int _RuleID;
+		private int _TransporteurID;
 		
 		private int _ReportID;
 		
+		private System.DateTime _AddedDate;
+		
+		private string _Answer;
+		
 		private EntityRef<Report> _Report;
 		
-		private EntityRef<Rule> _Rule;
+		private EntityRef<Transporteur> _Transporteur;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -10072,16 +10904,20 @@ namespace maps.Model
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnRuleIDChanging(int value);
-    partial void OnRuleIDChanged();
+    partial void OnTransporteurIDChanging(int value);
+    partial void OnTransporteurIDChanged();
     partial void OnReportIDChanging(int value);
     partial void OnReportIDChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnAnswerChanging(string value);
+    partial void OnAnswerChanged();
     #endregion
 		
-		public RuleReport()
+		public ReportAnswer()
 		{
 			this._Report = default(EntityRef<Report>);
-			this._Rule = default(EntityRef<Rule>);
+			this._Transporteur = default(EntityRef<Transporteur>);
 			OnCreated();
 		}
 		
@@ -10105,26 +10941,26 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RuleID", DbType="Int NOT NULL")]
-		public int RuleID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransporteurID", DbType="Int NOT NULL")]
+		public int TransporteurID
 		{
 			get
 			{
-				return this._RuleID;
+				return this._TransporteurID;
 			}
 			set
 			{
-				if ((this._RuleID != value))
+				if ((this._TransporteurID != value))
 				{
-					if (this._Rule.HasLoadedOrAssignedValue)
+					if (this._Transporteur.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnRuleIDChanging(value);
+					this.OnTransporteurIDChanging(value);
 					this.SendPropertyChanging();
-					this._RuleID = value;
-					this.SendPropertyChanged("RuleID");
-					this.OnRuleIDChanged();
+					this._TransporteurID = value;
+					this.SendPropertyChanged("TransporteurID");
+					this.OnTransporteurIDChanged();
 				}
 			}
 		}
@@ -10153,7 +10989,47 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_RuleReport", Storage="_Report", ThisKey="ReportID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Answer", DbType="NVarChar(MAX)")]
+		public string Answer
+		{
+			get
+			{
+				return this._Answer;
+			}
+			set
+			{
+				if ((this._Answer != value))
+				{
+					this.OnAnswerChanging(value);
+					this.SendPropertyChanging();
+					this._Answer = value;
+					this.SendPropertyChanged("Answer");
+					this.OnAnswerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_ReportAnswer", Storage="_Report", ThisKey="ReportID", OtherKey="ID", IsForeignKey=true)]
 		public Report Report
 		{
 			get
@@ -10170,12 +11046,12 @@ namespace maps.Model
 					if ((previousValue != null))
 					{
 						this._Report.Entity = null;
-						previousValue.RuleReports.Remove(this);
+						previousValue.ReportAnswers.Remove(this);
 					}
 					this._Report.Entity = value;
 					if ((value != null))
 					{
-						value.RuleReports.Add(this);
+						value.ReportAnswers.Add(this);
 						this._ReportID = value.ID;
 					}
 					else
@@ -10187,36 +11063,36 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rule_RuleReport", Storage="_Rule", ThisKey="RuleID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Rule Rule
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transporteur_ReportAnswer", Storage="_Transporteur", ThisKey="TransporteurID", OtherKey="ID", IsForeignKey=true)]
+		public Transporteur Transporteur
 		{
 			get
 			{
-				return this._Rule.Entity;
+				return this._Transporteur.Entity;
 			}
 			set
 			{
-				Rule previousValue = this._Rule.Entity;
+				Transporteur previousValue = this._Transporteur.Entity;
 				if (((previousValue != value) 
-							|| (this._Rule.HasLoadedOrAssignedValue == false)))
+							|| (this._Transporteur.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Rule.Entity = null;
-						previousValue.RuleReports.Remove(this);
+						this._Transporteur.Entity = null;
+						previousValue.ReportAnswers.Remove(this);
 					}
-					this._Rule.Entity = value;
+					this._Transporteur.Entity = value;
 					if ((value != null))
 					{
-						value.RuleReports.Add(this);
-						this._RuleID = value.ID;
+						value.ReportAnswers.Add(this);
+						this._TransporteurID = value.ID;
 					}
 					else
 					{
-						this._RuleID = default(int);
+						this._TransporteurID = default(int);
 					}
-					this.SendPropertyChanged("Rule");
+					this.SendPropertyChanged("Transporteur");
 				}
 			}
 		}

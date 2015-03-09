@@ -3,12 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css/bus")
     @RenderSection("styles", false)
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-
 </head>
-<body class="overflow">
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -22,11 +21,7 @@
                     <img src="/Content/images/maps_logo_small.png" />
                 </a>
             </div>
-
             <div class="collapse navbar-collapse pull-right">
-                <ul class="nav navbar-nav navbar-form">
-                    @Html.Action("SelectCities", "Home", new { area = "Default" })
-                </ul>
                 <ul class="nav navbar-nav navbar-form">
                     @Html.Action("UserLogin", "Home", new { area = "Default" })
                 </ul>
@@ -34,8 +29,8 @@
             @Html.Partial("TopMenu")
         </div>
     </div>
-    @RenderBody()
 
+    @RenderBody()
     <div id="PopupWrapper"></div>
     @Html.Partial("GoogleAnalytics")
     @MiniProfiler.RenderIncludes()

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Rule>
+@{
+    ViewBag.Title = "Правила";
+    Layout = "~/Areas/Bus/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>
+    @ViewBag.Title
+</h2>
+@Html.ActionLink("Додати", "Create", "Rule", null, new { @class = "btn btn-primary" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Назва
+            </th>
+            <th>
+                Тип
+            </th>
+            <th>
+                 Закон
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.ТуреStr
+            </td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", "Rule", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Видалити", "Delete", "Rule", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+            </td>
+        </tr>
+    }
+</table>
+

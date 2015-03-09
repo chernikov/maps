@@ -1,17 +1,26 @@
-﻿@model IEnumerable<maps.Model.Brand>
+﻿@model IEnumerable<Bus>
 @{
-    ViewBag.Title = "Марки бусів";
+    ViewBag.Title = "Буси";
     Layout = "~/Areas/Bus/Views/Shared/_AdminLayout.cshtml";
 }
 <h2>
     @ViewBag.Title
 </h2>
-@Html.ActionLink("Додати", "Create", "Brand", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Додати", "Create", "Bus", null, new { @class = "btn btn-primary" })
 <table class="table">
     <thead>
         <tr>
             <th>
-                Назва
+                Номер
+            </th>
+            <th>
+                Маршрут
+            </th>
+            <th>
+                Перевізник
+            </th>
+            <th>
+                Бренд
             </th>
             <th>
             </th>
@@ -22,11 +31,20 @@
     {
         <tr>
             <td>
-                @item.Name
+                @item.Number
             </td>
             <td>
-                @Html.ActionLink("Редагувати", "Edit", "Brand", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
-                @Html.ActionLink("Видалити", "Delete", "Brand", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+                @item.Route.Name
+            </td>
+            <td>
+                @item.Transporteur.FullName
+            </td>
+            <td>
+                @item.Brand.Name
+            </td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", "Bus", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Видалити", "Delete", "Bus", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
             </td>
         </tr>
     }

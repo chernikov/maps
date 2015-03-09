@@ -97,6 +97,8 @@
     <Build Include="dbo\Tables\Notify.sql" />
     <Build Include="dbo\Tables\RuleReport.sql" />
     <Build Include="dbo\Tables\ReportPhoto.sql" />
+    <Build Include="dbo\Tables\FundamentalRule.sql" />
+    <Build Include="dbo\Tables\ReportAnswer.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\Init.sql" />

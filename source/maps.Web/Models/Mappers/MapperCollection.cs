@@ -169,5 +169,50 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<BusView, Bus>();
             }
         }
+
+        public static class FundamentalRuleMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<FundamentalRule, FundamentalRuleView>();
+                Mapper.CreateMap<FundamentalRuleView, FundamentalRule>();
+            }
+        }
+
+        public static class RuleMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<Rule, RuleView>();
+                Mapper.CreateMap<RuleView, Rule>();
+            }
+        }
+
+        public static class ReportMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<Report, NewReportView>();
+                Mapper.CreateMap<NewReportView, Report>();
+            }
+
+        }
+        public static class ReportPhotoMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<ReportPhoto, ReportPhotoView>();
+                Mapper.CreateMap<ReportPhotoView, ReportPhoto>();
+            }
+        }
+
+        public static class ReportAnswerMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<ReportAnswer,  ReportAnswerView>();
+                Mapper.CreateMap<ReportAnswerView,  ReportAnswer>();
+            }
+        }
     }
 }

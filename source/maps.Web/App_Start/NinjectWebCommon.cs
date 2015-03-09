@@ -55,6 +55,7 @@ namespace maps.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IConfig>().To<Config>();
+            kernel.Bind<ISmsConfig>().To<Config>();
             kernel.Bind<mapsDbDataContext>().ToMethod(c => new mapsDbDataContext(kernel.Get<IConfig>().ConnectionStrings("ConnectionString")));
             kernel.Bind<IRepository>().To<SqlRepository>().InRequestScope();
             kernel.Bind<IAuthentication>().To<CustomAuthentication>().InRequestScope();

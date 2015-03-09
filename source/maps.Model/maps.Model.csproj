@@ -49,6 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepository.cs" />
+    <Compile Include="mapsDb.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mapsDb.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -68,12 +73,14 @@
     <Compile Include="Proxy\Goal.cs" />
     <Compile Include="Proxy\GoalCell.cs" />
     <Compile Include="Proxy\Notify.cs" />
+    <Compile Include="Proxy\ReportAnswer.cs" />
     <Compile Include="Proxy\Report.cs" />
     <Compile Include="Proxy\ReportComment.cs" />
     <Compile Include="Proxy\ReportPhoto.cs" />
     <Compile Include="Proxy\Role.cs" />
     <Compile Include="Proxy\Route.cs" />
     <Compile Include="Proxy\RouteSection.cs" />
+    <Compile Include="Proxy\FundamentalRule.cs" />
     <Compile Include="Proxy\Rule.cs" />
     <Compile Include="Proxy\RuleReport.cs" />
     <Compile Include="Proxy\Social.cs" />
@@ -102,12 +109,14 @@
     <Compile Include="SqlRepository\Goal.cs" />
     <Compile Include="SqlRepository\GoalCell.cs" />
     <Compile Include="SqlRepository\Notify.cs" />
+    <Compile Include="SqlRepository\ReportAnswer.cs" />
     <Compile Include="SqlRepository\Report.cs" />
     <Compile Include="SqlRepository\ReportComment.cs" />
     <Compile Include="SqlRepository\ReportPhoto.cs" />
     <Compile Include="SqlRepository\Role.cs" />
     <Compile Include="SqlRepository\Route.cs" />
     <Compile Include="SqlRepository\RouteSection.cs" />
+    <Compile Include="SqlRepository\FundamentalRule.cs" />
     <Compile Include="SqlRepository\Rule.cs" />
     <Compile Include="SqlRepository\RuleReport.cs" />
     <Compile Include="SqlRepository\Social.cs" />
@@ -115,11 +124,6 @@
     <Compile Include="SqlRepository\Transporteur.cs" />
     <Compile Include="SqlRepository\User.cs" />
     <Compile Include="SqlRepository\UserRole.cs" />
-    <Compile Include="mapsDb.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mapsDb.dbml</DependentUpon>
-    </Compile>
     <Compile Include="SqlRepository\UtilityDepartment.cs" />
     <Compile Include="SqlRepository\UtilityIssue.cs" />
     <Compile Include="SqlRepository\UtilityIssueComment.cs" />
@@ -130,30 +134,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <None Include="mapsDb.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>mapsDb.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="mapsDb.dbml.layout">
-      <DependentUpon>mapsDb.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">
       <Project>{2755dee8-1af1-41cc-b798-1eed42a9581d}</Project>
       <Name>Tool</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mapsDb.dbml.layout">
+      <DependentUpon>mapsDb.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

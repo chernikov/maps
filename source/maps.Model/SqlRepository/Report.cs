@@ -22,6 +22,8 @@ namespace maps.Model
         {
             if (instance.ID == 0)
             {
+                instance.AddedDate = DateTime.Now;
+                instance.DeadlineDate = DateTime.Now.AddDays(5);
                 Db.Reports.InsertOnSubmit(instance);
                 Db.Reports.Context.SubmitChanges();
                 return true;
@@ -36,6 +38,9 @@ namespace maps.Model
             if (cache != null)
             {
                 cache.UserID = instance.UserID;
+                cache.RouteID = instance.RouteID;
+                cache.Type = instance.Type;
+                cache.Status = instance.Status;
                 cache.BusID = instance.BusID;
                 cache.Status = instance.Status;
                 cache.DeadlineDate = instance.DeadlineDate;

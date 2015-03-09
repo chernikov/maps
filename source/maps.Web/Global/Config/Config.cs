@@ -8,7 +8,7 @@ using System.Web;
 
 namespace maps.Web.Global.Config
 {
-    public class Config : IConfig
+    public class Config : IConfig, ISmsConfig
     {
         public string ConnectionStrings(string connectionString)
         {
@@ -53,6 +53,30 @@ namespace maps.Web.Global.Config
             get
             {
                 return (FacebookAppConfig)ConfigurationManager.GetSection("facebookAppConfig");
+            }
+        }
+
+        public string SmsAPIKey
+        {
+            get 
+            {
+                return ConfigurationManager.AppSettings["SmsAPIKey"];
+            }
+        }
+
+        public string SmsSender
+        {
+            get 
+            {
+                return ConfigurationManager.AppSettings["SmsSender"];
+            }
+        }
+
+        public string SmsTemplateUri
+        {
+            get 
+            {
+                return ConfigurationManager.AppSettings["SmsTemplateUri"];
             }
         }
     }

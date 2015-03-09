@@ -8,6 +8,7 @@ using maps.Model;
 
 namespace maps.Web.Areas.Bus.Controllers
 {
+    [Authorize(Roles="admin")]
     public class TransporteurController : BaseBusController
     {
         public ActionResult Index()

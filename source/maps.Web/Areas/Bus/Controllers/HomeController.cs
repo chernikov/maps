@@ -1,16 +1,21 @@
-﻿using System;
+﻿using maps.Web.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace maps.Web.Areas.Bus.Controllers
 {
-    public class AdminController : BaseBusController
+    public class HomeController : BaseBusController
     {
-        public ActionResult Index()
+        private const int PageSize = 20;
+        public ActionResult Index(int page = 1)
         {
-            return View();
+            var reports = Repository.Reports.OrderByDescending(p => p.ID);
+
+            return View(reports.ToPagedList(page, PageSize));
         }
     }
 }

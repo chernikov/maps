@@ -45,12 +45,12 @@ namespace maps.Web.Models.ViewModels
 
         public int RouteID { get; set; }
 
-        private List<Brand> _routes
+        private List<Route> _routes
         {
             get
             {
                 var repository = DependencyResolver.Current.GetService<IRepository>();
-                return repository.Brands.ToList();
+                return repository.Routes.ToList();
             }
         }
 

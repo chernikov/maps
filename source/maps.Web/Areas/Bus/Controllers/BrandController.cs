@@ -63,27 +63,5 @@ namespace maps.Web.Areas.Bus.Controllers
             }
             return RedirectToAction("Index");
         }
-
-
-        [HttpGet]
-        public ActionResult EditBatch()
-        {
-            return View("EditBatch", string.Empty);
-        }
-
-        [HttpPost]
-        public ActionResult EditBatch(string Data)
-        {
-            var lines = Data.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (var line in lines)
-            {
-                var brand = new Brand()
-                {
-                    Name = line.Trim(),
-                };
-                Repository.CreateBrand(brand);
-           }
-           return View("EditBatch", string.Empty);
-        }
     }
 }

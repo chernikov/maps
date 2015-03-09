@@ -1,0 +1,96 @@
+﻿@model Report
+@{
+    ViewBag.Title = "#" + Model.ID + " " + Model.DateTime.Value.ToString("dd.MM.yyyy HH:mm");
+    Layout = "~/Areas/Bus/Views/Shared/_Layout.cshtml";
+    var currentUser = ((BaseController)ViewContext.Controller).CurrentUser;
+    var currentTransporteur = ((BaseBusController)ViewContext.Controller).CurrentTransporteur;
+}
+@section header {
+    @Scripts.Render("~/Scripts/bus/report-item.js")
+}
+<div class="row">
+    <p></p>
+</div>
+<div class="row">
+    <div class="col-sm-3 col-sm-offset-3">
+        @if (Model.SubRules.Any())
+        {
+            foreach (var photo in Model.SubPhotos)
+            {
+                <div class="thumbnail">
+                    @if (photo.ImagePath != null)
+                    {
+                        <img src="@photo.ImagePath?w=200&h=200&mode=crop" />
+                    }
+                </div>
+            }
+        }
+    </div>
+    <div class="col-sm-5">
+        <h3><span class="label label-info">@Model.StatusStr</span></h3>
+        @if (currentUser == null || !currentUser.InRoles("transporteur") || !Model.HasAccess(currentUser))
+        {
+            if (Model.Status == (int)Report.StatusEnum.New)
+            {
+                @Html.ActionLink("SMS", "SendSms", "Report", new { id = Model.ID }, new { @class = "btn btn-default" })
+            }
+        }
+        @if (currentTransporteur == null)
+        {
+            <p>
+                Натисніть @Html.ActionLink("Відповісти", "Index", "Login", new { id = Model.ID }, new { @class = "btn btn-primary" }), якщо ви є перевізником даного автобусу.
+            </p>
+        }
+        else
+        {
+            if (!Model.HasAnswerFrom(currentTransporteur))
+            {
+                <div id="AnswerWrapper">
+                    @Html.Action("Answer", "Report", new { id = Model.ID })
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <h3>Ви вже відповіли</h3>
+                    </div>
+                </div>
+            }
+        }
+        <p>
+            <strong>Дата: </strong>@Model.DateTime.Value.ToString("dd.MM.yyyy HH:mm")
+        </p>
+        <p>
+            <strong>Автобус: </strong> #@Model.Route.Name @Model.Bus.Number @Model.Bus.Brand.Name
+        </p>
+        @if (Model.SubRules.Any())
+        {
+            <p>
+                <strong>
+                    Порушені правила :
+                </strong>
+                @foreach (var rule in Model.SubRules)
+                {
+                <p>
+                    <h4> @rule.Name</h4>
+
+                    @Html.Raw(rule.Description.NlToBr())
+
+                    @if (!string.IsNullOrWhiteSpace(rule.UrlToLaw))
+                    {
+                        <br />
+                        <a href="@rule.UrlToLaw">@rule.UrlToLaw</a>
+                    }
+                </p>
+                }
+                </p>
+        }
+        <p>
+            <strong>  Опис : </strong>
+            @Model.Description.NlToBr()
+        </p>
+        <p></p>
+
+    </div>
+</div>
