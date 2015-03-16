@@ -5,6 +5,11 @@
 }
 <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
-        <li class="@(controllerName == "Admin" ? "active" : "")"><a href="@Url.Action("Index", "Admin")">Адмінка</a></li>
+        @if (currentUser != null && currentUser.InRoles("admin"))
+        {
+            <li class="@(controllerName == "Admin" ? "active" : "")"><a href="@Url.Action("Index", "Admin")">Адмінка</a></li>
+        }
+        <li class=""><a href="@Url.Action("Info", "Home")">Інформація</a></li>
     </ul>
+
 </div>

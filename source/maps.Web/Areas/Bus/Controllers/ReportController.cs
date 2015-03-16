@@ -17,10 +17,69 @@ namespace maps.Web.Areas.Bus.Controllers
     public class ReportController : BaseBusController
     {
         [HttpGet]
+        public ActionResult New()
+        {
+            if (CurrentUser != null)
+            {
+                return RedirectToAction("Create", "Report");
+            }
+            return View(new NewReportView()
+            {
+                DateTime = DateTime.Now.Date.AddHours(12)
+            });
+        }
+
+
+
+        [HttpPost]
+        public ActionResult New(NewReportView newReportView)
+        {
+            if (ModelState.IsValid)
+            {
+                if (CurrentUser == null) 
+                {
+                    newReportView.Mobile = "38" + newReportView.Mobile.ClearPhone();         
+                    var savedCode = Session["Code"] as string;
+                    var savedMobile = Session["Mobile"] as string;
+                    if (newReportView.Code == savedCode && newReportView.Mobile == savedMobile)
+                    {
+                        var user = Repository.Users.FirstOrDefault(p => p.Mobile == newReportView.Mobile);
+                        if (user == null)
+                        {
+                            var newUser = new User()
+                            {
+                                Login = Translit.Translate(string.Format("{0}_{1}", newReportView.LastName, newReportView.FirstName)),
+                                LastName = newReportView.LastName,
+                                FirstName = newReportView.FirstName,
+                                Mobile = newReportView.Mobile,
+                                Password = newReportView.Code, 
+                                CityID = CurrentCity.ID
+                            };
+                            Repository.CreateUser(newUser);
+                            newReportView.UserID = newUser.ID;
+                            Auth.Login(newUser.Login);
+                        }
+                        else
+                        {
+                            newReportView.UserID = user.ID;
+                            Auth.Login(user.Login);
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Code", "Код введено невірно");
+                    }
+                }
+                CreateReport(newReportView);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
         [Authorize]
         public ActionResult Create()
         {
-            return View(new NewReportView()
+            return View(new CreateReportView()
             {
                 UserID = CurrentUser.ID,
                 DateTime = DateTime.Now.Date.AddHours(12)
@@ -29,42 +88,48 @@ namespace maps.Web.Areas.Bus.Controllers
 
         [HttpPost]
         [Authorize]
-        public ActionResult Create(NewReportView newReportView)
+        public ActionResult Create(CreateReportView createReportView)
         {
             if (ModelState.IsValid)
             {
-                var report = (Report)ModelMapper.Map(newReportView, typeof(NewReportView), typeof(Report));
-                report.UserID = CurrentUser.ID;
-                var rules = Repository.Rules.Where(p => newReportView.SelectedRules.Contains(p.ID));
-                report.Type = rules.Any(p => p.IsRouteScope) ? (int)Report.TypeEnum.RouteScope : (int)Report.TypeEnum.BusScope;
-                report.Status = (int)Report.StatusEnum.New;
-                Repository.CreateReport(report);
+                createReportView.UserID = CurrentUser.ID;
 
-                if (newReportView.Photos != null)
+                CreateReport(createReportView);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        private void CreateReport(CreateReportView createReportView)
+        {
+            var report = (Report)ModelMapper.Map(createReportView, typeof(CreateReportView), typeof(Report));
+            var rules = Repository.Rules.Where(p => createReportView.SelectedRules.Contains(p.ID));
+            report.Type = rules.Any(p => p.IsRouteScope) ? (int)Report.TypeEnum.RouteScope : (int)Report.TypeEnum.BusScope;
+            report.Status = (int)Report.StatusEnum.New;
+            Repository.CreateReport(report);
+
+            if (createReportView.Photos != null)
+            {
+                foreach (var reportPhotoView in createReportView.Photos)
                 {
-                    foreach (var reportPhotoView in newReportView.Photos)
+                    var reportPhoto = Repository.ReportPhotos.FirstOrDefault(p => p.ID == reportPhotoView.Value.ID);
+                    if (reportPhoto != null)
                     {
-                        var reportPhoto = Repository.ReportPhotos.FirstOrDefault(p => p.ID == reportPhotoView.Value.ID);
-                        if (reportPhoto != null)
-                        {
-                            reportPhoto.ReportID = report.ID;
-                            Repository.UpdateReportPhoto(reportPhoto);
-                        }
-                    }
-                }
-                if (newReportView.SelectedRules != null)
-                {
-                    foreach (var ruleId in newReportView.SelectedRules)
-                    {
-                        Repository.CreateRuleReport(new RuleReport()
-                        {
-                            ReportID = report.ID,
-                            RuleID = ruleId
-                        });
+                        reportPhoto.ReportID = report.ID;
+                        Repository.UpdateReportPhoto(reportPhoto);
                     }
                 }
             }
-            return RedirectToAction("Index", "Home");
+            if (createReportView.SelectedRules != null)
+            {
+                foreach (var ruleId in createReportView.SelectedRules)
+                {
+                    Repository.CreateRuleReport(new RuleReport()
+                    {
+                        ReportID = report.ID,
+                        RuleID = ruleId
+                    });
+                }
+            }
         }
 
         public ActionResult SelectBus(int? routeId, int? busId = null)
@@ -146,12 +211,85 @@ namespace maps.Web.Areas.Bus.Controllers
             var report = Repository.Reports.FirstOrDefault(p => p.ID == id);
             if (report.Bus != null)
             {
+                report.Status = (int)Report.StatusEnum.Notified;
+                Repository.UpdateReport(report);
                 var transporteur = report.Bus.Transporteur;
                 var result = SmsSender.SendSms("38" + transporteur.PrimaryPhone.ClearPhone(),
-                    string.Format("Porushennja! Bus " + report.Bus.Number + ". Bil'she dostupno po http://maps.if.ua/report/" + report.ID));
+                    string.Format("Porushennja! Bus " + report.Bus.Number + ". Bil'she: http://maps.if.ua/report/" + report.ID));
+
+                Repository.CreateNotify(new Notify()
+                {
+                    ReportID = report.ID,
+                    Phone = "38" + transporteur.PrimaryPhone.ClearPhone(),
+                    Result = result,
+                    Text = string.Format("Porushennja! Bus " + report.Bus.Number + ". Bil'she: http://maps.if.ua/report/" + report.ID),
+                    Sender = "IFBus"
+                });
             }
 
             return RedirectToAction("Item", new { id });
+        }
+
+        public ActionResult SendCode(string mobile)
+        {
+            mobile = "38" + mobile.ClearPhone();
+            if (mobile.IsPhone())
+            {
+                var user = Repository.Users.FirstOrDefault(p => p.Mobile == mobile);
+                if (user != null) 
+                {
+                    var result = SmsSender.SendSms(user.Mobile, "Vash parol': " + user.Password);
+                    Repository.CreateNotify(new Notify()
+                    {
+                        ReportID = null,
+                        Phone = user.Mobile,
+                        Result = result,
+                        Text = "Vash parol': " + user.Password,
+                        Sender = "IFBus"
+                    });
+
+                    return Json(new { result = "ok", data = result }, JsonRequestBehavior.AllowGet);
+                } else {
+                    var code = StringExtension.CreateRandomPassword(6, "0123456789");
+                    Session["Mobile"] = mobile;
+                    Session["Code"] = code;
+                    var result = SmsSender.SendSms(mobile, "Vash cod: " + code);
+                    Repository.CreateNotify(new Notify()
+                    {
+                        ReportID = null,
+                        Phone = mobile,
+                        Result = result,
+                        Text = "Vash cod: " + code,
+                        Sender = "IFBus"
+                    });
+                    return Json(new { result = "ok", data = result }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return Json(new { result = "error", data = "Введіть мобільний телефон" }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult CheckCode(string mobile, string code)
+        {
+             mobile = "38" + mobile.ClearPhone();
+            var user = Repository.Users.FirstOrDefault(p => p.Mobile == mobile);
+            if (user != null)
+            {
+                if (code == user.Password)
+                {
+                    Auth.Login(user.Login);
+                    return Json(new { result = "ok", userID = user.ID }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                var savedCode = Session["Code"] as string;
+                var savedMobile = Session["Mobile"] as string;
+                if (code == savedCode && mobile == savedMobile)
+                {
+                    return Json(new { result = "ok" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return Json(new { result = "error", data = "Код не вірний" }, JsonRequestBehavior.AllowGet);
         }
 
 
@@ -185,6 +323,10 @@ namespace maps.Web.Areas.Bus.Controllers
                     var reportAnswer = (ReportAnswer)ModelMapper.Map(reportAnswerView, typeof(ReportAnswerView), typeof(ReportAnswer));
                     reportAnswer.TransporteurID = CurrentTransporteur.ID;
                     Repository.CreateReportAnswer(reportAnswer);
+
+                    report.Status = (int)Report.StatusEnum.Answered;
+                    Repository.UpdateReport(report);
+
                     return View("Thanks");
                 }
                 return null;

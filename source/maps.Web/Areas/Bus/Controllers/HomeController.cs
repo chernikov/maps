@@ -17,5 +17,10 @@ namespace maps.Web.Areas.Bus.Controllers
 
             return View(reports.ToPagedList(page, PageSize));
         }
+
+        public ActionResult Info()
+        {
+            return View();
+        }
     }
 }
