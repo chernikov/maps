@@ -9,6 +9,7 @@
 </h2>
 @Html.ActionLink("Додати", "Create", "BicycleParking", null, new { @class = "btn btn-primary" })
 
+@Html.ActionLink("Додати (для медиків)", "CreateMedical", "BicycleParking", null, new { @class = "btn btn-primary" })
 
 <table class="table">
     <thead>
@@ -63,6 +64,7 @@
                         <span class="label label-warning">Не перевірено </span><a class="btn btn-xs btn-default" href="@Url.Action("Verify", "BicycleParking", new { id = item.ID })"><span class="glyphicon glyphicon-ok"></span></a>
                     </h5>
                 }
+                @(item.IsMedical ? "Медична" : "")
             </td>
             <td>
                 @item.User.FirstName @item.User.LastName

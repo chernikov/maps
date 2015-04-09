@@ -1,0 +1,176 @@
+﻿@model NewReportView
+@{
+    ViewBag.Title = "Додати скаргу";
+    Layout = "~/Areas/Bus/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/Scripts/moment.js")
+    @Scripts.Render("~/Scripts/jquery.blockUI.js")
+    @Scripts.Render("~/Scripts/bootstrap-datetimepicker.js")
+    @Scripts.Render("~/scripts/bus/report-new.js")
+}
+
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+    @Styles.Render("~/Content/css/bootstrap-datetimepicker.css")
+}
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <h2>@ViewBag.Title</h2>
+        <p></p>
+        @using (Html.BeginForm("New", "Report", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <fieldset>
+                @Html.Hidden("ID", Model.ID)
+                @Html.Hidden("UserID", Model.UserID)
+                <div class="form-group @Html.HasErrorClass("LastName", "has-error")">
+                    <label class="col-sm-3 control-label" for="LastName">
+                        Прізвище
+                        <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Вкажіть своє прізвище"></span>
+                    </label>
+                    <div class="col-sm-5">
+                        @Html.TextBox("LastName", Model.LastName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.ValidationMessage("LastName")
+                    </div>
+                </div>
+                <div class="form-group @Html.HasErrorClass("FirstName", "has-error")">
+                    <label class="col-sm-3 control-label" for="FirstName">
+                        Ім'я
+                        <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Вкажіть своє ім'я"></span>
+                    </label>
+                    <div class="col-sm-5">
+                        @Html.TextBox("FirstName", Model.FirstName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.ValidationMessage("FirstName")
+                    </div>
+                </div>
+                <div class="form-group @Html.HasErrorClass("Mobile", "has-error")">
+                    <label class="col-sm-3 control-label" for="Mobile">
+                        Мобільний телефон
+                        <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Вкажіть свій мобільний телефон"></span>
+                    </label>
+                    <div class="col-sm-3">
+                        @Html.TextBox("Mobile", Model.Mobile, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="btn btn-primary" id="SendCode">Вислати код</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="help-block">формат: 095-777-65-43</span>
+                    </div>
+                </div>
+                <div class="form-group @Html.HasErrorClass("Mobile", "has-error")">
+                    <label class="col-sm-3 control-label" for="Code">
+                        Код
+                        <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Введіть код який прийшов на мобільний телефон"></span>
+                    </label>
+                    <div class="col-sm-2">
+                        @Html.TextBox("Code", Model.Code, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.ValidationMessage("Code")
+                        <div class="btn btn-primary" id="CheckCode">Перевірити код</div>
+                    </div>
+                </div>
+                <div id="MainForm">
+                    <div class="form-group @Html.HasErrorClass("DateTime", "has-error")">
+                        <label class="col-sm-3 control-label" for="DateTime">
+                            Дата і час
+                            <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Для початку додайте дату і час події. Якщо це тривало довго, то додайте це в детальний опис"></span>
+                        </label>
+                        <div class="col-sm-5">
+                            @Html.TextBox("DateTime", Model.DateTime.ToString("dd.MM.yyyy HH:mm"), new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.ValidationMessage("DateTime")
+                        </div>
+                    </div>
+                    <div class="form-group @Html.HasErrorClass("RouteID", "has-error")">
+                        <label class="col-sm-3 control-label" for="RouteID">
+                            Маршрут
+                            <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Оберіть маршрут, за яким їхав водій, який порушив правила"></span>
+                        </label>
+                        <div class="col-sm-5">
+                            @Html.DropDownList("RouteID", Model.SelectListRoutes, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.ValidationMessage("RouteID")
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            Номер автобусу
+                            <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Оберіть номер автобусу, водій якого порушив правила. Якщо ви не зайшли цього автобуса в списку, вкажіть це в детальному описі."></span>
+                        </label>
+                        <div id="BusWrapper">
+                            @Html.Action("SelectBus", new { routeId = Model.RouteID })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            Порушені правила
+                            <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Виберіть з порушених правил ті які порушив водій автобусу. Якщо в переліку правил нема цього порушення вкажіть в детальному описі."></span>
+                        </label>
+                        <div class="col-sm-9">
+                            @foreach (var rule in Model.Rules)
+                            {
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="@rule.ID" name="SelectedRules" @(Model.SelectedRules.Contains(rule.ID) ? "checked" : "") class="RuleSelector @(rule.IsRouteScope? "IsRoute" : "IsBus")" />
+                                        @rule.Name
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            Фотографії
+                            <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Додайте фотографію порушення."></span>
+                        </label>
+                        <div class="col-sm-9">
+                            <div class="row" id="ReportPhotosWrapper">
+                                @if (Model.Photos != null)
+                                {
+                                    foreach (var keyValuePair in Model.Photos)
+                                    {
+                                        @Html.Partial("ReportPhoto", keyValuePair)
+                                    }
+                                }
+                            </div>
+                            @Html.Partial("UploadTemplate")
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="AddPhoto">Додати</div>
+                        </div>
+                    </div>
+                    <div class="form-group  @Html.HasErrorClass("Description", "has-error")">
+                        <label class="col-sm-3 control-label" for="Description">
+                            Детальний опис
+                            <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Зробіть детальний опис. Це допоможить краще оформити порушення."></span>
+                        </label>
+                        <div class="col-sm-5">
+                            @Html.TextArea("Description", Model.Description, new { @class = "form-control textarea" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.ValidationMessage("Description")
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary center-block btn-lg">
+                        Додати
+                    </button>
+                </div>
+            </fieldset>
+        }
+    </div>
+</div>
+<div>
+    <p>&nbsp;</p><p>&nbsp;</p>
+</div>

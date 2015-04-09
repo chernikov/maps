@@ -18,6 +18,10 @@
         {
             @Html.ActionLink("Додати скаргу", "Create", "Report", null, new { @class = "btn btn-primary" })
         }
+        else
+        {
+            @Html.ActionLink("Додати скаргу", "New", "Report", null, new { @class = "btn btn-primary" })
+        }
     </div>
 </div>
 <table class="table">
@@ -30,7 +34,7 @@
                 Дата
             </th>
             <th>
-                Бус 
+                Бус
             </th>
             <th>
                 Порушені правила
@@ -52,7 +56,7 @@
     {
         <tr>
             <td>
-               @item.ID
+                @item.ID
             </td>
             <td>
                 @item.DateTime
@@ -88,7 +92,7 @@
                     {
                         @Html.ActionLink("Редагувати", "Edit", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
                     }
-                    
+
                     if (currentUser.InRoles("admin"))
                     {
                         @Html.ActionLink("Видалити", "Delete", "Report", new { id = item.ID }, new { @class = "btn btn-xs btn-danger" })

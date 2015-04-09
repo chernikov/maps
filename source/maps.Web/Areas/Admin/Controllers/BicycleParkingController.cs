@@ -31,6 +31,16 @@ namespace maps.Web.Areas.Admin.Controllers
             return View("Edit", bicycleparkingView);
         }
 
+        public ActionResult CreateMedical()
+        {
+            var bicycleparkingView = new AdminBicycleParkingView()
+            {
+                CityID = CurrentCity != null ? (int?)CurrentCity.ID : null,
+                IsMedical = true,
+            };
+            return View("Edit", bicycleparkingView);
+        }
+
         [HttpGet]
         public ActionResult Edit(int id)
         {

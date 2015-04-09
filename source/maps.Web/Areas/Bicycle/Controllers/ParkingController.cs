@@ -17,6 +17,11 @@ namespace maps.Web.Areas.Bicycle.Controllers
             return View();
         }
 
+        public ActionResult Medical()
+        {
+            return View();
+        }
+
         public ActionResult Futures()
         {
             return View();
@@ -24,7 +29,7 @@ namespace maps.Web.Areas.Bicycle.Controllers
         }
         public ActionResult GetAll()
         {
-            var list = Repository.BicycleParkings.Where(p => (p.VerifiedDate != null 
+            var list = Repository.BicycleParkings.Where(p => !p.IsMedical && (p.VerifiedDate != null 
                 || !p.Exist) && p.CityID == CurrentCity.ID).ToList();
 
             return Json(new { result = "ok", data = list.Select(p => 
@@ -33,6 +38,24 @@ namespace maps.Web.Areas.Bicycle.Controllers
                         Position = p.Position,
                         Exist = p.Exist,
                         Type = p.Type}) }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetMedical()
+        {
+            var list = Repository.BicycleParkings.Where(p => p.IsMedical && p.CityID == CurrentCity.ID).ToList();
+
+            return Json(new
+            {
+                result = "ok",
+                data = list.Select(p =>
+                    new
+                    {
+                        Id = p.ID,
+                        Position = p.Position,
+                        Exist = p.Exist,
+                        Type = p.Type
+                    })
+            }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult GetFuture()

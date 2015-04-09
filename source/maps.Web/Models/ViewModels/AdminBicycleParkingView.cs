@@ -13,6 +13,8 @@ namespace maps.Web.Models.ViewModels
         [Required(ErrorMessage = "¬ибер≥ть м≥сто")]
         public int? CityID { get; set; }
 
+        public bool IsMedical { get; set; }
+
         public double CityCenterLat { get; set; }
 
         public double CityCenterLng { get; set; }

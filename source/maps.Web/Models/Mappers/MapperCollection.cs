@@ -192,7 +192,7 @@ namespace maps.Web.Models.Mappers
         {
             public static void Init()
             {
-                Mapper.CreateMap<Report, NewReportView>();
+                Mapper.CreateMap<CreateReportView, Report>();
                 Mapper.CreateMap<NewReportView, Report>();
             }
 

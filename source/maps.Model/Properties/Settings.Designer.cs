@@ -83,5 +83,15 @@ namespace maps.Model.Properties {
                 return ((string)(this["mapsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SATURN\\MSSQL;Initial Catalog=maps_medic;Integrated Security=True")]
+        public string maps_medicConnectionString {
+            get {
+                return ((string)(this["maps_medicConnectionString"]));
+            }
+        }
     }
 }

@@ -97,13 +97,31 @@ namespace maps.Web.Areas.Bus.Controllers
             {
                 if (transporteur.User != null) 
                 {
-                    SmsSender.SendSms(transporteur.User.Mobile, "Vash parol: " + transporteur.User.Password);
+                    var result = SmsSender.SendSms(transporteur.User.Mobile, "Vash parol: " + transporteur.User.Password);
+
+                     Repository.CreateNotify(new Notify()
+                {
+                   
+                    Phone = transporteur.User.Mobile,
+                    Result = result,
+                    Text = "Vash parol: " + transporteur.User.Password,
+                    Sender = "IFBus"
+                });
                 } 
                 else 
                 {
                     var code = StringExtension.CreateRandomPassword(6, "0123456789");
                     Session["Code"] = code;
-                    SmsSender.SendSms("38" + mobile.ClearPhone(), "Vash cod: " + code);
+                    var result = SmsSender.SendSms("38" + mobile.ClearPhone(), "Vash cod: " + code);
+
+                    Repository.CreateNotify(new Notify()
+                    {
+                        ReportID = null,
+                        Phone = "38" + mobile.ClearPhone(),
+                        Result = result,
+                        Text = "Vash parol': " + "Vash cod: " + code,
+                        Sender = "IFBus"
+                    });
                 }
             }
             return Json(new { result = "ok" }, JsonRequestBehavior.AllowGet);

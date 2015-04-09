@@ -22,7 +22,7 @@ namespace maps.Model
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="maps")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="maps_medic")]
 	public partial class mapsDbDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -39,9 +39,6 @@ namespace maps.Model
     partial void InsertBicycleLine(BicycleLine instance);
     partial void UpdateBicycleLine(BicycleLine instance);
     partial void DeleteBicycleLine(BicycleLine instance);
-    partial void InsertBicycleParking(BicycleParking instance);
-    partial void UpdateBicycleParking(BicycleParking instance);
-    partial void DeleteBicycleParking(BicycleParking instance);
     partial void InsertBicycleParkingVote(BicycleParkingVote instance);
     partial void UpdateBicycleParkingVote(BicycleParkingVote instance);
     partial void DeleteBicycleParkingVote(BicycleParkingVote instance);
@@ -138,10 +135,13 @@ namespace maps.Model
     partial void InsertReportAnswer(ReportAnswer instance);
     partial void UpdateReportAnswer(ReportAnswer instance);
     partial void DeleteReportAnswer(ReportAnswer instance);
+    partial void InsertBicycleParking(BicycleParking instance);
+    partial void UpdateBicycleParking(BicycleParking instance);
+    partial void DeleteBicycleParking(BicycleParking instance);
     #endregion
 		
 		public mapsDbDataContext() : 
-				base(global::maps.Model.Properties.Settings.Default.mapsConnectionString, mappingSource)
+				base(global::maps.Model.Properties.Settings.Default.maps_medicConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -191,14 +191,6 @@ namespace maps.Model
 			get
 			{
 				return this.GetTable<BicycleLine>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BicycleParking> BicycleParkings
-		{
-			get
-			{
-				return this.GetTable<BicycleParking>();
 			}
 		}
 		
@@ -455,6 +447,14 @@ namespace maps.Model
 			get
 			{
 				return this.GetTable<ReportAnswer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BicycleParking> BicycleParkings
+		{
+			get
+			{
+				return this.GetTable<BicycleParking>();
 			}
 		}
 	}
@@ -1088,610 +1088,6 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleParking")]
-	public partial class BicycleParking : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _UserID;
-		
-		private int _CityID;
-		
-		private string _Position;
-		
-		private string _PhotoUrl;
-		
-		private bool _Exist;
-		
-		private int _Type;
-		
-		private bool _Lock;
-		
-		private bool _Camera;
-		
-		private bool _Rent;
-		
-		private int _Quality;
-		
-		private int _Capacity;
-		
-		private int _VotesCount;
-		
-		private string _Description;
-		
-		private System.DateTime _AddedDate;
-		
-		private System.Nullable<System.DateTime> _VerifiedDate;
-		
-		private System.Nullable<System.DateTime> _CreatedDate;
-		
-		private string _Address;
-		
-		private double _CenterDistance;
-		
-		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
-		
-		private EntityRef<City> _City;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnCityIDChanging(int value);
-    partial void OnCityIDChanged();
-    partial void OnPositionChanging(string value);
-    partial void OnPositionChanged();
-    partial void OnPhotoUrlChanging(string value);
-    partial void OnPhotoUrlChanged();
-    partial void OnExistChanging(bool value);
-    partial void OnExistChanged();
-    partial void OnTypeChanging(int value);
-    partial void OnTypeChanged();
-    partial void OnLockChanging(bool value);
-    partial void OnLockChanged();
-    partial void OnCameraChanging(bool value);
-    partial void OnCameraChanged();
-    partial void OnRentChanging(bool value);
-    partial void OnRentChanged();
-    partial void OnQualityChanging(int value);
-    partial void OnQualityChanged();
-    partial void OnCapacityChanging(int value);
-    partial void OnCapacityChanged();
-    partial void OnVotesCountChanging(int value);
-    partial void OnVotesCountChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    partial void OnVerifiedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnVerifiedDateChanged();
-    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreatedDateChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnCenterDistanceChanging(double value);
-    partial void OnCenterDistanceChanged();
-    #endregion
-		
-		public BicycleParking()
-		{
-			this._BicycleParkingVotes = new EntitySet<BicycleParkingVote>(new Action<BicycleParkingVote>(this.attach_BicycleParkingVotes), new Action<BicycleParkingVote>(this.detach_BicycleParkingVotes));
-			this._City = default(EntityRef<City>);
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
-		public int CityID
-		{
-			get
-			{
-				return this._CityID;
-			}
-			set
-			{
-				if ((this._CityID != value))
-				{
-					if (this._City.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCityIDChanging(value);
-					this.SendPropertyChanging();
-					this._CityID = value;
-					this.SendPropertyChanged("CityID");
-					this.OnCityIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Position
-		{
-			get
-			{
-				return this._Position;
-			}
-			set
-			{
-				if ((this._Position != value))
-				{
-					this.OnPositionChanging(value);
-					this.SendPropertyChanging();
-					this._Position = value;
-					this.SendPropertyChanged("Position");
-					this.OnPositionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhotoUrl", DbType="NVarChar(150)")]
-		public string PhotoUrl
-		{
-			get
-			{
-				return this._PhotoUrl;
-			}
-			set
-			{
-				if ((this._PhotoUrl != value))
-				{
-					this.OnPhotoUrlChanging(value);
-					this.SendPropertyChanging();
-					this._PhotoUrl = value;
-					this.SendPropertyChanged("PhotoUrl");
-					this.OnPhotoUrlChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Exist", DbType="Bit NOT NULL")]
-		public bool Exist
-		{
-			get
-			{
-				return this._Exist;
-			}
-			set
-			{
-				if ((this._Exist != value))
-				{
-					this.OnExistChanging(value);
-					this.SendPropertyChanging();
-					this._Exist = value;
-					this.SendPropertyChanged("Exist");
-					this.OnExistChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int NOT NULL")]
-		public int Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this.OnTypeChanging(value);
-					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lock", DbType="Bit NOT NULL")]
-		public bool Lock
-		{
-			get
-			{
-				return this._Lock;
-			}
-			set
-			{
-				if ((this._Lock != value))
-				{
-					this.OnLockChanging(value);
-					this.SendPropertyChanging();
-					this._Lock = value;
-					this.SendPropertyChanged("Lock");
-					this.OnLockChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Camera", DbType="Bit NOT NULL")]
-		public bool Camera
-		{
-			get
-			{
-				return this._Camera;
-			}
-			set
-			{
-				if ((this._Camera != value))
-				{
-					this.OnCameraChanging(value);
-					this.SendPropertyChanging();
-					this._Camera = value;
-					this.SendPropertyChanged("Camera");
-					this.OnCameraChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rent", DbType="Bit NOT NULL")]
-		public bool Rent
-		{
-			get
-			{
-				return this._Rent;
-			}
-			set
-			{
-				if ((this._Rent != value))
-				{
-					this.OnRentChanging(value);
-					this.SendPropertyChanging();
-					this._Rent = value;
-					this.SendPropertyChanged("Rent");
-					this.OnRentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quality", DbType="Int NOT NULL")]
-		public int Quality
-		{
-			get
-			{
-				return this._Quality;
-			}
-			set
-			{
-				if ((this._Quality != value))
-				{
-					this.OnQualityChanging(value);
-					this.SendPropertyChanging();
-					this._Quality = value;
-					this.SendPropertyChanged("Quality");
-					this.OnQualityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacity", DbType="Int NOT NULL")]
-		public int Capacity
-		{
-			get
-			{
-				return this._Capacity;
-			}
-			set
-			{
-				if ((this._Capacity != value))
-				{
-					this.OnCapacityChanging(value);
-					this.SendPropertyChanging();
-					this._Capacity = value;
-					this.SendPropertyChanged("Capacity");
-					this.OnCapacityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotesCount", DbType="Int NOT NULL")]
-		public int VotesCount
-		{
-			get
-			{
-				return this._VotesCount;
-			}
-			set
-			{
-				if ((this._VotesCount != value))
-				{
-					this.OnVotesCountChanging(value);
-					this.SendPropertyChanging();
-					this._VotesCount = value;
-					this.SendPropertyChanged("VotesCount");
-					this.OnVotesCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VerifiedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> VerifiedDate
-		{
-			get
-			{
-				return this._VerifiedDate;
-			}
-			set
-			{
-				if ((this._VerifiedDate != value))
-				{
-					this.OnVerifiedDateChanging(value);
-					this.SendPropertyChanging();
-					this._VerifiedDate = value;
-					this.SendPropertyChanged("VerifiedDate");
-					this.OnVerifiedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreatedDate
-		{
-			get
-			{
-				return this._CreatedDate;
-			}
-			set
-			{
-				if ((this._CreatedDate != value))
-				{
-					this.OnCreatedDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedDate = value;
-					this.SendPropertyChanged("CreatedDate");
-					this.OnCreatedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(MAX)")]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterDistance", DbType="Float NOT NULL")]
-		public double CenterDistance
-		{
-			get
-			{
-				return this._CenterDistance;
-			}
-			set
-			{
-				if ((this._CenterDistance != value))
-				{
-					this.OnCenterDistanceChanging(value);
-					this.SendPropertyChanging();
-					this._CenterDistance = value;
-					this.SendPropertyChanged("CenterDistance");
-					this.OnCenterDistanceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParkingVotes", ThisKey="ID", OtherKey="BicycleParkingID")]
-		public EntitySet<BicycleParkingVote> BicycleParkingVotes
-		{
-			get
-			{
-				return this._BicycleParkingVotes;
-			}
-			set
-			{
-				this._BicycleParkingVotes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleParking", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
-		public City City
-		{
-			get
-			{
-				return this._City.Entity;
-			}
-			set
-			{
-				City previousValue = this._City.Entity;
-				if (((previousValue != value) 
-							|| (this._City.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._City.Entity = null;
-						previousValue.BicycleParkings.Remove(this);
-					}
-					this._City.Entity = value;
-					if ((value != null))
-					{
-						value.BicycleParkings.Add(this);
-						this._CityID = value.ID;
-					}
-					else
-					{
-						this._CityID = default(int);
-					}
-					this.SendPropertyChanged("City");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.BicycleParkings.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.BicycleParkings.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BicycleParkingVotes(BicycleParkingVote entity)
-		{
-			this.SendPropertyChanging();
-			entity.BicycleParking = this;
-		}
-		
-		private void detach_BicycleParkingVotes(BicycleParkingVote entity)
-		{
-			this.SendPropertyChanging();
-			entity.BicycleParking = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleParkingVote")]
 	public partial class BicycleParkingVote : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1706,9 +1102,9 @@ namespace maps.Model
 		
 		private int _Mark;
 		
-		private EntityRef<BicycleParking> _BicycleParking;
-		
 		private EntityRef<User> _User;
+		
+		private EntityRef<BicycleParking> _BicycleParking;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1726,8 +1122,8 @@ namespace maps.Model
 		
 		public BicycleParkingVote()
 		{
-			this._BicycleParking = default(EntityRef<BicycleParking>);
 			this._User = default(EntityRef<User>);
+			this._BicycleParking = default(EntityRef<BicycleParking>);
 			OnCreated();
 		}
 		
@@ -1819,40 +1215,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParking", ThisKey="BicycleParkingID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public BicycleParking BicycleParking
-		{
-			get
-			{
-				return this._BicycleParking.Entity;
-			}
-			set
-			{
-				BicycleParking previousValue = this._BicycleParking.Entity;
-				if (((previousValue != value) 
-							|| (this._BicycleParking.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BicycleParking.Entity = null;
-						previousValue.BicycleParkingVotes.Remove(this);
-					}
-					this._BicycleParking.Entity = value;
-					if ((value != null))
-					{
-						value.BicycleParkingVotes.Add(this);
-						this._BicycleParkingID = value.ID;
-					}
-					else
-					{
-						this._BicycleParkingID = default(int);
-					}
-					this.SendPropertyChanged("BicycleParking");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParkingVote", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
 		public User User
 		{
@@ -1883,6 +1245,40 @@ namespace maps.Model
 						this._UserID = default(int);
 					}
 					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParking", ThisKey="BicycleParkingID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public BicycleParking BicycleParking
+		{
+			get
+			{
+				return this._BicycleParking.Entity;
+			}
+			set
+			{
+				BicycleParking previousValue = this._BicycleParking.Entity;
+				if (((previousValue != value) 
+							|| (this._BicycleParking.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BicycleParking.Entity = null;
+						previousValue.BicycleParkingVotes.Remove(this);
+					}
+					this._BicycleParking.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleParkingVotes.Add(this);
+						this._BicycleParkingID = value.ID;
+					}
+					else
+					{
+						this._BicycleParkingID = default(int);
+					}
+					this.SendPropertyChanged("BicycleParking");
 				}
 			}
 		}
@@ -2868,8 +2264,6 @@ namespace maps.Model
 		
 		private EntitySet<BicycleLine> _BicycleLines;
 		
-		private EntitySet<BicycleParking> _BicycleParkings;
-		
 		private EntitySet<BycicleDirection> _BycicleDirections;
 		
 		private EntitySet<UtilityDepartment> _UtilityDepartments;
@@ -2877,6 +2271,8 @@ namespace maps.Model
 		private EntitySet<UtilityIssue> _UtilityIssues;
 		
 		private EntitySet<User> _Users;
+		
+		private EntitySet<BicycleParking> _BicycleParkings;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2897,11 +2293,11 @@ namespace maps.Model
 		public City()
 		{
 			this._BicycleLines = new EntitySet<BicycleLine>(new Action<BicycleLine>(this.attach_BicycleLines), new Action<BicycleLine>(this.detach_BicycleLines));
-			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
 			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
 			this._UtilityDepartments = new EntitySet<UtilityDepartment>(new Action<UtilityDepartment>(this.attach_UtilityDepartments), new Action<UtilityDepartment>(this.detach_UtilityDepartments));
 			this._UtilityIssues = new EntitySet<UtilityIssue>(new Action<UtilityIssue>(this.attach_UtilityIssues), new Action<UtilityIssue>(this.detach_UtilityIssues));
 			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
+			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
 			OnCreated();
 		}
 		
@@ -3018,19 +2414,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="CityID")]
-		public EntitySet<BicycleParking> BicycleParkings
-		{
-			get
-			{
-				return this._BicycleParkings;
-			}
-			set
-			{
-				this._BicycleParkings.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BycicleDirection", Storage="_BycicleDirections", ThisKey="ID", OtherKey="CityID")]
 		public EntitySet<BycicleDirection> BycicleDirections
 		{
@@ -3083,6 +2466,19 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<BicycleParking> BicycleParkings
+		{
+			get
+			{
+				return this._BicycleParkings;
+			}
+			set
+			{
+				this._BicycleParkings.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3110,18 +2506,6 @@ namespace maps.Model
 		}
 		
 		private void detach_BicycleLines(BicycleLine entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = null;
-		}
-		
-		private void attach_BicycleParkings(BicycleParking entity)
-		{
-			this.SendPropertyChanging();
-			entity.City = this;
-		}
-		
-		private void detach_BicycleParkings(BicycleParking entity)
 		{
 			this.SendPropertyChanging();
 			entity.City = null;
@@ -3170,6 +2554,18 @@ namespace maps.Model
 		}
 		
 		private void detach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_BicycleParkings(BicycleParking entity)
 		{
 			this.SendPropertyChanging();
 			entity.City = null;
@@ -9060,8 +8456,6 @@ namespace maps.Model
 		
 		private string _LastName;
 		
-		private EntitySet<BicycleParking> _BicycleParkings;
-		
 		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
 		
 		private EntitySet<BycicleDirection> _BycicleDirections;
@@ -9085,6 +8479,8 @@ namespace maps.Model
 		private EntitySet<Report> _Reports;
 		
 		private EntitySet<Report> _Reports1;
+		
+		private EntitySet<BicycleParking> _BicycleParkings;
 		
 		private EntityRef<City> _City;
 		
@@ -9118,7 +8514,6 @@ namespace maps.Model
 		
 		public User()
 		{
-			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
 			this._BicycleParkingVotes = new EntitySet<BicycleParkingVote>(new Action<BicycleParkingVote>(this.attach_BicycleParkingVotes), new Action<BicycleParkingVote>(this.detach_BicycleParkingVotes));
 			this._BycicleDirections = new EntitySet<BycicleDirection>(new Action<BycicleDirection>(this.attach_BycicleDirections), new Action<BycicleDirection>(this.detach_BycicleDirections));
 			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
@@ -9131,6 +8526,7 @@ namespace maps.Model
 			this._Transporteurs = new EntitySet<Transporteur>(new Action<Transporteur>(this.attach_Transporteurs), new Action<Transporteur>(this.detach_Transporteurs));
 			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
 			this._Reports1 = new EntitySet<Report>(new Action<Report>(this.attach_Reports1), new Action<Report>(this.detach_Reports1));
+			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
 			this._City = default(EntityRef<City>);
 			OnCreated();
 		}
@@ -9359,19 +8755,6 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<BicycleParking> BicycleParkings
-		{
-			get
-			{
-				return this._BicycleParkings;
-			}
-			set
-			{
-				this._BicycleParkings.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParkingVote", Storage="_BicycleParkingVotes", ThisKey="ID", OtherKey="UserID")]
 		public EntitySet<BicycleParkingVote> BicycleParkingVotes
 		{
@@ -9528,6 +8911,19 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_BicycleParkings", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<BicycleParking> BicycleParkings
+		{
+			get
+			{
+				return this._BicycleParkings;
+			}
+			set
+			{
+				this._BicycleParkings.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_User", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
 		public City City
 		{
@@ -9580,18 +8976,6 @@ namespace maps.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_BicycleParkings(BicycleParking entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_BicycleParkings(BicycleParking entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
 		}
 		
 		private void attach_BicycleParkingVotes(BicycleParkingVote entity)
@@ -9736,6 +9120,18 @@ namespace maps.Model
 		{
 			this.SendPropertyChanging();
 			entity.User1 = null;
+		}
+		
+		private void attach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_BicycleParkings(BicycleParking entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
 		}
 	}
 	
@@ -11115,6 +10511,634 @@ namespace maps.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BicycleParking")]
+	public partial class BicycleParking : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _UserID;
+		
+		private int _CityID;
+		
+		private string _Position;
+		
+		private string _PhotoUrl;
+		
+		private bool _Exist;
+		
+		private int _Type;
+		
+		private bool _Lock;
+		
+		private bool _Camera;
+		
+		private bool _Rent;
+		
+		private int _Quality;
+		
+		private int _Capacity;
+		
+		private int _VotesCount;
+		
+		private string _Description;
+		
+		private System.DateTime _AddedDate;
+		
+		private System.Nullable<System.DateTime> _VerifiedDate;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private string _Address;
+		
+		private double _CenterDistance;
+		
+		private bool _IsMedical;
+		
+		private EntitySet<BicycleParkingVote> _BicycleParkingVotes;
+		
+		private EntityRef<City> _City;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnCityIDChanging(int value);
+    partial void OnCityIDChanged();
+    partial void OnPositionChanging(string value);
+    partial void OnPositionChanged();
+    partial void OnPhotoUrlChanging(string value);
+    partial void OnPhotoUrlChanged();
+    partial void OnExistChanging(bool value);
+    partial void OnExistChanged();
+    partial void OnTypeChanging(int value);
+    partial void OnTypeChanged();
+    partial void OnLockChanging(bool value);
+    partial void OnLockChanged();
+    partial void OnCameraChanging(bool value);
+    partial void OnCameraChanged();
+    partial void OnRentChanging(bool value);
+    partial void OnRentChanged();
+    partial void OnQualityChanging(int value);
+    partial void OnQualityChanged();
+    partial void OnCapacityChanging(int value);
+    partial void OnCapacityChanged();
+    partial void OnVotesCountChanging(int value);
+    partial void OnVotesCountChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnVerifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnVerifiedDateChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnCenterDistanceChanging(double value);
+    partial void OnCenterDistanceChanged();
+    partial void OnIsMedicalChanging(bool value);
+    partial void OnIsMedicalChanged();
+    #endregion
+		
+		public BicycleParking()
+		{
+			this._BicycleParkingVotes = new EntitySet<BicycleParkingVote>(new Action<BicycleParkingVote>(this.attach_BicycleParkingVotes), new Action<BicycleParkingVote>(this.detach_BicycleParkingVotes));
+			this._City = default(EntityRef<City>);
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
+		public int CityID
+		{
+			get
+			{
+				return this._CityID;
+			}
+			set
+			{
+				if ((this._CityID != value))
+				{
+					if (this._City.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCityIDChanging(value);
+					this.SendPropertyChanging();
+					this._CityID = value;
+					this.SendPropertyChanged("CityID");
+					this.OnCityIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Position
+		{
+			get
+			{
+				return this._Position;
+			}
+			set
+			{
+				if ((this._Position != value))
+				{
+					this.OnPositionChanging(value);
+					this.SendPropertyChanging();
+					this._Position = value;
+					this.SendPropertyChanged("Position");
+					this.OnPositionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhotoUrl", DbType="NVarChar(150)")]
+		public string PhotoUrl
+		{
+			get
+			{
+				return this._PhotoUrl;
+			}
+			set
+			{
+				if ((this._PhotoUrl != value))
+				{
+					this.OnPhotoUrlChanging(value);
+					this.SendPropertyChanging();
+					this._PhotoUrl = value;
+					this.SendPropertyChanged("PhotoUrl");
+					this.OnPhotoUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Exist", DbType="Bit NOT NULL")]
+		public bool Exist
+		{
+			get
+			{
+				return this._Exist;
+			}
+			set
+			{
+				if ((this._Exist != value))
+				{
+					this.OnExistChanging(value);
+					this.SendPropertyChanging();
+					this._Exist = value;
+					this.SendPropertyChanged("Exist");
+					this.OnExistChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int NOT NULL")]
+		public int Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lock", DbType="Bit NOT NULL")]
+		public bool Lock
+		{
+			get
+			{
+				return this._Lock;
+			}
+			set
+			{
+				if ((this._Lock != value))
+				{
+					this.OnLockChanging(value);
+					this.SendPropertyChanging();
+					this._Lock = value;
+					this.SendPropertyChanged("Lock");
+					this.OnLockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Camera", DbType="Bit NOT NULL")]
+		public bool Camera
+		{
+			get
+			{
+				return this._Camera;
+			}
+			set
+			{
+				if ((this._Camera != value))
+				{
+					this.OnCameraChanging(value);
+					this.SendPropertyChanging();
+					this._Camera = value;
+					this.SendPropertyChanged("Camera");
+					this.OnCameraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rent", DbType="Bit NOT NULL")]
+		public bool Rent
+		{
+			get
+			{
+				return this._Rent;
+			}
+			set
+			{
+				if ((this._Rent != value))
+				{
+					this.OnRentChanging(value);
+					this.SendPropertyChanging();
+					this._Rent = value;
+					this.SendPropertyChanged("Rent");
+					this.OnRentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quality", DbType="Int NOT NULL")]
+		public int Quality
+		{
+			get
+			{
+				return this._Quality;
+			}
+			set
+			{
+				if ((this._Quality != value))
+				{
+					this.OnQualityChanging(value);
+					this.SendPropertyChanging();
+					this._Quality = value;
+					this.SendPropertyChanged("Quality");
+					this.OnQualityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacity", DbType="Int NOT NULL")]
+		public int Capacity
+		{
+			get
+			{
+				return this._Capacity;
+			}
+			set
+			{
+				if ((this._Capacity != value))
+				{
+					this.OnCapacityChanging(value);
+					this.SendPropertyChanging();
+					this._Capacity = value;
+					this.SendPropertyChanged("Capacity");
+					this.OnCapacityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotesCount", DbType="Int NOT NULL")]
+		public int VotesCount
+		{
+			get
+			{
+				return this._VotesCount;
+			}
+			set
+			{
+				if ((this._VotesCount != value))
+				{
+					this.OnVotesCountChanging(value);
+					this.SendPropertyChanging();
+					this._VotesCount = value;
+					this.SendPropertyChanged("VotesCount");
+					this.OnVotesCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VerifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> VerifiedDate
+		{
+			get
+			{
+				return this._VerifiedDate;
+			}
+			set
+			{
+				if ((this._VerifiedDate != value))
+				{
+					this.OnVerifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._VerifiedDate = value;
+					this.SendPropertyChanged("VerifiedDate");
+					this.OnVerifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(MAX)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterDistance", DbType="Float NOT NULL")]
+		public double CenterDistance
+		{
+			get
+			{
+				return this._CenterDistance;
+			}
+			set
+			{
+				if ((this._CenterDistance != value))
+				{
+					this.OnCenterDistanceChanging(value);
+					this.SendPropertyChanging();
+					this._CenterDistance = value;
+					this.SendPropertyChanged("CenterDistance");
+					this.OnCenterDistanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsMedical", DbType="Bit NOT NULL")]
+		public bool IsMedical
+		{
+			get
+			{
+				return this._IsMedical;
+			}
+			set
+			{
+				if ((this._IsMedical != value))
+				{
+					this.OnIsMedicalChanging(value);
+					this.SendPropertyChanging();
+					this._IsMedical = value;
+					this.SendPropertyChanged("IsMedical");
+					this.OnIsMedicalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BicycleParking_BicycleParkingVote", Storage="_BicycleParkingVotes", ThisKey="ID", OtherKey="BicycleParkingID")]
+		public EntitySet<BicycleParkingVote> BicycleParkingVotes
+		{
+			get
+			{
+				return this._BicycleParkingVotes;
+			}
+			set
+			{
+				this._BicycleParkingVotes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_BicycleParking", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
+		public City City
+		{
+			get
+			{
+				return this._City.Entity;
+			}
+			set
+			{
+				City previousValue = this._City.Entity;
+				if (((previousValue != value) 
+							|| (this._City.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._City.Entity = null;
+						previousValue.BicycleParkings.Remove(this);
+					}
+					this._City.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleParkings.Add(this);
+						this._CityID = value.ID;
+					}
+					else
+					{
+						this._CityID = default(int);
+					}
+					this.SendPropertyChanged("City");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BicycleParking", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.BicycleParkings.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.BicycleParkings.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BicycleParkingVotes(BicycleParkingVote entity)
+		{
+			this.SendPropertyChanging();
+			entity.BicycleParking = this;
+		}
+		
+		private void detach_BicycleParkingVotes(BicycleParkingVote entity)
+		{
+			this.SendPropertyChanging();
+			entity.BicycleParking = null;
 		}
 	}
 }
