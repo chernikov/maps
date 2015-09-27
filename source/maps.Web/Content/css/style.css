@@ -54,6 +54,8 @@ body.overflow {
       background-color: #517fa4; }
     .projects li a.bus {
       background-color: #b94a48; }
+    .projects li a.accessible {
+      background-color: #125aa8; }
 
 .navbar > .container .navbar-brand.bycicle {
   color: #fff;
@@ -142,5 +144,3 @@ h3.label {
 
 .instagram-thumbnail img {
   width: 100%; }
-
-/*# sourceMappingURL=style.css.map */

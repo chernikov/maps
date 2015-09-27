@@ -156,9 +156,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Accessible\Views\Admin\" />
+    <Folder Include="Areas\Accessible\Views\Default\" />
+    <Folder Include="Areas\Bus\Views\Dozor\" />
     <Folder Include="Areas\Default\Models\" />
     <Folder Include="Areas\Instagram\Models\" />
     <Folder Include="Areas\Instagram\Views\Instagram\" />
+    <Folder Include="Areas\Sport\Models\" />
     <Folder Include="Content\files\uploads\" />
     <Folder Include="Content\files\utilities\" />
     <Folder Include="Content\logs\" />
@@ -170,7 +174,14 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Accessible\AccessibleAreaRegistration.cs" />
+    <Compile Include="Areas\Accessible\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Accessible\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Accessible\Controllers\DirectionController.cs" />
+    <Compile Include="Areas\Accessible\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Accessible\Controllers\ObjectController.cs" />
     <Compile Include="Areas\Bus\BusAreaRegistration.cs" />
+    <Compile Include="Areas\Bus\Controllers\DozorController.cs" />
     <Compile Include="Areas\Bus\Controllers\LoginController.cs" />
     <Compile Include="Areas\Bus\Controllers\BaseBusController.cs" />
     <Compile Include="Areas\Bus\Controllers\AdminController.cs" />
@@ -187,6 +198,8 @@
     <Compile Include="Areas\Instagram\Controllers\HomeController.cs" />
     <Compile Include="Areas\Instagram\Controllers\InstagramController.cs" />
     <Compile Include="Areas\Instagram\InstagramAreaRegistration.cs" />
+    <Compile Include="Areas\Sport\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Sport\SportAreaRegistration.cs" />
     <Compile Include="Areas\Utility\Controllers\AdminController.cs" />
     <Compile Include="Areas\Utility\Controllers\CommentController.cs" />
     <Compile Include="Areas\Utility\Controllers\HomeController.cs" />
@@ -252,10 +265,12 @@
     <Compile Include="Models\Info\InstagramPhoto.cs" />
     <Compile Include="Models\Info\MessageInfo.cs" />
     <Compile Include="Models\Mappers\ModelMapper.cs" />
+    <Compile Include="Models\ViewModels\AccessibleObjectView.cs" />
     <Compile Include="Models\ViewModels\AdminBicycleParkingView.cs" />
     <Compile Include="Models\Dto\BicycleParkingDto.cs" />
     <Compile Include="Models\Mappers\MapperCollection.cs" />
     <Compile Include="Models\Api\BicycleParkingApiModel.cs" />
+    <Compile Include="Models\ViewModels\AccessibleDirectionView.cs" />
     <Compile Include="Models\ViewModels\NewReportView.cs" />
     <Compile Include="Models\ViewModels\ReportAnswerView.cs" />
     <Compile Include="Models\ViewModels\BicycleParkingView.cs" />
@@ -271,6 +286,7 @@
     <Compile Include="Models\ViewModels\ReportPhotoView.cs" />
     <Compile Include="Models\ViewModels\RouteView.cs" />
     <Compile Include="Models\ViewModels\RuleView.cs" />
+    <Compile Include="Models\ViewModels\SportAvatarView.cs" />
     <Compile Include="Models\ViewModels\TransporteurLoginView.cs" />
     <Compile Include="Models\ViewModels\TransporteurView.cs" />
     <Compile Include="Models\ViewModels\UtilityDepartmentView.cs" />
@@ -282,6 +298,7 @@
     <Compile Include="Models\ViewModels\User\RegisterUserView.cs" />
     <Compile Include="Models\ViewModels\User\UserView.cs" />
     <Compile Include="Models\ViewModels\NewUtilityIssueView.cs" />
+    <Compile Include="Models\ViewModels\AccessibleObjectPhotoView.cs" />
     <Compile Include="Models\ViewModels\UtilityPhotoView.cs" />
     <Compile Include="Models\ViewModels\UtilityTagView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -319,7 +336,12 @@
     <Content Include="Content\css\fineuploader-4.1.1.min.css" />
     <Content Include="Content\css\fineuploader.css" />
     <Content Include="Content\css\PagedList.css" />
+    <Content Include="Content\css\sport.css" />
     <Content Include="Content\css\typeahead.css" />
+    <Content Include="Content\images\accessible_city_icon.png" />
+    <Content Include="Content\images\ava\couple.png" />
+    <Content Include="Content\images\ava\guy.png" />
+    <Content Include="Content\images\ava\lady.png" />
     <Content Include="Content\images\bus.png" />
     <Content Include="Content\images\bycicle_2.png" />
     <Content Include="Content\images\chosen-sprite.png" />
@@ -398,7 +420,7 @@
     <Content Include="Areas\Bicycle\Views\Route\Add.cshtml" />
     <Content Include="Areas\Bicycle\Views\Shared\TopMenu.cshtml" />
     <Content Include="Areas\Bicycle\Views\Route\Index.cshtml" />
-    <Content Include="Areas\Bicycle\Views\Route\My.cshtml" />
+    <Content Include="Areas\Accessible\Views\Direction\My.cshtml" />
     <Content Include="Areas\Admin\Views\BicycleParking\Index.cshtml" />
     <Content Include="Areas\Admin\Views\BicycleParking\Edit.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\Index.cshtml" />
@@ -511,6 +533,23 @@
     <Content Include="Areas\Bus\Views\Report\New.cshtml" />
     <Content Include="Areas\Bus\Views\Home\Info.cshtml" />
     <Content Include="Areas\Bicycle\Views\Parking\Medical.cshtml" />
+    <Content Include="Areas\Sport\Views\web.config" />
+    <Content Include="Areas\Sport\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Sport\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Sport\Views\Shared\UploadTemplate.cshtml" />
+    <Content Include="Areas\Accessible\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Accessible\Views\Shared\Map.cshtml" />
+    <Content Include="Areas\Accessible\Views\Shared\TopMenu.cshtml" />
+    <Content Include="Areas\Accessible\Views\web.config" />
+    <Content Include="Areas\Accessible\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Accessible\Views\Direction\Add.cshtml" />
+    <Content Include="Areas\Accessible\Views\Direction\Index.cshtml" />
+    <Content Include="Areas\Accessible\Views\Object\Index.cshtml" />
+    <Content Include="Areas\Accessible\Views\Object\Add.cshtml" />
+    <Content Include="Areas\Accessible\Views\Object\Edit.cshtml" />
+    <Content Include="Areas\Accessible\Views\Object\UploadTemplate.cshtml" />
+    <Content Include="Areas\Accessible\Views\Shared\Photo.cshtml" />
+    <Content Include="Areas\Accessible\Views\Object\Thanks.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -538,6 +577,16 @@
     <Content Include="Scripts\bus\login-index.js" />
     <Content Include="Scripts\bus\report-new.js" />
     <Content Include="Scripts\bus\report-item.js" />
+    <Content Include="Scripts\accessible\add-object.js" />
+    <Content Include="Scripts\accessible\add-direction.js" />
+    <Content Include="Scripts\accessible\index.js" />
+    <Content Include="Scripts\accessible\map-main.js" />
+    <Content Include="Scripts\accessible\map-object.js" />
+    <Content Include="Scripts\accessible\map-direction.js" />
+    <Content Include="Scripts\accessible\my-direction.js" />
+    <Content Include="Scripts\accessible\object.js" />
+    <Content Include="Scripts\accessible\direction.js" />
+    <Content Include="Scripts\accessible\simple-form.js" />
     <Content Include="Scripts\bycicle\map-medical-parking.js" />
     <Content Include="Scripts\chosen.jquery.min.js.map">
       <DependentUpon>chosen.jquery.min.js</DependentUpon>
@@ -574,6 +623,7 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\sport\index.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
     <Content Include="Scripts\typeahead.bundle.min.js" />
     <Content Include="Scripts\typeahead.jquery.js" />
@@ -642,6 +692,10 @@
     <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">
       <Project>{2755dee8-1af1-41cc-b798-1eed42a9581d}</Project>
       <Name>Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\maps.Dozor\maps.Dozor.csproj">
+      <Project>{6b38e0f3-7d3e-4577-af56-6ff85b4acdd4}</Project>
+      <Name>maps.Dozor</Name>
     </ProjectReference>
     <ProjectReference Include="..\maps.Instagram\maps.Instagram.csproj">
       <Project>{c3a161db-5a66-4ff4-b6f3-3b1f7733cbea}</Project>

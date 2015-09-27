@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Доступне місто - maps.if.ua";
+    Layout = "~/Areas/Accessible/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    @Scripts.Render("~/scripts/accessible/map-main.js")
+    @Scripts.Render("~/scripts/accessible/map-object.js")
+    @Scripts.Render("~/scripts/accessible/map-direction.js")
+    @Scripts.Render("~/scripts/accessible/index.js")
+}
+
+@Html.Partial("Map")

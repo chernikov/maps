@@ -98,6 +98,8 @@
       <Association Name="City_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="CityID" Type="UtilityIssue" />
       <Association Name="City_User" Member="Users" ThisKey="ID" OtherKey="CityID" Type="User" />
       <Association Name="City_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="CityID" Type="BicycleParking" />
+      <Association Name="City_AccessibleDirection" Member="AccessibleDirections" ThisKey="ID" OtherKey="CityID" Type="AccessibleDirection" />
+      <Association Name="City_AccessibleObject" Member="AccessibleObjects" ThisKey="ID" OtherKey="CityID" Type="AccessibleObject" />
     </Type>
   </Table>
   <Table Name="dbo.Comment" Member="Comments">
@@ -397,6 +399,8 @@
       <Association Name="User_Report" Member="Reports" ThisKey="ID" OtherKey="NotifyReporterID" Type="Report" />
       <Association Name="User_Report1" Member="Reports1" ThisKey="ID" OtherKey="UserID" Type="Report" />
       <Association Name="User_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="UserID" Type="BicycleParking" />
+      <Association Name="User_AccessibleDirection" Member="AccessibleDirections" ThisKey="ID" OtherKey="UserID" Type="AccessibleDirection" />
+      <Association Name="User_AccessibleObject" Member="AccessibleObjects" ThisKey="ID" OtherKey="UserID" Type="AccessibleObject" />
       <Association Name="City_User" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
     </Type>
   </Table>
@@ -482,6 +486,46 @@
       <Association Name="BicycleParking_BicycleParkingVote" Member="BicycleParkingVotes" ThisKey="ID" OtherKey="BicycleParkingID" Type="BicycleParkingVote" />
       <Association Name="City_BicycleParking" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
       <Association Name="User_BicycleParking" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessibleObjectPhoto" Member="AccessibleObjectPhotos">
+    <Type Name="AccessibleObjectPhoto">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccessibleObjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="AccessibleObject_AccessibleObjectPhoto" Member="AccessibleObject" ThisKey="AccessibleObjectID" OtherKey="ID" Type="AccessibleObject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessibleDirection" Member="AccessibleDirections">
+    <Type Name="AccessibleDirection">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Waypoints" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PolyLine" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="City_AccessibleDirection" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+      <Association Name="User_AccessibleDirection" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessibleObject" Member="AccessibleObjects">
+    <Type Name="AccessibleObject">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="VerifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CenterDistance" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="AccessibleObject_AccessibleObjectPhoto" Member="AccessibleObjectPhotos" ThisKey="ID" OtherKey="AccessibleObjectID" Type="AccessibleObjectPhoto" />
+      <Association Name="City_AccessibleObject" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+      <Association Name="User_AccessibleObject" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

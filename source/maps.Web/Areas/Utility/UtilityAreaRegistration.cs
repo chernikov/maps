@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace maps.Web.Areas.Admin
+namespace maps.Web.Areas.Utility
 {
     public class UtilityAreaRegistration : AreaRegistration 
     {

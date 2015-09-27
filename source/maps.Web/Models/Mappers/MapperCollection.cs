@@ -214,5 +214,32 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<ReportAnswerView,  ReportAnswer>();
             }
         }
+
+        public static class AccessibleDirectionMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<AccessibleDirection, AccessibleDirectionView>();
+                Mapper.CreateMap<AccessibleDirectionView, AccessibleDirection>();
+            }
+        }
+
+        public static class AccessibleObjectMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<AccessibleObject, AccessibleObjectView>();
+                Mapper.CreateMap<AccessibleObjectView, AccessibleObject>();
+            }
+        }
+
+        public static class AccessibleObjectPhotoMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<AccessibleObjectPhoto, AccessibleObjectPhotoView>();
+                Mapper.CreateMap<AccessibleObjectPhotoView, AccessibleObjectPhoto>();
+            }
+        }
     }
 }

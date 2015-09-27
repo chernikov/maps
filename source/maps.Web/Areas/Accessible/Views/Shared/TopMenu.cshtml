@@ -1,0 +1,21 @@
+﻿@{
+    var controllerName = ViewContext.RequestContext.RouteData.Values["controller"] as string;
+    var actionName = ViewContext.RequestContext.RouteData.Values["action"] as string;
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <li class="@(controllerName == "Home" ? "active" : "")"><a href="@Url.Action("Index", "Home")">Доступне місто</a></li>
+        <li class="@(controllerName == "Direction" ? "active" : "")"><a href="@Url.Action("Index", "Direction")">Маршрути</a></li>
+        @if (controllerName == "Direction" && currentUser != null)
+        {
+            <li class="@(controllerName == "Direction" && actionName == "Add" ? "active" : "")"><a href="@Url.Action("Add", "Direction")"><span class="glyphicon glyphicon-plus"></span> Додати</a></li>
+            <li class="@(controllerName == "Direction" && actionName == "My" ? "active" : "")"><a href="@Url.Action("My", "Direction")">Мої маршрути</a></li>
+        }
+        <li class="@(controllerName == "Object" ? "active" : "")"><a href="@Url.Action("Index", "Object")">Об'єкти</a></li>
+        @if (controllerName == "Object" && currentUser != null)
+        {
+            <li class="@(controllerName == "Object" && actionName == "Add" ? "active" : "")"><a href="@Url.Action("Add", "Object")"><span class="glyphicon glyphicon-plus"></span> Додати</a></li>
+        }
+    </ul>
+</div>

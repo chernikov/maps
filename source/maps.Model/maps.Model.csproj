@@ -60,6 +60,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Proxy\AccessibleDirection.cs" />
+    <Compile Include="Proxy\AccessibleObject.cs" />
+    <Compile Include="Proxy\AccessibleObjectPhoto.cs" />
     <Compile Include="Proxy\BicycleDirectionLine.cs" />
     <Compile Include="Proxy\BicycleLine.cs" />
     <Compile Include="Proxy\BicycleParking.cs" />
@@ -96,6 +99,9 @@
     <Compile Include="Proxy\UtilityPhoto.cs" />
     <Compile Include="Proxy\UtilityTag.cs" />
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="SqlRepository\AccessibleDirection.cs" />
+    <Compile Include="SqlRepository\AccessibleObject.cs" />
+    <Compile Include="SqlRepository\AccessibleObjectPhoto.cs" />
     <Compile Include="SqlRepository\BicycleDirectionLine.cs" />
     <Compile Include="SqlRepository\BicycleLine.cs" />
     <Compile Include="SqlRepository\BicycleParking.cs" />

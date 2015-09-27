@@ -1,0 +1,72 @@
+﻿@model SportAvatarView
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Sport/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+    <link href="~/Content/css/sport.css" rel="stylesheet" />
+}
+
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    <script type="text/javascript" src="/scripts/sport/index.js"></script>
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.Hidden("PhotoUrl", Model.PhotoUrl)
+    <div class="form-group">
+        <label class="col-sm-3 control-label">
+            Фото
+        </label>
+        <div class="col-sm-9">
+            <div id="ChangePhoto">Завантажити</div>
+            <br />
+            <br />
+            @*<img src="" id="Image" />*@
+            @Html.Partial("UploadTemplate")
+        </div>
+    </div>
+
+    <div class="form-group" id="ImagesWrapper" style="display:none;">
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <div class="lady sport-wrapper">
+                    <img src="" class=" trueimage" />
+                    <div class="over"></div>
+                </div>
+                <br/> 
+                <button type="submit" class="btn btn-primary saveBtn" data-type="lady">
+                    Зберегти
+                </button>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="guy sport-wrapper">
+                    <img src="" class=" trueimage" />
+                    <div class="over"></div>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary saveBtn" data-type="guy">
+                    Зберегти
+                </button>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="couple sport-wrapper">
+                    <img src="" class="trueimage" />
+                    <div class="over"></div>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary saveBtn" data-type="couple">
+                    Зберегти
+                </button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="form-actions">
+       
+    </div>
+}
+

@@ -14,23 +14,28 @@
      data-zoom="@currentCity.Zoom">
 </div>
 <ul class="projects">
-    <li>
+    @*<li>
         <a href="@Url.Action("Index", "Home", new { area = "bus" })" class="bus">
             <img src="/Content/images/bus.png" /> Перевізники
         </a>
-    </li>
+    </li>*@
     <li>
-        <a href="@Url.Action("Index", "Home", new { area = "utility" })" class="utility">
+        <a href="@Url.Action("Index", "Home", new { area = "Utility" })" class="utility">
             <img src="/Content/images/utility_logo_2.png"> Комуналка
         </a>
     </li>
     <li>
-        <a href="@Url.Action("Index", "Home", new { area = "bicycle" })" class="bicycle">
+        <a href="@Url.Action("Index", "Home", new { area = "Accessible" })" class="accessible">
+            <img src="/Content/images/accessible_city_icon.png"> Доступне місто
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("Index", "Home", new { area = "Bicycle" })" class="bicycle">
             <img src="/Content/images/bycicle_2.png" /> Велорух
         </a>
     </li>
     <li>
-        <a href="@Url.Action("Index", "Home", new { area = "instagram" })" class="instagram">
+        <a href="@Url.Action("Index", "Home", new { area = "Instagram" })" class="instagram">
             <img src="/Content/images/instagram.png" /> Instagram
         </a>
     </li>

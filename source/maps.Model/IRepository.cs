@@ -423,6 +423,48 @@ namespace maps.Model
         bool RemoveTransporteur(int idTransporteur);
 
         #endregion 
+
+        
+        #region AccessibleDirection
+
+        IQueryable<AccessibleDirection> AccessibleDirections { get; }
+
+        bool CreateAccessibleDirection(AccessibleDirection instance);
+
+        bool UpdateAccessibleDirection(AccessibleDirection instance);
+
+        bool RemoveAccessibleDirection(int idAccessibleDirection);
+
+        #endregion 
+
+        
+        #region AccessibleObject
+
+        IQueryable<AccessibleObject> AccessibleObjects { get; }
+
+        bool CreateAccessibleObject(AccessibleObject instance);
+
+        bool UpdateAccessibleObject(AccessibleObject instance);
+
+        bool VerifiedAccessibleObject(int idAccessibleObject, bool verified);
+
+        bool RemoveAccessibleObject(int idAccessibleObject);
+
+        #endregion 
+        
+        
+        #region AccessibleObjectPhoto
+
+        IQueryable<AccessibleObjectPhoto> AccessibleObjectPhotos { get; }
+
+        bool CreateAccessibleObjectPhoto(AccessibleObjectPhoto instance);
+
+        bool UpdateAccessibleObjectPhoto(AccessibleObjectPhoto instance);
+
+        bool RemoveAccessibleObjectPhoto(int idAccessibleObjectPhoto);
+
+        #endregion 
+        
         
     }
 

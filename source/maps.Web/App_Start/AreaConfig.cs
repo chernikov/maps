@@ -1,9 +1,12 @@
-﻿using maps.Web.Areas.Admin;
+﻿using maps.Web.Areas.Accessible;
+using maps.Web.Areas.Admin;
 using maps.Web.Areas.Bicycle;
 using maps.Web.Areas.Bus;
 using maps.Web.Areas.Default;
 using maps.Web.Areas.Goal;
 using maps.Web.Areas.Instagram;
+using maps.Web.Areas.Sport;
+using maps.Web.Areas.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +44,14 @@ namespace maps.Web.App_Start
             var utilityArea = new UtilityAreaRegistration();
             var utilityAreaContext = new AreaRegistrationContext(utilityArea.AreaName, routes);
             utilityArea.RegisterArea(utilityAreaContext);
+
+            var accessibleArea = new AccessibleAreaRegistration();
+            var accessibleAreaContext = new AreaRegistrationContext(accessibleArea.AreaName, routes);
+            accessibleArea.RegisterArea(accessibleAreaContext);
+
+            var sportArea = new SportAreaRegistration();
+            var sportAreaContext = new AreaRegistrationContext(sportArea.AreaName, routes);
+            sportArea.RegisterArea(sportAreaContext);
 
             var defaultArea = new DefaultAreaRegistration();
             var defaultAreaContext = new AreaRegistrationContext(defaultArea.AreaName, routes);
