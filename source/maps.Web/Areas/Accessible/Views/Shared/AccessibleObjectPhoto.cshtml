@@ -1,0 +1,11 @@
+﻿@model System.Collections.Generic.KeyValuePair<string, maps.Web.Models.ViewModels.AccessibleObjectPhotoView>
+<div class="col-sm-6 AccessibleObjectPhotoItem">
+    @Html.Hidden("Photos[" + Model.Key + "].ID", Model.Value.ID)
+    @Html.Hidden("Photos[" + Model.Key + "].ImagePath", Model.Value.ImagePath)
+    <div class="thumbnail normalsize">
+        <div class="remove-file RemoveAccessibleObjectPhoto">
+            <i class="glyphicon glyphicon-trash"></i>
+        </div>
+        <img src="@(Model.Value.ImagePath)?width=200&height=200" />
+    </div>
+</div>

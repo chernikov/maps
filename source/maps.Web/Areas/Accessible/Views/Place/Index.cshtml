@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Велорух - maps.if.ua";
+    Layout = "~/Areas/Bicycle/Views/Shared/_Layout.cshtml";
+}
+
+@section header {
+    @Scripts.Render("~/scripts/accessible/map-main.js")
+    @Scripts.Render("~/scripts/accessible/map-place.js")
+    @Scripts.Render("~/scripts/accessible/place.js")
+}
+@Html.Partial("Map")

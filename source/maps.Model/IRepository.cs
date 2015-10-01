@@ -465,7 +465,32 @@ namespace maps.Model
 
         #endregion 
         
+        #region AccessiblePlace
         
+        IQueryable<AccessiblePlace> AccessiblePlaces { get; }
+
+        bool CreateAccessiblePlace(AccessiblePlace instance);
+
+        bool UpdateAccessiblePlace(AccessiblePlace instance);
+
+        bool VerifiedAccessiblePlace(int idAccessiblePlace, bool verified);
+
+        bool RemoveAccessiblePlace(int idAccessiblePlace);
+
+        #endregion 
+        
+        
+        #region AccessiblePlacePhoto
+
+        IQueryable<AccessiblePlacePhoto> AccessiblePlacePhotos { get; }
+
+        bool CreateAccessiblePlacePhoto(AccessiblePlacePhoto instance);
+
+        bool UpdateAccessiblePlacePhoto(AccessiblePlacePhoto instance);
+
+        bool RemoveAccessiblePlacePhoto(int idAccessiblePlacePhoto);
+
+        #endregion 
     }
 
 }

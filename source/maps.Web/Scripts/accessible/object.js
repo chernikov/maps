@@ -5,7 +5,7 @@
     {
         google.maps.event.addDomListener(window, 'load', function () {
             mapMain.init();
-            mapParking.init();
+            mapObject.init();
         });
     }
 }

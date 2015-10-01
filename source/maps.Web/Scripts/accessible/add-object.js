@@ -47,8 +47,6 @@
         });
     }
     this.initModal = function (position) {
-        $(".chzn-select").chosen({ disable_search_threshold: 10 });
-
         $('.tooltipInfo').tooltip({
             html: true
         });
@@ -67,7 +65,7 @@
                 }
             });
         }
-        $('#IssueModal').on('hidden.bs.modal', function (e) {
+        $('#ObjectModal').on('hidden.bs.modal', function (e) {
             _this.clearMarker();
         });
 
@@ -97,32 +95,33 @@
             return true;
         });
 
-        $(document).on("click", ".RemoveUtilityPhoto", function () {
-            $(this).closest(".UtilityPhotoItem").remove();
+        $(document).on("click", ".RemoveAccessibleObjectPhoto", function () {
+            $(this).closest(".AccessibleObjectPhotoItem").remove();
         });
 
+
         $("#CloseThanksBtn").click(function () {
-            window.location = "/utility";
+            window.location = "/accessible";
         });
     }
 
     this.createPhoto = function (responseJSON) {
-        var id = responseJSON.utilityPhoto.ID;
+        var id = responseJSON.accessibleObjectPhoto.ID;
         $.ajax({
             type: "GET",
-            url: "/utility/UtilityPhoto/Item",
+            url: "/Accessible/Object/Item",
             data: { id: id },
             success: function (data) {
-                $("#UtilityPhotosWrapper").append(data);
+                $("#AccessibleObjectPhotosWrapper").append(data);
             }
         });
     }
 
     this.saveObject = function () {
         $.ajax({
-            url: "/accessible/Home/Edit",
+            url: "/accessible/Object/Edit",
             type: "POST",
-            data: $("#IssueForm").serialize(),
+            data: $("#AccessibleObjectForm").serialize(),
             success: function (data) {
                 $("#PopupWrapper").empty();
                 var obj = $(data);

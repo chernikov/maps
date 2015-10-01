@@ -12,15 +12,10 @@
             success: function (data) {
                 if (data.result == "ok") {
                     $.each(data.data, function (i, item) {
-                        var position = item.Position.replace('(', '').replace(')', '');
-
-                        var lat = position.replace(/\s*\,.*/, ''); 
-                        var lng = position.replace(/.*,\s*/, ''); 
-
-                        var latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
+                        var latLng = new google.maps.LatLng(parseFloat(item.Lat), parseFloat(item.Lng));
                         var marker = new google.maps.Marker({
                             map: mapMain.map,
-                            position: latLng
+                            position: latLng,
                         });
                        /* if (item.Exist)
                         {

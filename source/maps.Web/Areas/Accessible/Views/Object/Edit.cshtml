@@ -29,12 +29,12 @@
 
                             </label>
                             <div class="col-sm-9">
-                                <div class="row" id="UtilityPhotosWrapper">
+                                <div class="row" id="AccessibleObjectPhotosWrapper">
                                     @if (Model.Photos != null)
                                     {
                                         foreach (var keyValuePair in Model.Photos)
                                         {
-                                            @Html.Partial("Photo", keyValuePair)
+                                            @Html.Partial("AccessibleObjectPhoto", keyValuePair)
                                         }
                                     }
                                 </div>

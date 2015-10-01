@@ -163,6 +163,7 @@
     <Folder Include="Areas\Instagram\Models\" />
     <Folder Include="Areas\Instagram\Views\Instagram\" />
     <Folder Include="Areas\Sport\Models\" />
+    <Folder Include="Content\files\accessible\" />
     <Folder Include="Content\files\uploads\" />
     <Folder Include="Content\files\utilities\" />
     <Folder Include="Content\logs\" />
@@ -179,6 +180,7 @@
     <Compile Include="Areas\Accessible\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Accessible\Controllers\DirectionController.cs" />
     <Compile Include="Areas\Accessible\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Accessible\Controllers\PlaceController.cs" />
     <Compile Include="Areas\Accessible\Controllers\ObjectController.cs" />
     <Compile Include="Areas\Bus\BusAreaRegistration.cs" />
     <Compile Include="Areas\Bus\Controllers\DozorController.cs" />
@@ -265,6 +267,8 @@
     <Compile Include="Models\Info\InstagramPhoto.cs" />
     <Compile Include="Models\Info\MessageInfo.cs" />
     <Compile Include="Models\Mappers\ModelMapper.cs" />
+    <Compile Include="Models\ViewModels\AccessiblePlacePhotoView.cs" />
+    <Compile Include="Models\ViewModels\AccessiblePlaceView.cs" />
     <Compile Include="Models\ViewModels\AccessibleObjectView.cs" />
     <Compile Include="Models\ViewModels\AdminBicycleParkingView.cs" />
     <Compile Include="Models\Dto\BicycleParkingDto.cs" />
@@ -377,6 +381,9 @@
     <Content Include="Content\css\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
+    <Content Include="Scripts\accessible\add-place.js" />
+    <Content Include="Scripts\accessible\map-place.js" />
+    <Content Include="Scripts\accessible\place.js" />
     <Content Include="Scripts\admin\city-edit.js" />
     <Content Include="Scripts\admin\distance-parking.js" />
     <Content Include="Scripts\admin\route-index.js" />
@@ -548,8 +555,14 @@
     <Content Include="Areas\Accessible\Views\Object\Add.cshtml" />
     <Content Include="Areas\Accessible\Views\Object\Edit.cshtml" />
     <Content Include="Areas\Accessible\Views\Object\UploadTemplate.cshtml" />
-    <Content Include="Areas\Accessible\Views\Shared\Photo.cshtml" />
+    <Content Include="Areas\Accessible\Views\Shared\AccessibleObjectPhoto.cshtml" />
     <Content Include="Areas\Accessible\Views\Object\Thanks.cshtml" />
+    <Content Include="Areas\Accessible\Views\Place\Add.cshtml" />
+    <Content Include="Areas\Accessible\Views\Place\Edit.cshtml" />
+    <Content Include="Areas\Accessible\Views\Place\Index.cshtml" />
+    <Content Include="Areas\Accessible\Views\Place\Thanks.cshtml" />
+    <Content Include="Areas\Accessible\Views\Place\UploadTemplate.cshtml" />
+    <Content Include="Areas\Accessible\Views\Shared\AccessiblePlacePhoto.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />

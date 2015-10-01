@@ -100,6 +100,7 @@
       <Association Name="City_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="CityID" Type="BicycleParking" />
       <Association Name="City_AccessibleDirection" Member="AccessibleDirections" ThisKey="ID" OtherKey="CityID" Type="AccessibleDirection" />
       <Association Name="City_AccessibleObject" Member="AccessibleObjects" ThisKey="ID" OtherKey="CityID" Type="AccessibleObject" />
+      <Association Name="City_AccessiblePlace" Member="AccessiblePlaces" ThisKey="ID" OtherKey="CityID" Type="AccessiblePlace" />
     </Type>
   </Table>
   <Table Name="dbo.Comment" Member="Comments">
@@ -401,6 +402,7 @@
       <Association Name="User_BicycleParking" Member="BicycleParkings" ThisKey="ID" OtherKey="UserID" Type="BicycleParking" />
       <Association Name="User_AccessibleDirection" Member="AccessibleDirections" ThisKey="ID" OtherKey="UserID" Type="AccessibleDirection" />
       <Association Name="User_AccessibleObject" Member="AccessibleObjects" ThisKey="ID" OtherKey="UserID" Type="AccessibleObject" />
+      <Association Name="User_AccessiblePlace" Member="AccessiblePlaces" ThisKey="ID" OtherKey="UserID" Type="AccessiblePlace" />
       <Association Name="City_User" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
     </Type>
   </Table>
@@ -514,7 +516,8 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Position" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Lat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Lng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Category" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -526,6 +529,34 @@
       <Association Name="AccessibleObject_AccessibleObjectPhoto" Member="AccessibleObjectPhotos" ThisKey="ID" OtherKey="AccessibleObjectID" Type="AccessibleObjectPhoto" />
       <Association Name="City_AccessibleObject" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
       <Association Name="User_AccessibleObject" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessiblePlace" Member="AccessiblePlaces">
+    <Type Name="AccessiblePlace">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Lng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="VerifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CenterDistance" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="AccessiblePlace_AccessiblePlacePhoto" Member="AccessiblePlacePhotos" ThisKey="ID" OtherKey="AccessiblePlaceID" Type="AccessiblePlacePhoto" />
+      <Association Name="City_AccessiblePlace" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+      <Association Name="User_AccessiblePlace" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessiblePlacePhoto" Member="AccessiblePlacePhotos">
+    <Type Name="AccessiblePlacePhoto">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccessiblePlaceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="AccessiblePlace_AccessiblePlacePhoto" Member="AccessiblePlace" ThisKey="AccessiblePlaceID" OtherKey="ID" Type="AccessiblePlace" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

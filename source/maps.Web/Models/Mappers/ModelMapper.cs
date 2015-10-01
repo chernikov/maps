@@ -35,6 +35,8 @@ namespace maps.Web.Mappers
             MapperCollection.AccessibleDirectionMapper.Init();
             MapperCollection.AccessibleObjectMapper.Init();
             MapperCollection.AccessibleObjectPhotoMapper.Init();
+            MapperCollection.AccessiblePlaceMapper.Init();
+            MapperCollection.AccessiblePlacePhotoMapper.Init();
         }
 
         public object Map(object source, Type sourceType, Type destinationType)

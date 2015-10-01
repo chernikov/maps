@@ -147,6 +147,12 @@ namespace maps.Model
     partial void InsertAccessibleObject(AccessibleObject instance);
     partial void UpdateAccessibleObject(AccessibleObject instance);
     partial void DeleteAccessibleObject(AccessibleObject instance);
+    partial void InsertAccessiblePlace(AccessiblePlace instance);
+    partial void UpdateAccessiblePlace(AccessiblePlace instance);
+    partial void DeleteAccessiblePlace(AccessiblePlace instance);
+    partial void InsertAccessiblePlacePhoto(AccessiblePlacePhoto instance);
+    partial void UpdateAccessiblePlacePhoto(AccessiblePlacePhoto instance);
+    partial void DeleteAccessiblePlacePhoto(AccessiblePlacePhoto instance);
     #endregion
 		
 		public mapsDbDataContext() : 
@@ -488,6 +494,22 @@ namespace maps.Model
 			get
 			{
 				return this.GetTable<AccessibleObject>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AccessiblePlace> AccessiblePlaces
+		{
+			get
+			{
+				return this.GetTable<AccessiblePlace>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AccessiblePlacePhoto> AccessiblePlacePhotos
+		{
+			get
+			{
+				return this.GetTable<AccessiblePlacePhoto>();
 			}
 		}
 	}
@@ -2311,6 +2333,8 @@ namespace maps.Model
 		
 		private EntitySet<AccessibleObject> _AccessibleObjects;
 		
+		private EntitySet<AccessiblePlace> _AccessiblePlaces;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2337,6 +2361,7 @@ namespace maps.Model
 			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
 			this._AccessibleDirections = new EntitySet<AccessibleDirection>(new Action<AccessibleDirection>(this.attach_AccessibleDirections), new Action<AccessibleDirection>(this.detach_AccessibleDirections));
 			this._AccessibleObjects = new EntitySet<AccessibleObject>(new Action<AccessibleObject>(this.attach_AccessibleObjects), new Action<AccessibleObject>(this.detach_AccessibleObjects));
+			this._AccessiblePlaces = new EntitySet<AccessiblePlace>(new Action<AccessiblePlace>(this.attach_AccessiblePlaces), new Action<AccessiblePlace>(this.detach_AccessiblePlaces));
 			OnCreated();
 		}
 		
@@ -2544,6 +2569,19 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_AccessiblePlace", Storage="_AccessiblePlaces", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<AccessiblePlace> AccessiblePlaces
+		{
+			get
+			{
+				return this._AccessiblePlaces;
+			}
+			set
+			{
+				this._AccessiblePlaces.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2655,6 +2693,18 @@ namespace maps.Model
 		}
 		
 		private void detach_AccessibleObjects(AccessibleObject entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_AccessiblePlaces(AccessiblePlace entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_AccessiblePlaces(AccessiblePlace entity)
 		{
 			this.SendPropertyChanging();
 			entity.City = null;
@@ -8575,6 +8625,8 @@ namespace maps.Model
 		
 		private EntitySet<AccessibleObject> _AccessibleObjects;
 		
+		private EntitySet<AccessiblePlace> _AccessiblePlaces;
+		
 		private EntityRef<City> _City;
 		
     #region Extensibility Method Definitions
@@ -8622,6 +8674,7 @@ namespace maps.Model
 			this._BicycleParkings = new EntitySet<BicycleParking>(new Action<BicycleParking>(this.attach_BicycleParkings), new Action<BicycleParking>(this.detach_BicycleParkings));
 			this._AccessibleDirections = new EntitySet<AccessibleDirection>(new Action<AccessibleDirection>(this.attach_AccessibleDirections), new Action<AccessibleDirection>(this.detach_AccessibleDirections));
 			this._AccessibleObjects = new EntitySet<AccessibleObject>(new Action<AccessibleObject>(this.attach_AccessibleObjects), new Action<AccessibleObject>(this.detach_AccessibleObjects));
+			this._AccessiblePlaces = new EntitySet<AccessiblePlace>(new Action<AccessiblePlace>(this.attach_AccessiblePlaces), new Action<AccessiblePlace>(this.detach_AccessiblePlaces));
 			this._City = default(EntityRef<City>);
 			OnCreated();
 		}
@@ -9045,6 +9098,19 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_AccessiblePlace", Storage="_AccessiblePlaces", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<AccessiblePlace> AccessiblePlaces
+		{
+			get
+			{
+				return this._AccessiblePlaces;
+			}
+			set
+			{
+				this._AccessiblePlaces.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_User", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
 		public City City
 		{
@@ -9274,6 +9340,18 @@ namespace maps.Model
 		}
 		
 		private void detach_AccessibleObjects(AccessibleObject entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_AccessiblePlaces(AccessiblePlace entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_AccessiblePlaces(AccessiblePlace entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -11738,7 +11816,9 @@ namespace maps.Model
 		
 		private int _CityID;
 		
-		private string _Position;
+		private double _Lat;
+		
+		private double _Lng;
 		
 		private int _Category;
 		
@@ -11772,8 +11852,10 @@ namespace maps.Model
     partial void OnUserIDChanged();
     partial void OnCityIDChanging(int value);
     partial void OnCityIDChanged();
-    partial void OnPositionChanging(string value);
-    partial void OnPositionChanged();
+    partial void OnLatChanging(double value);
+    partial void OnLatChanged();
+    partial void OnLngChanging(double value);
+    partial void OnLngChanged();
     partial void OnCategoryChanging(int value);
     partial void OnCategoryChanged();
     partial void OnTypeChanging(int value);
@@ -11868,22 +11950,42 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Position
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Float NOT NULL")]
+		public double Lat
 		{
 			get
 			{
-				return this._Position;
+				return this._Lat;
 			}
 			set
 			{
-				if ((this._Position != value))
+				if ((this._Lat != value))
 				{
-					this.OnPositionChanging(value);
+					this.OnLatChanging(value);
 					this.SendPropertyChanging();
-					this._Position = value;
-					this.SendPropertyChanged("Position");
-					this.OnPositionChanged();
+					this._Lat = value;
+					this.SendPropertyChanged("Lat");
+					this.OnLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lng", DbType="Float NOT NULL")]
+		public double Lng
+		{
+			get
+			{
+				return this._Lng;
+			}
+			set
+			{
+				if ((this._Lng != value))
+				{
+					this.OnLngChanging(value);
+					this.SendPropertyChanging();
+					this._Lng = value;
+					this.SendPropertyChanged("Lng");
+					this.OnLngChanged();
 				}
 			}
 		}
@@ -12159,6 +12261,617 @@ namespace maps.Model
 		{
 			this.SendPropertyChanging();
 			entity.AccessibleObject = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AccessiblePlace")]
+	public partial class AccessiblePlace : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _UserID;
+		
+		private int _CityID;
+		
+		private double _Lat;
+		
+		private double _Lng;
+		
+		private int _Category;
+		
+		private int _Type;
+		
+		private string _Description;
+		
+		private System.DateTime _AddedDate;
+		
+		private System.Nullable<System.DateTime> _VerifiedDate;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private string _Address;
+		
+		private double _CenterDistance;
+		
+		private EntitySet<AccessiblePlacePhoto> _AccessiblePlacePhotos;
+		
+		private EntityRef<City> _City;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnCityIDChanging(int value);
+    partial void OnCityIDChanged();
+    partial void OnLatChanging(double value);
+    partial void OnLatChanged();
+    partial void OnLngChanging(double value);
+    partial void OnLngChanged();
+    partial void OnCategoryChanging(int value);
+    partial void OnCategoryChanged();
+    partial void OnTypeChanging(int value);
+    partial void OnTypeChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnVerifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnVerifiedDateChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnCenterDistanceChanging(double value);
+    partial void OnCenterDistanceChanged();
+    #endregion
+		
+		public AccessiblePlace()
+		{
+			this._AccessiblePlacePhotos = new EntitySet<AccessiblePlacePhoto>(new Action<AccessiblePlacePhoto>(this.attach_AccessiblePlacePhotos), new Action<AccessiblePlacePhoto>(this.detach_AccessiblePlacePhotos));
+			this._City = default(EntityRef<City>);
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
+		public int CityID
+		{
+			get
+			{
+				return this._CityID;
+			}
+			set
+			{
+				if ((this._CityID != value))
+				{
+					if (this._City.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCityIDChanging(value);
+					this.SendPropertyChanging();
+					this._CityID = value;
+					this.SendPropertyChanged("CityID");
+					this.OnCityIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Float NOT NULL")]
+		public double Lat
+		{
+			get
+			{
+				return this._Lat;
+			}
+			set
+			{
+				if ((this._Lat != value))
+				{
+					this.OnLatChanging(value);
+					this.SendPropertyChanging();
+					this._Lat = value;
+					this.SendPropertyChanged("Lat");
+					this.OnLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lng", DbType="Float NOT NULL")]
+		public double Lng
+		{
+			get
+			{
+				return this._Lng;
+			}
+			set
+			{
+				if ((this._Lng != value))
+				{
+					this.OnLngChanging(value);
+					this.SendPropertyChanging();
+					this._Lng = value;
+					this.SendPropertyChanged("Lng");
+					this.OnLngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="Int NOT NULL")]
+		public int Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this.OnCategoryChanging(value);
+					this.SendPropertyChanging();
+					this._Category = value;
+					this.SendPropertyChanged("Category");
+					this.OnCategoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int NOT NULL")]
+		public int Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VerifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> VerifiedDate
+		{
+			get
+			{
+				return this._VerifiedDate;
+			}
+			set
+			{
+				if ((this._VerifiedDate != value))
+				{
+					this.OnVerifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._VerifiedDate = value;
+					this.SendPropertyChanged("VerifiedDate");
+					this.OnVerifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(MAX)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CenterDistance", DbType="Float NOT NULL")]
+		public double CenterDistance
+		{
+			get
+			{
+				return this._CenterDistance;
+			}
+			set
+			{
+				if ((this._CenterDistance != value))
+				{
+					this.OnCenterDistanceChanging(value);
+					this.SendPropertyChanging();
+					this._CenterDistance = value;
+					this.SendPropertyChanged("CenterDistance");
+					this.OnCenterDistanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AccessiblePlace_AccessiblePlacePhoto", Storage="_AccessiblePlacePhotos", ThisKey="ID", OtherKey="AccessiblePlaceID")]
+		public EntitySet<AccessiblePlacePhoto> AccessiblePlacePhotos
+		{
+			get
+			{
+				return this._AccessiblePlacePhotos;
+			}
+			set
+			{
+				this._AccessiblePlacePhotos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_AccessiblePlace", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true)]
+		public City City
+		{
+			get
+			{
+				return this._City.Entity;
+			}
+			set
+			{
+				City previousValue = this._City.Entity;
+				if (((previousValue != value) 
+							|| (this._City.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._City.Entity = null;
+						previousValue.AccessiblePlaces.Remove(this);
+					}
+					this._City.Entity = value;
+					if ((value != null))
+					{
+						value.AccessiblePlaces.Add(this);
+						this._CityID = value.ID;
+					}
+					else
+					{
+						this._CityID = default(int);
+					}
+					this.SendPropertyChanged("City");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_AccessiblePlace", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.AccessiblePlaces.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.AccessiblePlaces.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_AccessiblePlacePhotos(AccessiblePlacePhoto entity)
+		{
+			this.SendPropertyChanging();
+			entity.AccessiblePlace = this;
+		}
+		
+		private void detach_AccessiblePlacePhotos(AccessiblePlacePhoto entity)
+		{
+			this.SendPropertyChanging();
+			entity.AccessiblePlace = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AccessiblePlacePhoto")]
+	public partial class AccessiblePlacePhoto : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _AccessiblePlaceID;
+		
+		private string _ImagePath;
+		
+		private EntityRef<AccessiblePlace> _AccessiblePlace;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnAccessiblePlaceIDChanging(System.Nullable<int> value);
+    partial void OnAccessiblePlaceIDChanged();
+    partial void OnImagePathChanging(string value);
+    partial void OnImagePathChanged();
+    #endregion
+		
+		public AccessiblePlacePhoto()
+		{
+			this._AccessiblePlace = default(EntityRef<AccessiblePlace>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccessiblePlaceID", DbType="Int")]
+		public System.Nullable<int> AccessiblePlaceID
+		{
+			get
+			{
+				return this._AccessiblePlaceID;
+			}
+			set
+			{
+				if ((this._AccessiblePlaceID != value))
+				{
+					if (this._AccessiblePlace.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAccessiblePlaceIDChanging(value);
+					this.SendPropertyChanging();
+					this._AccessiblePlaceID = value;
+					this.SendPropertyChanged("AccessiblePlaceID");
+					this.OnAccessiblePlaceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string ImagePath
+		{
+			get
+			{
+				return this._ImagePath;
+			}
+			set
+			{
+				if ((this._ImagePath != value))
+				{
+					this.OnImagePathChanging(value);
+					this.SendPropertyChanging();
+					this._ImagePath = value;
+					this.SendPropertyChanged("ImagePath");
+					this.OnImagePathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AccessiblePlace_AccessiblePlacePhoto", Storage="_AccessiblePlace", ThisKey="AccessiblePlaceID", OtherKey="ID", IsForeignKey=true)]
+		public AccessiblePlace AccessiblePlace
+		{
+			get
+			{
+				return this._AccessiblePlace.Entity;
+			}
+			set
+			{
+				AccessiblePlace previousValue = this._AccessiblePlace.Entity;
+				if (((previousValue != value) 
+							|| (this._AccessiblePlace.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._AccessiblePlace.Entity = null;
+						previousValue.AccessiblePlacePhotos.Remove(this);
+					}
+					this._AccessiblePlace.Entity = value;
+					if ((value != null))
+					{
+						value.AccessiblePlacePhotos.Add(this);
+						this._AccessiblePlaceID = value.ID;
+					}
+					else
+					{
+						this._AccessiblePlaceID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("AccessiblePlace");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

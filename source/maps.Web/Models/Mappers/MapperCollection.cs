@@ -241,5 +241,23 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<AccessibleObjectPhotoView, AccessibleObjectPhoto>();
             }
         }
+
+        public static class AccessiblePlaceMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<AccessiblePlace, AccessiblePlaceView>();
+                Mapper.CreateMap<AccessiblePlaceView, AccessiblePlace>();
+            }
+        }
+
+        public static class AccessiblePlacePhotoMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<AccessiblePlacePhoto, AccessiblePlacePhotoView>();
+                Mapper.CreateMap<AccessiblePlacePhotoView, AccessiblePlacePhoto>();
+            }
+        }
     }
 }
