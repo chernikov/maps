@@ -1,13 +1,13 @@
-@model IEnumerable<City>
+п»ї@model IEnumerable<City>
 
 @{
-    ViewBag.Title = "Міста";
+    ViewBag.Title = "РњС–СЃС‚Р°";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <h2>
-    Міста
+    РњС–СЃС‚Р°
 </h2>
-@Html.ActionLink("Додати", "Create", "City", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Р”РѕРґР°С‚Рё", "Create", "City", null, new { @class = "btn btn-primary" })
 <table class="table">
     <thead>
         <tr>
@@ -15,7 +15,7 @@
                 
             </th>
             <th>
-                Назва
+                РќР°Р·РІР°
             </th>
             <th>
             </th>
@@ -29,8 +29,8 @@
                @item.Name
             </td>
             <td>
-                @Html.ActionLink("Редагувати", "Edit", "City", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
-                @Html.ActionLink("Видалити", "Delete", "City", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+                @Html.ActionLink("Р РµРґР°РіСѓРІР°С‚Рё", "Edit", "City", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Р’РёРґР°Р»РёС‚Рё", "Delete", "City", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
             </td>
         </tr>
     }

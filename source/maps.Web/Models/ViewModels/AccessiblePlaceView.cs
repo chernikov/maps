@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,7 +23,7 @@ namespace maps.Web.Models.ViewModels
                 yield return new SelectListItem()
                 {
                     Value = ((int)AccessiblePlace.TypeEnum.Rampant).ToString(),
-                    Text = "œ‡Ì‰ÛÒ",
+                    Text = "–ü–∞–Ω–¥—É—Å",
                     Selected = Type == (int)AccessiblePlace.TypeEnum.Rampant
                 };
             }

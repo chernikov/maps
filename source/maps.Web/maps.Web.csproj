@@ -342,6 +342,19 @@
     <Content Include="Content\css\PagedList.css" />
     <Content Include="Content\css\sport.css" />
     <Content Include="Content\css\typeahead.css" />
+    <Content Include="Content\images\accessible\medicine_minus.png" />
+    <Content Include="Content\images\accessible\medicine_plus.png" />
+    <Content Include="Content\images\accessible\ok.png" />
+    <Content Include="Content\images\accessible\parking_minus.png" />
+    <Content Include="Content\images\accessible\parking_plus.png" />
+    <Content Include="Content\images\accessible\ramp_minus.png" />
+    <Content Include="Content\images\accessible\ramp_plus.png" />
+    <Content Include="Content\images\accessible\road_minus.png" />
+    <Content Include="Content\images\accessible\road_plus.png" />
+    <Content Include="Content\images\accessible\sidewalk_minus.png" />
+    <Content Include="Content\images\accessible\sidewalk_plus.png" />
+    <Content Include="Content\images\accessible\toilet_minus.png" />
+    <Content Include="Content\images\accessible\toilet_plus.png" />
     <Content Include="Content\images\accessible_city_icon.png" />
     <Content Include="Content\images\ava\couple.png" />
     <Content Include="Content\images\ava\guy.png" />
@@ -563,6 +576,14 @@
     <Content Include="Areas\Accessible\Views\Place\Thanks.cshtml" />
     <Content Include="Areas\Accessible\Views\Place\UploadTemplate.cshtml" />
     <Content Include="Areas\Accessible\Views\Shared\AccessiblePlacePhoto.cshtml" />
+    <Content Include="Areas\Bicycle\Views\Route\My.cshtml" />
+    <Content Include="Areas\Instagram\Views\Home\Old.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\Instagram\Views\Home\Photo.cshtml" />
+    <Content Include="Areas\Instagram\Views\Shared\_LayoutOld.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />

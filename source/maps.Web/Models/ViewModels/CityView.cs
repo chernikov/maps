@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +14,7 @@ namespace maps.Web.Models.ViewModels
 
         public int ID { get; set; }
 
-        [Required(ErrorMessage="Ââåä³òü íàçâó ì³ñòà")]
+        [Required(ErrorMessage="Â¬Ğ²ĞµĞ´â‰¥Ñ‚ÑŒ Ğ½Ğ°Ğ·Ğ²Ñƒ Ğ¼â‰¥ÑÑ‚Ğ°")]
 		public string Name {get; set; }
 
 		public double CenterLat {get; set; }

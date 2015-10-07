@@ -1,15 +1,15 @@
-@model IEnumerable<BicycleParking>
+п»ї@model IEnumerable<BicycleParking>
 
 @{
-    ViewBag.Title = "Велопарковки";
+    ViewBag.Title = "Р’РµР»РѕРїР°СЂРєРѕРІРєРё";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <h2>
-    Велопарковки
+    Р’РµР»РѕРїР°СЂРєРѕРІРєРё
 </h2>
-@Html.ActionLink("Додати", "Create", "BicycleParking", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Р”РѕРґР°С‚Рё", "Create", "BicycleParking", null, new { @class = "btn btn-primary" })
 
-@Html.ActionLink("Додати (для медиків)", "CreateMedical", "BicycleParking", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Р”РѕРґР°С‚Рё (РґР»СЏ РјРµРґРёРєС–РІ)", "CreateMedical", "BicycleParking", null, new { @class = "btn btn-primary" })
 
 <table class="table">
     <thead>
@@ -18,28 +18,28 @@
 
             </th>
             <th>
-                Місто
+                РњС–СЃС‚Рѕ
             </th>
             <th>
-                Додав
+                Р”РѕРґР°РІ
             </th>
             <th>
-                Iснуюча
+                IСЃРЅСѓСЋС‡Р°
             </th>
             <th>
-                Тип
+                РўРёРї
             </th>
             <th>
-                Фото
+                Р¤РѕС‚Рѕ
             </th>
             <th>
-                Ємність
+                Р„РјРЅС–СЃС‚СЊ
             </th>
             <th>
-                Адреса
+                РђРґСЂРµСЃР°
             </th>
             <th>
-                Віддаленість
+                Р’С–РґРґР°Р»РµРЅС–СЃС‚СЊ
             </th>
             <th>
             </th>
@@ -55,22 +55,22 @@
                 @if (item.VerifiedDate.HasValue)
                 {
                     <h5>
-                        <span class="label label-success ">Перевірено </span><a class="btn btn-xs btn-default" href="@Url.Action("Unverify", "BicycleParking", new { id = item.ID })"><span class="glyphicon glyphicon-remove"></span></a>
+                        <span class="label label-success ">РџРµСЂРµРІС–СЂРµРЅРѕ </span><a class="btn btn-xs btn-default" href="@Url.Action("Unverify", "BicycleParking", new { id = item.ID })"><span class="glyphicon glyphicon-remove"></span></a>
                     </h5>
                 }
                 else
                 {
                     <h5>
-                        <span class="label label-warning">Не перевірено </span><a class="btn btn-xs btn-default" href="@Url.Action("Verify", "BicycleParking", new { id = item.ID })"><span class="glyphicon glyphicon-ok"></span></a>
+                        <span class="label label-warning">РќРµ РїРµСЂРµРІС–СЂРµРЅРѕ </span><a class="btn btn-xs btn-default" href="@Url.Action("Verify", "BicycleParking", new { id = item.ID })"><span class="glyphicon glyphicon-ok"></span></a>
                     </h5>
                 }
-                @(item.IsMedical ? "Медична" : "")
+                @(item.IsMedical ? "РњРµРґРёС‡РЅР°" : "")
             </td>
             <td>
                 @item.User.FirstName @item.User.LastName
             </td>
             <td>
-                @(item.Exist ? "Так" : "Ні")
+                @(item.Exist ? "РўР°Рє" : "РќС–")
             </td>
             <td>
                 @item.TypeStr
@@ -88,11 +88,11 @@
                 @item.Address
             </td>
             <td>
-                @item.CenterDistance.ToString("0.000") км
+                @item.CenterDistance.ToString("0.000") РєРј
             </td>
             <td>
-                @Html.ActionLink("Редагувати", "Edit", "BicycleParking", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
-                @Html.ActionLink("Видалити", "Delete", "BicycleParking", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+                @Html.ActionLink("Р РµРґР°РіСѓРІР°С‚Рё", "Edit", "BicycleParking", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Р’РёРґР°Р»РёС‚Рё", "Delete", "BicycleParking", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
             </td>
         </tr>
     }

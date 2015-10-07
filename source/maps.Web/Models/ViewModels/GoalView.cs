@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,8 +17,8 @@ namespace maps.Web.Models.ViewModels
 
 		public string Url {get; set; }
 
-        [Required(ErrorMessage="Додайте опис")]
-        [MaxLength(140, ErrorMessage = "Опис має буди не довше 140 символів")]
+        [Required(ErrorMessage="Р”РѕРґР°Р№С‚Рµ РѕРїРёСЃ")]
+        [MaxLength(140, ErrorMessage = "РћРїРёСЃ РјР°С” Р±СѓРґРё РЅРµ РґРѕРІС€Рµ 140 СЃРёРјРІРѕР»С–РІ")]
 		public string Text {get; set; }
 
 

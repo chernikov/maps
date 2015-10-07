@@ -1,0 +1,17 @@
+﻿@model InstagramPhoto
+@{
+    ViewBag.Title = "Photo";
+    Layout = "~/Areas/Instagram/Views/Shared/_LayoutOld.cshtml";
+}
+@section header {
+    @Scripts.Render("~/scripts/instagram/map-main.js")
+    @Scripts.Render("~/scripts/instagram/map-photo.js")
+}
+@Html.Hidden("ID", Model.ID)
+@Html.Hidden("Lat", Model.Lat)
+@Html.Hidden("Lng", Model.Lng)
+@Html.Hidden("PhotoUrl", Model.PhotoUrl)
+
+@Html.Partial("Map")
+
+

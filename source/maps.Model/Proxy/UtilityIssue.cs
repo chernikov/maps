@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,12 +22,12 @@ namespace maps.Model
             {
                 switch ((StatusType)Status)
                 {
-                    case StatusType.Create: return "Новий";
-                    case StatusType.Accept: return "Прийнятий";
-                    case StatusType.Resolved: return "Вирішений";
-                    case StatusType.Closed: return "Закритий";
+                    case StatusType.Create: return "РќРѕРІРёР№";
+                    case StatusType.Accept: return "РџСЂРёР№РЅСЏС‚РёР№";
+                    case StatusType.Resolved: return "Р’РёСЂС–С€РµРЅРёР№";
+                    case StatusType.Closed: return "Р—Р°РєСЂРёС‚РёР№";
                 }
-                return "Невідомий";
+                return "РќРµРІС–РґРѕРјРёР№";
             }
         }
 

@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,7 +20,7 @@ namespace maps.Web.Models.ViewModels
 
 		public string Address {get; set; }
 
-        [Required(ErrorMessage="Додайте опис")]
+        [Required(ErrorMessage="Р”РѕРґР°Р№С‚Рµ РѕРїРёСЃ")]
 		public string Description {get; set; }
 
         private List<UtilityTag> _utilityTags

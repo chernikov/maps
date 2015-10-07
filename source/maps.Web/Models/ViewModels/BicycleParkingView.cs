@@ -1,4 +1,4 @@
-using maps.Model;
+Ôªøusing maps.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,13 +23,13 @@ namespace maps.Web.Models.ViewModels
                 yield return new SelectListItem()
                 {
                     Value = ((int)BicycleParking.TypeEnum.Wheel).ToString(),
-                    Text = " ÓÎÂÒÓ",
+                    Text = "–ö–æ–ª–µ—Å–æ",
                     Selected = Type == (int)BicycleParking.TypeEnum.Wheel
                 };
                 yield return new SelectListItem()
                 {
                     Value = ((int)BicycleParking.TypeEnum.Frame).ToString(),
-                    Text = "–‡Ï‡",
+                    Text = "–†–∞–º–∞",
                     Selected = Type == (int)BicycleParking.TypeEnum.Frame
                 };
             }

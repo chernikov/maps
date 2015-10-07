@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +20,9 @@ namespace maps.Model
                 switch ((TypeEnum)Type)
                 {
                     case TypeEnum.Wheel :
-                        return "колесо";
+                        return "РєРѕР»РµСЃРѕ";
                     case TypeEnum.Frame:
-                        return "рама";
+                        return "СЂР°РјР°";
                 }
                 return string.Empty;
             }

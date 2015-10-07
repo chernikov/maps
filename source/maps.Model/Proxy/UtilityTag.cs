@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,13 +13,12 @@ namespace maps.Model
             {
                 switch (ID)
                 {
-                    case 1: return ""; //житловий фонд - сірий
-                    case 2: return "alert-info"; //Транспорт - голубий
-                    case 3: return "alert-danger"; //Дорожня інфраструктура - червоний
-                    case 4: return "alert-success"; //Озеленення міста - зелений
-                    case 5: return "alert-warning"; //Освітлення - жовтий
-                    case 6: return "alert-success"; //Сміття - синій
-
+                    case 1: return ""; //Р¶РёС‚Р»РѕРІРёР№ С„РѕРЅРґ - СЃС–СЂРёР№
+                    case 2: return "alert-info"; //РўСЂР°РЅСЃРїРѕСЂС‚ - РіРѕР»СѓР±РёР№
+                    case 3: return "alert-danger"; //Р”РѕСЂРѕР¶РЅСЏ С–РЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР° - С‡РµСЂРІРѕРЅРёР№
+                    case 4: return "alert-success"; //РћР·РµР»РµРЅРµРЅРЅСЏ РјС–СЃС‚Р° - Р·РµР»РµРЅРёР№
+                    case 5: return "alert-warning"; //РћСЃРІС–С‚Р»РµРЅРЅСЏ - Р¶РѕРІС‚РёР№
+                    case 6: return "alert-success"; //РЎРјС–С‚С‚СЏ - СЃРёРЅС–Р№
                     default: return "";
                 }
             }

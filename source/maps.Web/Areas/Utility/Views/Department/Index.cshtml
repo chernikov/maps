@@ -1,24 +1,24 @@
-@model IEnumerable<UtilityDepartment>
+п»ї@model IEnumerable<UtilityDepartment>
 
 @{
-    ViewBag.Title = "Відповідальні";
+    ViewBag.Title = "Р’С–РґРїРѕРІС–РґР°Р»СЊРЅС–";
     Layout = "~/Areas/Utility/Views/Shared/_AdminLayout.cshtml";
 }
 <h2>
-    Відповідальні
+    Р’С–РґРїРѕРІС–РґР°Р»СЊРЅС–
 </h2>
-@Html.ActionLink("Додати", "Create", "Department", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Р”РѕРґР°С‚Рё", "Create", "Department", null, new { @class = "btn btn-primary" })
 <table class="table">
     <thead>
         <tr>
             <th>
-                Назва
+                РќР°Р·РІР°
             </th>
             <th>
-                Телефон
+                РўРµР»РµС„РѕРЅ
             </th>
             <th>
-                Адреса
+                РђРґСЂРµСЃР°
             </th>
             <th>
             </th>
@@ -38,8 +38,8 @@
                 @item.Address
             </td>
             <td>
-                @Html.ActionLink("Редагувати", "Edit", "Department", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
-                @Html.ActionLink("Видалити", "Delete", "Department", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
+                @Html.ActionLink("Р РµРґР°РіСѓРІР°С‚Рё", "Edit", "Department", new { id = item.ID }, new { @class = "btn btn-xs btn-default" })
+                @Html.ActionLink("Р’РёРґР°Р»РёС‚Рё", "Delete", "Department", new { id = item.ID }, new { @class = "btn btn-xs delete-btn-style btn-danger" })
             </td>
         </tr>
     }
