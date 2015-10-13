@@ -1,6 +1,6 @@
 ﻿@model AccessiblePlaceView
 
-<div class="modal fade parking-modal" id="IssueModal">
+<div class="modal fade parking-modal" id="AccessiblePlaceModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -33,7 +33,7 @@
                                     {
                                         foreach (var keyValuePair in Model.Photos)
                                         {
-                                            @Html.Partial("AccessibleObjectPhoto", keyValuePair)
+                                            @Html.Partial("AccessiblePlacePhoto", keyValuePair)
                                         }
                                     }
                                 </div>
