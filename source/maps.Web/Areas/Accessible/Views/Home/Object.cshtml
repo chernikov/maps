@@ -1,0 +1,84 @@
+﻿@model maps.Model.AccessibleObject
+
+@{
+    ViewBag.Title = "Інформація - Комуналка - maps.if.ua";
+    Layout = "~/Areas/Accessible/Views/Shared/_FullLayout.cshtml";
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+
+@section styles {
+    @Styles.Render("~/Content/css/blueimp-gallery.min.css")
+    @Styles.Render("~/Content/css/bootstrap-image-gallery.min.css")
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.blueimp-gallery.min.js")
+    @Scripts.Render("~/Scripts/bootstrap-image-gallery.min.js")
+    @Scripts.Render("~/Scripts/accessible/home-object.js")
+}
+
+<p>&nbsp;</p><p>&nbsp;</p>
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-2">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="small-map" id="map"
+                     data-lat="@Model.Lat.ToString(CultureInfo.InvariantCulture)"
+                     data-lng="@Model.Lng.ToString(CultureInfo.InvariantCulture)"
+                     data-zoom="@Model.City.Zoom">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <br />
+                <a href="@Url.Action("Index", "Home")" class="btn btn-default">На загальну мапу</a>
+            </div>
+        </div>
+        <div class="row">
+            <br /><br />
+        </div>
+        <div class="row">
+            @foreach (var item in Model.SubPhotos)
+            {
+                <div class="col-xs-12 col-md-6">
+                    <a href="@item.ImagePath" class="thumbnail" data-gallery>
+                        <img src="@item.ImagePath?w=200&h=200&mode=crop" />
+                    </a>
+                </div>
+            }
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                    <div class="fb-share-button" data-href="http://maps.if.ua/utility/Home/Item/@Model.ID"></div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <p>&nbsp;</p>
+        <p>
+            <span class="glyphicon glyphicon-time"></span> Додано : <em>@Model.AddedDate.ToString("dd.MM.yyyy HH:mm")</em>
+        </p>
+
+        <p>
+            <img src="~/Content/images/accessible/@(Model.TypeStr).png" />
+        </p>
+       
+        @if (!string.IsNullOrWhiteSpace(Model.Address))
+        {
+            <p>
+                <strong>Адреса:</strong> @Model.Address
+            </p>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <p>
+                <strong>Опис:</strong> @Model.Description
+            </p>
+        }
+    </div>
+</div>
+<div class="row">
+    <br/>
+    <br/>
+</div>
+@Html.Partial("GalleryLightBox")

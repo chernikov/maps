@@ -8,9 +8,21 @@ namespace maps.Model
 {
     public partial class AccessiblePlace
     {
-        public enum TypeEnum
+        public AccessiblePlacePhoto FirstImage
         {
-            Rampant = 0x01
+            get
+            {
+                return AccessiblePlacePhotos.FirstOrDefault();
+            }
+        }
+
+
+        public IEnumerable<AccessiblePlacePhoto> SubPhotos
+        {
+            get
+            {
+                return AccessiblePlacePhotos.AsEnumerable();
+            }
         }
     }
 }

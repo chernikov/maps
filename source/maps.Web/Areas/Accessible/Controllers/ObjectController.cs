@@ -38,8 +38,7 @@ namespace maps.Web.Areas.Accessible.Controllers
                         Id = p.ID,
                         Lat = p.Lat,
                         Lng = p.Lng,
-                        Category = p.Category,
-                        Type = p.Type
+                        Type = p.TypeStr
                     })
             }, JsonRequestBehavior.AllowGet);
         }
@@ -59,6 +58,10 @@ namespace maps.Web.Areas.Accessible.Controllers
 
                 accessibleObject.UserID = CurrentUser.ID;
                 accessibleObject.CityID = CurrentCity.ID;
+                if (accessibleObjectView.IsAccessible)
+                {
+                    accessibleObject.Type--;
+                }
                 Repository.CreateAccessibleObject(accessibleObject);
 
                
@@ -115,5 +118,16 @@ namespace maps.Web.Areas.Accessible.Controllers
             }
             return null;
         }
+
+        public ActionResult Info(int id)
+        {
+            var item = Repository.AccessibleObjects.FirstOrDefault(p => p.ID == id);
+            if (item != null)
+            {
+                return View(item);
+            }
+            return null;
+        }
+
     }
 }

@@ -395,6 +395,8 @@
       <DependentUpon>style.css</DependentUpon>
     </Content>
     <Content Include="Scripts\accessible\add-place.js" />
+    <Content Include="Scripts\accessible\home-place.js" />
+    <Content Include="Scripts\accessible\home-object.js" />
     <Content Include="Scripts\accessible\map-place.js" />
     <Content Include="Scripts\accessible\place.js" />
     <Content Include="Scripts\admin\city-edit.js" />
@@ -584,6 +586,12 @@
     <Content Include="Areas\Instagram\Views\Shared\_LayoutOld.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Areas\Accessible\Views\Place\Info.cshtml" />
+    <Content Include="Areas\Accessible\Views\Home\Object.cshtml" />
+    <Content Include="Areas\Accessible\Views\Home\Place.cshtml" />
+    <Content Include="Areas\Accessible\Views\Shared\GalleryLightBox.cshtml" />
+    <Content Include="Areas\Accessible\Views\Object\Info.cshtml" />
+    <Content Include="Areas\Accessible\Views\Shared\_FullLayout.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />

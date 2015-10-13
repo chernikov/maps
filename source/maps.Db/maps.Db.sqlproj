@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\Init.sql" />
+    <None Include="maps_site.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="maps.Db.refactorlog" />

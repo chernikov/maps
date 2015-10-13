@@ -38,9 +38,10 @@ namespace maps.Model
             {
                 cache.UserID = instance.UserID;
                 cache.CityID = instance.CityID;
-                cache.Lat = instance.Lng;
-                cache.Type = instance.Type;
-                cache.VerifiedDate = instance.VerifiedDate;
+                cache.Lat = instance.Lat;
+                cache.Lng = instance.Lng;
+                cache.Address = instance.Address;
+                cache.Description = instance.Description;
                 Db.AccessiblePlaces.Context.SubmitChanges();
                 return true;
             }

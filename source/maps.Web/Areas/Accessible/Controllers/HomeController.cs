@@ -13,5 +13,26 @@ namespace maps.Web.Areas.Accessible.Controllers
         {
             return View();
         }
+
+
+        public ActionResult Object(int id)
+        {
+            var item = Repository.AccessibleObjects.FirstOrDefault(p => p.ID == id);
+            if (item != null)
+            {
+                return View(item);
+            }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Place(int id)
+        {
+            var item = Repository.AccessiblePlaces.FirstOrDefault(p => p.ID == id);
+            if (item != null)
+            {
+                return View(item);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

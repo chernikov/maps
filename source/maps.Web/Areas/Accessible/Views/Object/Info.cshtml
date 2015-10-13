@@ -1,0 +1,27 @@
+﻿@model AccessibleObject
+<div>
+    <div class="col-sm-6">
+        <div class="thumbnail">
+            @if (Model.FirstImage != null)
+            {
+                <img src="@Model.FirstImage.ImagePath?w=200&h=200&mode=crop" />
+            }
+        </div>
+    </div>
+    <div class="col-sm-5">
+       
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <p>
+                @Model.Description
+            </p>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Address))
+        {
+            <p>
+                @Model.Address
+            </p>
+        }
+        <a href="@Url.Action("Object", "Home", new {id = Model.ID })">Детальніше >>></a>
+    </div>
+</div>

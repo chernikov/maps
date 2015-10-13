@@ -7,9 +7,6 @@
         <li><img src="@Model.AvatarPath?w=50&h=50&mode=crop" /></li>
     }
     <li>@Html.ActionLink("Вийти", "Logout", "Login", null, new { @class = "btn btn-default btn-navbar" })</li>
-    
-        <li>@Html.ActionLink("Моя ціль", "Index", "Home", new {area = "Goal"}, new { @class = "btn btn-navbar" })</li>
-
 }
 else
 {

@@ -37,9 +37,7 @@ namespace maps.Web.Areas.Accessible.Controllers
                     {
                         Id = p.ID,
                         Lat = p.Lat,
-                        Lng = p.Lng,
-                        Category = p.Category,
-                        Type = p.Type
+                        Lng = p.Lng
                     })
             }, JsonRequestBehavior.AllowGet);
         }
@@ -115,5 +113,15 @@ namespace maps.Web.Areas.Accessible.Controllers
             }
             return null;
         }
+        public ActionResult Info(int id)
+        {
+            var item = Repository.AccessiblePlaces.FirstOrDefault(p => p.ID == id);
+            if (item != null)
+            {
+                return View(item);
+            }
+            return null;
+        }
+
     }
 }

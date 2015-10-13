@@ -16,6 +16,7 @@
                         var marker = new google.maps.Marker({
                             map: mapMain.map,
                             position: latLng,
+                            icon: "/Content/images/accessible/ok.png"
                         });
                        /* if (item.Exist)
                         {

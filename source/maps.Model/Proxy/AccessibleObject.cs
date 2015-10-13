@@ -23,5 +23,29 @@ namespace maps.Model
             sidewalk_plus = 0x0B,
             sidewalk_minus = 0x0C,
         }
+        public AccessibleObjectPhoto FirstImage
+        {
+            get
+            {
+                return AccessibleObjectPhotos.FirstOrDefault();
+            }
+        }
+
+
+        public IEnumerable<AccessibleObjectPhoto> SubPhotos
+        {
+            get
+            {
+                return AccessibleObjectPhotos.AsEnumerable();
+            }
+        }
+
+        public string TypeStr
+        {
+            get
+            {
+                return ((TypeEnum)Type).ToString();
+            }
+        }
     }
 }

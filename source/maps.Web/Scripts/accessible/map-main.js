@@ -10,7 +10,7 @@
     {
         _this.centerLat = $("#map").data("lat");
         _this.centerLng = $("#map").data("lng");
-        _this.zoom = $("#map").data("zoom");
+        _this.zoom = $("#map").data("zoom") + 2;
 
         var mapOptions = {
             zoom: _this.zoom,

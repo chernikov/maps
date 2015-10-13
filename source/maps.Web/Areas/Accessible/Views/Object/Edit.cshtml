@@ -24,9 +24,27 @@
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">
+                                Тип
+                                <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Вкажіть тип недоліку"></span>
+                            </label>
+                            <div class="col-sm-9">
+                                @Html.DropDownList("Type", Model.SelectListType, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.CheckBox("IsAccessible", Model.IsAccessible)
+                                        Є доступним
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
                                 Фотографіі
                                 <span class="tooltipInfo glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Будь ласка, зробіть якісну фотографію (або декілька) зблизька."></span>
-
                             </label>
                             <div class="col-sm-9">
                                 <div class="row" id="AccessibleObjectPhotosWrapper">

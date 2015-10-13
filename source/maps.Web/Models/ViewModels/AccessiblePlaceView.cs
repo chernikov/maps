@@ -14,21 +14,6 @@ namespace maps.Web.Models.ViewModels
 
         public bool Exist { get; set; }
 
-        public int Type { get; set; }
-
-        public IEnumerable<SelectListItem> SelectListType
-        {
-            get
-            {
-                yield return new SelectListItem()
-                {
-                    Value = ((int)AccessiblePlace.TypeEnum.Rampant).ToString(),
-                    Text = "Пандус",
-                    Selected = Type == (int)AccessiblePlace.TypeEnum.Rampant
-                };
-            }
-        }
-
         public double Lat { get; set; }
 
         public double Lng { get; set; }
@@ -43,7 +28,6 @@ namespace maps.Web.Models.ViewModels
 
         public AccessiblePlaceView()
         {
-            Type = (int)AccessiblePlace.TypeEnum.Rampant;
         }
     }
 }

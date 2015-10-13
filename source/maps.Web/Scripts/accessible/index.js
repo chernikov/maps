@@ -5,6 +5,7 @@
         google.maps.event.addDomListener(window, 'load', function () {
             mapMain.init();
             mapObject.init();
+            mapPlace.init();
             mapDirection.init();
         });
     }

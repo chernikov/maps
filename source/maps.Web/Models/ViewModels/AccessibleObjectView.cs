@@ -12,8 +12,6 @@ namespace maps.Web.Models.ViewModels
     {
         public int ID { get; set; }
 
-        public bool Exist { get; set; }
-
         public int Type { get; set; }
 
         public IEnumerable<SelectListItem> SelectListType
@@ -26,8 +24,40 @@ namespace maps.Web.Models.ViewModels
                     Text = "Пандус",
                     Selected = Type == (int)AccessibleObject.TypeEnum.ramp_minus
                 };
+                yield return new SelectListItem()
+                {
+                    Value = ((int)AccessibleObject.TypeEnum.medicine_minus).ToString(),
+                    Text = "Аптека",
+                    Selected = Type == (int)AccessibleObject.TypeEnum.medicine_minus
+                };
+                yield return new SelectListItem()
+                {
+                    Value = ((int)AccessibleObject.TypeEnum.parking_minus).ToString(),
+                    Text = "Парковка",
+                    Selected = Type == (int)AccessibleObject.TypeEnum.parking_minus
+                };
+                yield return new SelectListItem()
+                {
+                    Value = ((int)AccessibleObject.TypeEnum.road_minus).ToString(),
+                    Text = "Вузька дорога",
+                    Selected = Type == (int)AccessibleObject.TypeEnum.road_minus
+                };
+                yield return new SelectListItem()
+                {
+                    Value = ((int)AccessibleObject.TypeEnum.sidewalk_minus).ToString(),
+                    Text = "З'їзд/заїзд",
+                    Selected = Type == (int)AccessibleObject.TypeEnum.sidewalk_minus
+                };
+                yield return new SelectListItem()
+                {
+                    Value = ((int)AccessibleObject.TypeEnum.toilet_minus).ToString(),
+                    Text = "Туалет",
+                    Selected = Type == (int)AccessibleObject.TypeEnum.toilet_minus
+                };
             }
         }
+
+        public bool IsAccessible { get; set; }
 
         public double Lat { get; set; }
 
