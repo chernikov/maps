@@ -394,6 +394,7 @@
     <Content Include="Content\css\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
+    <Content Include="Scripts\accessible\edit-direction.js" />
     <Content Include="Scripts\accessible\add-place.js" />
     <Content Include="Scripts\accessible\home-place.js" />
     <Content Include="Scripts\accessible\home-object.js" />
@@ -592,6 +593,8 @@
     <Content Include="Areas\Accessible\Views\Shared\GalleryLightBox.cshtml" />
     <Content Include="Areas\Accessible\Views\Object\Info.cshtml" />
     <Content Include="Areas\Accessible\Views\Shared\_FullLayout.cshtml" />
+    <Content Include="Areas\Accessible\Views\Direction\Edit.cshtml" />
+    <Content Include="Areas\Accessible\Views\Direction\SelectAction.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />

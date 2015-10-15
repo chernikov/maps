@@ -36,8 +36,6 @@ namespace maps.Model
             var cache = Db.AccessibleDirections.Where(p => p.ID == instance.ID).FirstOrDefault();
             if (cache != null)
             {
-                cache.CityID = instance.CityID;
-                cache.UserID = instance.UserID;
                 cache.Waypoints = instance.Waypoints;
                 cache.PolyLine = instance.PolyLine;
                 cache.Length = instance.Length;

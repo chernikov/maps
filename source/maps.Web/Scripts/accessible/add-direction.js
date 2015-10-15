@@ -120,10 +120,12 @@
         }
     }
 
-    this.saveRoute = function () {
-        if (_this.response != null) {
+    this.saveRoute = function ()
+    {
+        if (_this.response != null)
+        {
             var route = _this.response.routes[0];
-            var waypts = _this.response.routes[0].overview_path;
+            var waypts = _this.response.geocoded_waypoints;
             var distance = 0;
             $.each(_this.response.routes[0].legs, function (i, item) {
                 distance += item.distance.value;
@@ -140,7 +142,7 @@
                 success: function (data) {
                     if (data.result == "ok") {
                         _this.clear();
-                        window.location = "/accessible/Direction";
+                        window.location = "/accessible/Direction/My";
                     }
                 }
             });

@@ -1,0 +1,26 @@
+﻿@model AccessibleDirection
+@{
+    ViewBag.Title = "Змінити маршрут - Доступне місто - maps.if.ua";
+    Layout = "~/Areas/Accessible/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    @Scripts.Render("~/scripts/accessible/map-main.js")
+    @Scripts.Render("~/scripts/accessible/edit-direction.js")
+}
+
+@Html.Partial("Map")
+@Html.Hidden("ID", Model.ID)
+<div class="col-md-offset-9 col-md-3 tutorial-wrapper">
+    <div class="tutorial-item" id="first">1. Позначте початок маршруту</div>
+    <div class="tutorial-item" id="second">2. Позначте кінець маршруту</div>
+    <div class="tutorial-item" id="third">3. Скорегуйте маршрут перетягуючи його</div>
+    <div class="tutorial-item" id="fourth">
+        4. Перевірте чи все вірно та натисніть
+        <button class="btn btn-primary disabled" id="SaveRouteBtnOther" disabled="disabled">зберегти</button>
+    </div>
+</div>
+<div class="col-md-12 action-wrapper" id="ActionWrapper">
+    <div class="btn btn-primary" id="SaveRouteBtn">Зберегти</div>
+    <div class="btn btn-default" id="CancelBtn">Скасувати</div>
+</div>
+
