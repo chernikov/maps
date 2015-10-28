@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace maps.Dozor.Entity
 {
+    //type=1
     [JsonObject]
     public class BusRecord
     {

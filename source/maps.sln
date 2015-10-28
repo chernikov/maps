@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4ED383CE-DE8B-446B-BF25-0F54D67FB793}"
 EndProject
@@ -39,6 +39,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps.Dozor", "maps.Dozor\maps.Dozor.csproj", "{6B38E0F3-7D3E-4577-AF56-6FF85B4ACDD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps.Dozor.Console", "maps.Dozor.Console\maps.Dozor.Console.csproj", "{BC111D00-3C55-436B-8F40-1576FBD5678A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maps.Dozor.Context", "maps.Dozor.Context\maps.Dozor.Context.csproj", "{5B3E7AEF-12D2-41A0-BDA6-0A2554752AEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,6 +102,10 @@ Global
 		{BC111D00-3C55-436B-8F40-1576FBD5678A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC111D00-3C55-436B-8F40-1576FBD5678A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC111D00-3C55-436B-8F40-1576FBD5678A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3E7AEF-12D2-41A0-BDA6-0A2554752AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3E7AEF-12D2-41A0-BDA6-0A2554752AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3E7AEF-12D2-41A0-BDA6-0A2554752AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3E7AEF-12D2-41A0-BDA6-0A2554752AEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

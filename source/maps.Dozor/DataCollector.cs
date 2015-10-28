@@ -17,6 +17,7 @@ namespace maps.Dozor
         private string UrlBuses = "http://iv-frankivsk.dozor-gps.com.ua/get_data?type=1";
 
         private string Url = "http://iv-frankivsk.dozor-gps.com.ua/";
+
         private string host = "iv-frankivsk.dozor-gps.com.ua";
 
         public CookieCollection GetCookies()

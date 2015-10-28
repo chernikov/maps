@@ -1,4 +1,5 @@
-﻿using maps.Dozor.Entity;
+﻿using maps.Dozor.Context;
+using maps.Dozor.Entity;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace maps.Dozor.Console
         private static volatile bool _shouldStop;
 
         private static Thread mainThread { get; set; }
+
         static void Main(string[] args)
         {
             _shouldStop = false;
@@ -31,13 +33,22 @@ namespace maps.Dozor.Console
         private static void ThreadFunc()
         {
             var dozor = new DataCollector();
+            var dataContext = new BusDbContext();
+
             var cookies = dozor.GetCookies();
             var hash = 0;
-            var responceBuses = dozor.GetBuses(cookies);
-            var responceObjBuses = JsonConvert.DeserializeObject<RecordResponce<BusRecord>>(responceBuses);
-            foreach (var responceItem in responceObjBuses.Values)
+            var responseBuses = dozor.GetBuses(cookies);
+            var responseObjBuses = JsonConvert.DeserializeObject<RecordResponce<BusRecord>>(responseBuses);
+            foreach (var responseItem in responseObjBuses.Values)
             {
-                System.Console.WriteLine(string.Format("Id: {1}\tName:{0}", responceItem.Name, responceItem.Id));
+                System.Console.WriteLine(string.Format("Id: {1}\tName:{0}", responseItem.Name, responseItem.Id));
+
+                if (dataContext.Buses.Any(p => p.Id == responseItem.Id))
+                {
+                    
+                }
+                
+
             }
 
             while (true)
