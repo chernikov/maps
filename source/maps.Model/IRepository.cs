@@ -364,7 +364,6 @@ namespace maps.Model
 
         #endregion 
 
-
         #region FundamentalRule
 
         IQueryable<FundamentalRule> FundamentalRules { get; }
@@ -376,7 +375,6 @@ namespace maps.Model
         bool RemoveFundamentalRule(int idFundamentalRule);
 
         #endregion 
-        
         
         #region Rule
 
@@ -423,7 +421,6 @@ namespace maps.Model
         bool RemoveTransporteur(int idTransporteur);
 
         #endregion 
-
         
         #region AccessibleDirection
 
@@ -436,7 +433,6 @@ namespace maps.Model
         bool RemoveAccessibleDirection(int idAccessibleDirection);
 
         #endregion 
-
         
         #region AccessibleObject
 
@@ -451,7 +447,6 @@ namespace maps.Model
         bool RemoveAccessibleObject(int idAccessibleObject);
 
         #endregion 
-        
         
         #region AccessibleObjectPhoto
 
@@ -479,7 +474,6 @@ namespace maps.Model
 
         #endregion 
         
-        
         #region AccessiblePlacePhoto
 
         IQueryable<AccessiblePlacePhoto> AccessiblePlacePhotos { get; }
@@ -491,6 +485,44 @@ namespace maps.Model
         bool RemoveAccessiblePlacePhoto(int idAccessiblePlacePhoto);
 
         #endregion 
-    }
 
+
+        #region Visualization
+
+        IQueryable<Visualization> Visualizations { get; }
+
+        bool CreateVisualization(Visualization instance);
+
+        bool UpdateVisualization(Visualization instance);
+
+        bool RemoveVisualization(int idVisualization);
+
+        #endregion 
+        
+        
+        #region VisualizationItem
+
+        IQueryable<VisualizationItem> VisualizationItems { get; }
+
+        bool CreateVisualizationItem(VisualizationItem instance);
+
+        bool UpdateVisualizationItem(VisualizationItem instance);
+
+        bool RemoveVisualizationItem(int idVisualizationItem);
+
+        #endregion 
+        
+        #region VisualizationColumn
+
+        IQueryable<VisualizationColumn> VisualizationColumns { get; }
+
+        bool CreateVisualizationColumn(VisualizationColumn instance);
+
+        bool UpdateVisualizationColumn(VisualizationColumn instance);
+
+        bool RemoveVisualizationColumn(int idVisualizationColumn);
+
+        #endregion 
+        
+    }
 }

@@ -104,6 +104,9 @@
     <Build Include="dbo\Tables\AccessibleObjectPhoto.sql" />
     <Build Include="dbo\Tables\AccessiblePlace.sql" />
     <Build Include="dbo\Tables\AccessiblePlacePhoto.sql" />
+    <Build Include="dbo\Tables\Visualization.sql" />
+    <Build Include="dbo\Tables\VisualizationItem.sql" />
+    <Build Include="dbo\Tables\VisualizationColumn.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\Init.sql" />

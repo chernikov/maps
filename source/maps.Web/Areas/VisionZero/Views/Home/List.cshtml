@@ -1,0 +1,9 @@
+﻿@model IList<Visualization>
+
+
+<ul class="list-unstyled">
+    @foreach (var visualization in Model)
+    {
+        <li><span class="btn btn-link visualizationItem" data-id="@visualization.ID">@visualization.Name</span></li>
+    }
+</ul>

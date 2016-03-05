@@ -100,6 +100,9 @@
     <Compile Include="Proxy\UtilityIssueTag.cs" />
     <Compile Include="Proxy\UtilityPhoto.cs" />
     <Compile Include="Proxy\UtilityTag.cs" />
+    <Compile Include="Proxy\Visualization.cs" />
+    <Compile Include="Proxy\VisualizationColumn.cs" />
+    <Compile Include="Proxy\VisualizationItem.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="SqlRepository\AccessibleDirection.cs" />
     <Compile Include="SqlRepository\AccessiblePlace.cs" />
@@ -141,6 +144,9 @@
     <Compile Include="SqlRepository\UtilityIssueTag.cs" />
     <Compile Include="SqlRepository\UtilityPhoto.cs" />
     <Compile Include="SqlRepository\UtilityTag.cs" />
+    <Compile Include="SqlRepository\Visualization.cs" />
+    <Compile Include="SqlRepository\VisualizationColumn.cs" />
+    <Compile Include="SqlRepository\VisualizationItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

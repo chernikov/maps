@@ -103,5 +103,15 @@ namespace maps.Model.Properties {
                 return ((string)(this["maps_DbConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=URAN;Initial Catalog=maps_work.Db;Integrated Security=True")]
+        public string maps_work_DbConnectionString {
+            get {
+                return ((string)(this["maps_work_DbConnectionString"]));
+            }
+        }
     }
 }

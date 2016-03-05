@@ -7,6 +7,7 @@ using maps.Web.Areas.Goal;
 using maps.Web.Areas.Instagram;
 using maps.Web.Areas.Sport;
 using maps.Web.Areas.Utility;
+using maps.Web.Areas.VisionZero;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +53,11 @@ namespace maps.Web.App_Start
             var sportArea = new SportAreaRegistration();
             var sportAreaContext = new AreaRegistrationContext(sportArea.AreaName, routes);
             sportArea.RegisterArea(sportAreaContext);
+
+
+            var visionZeroArea = new VisionZeroAreaRegistration();
+            var visionZeroAreaContext = new AreaRegistrationContext(visionZeroArea.AreaName, routes);
+            visionZeroArea.RegisterArea(visionZeroAreaContext);
 
             var defaultArea = new DefaultAreaRegistration();
             var defaultAreaContext = new AreaRegistrationContext(defaultArea.AreaName, routes);

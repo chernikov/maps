@@ -62,10 +62,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Admin/Views/City/Edit.cshtml">
-      <publishTime>05/09/2014 14:43:38</publishTime>
+      <publishTime>09/05/2014 14:43:38</publishTime>
     </File>
     <File Include="Areas/Admin/Views/City/Index.cshtml">
-      <publishTime>05/09/2014 14:01:03</publishTime>
+      <publishTime>09/05/2014 14:01:03</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Home/Index.cshtml">
       <publishTime>09/09/2014 14:30:45</publishTime>
@@ -77,13 +77,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/09/2014 14:39:05</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
-      <publishTime>11/09/2014 11:18:19</publishTime>
+      <publishTime>09/11/2014 11:18:19</publishTime>
     </File>
     <File Include="Areas/Admin/Views/User/Edit.cshtml">
-      <publishTime>12/07/2014 17:11:17</publishTime>
+      <publishTime>07/12/2014 17:11:17</publishTime>
     </File>
     <File Include="Areas/Admin/Views/User/Index.cshtml">
-      <publishTime>08/01/2014 21:05:50</publishTime>
+      <publishTime>01/08/2014 21:05:50</publishTime>
     </File>
     <File Include="Areas/Admin/Views/web.config">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -92,7 +92,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Bicycle/Controllers/BicycleController.cs">
-      <publishTime>02/08/2014 14:19:27</publishTime>
+      <publishTime>08/02/2014 14:19:27</publishTime>
     </File>
     <File Include="Areas/Bicycle/Controllers/HomeController.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -101,16 +101,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/09/2014 12:43:06</publishTime>
     </File>
     <File Include="Areas/Bicycle/Controllers/RouteController.cs">
-      <publishTime>08/09/2014 15:10:50</publishTime>
+      <publishTime>09/08/2014 15:10:50</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Home/Index.cshtml">
-      <publishTime>08/09/2014 10:38:52</publishTime>
+      <publishTime>09/08/2014 10:38:52</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Parking/Add.cshtml">
-      <publishTime>08/09/2014 13:43:14</publishTime>
+      <publishTime>09/08/2014 13:43:14</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Parking/AddFuture.cshtml">
-      <publishTime>08/09/2014 14:38:36</publishTime>
+      <publishTime>09/08/2014 14:38:36</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Parking/Edit.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -119,13 +119,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Parking/Index.cshtml">
-      <publishTime>08/09/2014 13:39:31</publishTime>
+      <publishTime>09/08/2014 13:39:31</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Parking/Info.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Parking/Popup.cshtml">
-      <publishTime>02/08/2014 13:00:32</publishTime>
+      <publishTime>08/02/2014 13:00:32</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Parking/PopupFuture.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -137,52 +137,52 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Route/Add.cshtml">
-      <publishTime>08/09/2014 13:34:22</publishTime>
+      <publishTime>09/08/2014 13:34:22</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Route/Index.cshtml">
-      <publishTime>08/09/2014 13:22:31</publishTime>
+      <publishTime>09/08/2014 13:22:31</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Route/My.cshtml">
-      <publishTime>08/09/2014 13:25:28</publishTime>
+      <publishTime>09/08/2014 13:25:28</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Shared/Map.cshtml">
-      <publishTime>08/09/2014 09:53:36</publishTime>
+      <publishTime>09/08/2014 09:53:36</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Shared/TopMenu.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/Shared/_Layout.cshtml">
-      <publishTime>08/09/2014 10:41:21</publishTime>
+      <publishTime>09/08/2014 10:41:21</publishTime>
     </File>
     <File Include="Areas/Bicycle/Views/web.config">
-      <publishTime>08/09/2014 09:41:43</publishTime>
+      <publishTime>09/08/2014 09:41:43</publishTime>
     </File>
     <File Include="Areas/Default/Controllers/DefaultController.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Default/Controllers/ErrorController.cs">
-      <publishTime>12/07/2014 17:11:17</publishTime>
+      <publishTime>07/12/2014 17:11:17</publishTime>
     </File>
     <File Include="Areas/Default/Controllers/FileController.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Default/Controllers/HomeController.cs">
-      <publishTime>11/09/2014 11:47:50</publishTime>
+      <publishTime>09/11/2014 11:47:50</publishTime>
     </File>
     <File Include="Areas/Default/Controllers/LoginController.cs">
-      <publishTime>09/08/2014 15:02:40</publishTime>
+      <publishTime>08/09/2014 15:02:40</publishTime>
     </File>
     <File Include="Areas/Default/Controllers/UserController.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Default/DefaultAreaRegistration.cs">
-      <publishTime>12/07/2014 17:11:17</publishTime>
+      <publishTime>07/12/2014 17:11:17</publishTime>
     </File>
     <File Include="Areas/Default/Views/Error/Index.cshtml">
-      <publishTime>09/01/2014 16:54:10</publishTime>
+      <publishTime>01/09/2014 16:54:10</publishTime>
     </File>
     <File Include="Areas/Default/Views/Error/NotFoundPage.cshtml">
-      <publishTime>08/01/2014 16:03:16</publishTime>
+      <publishTime>01/08/2014 16:03:16</publishTime>
     </File>
     <File Include="Areas/Default/Views/File/Index.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -191,7 +191,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Default/Views/Home/SelectCities.cshtml">
-      <publishTime>11/09/2014 11:47:43</publishTime>
+      <publishTime>09/11/2014 11:47:43</publishTime>
     </File>
     <File Include="Areas/Default/Views/Home/UserLogin.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -206,31 +206,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Default/Views/Shared/UploadTemplate.cshtml">
-      <publishTime>09/01/2014 13:01:50</publishTime>
+      <publishTime>01/09/2014 13:01:50</publishTime>
     </File>
     <File Include="Areas/Default/Views/Shared/_Layout.cshtml">
-      <publishTime>11/09/2014 11:20:36</publishTime>
+      <publishTime>09/11/2014 11:20:36</publishTime>
     </File>
     <File Include="Areas/Default/Views/User/ActivateSuccess.cshtml">
-      <publishTime>08/01/2014 16:03:42</publishTime>
+      <publishTime>01/08/2014 16:03:42</publishTime>
     </File>
     <File Include="Areas/Default/Views/User/ChangePassword.cshtml">
-      <publishTime>12/07/2014 17:11:17</publishTime>
+      <publishTime>07/12/2014 17:11:17</publishTime>
     </File>
     <File Include="Areas/Default/Views/User/Edit.cshtml">
-      <publishTime>12/07/2014 17:11:17</publishTime>
+      <publishTime>07/12/2014 17:11:17</publishTime>
     </File>
     <File Include="Areas/Default/Views/User/Index.cshtml">
-      <publishTime>12/07/2014 17:11:17</publishTime>
+      <publishTime>07/12/2014 17:11:17</publishTime>
     </File>
     <File Include="Areas/Default/Views/User/Register.cshtml">
-      <publishTime>12/07/2014 17:11:17</publishTime>
+      <publishTime>07/12/2014 17:11:17</publishTime>
     </File>
     <File Include="Areas/Default/Views/User/RegisterSuccess.cshtml">
-      <publishTime>08/01/2014 16:10:09</publishTime>
+      <publishTime>01/08/2014 16:10:09</publishTime>
     </File>
     <File Include="Areas/Default/Views/web.config">
-      <publishTime>08/09/2014 09:43:53</publishTime>
+      <publishTime>09/08/2014 09:43:53</publishTime>
     </File>
     <File Include="Areas/Goal/Controllers/GoalController.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -266,7 +266,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Utility/Controllers/AdminController.cs">
-      <publishTime>11/09/2014 11:22:11</publishTime>
+      <publishTime>09/11/2014 11:22:11</publishTime>
     </File>
     <File Include="Areas/Utility/Controllers/CommentController.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -278,10 +278,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Utility/Controllers/TagController.cs">
-      <publishTime>11/09/2014 14:59:21</publishTime>
+      <publishTime>09/11/2014 14:59:21</publishTime>
     </File>
     <File Include="Areas/Utility/Controllers/UtilityController.cs">
-      <publishTime>11/09/2014 12:25:17</publishTime>
+      <publishTime>09/11/2014 12:25:17</publishTime>
     </File>
     <File Include="Areas/Utility/Controllers/UtilityIssueController.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -290,10 +290,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Utility/UtilityAreaRegistration.cs">
-      <publishTime>11/09/2014 11:22:53</publishTime>
+      <publishTime>09/11/2014 11:22:53</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Admin/Index.cshtml">
-      <publishTime>11/09/2014 11:18:21</publishTime>
+      <publishTime>09/11/2014 11:18:21</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Comment/Write.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -305,7 +305,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Home/Add.cshtml">
-      <publishTime>11/09/2014 16:07:33</publishTime>
+      <publishTime>09/11/2014 16:07:33</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Home/Edit.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -329,13 +329,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Shared/FbCode.cshtml">
-      <publishTime>11/09/2014 11:25:18</publishTime>
+      <publishTime>09/11/2014 11:25:18</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Shared/GalleryLightBox.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Shared/Map.cshtml">
-      <publishTime>11/09/2014 12:19:21</publishTime>
+      <publishTime>09/11/2014 12:19:21</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Shared/TopMenu.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -344,19 +344,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Shared/_AdminLayout.cshtml">
-      <publishTime>11/09/2014 15:02:40</publishTime>
+      <publishTime>09/11/2014 15:02:40</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Shared/_FullLayout.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Shared/_Layout.cshtml">
-      <publishTime>11/09/2014 12:32:30</publishTime>
+      <publishTime>09/11/2014 12:32:30</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Tag/Edit.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Utility/Views/Tag/Index.cshtml">
-      <publishTime>11/09/2014 14:58:18</publishTime>
+      <publishTime>09/11/2014 14:58:18</publishTime>
     </File>
     <File Include="Areas/Utility/Views/UtilityIssue/Edit.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -491,22 +491,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/Controller/Controller.ps1">
-      <publishTime>07/06/2012 13:20:22</publishTime>
+      <publishTime>06/07/2012 13:20:22</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/Controller/ControllerTemplate.cs.t4">
-      <publishTime>07/06/2012 10:16:32</publishTime>
+      <publishTime>06/07/2012 10:16:32</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/EditView/EditView.ps1">
-      <publishTime>07/06/2012 13:20:05</publishTime>
+      <publishTime>06/07/2012 13:20:05</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/EditView/EditViewTemplate.cs.t4">
-      <publishTime>10/01/2014 11:19:18</publishTime>
+      <publishTime>01/10/2014 11:19:18</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/IndexView/IndexView.ps1">
-      <publishTime>07/06/2012 14:22:46</publishTime>
+      <publishTime>06/07/2012 14:22:46</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/IndexView/IndexViewTemplate.cs.t4">
-      <publishTime>10/01/2014 11:16:39</publishTime>
+      <publishTime>01/10/2014 11:16:39</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/Model/MapperCollection.ps1">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -518,22 +518,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/Model/Model.ps1">
-      <publishTime>12/07/2014 21:10:04</publishTime>
+      <publishTime>07/12/2014 21:10:04</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/Model/ModelMapper.cs.t4">
-      <publishTime>12/07/2014 21:13:49</publishTime>
+      <publishTime>07/12/2014 21:13:49</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/Model/ModelMapper.ps1">
-      <publishTime>12/07/2014 21:12:02</publishTime>
+      <publishTime>07/12/2014 21:12:02</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/Model/ModelTemplate.cs.t4">
-      <publishTime>07/06/2012 14:02:21</publishTime>
+      <publishTime>06/07/2012 14:02:21</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/SelectReference/SelectReference.ps1">
-      <publishTime>07/06/2012 14:54:17</publishTime>
+      <publishTime>06/07/2012 14:54:17</publishTime>
     </File>
     <File Include="CodeTemplates/Scaffolders/SelectReference/SelectReferenceTemplate.cs.t4">
-      <publishTime>07/06/2012 14:55:24</publishTime>
+      <publishTime>06/07/2012 14:55:24</publishTime>
     </File>
     <File Include="config.rb">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -779,16 +779,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/css/chosen.css">
-      <publishTime>11/09/2014 16:08:13</publishTime>
+      <publishTime>09/11/2014 16:08:13</publishTime>
     </File>
     <File Include="Content/css/fineuploader-4.1.1.min.css">
-      <publishTime>09/01/2014 12:53:30</publishTime>
+      <publishTime>01/09/2014 12:53:30</publishTime>
     </File>
     <File Include="Content/css/fineuploader.css">
-      <publishTime>08/01/2014 14:56:38</publishTime>
+      <publishTime>01/08/2014 14:56:38</publishTime>
     </File>
     <File Include="Content/css/PagedList.css">
-      <publishTime>08/01/2014 15:04:24</publishTime>
+      <publishTime>01/08/2014 15:04:24</publishTime>
     </File>
     <File Include="Content/css/style.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -818,22 +818,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.eot">
-      <publishTime>06/01/2014 13:59:06</publishTime>
+      <publishTime>01/06/2014 13:59:06</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.svg">
-      <publishTime>06/01/2014 13:59:06</publishTime>
+      <publishTime>01/06/2014 13:59:06</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>06/01/2014 13:59:06</publishTime>
+      <publishTime>01/06/2014 13:59:06</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.woff">
-      <publishTime>06/01/2014 13:59:06</publishTime>
+      <publishTime>01/06/2014 13:59:06</publishTime>
     </File>
     <File Include="Content/images/bycicle_2.png">
-      <publishTime>12/07/2014 18:26:07</publishTime>
+      <publishTime>07/12/2014 18:26:07</publishTime>
     </File>
     <File Include="Content/images/chosen-sprite.png">
-      <publishTime>11/09/2014 16:00:36</publishTime>
+      <publishTime>09/11/2014 16:00:36</publishTime>
     </File>
     <File Include="Content/images/danger-icon.png">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -860,22 +860,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/maps_logo.png">
-      <publishTime>12/07/2014 17:22:21</publishTime>
+      <publishTime>07/12/2014 17:22:21</publishTime>
     </File>
     <File Include="Content/images/maps_logo_small.png">
-      <publishTime>12/07/2014 17:33:53</publishTime>
+      <publishTime>07/12/2014 17:33:53</publishTime>
     </File>
     <File Include="Content/images/marker_12_2x.png">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/marker_12_2x__.png">
-      <publishTime>09/08/2014 15:02:40</publishTime>
+      <publishTime>08/09/2014 15:02:40</publishTime>
     </File>
     <File Include="Content/images/marker_13_2x.png">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/marker_13_2x__.png">
-      <publishTime>09/08/2014 15:02:40</publishTime>
+      <publishTime>08/09/2014 15:02:40</publishTime>
     </File>
     <File Include="Content/images/marker_stroked.png">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -893,10 +893,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/images/utility_logo.png">
-      <publishTime>11/09/2014 11:45:11</publishTime>
+      <publishTime>09/11/2014 11:45:11</publishTime>
     </File>
     <File Include="Content/images/utility_logo_2.png">
-      <publishTime>11/09/2014 11:45:11</publishTime>
+      <publishTime>09/11/2014 11:45:11</publishTime>
     </File>
     <File Include="Content/images/warnings-icon.png">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -905,7 +905,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>12/07/2014 17:11:17</publishTime>
+      <publishTime>07/12/2014 17:11:17</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1139,7 +1139,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/09/2014 14:08:37</publishTime>
     </File>
     <File Include="Scripts/admin/city-edit.js">
-      <publishTime>05/09/2014 14:40:44</publishTime>
+      <publishTime>09/05/2014 14:40:44</publishTime>
     </File>
     <File Include="Scripts/admin/common.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1154,7 +1154,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/09/2014 14:28:28</publishTime>
     </File>
     <File Include="Scripts/admin/route-lengths.js">
-      <publishTime>09/08/2014 15:02:40</publishTime>
+      <publishTime>08/09/2014 15:02:40</publishTime>
     </File>
     <File Include="Scripts/bloodhound.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1169,103 +1169,103 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
-      <publishTime>06/01/2014 13:59:06</publishTime>
+      <publishTime>01/06/2014 13:59:06</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
-      <publishTime>06/01/2014 13:59:06</publishTime>
+      <publishTime>01/06/2014 13:59:06</publishTime>
     </File>
     <File Include="Scripts/bycicle/add-future-parking.js">
-      <publishTime>08/09/2014 14:41:53</publishTime>
+      <publishTime>09/08/2014 14:41:53</publishTime>
     </File>
     <File Include="Scripts/bycicle/add-parking.js">
       <publishTime>09/09/2014 14:26:18</publishTime>
     </File>
     <File Include="Scripts/bycicle/add-route.js">
-      <publishTime>08/09/2014 13:56:27</publishTime>
+      <publishTime>09/08/2014 13:56:27</publishTime>
     </File>
     <File Include="Scripts/bycicle/index.js">
-      <publishTime>08/09/2014 10:40:40</publishTime>
+      <publishTime>09/08/2014 10:40:40</publishTime>
     </File>
     <File Include="Scripts/bycicle/map-main.js">
-      <publishTime>08/09/2014 14:27:30</publishTime>
+      <publishTime>09/08/2014 14:27:30</publishTime>
     </File>
     <File Include="Scripts/bycicle/map-parking.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/bycicle/map-route.js">
-      <publishTime>08/09/2014 14:30:16</publishTime>
+      <publishTime>09/08/2014 14:30:16</publishTime>
     </File>
     <File Include="Scripts/bycicle/my-route.js">
-      <publishTime>08/09/2014 13:25:53</publishTime>
+      <publishTime>09/08/2014 13:25:53</publishTime>
     </File>
     <File Include="Scripts/bycicle/parking.js">
-      <publishTime>08/09/2014 13:38:43</publishTime>
+      <publishTime>09/08/2014 13:38:43</publishTime>
     </File>
     <File Include="Scripts/bycicle/route.js">
-      <publishTime>08/09/2014 13:20:53</publishTime>
+      <publishTime>09/08/2014 13:20:53</publishTime>
     </File>
     <File Include="Scripts/bycicle/simple-form.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/chosen.jquery.js">
-      <publishTime>11/09/2014 15:58:34</publishTime>
+      <publishTime>09/11/2014 15:58:34</publishTime>
     </File>
     <File Include="Scripts/chosen.jquery.min.js">
-      <publishTime>11/09/2014 15:09:43</publishTime>
+      <publishTime>09/11/2014 15:09:43</publishTime>
     </File>
     <File Include="Scripts/constants.js">
-      <publishTime>09/08/2014 15:02:40</publishTime>
+      <publishTime>08/09/2014 15:02:40</publishTime>
     </File>
     <File Include="Scripts/default/common.js">
-      <publishTime>08/09/2014 09:40:04</publishTime>
+      <publishTime>09/08/2014 09:40:04</publishTime>
     </File>
     <File Include="Scripts/default/edit-user.js">
-      <publishTime>09/01/2014 15:27:29</publishTime>
+      <publishTime>01/09/2014 15:27:29</publishTime>
     </File>
     <File Include="Scripts/default/index.js">
-      <publishTime>08/09/2014 09:44:40</publishTime>
+      <publishTime>09/08/2014 09:44:40</publishTime>
     </File>
     <File Include="Scripts/fineuploader-4.1.1.min.js">
-      <publishTime>09/01/2014 12:39:40</publishTime>
+      <publishTime>01/09/2014 12:39:40</publishTime>
     </File>
     <File Include="Scripts/goal/index.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/google.maps.extend.js">
-      <publishTime>09/08/2014 15:02:40</publishTime>
+      <publishTime>08/09/2014 15:02:40</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
-      <publishTime>06/01/2014 13:59:06</publishTime>
+      <publishTime>01/06/2014 13:59:06</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.min.js">
-      <publishTime>06/01/2014 13:59:06</publishTime>
+      <publishTime>01/06/2014 13:59:06</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.min.map">
-      <publishTime>06/01/2014 13:59:06</publishTime>
+      <publishTime>01/06/2014 13:59:06</publishTime>
     </File>
     <File Include="Scripts/jquery.blueimp-gallery.min.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/jquery.fineuploader-3.5.0.js">
-      <publishTime>03/01/2014 13:04:29</publishTime>
+      <publishTime>01/03/2014 13:04:29</publishTime>
     </File>
     <File Include="Scripts/jquery.fineuploader-3.5.0.min.js">
-      <publishTime>03/01/2014 13:04:48</publishTime>
+      <publishTime>01/03/2014 13:04:48</publishTime>
     </File>
     <File Include="Scripts/jquery.fineuploader-4.1.1.min.js">
-      <publishTime>09/01/2014 12:39:40</publishTime>
+      <publishTime>01/09/2014 12:39:40</publishTime>
     </File>
     <File Include="Scripts/jquery.serialize.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
-      <publishTime>06/01/2014 13:59:07</publishTime>
+      <publishTime>01/06/2014 13:59:07</publishTime>
     </File>
     <File Include="Scripts/respond.js">
-      <publishTime>06/01/2014 13:59:07</publishTime>
+      <publishTime>01/06/2014 13:59:07</publishTime>
     </File>
     <File Include="Scripts/respond.min.js">
-      <publishTime>06/01/2014 13:59:07</publishTime>
+      <publishTime>01/06/2014 13:59:07</publishTime>
     </File>
     <File Include="Scripts/typeahead.bundle.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1286,7 +1286,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/utility/admin-index.js">
-      <publishTime>11/09/2014 11:17:36</publishTime>
+      <publishTime>09/11/2014 11:17:36</publishTime>
     </File>
     <File Include="Scripts/utility/edit-issue.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1301,7 +1301,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/utility/map-main.js">
-      <publishTime>11/09/2014 12:28:58</publishTime>
+      <publishTime>09/11/2014 12:28:58</publishTime>
     </File>
     <File Include="Scripts/utility/map-small-main.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1319,7 +1319,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/_Ok.cshtml">
-      <publishTime>11/09/2014 13:37:38</publishTime>
+      <publishTime>09/11/2014 13:37:38</publishTime>
     </File>
     <File Include="Views/web.config">
       <publishTime>01/01/0001 00:00:00</publishTime>

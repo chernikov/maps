@@ -1,0 +1,10 @@
+﻿@model List<KeyValuePair<string,string>>
+
+<ul>
+@foreach (var item in Model)
+{
+    <li>
+        <strong>@item.Key:</strong> @item.Value
+    </li>
+}
+</ul>
