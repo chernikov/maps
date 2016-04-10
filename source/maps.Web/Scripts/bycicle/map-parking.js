@@ -76,8 +76,6 @@
                 _this.infoWindows.push(infowindow);
 
                 infowindow.open(mapMain.map, marker);
-                
-
             }
         });
     }

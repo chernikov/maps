@@ -36,11 +36,22 @@ namespace maps.Model
                 cache.Lat = instance.Lat;
                 cache.Lng = instance.Lng;
                 cache.Data = instance.Data;
+                cache.Accuracy = instance.Accuracy;
                 Db.VisualizationItems.Context.SubmitChanges();
                 return true;
             }
 
             return false;
+        }
+
+        public void ChangeVisibleVisualizationItems(int id)
+        {
+            var cache = Db.VisualizationItems.FirstOrDefault(p => p.ID == id);
+            if (cache != null)
+            {
+                cache.IsHidden = !cache.IsHidden;
+                Db.VisualizationItems.Context.SubmitChanges();
+            }
         }
 
         public bool RemoveVisualizationItem(int idVisualizationItem)

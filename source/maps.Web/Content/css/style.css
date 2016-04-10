@@ -149,5 +149,20 @@ h3.label {
   height: 100%; }
 
 .vision-zero .panel {
-  margin-top: 30px;
-  padding: 10px 10px 10px 20px; }
+  margin-top: 90px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  bottom: 0;
+  left: 10px;
+  padding: 0;
+  position: fixed;
+  top: 0; }
+
+.cut {
+  overflow: hidden;
+  cursor: pointer; }
+  .cut.cut-collapsed {
+    height: 22px; }
+
+.is-hidden {
+  text-decoration: line-through; }

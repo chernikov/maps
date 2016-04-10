@@ -49,5 +49,10 @@ namespace maps.Model
                 return string.Format("{0} {1}", FirstName, LastName);
             }
         }
+
+        public bool HasVisualizationAccess(int id)
+        {
+            return Visualizations.Any(p => p.ID == id) || VisualizationUsers.Any(p => p.VisualizationID == id);
+        }
     }
 }

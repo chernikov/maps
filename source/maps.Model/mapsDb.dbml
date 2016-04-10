@@ -426,6 +426,7 @@
       <Association Name="User_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="UserID" Type="UtilityIssue" />
       <Association Name="User_UtilityIssueHistory" Member="UtilityIssueHistories" ThisKey="ID" OtherKey="UserID" Type="UtilityIssueHistory" />
       <Association Name="User_UtilityPhoto" Member="UtilityPhotos" ThisKey="ID" OtherKey="UserID" Type="UtilityPhoto" />
+      <Association Name="User_VisualizationUser" Member="VisualizationUsers" ThisKey="ID" OtherKey="UserID" Type="VisualizationUser" />
       <Association Name="User_Visualization" Member="Visualizations" ThisKey="ID" OtherKey="UserID" Type="Visualization" />
       <Association Name="City_User" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
     </Type>
@@ -546,14 +547,36 @@
       <Association Name="UtilityTag_UtilityIssueTag" Member="UtilityIssueTags" ThisKey="ID" OtherKey="UtilityTagID" Type="UtilityIssueTag" />
     </Type>
   </Table>
+  <Table Name="dbo.VisualizationColumn" Member="VisualizationColumns">
+    <Type Name="VisualizationColumn">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VisualizationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FilterValues" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Visualization_VisualizationColumn" Member="Visualization" ThisKey="VisualizationID" OtherKey="ID" Type="Visualization" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VisualizationUser" Member="VisualizationUsers">
+    <Type Name="VisualizationUser">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VisualizationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_VisualizationUser" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Visualization_VisualizationUser" Member="Visualization" ThisKey="VisualizationID" OtherKey="ID" Type="Visualization" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Visualization" Member="Visualizations">
     <Type Name="Visualization">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShareLink" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
       <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="Visualization_VisualizationItem" Member="VisualizationItems" ThisKey="ID" OtherKey="VisualizationID" Type="VisualizationItem" />
       <Association Name="Visualization_VisualizationColumn" Member="VisualizationColumns" ThisKey="ID" OtherKey="VisualizationID" Type="VisualizationColumn" />
+      <Association Name="Visualization_VisualizationUser" Member="VisualizationUsers" ThisKey="ID" OtherKey="VisualizationID" Type="VisualizationUser" />
+      <Association Name="Visualization_VisualizationItem" Member="VisualizationItems" ThisKey="ID" OtherKey="VisualizationID" Type="VisualizationItem" />
       <Association Name="User_Visualization" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
@@ -563,19 +586,10 @@
       <Column Name="VisualizationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Lat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Lng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Accuracy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Data" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Association Name="Visualization_VisualizationItem" Member="Visualization" ThisKey="VisualizationID" OtherKey="ID" Type="Visualization" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.VisualizationColumn" Member="VisualizationColumns">
-    <Type Name="VisualizationColumn">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="VisualizationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FilterValues" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="Visualization_VisualizationColumn" Member="Visualization" ThisKey="VisualizationID" OtherKey="ID" Type="Visualization" IsForeignKey="true" />
+      <Column Name="IsHidden" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Visualization_VisualizationItem" Member="Visualization" ThisKey="VisualizationID" OtherKey="ID" Type="Visualization" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

@@ -20,6 +20,13 @@ namespace maps.Web.Areas.VisionZero
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
+                null,
+                "vision-zero/shared/{id}",
+                new { controller = "Home", action = "Shared" },
+                new[] { "maps.Web.Areas.VisionZero.Controllers" }
+            );
+
+            context.MapRoute(
                 "VisionZero_default",
                 "vision-zero/{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },

@@ -2,6 +2,7 @@
     ViewBag.Title = "Vision Zero - maps.if.ua";
     Layout = "~/Areas/VisionZero/Views/Shared/_Layout.cshtml";
     var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var id = (int?)ViewBag.ID ?? 0;
 }
 @section styles {
     @Styles.Render("~/Content/css/fineuploader")
@@ -17,28 +18,32 @@
 
 }
 
+@Html.Hidden("ID", id)
 <div class="fluid-container height">
     <div class="row height">
-        <div class="col-lg-3 height panel">
+        <div class="col-lg-3 col-md-3 panel">
             @if (currentUser != null)
             {
                 <div class="row">
-                    <div id="Upload">Upload</div>
-                    @Html.Partial("UploadTemplate")
-                </div>
-                <div class="row">
-                    <br />
-                    <div id="ListWrapper">
-                        @Html.Action("List", "Home")
+                    <div class="col-md-11">
+                        <div id="Upload">Upload</div>
+                        @Html.Partial("UploadTemplate")
                     </div>
                 </div>
-                
+                <div class="row">
+                    <div class="col-md-11">
+                        <br />
+                        <div id="ListWrapper">
+                            @Html.Action("List", "Home")
+                        </div>
+                    </div>
+                </div>
                 <div id="FilterWrapper">
 
                 </div>
             }
         </div>
-        <div class="col-lg-9 height">
+        <div class="col-lg-9 col-md-9 col-lg-offset-3 col-md-offset-3 height">
             @Html.Partial("Map")
         </div>
     </div>

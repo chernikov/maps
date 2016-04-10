@@ -74,5 +74,13 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=URAN;Initial Catalog=maps_work.Db;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="_1gb_mapsConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=mssql4.1gb.ua;Initial Catalog=1gb_maps;User ID=1gb_chernikov;Password=153c5112&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=mssql4.1gb.ua;Initial Catalog=1gb_maps;User ID=1gb_chernikov;Password=153c5112</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

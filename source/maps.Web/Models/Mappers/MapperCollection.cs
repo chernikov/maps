@@ -259,5 +259,15 @@ namespace maps.Web.Models.Mappers
                 Mapper.CreateMap<AccessiblePlacePhotoView, AccessiblePlacePhoto>();
             }
         }
+
+        public static class VisualizationItemMapper
+        {
+            public static void Init()
+            {
+                Mapper.CreateMap<VisualizationItem, VisualizationItemView>();
+                Mapper.CreateMap<VisualizationItemView, VisualizationItem>()
+                    .ForMember(p => p.DataItems, opt => opt.Ignore());
+            }
+        }
     }
 }

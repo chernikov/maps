@@ -14,11 +14,13 @@ namespace maps.Web.Models.Info
 
         public List<VisualizationItem> Items { get; set; }
 
+        public List<int> HiddenIndexes { get; set; } 
 
         public VisualizationTable()
         {
             Columns = new List<VisualizationColumn>();
             Items = new List<VisualizationItem>();
+            HiddenIndexes = new List<int>();
         }
 
         public static VisualizationTable Parse(string data)
@@ -36,17 +38,20 @@ namespace maps.Web.Models.Info
 
             var indexLat = columnsLower.IndexOf("lat") != -1 ? columnsLower.IndexOf("lat") : columnsLower.IndexOf("latitude");
             var indexLng = columnsLower.IndexOf("lng") != -1 ? columnsLower.IndexOf("lng") : columnsLower.IndexOf("longitude");
+            var indexAcc = columnsLower.IndexOf("acc") != -1 ? columnsLower.IndexOf("acc") : columnsLower.IndexOf("accuracy");
             if (indexLat == -1 || indexLng == -1)
             {
                 throw new ArgumentException("Longitude and latidute column are not exist!");
             }
-            table.Gathering(rows, columns, indexLat, indexLng);
+            table.Gathering(rows, columns, indexLat, indexLng, indexAcc);
 
             table.Analyze(rows, columns);
+
+            table.HiddenIndexes.AddRange(new int[] {indexLat, indexLng, indexAcc});
             return table;
         }
 
-        private void Gathering(List<string> rows, List<string> columns, int indexLat, int indexLng)
+        private void Gathering(List<string> rows, List<string> columns, int indexLat, int indexLng, int indexAcc)
         {
             for (int i = 0; i < columns.Count; i++)
             {
@@ -62,18 +67,36 @@ namespace maps.Web.Models.Info
                 try
                 {
                     var items = rows[j].Split(new string[] { ";" }, StringSplitOptions.None).ToList();
-
                     var latStr = items[indexLat];
                     var lngStr = items[indexLng];
+                    double lat = 0;
+                    double lng = 0;
+                    int acc = 0;
+                    try
+                    {
+                        lat = Double.Parse(latStr);
+                        lng = Double.Parse(lngStr);
+                    }
+                    catch { }
 
-                    var lat = Double.Parse(latStr);
-                    var lng = Double.Parse(lngStr);
+                    if (indexAcc != -1)
+                    {
+                        try
+                        {
+                            var accStr = items[indexAcc];
+                            acc = Int32.Parse(accStr);
+                        }
+                        catch { }
+                    }
                     var obj = new List<KeyValuePair<string, string>>();
                     for (int i = 0; i < columns.Count; i++)
                     {
                         if (items.Count > i)
                         {
-                            obj.Add(new KeyValuePair<string, string>(columns[i], items[i]));
+                            if (i != indexLat && i != indexLng && i != indexAcc)
+                            {
+                                obj.Add(new KeyValuePair<string, string>(columns[i], items[i]));
+                            }
                         }
                     }
                     var dataObj = JsonConvert.SerializeObject(obj, new KeyValueConverter());
@@ -82,8 +105,10 @@ namespace maps.Web.Models.Info
                     {
                         Lat = lat,
                         Lng = lng,
+                        Accuracy = acc,
                         Data = dataObj
                     });
+
                 }
                 catch
                 {
@@ -103,10 +128,17 @@ namespace maps.Web.Models.Info
                 foreach (var item in realRows)
                 {
                     var items = item.Split(new string[] { ";" }, StringSplitOptions.None).ToList();
-
-                    var value = items[i];
-                    DateTime date;
-                    if (!DateTime.TryParse(value, out date))
+                    if (items.Count > i)
+                    {
+                        var value = items[i];
+                        DateTime date;
+                        if (!DateTime.TryParse(value, out date))
+                        {
+                            possibleDate = false;
+                            break;
+                        }
+                    }
+                    else
                     {
                         possibleDate = false;
                         break;
@@ -121,10 +153,17 @@ namespace maps.Web.Models.Info
                 foreach (var item in realRows)
                 {
                     var items = item.Split(new string[] { ";" }, StringSplitOptions.None).ToList();
-
-                    var value = items[i];
-                    TimeSpan time;
-                    if (!TimeSpan.TryParse(value, out time))
+                    if (items.Count > i)
+                    {
+                        var value = items[i];
+                        TimeSpan time;
+                        if (!TimeSpan.TryParse(value, out time))
+                        {
+                            possibleTime = false;
+                            break;
+                        }
+                    }
+                    else
                     {
                         possibleTime = false;
                         break;
@@ -139,11 +178,13 @@ namespace maps.Web.Models.Info
                 foreach (var item in realRows)
                 {
                     var items = item.Split(new string[] { ";" }, StringSplitOptions.None).ToList();
-                    list.Add(items[i]);
+                    if (items.Count > i)
+                    {
+                        list.Add(items[i]);
+                    }
                 }
-
                 var distinctList = list.Distinct().ToList();
-                if (distinctList.Count * 3 < list.Count)
+                if (distinctList.Count * 3 < list.Count && distinctList.Count > 1)
                 {
                     Columns[i].Type = (int)VisualizationColumn.VisualizationType.List;
                     var filteredValues = string.Join("; ", distinctList.ToArray());

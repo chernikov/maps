@@ -1,6 +1,7 @@
 ﻿CREATE TABLE [dbo].[Visualization]
 (
 	[ID] INT IDENTITY (1, 1) NOT NULL, 
+	[ShareLink] NVARCHAR(10) NOT NULL DEFAULT '',
 	[UserID] INT NOT NULL,
 	[Name] NVARCHAR(300),
 	[AddedDate] DATETIME NOT NULL, 

@@ -37,6 +37,7 @@ namespace maps.Web.Mappers
             MapperCollection.AccessibleObjectPhotoMapper.Init();
             MapperCollection.AccessiblePlaceMapper.Init();
             MapperCollection.AccessiblePlacePhotoMapper.Init();
+            MapperCollection.VisualizationItemMapper.Init();
         }
 
         public object Map(object source, Type sourceType, Type destinationType)

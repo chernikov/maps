@@ -1,0 +1,33 @@
+﻿@model Visualization
+@{
+    ViewBag.Title = "Vision Zero - maps.if.ua";
+    Layout = "~/Areas/VisionZero/Views/Shared/_Layout.cshtml";
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+}
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/Scripts/bootstrap-datepicker.js")
+    @Scripts.Render("~/Scripts/markerclusterer.js")
+    @Scripts.Render("~/scripts/vision-zero/map-main.js")
+    @Scripts.Render("~/scripts/vision-zero/map-visualization.js")
+    @Scripts.Render("~/scripts/vision-zero/shared.js")
+}
+
+@Html.Hidden("Identifier", Model.Identifier)
+<div class="fluid-container height">
+    <div class="row height">
+        <div class="col-lg-3 col-md-3 panel">
+            <div id="FilterWrapper">
+
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-lg-offset-3 col-md-offset-3 height">
+            @Html.Partial("Map")
+        </div>
+    </div>
+
+</div>

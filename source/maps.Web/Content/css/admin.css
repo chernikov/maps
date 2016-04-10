@@ -67,7 +67,9 @@
       text-decoration: none;
       background-color: #e5e3e9;
       border-right: 1px solid #dbd8e0; }
-  .bs-sidenav .nav .active > a, .bs-sidenav .nav .active:hover > a, .bs-sidenav .nav .active:focus > a {
+  .bs-sidenav .nav .active > a,
+  .bs-sidenav .nav .active:hover > a,
+  .bs-sidenav .nav .active:focus > a {
     font-weight: bold;
     color: #563d7c;
     background-color: transparent;
@@ -104,14 +106,12 @@
       /* Undo the static from mobile first approach */ }
       .bs-sidebar.affix-bottom .bs-sidenav {
         margin-top: 0;
-        margin-bottom: 0; }
- }
+        margin-bottom: 0; } }
 
 @media (min-width: 1200px) {
   /* Widen the fixed sidebar again */
   .bs-sidebar.affix-bottom, .bs-sidebar.affix {
-    width: 263px; }
- }
+    width: 263px; } }
 
 .small-map {
   width: 600px;
@@ -127,5 +127,3 @@
 
 .no-top-border td {
   border-top: none !important; }
-
-/*# sourceMappingURL=admin.css.map */

@@ -508,6 +508,8 @@ namespace maps.Model
 
         bool UpdateVisualizationItem(VisualizationItem instance);
 
+        void ChangeVisibleVisualizationItems(int id);
+
         bool RemoveVisualizationItem(int idVisualizationItem);
 
         #endregion 
@@ -524,5 +526,7 @@ namespace maps.Model
 
         #endregion 
         
+    
+      
     }
 }

@@ -1,8 +1,11 @@
-﻿using ImageResizer;
+﻿using AutoMapper;
+using ImageResizer;
 using maps.Model;
 using maps.Web.Global;
 using maps.Web.Global.Search;
 using maps.Web.Models.Info;
+using maps.Web.Models.ViewModels;
+using maps.Web.Tools;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -22,6 +25,14 @@ namespace maps.Web.Areas.VisionZero.Controllers
             return View();
         }
 
+
+        public ActionResult Item(int id)
+        {
+            ViewBag.ID = id;
+            return View("Index");
+        }
+
+
         [ValidateInput(false)]
         [HttpPost]
         public FineUploaderResult UploadFile(FineUpload upload)
@@ -35,14 +46,32 @@ namespace maps.Web.Areas.VisionZero.Controllers
                     data = reader.ReadToEnd();
                     var table = VisualizationTable.Parse(data);
 
-                    var visualization = new Visualization();
-                    visualization.Name = upload.Filename;
-                    visualization.UserID = CurrentUser.ID;
+                    var visualization = new Visualization()
+                    {
+                        Name = upload.Filename,
+                        UserID = CurrentUser.ID,
+                        ShareLink = StringExtension.CreateRandomPassword(10, allowedChars: "abcdefghijkmnopqrstuvwxyz0123456789")
+                    };
+                    while (true)
+                    {
+                        var existShareLink = Repository.Visualizations.Any(p => p.ShareLink == visualization.ShareLink);
+                        if (existShareLink)
+                        {
+                            visualization.ShareLink = StringExtension.CreateRandomPassword(10, allowedChars: "abcdefghijkmnopqrstuvwxyz0123456789");
+                        }
+                        else
+                        {
+                            break;
+                        };
+                    }
                     Repository.CreateVisualization(visualization);
                     foreach (var column in table.Columns)
                     {
-                        column.VisualizationID = visualization.ID;
-                        Repository.CreateVisualizationColumn(column);
+                        if (!table.HiddenIndexes.Contains(column.Number))
+                        {
+                            column.VisualizationID = visualization.ID;
+                            Repository.CreateVisualizationColumn(column);
+                        }
                     }
                     foreach (var item in table.Items)
                     {
@@ -59,11 +88,33 @@ namespace maps.Web.Areas.VisionZero.Controllers
         }
 
 
+        public ActionResult Shared(string id)
+        {
+            var visualization = Repository.Visualizations.FirstOrDefault(p => string.Compare(p.ShareLink, id, true) == 0);
+            if (visualization != null)
+            {
+                return View(visualization);
+            }
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult ShareLink(int id)
+        {
+            var visualization = Repository.Visualizations.FirstOrDefault(p => p.ID == id);
+
+            if (visualization != null)
+            {
+                return View(visualization);
+            }
+            return null;
+        }
+
         public ActionResult List()
         {
             if (CurrentUser != null)
             {
-                var list = Repository.Visualizations.Where(p => p.UserID == CurrentUser.ID).ToList();
+                var list = Repository.Visualizations.Where(p => p.UserID == CurrentUser.ID || p.VisualizationUsers.Any(r => r.UserID == CurrentUser.ID)).ToList();
                 return View(list);
             }
             return null;
@@ -76,15 +127,15 @@ namespace maps.Web.Areas.VisionZero.Controllers
             return View(visualizationFilter);
         }
 
-
         public ActionResult ShowData(int id)
         {
             var items = Repository.VisualizationItems
-                .Where(p => p.VisualizationID == id).Select(p => new
+                .Where(p => p.VisualizationID == id && !p.IsHidden).Select(p => new
             {
                 Id = p.ID,
                 lat = p.Lat,
                 lng = p.Lng,
+                accuracy = p.Accuracy,
                 data = p.Data
             }).ToList();
             return Json(new { result = "ok", data = items }, JsonRequestBehavior.AllowGet);
@@ -93,8 +144,7 @@ namespace maps.Web.Areas.VisionZero.Controllers
 
         public ActionResult Shake(int id)
         {
-            var items = Repository.VisualizationItems.Where(p => p.VisualizationID == id).ToList();
-
+            var items = Repository.VisualizationItems.Where(p => p.VisualizationID == id && p.Lat != 0 && p.Lng != 0).ToList();
             var shake = new Random((int)DateTime.Now.Ticks);
             for (int i = 0; i < items.Count; i++)
             {
@@ -111,22 +161,19 @@ namespace maps.Web.Areas.VisionZero.Controllers
                     }
                 }
             }
-
             return Json(new { result = "ok" });
         }
 
         public ActionResult FilterData(VisualizationFilter filter)
         {
-            var items = Repository.VisualizationItems.Where(p => p.VisualizationID == filter.ID).ToList();
+            var items = Repository.VisualizationItems.Where(p => p.VisualizationID == filter.ID && !p.IsHidden).ToList();
 
             var filteredItems = new List<VisualizationItem>();
 
-            if (!string.IsNullOrWhiteSpace(filter.SearchString)) 
+            if (!string.IsNullOrWhiteSpace(filter.SearchString))
             {
                 items = SearchEngine.Get(filter.SearchString, items.AsQueryable()).ToList();
             }
-            
-
             foreach (var item in items)
             {
                 var data = JsonConvert.DeserializeObject<List<KeyValuePair<string, string>>>(item.Data);
@@ -193,6 +240,7 @@ namespace maps.Web.Areas.VisionZero.Controllers
                    Id = p.ID,
                    lat = p.Lat,
                    lng = p.Lng,
+                   accuracy = p.Accuracy,
                    data = p.Data
                }).ToList();
 
@@ -204,8 +252,63 @@ namespace maps.Web.Areas.VisionZero.Controllers
         {
             var item = Repository.VisualizationItems.FirstOrDefault(p => p.ID == id);
             var data = JsonConvert.DeserializeObject<List<KeyValuePair<string, string>>>(item.Data);
-
+            ViewBag.ID = id;
             return View(data);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var visualization = Repository.Visualizations.FirstOrDefault(p => p.ID == id);
+
+            if (visualization != null && visualization.UserID == CurrentUser.ID)
+            {
+                Repository.RemoveVisualization(visualization.ID);
+            }
+
+            return RedirectToAction("Index");
+
+        }
+
+        public ActionResult Table(int id)
+        {
+            var visualization = Repository.Visualizations.FirstOrDefault(p => p.ID == id);
+
+            if (visualization != null)
+            {
+                return View(visualization);
+            }
+            return null;
+        }
+
+        public ActionResult ChangeVisible(int id)
+        {
+            Repository.ChangeVisibleVisualizationItems(id);
+
+            return Json(new { result = "ok" });
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var visualizationItem = Repository.VisualizationItems.FirstOrDefault(p => p.ID == id);
+            if (visualizationItem != null)
+            {
+                var visualizationItemView = Mapper.Map<VisualizationItem, VisualizationItemView>(visualizationItem);
+                return View(visualizationItemView);
+            }
+            return RedirectToNotFoundPage;
+        }
+
+        [HttpPost]
+        public ActionResult Edit(VisualizationItemView visualizationItemView)
+        {
+            var visualizationItem = Mapper.Map<VisualizationItemView, VisualizationItem>(visualizationItemView);
+            var data = JsonConvert.SerializeObject(visualizationItemView.DataItems, new KeyValueConverter());
+            visualizationItem.Accuracy = 10;
+            visualizationItem.Data = data;
+            Repository.UpdateVisualizationItem(visualizationItem);
+            visualizationItem = Repository.VisualizationItems.First(p => p.ID == visualizationItem.ID);
+            return RedirectToAction("Item", new { id = visualizationItem.VisualizationID });
         }
     }
 }

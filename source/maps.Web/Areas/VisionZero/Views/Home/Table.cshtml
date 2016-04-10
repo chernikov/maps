@@ -1,0 +1,60 @@
+﻿@model Visualization
+<div class="modal fade modal-lg" id="TableModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Table @Model.Name</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Lat/Lng
+                            </th>
+                            <th>
+                                Accuracy
+                            </th>
+                            <th>Info</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.SubItems)
+                        {
+                            <tr class="@(item.Accuracy == 0 ?"danger" : (item.Accuracy >= 8 ?"success" : "warning")) @(item.IsHidden ? "is-hidden" :"")">
+                                <td>
+                                    @item.Lat;@item.Lng
+                                </td>
+                                <td>
+                                    @item.Accuracy
+                                </td>
+                                <td>
+                                    <div class="cut cut-collapsed">
+                                        <small>
+                                            @foreach (var itemData in item.DataItems)
+                                            {
+                                                <strong>@itemData.Key: </strong>@itemData.Value
+
+                                            }
+                                        </small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="btn btn-primary btn-xs changeHide" data-id="@item.ID">
+                                        <span class="glyphicon @(item.IsHidden ? "glyphicon-eye-open" :"glyphicon-eye-close" )"></span>
+                                    </div>
+                                    <a href="@Url.Action("Edit", "Home", new { id = item.ID})" class="btn btn-primary btn-xs">Edit</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

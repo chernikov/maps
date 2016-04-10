@@ -1,9 +1,21 @@
 ﻿@model IList<Visualization>
-
+@{
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
 
 <ul class="list-unstyled">
     @foreach (var visualization in Model)
     {
-        <li><span class="btn btn-link visualizationItem" data-id="@visualization.ID">@visualization.Name</span></li>
+        <li>
+        <span class="btn btn-link visualizationItem" data-id="@visualization.ID">@visualization.Name</span>
+
+            @if (currentUser.ID == visualization.UserID) 
+            { 
+                <div class="pull-right">
+                    <a data-id="@visualization.ID" href="@Url.Action("ShareLink", "Home", new {id = visualization.ID })" class="btn btn-sm btn-primary ShareLinkBtn"><span class="glyphicon glyphicon-share"></span> Share</a>
+                    <a href="@Url.Action("Delete", "Home", new {id = visualization.ID })" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                </div>
+            }
+        </li>
     }
 </ul>

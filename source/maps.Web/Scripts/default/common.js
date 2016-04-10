@@ -4,8 +4,18 @@
     this.init = function () {
         $('.dropdown-toggle').dropdown();
 
+        
+
+        $(document).ajaxStart(function () {
+            $.blockUI({ message: "" });
+        });
+
+        $(document).ajaxComplete(function () {
+            $.unblockUI();
+        });
+
         $(document).on("click", ".delete-action",function () {
-            return confirm("Действительно удалять?");
+            return confirm("Точно видалити?");
         });
 
         $("#SelectCityID").change(function () {

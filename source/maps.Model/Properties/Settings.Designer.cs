@@ -113,5 +113,16 @@ namespace maps.Model.Properties {
                 return ((string)(this["maps_work_DbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=mssql4.1gb.ua;Initial Catalog=1gb_maps;User ID=1gb_chernikov;Password" +
+            "=153c5112")]
+        public string _1gb_mapsConnectionString {
+            get {
+                return ((string)(this["_1gb_mapsConnectionString"]));
+            }
+        }
     }
 }

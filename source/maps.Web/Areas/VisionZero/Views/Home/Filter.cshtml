@@ -1,21 +1,24 @@
 ﻿@model maps.Web.Models.Info.VisualizationFilter
-
+@{
+     var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
 <div class="row">
-
-    
-    <div class="col-sm-11 col-sm-offset-1">
-       
+    <div class="col-md-11">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-sm showTable" data-id="@Model.ID">
+                <span class="glyphicon glyphicon-list"></span>Table
+            </div>
+        </div>
         <div class="text-info" id="CountWrapper"></div>
+        <div class="text-info" id="CountFailedWrapper"></div>
         <form class="form" id="FilterForm">
             @Html.Hidden("ID", Model.ID)
             @{
                 var i = 0;
             }
             <div class="form-group">
-                <div class="row">
-                    <div>
-                        @Html.TextBox("SearchString", Model.SearchString, new { @class = "form-control", placeholder = "Search string"  })
-                    </div>
+                <div>
+                    @Html.TextBox("SearchString", Model.SearchString, new { @class = "form-control", placeholder = "Search string" })
                 </div>
             </div>
             @foreach (var field in Model.Fields)
@@ -70,7 +73,10 @@
             }
             <div class="form-group">
                 <button id="SubmitFilter" class="btn btn-primary" data-id="@Model.ID">Submit</button>
-                <button class="btn btn-primary btn-sm pull-right" id="ShakePointsBtn" data-id="@Model.ID">Shake</button>
+                @if (currentUser != null && currentUser.HasVisualizationAccess(Model.ID)) 
+                {
+                    <button class="btn btn-primary btn-sm pull-right" id="ShakePointsBtn" data-id="@Model.ID">Shake</button>
+                }
             </div>
         </form>
     </div>

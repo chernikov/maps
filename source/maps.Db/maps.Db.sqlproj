@@ -62,6 +62,7 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="data" />
+    <Folder Include="Migrations" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Role.sql" />
@@ -107,10 +108,12 @@
     <Build Include="dbo\Tables\Visualization.sql" />
     <Build Include="dbo\Tables\VisualizationItem.sql" />
     <Build Include="dbo\Tables\VisualizationColumn.sql" />
+    <Build Include="dbo\Tables\VisualizationUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\Init.sql" />
     <None Include="maps_site.publish.xml" />
+    <None Include="Migrations\MigrationScript_001.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="maps.Db.refactorlog" />

@@ -150,15 +150,18 @@ namespace maps.Model
     partial void InsertUtilityTag(UtilityTag instance);
     partial void UpdateUtilityTag(UtilityTag instance);
     partial void DeleteUtilityTag(UtilityTag instance);
+    partial void InsertVisualizationColumn(VisualizationColumn instance);
+    partial void UpdateVisualizationColumn(VisualizationColumn instance);
+    partial void DeleteVisualizationColumn(VisualizationColumn instance);
+    partial void InsertVisualizationUser(VisualizationUser instance);
+    partial void UpdateVisualizationUser(VisualizationUser instance);
+    partial void DeleteVisualizationUser(VisualizationUser instance);
     partial void InsertVisualization(Visualization instance);
     partial void UpdateVisualization(Visualization instance);
     partial void DeleteVisualization(Visualization instance);
     partial void InsertVisualizationItem(VisualizationItem instance);
     partial void UpdateVisualizationItem(VisualizationItem instance);
     partial void DeleteVisualizationItem(VisualizationItem instance);
-    partial void InsertVisualizationColumn(VisualizationColumn instance);
-    partial void UpdateVisualizationColumn(VisualizationColumn instance);
-    partial void DeleteVisualizationColumn(VisualizationColumn instance);
     #endregion
 		
 		public mapsDbDataContext() : 
@@ -511,6 +514,22 @@ namespace maps.Model
 			}
 		}
 		
+		public System.Data.Linq.Table<VisualizationColumn> VisualizationColumns
+		{
+			get
+			{
+				return this.GetTable<VisualizationColumn>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VisualizationUser> VisualizationUsers
+		{
+			get
+			{
+				return this.GetTable<VisualizationUser>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Visualization> Visualizations
 		{
 			get
@@ -524,14 +543,6 @@ namespace maps.Model
 			get
 			{
 				return this.GetTable<VisualizationItem>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VisualizationColumn> VisualizationColumns
-		{
-			get
-			{
-				return this.GetTable<VisualizationColumn>();
 			}
 		}
 	}
@@ -9243,6 +9254,8 @@ namespace maps.Model
 		
 		private EntitySet<UtilityPhoto> _UtilityPhotos;
 		
+		private EntitySet<VisualizationUser> _VisualizationUsers;
+		
 		private EntitySet<Visualization> _Visualizations;
 		
 		private EntityRef<City> _City;
@@ -9293,6 +9306,7 @@ namespace maps.Model
 			this._UtilityIssues = new EntitySet<UtilityIssue>(new Action<UtilityIssue>(this.attach_UtilityIssues), new Action<UtilityIssue>(this.detach_UtilityIssues));
 			this._UtilityIssueHistories = new EntitySet<UtilityIssueHistory>(new Action<UtilityIssueHistory>(this.attach_UtilityIssueHistories), new Action<UtilityIssueHistory>(this.detach_UtilityIssueHistories));
 			this._UtilityPhotos = new EntitySet<UtilityPhoto>(new Action<UtilityPhoto>(this.attach_UtilityPhotos), new Action<UtilityPhoto>(this.detach_UtilityPhotos));
+			this._VisualizationUsers = new EntitySet<VisualizationUser>(new Action<VisualizationUser>(this.attach_VisualizationUsers), new Action<VisualizationUser>(this.detach_VisualizationUsers));
 			this._Visualizations = new EntitySet<Visualization>(new Action<Visualization>(this.attach_Visualizations), new Action<Visualization>(this.detach_Visualizations));
 			this._City = default(EntityRef<City>);
 			OnCreated();
@@ -9730,6 +9744,19 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_VisualizationUser", Storage="_VisualizationUsers", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<VisualizationUser> VisualizationUsers
+		{
+			get
+			{
+				return this._VisualizationUsers;
+			}
+			set
+			{
+				this._VisualizationUsers.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Visualization", Storage="_Visualizations", ThisKey="ID", OtherKey="UserID")]
 		public EntitySet<Visualization> Visualizations
 		{
@@ -9984,6 +10011,18 @@ namespace maps.Model
 		}
 		
 		private void detach_UtilityPhotos(UtilityPhoto entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_VisualizationUsers(VisualizationUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_VisualizationUsers(VisualizationUser entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -12647,436 +12686,6 @@ namespace maps.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Visualization")]
-	public partial class Visualization : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _UserID;
-		
-		private string _Name;
-		
-		private System.DateTime _AddedDate;
-		
-		private EntitySet<VisualizationItem> _VisualizationItems;
-		
-		private EntitySet<VisualizationColumn> _VisualizationColumns;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    #endregion
-		
-		public Visualization()
-		{
-			this._VisualizationItems = new EntitySet<VisualizationItem>(new Action<VisualizationItem>(this.attach_VisualizationItems), new Action<VisualizationItem>(this.detach_VisualizationItems));
-			this._VisualizationColumns = new EntitySet<VisualizationColumn>(new Action<VisualizationColumn>(this.attach_VisualizationColumns), new Action<VisualizationColumn>(this.detach_VisualizationColumns));
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(300)")]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationItem", Storage="_VisualizationItems", ThisKey="ID", OtherKey="VisualizationID")]
-		public EntitySet<VisualizationItem> VisualizationItems
-		{
-			get
-			{
-				return this._VisualizationItems;
-			}
-			set
-			{
-				this._VisualizationItems.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationColumn", Storage="_VisualizationColumns", ThisKey="ID", OtherKey="VisualizationID")]
-		public EntitySet<VisualizationColumn> VisualizationColumns
-		{
-			get
-			{
-				return this._VisualizationColumns;
-			}
-			set
-			{
-				this._VisualizationColumns.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Visualization", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Visualizations.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Visualizations.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_VisualizationItems(VisualizationItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Visualization = this;
-		}
-		
-		private void detach_VisualizationItems(VisualizationItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Visualization = null;
-		}
-		
-		private void attach_VisualizationColumns(VisualizationColumn entity)
-		{
-			this.SendPropertyChanging();
-			entity.Visualization = this;
-		}
-		
-		private void detach_VisualizationColumns(VisualizationColumn entity)
-		{
-			this.SendPropertyChanging();
-			entity.Visualization = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VisualizationItem")]
-	public partial class VisualizationItem : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _VisualizationID;
-		
-		private double _Lat;
-		
-		private double _Lng;
-		
-		private string _Data;
-		
-		private EntityRef<Visualization> _Visualization;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnVisualizationIDChanging(int value);
-    partial void OnVisualizationIDChanged();
-    partial void OnLatChanging(double value);
-    partial void OnLatChanged();
-    partial void OnLngChanging(double value);
-    partial void OnLngChanged();
-    partial void OnDataChanging(string value);
-    partial void OnDataChanged();
-    #endregion
-		
-		public VisualizationItem()
-		{
-			this._Visualization = default(EntityRef<Visualization>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisualizationID", DbType="Int NOT NULL")]
-		public int VisualizationID
-		{
-			get
-			{
-				return this._VisualizationID;
-			}
-			set
-			{
-				if ((this._VisualizationID != value))
-				{
-					if (this._Visualization.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnVisualizationIDChanging(value);
-					this.SendPropertyChanging();
-					this._VisualizationID = value;
-					this.SendPropertyChanged("VisualizationID");
-					this.OnVisualizationIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Float NOT NULL")]
-		public double Lat
-		{
-			get
-			{
-				return this._Lat;
-			}
-			set
-			{
-				if ((this._Lat != value))
-				{
-					this.OnLatChanging(value);
-					this.SendPropertyChanging();
-					this._Lat = value;
-					this.SendPropertyChanged("Lat");
-					this.OnLatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lng", DbType="Float NOT NULL")]
-		public double Lng
-		{
-			get
-			{
-				return this._Lng;
-			}
-			set
-			{
-				if ((this._Lng != value))
-				{
-					this.OnLngChanging(value);
-					this.SendPropertyChanging();
-					this._Lng = value;
-					this.SendPropertyChanged("Lng");
-					this.OnLngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Data
-		{
-			get
-			{
-				return this._Data;
-			}
-			set
-			{
-				if ((this._Data != value))
-				{
-					this.OnDataChanging(value);
-					this.SendPropertyChanging();
-					this._Data = value;
-					this.SendPropertyChanged("Data");
-					this.OnDataChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationItem", Storage="_Visualization", ThisKey="VisualizationID", OtherKey="ID", IsForeignKey=true)]
-		public Visualization Visualization
-		{
-			get
-			{
-				return this._Visualization.Entity;
-			}
-			set
-			{
-				Visualization previousValue = this._Visualization.Entity;
-				if (((previousValue != value) 
-							|| (this._Visualization.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Visualization.Entity = null;
-						previousValue.VisualizationItems.Remove(this);
-					}
-					this._Visualization.Entity = value;
-					if ((value != null))
-					{
-						value.VisualizationItems.Add(this);
-						this._VisualizationID = value.ID;
-					}
-					else
-					{
-						this._VisualizationID = default(int);
-					}
-					this.SendPropertyChanged("Visualization");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VisualizationColumn")]
 	public partial class VisualizationColumn : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -13245,7 +12854,7 @@ namespace maps.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationColumn", Storage="_Visualization", ThisKey="VisualizationID", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationColumn", Storage="_Visualization", ThisKey="VisualizationID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Visualization Visualization
 		{
 			get
@@ -13268,6 +12877,728 @@ namespace maps.Model
 					if ((value != null))
 					{
 						value.VisualizationColumns.Add(this);
+						this._VisualizationID = value.ID;
+					}
+					else
+					{
+						this._VisualizationID = default(int);
+					}
+					this.SendPropertyChanged("Visualization");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VisualizationUser")]
+	public partial class VisualizationUser : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _VisualizationID;
+		
+		private int _UserID;
+		
+		private EntityRef<User> _User;
+		
+		private EntityRef<Visualization> _Visualization;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnVisualizationIDChanging(int value);
+    partial void OnVisualizationIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    #endregion
+		
+		public VisualizationUser()
+		{
+			this._User = default(EntityRef<User>);
+			this._Visualization = default(EntityRef<Visualization>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisualizationID", DbType="Int NOT NULL")]
+		public int VisualizationID
+		{
+			get
+			{
+				return this._VisualizationID;
+			}
+			set
+			{
+				if ((this._VisualizationID != value))
+				{
+					if (this._Visualization.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnVisualizationIDChanging(value);
+					this.SendPropertyChanging();
+					this._VisualizationID = value;
+					this.SendPropertyChanged("VisualizationID");
+					this.OnVisualizationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_VisualizationUser", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.VisualizationUsers.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.VisualizationUsers.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationUser", Storage="_Visualization", ThisKey="VisualizationID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Visualization Visualization
+		{
+			get
+			{
+				return this._Visualization.Entity;
+			}
+			set
+			{
+				Visualization previousValue = this._Visualization.Entity;
+				if (((previousValue != value) 
+							|| (this._Visualization.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Visualization.Entity = null;
+						previousValue.VisualizationUsers.Remove(this);
+					}
+					this._Visualization.Entity = value;
+					if ((value != null))
+					{
+						value.VisualizationUsers.Add(this);
+						this._VisualizationID = value.ID;
+					}
+					else
+					{
+						this._VisualizationID = default(int);
+					}
+					this.SendPropertyChanged("Visualization");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Visualization")]
+	public partial class Visualization : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _ShareLink;
+		
+		private int _UserID;
+		
+		private string _Name;
+		
+		private System.DateTime _AddedDate;
+		
+		private EntitySet<VisualizationColumn> _VisualizationColumns;
+		
+		private EntitySet<VisualizationUser> _VisualizationUsers;
+		
+		private EntitySet<VisualizationItem> _VisualizationItems;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnShareLinkChanging(string value);
+    partial void OnShareLinkChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    #endregion
+		
+		public Visualization()
+		{
+			this._VisualizationColumns = new EntitySet<VisualizationColumn>(new Action<VisualizationColumn>(this.attach_VisualizationColumns), new Action<VisualizationColumn>(this.detach_VisualizationColumns));
+			this._VisualizationUsers = new EntitySet<VisualizationUser>(new Action<VisualizationUser>(this.attach_VisualizationUsers), new Action<VisualizationUser>(this.detach_VisualizationUsers));
+			this._VisualizationItems = new EntitySet<VisualizationItem>(new Action<VisualizationItem>(this.attach_VisualizationItems), new Action<VisualizationItem>(this.detach_VisualizationItems));
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShareLink", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string ShareLink
+		{
+			get
+			{
+				return this._ShareLink;
+			}
+			set
+			{
+				if ((this._ShareLink != value))
+				{
+					this.OnShareLinkChanging(value);
+					this.SendPropertyChanging();
+					this._ShareLink = value;
+					this.SendPropertyChanged("ShareLink");
+					this.OnShareLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(300)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationColumn", Storage="_VisualizationColumns", ThisKey="ID", OtherKey="VisualizationID")]
+		public EntitySet<VisualizationColumn> VisualizationColumns
+		{
+			get
+			{
+				return this._VisualizationColumns;
+			}
+			set
+			{
+				this._VisualizationColumns.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationUser", Storage="_VisualizationUsers", ThisKey="ID", OtherKey="VisualizationID")]
+		public EntitySet<VisualizationUser> VisualizationUsers
+		{
+			get
+			{
+				return this._VisualizationUsers;
+			}
+			set
+			{
+				this._VisualizationUsers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationItem", Storage="_VisualizationItems", ThisKey="ID", OtherKey="VisualizationID")]
+		public EntitySet<VisualizationItem> VisualizationItems
+		{
+			get
+			{
+				return this._VisualizationItems;
+			}
+			set
+			{
+				this._VisualizationItems.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Visualization", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Visualizations.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Visualizations.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_VisualizationColumns(VisualizationColumn entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visualization = this;
+		}
+		
+		private void detach_VisualizationColumns(VisualizationColumn entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visualization = null;
+		}
+		
+		private void attach_VisualizationUsers(VisualizationUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visualization = this;
+		}
+		
+		private void detach_VisualizationUsers(VisualizationUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visualization = null;
+		}
+		
+		private void attach_VisualizationItems(VisualizationItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visualization = this;
+		}
+		
+		private void detach_VisualizationItems(VisualizationItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Visualization = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VisualizationItem")]
+	public partial class VisualizationItem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _VisualizationID;
+		
+		private double _Lat;
+		
+		private double _Lng;
+		
+		private int _Accuracy;
+		
+		private string _Data;
+		
+		private bool _IsHidden;
+		
+		private EntityRef<Visualization> _Visualization;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnVisualizationIDChanging(int value);
+    partial void OnVisualizationIDChanged();
+    partial void OnLatChanging(double value);
+    partial void OnLatChanged();
+    partial void OnLngChanging(double value);
+    partial void OnLngChanged();
+    partial void OnAccuracyChanging(int value);
+    partial void OnAccuracyChanged();
+    partial void OnDataChanging(string value);
+    partial void OnDataChanged();
+    partial void OnIsHiddenChanging(bool value);
+    partial void OnIsHiddenChanged();
+    #endregion
+		
+		public VisualizationItem()
+		{
+			this._Visualization = default(EntityRef<Visualization>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisualizationID", DbType="Int NOT NULL")]
+		public int VisualizationID
+		{
+			get
+			{
+				return this._VisualizationID;
+			}
+			set
+			{
+				if ((this._VisualizationID != value))
+				{
+					if (this._Visualization.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnVisualizationIDChanging(value);
+					this.SendPropertyChanging();
+					this._VisualizationID = value;
+					this.SendPropertyChanged("VisualizationID");
+					this.OnVisualizationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Float NOT NULL")]
+		public double Lat
+		{
+			get
+			{
+				return this._Lat;
+			}
+			set
+			{
+				if ((this._Lat != value))
+				{
+					this.OnLatChanging(value);
+					this.SendPropertyChanging();
+					this._Lat = value;
+					this.SendPropertyChanged("Lat");
+					this.OnLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lng", DbType="Float NOT NULL")]
+		public double Lng
+		{
+			get
+			{
+				return this._Lng;
+			}
+			set
+			{
+				if ((this._Lng != value))
+				{
+					this.OnLngChanging(value);
+					this.SendPropertyChanging();
+					this._Lng = value;
+					this.SendPropertyChanged("Lng");
+					this.OnLngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Accuracy", DbType="Int NOT NULL")]
+		public int Accuracy
+		{
+			get
+			{
+				return this._Accuracy;
+			}
+			set
+			{
+				if ((this._Accuracy != value))
+				{
+					this.OnAccuracyChanging(value);
+					this.SendPropertyChanging();
+					this._Accuracy = value;
+					this.SendPropertyChanged("Accuracy");
+					this.OnAccuracyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Data
+		{
+			get
+			{
+				return this._Data;
+			}
+			set
+			{
+				if ((this._Data != value))
+				{
+					this.OnDataChanging(value);
+					this.SendPropertyChanging();
+					this._Data = value;
+					this.SendPropertyChanged("Data");
+					this.OnDataChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsHidden", DbType="Bit NOT NULL")]
+		public bool IsHidden
+		{
+			get
+			{
+				return this._IsHidden;
+			}
+			set
+			{
+				if ((this._IsHidden != value))
+				{
+					this.OnIsHiddenChanging(value);
+					this.SendPropertyChanging();
+					this._IsHidden = value;
+					this.SendPropertyChanged("IsHidden");
+					this.OnIsHiddenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visualization_VisualizationItem", Storage="_Visualization", ThisKey="VisualizationID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Visualization Visualization
+		{
+			get
+			{
+				return this._Visualization.Entity;
+			}
+			set
+			{
+				Visualization previousValue = this._Visualization.Entity;
+				if (((previousValue != value) 
+							|| (this._Visualization.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Visualization.Entity = null;
+						previousValue.VisualizationItems.Remove(this);
+					}
+					this._Visualization.Entity = value;
+					if ((value != null))
+					{
+						value.VisualizationItems.Add(this);
 						this._VisualizationID = value.ID;
 					}
 					else

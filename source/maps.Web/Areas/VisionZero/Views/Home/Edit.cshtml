@@ -1,0 +1,52 @@
+﻿@model VisualizationItemView
+
+@{
+    ViewBag.Title = "Edit point";
+    Layout = "~/Areas/VisionZero/Views/Shared/_Layout.cshtml";
+}
+
+
+@section header
+{
+    @Scripts.Render("~/scripts/vision-zero/map-main.js")
+    @Scripts.Render("~/scripts/vision-zero/edit.js")
+}
+<div class="fluid-container height">
+    <div class="row height">
+        <div class="col-lg-3 col-md-3 panel">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    @using (@Html.BeginForm("Edit", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        var i = 0;
+                        @Html.Hidden("ID", Model.ID)
+                        @Html.Hidden("Lat", Model.Lat)
+                        @Html.Hidden("Lng", Model.Lng)
+                        <div class="form-group">
+                            <button class="btn btn-primary">Save</button>
+                        </div>
+                        foreach (var dataItem in Model.DataItems)
+                        {
+                            @Html.Hidden("DataItems.index", i)
+                            @Html.Hidden("DataItems[" + i + "].Key", dataItem.Key)
+                            <div class="form-group">
+                                <label class="control-label">
+                                    @dataItem.Key
+                                </label>
+                                @Html.TextBox("DataItems[" + i + "].Value", dataItem.Value, new { @class = "form-control" })
+                            </div>
+                            i++;
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-lg-offset-3 col-md-offset-3 height">
+            @Html.Partial("Map")
+        </div>
+    </div>
+
+</div>
+
+

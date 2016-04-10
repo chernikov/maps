@@ -6,7 +6,14 @@
         _this.initUpload();
 
         google.maps.event.addDomListener(window, 'load', function () {
-            mapMain.init();
+            mapMain.init(function () {
+                var id = $("#ID").val();
+                if (id > 0)
+                {
+                    mapVisualization.showData(id);
+                    _this.showFilters(id);
+                }
+            });
         });
 
         $(document).on("click", ".visualizationItem", function () {
@@ -14,7 +21,47 @@
             var id = $(this).data("id");
             mapVisualization.showData(id);
             _this.showFilters(id);
+           
         });
+
+        $(document).on("click", ".showTable", function () {
+            var id = $(this).data("id");
+            $.ajax({
+                type: "GET",
+                url: "/vision-zero/Home/Table",
+                data: {
+                    id: id
+                },
+                success: function (data)
+                {
+                    var obj = $(data);
+                    $("#PopupWrapper").html(obj);
+                    obj.modal({
+                        backdrop: false,
+                    });
+                }
+            });
+            return false;
+        });
+
+        $(document).on("click", ".ShareLinkBtn", function () {
+            var id = $(this).data("id");
+            $.ajax({
+                type: "GET",
+                url: "/vision-zero/Home/ShareLink",
+                data: {
+                    id: id
+                },
+                success: function (data) {
+                    var obj = $(data);
+                    $("#PopupWrapper").html(obj);
+                    obj.modal({
+                        backdrop: false,
+                    });
+                }
+            });
+            return false;
+        })
 
         $(document).on("click", "#SubmitFilter", function () {
             var id = $(this).data("id");
@@ -38,7 +85,31 @@
             });
             return false;
         });
+
+        $(document).on("click", ".cut", function () {
+            $(this).toggleClass("cut-collapsed");
+        });
+
+        $(document).on("click", ".changeHide", function () {
+            var item = $(this);
+            var id = item.data("id");
+            var wrapper = $(this).closest("tr");
+            var isHidden = wrapper.hasClass("is-hidden");
+            $.ajax({
+                type: "POST",
+                url: "/vision-zero/Home/ChangeVisible",
+                data: { id: id },
+                success: function (data) {
+                    if (data.result == "ok") {
+                        $(".glyphicon", item).toggleClass("glyphicon-eye-open");
+                        $(".glyphicon", item).toggleClass("glyphicon-eye-close");
+                        wrapper.toggleClass("is-hidden");
+                    }
+                }
+            });
+        });
     }
+    
 
     this.initUpload = function () {
         $("#Upload").fineUploader({
