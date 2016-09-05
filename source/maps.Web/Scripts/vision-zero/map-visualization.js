@@ -24,7 +24,7 @@
     this.filterData = function (id, filter) {
         _this.clearAll();
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: "/vision-zero/Home/FilterData",
             data: filter,
             success: function (data) {

@@ -1,4 +1,7 @@
 ﻿@model List<KeyValuePair<string,string>>
+@{
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
 
 <ul>
 @foreach (var item in Model)
@@ -8,5 +11,7 @@
     </li>
 }
 </ul>
-
+   @if (currentUser != null) 
+   { 
 <a href="@Url.Action("Edit", "Home", new { id=  ViewBag.ID })" class="btn btn-xs btn-primary">Edit</a>
+   }

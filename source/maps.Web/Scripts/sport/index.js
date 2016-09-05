@@ -34,8 +34,7 @@
 
         $(".saveBtn").click(function () {
             var PhotoUrl = $("#PhotoUrl").val();
-            var AvatarType = $(this).data("type");
-            var url = "/sport/home/download?PhotoUrl="+PhotoUrl + "&AvatarType="+ AvatarType;
+            var url = "/illlegal/home/download?PhotoUrl="+PhotoUrl;
             window.open(url, '_blank');
             return false;
         });

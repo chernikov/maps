@@ -166,3 +166,7 @@ h3.label {
 
 .is-hidden {
   text-decoration: line-through; }
+  
+.modal-lg .modal-dialog {
+width : 1300px;
+}

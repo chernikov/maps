@@ -14,22 +14,6 @@
     left : 0;
     width : 300px;
     height : 300px;
-
-}
-
-.lady .over {
-    background : transparent url("/Content/images/ava/lady.png") no-repeat 0 0;
-    background-size: 300px 300px;
-}
-
-
-.guy .over {
-    background : transparent url("/Content/images/ava/guy.png") no-repeat 0 0;
-    background-size: 300px 300px;
-}
-
-
-.couple .over {
-    background : transparent url("/Content/images/ava/couple.png") no-repeat 0 0;
+    background : transparent url("/Content/images/ava/illlegal.png") no-repeat 0 0;
     background-size: 300px 300px;
 }

@@ -1,13 +1,16 @@
 ﻿@model maps.Web.Models.Info.VisualizationFilter
 @{
-     var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
 }
 <div class="row">
     <div class="col-md-11">
         <div class="pull-right">
-            <div class="btn btn-primary btn-sm showTable" data-id="@Model.ID">
-                <span class="glyphicon glyphicon-list"></span>Table
-            </div>
+            @if (currentUser != null)
+            {
+                <div class="btn btn-primary btn-sm showTable" data-id="@Model.ID">
+                    <span class="glyphicon glyphicon-list"></span>Table
+                </div>
+            }
         </div>
         <div class="text-info" id="CountWrapper"></div>
         <div class="text-info" id="CountFailedWrapper"></div>
@@ -73,7 +76,7 @@
             }
             <div class="form-group">
                 <button id="SubmitFilter" class="btn btn-primary" data-id="@Model.ID">Submit</button>
-                @if (currentUser != null && currentUser.HasVisualizationAccess(Model.ID)) 
+                @if (currentUser != null && currentUser.HasVisualizationAccess(Model.ID))
                 {
                     <button class="btn btn-primary btn-sm pull-right" id="ShakePointsBtn" data-id="@Model.ID">Shake</button>
                 }

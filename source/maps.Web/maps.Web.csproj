@@ -369,6 +369,7 @@
     <Content Include="Content\images\accessible_city_icon.png" />
     <Content Include="Content\images\ava\couple.png" />
     <Content Include="Content\images\ava\guy.png" />
+    <Content Include="Content\images\ava\illlegal.png" />
     <Content Include="Content\images\ava\lady.png" />
     <Content Include="Content\images\bus.png" />
     <Content Include="Content\images\bycicle_2.png" />

@@ -164,6 +164,7 @@ namespace maps.Web.Areas.VisionZero.Controllers
             return Json(new { result = "ok" });
         }
 
+        [HttpPost]
         public ActionResult FilterData(VisualizationFilter filter)
         {
             var items = Repository.VisualizationItems.Where(p => p.VisualizationID == filter.ID && !p.IsHidden).ToList();
@@ -216,7 +217,8 @@ namespace maps.Web.Areas.VisionZero.Controllers
                             if (field.Value != "All")
                             {
                                 var filterValue = field.Value.ToLower().Trim();
-                                if (value.Value.ToLower().Trim() != filterValue)
+                                if (value.Value == null ||
+                                    value.Value.ToLower().Trim() != filterValue)
                                 {
                                     pass = false;
                                 }

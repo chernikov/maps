@@ -19,10 +19,10 @@ namespace maps.Web.Areas.Sport.Controllers
         }
 
         [HttpGet]
-        public ActionResult Download(SportAvatarView sportAvatartView)
+        public ActionResult Download(string PhotoUrl)
         {
-            var sourceImage = Image.FromFile(Server.MapPath("~" + sportAvatartView.PhotoUrl));
-            var secondImage = Image.FromFile(Server.MapPath("~/Content/images/ava/" + sportAvatartView.AvatarType.ToString()+".png"));
+            var sourceImage = Image.FromFile(Server.MapPath("~" + PhotoUrl));
+            var secondImage = Image.FromFile(Server.MapPath("~/Content/images/ava/illlegal.png"));
             var data = MergeTwoImages(sourceImage, secondImage);
             FileContentResult result;
             using (var memStream = new System.IO.MemoryStream())
