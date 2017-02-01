@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -237,6 +238,7 @@
     <Compile Include="Areas\Goal\Controllers\HomeController.cs" />
     <Compile Include="Areas\Goal\GoalAreaRegistration.cs" />
     <Compile Include="Areas\VisionZero\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\VisionZero\Controllers\GeocodingController.cs" />
     <Compile Include="Areas\VisionZero\Controllers\HomeController.cs" />
     <Compile Include="Areas\VisionZero\VisionZeroAreaRegistration.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
@@ -353,6 +355,7 @@
     <Content Include="Content\css\PagedList.css" />
     <Content Include="Content\css\sport.css" />
     <Content Include="Content\css\typeahead.css" />
+    <Content Include="Content\css\vision-zero.css" />
     <Content Include="Content\images\accessible\medicine_minus.png" />
     <Content Include="Content\images\accessible\medicine_plus.png" />
     <Content Include="Content\images\accessible\ok.png" />
@@ -620,6 +623,7 @@
     <Content Include="Areas\VisionZero\Views\Home\ShareLink.cshtml" />
     <Content Include="Areas\VisionZero\Views\Home\Table.cshtml" />
     <Content Include="Areas\VisionZero\Views\Home\Edit.cshtml" />
+    <Content Include="Areas\VisionZero\Views\Geocoding\Index.cshtml" />
     <None Include="Content\css\admin.scss" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -774,6 +778,8 @@
     <Content Include="Scripts\typeahead.bundle.min.js" />
     <Content Include="Scripts\typeahead.jquery.js" />
     <Content Include="Scripts\typeahead.jquery.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\utility\edit-issue.js" />
     <Content Include="Scripts\utility\add-issue.js" />
     <Content Include="Scripts\default\common.js" />
@@ -800,6 +806,7 @@
     <Content Include="Scripts\utility\map-small-main.js" />
     <Content Include="Scripts\instagram\map-main.js" />
     <Content Include="Scripts\vision-zero\edit.js" />
+    <Content Include="Scripts\vision-zero\geocoding.js" />
     <Content Include="Scripts\vision-zero\shared.js" />
     <Content Include="Scripts\vision-zero\index.js" />
     <Content Include="Scripts\vision-zero\map-main.js" />
@@ -838,6 +845,7 @@
     <Content Include="Scripts\typeahead.jquery.min.js.map">
       <DependentUpon>typeahead.jquery.min.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\underscore.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">

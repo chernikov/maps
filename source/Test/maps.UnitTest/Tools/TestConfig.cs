@@ -63,7 +63,6 @@ namespace maps.UnitTest.Tools
 
         #endregion
 
-
         public IFbAppConfig FacebookAppConfig
         {
             get { throw new NotImplementedException(); }

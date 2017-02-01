@@ -21,6 +21,13 @@ namespace maps.Web.Areas.VisionZero
         {
             context.MapRoute(
                 null,
+                "vision-zero/geo",
+                new { controller = "Geocoding", action = "Index" },
+                new[] { "maps.Web.Areas.VisionZero.Controllers" }
+            );
+
+            context.MapRoute(
+                null,
                 "vision-zero/shared/{id}",
                 new { controller = "Home", action = "Shared" },
                 new[] { "maps.Web.Areas.VisionZero.Controllers" }
