@@ -12,32 +12,36 @@ namespace maps.Web.Mappers
     {
         static ModelMapper()
         {
-            MapperCollection.LoginUserMapper.Init();
-            MapperCollection.UserMapper.Init();
-            MapperCollection.BycicleDirectionMapper.Init();
-            MapperCollection.BicycleParkingMapper.Init();
-            MapperCollection.GoalMapper.Init();
-            MapperCollection.CityMapper.Init();
-            MapperCollection.UtilityIssueMapper.Init();
-            MapperCollection.UtilityTagMapper.Init();
-            MapperCollection.UtilityPhotoMapper.Init();
-            MapperCollection.UtilityDepartmentMapper.Init();
-            MapperCollection.CommentMapper.Init();
-            MapperCollection.TransporteurMapper.Init();
-            MapperCollection.RouteMapper.Init();
-            MapperCollection.BrandMapper.Init();
-            MapperCollection.BusMapper.Init();
-            MapperCollection.FundamentalRuleMapper.Init();
-            MapperCollection.RuleMapper.Init();
-            MapperCollection.ReportMapper.Init();
-            MapperCollection.ReportPhotoMapper.Init();
-            MapperCollection.ReportAnswerMapper.Init();
-            MapperCollection.AccessibleDirectionMapper.Init();
-            MapperCollection.AccessibleObjectMapper.Init();
-            MapperCollection.AccessibleObjectPhotoMapper.Init();
-            MapperCollection.AccessiblePlaceMapper.Init();
-            MapperCollection.AccessiblePlacePhotoMapper.Init();
-            MapperCollection.VisualizationItemMapper.Init();
+            Mapper.Initialize(cfg =>
+            {
+
+                MapperCollection.LoginUserMapper.Init(cfg);
+                MapperCollection.UserMapper.Init(cfg);
+                MapperCollection.BycicleDirectionMapper.Init(cfg);
+                MapperCollection.BicycleParkingMapper.Init(cfg);
+                MapperCollection.GoalMapper.Init(cfg);
+                MapperCollection.CityMapper.Init(cfg);
+                MapperCollection.UtilityIssueMapper.Init(cfg);
+                MapperCollection.UtilityTagMapper.Init(cfg);
+                MapperCollection.UtilityPhotoMapper.Init(cfg);
+                MapperCollection.UtilityDepartmentMapper.Init(cfg);
+                MapperCollection.CommentMapper.Init(cfg);
+                MapperCollection.TransporteurMapper.Init(cfg);
+                MapperCollection.RouteMapper.Init(cfg);
+                MapperCollection.BrandMapper.Init(cfg);
+                MapperCollection.BusMapper.Init(cfg);
+                MapperCollection.FundamentalRuleMapper.Init(cfg);
+                MapperCollection.RuleMapper.Init(cfg);
+                MapperCollection.ReportMapper.Init(cfg);
+                MapperCollection.ReportPhotoMapper.Init(cfg);
+                MapperCollection.ReportAnswerMapper.Init(cfg);
+                MapperCollection.AccessibleDirectionMapper.Init(cfg);
+                MapperCollection.AccessibleObjectMapper.Init(cfg);
+                MapperCollection.AccessibleObjectPhotoMapper.Init(cfg);
+                MapperCollection.AccessiblePlaceMapper.Init(cfg);
+                MapperCollection.AccessiblePlacePhotoMapper.Init(cfg);
+                MapperCollection.VisualizationItemMapper.Init(cfg);
+            });
         }
 
         public object Map(object source, Type sourceType, Type destinationType)

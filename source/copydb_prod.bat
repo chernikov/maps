@@ -1,0 +1,2 @@
+"C:\Program Files (x86)\Microsoft SQL Server\140\DAC\bin\SqlPackage.exe" /Action:Export /SourceServerName:"tcp:plt4m.database.windows.net,1433" /SourceDatabaseName:plt4m_db /SourceUser:chernikov@plt4m /SourcePassword:Million30 /TargetFile:C:\backups\plt4m_db_backup.bacpac
+"C:\Program Files (x86)\Microsoft SQL Server\140\DAC\bin\SqlPackage.exe" /Action:Import  /SourceFile:C:\backups\plt4m_db_backup.bacpac /TargetConnectionString:"Data Source=URAN;Initial Catalog=plt4m_db_backup_oct;Integrated Security=True"

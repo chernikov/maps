@@ -42,3 +42,7 @@ source/maps.Web/Content/logs
 source/packages
 source/maps.Web/.sass-cache
 *.suo
+source/.vs
+source/.vs/config
+/source/maps.Db/maps.Db.dbmdl
+*.jfm
