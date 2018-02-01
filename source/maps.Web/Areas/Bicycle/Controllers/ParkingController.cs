@@ -32,7 +32,8 @@ namespace maps.Web.Areas.Bicycle.Controllers
             var list = Repository.BicycleParkings.Where(p => !p.IsMedical && (p.VerifiedDate != null 
                 || !p.Exist) && p.CityID == CurrentCity.ID).ToList();
 
-            return Json(new { result = "ok", data = list.Select(p => 
+            var date = new DateTime(2016, 01, 01);
+            return Json(new { result = "ok", data = list.Where(p => p.AddedDate < date).Select(p => 
                     new {
                         Id = p.ID,
                         Position = p.Position,
