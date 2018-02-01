@@ -1,0 +1,10 @@
+﻿
+
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+<div>
+    @Html.TextArea("input", new { rows = 20, cols = 60 })
+    <input type="submit" value="Save"/>
+</div>
+
+}

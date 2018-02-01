@@ -12,7 +12,7 @@ using maps.Model;
 using maps.Web.Mappers;
 using Ninject;
 
-namespace maps.Web.Controllers
+namespace maps.Web.Api.Controllers
 {
     public class BaseApiController : ApiController
     {

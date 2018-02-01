@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 using Tool;
 using System.Net.Http.Formatting;
 
-namespace maps.Web.Controllers
+namespace maps.Web.Api.Controllers
 {
     public class UploadController : BaseApiController
     {

@@ -109,6 +109,8 @@
     <Build Include="dbo\Tables\VisualizationItem.sql" />
     <Build Include="dbo\Tables\VisualizationColumn.sql" />
     <Build Include="dbo\Tables\VisualizationUser.sql" />
+    <Build Include="dbo\Tables\Building.sql" />
+    <Build Include="dbo\Tables\BuildingElectricity.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\Init.sql" />

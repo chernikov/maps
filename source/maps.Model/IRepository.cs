@@ -116,11 +116,35 @@ namespace maps.Model
         IQueryable<BicycleDirectionLine> BicycleDirectionLines { get; }
         
         bool CreateBicycleDirectionLine(BicycleDirectionLine instance);
-        
-        #endregion 
+
+        #endregion
+
+        #region Building
+
+        IQueryable<Building> Buildings { get; }
+
+        bool CreateBuilding(Building instance);
+
+        bool UpdateBuilding(Building instance);
+
+        bool RemoveBuilding(int idBuilding);
+
+        #endregion
+
+        #region BuildingElectricity
+
+        IQueryable<BuildingElectricity> BuildingElectricities { get; }
+
+        bool CreateBuildingElectricity(BuildingElectricity instance);
+
+        bool UpdateBuildingElectricity(BuildingElectricity instance);
+
+        bool RemoveBuildingElectricity(int idBuildingElectricity);
+
+        #endregion
 
         #region Goal
-        
+
         IQueryable<Goal> Goals { get; }
         
         bool CreateGoal(Goal instance);

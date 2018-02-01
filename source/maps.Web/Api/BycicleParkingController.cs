@@ -13,7 +13,7 @@ using maps.Web.Models.Api;
 using maps.Web.Models.Dto;
 using Ninject;
 
-namespace maps.Web.Controllers
+namespace maps.Web.Api.Controllers
 {
     public class BycicleParkingController : BaseApiController
     {

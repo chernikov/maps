@@ -4,6 +4,7 @@ using maps.Web.Areas.Bicycle;
 using maps.Web.Areas.Bus;
 using maps.Web.Areas.Default;
 using maps.Web.Areas.Goal;
+using maps.Web.Areas.Housing;
 using maps.Web.Areas.Instagram;
 using maps.Web.Areas.Sport;
 using maps.Web.Areas.Utility;
@@ -26,6 +27,8 @@ namespace maps.Web.App_Start
             var adminAreaContext = new AreaRegistrationContext(adminArea.AreaName, routes);
             adminArea.RegisterArea(adminAreaContext);
 
+           
+
             var busArea = new BusAreaRegistration();
             var busAreaContext = new AreaRegistrationContext(busArea.AreaName, routes);
             busArea.RegisterArea(busAreaContext);
@@ -33,6 +36,10 @@ namespace maps.Web.App_Start
             var bycicleArea = new BicycleAreaRegistration();
             var bycicleAreaContext = new AreaRegistrationContext(bycicleArea.AreaName, routes);
             bycicleArea.RegisterArea(bycicleAreaContext);
+
+            var housingArea = new HousingAreaRegistration();
+            var housingAreaContext = new AreaRegistrationContext(housingArea.AreaName, routes);
+            housingArea.RegisterArea(housingAreaContext);
 
             var instagramArea = new InstagramAreaRegistration();
             var instagramAreaContext = new AreaRegistrationContext(instagramArea.AreaName, routes);

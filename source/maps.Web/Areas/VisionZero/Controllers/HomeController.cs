@@ -25,13 +25,11 @@ namespace maps.Web.Areas.VisionZero.Controllers
             return View();
         }
 
-
         public ActionResult Item(int id)
         {
             ViewBag.ID = id;
             return View("Index");
         }
-
 
         [ValidateInput(false)]
         [HttpPost]

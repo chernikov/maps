@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Housing - maps.if.ua";
+    Layout = "~/Areas/VisionZero/Views/Shared/_Layout.cshtml";
+    var currentUser = ((maps.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var id = (int?)ViewBag.ID ?? 0;
+}
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+}
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/Scripts/bootstrap-datepicker.js")
+    @Scripts.Render("~/Scripts/markerclusterer.js")
+    @Scripts.Render("~/scripts/housing/map-main.js")
+    @Scripts.Render("~/scripts/housing/map-visualization.js")
+    @Scripts.Render("~/scripts/housing/index.js")
+
+}
+
+@Html.Hidden("ID", id)
+<div class="fluid-container height">
+    <div class="row height">
+        <div class="col-lg-3 col-md-3 panel">
+            <div class="row">
+                <div class="col-md-11">
+                    <form class="form" id="FilterForm">
+                        <div class="form-group">
+                            <div>
+                                @Html.TextBox("StartYear", "", new { type = "number", @class = "form-control", placeholder = "Start year" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                @Html.TextBox("LastYear", "", new { type = "number", @class = "form-control", placeholder = "Last year" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                @Html.CheckBox("ExistOnStartYear", false) Exist at start year
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button id="SubmitFilter" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+
+                    <div id="DataWrapper">
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-lg-offset-3 col-md-offset-3 height">
+            @Html.Partial("Map")
+        </div>
+    </div>
+
+</div>

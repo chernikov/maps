@@ -1,0 +1,28 @@
+﻿@model Building
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            Ємність
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+    </dl>
+
+    <ul>
+        @foreach (var item in Model.SubBuildingElectricities)
+        {
+            <li>
+                <strong>@item.Year</strong> @item.PowerOn / @Model.Capacity
+            </li>
+        }
+    </ul>
+</div>

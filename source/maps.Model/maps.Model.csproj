@@ -70,6 +70,7 @@
     <Compile Include="Proxy\BicycleParking.cs" />
     <Compile Include="Proxy\BicycleParkingVote.cs" />
     <Compile Include="Proxy\Brand.cs" />
+    <Compile Include="Proxy\Building.cs" />
     <Compile Include="Proxy\Bus.cs" />
     <Compile Include="Proxy\BusPhoto.cs" />
     <Compile Include="Proxy\BycicleDirection.cs" />
@@ -114,6 +115,8 @@
     <Compile Include="SqlRepository\BicycleParking.cs" />
     <Compile Include="SqlRepository\BicycleParkingVote.cs" />
     <Compile Include="SqlRepository\Brand.cs" />
+    <Compile Include="SqlRepository\Building.cs" />
+    <Compile Include="SqlRepository\BuildingElectricity.cs" />
     <Compile Include="SqlRepository\Bus.cs" />
     <Compile Include="SqlRepository\BusPhoto.cs" />
     <Compile Include="SqlRepository\BycicleDirection.cs" />

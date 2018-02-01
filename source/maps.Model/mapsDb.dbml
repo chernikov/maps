@@ -183,6 +183,7 @@
       <Association Name="City_User" Member="Users" ThisKey="ID" OtherKey="CityID" Type="User" />
       <Association Name="City_UtilityDepartment" Member="UtilityDepartments" ThisKey="ID" OtherKey="CityID" Type="UtilityDepartment" />
       <Association Name="City_UtilityIssue" Member="UtilityIssues" ThisKey="ID" OtherKey="CityID" Type="UtilityIssue" />
+      <Association Name="City_Building" Member="Buildings" ThisKey="ID" OtherKey="CityID" Type="Building" />
     </Type>
   </Table>
   <Table Name="dbo.Comment" Member="Comments">
@@ -590,6 +591,28 @@
       <Column Name="Data" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="IsHidden" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Visualization_VisualizationItem" Member="Visualization" ThisKey="VisualizationID" OtherKey="ID" Type="Visualization" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BuildingElectricity" Member="BuildingElectricities">
+    <Type Name="BuildingElectricity">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuildingID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PowerOn" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Consumed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Building_BuildingElectricity" Member="Building" ThisKey="BuildingID" OtherKey="ID" Type="Building" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Building" Member="Buildings">
+    <Type Name="Building">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Lat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Lng" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Capacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Building_BuildingElectricity" Member="BuildingElectricities" ThisKey="ID" OtherKey="BuildingID" Type="BuildingElectricity" />
+      <Association Name="City_Building" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

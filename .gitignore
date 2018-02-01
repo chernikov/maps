@@ -42,3 +42,4 @@ source/maps.Web/Content/logs
 source/packages
 source/maps.Web/.sass-cache
 *.suo
+/source/.vs/maps/v15/Server/sqlite3

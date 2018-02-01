@@ -162,6 +162,12 @@ namespace maps.Model
     partial void InsertVisualizationItem(VisualizationItem instance);
     partial void UpdateVisualizationItem(VisualizationItem instance);
     partial void DeleteVisualizationItem(VisualizationItem instance);
+    partial void InsertBuildingElectricity(BuildingElectricity instance);
+    partial void UpdateBuildingElectricity(BuildingElectricity instance);
+    partial void DeleteBuildingElectricity(BuildingElectricity instance);
+    partial void InsertBuilding(Building instance);
+    partial void UpdateBuilding(Building instance);
+    partial void DeleteBuilding(Building instance);
     #endregion
 		
 		public mapsDbDataContext() : 
@@ -543,6 +549,22 @@ namespace maps.Model
 			get
 			{
 				return this.GetTable<VisualizationItem>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BuildingElectricity> BuildingElectricities
+		{
+			get
+			{
+				return this.GetTable<BuildingElectricity>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Building> Buildings
+		{
+			get
+			{
+				return this.GetTable<Building>();
 			}
 		}
 	}
@@ -4224,6 +4246,8 @@ namespace maps.Model
 		
 		private EntitySet<UtilityIssue> _UtilityIssues;
 		
+		private EntitySet<Building> _Buildings;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4251,6 +4275,7 @@ namespace maps.Model
 			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
 			this._UtilityDepartments = new EntitySet<UtilityDepartment>(new Action<UtilityDepartment>(this.attach_UtilityDepartments), new Action<UtilityDepartment>(this.detach_UtilityDepartments));
 			this._UtilityIssues = new EntitySet<UtilityIssue>(new Action<UtilityIssue>(this.attach_UtilityIssues), new Action<UtilityIssue>(this.detach_UtilityIssues));
+			this._Buildings = new EntitySet<Building>(new Action<Building>(this.attach_Buildings), new Action<Building>(this.detach_Buildings));
 			OnCreated();
 		}
 		
@@ -4471,6 +4496,19 @@ namespace maps.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_Building", Storage="_Buildings", ThisKey="ID", OtherKey="CityID")]
+		public EntitySet<Building> Buildings
+		{
+			get
+			{
+				return this._Buildings;
+			}
+			set
+			{
+				this._Buildings.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -4594,6 +4632,18 @@ namespace maps.Model
 		}
 		
 		private void detach_UtilityIssues(UtilityIssue entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = null;
+		}
+		
+		private void attach_Buildings(Building entity)
+		{
+			this.SendPropertyChanging();
+			entity.City = this;
+		}
+		
+		private void detach_Buildings(Building entity)
 		{
 			this.SendPropertyChanging();
 			entity.City = null;
@@ -13628,6 +13678,456 @@ namespace maps.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BuildingElectricity")]
+	public partial class BuildingElectricity : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _BuildingID;
+		
+		private int _PowerOn;
+		
+		private int _Year;
+		
+		private int _Consumed;
+		
+		private EntityRef<Building> _Building;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnBuildingIDChanging(int value);
+    partial void OnBuildingIDChanged();
+    partial void OnPowerOnChanging(int value);
+    partial void OnPowerOnChanged();
+    partial void OnYearChanging(int value);
+    partial void OnYearChanged();
+    partial void OnConsumedChanging(int value);
+    partial void OnConsumedChanged();
+    #endregion
+		
+		public BuildingElectricity()
+		{
+			this._Building = default(EntityRef<Building>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BuildingID", DbType="Int NOT NULL")]
+		public int BuildingID
+		{
+			get
+			{
+				return this._BuildingID;
+			}
+			set
+			{
+				if ((this._BuildingID != value))
+				{
+					if (this._Building.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBuildingIDChanging(value);
+					this.SendPropertyChanging();
+					this._BuildingID = value;
+					this.SendPropertyChanged("BuildingID");
+					this.OnBuildingIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PowerOn", DbType="Int NOT NULL")]
+		public int PowerOn
+		{
+			get
+			{
+				return this._PowerOn;
+			}
+			set
+			{
+				if ((this._PowerOn != value))
+				{
+					this.OnPowerOnChanging(value);
+					this.SendPropertyChanging();
+					this._PowerOn = value;
+					this.SendPropertyChanged("PowerOn");
+					this.OnPowerOnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="Int NOT NULL")]
+		public int Year
+		{
+			get
+			{
+				return this._Year;
+			}
+			set
+			{
+				if ((this._Year != value))
+				{
+					this.OnYearChanging(value);
+					this.SendPropertyChanging();
+					this._Year = value;
+					this.SendPropertyChanged("Year");
+					this.OnYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumed", DbType="Int NOT NULL")]
+		public int Consumed
+		{
+			get
+			{
+				return this._Consumed;
+			}
+			set
+			{
+				if ((this._Consumed != value))
+				{
+					this.OnConsumedChanging(value);
+					this.SendPropertyChanging();
+					this._Consumed = value;
+					this.SendPropertyChanged("Consumed");
+					this.OnConsumedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Building_BuildingElectricity", Storage="_Building", ThisKey="BuildingID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Building Building
+		{
+			get
+			{
+				return this._Building.Entity;
+			}
+			set
+			{
+				Building previousValue = this._Building.Entity;
+				if (((previousValue != value) 
+							|| (this._Building.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Building.Entity = null;
+						previousValue.BuildingElectricities.Remove(this);
+					}
+					this._Building.Entity = value;
+					if ((value != null))
+					{
+						value.BuildingElectricities.Add(this);
+						this._BuildingID = value.ID;
+					}
+					else
+					{
+						this._BuildingID = default(int);
+					}
+					this.SendPropertyChanged("Building");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Building")]
+	public partial class Building : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _CityID;
+		
+		private string _Address;
+		
+		private double _Lat;
+		
+		private double _Lng;
+		
+		private System.Nullable<int> _Capacity;
+		
+		private EntitySet<BuildingElectricity> _BuildingElectricities;
+		
+		private EntityRef<City> _City;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnCityIDChanging(int value);
+    partial void OnCityIDChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnLatChanging(double value);
+    partial void OnLatChanged();
+    partial void OnLngChanging(double value);
+    partial void OnLngChanged();
+    partial void OnCapacityChanging(System.Nullable<int> value);
+    partial void OnCapacityChanged();
+    #endregion
+		
+		public Building()
+		{
+			this._BuildingElectricities = new EntitySet<BuildingElectricity>(new Action<BuildingElectricity>(this.attach_BuildingElectricities), new Action<BuildingElectricity>(this.detach_BuildingElectricities));
+			this._City = default(EntityRef<City>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int NOT NULL")]
+		public int CityID
+		{
+			get
+			{
+				return this._CityID;
+			}
+			set
+			{
+				if ((this._CityID != value))
+				{
+					if (this._City.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCityIDChanging(value);
+					this.SendPropertyChanging();
+					this._CityID = value;
+					this.SendPropertyChanged("CityID");
+					this.OnCityIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Float NOT NULL")]
+		public double Lat
+		{
+			get
+			{
+				return this._Lat;
+			}
+			set
+			{
+				if ((this._Lat != value))
+				{
+					this.OnLatChanging(value);
+					this.SendPropertyChanging();
+					this._Lat = value;
+					this.SendPropertyChanged("Lat");
+					this.OnLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lng", DbType="Float NOT NULL")]
+		public double Lng
+		{
+			get
+			{
+				return this._Lng;
+			}
+			set
+			{
+				if ((this._Lng != value))
+				{
+					this.OnLngChanging(value);
+					this.SendPropertyChanging();
+					this._Lng = value;
+					this.SendPropertyChanged("Lng");
+					this.OnLngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacity", DbType="Int")]
+		public System.Nullable<int> Capacity
+		{
+			get
+			{
+				return this._Capacity;
+			}
+			set
+			{
+				if ((this._Capacity != value))
+				{
+					this.OnCapacityChanging(value);
+					this.SendPropertyChanging();
+					this._Capacity = value;
+					this.SendPropertyChanged("Capacity");
+					this.OnCapacityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Building_BuildingElectricity", Storage="_BuildingElectricities", ThisKey="ID", OtherKey="BuildingID")]
+		public EntitySet<BuildingElectricity> BuildingElectricities
+		{
+			get
+			{
+				return this._BuildingElectricities;
+			}
+			set
+			{
+				this._BuildingElectricities.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_Building", Storage="_City", ThisKey="CityID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public City City
+		{
+			get
+			{
+				return this._City.Entity;
+			}
+			set
+			{
+				City previousValue = this._City.Entity;
+				if (((previousValue != value) 
+							|| (this._City.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._City.Entity = null;
+						previousValue.Buildings.Remove(this);
+					}
+					this._City.Entity = value;
+					if ((value != null))
+					{
+						value.Buildings.Add(this);
+						this._CityID = value.ID;
+					}
+					else
+					{
+						this._CityID = default(int);
+					}
+					this.SendPropertyChanged("City");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BuildingElectricities(BuildingElectricity entity)
+		{
+			this.SendPropertyChanging();
+			entity.Building = this;
+		}
+		
+		private void detach_BuildingElectricities(BuildingElectricity entity)
+		{
+			this.SendPropertyChanging();
+			entity.Building = null;
 		}
 	}
 }
